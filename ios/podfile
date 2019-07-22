@@ -1,0 +1,10 @@
+target ‘project’ do
+    pod 'Alamofire'
+    pod 'AlamofireImage'
+    pod 'KeychainAccess'
+    pod 'PinLayout'
+    pod 'FlexLayout'
+    pod 'UITextView+Placeholder'
+    pod 'Fabric'
+    pod 'Crashlytics'
+end

@@ -1,0 +1,46 @@
+PODS:
+  - Alamofire (4.8.1)
+  - AlamofireImage (3.5.0):
+    - Alamofire (~> 4.8)
+  - Crashlytics (3.13.1):
+    - Fabric (~> 1.10.1)
+  - Fabric (1.10.1)
+  - FlexLayout (1.3.11)
+  - KeychainAccess (3.1.2)
+  - PinLayout (1.8.6)
+  - "UITextView+Placeholder (1.2.1)"
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireImage
+  - Crashlytics
+  - Fabric
+  - FlexLayout
+  - KeychainAccess
+  - PinLayout
+  - "UITextView+Placeholder"
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
+    - Crashlytics
+    - Fabric
+    - FlexLayout
+    - KeychainAccess
+    - PinLayout
+    - "UITextView+Placeholder"
+
+SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
+  Crashlytics: 5aa8e90dcbf2f34898b4f5a0037787531246cca0
+  Fabric: f6f21452846788bb44595d73e9909d79d328e617
+  FlexLayout: b008184d23aae0c56e1c916e803445a13a6f4e5a
+  KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
+  PinLayout: fe2a2432d6982588e208572005c941aeeae417ab
+  "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
+
+PODFILE CHECKSUM: 5cf51157b63d8e75d81b0f71330d4e4f0f78a63e
+
+COCOAPODS: 1.5.3
