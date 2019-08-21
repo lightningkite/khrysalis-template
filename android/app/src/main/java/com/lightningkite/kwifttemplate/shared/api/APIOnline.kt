@@ -5,13 +5,13 @@
 
 package com.lightningkite.kwifttemplate.shared.api
 
-import com.lightningkite.kwift.actuals.*
-import com.lightningkite.kwifttemplate.shared.models.*
-import java.util.*
+import com.lightningkite.kwift.actuals.HttpClient
+import com.lightningkite.kwift.actuals.escaping
+import com.lightningkite.kwifttemplate.shared.models.Post
 
 
 class APIOnline(val baseUrl: String = "https://jsonplaceholder.typicode.com") : APIInterface {
-    override fun getExamplePosts(@escaping onResult: (Int, List<Post>?, String?) -> Unit) {
+    override fun getExamplePosts(onResult: @escaping() (Int, List<Post>?, String?) -> Unit) {
         HttpClient.call(
             url = baseUrl + "/posts",
             method = HttpClient.GET,

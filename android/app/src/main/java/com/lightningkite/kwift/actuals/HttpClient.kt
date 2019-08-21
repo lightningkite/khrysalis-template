@@ -3,7 +3,6 @@ package com.lightningkite.kwift.actuals
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
@@ -17,9 +16,7 @@ import com.fasterxml.jackson.databind.util.StdDateFormat
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import okhttp3.*
 import java.io.ByteArrayOutputStream
-import java.io.File
 import java.io.IOException
-import java.lang.Exception
 import java.util.*
 
 @SuppressLint("StaticFieldLeak")
@@ -55,7 +52,7 @@ object HttpClient {
         method: String,
         headers: Map<String, String>,
         body: Any? = null,
-        @escaping crossinline onResult: (code: Int, result: T?, error: String?) -> Unit
+        crossinline onResult: @escaping() (code: Int, result: T?, error: String?) -> Unit
     ) {
         Log.i("HttpClient", "Sending $method request to $url with headers $headers")
         val request = Request.Builder()
@@ -81,40 +78,31 @@ object HttpClient {
                 val raw = response.body()!!.string()
                 Log.i("HttpClient", "Response ${response.code()}: $raw")
                 Handler(Looper.getMainLooper()).post {
-                    if (T::class == Unit::class) {
-                        val code = response.code()
-                        if (code / 100 == 2) {
-                            onResult.invoke(response.code(), Unit as T, null)
-                        } else {
-                            onResult.invoke(code, null, raw ?: "")
+                    val code = response.code()
+                    if (code / 100 == 2) {
+                        try {
+                            val read =
+                                mapper.readValue<T>(raw, object : TypeReference<T>() {})
+                            onResult.invoke(code, read, null)
+                        } catch (e: Exception) {
+                            Log.e("HttpClient", "Failure to parse: ${e.message}")
+                            onResult.invoke(code, null, e.message)
                         }
                     } else {
-                        val code = response.code()
-                        if (code / 100 == 2) {
-                            try {
-                                val read =
-                                    mapper.readValue<T>(raw, object : TypeReference<T>() {})
-                                onResult.invoke(code, read, null)
-                            } catch (e: Exception) {
-                                Log.e("HttpClient", "Failure to parse: ${e.message}")
-                                onResult.invoke(code, null, e.message)
-                            }
-                        } else {
-                            onResult.invoke(code, null, raw ?: "")
-                        }
+                        onResult.invoke(code, null, raw ?: "")
                     }
                 }
             }
         })
     }
 
-    inline fun <reified T : Any> uploadImage(
+    inline fun <reified T : Any> uploadImageWithoutResult(
         url: String,
         method: String,
         headers: Map<String, String>,
         fieldName: String,
         image: ImageData,
-        @escaping crossinline onResult: (code: Int, result: T?, error: String?) -> Unit
+        crossinline onResult: @escaping() (code: Int, result: T?, error: String?) -> Unit
     ) {
         Log.i("HttpClient", "Sending $method request to $url with headers $headers and image")
         val data = ByteArrayOutputStream().use {
@@ -148,27 +136,111 @@ object HttpClient {
                 val raw = response.body()!!.string()
                 Log.i("HttpClient", "Response ${response.code()}: $raw")
                 Handler(Looper.getMainLooper()).post {
-                    if (T::class == Unit::class) {
-                        val code = response.code()
-                        if (code / 100 == 2) {
-                            onResult.invoke(response.code(), Unit as T, null)
-                        } else {
-                            onResult.invoke(code, null, raw ?: "")
+                    val code = response.code()
+                    if (code / 100 == 2) {
+                        try {
+                            val read =
+                                mapper.readValue<T>(raw, object : TypeReference<T>() {})
+                            onResult.invoke(code, read, null)
+                        } catch (e: Exception) {
+                            Log.e("HttpClient", "Failure to parse: ${e.message}")
+                            onResult.invoke(code, null, e.message)
                         }
                     } else {
-                        val code = response.code()
-                        if (code / 100 == 2) {
-                            try {
-                                val read =
-                                    mapper.readValue<T>(raw, object : TypeReference<T>() {})
-                                onResult.invoke(code, read, null)
-                            } catch (e: Exception) {
-                                Log.e("HttpClient", "Failure to parse: ${e.message}")
-                                onResult.invoke(code, null, e.message)
-                            }
-                        } else {
-                            onResult.invoke(code, null, raw ?: "")
-                        }
+                        onResult.invoke(code, null, raw ?: "")
+                    }
+                }
+            }
+        })
+    }
+
+    inline fun callWithoutResult(
+        url: String,
+        method: String,
+        headers: Map<String, String>,
+        body: Any? = null,
+        crossinline onResult: @escaping() (code: Int, error: String?) -> Unit
+    ) {
+        Log.i("HttpClient", "Sending $method request to $url with headers $headers")
+        val request = Request.Builder()
+            .url(url)
+            .method(method, body?.let {
+                val sending = mapper.writeValueAsString(it)
+                Log.i("HttpClient", "with body $sending")
+                RequestBody.create(MediaType.parse("application/json"), sending)
+            })
+            .headers(Headers.of(headers))
+            .addHeader("Accept-Language", Locale.getDefault().language)
+            .build()
+
+        client.newCall(request).enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                Log.e("HttpClient", "Failure: ${e.message}")
+                Handler(Looper.getMainLooper()).post {
+                    onResult.invoke(0, e.message ?: "")
+                }
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                val raw = response.body()!!.string()
+                Log.i("HttpClient", "Response ${response.code()}: $raw")
+                Handler(Looper.getMainLooper()).post {
+                    val code = response.code()
+                    if (code / 100 == 2) {
+                        onResult.invoke(response.code(), null)
+                    } else {
+                        onResult.invoke(code, raw ?: "")
+                    }
+                }
+            }
+        })
+    }
+
+    inline fun uploadImageWithoutResult(
+        url: String,
+        method: String,
+        headers: Map<String, String>,
+        fieldName: String,
+        image: ImageData,
+        crossinline onResult: @escaping() (code: Int, error: String?) -> Unit
+    ) {
+        Log.i("HttpClient", "Sending $method request to $url with headers $headers and image")
+        val data = ByteArrayOutputStream().use {
+            image.compress(Bitmap.CompressFormat.JPEG, 90, it)
+            it.toByteArray()
+        }
+        val request = Request.Builder()
+            .url(url)
+            .method(
+                method,
+                MultipartBody.Builder()
+                    .setType(MultipartBody.FORM)
+                    .addFormDataPart(
+                        fieldName,
+                        "image.jpg",
+                        RequestBody.create(MediaType.parse("image/jpeg"), data)
+                    )
+                    .build()
+            )
+            .headers(Headers.of(headers))
+            .build()
+
+        client.newCall(request).enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                Handler(Looper.getMainLooper()).post {
+                    onResult.invoke(0, e.message ?: "")
+                }
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                val raw = response.body()!!.string()
+                Log.i("HttpClient", "Response ${response.code()}: $raw")
+                Handler(Looper.getMainLooper()).post {
+                    val code = response.code()
+                    if (code / 100 == 2) {
+                        onResult.invoke(response.code(), null)
+                    } else {
+                        onResult.invoke(code, raw ?: "")
                     }
                 }
             }

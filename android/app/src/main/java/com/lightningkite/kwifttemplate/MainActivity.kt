@@ -1,32 +1,23 @@
 package com.lightningkite.kwifttemplate
 
-import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.preference.PreferenceManager
-import com.lightningkite.kwift.actuals.Preferences
 import com.lightningkite.kwift.android.AccessibleActivity
-import com.lightningkite.kwift.android.ViewDataView
-import com.lightningkite.kwift.android.view
-import com.lightningkite.kwift.shared.ViewDataStack
-import com.lightningkite.kwifttemplate.shared.views.MainViewData
+import com.lightningkite.kwifttemplate.shared.views.MainViewGenerator
 
 
 class MainActivity : AccessibleActivity() {
 
     companion object {
-        val viewData: MainViewData by lazy { MainViewData() }
+        val viewData: MainViewGenerator by lazy { MainViewGenerator() }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(viewData.view(this))
+        setContentView(viewData.generate(this))
     }
 
     override fun onBackPressed() {
-        if (!ViewDataView.onBackPressed()) super.onBackPressed()
+        if (!viewData.stack.pop()) super.onBackPressed()
     }
 }
