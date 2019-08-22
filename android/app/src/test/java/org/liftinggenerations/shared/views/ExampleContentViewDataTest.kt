@@ -1,22 +1,23 @@
 package org.liftinggenerations.shared.views
 
 import com.lightningkite.kwift.observables.shared.ObservableStack
-import com.lightningkite.kwifttemplate.shared.views.ExampleContent2ViewData
-import com.lightningkite.kwifttemplate.shared.views.ExampleContentViewData
+import com.lightningkite.kwift.views.shared.ViewGenerator
+import com.lightningkite.kwifttemplate.shared.views.ExampleContent2ViewGenerator
+import com.lightningkite.kwifttemplate.shared.views.ExampleContentViewGenerator
 import org.junit.Test
 
 class ExampleContentViewDataTest {
 
     @Test
     fun canCreate() {
-        val stack = ObservableStack()
-        stack.push(ExampleContentViewData(stack))
+        val stack = ObservableStack<ViewGenerator>()
+        stack.push(ExampleContentViewGenerator(stack))
     }
 
     @Test
     fun incrementWorksAtZero() {
-        val stack = ObservableStack()
-        val data = ExampleContentViewData(stack)
+        val stack = ObservableStack<ViewGenerator>()
+        val data = ExampleContentViewGenerator(stack)
         stack.push(data)
 
         data.number.value = 0
@@ -26,8 +27,8 @@ class ExampleContentViewDataTest {
 
     @Test
     fun incrementWorksAtOne() {
-        val stack = ObservableStack()
-        val data = ExampleContentViewData(stack)
+        val stack = ObservableStack<ViewGenerator>()
+        val data = ExampleContentViewGenerator(stack)
         stack.push(data)
 
         data.number.value = 1
@@ -37,12 +38,12 @@ class ExampleContentViewDataTest {
 
     @Test
     fun navigationToAnotherScreenWorks() {
-        val stack = ObservableStack()
-        val data = ExampleContentViewData(stack)
+        val stack = ObservableStack<ViewGenerator>()
+        val data = ExampleContentViewGenerator(stack)
         stack.push(data)
 
         data.goToAnotherScreen()
-        assert(stack.stack.last() is ExampleContent2ViewData)
+        assert(stack.stack.last() is ExampleContent2ViewGenerator)
     }
 
 }

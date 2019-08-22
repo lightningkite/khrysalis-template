@@ -24,22 +24,13 @@ extension UIView {
         _ = theSwizzler
     }
     
-    private class LambdaBox {
-        var lambda: ()->Void = {}
-    }
-    private static var table = NSMapTable<UIView, LambdaBox>(keyOptions: .weakMemory, valueOptions: .strongMemory)
+    private static var ext = ExtensionProperty<UIView, ()->Void>()
     var onLayoutSubviews: (()->Void)? {
         get {
-            return UIView.table.object(forKey: self)?.lambda
+            return UIView.ext.get(self)
         }
         set(value) {
-            if let value = value {
-                let box = LambdaBox()
-                box.lambda = value
-                UIView.table.setObject(box, forKey: self)
-            } else {
-                UIView.table.removeObject(forKey: self)
-            }
+            UIView.ext.set(self, value)
         }
     }
     

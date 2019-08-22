@@ -20,7 +20,7 @@ class ExampleContent2Xml {
                     view.flex.direction(.column).padding(8, 8, 8, 8).alignContent(.start).justifyContent(.start).define{ (flex) in 
                         flex.addItem({ () -> UILabel in 
                             let view = UILabel(frame: .zero)
-                            view.text = "You made it to another screen!"
+                            view.text = ResourcesStrings.youMadeItToAnotherScreen
                             view.numberOfLines = 0
                             view.font = UIFont.get(size: 16, style: [])
                             view.textColor = UIColor(argb: 0xFF222222)

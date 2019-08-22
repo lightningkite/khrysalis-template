@@ -6,7 +6,7 @@ import com.lightningkite.kwift.views.actual.ViewDependency
 import com.lightningkite.kwift.views.shared.ViewGenerator
 import com.lightningkite.kwifttemplate.xml.ExampleContent2Xml
 
-class ExampleContent2ViewData(val stack: ObservableStack<ViewGenerator>) : ViewGenerator() {
+class ExampleContent2ViewGenerator(val stack: ObservableStack<ViewGenerator>) : ViewGenerator() {
     override val title: String get() = "Example Content 2 "
 
     override fun generate(dependency: ViewDependency): View {

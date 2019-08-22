@@ -11,28 +11,25 @@ import UIKit
 
 
 extension Dropdown {
-    func bind<T: Equatable, VIEW: UIView>(
-        data: ObservableProperty<[T]>,
+    func bind<T: Equatable>(
+        options: ObservableProperty<[T]>,
         selected: MutableObservableProperty<T>,
-        makeLayout: @escaping () -> VIEW,
-        setup: @escaping (VIEW, T) -> Void
+        makeView: @escaping (ObservableProperty<T>) -> UIView
     ) {
-        let boundDataSource = PickerBoundDataSource(data: data, selected: selected, createView: makeLayout, updateView: setup)
+        let boundDataSource = PickerBoundDataSource(data: options, selected: selected, makeView: makeView)
         self.dataSource = boundDataSource
         self.delegate = boundDataSource
         retain(as: "boundDataSource", item: boundDataSource)
         
-        data.addAndRunWeak(self) { this, value in
+        options.addAndRunWeak(self) { this, value in
             this.pickerView.reloadAllComponents()
         }
-        self.selectedView = makeLayout()
+        self.selectedView = makeView(selected)
         selected.addAndRunWeak(self) { this, value in
-            setup(this.selectedView as! VIEW, value)
-            var index = data.value.indexOf(value)
-            if index == -1 {
-                index = 0
+            var index = options.value.indexOf(value)
+            if index != -1 {
+                this.pickerView.selectRow(index, inComponent: 0, animated: false)
             }
-            this.pickerView.selectRow(index, inComponent: 0, animated: false)
         }
     }
 }
@@ -41,14 +38,14 @@ extension Dropdown {
 class PickerBoundDataSource<T, VIEW: UIView>: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
     weak var data: ObservableProperty<[T]>?
     weak var selected: MutableObservableProperty<T>?
-    let createView: () -> VIEW
-    let updateView: (VIEW, T) -> Void
+    let makeView: (ObservableProperty<T>) -> UIView
     
-    init(data: ObservableProperty<[T]>, selected: MutableObservableProperty<T>, createView: @escaping () -> VIEW, updateView: @escaping (VIEW, T) -> Void) {
+    private var ext = ExtensionProperty<UIView, MutableObservableProperty<T>>()
+    
+    init(data: ObservableProperty<[T]>, selected: MutableObservableProperty<T>, makeView: @escaping (ObservableProperty<T>) -> UIView) {
         self.data = data
         self.selected = selected
-        self.createView = createView
-        self.updateView = updateView
+        self.makeView = makeView
         super.init()
     }
     
@@ -62,11 +59,16 @@ class PickerBoundDataSource<T, VIEW: UIView>: NSObject, UIPickerViewDataSource, 
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        let v = view ?? createView()
-        guard let value = data?.value[row] else {
-            return v
+        guard let selected = selected else { return UIView(frame: .zero) }
+        let v = view ?? {
+            let obs = StandardObservableProperty(selected.value)
+            let new = makeView(obs)
+            ext.set(new, obs)
+            return new
+        }()
+        if let obs = ext.get(v), let value = data?.value[row] {
+            obs.value = value
         }
-        updateView(v as! VIEW, value)
         return v
     }
     

@@ -14,15 +14,15 @@ import com.lightningkite.kwifttemplate.R
 
 class MainXml {
 
-    lateinit var boundViewMainBack: ImageButton
-    lateinit var boundViewTitle: TextView
-    lateinit var boundViewMainContent: FrameLayout
+    lateinit var mainBack: ImageButton
+    lateinit var title: TextView
+    lateinit var mainContent: FrameLayout
 
     fun setup(dependency: ViewDependency): View {
         val view = LayoutInflater.from(dependency.context).inflate(R.layout.main, null, false)
-        boundViewMainBack = view.findViewById<ImageButton>(R.id.mainBack)
-        boundViewTitle = view.findViewById<TextView>(R.id.title)
-        boundViewMainContent = view.findViewById<FrameLayout>(R.id.mainContent)
+        mainBack = view.findViewById<ImageButton>(R.id.mainBack)
+        title = view.findViewById<TextView>(R.id.title)
+        mainContent = view.findViewById<FrameLayout>(R.id.mainContent)
         return view
     }
 }

@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import com.lightningkite.kwift.observables.shared.ObservableProperty
+import com.lightningkite.kwift.observables.shared.StandardObservableProperty
 import com.lightningkite.kwift.observables.shared.addAndRunWeak
 
 
@@ -21,28 +22,38 @@ fun RecyclerView.whenScrolledToEnd(action: () -> Unit) {
     })
 }
 
-fun <T, V : View> RecyclerView.bind(
+fun <T> RecyclerView.bind(
     data: ObservableProperty<List<T>>,
-    makeLayout: () -> V,
-    setup: (view: V, item: T) -> Unit
+    defaultValue: T,
+    makeView: (ObservableProperty<T>) -> View
 ) {
     layoutManager = LinearLayoutManager(context)
     adapter = object : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         init {
+            println("Setting up adapter")
             data.addAndRunWeak(this) { self, _ ->
                 self.notifyDataSetChanged()
             }
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-            val subview = makeLayout()
+            println("Creating view holder")
+            val event = StandardObservableProperty<T>(defaultValue)
+            val subview = makeView(event)
+            subview.tag = event
             return object : RecyclerView.ViewHolder(subview) {}
         }
 
         override fun getItemCount(): Int = data.value.size
 
+        @Suppress("UNCHECKED_CAST")
         override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-            setup.invoke(holder.itemView as V, data.value[position])
+            (holder.itemView.tag as? StandardObservableProperty<T>)?.let {
+                println("Updating value to ${data.value[position]}")
+                it.value = data.value[position]
+            } ?: run {
+                println("Failed to find property to update")
+            }
         }
     }
 

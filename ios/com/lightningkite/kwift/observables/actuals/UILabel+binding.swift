@@ -19,7 +19,6 @@ extension UILabel {
             if this.text != value {
                 this.text = value
             }
-            this.flex.markDirty()
             this.relayoutFlexClimbToXml()
         }
     }
@@ -33,7 +32,6 @@ extension UILabel {
             if this.text != textValue {
                 this.text = textValue
             }
-            this.flex.markDirty()
             this.relayoutFlexClimbToXml()
         }
     }
@@ -51,7 +49,6 @@ extension UILabel {
             } else {
                 this.text = nil
             }
-            this.flex.markDirty()
             this.relayoutFlexClimbToXml()
         }
     }

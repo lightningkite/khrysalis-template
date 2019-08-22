@@ -18,14 +18,14 @@ public class MainViewGenerator: ViewGenerator {
     override public func generate(dependency: ViewDependency) -> View {
         var xml = MainXml()
         var view = xml.setup(dependency)
-        xml.boundViewMainContent.bindStack(dependency, stack)
-        xml.boundViewTitle.bindText(stack) { (it) in 
+        xml.mainContent.bindStack(dependency, stack)
+        xml.title.bindText(stack) { (it) in 
             (it.lastOrNull()?.title) ?? ""
         }
-        xml.boundViewMainBack.bindVisible(stack.transformed{ (it) in 
+        xml.mainBack.bindVisible(stack.transformed{ (it) in 
             it.size > 1
         })
-        xml.boundViewMainBack.onClick(captureWeak(self) { (self) in 
+        xml.mainBack.onClick(captureWeak(self) { (self) in 
             self.stack.pop()
             ()
         })
@@ -38,7 +38,7 @@ public class MainViewGenerator: ViewGenerator {
     override public init() {
         self.stack = ObservableStack<ViewGenerator>()
         super.init()
-        stack.push(ExampleContentViewData(stack))
+        stack.push(ExampleContentViewGenerator(stack))
     }
 }
  

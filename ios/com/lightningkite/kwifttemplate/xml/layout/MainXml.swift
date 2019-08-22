@@ -9,9 +9,9 @@ import PinLayout
 
 class MainXml {
     
-    weak var boundViewMainContent: UIView!
-    weak var boundViewTitle: UILabel!
-    weak var boundViewMainBack: UIButton!
+    weak var mainBack: UIButton!
+    weak var mainContent: UIView!
+    weak var title: UILabel!
     
     func setup(_ dependency: ViewDependency) -> UIView {
         return { () -> UIView in 
@@ -24,7 +24,7 @@ class MainXml {
                     view.flex.direction(.row).padding(8, 8, 8, 8).alignContent(.center).justifyContent(.center).define{ (flex) in 
                         flex.addItem({ () -> UIButton in 
                             let view = UIButton(frame: .zero)
-                            self.boundViewMainBack = view
+                            self.mainBack = view
                             view.contentHorizontalAlignment = .center
                             view.setImage(UIImage(named: "ic_arrow_back_white_24dp"), for: .normal)
                             view.contentMode = .scaleAspectFit
@@ -37,7 +37,7 @@ class MainXml {
                         
                         flex.addItem({ () -> UILabel in 
                             let view = UILabel(frame: .zero)
-                            self.boundViewTitle = view
+                            self.title = view
                             view.text = ResourcesStrings.appName
                             view.numberOfLines = 0
                             view.font = UIFont.get(size: 18, style: ["bold"])
@@ -53,7 +53,7 @@ class MainXml {
                 
                 flex.addItem({ () -> UIView in 
                     let view = UIView(frame: .zero)
-                    self.boundViewMainContent = view
+                    self.mainContent = view
                     return view
                 }()
                 ).margin(0, 0, 0, 0).grow(1).shrink(1).height(0).alignSelf(.stretch)

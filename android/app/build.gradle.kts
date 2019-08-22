@@ -63,6 +63,15 @@ tasks.create("kwift") {
             baseFolderForLocalizations = File("../../ios/localizations"),
             outputFolder = File("../../ios/com/lightningkite/kwifttemplate/xml")
         )
+        println("Finished")
+    }
+}
+
+
+tasks.create("kwiftXml") {
+    this.group = "build"
+    doLast {
+        println("Started")
         createAndroidLayoutClasses(
             resourcesFolder = File("src/main/res"),
             applicationPackage = "com.lightningkite.kwifttemplate",

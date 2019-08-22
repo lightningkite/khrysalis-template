@@ -13,15 +13,16 @@ import com.lightningkite.kwifttemplate.R
 
 class ExampleContentXml {
 
-    lateinit var boundViewExampleContentNumber: TextView
-    lateinit var boundViewExampleContentIncrement: Button
-    lateinit var boundViewExampleContentGoToAnotherScreen: Button
+    lateinit var exampleContentNumber: TextView
+    lateinit var exampleContentIncrement: Button
+    lateinit var exampleContentGoToAnotherScreen: Button
 
     fun setup(dependency: ViewDependency): View {
         val view = LayoutInflater.from(dependency.context).inflate(R.layout.example_content, null, false)
-        boundViewExampleContentNumber = view.findViewById<TextView>(R.id.exampleContentNumber)
-        boundViewExampleContentIncrement = view.findViewById<Button>(R.id.exampleContentIncrement)
-        boundViewExampleContentGoToAnotherScreen = view.findViewById<Button>(R.id.exampleContentGoToAnotherScreen)
+        exampleContentNumber = view.findViewById<TextView>(R.id.exampleContentNumber)
+        exampleContentIncrement = view.findViewById<Button>(R.id.exampleContentIncrement)
+        exampleContentGoToAnotherScreen =
+            view.findViewById<Button>(R.id.exampleContentGoToAnotherScreen)
         return view
     }
 }

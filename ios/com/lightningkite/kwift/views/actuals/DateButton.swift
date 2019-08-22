@@ -12,6 +12,15 @@ import UIKit
 
 class DateButton : UIButton {
     
+    var mode: UIDatePicker.Mode {
+        get {
+            return picker.datePickerMode
+        }
+        set(value) {
+            picker.datePickerMode = mode
+        }
+    }
+    
     var format: DateFormatter = {
         let format = DateFormatter()
         format.dateStyle = .medium;

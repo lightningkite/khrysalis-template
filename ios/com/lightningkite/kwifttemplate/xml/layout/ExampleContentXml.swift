@@ -9,9 +9,9 @@ import PinLayout
 
 class ExampleContentXml {
     
-    weak var boundViewExampleContentGoToAnotherScreen: UIButton!
-    weak var boundViewExampleContentIncrement: UIButton!
-    weak var boundViewExampleContentNumber: UILabel!
+    weak var exampleContentGoToAnotherScreen: UIButton!
+    weak var exampleContentNumber: UILabel!
+    weak var exampleContentIncrement: UIButton!
     
     func setup(_ dependency: ViewDependency) -> UIView {
         return { () -> UIScrollView in 
@@ -22,7 +22,7 @@ class ExampleContentXml {
                     view.flex.direction(.column).padding(8, 8, 8, 8).alignContent(.start).justifyContent(.start).define{ (flex) in 
                         flex.addItem({ () -> UILabel in 
                             let view = UILabel(frame: .zero)
-                            view.text = "Welcome!"
+                            view.text = ResourcesStrings.welcome
                             view.numberOfLines = 0
                             view.font = UIFont.get(size: 24, style: ["bold"])
                             view.textColor = UIColor(argb: 0xFF000000)
@@ -32,7 +32,7 @@ class ExampleContentXml {
                         
                         flex.addItem({ () -> UILabel in 
                             let view = UILabel(frame: .zero)
-                            view.text = "This is the template for a Kwift project. This screen exists to help you figure out stuff about it."
+                            view.text = ResourcesStrings.welcomeMessage
                             view.numberOfLines = 0
                             view.font = UIFont.get(size: 16, style: [])
                             view.textColor = UIColor(argb: 0xFF222222)
@@ -45,7 +45,7 @@ class ExampleContentXml {
                             view.flex.direction(.row).padding(0, 0, 0, 0).alignContent(.center).justifyContent(.center).define{ (flex) in 
                                 flex.addItem({ () -> UILabel in 
                                     let view = UILabel(frame: .zero)
-                                    self.boundViewExampleContentNumber = view
+                                    self.exampleContentNumber = view
                                     view.text = "0"
                                     view.numberOfLines = 0
                                     view.font = UIFont.get(size: 16, style: [])
@@ -56,18 +56,18 @@ class ExampleContentXml {
                                 
                                 flex.addItem({ () -> UIButton in 
                                     let view = UIButton(frame: .zero)
-                                    self.boundViewExampleContentIncrement = view
+                                    self.exampleContentIncrement = view
                                     if let image = UIImage(named: "button_primary") {
                                         view.backgroundColor = UIColor(patternImage: image)
                                     } else {
                                         ResourcesBackground.apply(view, "button_primary")
                                     }
-                                    view.setTitle("Increment the Number", for: .normal)
+                                    view.setTitle(ResourcesStrings.incrementTheNumber, for: .normal)
                                     view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
                                     view.contentHorizontalAlignment = .center
                                     view.contentMode = .scaleAspectFit
                                     view.contentEdgeInsets = UIEdgeInsets(top: 8, left:8, bottom:8, right:8)
-                                    view.titleLabel?.text = "Increment the Number"
+                                    view.titleLabel?.text = ResourcesStrings.incrementTheNumber
                                     view.titleLabel?.numberOfLines = 0
                                     view.titleLabel?.font = UIFont.get(size: 16, style: [])
                                     view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
@@ -82,7 +82,7 @@ class ExampleContentXml {
                         
                         flex.addItem({ () -> UIButton in 
                             let view = UIButton(frame: .zero)
-                            self.boundViewExampleContentGoToAnotherScreen = view
+                            self.exampleContentGoToAnotherScreen = view
                             if let image = UIImage(named: "button_primary") {
                                 view.backgroundColor = UIColor(patternImage: image)
                             } else {

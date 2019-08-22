@@ -37,13 +37,14 @@ extension UITableView {
         }
     }
     
-    func bind<T, VIEW: UIView>(
+    func bind<T>(
         data: ObservableProperty<[T]>,
+        defaultValue: T,
         spacing: CGFloat = 8,
-        makeLayout: @escaping () -> VIEW,
-        setup: @escaping (VIEW, T) -> Void
+        makeView: @escaping (ObservableProperty<T>) -> UIView
     ) {
-        let boundDataSource = BoundDataSource(source: data, spacing: spacing, getView: makeLayout, updateCell: setup)
+        register(CustomUITableViewCell.self, forCellReuseIdentifier: "main-cell")
+        let boundDataSource = BoundDataSource(source: data, defaultValue: defaultValue, spacing: spacing, makeView: makeView)
         dataSource = boundDataSource
         delegate = boundDataSource
         retain(as: "boundDataSource", item: boundDataSource)
@@ -64,47 +65,31 @@ extension UITableView {
 }
 
 class CustomUITableViewCell: UITableViewCell {
+    var obs: Any?
     var spacing: CGFloat = 0
-    var subview: UIView = UIView(frame: CGRect.zero) {
-        didSet {
-            subview.removeFromSuperview()
-            centerSubview()
-        }
-    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        centerSubview()
+        contentView.flex
+            .direction(.column)
+            .alignItems(.stretch)
+            .alignContent(.stretch)
+            .padding(spacing)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func centerSubview() {
-        contentView.flex.direction(.column).alignItems(.stretch).alignContent(.stretch).padding(spacing).addItem(subview)
-    }
-    
-    
     override func layoutSubviews() {
         super.layoutSubviews()
-        layout()
-    }
-    
-    fileprivate func layout() {
-        //        subview.flex.layout(mode: .adjustHeight)
         contentView.flex.layout(mode: .adjustHeight)
     }
+
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
-        // 1) Set the contentView's width to the specified size parameter
         contentView.pin.width(size.width)
-        //        subview.pin.width(size.width)
-        
-        // 2) Layout contentView flex container
-        layout()
-        
-        // Return the flex container new size
+        contentView.flex.layout(mode: .adjustHeight)
         return contentView.frame.size
     }
 }
@@ -117,18 +102,16 @@ protocol HasAtEnd {
 class BoundDataSource<T, VIEW: UIView>: NSObject, UITableViewDataSource, UITableViewDelegate, HasAtEnd {
     
     weak var source: ObservableProperty<[T]>?
-    let getView: () -> VIEW
-    let updateCell: (VIEW, T) -> Void
+    let makeView: (ObservableProperty<T>) -> UIView
+    let defaultValue: T
     var atEnd: () -> Void = {}
-    let stubView: VIEW
     let spacing: CGFloat
     
-    init(source: ObservableProperty<[T]>, spacing: CGFloat, getView: @escaping () -> VIEW, updateCell: @escaping (VIEW, T) -> Void) {
+    init(source: ObservableProperty<[T]>, defaultValue: T, spacing: CGFloat, makeView: @escaping (ObservableProperty<T>) -> UIView) {
         self.source = source
-        self.getView = getView
         self.spacing = spacing
-        self.updateCell = updateCell
-        self.stubView = getView()
+        self.makeView = makeView
+        self.defaultValue = defaultValue
         super.init()
     }
     
@@ -157,14 +140,17 @@ class BoundDataSource<T, VIEW: UIView>: NSObject, UITableViewDataSource, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let s = source?.value {
-            var cell: CustomUITableViewCell
-            cell = CustomUITableViewCell(style: .default, reuseIdentifier: "main-cell")
+            var cell: CustomUITableViewCell = tableView.dequeueReusableCell(withIdentifier: "main-cell") as! CustomUITableViewCell
             cell.spacing = self.spacing
             cell.selectionStyle = .none
-            let v = getView()
-            cell.subview = v
-            if let view: VIEW = cell.subview as? VIEW {
-                updateCell(view, s[indexPath.row])
+            if cell.obs == nil {
+                var obs = StandardObservableProperty(defaultValue)
+                cell.obs = obs
+                let new = makeView(obs)
+                cell.contentView.flex.addItem(new)
+            }
+            if let obs = cell.obs as? StandardObservableProperty<T> {
+                obs.value = s[indexPath.row]
             }
             return cell
         } else {

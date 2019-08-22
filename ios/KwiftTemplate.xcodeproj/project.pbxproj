@@ -14,8 +14,6 @@
 		5E6A56E7230C9ACA00AB03B2 /* APIOnline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A5694230C9AC900AB03B2 /* APIOnline.swift */; };
 		5E6A56E8230C9ACA00AB03B2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A5695230C9AC900AB03B2 /* API.swift */; };
 		5E6A56E9230C9ACA00AB03B2 /* APIInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A5696230C9AC900AB03B2 /* APIInterface.swift */; };
-		5E6A56EA230C9ACA00AB03B2 /* ExampleContent2ViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A5698230C9AC900AB03B2 /* ExampleContent2ViewData.swift */; };
-		5E6A56EB230C9ACA00AB03B2 /* ExampleContentViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A5699230C9AC900AB03B2 /* ExampleContentViewData.swift */; };
 		5E6A56EC230C9ACA00AB03B2 /* MainViewGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A569A230C9AC900AB03B2 /* MainViewGenerator.swift */; };
 		5E6A56ED230C9ACA00AB03B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A569C230C9AC900AB03B2 /* ViewController.swift */; };
 		5E6A56EE230C9ACA00AB03B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E6A569E230C9AC900AB03B2 /* Assets.xcassets */; };
@@ -84,6 +82,16 @@
 		5E6A5739230DE41700AB03B2 /* UITableView+binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A5738230DE41700AB03B2 /* UITableView+binding.swift */; };
 		5E6A573B230DE43500AB03B2 /* UIImageView+binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A573A230DE43500AB03B2 /* UIImageView+binding.swift */; };
 		5E6A573D230DE45400AB03B2 /* UIButton+binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A573C230DE45400AB03B2 /* UIButton+binding.swift */; };
+		5E6A573F230E136C00AB03B2 /* extensionProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A573E230E136C00AB03B2 /* extensionProperty.swift */; };
+		5E6A5743230F2E2900AB03B2 /* ExampleContentViewGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A5740230F2E2900AB03B2 /* ExampleContentViewGenerator.swift */; };
+		5E6A5744230F2E2900AB03B2 /* SwitchManiaVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A5741230F2E2900AB03B2 /* SwitchManiaVG.swift */; };
+		5E6A5745230F2E2900AB03B2 /* ExampleContent2ViewGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A5742230F2E2900AB03B2 /* ExampleContent2ViewGenerator.swift */; };
+		5E6A5748230F2E3800AB03B2 /* NeverEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A5746230F2E3700AB03B2 /* NeverEvent.swift */; };
+		5E6A5749230F2E3800AB03B2 /* ConstantObservableProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A5747230F2E3800AB03B2 /* ConstantObservableProperty.swift */; };
+		5E6A574D230F2E4600AB03B2 /* RowTestXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A574A230F2E4600AB03B2 /* RowTestXml.swift */; };
+		5E6A574E230F2E4600AB03B2 /* RowTextXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A574B230F2E4600AB03B2 /* RowTextXml.swift */; };
+		5E6A574F230F2E4600AB03B2 /* SwitchManiaXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A574C230F2E4600AB03B2 /* SwitchManiaXml.swift */; };
+		5E6A5751230F31EA00AB03B2 /* Flex+root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A5750230F31EA00AB03B2 /* Flex+root.swift */; };
 		5EF4BA7122FA32AB0007F2CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF4BA6D22FA32AB0007F2CF /* LaunchScreen.storyboard */; };
 		5EF4BA7222FA32AB0007F2CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF4BA6F22FA32AB0007F2CF /* Main.storyboard */; };
 		A19294995816C17B7906B6AD /* libPods-Lifting Generations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E35205E60C01654F1CCEC5C /* libPods-Lifting Generations.a */; };
@@ -120,8 +128,6 @@
 		5E6A5694230C9AC900AB03B2 /* APIOnline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIOnline.swift; sourceTree = "<group>"; };
 		5E6A5695230C9AC900AB03B2 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		5E6A5696230C9AC900AB03B2 /* APIInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIInterface.swift; sourceTree = "<group>"; };
-		5E6A5698230C9AC900AB03B2 /* ExampleContent2ViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleContent2ViewData.swift; sourceTree = "<group>"; };
-		5E6A5699230C9AC900AB03B2 /* ExampleContentViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleContentViewData.swift; sourceTree = "<group>"; };
 		5E6A569A230C9AC900AB03B2 /* MainViewGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewGenerator.swift; sourceTree = "<group>"; };
 		5E6A569C230C9AC900AB03B2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5E6A569D230C9AC900AB03B2 /* project.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = project.entitlements; sourceTree = "<group>"; };
@@ -192,6 +198,16 @@
 		5E6A5738230DE41700AB03B2 /* UITableView+binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+binding.swift"; sourceTree = "<group>"; };
 		5E6A573A230DE43500AB03B2 /* UIImageView+binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+binding.swift"; sourceTree = "<group>"; };
 		5E6A573C230DE45400AB03B2 /* UIButton+binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+binding.swift"; sourceTree = "<group>"; };
+		5E6A573E230E136C00AB03B2 /* extensionProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionProperty.swift; sourceTree = "<group>"; };
+		5E6A5740230F2E2900AB03B2 /* ExampleContentViewGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleContentViewGenerator.swift; sourceTree = "<group>"; };
+		5E6A5741230F2E2900AB03B2 /* SwitchManiaVG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchManiaVG.swift; sourceTree = "<group>"; };
+		5E6A5742230F2E2900AB03B2 /* ExampleContent2ViewGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleContent2ViewGenerator.swift; sourceTree = "<group>"; };
+		5E6A5746230F2E3700AB03B2 /* NeverEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeverEvent.swift; sourceTree = "<group>"; };
+		5E6A5747230F2E3800AB03B2 /* ConstantObservableProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantObservableProperty.swift; sourceTree = "<group>"; };
+		5E6A574A230F2E4600AB03B2 /* RowTestXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowTestXml.swift; sourceTree = "<group>"; };
+		5E6A574B230F2E4600AB03B2 /* RowTextXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowTextXml.swift; sourceTree = "<group>"; };
+		5E6A574C230F2E4600AB03B2 /* SwitchManiaXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchManiaXml.swift; sourceTree = "<group>"; };
+		5E6A5750230F31EA00AB03B2 /* Flex+root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flex+root.swift"; sourceTree = "<group>"; };
 		5EF4BA6E22FA32AB0007F2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5EF4BA7022FA32AB0007F2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B6816A1CDDBD11CB0E0D2C6 /* Pods-Lifting Generations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lifting Generations.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lifting Generations/Pods-Lifting Generations.debug.xcconfig"; sourceTree = "<group>"; };
@@ -333,8 +349,9 @@
 		5E6A5697230C9AC900AB03B2 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				5E6A5698230C9AC900AB03B2 /* ExampleContent2ViewData.swift */,
-				5E6A5699230C9AC900AB03B2 /* ExampleContentViewData.swift */,
+				5E6A5742230F2E2900AB03B2 /* ExampleContent2ViewGenerator.swift */,
+				5E6A5740230F2E2900AB03B2 /* ExampleContentViewGenerator.swift */,
+				5E6A5741230F2E2900AB03B2 /* SwitchManiaVG.swift */,
 				5E6A569A230C9AC900AB03B2 /* MainViewGenerator.swift */,
 			);
 			path = views;
@@ -379,6 +396,9 @@
 		5E6A56A9230C9AC900AB03B2 /* layout */ = {
 			isa = PBXGroup;
 			children = (
+				5E6A574A230F2E4600AB03B2 /* RowTestXml.swift */,
+				5E6A574B230F2E4600AB03B2 /* RowTextXml.swift */,
+				5E6A574C230F2E4600AB03B2 /* SwitchManiaXml.swift */,
 				5E6A56AA230C9AC900AB03B2 /* ExampleContentXml.swift */,
 				5E6A56AB230C9AC900AB03B2 /* ExampleContent2Xml.swift */,
 				5E6A56AC230C9AC900AB03B2 /* MainXml.swift */,
@@ -445,6 +465,8 @@
 		5E6A56C0230C9AC900AB03B2 /* shared */ = {
 			isa = PBXGroup;
 			children = (
+				5E6A5747230F2E3800AB03B2 /* ConstantObservableProperty.swift */,
+				5E6A5746230F2E3700AB03B2 /* NeverEvent.swift */,
 				5E6A572A230CB58000AB03B2 /* Close.swift */,
 				5E6A56C1230C9AC900AB03B2 /* TransformedObservableProperty.swift */,
 				5E6A56C2230C9AC900AB03B2 /* ObservableProperty.swift */,
@@ -514,6 +536,8 @@
 				5E6A56E2230C9AC900AB03B2 /* onLayoutSubviewsSwizzle.swift */,
 				5E6A56E3230C9AC900AB03B2 /* UIImageView.ext.swift */,
 				5E6A56E4230C9AC900AB03B2 /* UIButton.position.swift */,
+				5E6A573E230E136C00AB03B2 /* extensionProperty.swift */,
+				5E6A5750230F31EA00AB03B2 /* Flex+root.swift */,
 			);
 			path = ios;
 			sourceTree = "<group>";
@@ -714,27 +738,32 @@
 				5E6A56FE230C9ACA00AB03B2 /* Preferences.swift in Sources */,
 				5E6A571B230C9ACA00AB03B2 /* UIButtonWithInput.swift in Sources */,
 				5E6A5716230C9ACA00AB03B2 /* ScrollSavingDelegate.swift in Sources */,
+				5E6A574D230F2E4600AB03B2 /* RowTestXml.swift in Sources */,
+				5E6A574E230F2E4600AB03B2 /* RowTextXml.swift in Sources */,
 				5E6A56FC230C9ACA00AB03B2 /* String.humanify.swift in Sources */,
 				5E6A5719230C9ACA00AB03B2 /* LabeledSwitch.swift in Sources */,
 				5E6A56FD230C9ACA00AB03B2 /* delay.swift in Sources */,
 				5E6A5720230C9ACA00AB03B2 /* UIScrollView+flexFix.swift in Sources */,
+				5E6A5751230F31EA00AB03B2 /* Flex+root.swift in Sources */,
 				5E6A5733230DE3C600AB03B2 /* UITextView+binding.swift in Sources */,
 				5E6A573D230DE45400AB03B2 /* UIButton+binding.swift in Sources */,
 				5E6A5700230C9ACA00AB03B2 /* SecurePreferences.swift in Sources */,
 				5E6A5701230C9ACA00AB03B2 /* unit.swift in Sources */,
 				5E6A5727230C9ACA00AB03B2 /* UIButton.position.swift in Sources */,
-				5E6A56EA230C9ACA00AB03B2 /* ExampleContent2ViewData.swift in Sources */,
 				5E6A5722230C9ACA00AB03B2 /* UIColor.ext.swift in Sources */,
 				5E6A5702230C9ACA00AB03B2 /* Kotlin.swift in Sources */,
 				5E6A56EC230C9ACA00AB03B2 /* MainViewGenerator.swift in Sources */,
 				5E6A56E7230C9ACA00AB03B2 /* APIOnline.swift in Sources */,
 				5E6A56F7230C9ACA00AB03B2 /* ExampleContentXml.swift in Sources */,
+				5E6A5749230F2E3800AB03B2 /* ConstantObservableProperty.swift in Sources */,
+				5E6A574F230F2E4600AB03B2 /* SwitchManiaXml.swift in Sources */,
 				5E6A56FA230C9ACA00AB03B2 /* Resources.swift in Sources */,
 				5E6A5708230C9ACA00AB03B2 /* ClosureSleeve.swift in Sources */,
 				5E6A56ED230C9ACA00AB03B2 /* ViewController.swift in Sources */,
 				5E6A571D230C9ACA00AB03B2 /* showDialog.swift in Sources */,
 				5E6A5705230C9ACA00AB03B2 /* Codable.swift in Sources */,
 				5E6A571C230C9ACA00AB03B2 /* ViewGenerator.swift in Sources */,
+				5E6A5745230F2E2900AB03B2 /* ExampleContent2ViewGenerator.swift in Sources */,
 				5E6A571F230C9ACA00AB03B2 /* UIView.focus.swift in Sources */,
 				5E6A573B230DE43500AB03B2 /* UIImageView+binding.swift in Sources */,
 				5E6A56E6230C9ACA00AB03B2 /* APIMock.swift in Sources */,
@@ -746,7 +775,9 @@
 				5E6A5718230C9ACA00AB03B2 /* DateButton.swift in Sources */,
 				5E6A56E8230C9ACA00AB03B2 /* API.swift in Sources */,
 				5E6A5703230C9ACA00AB03B2 /* OptionalProtocol.swift in Sources */,
+				5E6A5743230F2E2900AB03B2 /* ExampleContentViewGenerator.swift in Sources */,
 				5E6A5710230C9ACA00AB03B2 /* ObservableStack.swift in Sources */,
+				5E6A5748230F2E3800AB03B2 /* NeverEvent.swift in Sources */,
 				5E6A5737230DE3F100AB03B2 /* Dropdown+binding.swift in Sources */,
 				5E6A5726230C9ACA00AB03B2 /* UIImageView.ext.swift in Sources */,
 				5E6A5739230DE41700AB03B2 /* UITableView+binding.swift in Sources */,
@@ -761,13 +792,14 @@
 				5E6A5714230C9ACA00AB03B2 /* captureWeak.swift in Sources */,
 				5E6A5707230C9ACA00AB03B2 /* DateButton+binding.swift in Sources */,
 				5E6A572F230DE38D00AB03B2 /* UILabel+binding.swift in Sources */,
+				5E6A5744230F2E2900AB03B2 /* SwitchManiaVG.swift in Sources */,
 				5E6A56EF230C9ACA00AB03B2 /* AppDelegate.swift in Sources */,
 				5E6A572D230DE36800AB03B2 /* UIView+binding.swift in Sources */,
 				5E6A56F6230C9ACA00AB03B2 /* CustomViews.swift in Sources */,
 				5E6A56F5230C9ACA00AB03B2 /* strings.swift in Sources */,
 				5E6A5713230C9ACA00AB03B2 /* ObservableProperty.ext.swift in Sources */,
 				5E6A570F230C9ACA00AB03B2 /* StandardObservableProperty.swift in Sources */,
-				5E6A56EB230C9ACA00AB03B2 /* ExampleContentViewData.swift in Sources */,
+				5E6A573F230E136C00AB03B2 /* extensionProperty.swift in Sources */,
 				5E6A5729230C9BD400AB03B2 /* general.swift in Sources */,
 				5E6A570A230C9ACA00AB03B2 /* ObservableProperty.swift in Sources */,
 				5E6A56F8230C9ACA00AB03B2 /* ExampleContent2Xml.swift in Sources */,

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FlexLayout
 
 extension UIView {
     func bindVisible(_ observable: ObservableProperty<Bool>) {
@@ -34,13 +35,23 @@ extension UIView {
     }
     
     func relayoutFlexClimbToXml() {
-//        if self is XmlView {
-//            self.flex.layout()
-//        } else {
-//            self.superview?.relayoutFlexClimbToXml()
-//        }
+        self.flex.markDirty()
+        
+        func sub(view: UIView){
+            if let parent = view.superview, !(parent is UIWindow) {
+                sub(view: parent)
+            } else {
+                view.setNeedsLayout()
+            }
+        }
+        sub(view: self)
     }
     
+    enum Animation {
+        case push
+        case pop
+        case fade
+    }
     func bindStack(_ dependency: ViewDependency, _ stack: ObservableStack<ViewGenerator>) {
         return bindStack(dependency: dependency, stack: stack)
     }
@@ -48,68 +59,57 @@ extension UIView {
         var current: UIView? = nil
         var lastCount = 0
         stack.addAndRunWeak(self) { this, value in
-            var multiplier: CGFloat = 1
-            var oldFrameEnd: (UIView) -> Void
-            var newFrameStart: (UIView) -> Void
-            if lastCount > value.count {
-                oldFrameEnd = {
-                    $0.frame = CGRect(x: this.frame.width, y: 0, width: this.frame.width, height: this.frame.height)
-                }
-                newFrameStart = {
-                    $0.frame = CGRect(x: -this.frame.width, y: 0, width: this.frame.width, height: this.frame.height)
-                }
-            } else if lastCount < value.count {
-                oldFrameEnd = {
-                    $0.frame = CGRect(x: -this.frame.width, y: 0, width: this.frame.width, height: this.frame.height)
-                }
-                newFrameStart = {
-                    $0.frame = CGRect(x: this.frame.width, y: 0, width: this.frame.width, height: this.frame.height)
-                }
-            } else {
-                oldFrameEnd = {
-                    $0.alpha = 0
-                }
-                newFrameStart = {
-                    $0.alpha = 0
-                }
+            var animation = Animation.fade
+            if value.count > lastCount {
+                animation = .push
+            } else if value.count < lastCount {
+                animation = .pop
             }
             lastCount = value.count
             
             if let old = current {
+                old.flex.left(0).top(0).right(0).bottom(0)
+                self.flex.layout(mode: .fitContainer)
                 UIView.animate(
                     withDuration: 0.25,
                     animations: {
-                        oldFrameEnd(old)
-                },
+                        switch animation {
+                        case .fade:
+                            old.alpha = 0
+                        case .pop:
+                            old.flex.left(100%).right(-100%)
+                        case .push:
+                            old.flex.left(-100%).right(100%)
+                        }
+                        self.flex.layout(mode: .fitContainer)
+                    },
                     completion: { done in
                         old.removeFromSuperview()
-                }
+                    }
                 )
             }
             if let newData = value.last {
                 let new = newData.generate(dependency: ())
-                newFrameStart(new)
-                this.addSubview(new)
-                new.layoutSubviews()
-                new.flex.layout()
+                self.flex.addItem(new).position(.absolute).left(0%).right(0%).top(0%).bottom(0%)
+                switch animation {
+                case .fade:
+                    new.alpha = 0
+                case .pop:
+                    new.flex.left(-100%).right(100%)
+                case .push:
+                    new.flex.left(100%).right(-100%)
+                }
+                self.flex.layout(mode: .fitContainer)
                 UIView.animate(
                     withDuration: 0.25,
                     animations: {
-                        new.frame = CGRect(x: 0, y: 0, width: this.frame.width, height: this.frame.height)
-                        new.layoutSubviews()
-                        new.flex.layout()
+                        new.flex.left(0%).right(0%)
                         new.alpha = 1
-                }
+                        self.flex.layout(mode: .fitContainer)
+                    }
                 )
                 current = new
             }
         }
-        
-//        self.addOnLayoutSubviews { [weak self] in
-//            guard let self = self else { return }
-//            for v in self.subviews {
-//                v.pin.top().left().right().bottom()
-//            }
-//        }
     }
 }
