@@ -5,6 +5,8 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewGroup.LayoutParams.MATCH_PARENT
+import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import com.lightningkite.kwift.observables.shared.ObservableProperty
 import com.lightningkite.kwift.observables.shared.StandardObservableProperty
 import com.lightningkite.kwift.observables.shared.addAndRunWeak
@@ -41,6 +43,7 @@ fun <T> RecyclerView.bind(
             val event = StandardObservableProperty<T>(defaultValue)
             val subview = makeView(event)
             subview.tag = event
+            subview.layoutParams = RecyclerView.LayoutParams(MATCH_PARENT, WRAP_CONTENT)
             return object : RecyclerView.ViewHolder(subview) {}
         }
 
