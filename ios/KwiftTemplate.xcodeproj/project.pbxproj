@@ -94,7 +94,7 @@
 		5E6A5751230F31EA00AB03B2 /* Flex+root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A5750230F31EA00AB03B2 /* Flex+root.swift */; };
 		5EF4BA7122FA32AB0007F2CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF4BA6D22FA32AB0007F2CF /* LaunchScreen.storyboard */; };
 		5EF4BA7222FA32AB0007F2CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF4BA6F22FA32AB0007F2CF /* Main.storyboard */; };
-		A19294995816C17B7906B6AD /* libPods-Lifting Generations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E35205E60C01654F1CCEC5C /* libPods-Lifting Generations.a */; };
+		8DBD54362C6851F2F56D6249 /* libPods-KwiftTemplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D2ECE124347EA0EC0435FF /* libPods-KwiftTemplate.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +115,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37D2ECE124347EA0EC0435FF /* libPods-KwiftTemplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KwiftTemplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1F2AD7221B834B006BD597 /* KwiftTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KwiftTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1F2AEB221B834D006BD597 /* KwiftTemplateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KwiftTemplateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1F2AEF221B834D006BD597 /* Lifting_GenerationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lifting_GenerationsTests.swift; sourceTree = "<group>"; };
@@ -122,7 +123,6 @@
 		5E1F2AF6221B834D006BD597 /* KwiftTemplateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KwiftTemplateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1F2AFA221B834D006BD597 /* Lifting_GenerationsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lifting_GenerationsUITests.swift; sourceTree = "<group>"; };
 		5E1F2AFC221B834D006BD597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5E35205E60C01654F1CCEC5C /* libPods-Lifting Generations.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Lifting Generations.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6A5691230C9AC900AB03B2 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		5E6A5693230C9AC900AB03B2 /* APIMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIMock.swift; sourceTree = "<group>"; };
 		5E6A5694230C9AC900AB03B2 /* APIOnline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIOnline.swift; sourceTree = "<group>"; };
@@ -212,6 +212,8 @@
 		5EF4BA7022FA32AB0007F2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B6816A1CDDBD11CB0E0D2C6 /* Pods-Lifting Generations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lifting Generations.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lifting Generations/Pods-Lifting Generations.debug.xcconfig"; sourceTree = "<group>"; };
 		A4EBE91C295E1F7DF7F7D6FA /* Pods-Lifting Generations.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lifting Generations.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lifting Generations/Pods-Lifting Generations.release.xcconfig"; sourceTree = "<group>"; };
+		B2B52ACF2ED8F920630B2F4A /* Pods-KwiftTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KwiftTemplate.release.xcconfig"; path = "Pods/Target Support Files/Pods-KwiftTemplate/Pods-KwiftTemplate.release.xcconfig"; sourceTree = "<group>"; };
+		B84A43791AFAB8BCC3A8220F /* Pods-KwiftTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KwiftTemplate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KwiftTemplate/Pods-KwiftTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,7 +221,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A19294995816C17B7906B6AD /* libPods-Lifting Generations.a in Frameworks */,
+				8DBD54362C6851F2F56D6249 /* libPods-KwiftTemplate.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +247,8 @@
 			children = (
 				9B6816A1CDDBD11CB0E0D2C6 /* Pods-Lifting Generations.debug.xcconfig */,
 				A4EBE91C295E1F7DF7F7D6FA /* Pods-Lifting Generations.release.xcconfig */,
+				B84A43791AFAB8BCC3A8220F /* Pods-KwiftTemplate.debug.xcconfig */,
+				B2B52ACF2ED8F920630B2F4A /* Pods-KwiftTemplate.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -554,7 +558,7 @@
 		B55F322A2AA0F65264BE7A67 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5E35205E60C01654F1CCEC5C /* libPods-Lifting Generations.a */,
+				37D2ECE124347EA0EC0435FF /* libPods-KwiftTemplate.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -712,7 +716,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Lifting Generations-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-KwiftTemplate-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -979,7 +983,7 @@
 		};
 		5E1F2B00221B834D006BD597 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B6816A1CDDBD11CB0E0D2C6 /* Pods-Lifting Generations.debug.xcconfig */;
+			baseConfigurationReference = B84A43791AFAB8BCC3A8220F /* Pods-KwiftTemplate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = com/lightningkite/kwifttemplate/ios/project.entitlements;
@@ -1001,7 +1005,7 @@
 		};
 		5E1F2B01221B834D006BD597 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4EBE91C295E1F7DF7F7D6FA /* Pods-Lifting Generations.release.xcconfig */;
+			baseConfigurationReference = B2B52ACF2ED8F920630B2F4A /* Pods-KwiftTemplate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = com/lightningkite/kwifttemplate/ios/project.entitlements;

@@ -9,7 +9,7 @@ import com.lightningkite.kwift.observables.shared.addAndRunWeak
 
 fun TextView.bindString(observable: ObservableProperty<String>) {
     observable.addAndRunWeak(this) { self, value ->
-        self.text = observable.value
+        self.text = value
     }
 }
 

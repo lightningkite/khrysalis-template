@@ -72,7 +72,7 @@ class SwitchManiaXml {
                     view.textColor = UIColor(argb: 0xFF222222)
                     return view
                 }()
-                ).margin(8, 8, 8, 8).alignSelf(.stretch)
+                ).margin(8, 8, 8, 8).minHeight(40).alignSelf(.stretch)
                 
                 flex.addItem({ () -> UILabel in 
                     let view = UILabel(frame: .zero)
