@@ -12,22 +12,12 @@ import UIKit
 
 extension UIButton {
     func bindBackButton<T>(stack: ObservableStack<T>) {
+        self.titleLabel?.font
         stack.onChange.addAndRunWeak(self, stack.stack) { this, value in
             this.isHidden = value.count <= 1
         }
         addAction {
             stack.pop()
-        }
-    }
-    
-    func bindToggle<T: Equatable>(value: T, observable: MutableObservableProperty<T>) {
-        observable.addAndRunWeak(self) { (this, current) in
-            this.isSelected = (current == value)
-            this.flex.markDirty()
-        }
-        weak var weakObs = observable
-        addAction { [weak self] in
-            weakObs?.value = value
         }
     }
     

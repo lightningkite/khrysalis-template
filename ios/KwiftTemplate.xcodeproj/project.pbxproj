@@ -92,6 +92,7 @@
 		5E6A574E230F2E4600AB03B2 /* RowTextXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A574B230F2E4600AB03B2 /* RowTextXml.swift */; };
 		5E6A574F230F2E4600AB03B2 /* SwitchManiaXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A574C230F2E4600AB03B2 /* SwitchManiaXml.swift */; };
 		5E6A5751230F31EA00AB03B2 /* Flex+root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A5750230F31EA00AB03B2 /* Flex+root.swift */; };
+		5EEE102E2315BBF400E6FBF1 /* LabeledCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEE102D2315BBF400E6FBF1 /* LabeledCheckbox.swift */; };
 		5EF4BA7122FA32AB0007F2CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF4BA6D22FA32AB0007F2CF /* LaunchScreen.storyboard */; };
 		5EF4BA7222FA32AB0007F2CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF4BA6F22FA32AB0007F2CF /* Main.storyboard */; };
 		A19294995816C17B7906B6AD /* libPods-Lifting Generations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E35205E60C01654F1CCEC5C /* libPods-Lifting Generations.a */; };
@@ -208,6 +209,7 @@
 		5E6A574B230F2E4600AB03B2 /* RowTextXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowTextXml.swift; sourceTree = "<group>"; };
 		5E6A574C230F2E4600AB03B2 /* SwitchManiaXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchManiaXml.swift; sourceTree = "<group>"; };
 		5E6A5750230F31EA00AB03B2 /* Flex+root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flex+root.swift"; sourceTree = "<group>"; };
+		5EEE102D2315BBF400E6FBF1 /* LabeledCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledCheckbox.swift; sourceTree = "<group>"; };
 		5EF4BA6E22FA32AB0007F2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5EF4BA7022FA32AB0007F2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B6816A1CDDBD11CB0E0D2C6 /* Pods-Lifting Generations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lifting Generations.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lifting Generations/Pods-Lifting Generations.debug.xcconfig"; sourceTree = "<group>"; };
@@ -510,6 +512,7 @@
 				5E6A56D5230C9AC900AB03B2 /* DatePickerButton.swift */,
 				5E6A56D6230C9AC900AB03B2 /* UIButtonWithInput.swift */,
 				5E6A5728230C9BD400AB03B2 /* general.swift */,
+				5EEE102D2315BBF400E6FBF1 /* LabeledCheckbox.swift */,
 			);
 			path = actuals;
 			sourceTree = "<group>";
@@ -749,6 +752,7 @@
 				5E6A573D230DE45400AB03B2 /* UIButton+binding.swift in Sources */,
 				5E6A5700230C9ACA00AB03B2 /* SecurePreferences.swift in Sources */,
 				5E6A5701230C9ACA00AB03B2 /* unit.swift in Sources */,
+				5EEE102E2315BBF400E6FBF1 /* LabeledCheckbox.swift in Sources */,
 				5E6A5727230C9ACA00AB03B2 /* UIButton.position.swift in Sources */,
 				5E6A5722230C9ACA00AB03B2 /* UIColor.ext.swift in Sources */,
 				5E6A5702230C9ACA00AB03B2 /* Kotlin.swift in Sources */,

@@ -21,7 +21,6 @@ class LabeledSwitch : UIView {
         flex.direction(.row).alignContent(.center)
         flex.addItem(labelView).grow(1).marginRight(8)
         flex.addItem(switchView)
-        switchView.onTintColor = ResourcesColors.colorPrimary
     }
     
     required init?(coder aDecoder: NSCoder) {
