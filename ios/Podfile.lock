@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.8.1)
   - AlamofireImage (3.5.0):
     - Alamofire (~> 4.8)
+  - Cosmos (19.0.3)
   - Crashlytics (3.13.1):
     - Fabric (~> 1.10.1)
   - Fabric (1.10.1)
@@ -13,6 +14,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
+  - Cosmos (~> 19.0)
   - Crashlytics
   - Fabric
   - FlexLayout
@@ -24,6 +26,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireImage
+    - Cosmos
     - Crashlytics
     - Fabric
     - FlexLayout
@@ -34,6 +37,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
+  Cosmos: a6fb17284281fa12cf4c85c2efecd440a215ec44
   Crashlytics: 5aa8e90dcbf2f34898b4f5a0037787531246cca0
   Fabric: f6f21452846788bb44595d73e9909d79d328e617
   FlexLayout: b008184d23aae0c56e1c916e803445a13a6f4e5a
@@ -41,6 +45,6 @@ SPEC CHECKSUMS:
   PinLayout: fe2a2432d6982588e208572005c941aeeae417ab
   "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
 
-PODFILE CHECKSUM: f03dfe9d36f8317172168c9bf682f54ddd4dc342
+PODFILE CHECKSUM: 6adf93fae9e64c163658f5a663f5bcdab857e406
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.5.3

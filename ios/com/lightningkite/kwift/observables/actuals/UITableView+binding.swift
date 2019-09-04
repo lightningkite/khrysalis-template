@@ -53,7 +53,7 @@ extension UITableView {
         self.rowHeight = UITableView.automaticDimension
         
         var previouslyEmpty = data.value.isEmpty
-        data.addAndRunWeak(self, data) { this, data, value in
+        data.addAndRunWeak(self) { this, value in
             let emptyNow = data.value.isEmpty
             this.reloadData()
             if previouslyEmpty && !emptyNow {
@@ -101,7 +101,7 @@ protocol HasAtEnd {
 
 class BoundDataSource<T, VIEW: UIView>: NSObject, UITableViewDataSource, UITableViewDelegate, HasAtEnd {
     
-    weak var source: ObservableProperty<[T]>?
+    var source: ObservableProperty<[T]>
     let makeView: (ObservableProperty<T>) -> UIView
     let defaultValue: T
     var atEnd: () -> Void = {}
@@ -120,11 +120,13 @@ class BoundDataSource<T, VIEW: UIView>: NSObject, UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.source?.value.count ?? 0
+        let value = self.source.value
+        let count = value.count
+        return count
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row >= (source?.value.count ?? 1) - 1 {
+        if indexPath.row >= (source.value.count) - 1 {
             atEnd()
         }
     }
@@ -139,25 +141,20 @@ class BoundDataSource<T, VIEW: UIView>: NSObject, UITableViewDataSource, UITable
     //    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let s = source?.value {
-            var cell: CustomUITableViewCell = tableView.dequeueReusableCell(withIdentifier: "main-cell") as! CustomUITableViewCell
-            cell.spacing = self.spacing
-            cell.selectionStyle = .none
-            if cell.obs == nil {
-                var obs = StandardObservableProperty(defaultValue)
-                cell.obs = obs
-                let new = makeView(obs)
-                cell.contentView.flex.addItem(new)
-            }
-            if let obs = cell.obs as? StandardObservableProperty<T> {
-                obs.value = s[indexPath.row]
-            }
-            return cell
-        } else {
-            print("CELL FAILED")
-            let cell = tableView.dequeueReusableCell(withIdentifier: "list-released") ?? UITableViewCell(style: .default, reuseIdentifier: "list-released")
-            return cell
+        let s = source.value
+        var cell: CustomUITableViewCell = tableView.dequeueReusableCell(withIdentifier: "main-cell") as! CustomUITableViewCell
+        cell.spacing = self.spacing
+        cell.selectionStyle = .none
+        if cell.obs == nil {
+            var obs = StandardObservableProperty(defaultValue)
+            cell.obs = obs
+            let new = makeView(obs)
+            cell.contentView.flex.addItem(new)
         }
+        if let obs = cell.obs as? StandardObservableProperty<T> {
+            obs.value = s[indexPath.row]
+        }
+        return cell
     }
     
 }

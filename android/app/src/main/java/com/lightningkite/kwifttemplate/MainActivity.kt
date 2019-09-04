@@ -2,13 +2,13 @@ package com.lightningkite.kwifttemplate
 
 import android.os.Bundle
 import com.lightningkite.kwift.android.AccessibleActivity
-import com.lightningkite.kwifttemplate.shared.views.MainViewGenerator
+import com.lightningkite.kwifttemplate.shared.views.MainVG
 
 
 class MainActivity : AccessibleActivity() {
 
     companion object {
-        val viewData: MainViewGenerator by lazy { MainViewGenerator() }
+        val viewData: MainVG by lazy { MainVG() }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

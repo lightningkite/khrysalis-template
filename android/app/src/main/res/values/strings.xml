@@ -12,4 +12,5 @@
     <string name="welcome_message">This is the template for a Kwift project. This screen exists to help you figure out stuff about it.</string>
     <string name="increment_the_number">Increment the Number</string>
     <string name="text_field">Text Field</string>
+    <string name="select_demo">Select Demo</string>
 </resources>

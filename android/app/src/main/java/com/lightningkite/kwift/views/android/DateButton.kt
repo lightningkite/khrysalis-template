@@ -1,4 +1,4 @@
-package com.lightningkite.kwift.views.actual
+package com.lightningkite.kwift.views.android
 
 import android.app.DatePickerDialog
 import android.content.Context

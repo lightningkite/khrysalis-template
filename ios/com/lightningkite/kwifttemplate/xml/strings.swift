@@ -21,4 +21,5 @@ public enum ResourcesStrings {
     static let welcomeMessage = NSLocalizedString("This is the template for a Kwift project. This screen exists to help you figure out stuff about it.", comment: "welcome_message")
     static let incrementTheNumber = NSLocalizedString("Increment the Number", comment: "increment_the_number")
     static let textField = NSLocalizedString("Text Field", comment: "text_field")
+    static let selectDemo = NSLocalizedString("Select Demo", comment: "select_demo")
 }

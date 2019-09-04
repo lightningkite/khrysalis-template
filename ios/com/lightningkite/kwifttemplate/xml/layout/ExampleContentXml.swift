@@ -9,7 +9,6 @@ import PinLayout
 
 class ExampleContentXml {
     
-    weak var exampleContentGoToAnotherScreen: UIButton!
     weak var exampleContentNumber: UILabel!
     weak var exampleContentIncrement: UIButton!
     
@@ -79,27 +78,6 @@ class ExampleContentXml {
                             return view
                         }()
                         ).margin(0, 0, 0, 0).alignSelf(.stretch)
-                        
-                        flex.addItem({ () -> UIButton in 
-                            let view = UIButton(frame: .zero)
-                            self.exampleContentGoToAnotherScreen = view
-                            if let image = UIImage(named: "button_primary") {
-                                view.backgroundColor = UIColor(patternImage: image)
-                            } else {
-                                ResourcesBackground.apply(view, "button_primary")
-                            }
-                            view.setTitle("Go to Another Screen", for: .normal)
-                            view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
-                            view.contentHorizontalAlignment = .center
-                            view.contentMode = .scaleAspectFit
-                            view.contentEdgeInsets = UIEdgeInsets(top: 8, left:8, bottom:8, right:8)
-                            view.titleLabel?.text = "Go to Another Screen"
-                            view.titleLabel?.numberOfLines = 0
-                            view.titleLabel?.font = UIFont.get(size: 16, style: [])
-                            view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
-                            return view
-                        }()
-                        ).margin(8, 8, 8, 8).alignSelf(.start)
                         
                     }
                     return view

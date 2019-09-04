@@ -38,8 +38,8 @@ class SwitchManiaXml {
                 }()
                 ).margin(8, 8, 8, 8).alignSelf(.stretch)
                 
-                flex.addItem({ () -> LabeledSwitch in 
-                    let view = LabeledSwitch(frame: .zero)
+                flex.addItem({ () -> LabeledCheckbox in 
+                    let view = LabeledCheckbox(frame: .zero)
                     view.labelView.text = ResourcesStrings.iMASwitch
                     view.labelView.numberOfLines = 0
                     view.labelView.font = UIFont.get(size: 12, style: [])

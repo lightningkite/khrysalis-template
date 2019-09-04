@@ -26,7 +26,7 @@ extension Dropdown {
         }
         self.selectedView = makeView(selected)
         selected.addAndRunWeak(self) { this, value in
-            var index = options.value.indexOf(value)
+            var index = Int(options.value.indexOf(value))
             if index != -1 {
                 this.pickerView.selectRow(index, inComponent: 0, animated: false)
             }

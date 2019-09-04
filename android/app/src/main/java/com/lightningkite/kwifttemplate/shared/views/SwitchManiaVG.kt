@@ -1,6 +1,7 @@
 package com.lightningkite.kwifttemplate.shared.views
 
 import android.view.View
+import com.lightningkite.kwift.actuals.weak
 import com.lightningkite.kwift.observables.actual.bind
 import com.lightningkite.kwift.observables.actual.bindString
 import com.lightningkite.kwift.observables.shared.ObservableStack
@@ -13,7 +14,8 @@ import com.lightningkite.kwifttemplate.xml.RowTestXml
 import com.lightningkite.kwifttemplate.xml.RowTextXml
 import com.lightningkite.kwifttemplate.xml.SwitchManiaXml
 
-class SwitchManiaVG(val stack: ObservableStack<ViewGenerator>) : ViewGenerator() {
+class SwitchManiaVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator() {
+    val stack: ObservableStack<ViewGenerator>? by weak(stack)
     override val title: String get() = "Switch Mania!"
 
     val text: StandardObservableProperty<String> = StandardObservableProperty("")

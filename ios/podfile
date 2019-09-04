@@ -7,4 +7,5 @@ target ‘KwiftTemplate’ do
     pod 'UITextView+Placeholder'
     pod 'Fabric'
     pod 'Crashlytics'
+    pod 'Cosmos', '~> 19.0'
 end

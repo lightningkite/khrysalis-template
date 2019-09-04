@@ -16,7 +16,9 @@ import java.lang.reflect.Constructor
 import java.lang.reflect.Method
 import java.lang.reflect.TypeVariable
 import kotlin.reflect.KParameter
-import kotlin.reflect.full.*
+import kotlin.reflect.full.extensionReceiverParameter
+import kotlin.reflect.full.instanceParameter
+import kotlin.reflect.full.valueParameters
 import kotlin.reflect.jvm.isAccessible
 import kotlin.reflect.jvm.javaType
 
@@ -66,7 +68,7 @@ internal class KotlinValueInstantiator(
                 possibleCompanion.objectInstance
             } catch (ex: IllegalAccessException) {
                 // fallback for when an odd access exception happens through Kotlin reflection
-                val companionField = possibleCompanion.java.enclosingClass.fields.firstOrNull { it.name == "Companion" }
+                val companionField = possibleCompanion.java.enclosingClass!!.fields.firstOrNull { it.name == "Companion" }
                 if (companionField == null) throw ex
                 val accessible = companionField.isAccessible
                 if ((!accessible && ctxt.config.isEnabled(MapperFeature.CAN_OVERRIDE_ACCESS_MODIFIERS)) ||

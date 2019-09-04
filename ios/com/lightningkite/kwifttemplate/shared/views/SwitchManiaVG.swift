@@ -7,8 +7,8 @@ import Foundation
 
 public class SwitchManiaVG: ViewGenerator {
     
-    public var stack: ObservableStack<ViewGenerator>
     
+    public weak var stack: ObservableStack<ViewGenerator>? 
     override public var title: String {
         get {
             return "Switch Mania!"

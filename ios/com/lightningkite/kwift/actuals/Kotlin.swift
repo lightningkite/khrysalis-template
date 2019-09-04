@@ -17,28 +17,28 @@ extension Array {
     func isEmpty() -> Bool {
         return self.isEmpty
     }
-    var size: Int { return self.count }
+    var size: Int32 { return Int32(self.count) }
     mutating func add(_ element: Element) {
         self.append(element)
     }
-    mutating func add(_ index: Int, _ element: Element) {
-        self.insert(element, at: index)
+    mutating func add(_ index: Int32, _ element: Element) {
+        self.insert(element, at: Int(index))
     }
     mutating func addAll(_ other: Array) {
         for element in other {
             self.append(element)
         }
     }
-    func get(_ index: Int) -> Element {
-        return self[index]
+    func get(_ index: Int32) -> Element {
+        return self[Int(index)]
     }
     mutating func clear() {
         self.removeAll()
     }
-    mutating func removeAt(_ index: Int) {
-        remove(at: index)
+    mutating func removeAt(_ index: Int32) {
+        remove(at: Int(index))
     }
-    var lastIndex: Int { return self.count - 1 }
+    var lastIndex: Int32 { return Int32(self.count - 1) }
     
     func first() -> Element {
         return first!
@@ -63,10 +63,10 @@ extension Array where Element: Equatable {
             remove(at: index)
         }
     }
-    func indexOf(_ element: Element) -> Int {
-        return self.firstIndex(where: { sub in
+    func indexOf(_ element: Element) -> Int32 {
+        return Int32(self.firstIndex(where: { sub in
             sub == element
-        }) ?? -1
+        }) ?? -1)
     }
     static func -(first: Array<Element>, second: Element) -> Array<Element> {
         var copy = first
@@ -88,16 +88,20 @@ extension Array {
     func sortedByDescending<T: Comparable>(get: (Element) -> T) -> Array<Element> {
         return self.sorted(by: { get($0) > get($1) })
     }
+    subscript(index: Int32) -> Element {
+        return self[Int(index)]
+    }
 }
 
 extension Array where Element == String {
     func joinToString(_ between: String = ", ") -> String {
         return self.joined(separator: between)
     }
+    
 }
 
 extension Dictionary {
-    var size: Int { return self.count }
+    var size: Int32 { return Int32(self.count) }
     mutating func put(_ key: Key, _ value: Value) {
         self[key] = value
     }
@@ -115,7 +119,7 @@ extension Dictionary {
 }
 
 extension Set {
-    var size: Int { return self.count }
+    var size: Int32 { return Int32(self.count) }
     mutating func add(_ element: Element) {
         self.insert(element)
     }
@@ -133,14 +137,14 @@ extension Set {
 }
 
 extension String {
-    var length: Int { return count }
+    var length: Int32 { return Int32(count) }
     
-    func substring(_ startIndex: Int, _ endIndex: Int? = nil) -> String {
+    func substring(_ startIndex: Int32, _ endIndex: Int32? = nil) -> String {
         let s = self.index(self.startIndex, offsetBy: startIndex)
         let e = self.index(self.startIndex, offsetBy: endIndex ?? self.length)
         return String(self[s..<e])
     }
-    func substring(_ startIndex: Int) -> String {
+    func substring(_ startIndex: Int32) -> String {
         return substring(startIndex, self.length)
     }
     func contains(_ string: String) -> Bool {
@@ -215,7 +219,7 @@ extension String {
 
 
 extension StringProtocol {
-    func indexOf(_ string: Self, _ startIndex: Int = 0, _ ignoreCase: Bool = true) -> Int {
+    func indexOf(_ string: Self, _ startIndex: Int32 = 0, _ ignoreCase: Bool = true) -> Int32 {
         var options: String.CompareOptions = .literal
         if ignoreCase {
             options = .caseInsensitive
@@ -285,25 +289,17 @@ class System {
     }
 }
 
-func / (lhs: Double, rhs: Int) -> Double {
+func / (lhs: Double, rhs: Int32) -> Double {
     return Double(lhs) / Double(rhs)
 }
 
-func / (lhs: Int, rhs: Double) -> Double {
+func / (lhs: Int32, rhs: Double) -> Double {
     return Double(lhs) / Double(rhs)
 }
 
 protocol Addable {}
-extension Int: Addable {}
+extension Int32: Addable {}
 extension Double: Addable {}
-
-
-func + (a: Int, b: Double) -> Double {
-    return Double(a) + b
-}
-func + (a: Double, b: Int) -> Double {
-    return Double(b) + a
-}
 
 func + (a: Int64, b: Double) -> Double {
     return Double(a) + b
@@ -375,7 +371,7 @@ func != (a: Int64, b: Int) -> Bool {
     return Int64(b) != a
 }
 
-extension Int {
+extension Int32 {
     func toLong() -> Int64 {
         return Int64(self)
     }

@@ -11,7 +11,7 @@ import FlexLayout
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    static let main = MainViewGenerator()
+    static let main = MainVG()
     @IBOutlet var bottomConstraintForKeyboard: NSLayoutConstraint!
     @IBOutlet weak var contentView: UIView!
     
