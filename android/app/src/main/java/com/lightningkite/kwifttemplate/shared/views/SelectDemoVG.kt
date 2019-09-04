@@ -21,7 +21,8 @@ class SelectDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator() {
         SwitchManiaVG(stack),
         ExampleContentVG(),
         ViewPagerDemoVG(stack),
-        SegmentedControlDemoVG()
+        SegmentedControlDemoVG(),
+        SliderDemoVG()
     )
 
     fun selectVG(viewGenerator: ViewGenerator){
