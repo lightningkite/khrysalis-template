@@ -4,15 +4,15 @@ import com.lightningkite.kwift.actuals.escaping
 
 class TransformedObservableProperty<A, B>(
     val basedOn: ObservableProperty<A>,
-    val transformation: @escaping() (A) -> B
+    val read: @escaping() (A) -> B
 ) : ObservableProperty<B>() {
     override val value: B
         get() {
-            return transformation(basedOn.value)
+            return read(basedOn.value)
         }
-    override val onChange: Event<B> = basedOn.onChange.transformed(transformation = transformation)
+    override val onChange: Event<B> = basedOn.onChange.transformed(transformation = read)
 }
 
-fun <T, B> ObservableProperty<T>.transformed(transformation: @escaping() (T) -> B): ObservableProperty<B> {
-    return TransformedObservableProperty<T, B>(this, transformation)
+fun <T, B> ObservableProperty<T>.transformed(read: @escaping() (T) -> B): ObservableProperty<B> {
+    return TransformedObservableProperty<T, B>(this, read)
 }

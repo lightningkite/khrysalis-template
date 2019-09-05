@@ -1,21 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-    <SeekBar
-            android:id="@+id/slider"
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"/>
+            android:orientation="vertical">
 
-    <TextView
-            android:id="@+id/valueDisplay"
-            style="@style/Header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"/>
+        <SeekBar
+                android:id="@+id/slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"/>
 
-</LinearLayout>
+        <TextView
+                android:id="@+id/valueDisplay"
+                style="@style/Header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"/>
+
+        <com.lightningkite.kwift.views.android.ColorRatingBar
+                android:id="@+id/rating"
+                style="?android:attr/ratingBarStyle"
+                app:empty_color="#F888"
+                app:progress_color="#FF0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"/>
+
+        <com.lightningkite.kwift.views.android.ColorRatingBar
+                android:id="@+id/ratingDisplayStars"
+                style="?android:attr/ratingBarStyleIndicator"
+                app:empty_color="#F888"
+                app:progress_color="#FF0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"/>
+
+        <com.lightningkite.kwift.views.android.ColorRatingBar
+                android:id="@+id/ratingDisplayStarsSmall"
+                style="?android:attr/ratingBarStyleSmall"
+                app:empty_color="#F888"
+                app:progress_color="#FF0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"/>
+
+        <TextView
+                android:id="@+id/ratingDisplayNumber"
+                style="@style/Header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"/>
+
+        <com.lightningkite.kwift.views.android.ColorRatingBar
+                android:id="@+id/ratingFloat"
+                style="?android:attr/ratingBarStyle"
+                app:empty_color="#F888"
+                app:progress_color="#FF0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"/>
+
+        <com.lightningkite.kwift.views.android.ColorRatingBar
+                android:id="@+id/ratingDisplayStarsFloat"
+                style="?android:attr/ratingBarStyleIndicator"
+                app:empty_color="#F888"
+                app:progress_color="#FF0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"/>
+
+        <com.lightningkite.kwift.views.android.ColorRatingBar
+                android:id="@+id/ratingDisplayStarsSmallFloat"
+                style="?android:attr/ratingBarStyleSmall"
+                app:empty_color="#F888"
+                app:progress_color="#FF0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"/>
+
+        <TextView
+                android:id="@+id/ratingDisplayNumberFloat"
+                style="@style/Header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"/>
+
+    </LinearLayout>
+</ScrollView>

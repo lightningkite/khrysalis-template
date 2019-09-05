@@ -5,7 +5,7 @@ import Foundation
 
 
 
-public class Post: Equatable, Hashable, Codable {
+public final class Post: Equatable, Hashable, Codable {
     
     public var userId: Int64
     public var id: Int64
@@ -45,6 +45,20 @@ public class Post: Equatable, Hashable, Codable {
     }
     convenience public init(_ userId: Int64 = 0, _ id: Int64 = 0, _ title: String = "", _ body: String = "") {
         self.init(userId: userId, id: id, title: title, body: body)
+    }
+    required public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        userId = try values.decodeIfPresent(Int64.self, forKey: .userId) ?? 0
+        id = try values.decodeIfPresent(Int64.self, forKey: .id) ?? 0
+        title = try values.decodeIfPresent(String.self, forKey: .title) ?? ""
+        body = try values.decodeIfPresent(String.self, forKey: .body) ?? ""
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case userId = "user_id}"
+        case id = "id}"
+        case title = "title}"
+        case body = "body}"
     }
     
 }
