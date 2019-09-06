@@ -41,24 +41,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
             this.present(alert, animated: true, completion: {})
         }
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillShow),
-            name: UIResponder.keyboardWillShowNotification,
-            object: nil
-        )
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillHide),
-            name: UIResponder.keyboardWillHideNotification,
-            object: nil
-        )
         
         contentView.backgroundColor = ResourcesColors.colorPrimaryDark
         let m = ViewController.main.generate(())
         contentView.addSubview(m)
         mainView = m
         mainView.flex.layout()
+        
+        addKeyboardObservers()
+        hideKeyboardWhenTappedAround()
     }
     
     override func viewDidLayoutSubviews() {
@@ -68,22 +59,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         mainView.flex.layout()
     }
     
-    @objc func keyboardWillShow(sender: NSNotification) {
-        print("SHOW KEYBOARD")
-        let i = sender.userInfo!
-        let k = (i[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.height
-        bottomConstraintForKeyboard.constant = k - bottomLayoutGuide.length
-        let s: TimeInterval = (i[UIResponder.keyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
-        UIView.animate(withDuration: s) { self.view.layoutIfNeeded() }
-    }
-    
-    @objc func keyboardWillHide(sender: NSNotification) {
-        print("HIDE KEYBOARD")
-        let i = sender.userInfo!
-        let k = (i[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.height
-        bottomConstraintForKeyboard.constant = 0
-        let s: TimeInterval = (i[UIResponder.keyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
-        UIView.animate(withDuration: s) { self.view.layoutIfNeeded() }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        removeKeyboardObservers()
     }
     
     static var imageRequestEvent: StandardEvent<Void> = StandardEvent()
@@ -112,3 +90,124 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 }
 
+
+
+// MARK: - Extensions to make view controller keyboard-aware.
+// Move these to a separate file if you want
+extension UIView {
+    var firstResponder: UIView? {
+        guard !isFirstResponder else { return self }
+        
+        for subview in subviews {
+            if let firstResponder = subview.firstResponder {
+                return firstResponder
+            }
+        }
+        
+        return nil
+    }
+}
+
+extension UIViewController {
+    /// How much space (in percentage of remaining available space) to designate under the focused
+    /// text field. The higher the number, the close the textfield will be to the keyboard. If you
+    /// have a field that won't be covered by the keyboard, keep this number close to 1.
+    func spacingPercentageFromTop() -> CGFloat {
+        return 0.8
+    }
+    
+    /// Asks the system to resign all first responders (usually input fields), which effectively
+    /// causes the keyboard to dismiss itself.
+    func resignAllFirstResponders() {
+        view.endEditing(true)
+    }
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        resignAllFirstResponders()
+    }
+    
+    func addKeyboardObservers() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillChangeFrame),
+            name: UIResponder.keyboardWillChangeFrameNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+    
+    /// Remove observers that were added previously.
+    func removeKeyboardObservers() {
+        NotificationCenter.default.removeObserver(
+            self,
+            name: UIResponder.keyboardWillChangeFrameNotification,
+            object: self.view.window
+        )
+        NotificationCenter.default.removeObserver(
+            self,
+            name: UIResponder.keyboardWillHideNotification,
+            object: self.view.window
+        )
+    }
+    
+    
+    /// Method's notified when the keyboard is about to be shown or change its size.
+    ///
+    /// - Parameter notification: System keyboard notification
+    @objc func keyboardWillChangeFrame(notification: NSNotification) {
+        if
+            let window = view.window,
+            let responder = view.firstResponder,
+            let userInfo = notification.userInfo,
+            let keyboardFrameValue = userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue,
+            let keyboardAnimationDuration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber
+        {
+            let keyboardHeight = keyboardFrameValue.cgRectValue.height
+            UIView.animate(
+                withDuration: keyboardAnimationDuration.doubleValue,
+                animations: {
+                    window.frame.origin.y = min(
+                        0,
+                        -min(
+                            keyboardHeight,
+                            responder.layer.position.y
+                                - (window.bounds.height - keyboardHeight - responder.bounds.height)
+                                * self.spacingPercentageFromTop()
+                        )
+                    )
+                    self.view.layoutIfNeeded()
+            }
+            )
+        }
+    }
+    
+    /// Method's notified when the keyboard is about to be dismissed.
+    ///
+    /// - Parameter notification: System keyboard notification
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if
+            let window = self.view.window,
+            let userInfo = notification.userInfo,
+            let animationDuration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber
+        {
+            UIView.animate(
+                withDuration: animationDuration.doubleValue,
+                animations: {
+                    window.frame.origin.y = 0
+                    self.view.layoutIfNeeded()
+            }
+            )
+        }
+    }
+}
