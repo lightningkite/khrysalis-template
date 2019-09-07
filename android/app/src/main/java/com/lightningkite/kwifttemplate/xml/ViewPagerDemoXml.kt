@@ -11,12 +11,12 @@ import com.lightningkite.kwifttemplate.R
 
 class ViewPagerDemoXml {
 
-    lateinit var viewPager: android.support.v4.view.ViewPager
+    lateinit var viewPager: androidx.viewpager.widget.ViewPager
     lateinit var viewPagerIndicator: com.rd.PageIndicatorView
 
     fun setup(dependency: ViewDependency): View {
         val view = LayoutInflater.from(dependency.context).inflate(R.layout.view_pager_demo, null, false)
-        viewPager = view.findViewById<android.support.v4.view.ViewPager>(R.id.viewPager)
+        viewPager = view.findViewById<androidx.viewpager.widget.ViewPager>(R.id.viewPager)
         viewPagerIndicator = view.findViewById<com.rd.PageIndicatorView>(R.id.viewPagerIndicator)
         return view
     }

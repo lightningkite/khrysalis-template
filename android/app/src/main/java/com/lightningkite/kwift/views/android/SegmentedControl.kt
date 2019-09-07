@@ -1,8 +1,8 @@
 package com.lightningkite.kwift.views.android
 
 import android.content.Context
-import android.support.design.widget.TabLayout
 import android.util.AttributeSet
+import com.google.android.material.tabs.TabLayout
 
 class SegmentedControl : TabLayout {
     constructor(context: Context) : super(context) { sharedInit() }

@@ -1,6 +1,6 @@
 package com.lightningkite.kwift.observables.actual
 
-import android.support.design.widget.TabLayout
+import com.google.android.material.tabs.TabLayout
 import com.lightningkite.kwift.observables.shared.MutableObservableProperty
 import com.lightningkite.kwift.observables.shared.addAndRunWeak
 

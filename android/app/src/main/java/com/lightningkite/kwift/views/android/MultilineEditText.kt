@@ -3,7 +3,7 @@ package com.lightningkite.kwift.views.android
 import android.content.Context
 import android.util.AttributeSet
 
-class MultilineEditText : android.support.v7.widget.AppCompatEditText {
+class MultilineEditText : androidx.appcompat.widget.AppCompatEditText {
     constructor(context: Context) : super(context) {}
 
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {}

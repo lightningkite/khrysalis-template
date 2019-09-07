@@ -1,9 +1,9 @@
 package com.lightningkite.kwift.observables.actual
 
-import android.support.v4.view.PagerAdapter
-import android.support.v4.view.ViewPager
 import android.view.View
 import android.view.ViewGroup
+import androidx.viewpager.widget.PagerAdapter
+import androidx.viewpager.widget.ViewPager
 import com.lightningkite.kwift.observables.shared.MutableObservableProperty
 import com.lightningkite.kwift.observables.shared.StandardObservableProperty
 import com.lightningkite.kwift.observables.shared.addAndRunWeak

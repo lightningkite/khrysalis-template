@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+        <TextView
+                style="@style/Header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="@string/welcome_to_switch_town"/>
+
+        <Switch
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="@string/i_m_a_switch"/>
+
+        <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="@string/i_m_a_switch"/>
+
+        <TextView
+                style="@style/Body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="@string/text_field"/>
+
+        <EditText
+                android:id="@+id/editableText"
+                style="@style/Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:minHeight="40dp"
+                android:padding="8dp"
+                android:background="@drawable/border"/>
+
+        <TextView
+                android:id="@+id/editableTextCopy"
+                style="@style/Body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:text=""/>
+
+        <com.lightningkite.kwift.views.android.MultilineEditText
+                android:id="@+id/editableTextBig"
+                style="@style/Body"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:background="@drawable/border"/>
+
+        <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/border"/>
+
+    </LinearLayout>
+</ScrollView>

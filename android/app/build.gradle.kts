@@ -35,14 +35,14 @@ repositories {
 val kotlin_version = "1.3.41"
 dependencies {
     testImplementation("junit:junit:4.12")
-    androidTestImplementation("com.android.support.test:runner:1.0.2")
+    androidTestImplementation("androidx.test:runner:1.2.0")
     androidTestImplementation("com.android.support.test.espresso:espresso-core:3.0.2")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version")
     implementation("org.jetbrains.kotlin:kotlin-reflect:$kotlin_version")
-    implementation("com.android.support:appcompat-v7:28+")
-    implementation("com.android.support:design:28+")
+    implementation("androidx.appcompat:appcompat:1.1.0")
+    implementation("com.google.android.material:material:1.0.0")
     implementation("com.android.support.constraint:constraint-layout:1.1.3")
-    implementation("com.android.support:recyclerview-v7:28+")
+    implementation("androidx.recyclerview:recyclerview:1.0.0")
     implementation("com.fasterxml.jackson.core:jackson-core:2.9.9")
     implementation("com.fasterxml.jackson.core:jackson-annotations:2.9.7")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.9.9")
@@ -50,8 +50,10 @@ dependencies {
     implementation("de.hdodenhof:circleimageview:2.2.0")
     implementation("br.com.simplepass:loading-button-android:1.14.0")
     implementation("com.squareup.picasso:picasso:2.71828")
-    implementation("com.romandanylyk:pageindicatorview:1.0.2")
-    implementation("com.theartofdev.edmodo:android-image-cropper:2.7.+")
+    implementation("com.romandanylyk:pageindicatorview:1.0.3")
+    implementation("com.theartofdev.edmodo:android-image-cropper:2.7.0")
+    implementation("com.archit.calendar:awesome-calendar:1.1.5") //Date range picker
+    implementation("com.github.marcoscgdev:Android-Week-View:1.2.7")
 }
 
 KwiftSettings.verbose = true
