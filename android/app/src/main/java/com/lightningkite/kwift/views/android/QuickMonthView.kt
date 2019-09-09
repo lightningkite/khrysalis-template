@@ -14,6 +14,7 @@ import java.text.DateFormat
 import java.text.DateFormatSymbols
 import java.time.DayOfWeek
 import java.util.*
+import kotlin.math.min
 
 open class QuickMonthView : View {
 
@@ -35,10 +36,7 @@ open class QuickMonthView : View {
 
             _firstDay.timeInMillis = value.timeInMillis
             val shiftBy = 1 - value.get(Calendar.DAY_OF_WEEK)
-            println("Shift by $shiftBy")
-            println("Before ${DateFormat.getDateInstance().format(_firstDay.time)}")
             _firstDay.add(Calendar.DAY_OF_MONTH, shiftBy)
-            println("After ${DateFormat.getDateInstance().format(_firstDay.time)}")
 
             invalidate()
         }
@@ -49,37 +47,35 @@ open class QuickMonthView : View {
     var labelFontSp: Float = 12f
     var dayFontSp: Float = 16f
     var internalPaddingDp: Float = 8f
+    var dayCellMarginDp: Float = 8f
 
     val paint = Paint().apply {
         flags = flags or Paint.ANTI_ALIAS_FLAG
     }
 
     constructor(context: Context) : super(context) {
-        init(context)
+        init(context, null, 0)
     }
 
-    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
         init(context, attrs, 0)
     }
 
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
         init(context, attrs, defStyleAttr)
     }
 
     var dayLabelHeight: Float = 0f
     private var dayCellHeight: Float = 0f
     private var dayCellWidth: Float = 0f
+    var dayCellMargin: Float = 0f
     private fun measure(context: Context) {
         val internalPadding = context.resources.displayMetrics.density * internalPaddingDp
+        dayCellMargin = context.resources.displayMetrics.density * dayCellMarginDp
         paint.textSize = labelFontSp * context.resources.displayMetrics.scaledDensity
         dayLabelHeight = paint.fontMetrics.let { it.descent - it.ascent } + internalPadding * 2
         dayCellWidth = width / 7f
-        dayCellHeight = (height - dayLabelHeight) / 5f
-    }
-
-    private fun init(context: Context) {
-        measure(context)
-        month = Calendar.getInstance()
+        dayCellHeight = (height - dayLabelHeight) / 6f
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
@@ -87,14 +83,44 @@ open class QuickMonthView : View {
         invalidate()
     }
 
-//    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-//        setMeasuredDimension(
-//
-//        )
-//    }
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        val widthMode = MeasureSpec.getMode(widthMeasureSpec)
+        val widthSize = MeasureSpec.getSize(widthMeasureSpec)
+        val heightMode = MeasureSpec.getMode(heightMeasureSpec)
+        val heightSize = MeasureSpec.getSize(heightMeasureSpec)
+        val width = when (widthMode) {
+            MeasureSpec.AT_MOST -> min(measureX(), widthSize)
+            MeasureSpec.EXACTLY -> widthSize
+            MeasureSpec.UNSPECIFIED -> min(measureX(), widthSize)
+            else -> min(measureX(), widthSize)
+        }
+        val height = when (heightMode) {
+            MeasureSpec.AT_MOST -> min(measureY(width), heightSize)
+            MeasureSpec.EXACTLY -> heightSize
+            MeasureSpec.UNSPECIFIED -> min(measureY(width), heightSize)
+            else -> min(measureY(width), heightSize)
+        }
+        setMeasuredDimension(
+            width,
+            height
+        )
+    }
 
-    private fun init(context: Context, attrs: AttributeSet, defStyleAttr: Int) {
-        init(context)
+    private fun measureX(): Int {
+        paint.apply {
+            this.textSize = labelFontSp * context.resources.displayMetrics.scaledDensity
+        }
+        return DayOfWeek.values().sumBy { paint.measureText(symbols.shortWeekdays[it.ordinal + 1]).toInt() }
+    }
+
+    private fun measureY(givenWidth: Int): Int {
+        return givenWidth * 6 / 7 + dayLabelHeight.toInt()
+    }
+
+
+    private fun init(context: Context, attrs: AttributeSet?, defStyleAttr: Int = 0) {
+        measure(context)
+        month = Calendar.getInstance()
         val a = context.theme.obtainStyledAttributes(attrs, R.styleable.QuickMonthView, defStyleAttr, 0)
         defaultColorSet = ColorSet(
             foreground = a.getColor(R.styleable.QuickMonthView_selectedForegroundColor, Color.BLACK),
@@ -113,29 +139,44 @@ open class QuickMonthView : View {
         )
     }
 
-    var onTouchDown: (Calendar) -> Unit = {
-        println("Down on ${DateFormat.getDateInstance().format(it.time)}")
+    open fun onTouchDown(calendar: Calendar): Boolean {
+        println("Down on ${DateFormat.getDateInstance().format(calendar.time)}")
+        return false
     }
-    var onTouchUp: (Calendar) -> Unit = {
-        println("Up on ${DateFormat.getDateInstance().format(it.time)}")
+
+    open fun onTouchMove(calendar: Calendar): Boolean {
+        println("Move on ${DateFormat.getDateInstance().format(calendar.time)}")
+        return false
+    }
+
+    open fun onTouchUp(calendar: Calendar): Boolean {
+        println("Up on ${DateFormat.getDateInstance().format(calendar.time)}")
+        return false
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
-        when (event.actionMasked) {
-            MotionEvent.ACTION_DOWN -> {
-                onTouchDown(dayAtPixel(event.x, event.y))
-            }
-            MotionEvent.ACTION_UP -> {
-                onTouchUp(dayAtPixel(event.x, event.y))
-            }
+        val position = dayAtPixel(event.x, event.y) ?: return false
+        return when (event.actionMasked) {
+            MotionEvent.ACTION_DOWN -> onTouchDown(position)
+            MotionEvent.ACTION_MOVE -> onTouchMove(position)
+            MotionEvent.ACTION_UP -> onTouchUp(position)
+            else -> false
         }
-        return true
     }
 
-    fun dayAtPixel(x: Float, y: Float, out: Calendar = Calendar.getInstance()): Calendar {
-        val col = (x / dayCellWidth).toInt()
+    override fun performClick(): Boolean {
+        //Trigger normal date selection dialog?
+        //TODO: Accessibility
+        return super.performClick()
+    }
+
+    fun dayAtPixel(x: Float, y: Float, out: Calendar = Calendar.getInstance()): Calendar? {
+        if (y < dayLabelHeight) return null
+        val column = (x / dayCellWidth).toInt()
         val row = ((y - dayLabelHeight) / dayCellHeight).toInt()
-        return dayAt(row, col, out)
+        if (row !in 0..5) return null
+        if (column !in 0..6) return null
+        return dayAt(row, column, out)
     }
 
     fun dayAt(row: Int, column: Int, out: Calendar = Calendar.getInstance()): Calendar {
@@ -150,7 +191,7 @@ open class QuickMonthView : View {
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         drawLabels(canvas)
-        for (row in 0..4) {
+        for (row in 0..5) {
             for (col in 0..6) {
                 val day = dayAt(row, col, forReuse)
                 rectForReuse.set(
@@ -165,26 +206,102 @@ open class QuickMonthView : View {
     }
 
     protected open fun drawDayCell(canvas: Canvas, rectangle: RectF, day: Calendar) {
-        paint.apply {
-            this.color = defaultColorSet.background
-            this.style = Paint.Style.FILL
-        }
-        canvas.drawRect(rectangle, paint)
-        paint.apply {
-            this.color = if (day.get(Calendar.MONTH) == month.get(Calendar.MONTH)) {
-                defaultColorSet.foreground
-            } else {
-                Color.argb(
-                    Color.alpha(defaultColorSet.foreground) / 2,
-                    Color.red(defaultColorSet.foreground),
-                    Color.green(defaultColorSet.foreground),
-                    Color.blue(defaultColorSet.foreground)
-                )
-            }
+        drawDayCellBackground(canvas, rectangle, defaultColorSet)
+        drawDayCellText(day, canvas, rectangle, defaultColorSet)
+    }
 
-            this.style = Paint.Style.FILL
-            this.textSize = dayFontSp * context.resources.displayMetrics.scaledDensity
+    protected fun drawDayCellBackground(canvas: Canvas, rectangle: RectF, colorSet: ColorSet) {
+        drawDayCellBackground(canvas, rectangle) {
+            color = colorSet.background
+            style = Paint.Style.FILL
         }
+    }
+
+    protected inline fun drawDayCellBackground(canvas: Canvas, rectangle: RectF, paintSetup: Paint.() -> Unit) {
+        val size = min(rectangle.width(), rectangle.height()) / 2 - dayCellMargin
+        canvas.drawCircle(rectangle.centerX(), rectangle.centerY(), size, paint.apply(paintSetup))
+    }
+
+    protected fun drawDayCellBackgroundStart(canvas: Canvas, rectangle: RectF, colorSet: ColorSet) {
+        drawDayCellBackgroundStart(canvas, rectangle) {
+            color = colorSet.background
+            style = Paint.Style.FILL
+        }
+    }
+
+    protected inline fun drawDayCellBackgroundStart(canvas: Canvas, rectangle: RectF, paintSetup: Paint.() -> Unit) {
+        val size = min(rectangle.width(), rectangle.height()) / 2 - dayCellMargin
+        canvas.drawCircle(rectangle.centerX(), rectangle.centerY(), size, paint.apply(paintSetup))
+        canvas.drawRect(
+            rectangle.centerX(),
+            rectangle.top + dayCellMargin,
+            rectangle.right + 1,
+            rectangle.bottom - dayCellMargin,
+            paint
+        )
+    }
+
+    protected fun drawDayCellBackgroundEnd(canvas: Canvas, rectangle: RectF, colorSet: ColorSet) {
+        drawDayCellBackgroundEnd(canvas, rectangle) {
+            color = colorSet.background
+            style = Paint.Style.FILL
+        }
+    }
+
+    protected inline fun drawDayCellBackgroundEnd(canvas: Canvas, rectangle: RectF, paintSetup: Paint.() -> Unit) {
+        val size = min(rectangle.width(), rectangle.height()) / 2 - dayCellMargin
+        canvas.drawCircle(rectangle.centerX(), rectangle.centerY(), size, paint.apply(paintSetup))
+        canvas.drawRect(
+            rectangle.left - 1,
+            rectangle.top + dayCellMargin,
+            rectangle.centerX(),
+            rectangle.bottom - dayCellMargin,
+            paint
+        )
+    }
+
+    protected fun drawDayCellBackgroundMiddle(canvas: Canvas, rectangle: RectF, colorSet: ColorSet) {
+        drawDayCellBackgroundMiddle(canvas, rectangle) {
+            color = colorSet.background
+            style = Paint.Style.FILL
+        }
+    }
+
+    protected inline fun drawDayCellBackgroundMiddle(canvas: Canvas, rectangle: RectF, paintSetup: Paint.() -> Unit) {
+        canvas.drawRect(
+            rectangle.left - 1,
+            rectangle.top + dayCellMargin,
+            rectangle.right + 1,
+            rectangle.bottom - dayCellMargin,
+            paint.apply(paintSetup)
+        )
+    }
+
+
+    protected fun drawDayCellText(
+        day: Calendar,
+        canvas: Canvas,
+        rectangle: RectF,
+        colorSet: ColorSet
+    ): Unit = drawDayCellText(day, canvas, rectangle) { isInMonth ->
+        this.color = if (isInMonth) {
+            colorSet.foreground
+        } else {
+            colorSet.foreground.colorAlpha(64)
+        }
+
+        this.style = Paint.Style.FILL
+        this.textSize = dayFontSp * context.resources.displayMetrics.scaledDensity
+    }
+
+    protected inline fun drawDayCellText(
+        day: Calendar,
+        canvas: Canvas,
+        rectangle: RectF,
+        paintSetup: Paint.(isInMonth: Boolean) -> Unit = { isInMonth ->
+        }
+    ) {
+        paint.apply { paintSetup(day.get(Calendar.MONTH) == month.get(Calendar.MONTH)) }
         canvas.drawTextCentered(
             day.get(Calendar.DAY_OF_MONTH).toString(),
             rectangle.centerX(),
@@ -213,9 +330,4 @@ open class QuickMonthView : View {
         }
     }
 
-    fun Canvas.drawTextCentered(text: String, centerX: Float, centerY: Float, paint: Paint) {
-        val textWidth = paint.measureText(text)
-        val textHeightOffset = (paint.fontMetrics.let { it.ascent + it.descent } / 2)
-        drawText(text, centerX - textWidth / 2, centerY - textHeightOffset, paint)
-    }
 }

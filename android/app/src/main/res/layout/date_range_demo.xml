@@ -4,11 +4,24 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <!-- https://github.com/ArchitShah248/CalendarDateRangePicker -->
-    <com.lightningkite.kwift.views.android.QuickMonthView
+    <com.lightningkite.kwift.views.android.SelectDayView
+            android:id="@+id/select"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+    />
+
+    <com.lightningkite.kwift.views.android.SelectDateRangeView
             android:id="@+id/range"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
     />
 
 </LinearLayout>
