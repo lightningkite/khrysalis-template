@@ -1,4 +1,4 @@
-target ‘KwiftTemplate’ do
+target 'KwiftTemplate' do
     pod 'Alamofire'
     pod 'AlamofireImage'
     pod 'KeychainAccess'
@@ -8,6 +8,6 @@ target ‘KwiftTemplate’ do
     pod 'Fabric'
     pod 'Crashlytics'
     pod 'Cosmos', '~> 19.0'
-    pod 'JTAppleCalendar', '~>; 7.1'
-    pod 'QVRWeekView'
+    pod 'JTAppleCalendar', '~> 7.1'
+    pod 'QVRWeekView', '~> 0.13.2'
 end

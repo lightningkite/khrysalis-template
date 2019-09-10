@@ -3,6 +3,7 @@ package com.lightningkite.kwifttemplate.shared.views
 import android.view.View
 import com.alamkanak.weekview.WeekViewEvent
 import com.lightningkite.kwift.views.actual.ViewDependency
+import com.lightningkite.kwift.views.actual.bind
 import com.lightningkite.kwift.views.shared.ViewGenerator
 import com.lightningkite.kwifttemplate.xml.WeekDemoXml
 
@@ -13,46 +14,46 @@ class WeekDemoVG() : ViewGenerator() {
         val xml = WeekDemoXml()
         val view = xml.setup(dependency)
 
-        xml.week.setMonthChangeListener { newYear, newMonth ->
+        xml.week.bind { year, month ->
             listOf(
                 WeekViewEvent(
-                    newYear * 120L + newMonth * 10 + 0,
+                    year * 120L + month * 10 + 0,
                     "Test (5th)",
-                    newYear,
-                    newMonth,
+                    year,
+                    month,
                     5,
                     10,
                     0,
-                    newYear,
-                    newMonth,
+                    year,
+                    month,
                     5,
                     18,
                     0
                 ),
                 WeekViewEvent(
-                    newYear * 120L + newMonth * 10 + 0,
+                    year * 120L + month * 10 + 0,
                     "Test (10th)",
-                    newYear,
-                    newMonth,
+                    year,
+                    month,
                     10,
                     10,
                     0,
-                    newYear,
-                    newMonth,
+                    year,
+                    month,
                     10,
                     18,
                     0
                 ),
                 WeekViewEvent(
-                    newYear * 120L + newMonth * 10 + 0,
+                    year * 120L + month * 10 + 0,
                     "Test (15th)",
-                    newYear,
-                    newMonth,
+                    year,
+                    month,
                     15,
                     10,
                     0,
-                    newYear,
-                    newMonth,
+                    year,
+                    month,
                     15,
                     18,
                     0

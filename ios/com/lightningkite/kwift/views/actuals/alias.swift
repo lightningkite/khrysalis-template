@@ -8,5 +8,9 @@
 
 import Foundation
 import Cosmos
+import JTAppleCalendar
+import QVRWeekView
 
 typealias UIRatingBar = CosmosView
+typealias UICalendarView = JTAppleCalendar.JTAppleCalendarView
+typealias UIWeekView = QVRWeekView.WeekView
