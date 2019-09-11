@@ -9,7 +9,8 @@
     <com.alamkanak.weekview.WeekView
             android:id="@+id/week"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
             app:eventTextColor="@android:color/white"
             app:textSize="12sp"
             app:hourHeight="60dp"

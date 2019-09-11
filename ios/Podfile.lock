@@ -23,7 +23,7 @@ DEPENDENCIES:
   - JTAppleCalendar (~> 7.1)
   - KeychainAccess
   - PinLayout
-  - QVRWeekView (~> 0.13.2)
+  - QVRWeekView (from `https://github.com/lightningkite/iOS-Week-View.git`)
   - "UITextView+Placeholder"
 
 SPEC REPOS:
@@ -37,8 +37,16 @@ SPEC REPOS:
     - JTAppleCalendar
     - KeychainAccess
     - PinLayout
-    - QVRWeekView
     - "UITextView+Placeholder"
+
+EXTERNAL SOURCES:
+  QVRWeekView:
+    :git: https://github.com/lightningkite/iOS-Week-View.git
+
+CHECKOUT OPTIONS:
+  QVRWeekView:
+    :commit: ce16362180363a378a97afe92161cb3174d7b9e7
+    :git: https://github.com/lightningkite/iOS-Week-View.git
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
@@ -50,9 +58,9 @@ SPEC CHECKSUMS:
   JTAppleCalendar: 96da4d8388fa6dc82d6a60d41ef36a015e167e2f
   KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   PinLayout: fe2a2432d6982588e208572005c941aeeae417ab
-  QVRWeekView: d3941741f5c5b324a097d30d4ea8f4c9a2c2c59c
+  QVRWeekView: 3439d87341135afb524b83dfdde366ddad5c6157
   "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
 
-PODFILE CHECKSUM: 8c593b33d4e4a7578b39f8e85879088127a1c7f0
+PODFILE CHECKSUM: e82cb8f07d13eb66ce5ee18076c02c60e0d1cb02
 
 COCOAPODS: 1.5.3

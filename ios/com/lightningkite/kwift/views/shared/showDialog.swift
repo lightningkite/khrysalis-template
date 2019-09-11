@@ -10,16 +10,16 @@ public var showDialogEvent = StandardEvent<DialogRequest>()
 public class DialogRequest {
     
     public var string: String? 
-    public var stringReference: StringReference? 
+    public var stringReference: StringResource? 
     public var confirmation: (() -> Void)? 
     
     
-    public init(string: String?  = nil, stringReference: StringReference?  = nil, confirmation: (() -> Void)?  = nil) {
+    public init(string: String?  = nil, stringReference: StringResource?  = nil, confirmation: (() -> Void)?  = nil) {
         self.string = string
         self.stringReference = stringReference
         self.confirmation = confirmation
     }
-    convenience public init(_ string: String?  = nil, _ stringReference: StringReference?  = nil, _ confirmation: (() -> Void)?  = nil) {
+    convenience public init(_ string: String?  = nil, _ stringReference: StringResource?  = nil, _ confirmation: (() -> Void)?  = nil) {
         self.init(string: string, stringReference: stringReference, confirmation: confirmation)
     }
 }
@@ -45,10 +45,10 @@ public func showDialog(_ message: String) -> Void {
  
  
 
-public func showDialogByReference(message: StringReference) -> Void {
+public func showDialogByReference(message: StringResource) -> Void {
     showDialog(DialogRequest(stringReference: message))
 }
-public func showDialogByReference(_ message: StringReference) -> Void {
+public func showDialogByReference(_ message: StringResource) -> Void {
     return showDialogByReference(message: message)
 }
  

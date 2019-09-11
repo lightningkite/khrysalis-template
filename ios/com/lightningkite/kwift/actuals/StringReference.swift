@@ -7,5 +7,8 @@
 //
 
 import Foundation
+import UIKit
 
-public typealias StringReference = String
+public typealias StringReference = StringResource
+public typealias StringResource = String
+public typealias ColorResource = UIColor

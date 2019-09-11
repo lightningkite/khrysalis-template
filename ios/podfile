@@ -9,5 +9,5 @@ target 'KwiftTemplate' do
     pod 'Crashlytics'
     pod 'Cosmos', '~> 19.0'
     pod 'JTAppleCalendar', '~> 7.1'
-    pod 'QVRWeekView', '~> 0.13.2'
+    pod 'QVRWeekView', :git => 'https://github.com/lightningkite/iOS-Week-View.git'
 end

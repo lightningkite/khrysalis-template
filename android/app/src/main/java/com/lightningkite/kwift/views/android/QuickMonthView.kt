@@ -35,8 +35,7 @@ open class QuickMonthView : View {
             field = value
 
             _firstDay.timeInMillis = value.timeInMillis
-            val shiftBy = 1 - value.get(Calendar.DAY_OF_WEEK)
-            _firstDay.add(Calendar.DAY_OF_MONTH, shiftBy)
+            _firstDay.set(Calendar.DAY_OF_WEEK, 1)
 
             invalidate()
         }

@@ -1,11 +1,16 @@
 package com.lightningkite.kwifttemplate.shared.views
 
 import android.view.View
-import com.alamkanak.weekview.WeekViewEvent
+import com.lightningkite.kwift.actuals.hours
+import com.lightningkite.kwift.actuals.plus
+import com.lightningkite.kwift.observables.actual.WeekViewEvent
+import com.lightningkite.kwift.observables.actual.bind
+import com.lightningkite.kwift.observables.shared.ConstantObservableProperty
 import com.lightningkite.kwift.views.actual.ViewDependency
-import com.lightningkite.kwift.views.actual.bind
 import com.lightningkite.kwift.views.shared.ViewGenerator
+import com.lightningkite.kwifttemplate.R
 import com.lightningkite.kwifttemplate.xml.WeekDemoXml
+import java.util.*
 
 class WeekDemoVG() : ViewGenerator() {
     override val title: String get() = "Week Demo"
@@ -14,52 +19,21 @@ class WeekDemoVG() : ViewGenerator() {
         val xml = WeekDemoXml()
         val view = xml.setup(dependency)
 
-        xml.week.bind { year, month ->
-            listOf(
-                WeekViewEvent(
-                    year * 120L + month * 10 + 0,
-                    "Test (5th)",
-                    year,
-                    month,
-                    5,
-                    10,
-                    0,
-                    year,
-                    month,
-                    5,
-                    18,
-                    0
-                ),
-                WeekViewEvent(
-                    year * 120L + month * 10 + 0,
-                    "Test (10th)",
-                    year,
-                    month,
-                    10,
-                    10,
-                    0,
-                    year,
-                    month,
-                    10,
-                    18,
-                    0
-                ),
-                WeekViewEvent(
-                    year * 120L + month * 10 + 0,
-                    "Test (15th)",
-                    year,
-                    month,
-                    15,
-                    10,
-                    0,
-                    year,
-                    month,
-                    15,
-                    18,
-                    0
+        xml.week.bind(
+            data = ConstantObservableProperty { start, end ->
+                listOf(
+                    WeekViewEvent(
+                        id = 0,
+                        title = "Event",
+                        start = Date(),
+                        end = Date() + 1.hours(),
+                        colorRes = R.color.colorPrimary
+                    )
                 )
-            )
-        }
+            },
+            onEventClick = { it -> println(it) },
+            onEmptyClick = { it -> println(it) }
+        )
 
         return view
     }

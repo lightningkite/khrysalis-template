@@ -8,9 +8,17 @@
 
 import Foundation
 import Cosmos
-import JTAppleCalendar
 import QVRWeekView
 
 typealias UIRatingBar = CosmosView
-typealias UICalendarView = JTAppleCalendar.JTAppleCalendarView
-typealias UIWeekView = QVRWeekView.WeekView
+typealias UIWeekView = WeekView
+typealias WeekViewEvent = EventData
+
+extension WeekViewEvent {
+    convenience init(id: Int64, title: String, start: Date, end: Date, colorRes: UIColor) {
+        self.init(id: Int(id), title: title, startDate: start, endDate: end, color: colorRes)
+    }
+    convenience init(_ id: Int64, _ title: String, _ start: Date, _ end: Date, _ colorRes: UIColor) {
+        self.init(id: Int(id), title: title, startDate: start, endDate: end, color: colorRes)
+    }
+}

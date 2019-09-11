@@ -2,9 +2,9 @@ package com.lightningkite.kwift.observables.actual
 
 import android.view.View
 import android.widget.TextView
-import com.lightningkite.kwift.actuals.StringReference
 import com.lightningkite.kwift.observables.shared.ObservableProperty
 import com.lightningkite.kwift.observables.shared.addAndRunWeak
+import com.lightningkite.kwift.views.actual.StringResource
 
 
 fun TextView.bindString(observable: ObservableProperty<String>) {
@@ -13,7 +13,7 @@ fun TextView.bindString(observable: ObservableProperty<String>) {
     }
 }
 
-fun TextView.bindStringRes(observable: ObservableProperty<StringReference?>) {
+fun TextView.bindStringRes(observable: ObservableProperty<StringResource?>) {
     observable.addAndRunWeak(this) { self, value ->
         self.visibility = if (value == null) View.GONE else View.VISIBLE
         if (value != null) {
