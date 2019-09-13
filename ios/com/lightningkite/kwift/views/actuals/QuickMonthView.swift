@@ -13,8 +13,8 @@ import CoreGraphics
 
 open class QuickMonthView: UIView {
     struct ColorSet {
-        let foreground: UIColor
-        let background: UIColor
+        var foreground: UIColor
+        var background: UIColor
     }
     
     private var _firstDay: Date = Date()
@@ -97,11 +97,16 @@ open class QuickMonthView: UIView {
     func dayAt(row: Int, column: Int) -> Date {
         return firstDay.advancedBy(days: row * 7 + column)
     }
+
+//    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+//
+//    }
     
     override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard touches.count == 1, let touch = touches.first else { return }
         if let date = dayAtPixel(point: touch.location(in: self)) {
             onTouchDown(date: date)
+            super.touchesBegan(touches, with: event)
         }
     }
     
@@ -109,6 +114,7 @@ open class QuickMonthView: UIView {
         guard touches.count == 1, let touch = touches.first else { return }
         if let date = dayAtPixel(point: touch.location(in: self)) {
             onTouchMove(date: date)
+            super.touchesMoved(touches, with: event)
         }
     }
     
@@ -116,6 +122,7 @@ open class QuickMonthView: UIView {
         guard touches.count == 1, let touch = touches.first else { return }
         if let date = dayAtPixel(point: touch.location(in: self)) {
             onTouchUp(date: date)
+            super.touchesEnded(touches, with: event)
         }
     }
     

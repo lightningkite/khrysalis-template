@@ -5,9 +5,9 @@ import com.lightningkite.kwift.observables.shared.transformed
 import com.lightningkite.kwift.views.android.SelectDayView
 import java.util.*
 
-fun SelectDayView.bind(day: MutableObservableProperty<Date>) {
+fun SelectDayView.bind(day: MutableObservableProperty<Date?>) {
     this.selected = day.transformed(
-        read = { Calendar.getInstance().apply { timeInMillis = it.time } },
-        write = { it.time }
+        read = { it?.let { Calendar.getInstance().apply { timeInMillis = it.time } } },
+        write = { it?.time }
     )
 }

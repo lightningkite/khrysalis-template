@@ -11,8 +11,8 @@ import java.util.*
 class DateRangeDemoVG() : ViewGenerator() {
     override val title: String get() = "Date Range Demo"
 
-    val start: StandardObservableProperty<Date> = StandardObservableProperty(Date())
-    val endInclusive: StandardObservableProperty<Date> = StandardObservableProperty(Date())
+    val start: StandardObservableProperty<Date?> = StandardObservableProperty(Date())
+    val endInclusive: StandardObservableProperty<Date?> = StandardObservableProperty(Date())
 
     override fun generate(dependency: ViewDependency): View {
         val xml = DateRangeDemoXml()

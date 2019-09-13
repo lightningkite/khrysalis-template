@@ -119,6 +119,13 @@
 		5EBE3B6523299197000B6116 /* QuickMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE3B6423299197000B6116 /* QuickMonthView.swift */; };
 		5EBE3B672329AED1000B6116 /* SelectDayMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE3B662329AED1000B6116 /* SelectDayMonthView.swift */; };
 		5EBE3B692329B01B000B6116 /* SelectDateRangeMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE3B682329B01B000B6116 /* SelectDateRangeMonthView.swift */; };
+		5EBE3B6B232AADFA000B6116 /* ViewPagerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE3B6A232AADFA000B6116 /* ViewPagerLayout.swift */; };
+		5EBE3B6D232AB061000B6116 /* UICollectionView+binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE3B6C232AB061000B6116 /* UICollectionView+binding.swift */; };
+		5EBE3B6F232AB814000B6116 /* AbstractCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE3B6E232AB814000B6116 /* AbstractCalendarView.swift */; };
+		5EBE3B71232AC2B7000B6116 /* SelectDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE3B70232AC2B7000B6116 /* SelectDayView.swift */; };
+		5EBE3B73232AC3A6000B6116 /* SelectDateRangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE3B72232AC3A6000B6116 /* SelectDateRangeView.swift */; };
+		5EBE3B75232C15A1000B6116 /* SelectDateRangeView+binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE3B74232C15A1000B6116 /* SelectDateRangeView+binding.swift */; };
+		5EBE3B77232C16AA000B6116 /* SelectDayView+binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE3B76232C16AA000B6116 /* SelectDayView+binding.swift */; };
 		5EF4BA7122FA32AB0007F2CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF4BA6D22FA32AB0007F2CF /* LaunchScreen.storyboard */; };
 		5EF4BA7222FA32AB0007F2CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF4BA6F22FA32AB0007F2CF /* Main.storyboard */; };
 		8DBD54362C6851F2F56D6249 /* libPods-KwiftTemplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D2ECE124347EA0EC0435FF /* libPods-KwiftTemplate.a */; };
@@ -262,6 +269,13 @@
 		5EBE3B6423299197000B6116 /* QuickMonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickMonthView.swift; sourceTree = "<group>"; };
 		5EBE3B662329AED1000B6116 /* SelectDayMonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDayMonthView.swift; sourceTree = "<group>"; };
 		5EBE3B682329B01B000B6116 /* SelectDateRangeMonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateRangeMonthView.swift; sourceTree = "<group>"; };
+		5EBE3B6A232AADFA000B6116 /* ViewPagerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPagerLayout.swift; sourceTree = "<group>"; };
+		5EBE3B6C232AB061000B6116 /* UICollectionView+binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+binding.swift"; sourceTree = "<group>"; };
+		5EBE3B6E232AB814000B6116 /* AbstractCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractCalendarView.swift; sourceTree = "<group>"; };
+		5EBE3B70232AC2B7000B6116 /* SelectDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDayView.swift; sourceTree = "<group>"; };
+		5EBE3B72232AC3A6000B6116 /* SelectDateRangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateRangeView.swift; sourceTree = "<group>"; };
+		5EBE3B74232C15A1000B6116 /* SelectDateRangeView+binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectDateRangeView+binding.swift"; sourceTree = "<group>"; };
+		5EBE3B76232C16AA000B6116 /* SelectDayView+binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectDayView+binding.swift"; sourceTree = "<group>"; };
 		5EF4BA6E22FA32AB0007F2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5EF4BA7022FA32AB0007F2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B6816A1CDDBD11CB0E0D2C6 /* Pods-Lifting Generations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lifting Generations.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lifting Generations/Pods-Lifting Generations.debug.xcconfig"; sourceTree = "<group>"; };
@@ -536,6 +550,9 @@
 				5E9C862D23271F6700955CF1 /* UITextView+binding.swift */,
 				5E9C862823271F6700955CF1 /* UIView+binding.swift */,
 				5EBE3B6023281F4D000B6116 /* UIWeekView+ext.swift */,
+				5EBE3B6C232AB061000B6116 /* UICollectionView+binding.swift */,
+				5EBE3B74232C15A1000B6116 /* SelectDateRangeView+binding.swift */,
+				5EBE3B76232C16AA000B6116 /* SelectDayView+binding.swift */,
 			);
 			path = actuals;
 			sourceTree = "<group>";
@@ -593,7 +610,10 @@
 				5E9C865123271F6700955CF1 /* UIButtonWithInput.swift */,
 				5EBE3B6423299197000B6116 /* QuickMonthView.swift */,
 				5EBE3B662329AED1000B6116 /* SelectDayMonthView.swift */,
+				5EBE3B6E232AB814000B6116 /* AbstractCalendarView.swift */,
 				5EBE3B682329B01B000B6116 /* SelectDateRangeMonthView.swift */,
+				5EBE3B70232AC2B7000B6116 /* SelectDayView.swift */,
+				5EBE3B72232AC3A6000B6116 /* SelectDateRangeView.swift */,
 			);
 			path = actuals;
 			sourceTree = "<group>";
@@ -623,6 +643,7 @@
 				5E9C866023271F6700955CF1 /* UIImageView.ext.swift */,
 				5E9C866123271F6700955CF1 /* UIButton.position.swift */,
 				5E9C866223271F6700955CF1 /* extensionProperty.swift */,
+				5EBE3B6A232AADFA000B6116 /* ViewPagerLayout.swift */,
 			);
 			path = ios;
 			sourceTree = "<group>";
@@ -872,6 +893,7 @@
 				5E9C869A23271F6700955CF1 /* Dropdown+binding.swift in Sources */,
 				5E9C86A523271F6800955CF1 /* UITableView+binding.swift in Sources */,
 				5E9C869323271F6700955CF1 /* Codable.swift in Sources */,
+				5EBE3B6D232AB061000B6116 /* UICollectionView+binding.swift in Sources */,
 				5E9C868823271F6700955CF1 /* Resources.swift in Sources */,
 				5E9C869823271F6700955CF1 /* UIView+binding.swift in Sources */,
 				5E9C866A23271F6700955CF1 /* SliderDemoVG.swift in Sources */,
@@ -893,18 +915,22 @@
 				5E9C86A423271F6800955CF1 /* DateButton+binding.swift in Sources */,
 				5E9C867023271F6700955CF1 /* MainVG.swift in Sources */,
 				5E9C866723271F6700955CF1 /* APIInterface.swift in Sources */,
+				5EBE3B73232AC3A6000B6116 /* SelectDateRangeView.swift in Sources */,
 				5E9C867A23271F6700955CF1 /* CustomViews.swift in Sources */,
+				5EBE3B75232C15A1000B6116 /* SelectDateRangeView+binding.swift in Sources */,
 				5E9C867323271F6700955CF1 /* AppDelegate.swift in Sources */,
 				5E9C869C23271F6800955CF1 /* ClosureSleeve.swift in Sources */,
 				5E9C86B023271F6800955CF1 /* NeverEvent.swift in Sources */,
 				5E9C868423271F6700955CF1 /* ExampleContent2Xml.swift in Sources */,
 				5E9C868023271F6700955CF1 /* RowTestXml.swift in Sources */,
 				5E9C86C423271F6800955CF1 /* UIColor.ext.swift in Sources */,
+				5EBE3B6B232AADFA000B6116 /* ViewPagerLayout.swift in Sources */,
 				5E9C867D23271F6700955CF1 /* ControlsDemoXml.swift in Sources */,
 				5E9C86A023271F6800955CF1 /* UIButton+binding.swift in Sources */,
 				5E9C867F23271F6700955CF1 /* SelectDemoXml.swift in Sources */,
 				5E9C86A823271F6800955CF1 /* Event.swift in Sources */,
 				5E9C869D23271F6800955CF1 /* UITextView+binding.swift in Sources */,
+				5EBE3B77232C16AA000B6116 /* SelectDayView+binding.swift in Sources */,
 				5EBE3B672329AED1000B6116 /* SelectDayMonthView.swift in Sources */,
 				5E9C867B23271F6700955CF1 /* ViewPagerDemoXml.swift in Sources */,
 				5E9C868F23271F6700955CF1 /* unit.swift in Sources */,
@@ -927,6 +953,7 @@
 				5E9C866B23271F6700955CF1 /* WeekDemoVG.swift in Sources */,
 				5E9C86B223271F6800955CF1 /* ObservableProperty.ext.swift in Sources */,
 				5E9C868B23271F6700955CF1 /* delay.swift in Sources */,
+				5EBE3B6F232AB814000B6116 /* AbstractCalendarView.swift in Sources */,
 				5E9C869923271F6700955CF1 /* UIImageView+binding.swift in Sources */,
 				5E9C86C123271F6800955CF1 /* UIView.focus.swift in Sources */,
 				5E9C867E23271F6700955CF1 /* ExampleContentXml.swift in Sources */,
@@ -934,6 +961,7 @@
 				5E9C86AF23271F6800955CF1 /* TransformedMutableObservableProperty.swift in Sources */,
 				5E9C869423271F6700955CF1 /* ImageData.swift in Sources */,
 				5E9C86C723271F6800955CF1 /* UISegmentedControl+addIndicator.swift in Sources */,
+				5EBE3B71232AC2B7000B6116 /* SelectDayView.swift in Sources */,
 				5E9C868523271F6700955CF1 /* DateRangeDemoXml.swift in Sources */,
 				5E9C866E23271F6700955CF1 /* ControlsDemoVG.swift in Sources */,
 				5E9C86AC23271F6800955CF1 /* StandardObservableProperty.swift in Sources */,

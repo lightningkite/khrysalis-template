@@ -15,12 +15,15 @@ class ExampleContentXml {
     func setup(_ dependency: ViewDependency) -> UIView {
         return { () -> UIScrollView in 
             let view = UIScrollView(frame: .zero)
+            view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             view.flex.direction(.column).alignContent(.center).addItem({
                 let sub = { () -> UIView in 
                     let view = UIView(frame: .zero)
+                    view.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
                     view.flex.direction(.column).padding(8, 8, 8, 8).alignContent(.start).justifyContent(.start).define{ (flex) in 
                         flex.addItem({ () -> UILabel in 
                             let view = UILabel(frame: .zero)
+                            view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
                             view.text = ResourcesStrings.welcome
                             view.numberOfLines = 0
                             view.font = UIFont.get(size: 24, style: ["bold"])
@@ -31,6 +34,7 @@ class ExampleContentXml {
                         
                         flex.addItem({ () -> UILabel in 
                             let view = UILabel(frame: .zero)
+                            view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
                             view.text = ResourcesStrings.welcomeMessage
                             view.numberOfLines = 0
                             view.font = UIFont.get(size: 16, style: [])
@@ -41,10 +45,12 @@ class ExampleContentXml {
                         
                         flex.addItem({ () -> UIView in 
                             let view = UIView(frame: .zero)
+                            view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
                             view.flex.direction(.row).padding(0, 0, 0, 0).alignContent(.center).justifyContent(.center).define{ (flex) in 
                                 flex.addItem({ () -> UILabel in 
                                     let view = UILabel(frame: .zero)
                                     self.exampleContentNumber = view
+                                    view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
                                     view.text = "0"
                                     view.numberOfLines = 0
                                     view.font = UIFont.get(size: 16, style: [])
@@ -61,6 +67,7 @@ class ExampleContentXml {
                                     } else {
                                         ResourcesBackground.apply(view, "button_primary")
                                     }
+                                    view.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
                                     view.setTitle(ResourcesStrings.incrementTheNumber, for: .normal)
                                     view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
                                     view.contentHorizontalAlignment = .center
