@@ -13,9 +13,24 @@ func TODO(_ message: String = ""){
     fatalError(message)
 }
 
+extension Sequence {
+    func mapNotNull<OUT>(transform: (Element)->OUT?) -> Array<OUT> {
+        var newArray = Array<OUT>()
+        for element in self {
+            if let transformed = transform(element) {
+                newArray.append(transformed)
+            }
+        }
+        return newArray
+    }
+}
+
 extension Array {
     func isEmpty() -> Bool {
         return self.isEmpty
+    }
+    func isNotEmpty() -> Bool {
+        return !self.isEmpty
     }
     var size: Int32 { return Int32(self.count) }
     mutating func add(_ element: Element) {
@@ -90,6 +105,12 @@ extension Array {
     }
     subscript(index: Int32) -> Element {
         return self[Int(index)]
+    }
+    func joinToString(_ separator: String, _ conversion: (Element)->String) -> String {
+        return self.map(conversion).joined(separator: separator)
+    }
+    func joinToString(separator: String = ", ", _ conversion: (Element)->String) -> String {
+        return self.map(conversion).joined(separator: separator)
     }
 }
 
@@ -215,6 +236,7 @@ extension String {
             return defaultTo ?? self
         }
     }
+    
 }
 
 

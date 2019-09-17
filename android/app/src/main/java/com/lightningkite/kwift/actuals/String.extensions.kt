@@ -6,3 +6,5 @@ fun String.humanify(): String {
         " " + result.value
     }.replace('_', ' ').trim()
 }
+
+fun String.formatList(arguments: List<Any?>) = this.format(*arguments.toTypedArray())

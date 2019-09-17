@@ -10,7 +10,11 @@ import Foundation
 import UIKit
 
 public typealias View = UIView
-public typealias ViewDependency = Void
+public class ViewDependency {
+    func getString(_ reference: StringReference) -> String {
+        return reference
+    }
+}
 
 extension UIButton {
     @objc override func onClick(_ action: @escaping ()->Void) {

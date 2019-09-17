@@ -22,4 +22,10 @@ public enum ResourcesStrings {
     static let incrementTheNumber = NSLocalizedString("Increment the Number", comment: "increment_the_number")
     static let textField = NSLocalizedString("Text Field", comment: "text_field")
     static let selectDemo = NSLocalizedString("Select Demo", comment: "select_demo")
+    static let username = NSLocalizedString("Username", comment: "username")
+    static let password = NSLocalizedString("Password", comment: "password")
+    static let iAgree = NSLocalizedString("I Agree to the Terms of Service", comment: "i_agree")
+    static let submit = NSLocalizedString("Submit", comment: "submit")
+    static let mustAgree = NSLocalizedString("You must agree to the terms of service.", comment: "mustAgree")
+    static let verifyPassword = NSLocalizedString("Verify Password", comment: "verify_password")
 }

@@ -24,7 +24,8 @@ class SelectDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator() {
         SegmentedControlDemoVG(),
         SliderDemoVG(),
         WeekDemoVG(),
-        DateRangeDemoVG()
+        DateRangeDemoVG(),
+        LoginDemoVG(stack)
     )
 
     fun selectVG(viewGenerator: ViewGenerator){

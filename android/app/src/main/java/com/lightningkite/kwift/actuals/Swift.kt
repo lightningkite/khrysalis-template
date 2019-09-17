@@ -5,9 +5,16 @@ import kotlin.reflect.KProperty
 
 
 typealias AnyObject = Any
+typealias Equatable = Any
 
 @Target(AnnotationTarget.TYPE)
 annotation class escaping
+
+@Target(AnnotationTarget.TYPE)
+annotation class swiftExactly(val parameterName: String = "default")
+
+@Target(AnnotationTarget.TYPE)
+annotation class swiftDescendsFrom(val parameterName: String = "default")
 
 @Target(AnnotationTarget.FUNCTION)
 annotation class discardableResult

@@ -52,7 +52,6 @@ dependencies {
     implementation("com.squareup.picasso:picasso:2.71828")
     implementation("com.romandanylyk:pageindicatorview:1.0.3")
     implementation("com.theartofdev.edmodo:android-image-cropper:2.7.0")
-    implementation("com.archit.calendar:awesome-calendar:1.1.5") //Date range picker
     implementation("com.github.marcoscgdev:Android-Week-View:1.2.7")
 }
 

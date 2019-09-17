@@ -14,7 +14,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     static let main = MainVG()
     @IBOutlet var bottomConstraintForKeyboard: NSLayoutConstraint!
     @IBOutlet weak var contentView: UIView!
-    
+    let dependency = ViewDependency()
     weak var mainView: UIView!
     
     override func viewDidLoad() {
@@ -25,7 +25,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
         showDialogEvent.addWeak(self){ (this, request) in
-            let message = request.string ?? request.stringReference ?? ""
+            let message = request.string.get(this.dependency)
             let alert = UIAlertController(title: ResourcesStrings.appName, message: message, preferredStyle: .alert)
             if let confirmation = request.confirmation {
                 alert.addAction(UIAlertAction(title: ResourcesStrings.ok, style: .default, handler: { (action) in
@@ -43,7 +43,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
         contentView.backgroundColor = ResourcesColors.colorPrimaryDark
-        let m = ViewController.main.generate(())
+        let m = ViewController.main.generate(dependency)
         contentView.addSubview(m)
         mainView = m
         mainView.flex.layout()

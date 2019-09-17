@@ -89,7 +89,7 @@ extension UIView {
                 )
             }
             if let newData = value.last {
-                let new = newData.generate(dependency: ())
+                let new = newData.generate(dependency: dependency)
                 self.flex.addItem(new).position(.absolute).left(0%).right(0%).top(0%).bottom(0%)
                 switch animation {
                 case .fade:

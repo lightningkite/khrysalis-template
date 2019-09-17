@@ -1,7 +1,10 @@
 package com.lightningkite.kwifttemplate
 
+import android.app.AlertDialog
 import android.os.Bundle
 import com.lightningkite.kwift.android.AccessibleActivity
+import com.lightningkite.kwift.observables.shared.addWeak
+import com.lightningkite.kwift.views.shared.showDialogEvent
 import com.lightningkite.kwifttemplate.shared.views.MainVG
 
 
@@ -14,7 +17,23 @@ class MainActivity : AccessibleActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(viewData.generate(this))
+        val view = viewData.generate(this)
+
+        showDialogEvent.addWeak(view) { view, request ->
+            val builder = AlertDialog.Builder(this)
+            builder.setMessage(request.string.get(this))
+            if (request.confirmation != null) {
+                builder.setPositiveButton(R.string.ok) { dialog, which -> request.confirmation.invoke(); dialog.dismiss() }
+                builder.setNeutralButton(R.string.cancel) { dialog, which -> dialog.dismiss() }
+            } else {
+                builder.setPositiveButton(R.string.ok) { dialog, which -> dialog.dismiss() }
+            }
+            builder
+                .create()
+                .show()
+        }
+
+        setContentView(view)
     }
 
     override fun onBackPressed() {
