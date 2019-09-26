@@ -1,17 +1,17 @@
 import com.lightningkite.kwift.KwiftSettings
-import com.lightningkite.kwift.layoutxml.convertAndroidResourcesToSwift
-import com.lightningkite.kwift.layoutxml.createAndroidLayoutClasses
+import com.lightningkite.kwift.convertResourcesToIos
+import com.lightningkite.kwift.layout.convertLayoutsToSwift
+import com.lightningkite.kwift.layout.createAndroidLayoutClasses
 import com.lightningkite.kwift.swift.convertKotlinToSwift
 
 plugins {
     id("com.android.application")
     id("kotlin-android")
     id("kotlin-android-extensions")
-    id("com.lightningkite.kwift")
 }
 
 android {
-//    buildToolsVersion = "28.0.3"
+    //    buildToolsVersion = "28.0.3"
     compileSdkVersion(29)
     defaultConfig {
         minSdkVersion(19)
@@ -57,33 +57,55 @@ dependencies {
 
 KwiftSettings.verbose = true
 
-tasks.create("kwift") {
+tasks.create("kwiftConvertKotlinToSwift") {
     this.group = "build"
     doLast {
         println("Started")
         convertKotlinToSwift(
-            baseKotlin = File("src/main/java/com"),
-            baseSwift = File("../../ios/com")
-        )
-        convertAndroidResourcesToSwift(
-            resourcesFolder = File("src/main/res"),
-            baseFolderForLocalizations = File("../../ios/localizations"),
-            outputFolder = File("../../ios/com/lightningkite/kwifttemplate/xml")
+            androidFolder = File("."),
+            iosFolder = File("../../ios/Kwift Template"),
+            clean = true
         )
         println("Finished")
     }
 }
-
-
-tasks.create("kwiftXml") {
+tasks.create("kwiftCreateAndroidLayoutClasses") {
     this.group = "build"
     doLast {
         println("Started")
         createAndroidLayoutClasses(
-            resourcesFolder = File("src/main/res"),
-            applicationPackage = "com.lightningkite.kwifttemplate",
-            outputFolder = File("src/main/java/com/lightningkite/kwifttemplate/xml")
+            androidFolder = File("."),
+            applicationPackage = "com.lightningkite.kwifttest"
         )
         println("Finished")
     }
+}
+tasks.create("kwiftConvertLayoutsToSwift") {
+    this.group = "build"
+    doLast {
+        println("Started")
+        convertLayoutsToSwift(
+            androidFolder = File("."),
+            iosFolder = File("../../ios/Kwift Template")
+        )
+        println("Finished")
+    }
+}
+tasks.create("kwiftConvertResourcesToIos") {
+    this.group = "build"
+    doLast {
+        println("Started")
+        convertResourcesToIos(
+            androidFolder = File("."),
+            iosFolder = File("../../ios/Kwift Template")
+        )
+        println("Finished")
+    }
+}
+tasks.create("kwiftIos") {
+    this.group = "build"
+    this.dependsOn("kwiftConvertKotlinToSwift")
+    this.dependsOn("kwiftConvertLayoutsToSwift")
+    this.dependsOn("kwiftConvertResourcesToIos")
+    this.dependsOn("kwiftCreateAndroidLayoutClasses")
 }

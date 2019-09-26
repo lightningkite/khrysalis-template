@@ -18,14 +18,15 @@ class SelectDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator() {
     override val title: String get() = "Select Demo"
 
     val options: List<ViewGenerator> = listOf(
-        ControlsDemoVG(stack),
+        ControlsDemoVG(),
         ExampleContentVG(),
         ViewPagerDemoVG(stack),
         SegmentedControlDemoVG(),
         SliderDemoVG(),
         WeekDemoVG(),
         DateRangeDemoVG(),
-        LoginDemoVG(stack)
+        LoginDemoVG(stack),
+        DrawableDemoVG()
     )
 
     fun selectVG(viewGenerator: ViewGenerator){

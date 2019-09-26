@@ -1,18 +1,15 @@
 package com.lightningkite.kwifttemplate.shared.views
 
 import android.view.View
-import com.lightningkite.kwift.actuals.weak
 import com.lightningkite.kwift.observables.actual.bind
 import com.lightningkite.kwift.observables.actual.bindString
-import com.lightningkite.kwift.observables.shared.ObservableStack
 import com.lightningkite.kwift.observables.shared.StandardObservableProperty
 import com.lightningkite.kwift.views.actual.ViewDependency
 import com.lightningkite.kwift.views.shared.ViewGenerator
 import com.lightningkite.kwifttemplate.xml.ControlsDemoXml
 import com.lightningkite.kwifttemplate.xml.RowTextXml
 
-class ControlsDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator() {
-    val stack: ObservableStack<ViewGenerator>? by weak(stack)
+class ControlsDemoVG() : ViewGenerator() {
     override val title: String get() = "Controls Demo"
 
     val text: StandardObservableProperty<String> = StandardObservableProperty("")
