@@ -75,7 +75,7 @@ tasks.create("kwiftCreateAndroidLayoutClasses") {
         println("Started")
         createAndroidLayoutClasses(
             androidFolder = File("."),
-            applicationPackage = "com.lightningkite.kwifttest"
+            applicationPackage = "com.lightningkite.kwifttemplate"
         )
         println("Finished")
     }
