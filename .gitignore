@@ -2,7 +2,7 @@ local.properties
 **/build
 
 **/Pods
-ios/kwift.xcworkspace
+ios/*.xcworkspace
 **/xcuserdata
 **.iml
 **/.idea
