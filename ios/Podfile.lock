@@ -1,0 +1,61 @@
+PODS:
+  - Alamofire (4.9.0)
+  - AlamofireImage (3.5.2):
+    - Alamofire (~> 4.8)
+  - Cosmos (19.0.3)
+  - Crashlytics (3.14.0):
+    - Fabric (~> 1.10.2)
+  - Fabric (1.10.2)
+  - FlexLayout (1.3.16)
+  - KeychainAccess (3.2.0)
+  - kwift (0.1.0):
+    - Alamofire
+    - AlamofireImage
+    - Cosmos (~> 19.0)
+    - Crashlytics
+    - Fabric
+    - FlexLayout
+    - KeychainAccess
+    - PinLayout
+    - QVRWeekView
+    - "UITextView+Placeholder"
+  - PinLayout (1.8.11)
+  - QVRWeekView (0.13.3)
+  - "UITextView+Placeholder (1.3.3)"
+
+DEPENDENCIES:
+  - kwift (from `/Users/josephivie/StudioProjects/kwift/kwift.podspec`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
+    - Cosmos
+    - Crashlytics
+    - Fabric
+    - FlexLayout
+    - KeychainAccess
+    - PinLayout
+    - QVRWeekView
+    - "UITextView+Placeholder"
+
+EXTERNAL SOURCES:
+  kwift:
+    :path: "/Users/josephivie/StudioProjects/kwift/kwift.podspec"
+
+SPEC CHECKSUMS:
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
+  Cosmos: a6fb17284281fa12cf4c85c2efecd440a215ec44
+  Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
+  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
+  FlexLayout: 2c9f7724c5218eb2f23c734dc4343141815a1681
+  KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
+  kwift: dfdcdb38be17f0666a98c84eb7b33f097e73c426
+  PinLayout: bbff13c7f635c55a7a10f6043867371c02df76a4
+  QVRWeekView: d3941741f5c5b324a097d30d4ea8f4c9a2c2c59c
+  "UITextView+Placeholder": c407b27599ea23cca425946fee3cf1db5d547008
+
+PODFILE CHECKSUM: c8c07bc2a415bf0359b335e2b6892b32679e4a4d
+
+COCOAPODS: 1.5.3

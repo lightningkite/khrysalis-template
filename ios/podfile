@@ -1,0 +1,8 @@
+
+platform :ios, '9.0'
+use_modular_headers!
+
+target 'Kwift Template' do
+#    pod 'kwift', :path => '/Users/josephivie/StudioProjects/kwift/kwift.podspec'
+    pod 'kwift', :git => 'https://github.com/lightningkite/kwift.git'
+end

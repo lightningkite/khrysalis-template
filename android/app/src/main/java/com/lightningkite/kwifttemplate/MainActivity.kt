@@ -22,10 +22,10 @@ class MainActivity : AccessibleActivity() {
         showDialogEvent.addWeak(view) { view, request ->
             val builder = AlertDialog.Builder(this)
             builder.setMessage(request.string.get(this))
-            if (request.confirmation != null) {
-                builder.setPositiveButton(R.string.ok) { dialog, which -> request.confirmation.invoke(); dialog.dismiss() }
+            request.confirmation?.let { conf ->
+                builder.setPositiveButton(R.string.ok) { dialog, which -> conf.invoke(); dialog.dismiss() }
                 builder.setNeutralButton(R.string.cancel) { dialog, which -> dialog.dismiss() }
-            } else {
+            } ?: run {
                 builder.setPositiveButton(R.string.ok) { dialog, which -> dialog.dismiss() }
             }
             builder

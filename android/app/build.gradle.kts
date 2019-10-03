@@ -30,10 +30,12 @@ android {
 
 repositories {
     maven("https://jitpack.io")
+    mavenLocal()
 }
 
 val kotlin_version = "1.3.41"
 dependencies {
+    implementation("com.lightningkite.kwift:android:0.1.0")
     testImplementation("junit:junit:4.12")
     androidTestImplementation("androidx.test:runner:1.2.0")
     androidTestImplementation("com.android.support.test.espresso:espresso-core:3.0.2")

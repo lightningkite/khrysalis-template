@@ -6,7 +6,7 @@
               android:layout_height="match_parent">
 
     <!--https://github.com/alamkanak/Android-Week-View-->
-    <com.alamkanak.weekview.WeekView
+    <com.lightningkite.kwift.views.android.WeekView
             android:id="@+id/week"
             android:layout_width="match_parent"
             android:layout_height="0px"
