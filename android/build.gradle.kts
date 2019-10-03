@@ -8,7 +8,6 @@ buildscript {
         mavenLocal()
     }
     dependencies {
-        classpath("com.lightningkite:kwift:0.1.0")
         classpath("com.android.tools.build:gradle:3.2.1")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
 

@@ -4,6 +4,15 @@ import com.lightningkite.kwift.layout.convertLayoutsToSwift
 import com.lightningkite.kwift.layout.createAndroidLayoutClasses
 import com.lightningkite.kwift.swift.convertKotlinToSwift
 
+buildscript {
+    repositories {
+        mavenLocal()
+    }
+    dependencies {
+        classpath("com.lightningkite.kwift:plugin:0.1.0")
+    }
+}
+
 plugins {
     id("com.android.application")
     id("kotlin-android")
