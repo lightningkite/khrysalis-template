@@ -6,8 +6,8 @@ import com.lightningkite.kwift.observables.shared.ObservableStack
 import com.lightningkite.kwift.observables.shared.StandardObservableProperty
 import com.lightningkite.kwift.views.actual.ViewDependency
 import com.lightningkite.kwift.views.shared.ViewGenerator
-import com.lightningkite.kwifttemplate.xml.RowTestXml
-import com.lightningkite.kwifttemplate.xml.ViewPagerDemoXml
+import com.lightningkite.kwifttemplate.layouts.RowTestXml
+import com.lightningkite.kwifttemplate.layouts.ViewPagerDemoXml
 
 class ViewPagerDemoVG(val stack: ObservableStack<ViewGenerator>) : ViewGenerator() {
     override val title: String get() = "View Pager Demo"

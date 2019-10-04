@@ -11,7 +11,7 @@ import com.lightningkite.kwift.shared.captureWeak
 import com.lightningkite.kwift.views.actual.ViewDependency
 import com.lightningkite.kwift.views.actual.onClick
 import com.lightningkite.kwift.views.shared.ViewGenerator
-import com.lightningkite.kwifttemplate.xml.MainXml
+import com.lightningkite.kwifttemplate.layouts.MainXml
 
 class MainVG : ViewGenerator() {
     override val title: String get() = "Main"

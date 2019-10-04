@@ -10,7 +10,7 @@ import com.lightningkite.kwift.views.actual.ViewDependency
 import com.lightningkite.kwift.views.actual.onClick
 import com.lightningkite.kwift.views.shared.*
 import com.lightningkite.kwifttemplate.R
-import com.lightningkite.kwifttemplate.xml.LoginDemoXml
+import com.lightningkite.kwifttemplate.layouts.LoginDemoXml
 
 class LoginDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator() {
     val stack: ObservableStack<ViewGenerator>? by weak(stack)

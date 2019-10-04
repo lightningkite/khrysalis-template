@@ -46,7 +46,7 @@ public class SelectDemoVG: ViewGenerator {
     
     public init(stack: ObservableStack<ViewGenerator>) {
         self.stack = stack
-        let options: Array<ViewGenerator> = [ControlsDemoVG(), ExampleContentVG(), ViewPagerDemoVG(stack), SegmentedControlDemoVG(), SliderDemoVG(), WeekDemoVG(), DateRangeDemoVG(), LoginDemoVG(stack), DrawableDemoVG()]
+        let options: Array<ViewGenerator> = [ControlsDemoVG(), ExampleContentVG(), ViewPagerDemoVG(stack), SegmentedControlDemoVG(), SliderDemoVG(), WeekDemoVG(), DateRangeDemoVG(), LoginDemoVG(stack), DrawableDemoVG(), PreviewVG()]
         self.options = options
         super.init()
     }

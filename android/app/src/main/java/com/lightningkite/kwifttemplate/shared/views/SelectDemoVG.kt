@@ -10,8 +10,8 @@ import com.lightningkite.kwift.shared.captureWeak
 import com.lightningkite.kwift.views.actual.ViewDependency
 import com.lightningkite.kwift.views.actual.onClick
 import com.lightningkite.kwift.views.shared.ViewGenerator
-import com.lightningkite.kwifttemplate.xml.RowTestXml
-import com.lightningkite.kwifttemplate.xml.SelectDemoXml
+import com.lightningkite.kwifttemplate.layouts.RowTestXml
+import com.lightningkite.kwifttemplate.layouts.SelectDemoXml
 
 class SelectDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator() {
     val stack: ObservableStack<ViewGenerator>? by weak(stack)
@@ -26,7 +26,8 @@ class SelectDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator() {
         WeekDemoVG(),
         DateRangeDemoVG(),
         LoginDemoVG(stack),
-        DrawableDemoVG()
+        DrawableDemoVG(),
+        PreviewVG()
     )
 
     fun selectVG(viewGenerator: ViewGenerator){

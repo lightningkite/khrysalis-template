@@ -7,7 +7,7 @@ import com.lightningkite.kwift.shared.captureWeak
 import com.lightningkite.kwift.views.actual.ViewDependency
 import com.lightningkite.kwift.views.actual.onClick
 import com.lightningkite.kwift.views.shared.ViewGenerator
-import com.lightningkite.kwifttemplate.xml.ExampleContentXml
+import com.lightningkite.kwifttemplate.layouts.ExampleContentXml
 
 class ExampleContentVG : ViewGenerator() {
     override val title: String get() = "Example Content"

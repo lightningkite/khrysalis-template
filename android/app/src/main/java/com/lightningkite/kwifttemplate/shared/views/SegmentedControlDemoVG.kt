@@ -5,7 +5,7 @@ import com.lightningkite.kwift.observables.actual.bind
 import com.lightningkite.kwift.observables.shared.StandardObservableProperty
 import com.lightningkite.kwift.views.actual.ViewDependency
 import com.lightningkite.kwift.views.shared.ViewGenerator
-import com.lightningkite.kwifttemplate.xml.SegmentedControlDemoXml
+import com.lightningkite.kwifttemplate.layouts.SegmentedControlDemoXml
 
 class SegmentedControlDemoVG() : ViewGenerator() {
     override val title: String get() = "Segmented Control Demo"

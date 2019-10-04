@@ -9,7 +9,7 @@ import com.lightningkite.kwift.observables.shared.ConstantObservableProperty
 import com.lightningkite.kwift.views.actual.ViewDependency
 import com.lightningkite.kwift.views.shared.ViewGenerator
 import com.lightningkite.kwifttemplate.R
-import com.lightningkite.kwifttemplate.xml.WeekDemoXml
+import com.lightningkite.kwifttemplate.layouts.WeekDemoXml
 import java.util.*
 
 class WeekDemoVG() : ViewGenerator() {

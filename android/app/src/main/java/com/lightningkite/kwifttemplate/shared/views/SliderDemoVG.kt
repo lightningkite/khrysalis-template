@@ -9,7 +9,7 @@ import com.lightningkite.kwift.observables.shared.StandardObservableProperty
 import com.lightningkite.kwift.observables.shared.transformed
 import com.lightningkite.kwift.views.actual.ViewDependency
 import com.lightningkite.kwift.views.shared.ViewGenerator
-import com.lightningkite.kwifttemplate.xml.SliderDemoXml
+import com.lightningkite.kwifttemplate.layouts.SliderDemoXml
 
 class SliderDemoVG() : ViewGenerator() {
     override val title: String get() = "Slider Demo"

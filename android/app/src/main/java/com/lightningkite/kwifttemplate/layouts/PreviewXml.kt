@@ -1,5 +1,5 @@
 //
-// RowTextXml.swift
+// PreviewXml.swift
 // Created by Kwift XML Android
 //
 package com.lightningkite.kwifttemplate.layouts
@@ -10,17 +10,20 @@ import android.widget.TextView
 import com.lightningkite.kwift.views.actual.ViewDependency
 import com.lightningkite.kwifttemplate.R
 
-class RowTextXml {
+class PreviewXml {
 
-    lateinit var label: TextView
+    lateinit var viewName: TextView
+    lateinit var pager: androidx.viewpager.widget.ViewPager
 
 
     fun setup(dependency: ViewDependency): View {
-        val view = LayoutInflater.from(dependency.context).inflate(R.layout.row_text, null, false)
+        val view = LayoutInflater.from(dependency.context).inflate(R.layout.preview, null, false)
         return setup(view)
     }
+
     fun setup(view: View): View {
-        label = view.findViewById<TextView>(R.id.label)
+        viewName = view.findViewById<TextView>(R.id.viewName)
+        pager = view.findViewById<androidx.viewpager.widget.ViewPager>(R.id.pager)
 
         return view
     }

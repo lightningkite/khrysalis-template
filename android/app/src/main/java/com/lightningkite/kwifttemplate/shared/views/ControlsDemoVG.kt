@@ -6,8 +6,8 @@ import com.lightningkite.kwift.observables.actual.bindString
 import com.lightningkite.kwift.observables.shared.StandardObservableProperty
 import com.lightningkite.kwift.views.actual.ViewDependency
 import com.lightningkite.kwift.views.shared.ViewGenerator
-import com.lightningkite.kwifttemplate.xml.ControlsDemoXml
-import com.lightningkite.kwifttemplate.xml.RowTextXml
+import com.lightningkite.kwifttemplate.layouts.ControlsDemoXml
+import com.lightningkite.kwifttemplate.layouts.RowTextXml
 
 class ControlsDemoVG() : ViewGenerator() {
     override val title: String get() = "Controls Demo"

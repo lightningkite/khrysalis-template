@@ -4,10 +4,12 @@
 //
 package com.lightningkite.kwifttemplate.layouts
 
-import android.widget.*
-import android.view.*
-import com.lightningkite.kwift.views.actual.*
-import com.lightningkite.kwift.views.shared.*
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.FrameLayout
+import android.widget.ImageButton
+import android.widget.TextView
+import com.lightningkite.kwift.views.actual.ViewDependency
 import com.lightningkite.kwifttemplate.R
 
 class MainXml {
