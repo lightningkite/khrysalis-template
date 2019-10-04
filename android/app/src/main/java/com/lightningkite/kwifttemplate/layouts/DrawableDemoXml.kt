@@ -4,9 +4,10 @@
 //
 package com.lightningkite.kwifttemplate.layouts
 
-import android.view.LayoutInflater
-import android.view.View
-import com.lightningkite.kwift.views.actual.ViewDependency
+import android.widget.*
+import android.view.*
+import com.lightningkite.kwift.views.actual.*
+import com.lightningkite.kwift.views.shared.*
 import com.lightningkite.kwifttemplate.R
 
 class DrawableDemoXml {
@@ -16,7 +17,6 @@ class DrawableDemoXml {
         val view = LayoutInflater.from(dependency.context).inflate(R.layout.drawable_demo, null, false)
         return setup(view)
     }
-
     fun setup(view: View): View {
 
 

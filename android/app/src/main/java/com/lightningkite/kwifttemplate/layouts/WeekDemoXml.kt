@@ -4,9 +4,10 @@
 //
 package com.lightningkite.kwifttemplate.layouts
 
-import android.view.LayoutInflater
-import android.view.View
-import com.lightningkite.kwift.views.actual.ViewDependency
+import android.widget.*
+import android.view.*
+import com.lightningkite.kwift.views.actual.*
+import com.lightningkite.kwift.views.shared.*
 import com.lightningkite.kwifttemplate.R
 
 class WeekDemoXml {
@@ -18,7 +19,6 @@ class WeekDemoXml {
         val view = LayoutInflater.from(dependency.context).inflate(R.layout.week_demo, null, false)
         return setup(view)
     }
-
     fun setup(view: View): View {
         week = view.findViewById<com.lightningkite.kwift.views.android.WeekView>(R.id.week)
 

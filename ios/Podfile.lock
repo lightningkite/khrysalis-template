@@ -25,6 +25,7 @@ PODS:
 
 DEPENDENCIES:
   - Kwift (from `~/StudioProjects/kwift/kwift.podspec`)
+  - QVRWeekView (from `https://github.com/Quivr/iOS-Week-View.git`)
 
 SPEC REPOS:
   trunk:
@@ -36,12 +37,18 @@ SPEC REPOS:
     - FlexLayout
     - KeychainAccess
     - PinLayout
-    - QVRWeekView
     - "UITextView+Placeholder"
 
 EXTERNAL SOURCES:
   Kwift:
     :path: "~/StudioProjects/kwift/kwift.podspec"
+  QVRWeekView:
+    :git: https://github.com/Quivr/iOS-Week-View.git
+
+CHECKOUT OPTIONS:
+  QVRWeekView:
+    :commit: 964b7cbbf106979f0538eebdb8c07c64883eccbc
+    :git: https://github.com/Quivr/iOS-Week-View.git
 
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
@@ -56,6 +63,6 @@ SPEC CHECKSUMS:
   QVRWeekView: d3941741f5c5b324a097d30d4ea8f4c9a2c2c59c
   "UITextView+Placeholder": c407b27599ea23cca425946fee3cf1db5d547008
 
-PODFILE CHECKSUM: ce77be78291c630d2a114d729dd70fd77d9eb5b9
+PODFILE CHECKSUM: b13f2096f911a2c6698b855bce4b7a4996b78a93
 
 COCOAPODS: 1.8.1

@@ -1,5 +1,6 @@
 //Automatically created by Kwift
 import UIKit
+import Kwift
 
 extension ResourcesDrawables {
 

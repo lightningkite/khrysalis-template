@@ -4,10 +4,10 @@
 //
 package com.lightningkite.kwifttemplate.layouts
 
-import android.view.LayoutInflater
-import android.view.View
-import android.widget.TextView
-import com.lightningkite.kwift.views.actual.ViewDependency
+import android.widget.*
+import android.view.*
+import com.lightningkite.kwift.views.actual.*
+import com.lightningkite.kwift.views.shared.*
 import com.lightningkite.kwifttemplate.R
 
 class RowTextXml {
@@ -19,7 +19,6 @@ class RowTextXml {
         val view = LayoutInflater.from(dependency.context).inflate(R.layout.row_text, null, false)
         return setup(view)
     }
-
     fun setup(view: View): View {
         label = view.findViewById<TextView>(R.id.label)
 

@@ -4,9 +4,10 @@
 //
 package com.lightningkite.kwifttemplate.layouts
 
-import android.view.LayoutInflater
-import android.view.View
-import com.lightningkite.kwift.views.actual.ViewDependency
+import android.widget.*
+import android.view.*
+import com.lightningkite.kwift.views.actual.*
+import com.lightningkite.kwift.views.shared.*
 import com.lightningkite.kwifttemplate.R
 
 class ViewPagerDemoXml {
@@ -19,7 +20,6 @@ class ViewPagerDemoXml {
         val view = LayoutInflater.from(dependency.context).inflate(R.layout.view_pager_demo, null, false)
         return setup(view)
     }
-
     fun setup(view: View): View {
         viewPager = view.findViewById<androidx.viewpager.widget.ViewPager>(R.id.viewPager)
         viewPagerIndicator = view.findViewById<com.rd.PageIndicatorView>(R.id.viewPagerIndicator)

@@ -4,12 +4,10 @@
 //
 package com.lightningkite.kwifttemplate.layouts
 
-import android.view.LayoutInflater
-import android.view.View
-import android.widget.EditText
-import android.widget.Spinner
-import android.widget.TextView
-import com.lightningkite.kwift.views.actual.ViewDependency
+import android.widget.*
+import android.view.*
+import com.lightningkite.kwift.views.actual.*
+import com.lightningkite.kwift.views.shared.*
 import com.lightningkite.kwifttemplate.R
 
 class ControlsDemoXml {
@@ -24,7 +22,6 @@ class ControlsDemoXml {
         val view = LayoutInflater.from(dependency.context).inflate(R.layout.controls_demo, null, false)
         return setup(view)
     }
-
     fun setup(view: View): View {
         editableText = view.findViewById<EditText>(R.id.editableText)
         editableTextCopy = view.findViewById<TextView>(R.id.editableTextCopy)

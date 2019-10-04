@@ -67,16 +67,20 @@ dependencies {
 }
 
 KwiftSettings.verbose = true
+val androidBase = project.projectDir
+val iosBase = project.projectDir.resolve("../../ios/Kwift Template")
 
 tasks.create("kwiftConvertKotlinToSwift") {
     this.group = "build"
     doLast {
         println("Started")
         convertKotlinToSwift(
-            androidFolder = File("."),
-            iosFolder = File("../../ios/Kwift Template"),
+            androidFolder = androidBase,
+            iosFolder = iosBase,
             clean = true
-        )
+        ) {
+            imports = listOf("Kwift")
+        }
         println("Finished")
     }
 }
@@ -85,7 +89,7 @@ tasks.create("kwiftCreateAndroidLayoutClasses") {
     doLast {
         println("Started")
         createAndroidLayoutClasses(
-            androidFolder = File("."),
+            androidFolder = androidBase,
             applicationPackage = "com.lightningkite.kwifttemplate"
         )
         println("Finished")
@@ -96,8 +100,8 @@ tasks.create("kwiftConvertLayoutsToSwift") {
     doLast {
         println("Started")
         convertLayoutsToSwift(
-            androidFolder = File("."),
-            iosFolder = File("../../ios/Kwift Template")
+            androidFolder = androidBase,
+            iosFolder = iosBase
         )
         println("Finished")
     }
@@ -107,8 +111,8 @@ tasks.create("kwiftConvertResourcesToIos") {
     doLast {
         println("Started")
         convertResourcesToIos(
-            androidFolder = File("."),
-            iosFolder = File("../../ios/Kwift Template")
+            androidFolder = androidBase,
+            iosFolder = iosBase
         )
         println("Finished")
     }

@@ -5,6 +5,7 @@
 
 import Foundation
 import UIKit
+import Kwift
 
 
 public enum ResourcesStrings {

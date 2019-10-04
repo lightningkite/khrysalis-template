@@ -6,6 +6,7 @@
 import UIKit
 import FlexLayout
 import PinLayout
+import Kwift
 
 class ControlsDemoXml {
     
