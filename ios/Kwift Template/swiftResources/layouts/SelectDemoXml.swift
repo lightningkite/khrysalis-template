@@ -14,37 +14,43 @@ class SelectDemoXml {
     unowned var xmlRoot: UIView!
     
     func setup(_ dependency: ViewDependency) -> UIView {
-        let result = { () -> UIView in 
-            let view = UIView(frame: .zero)
-            view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-            view.flex.direction(.column).padding(0, 0, 0, 0).alignContent(.start).justifyContent(.start).define{ (flex) in 
-                flex.addItem({ () -> UILabel in 
-                    let view = UILabel(frame: .zero)
-                    view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-                    view.text = ResourcesStrings.selectDemo
-                    view.numberOfLines = 0
-                    view.font = UIFont.get(size: 24, style: ["bold"])
-                    view.textColor = UIColor(argb: 0xFF000000)
-                    view.textAlignment = .center
-                    view.baselineAdjustment = .alignCenters
-                    return view
-                }()
-                ).margin(16, 16, 16, 16).alignSelf(.stretch)
-                
-                flex.addItem({ () -> UITableView in 
-                    let view = UITableView(frame: .zero)
-                    self.list = view
-                    view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-                    return view
-                }()
-                ).margin(0, 0, 0, 0).grow(1.0).shrink(1.0).alignSelf(.stretch)
-                
-            }
-            return view
-        }()
+        let view = LinearLayout(frame: .zero)
+        view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        view.orientation = .y
+        view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
-        xmlRoot = result
-        return result
+        view.addSubview(
+            UILabel(frame: .zero),
+            minimumSize: CGSize(width: 0, height: 0),
+            size: CGSize(width: 0, height: 0),
+            margin: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16),
+            gravity: .topFill,
+            weight: 0
+        ) { view in 
+            view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            view.text = ResourcesStrings.selectDemo
+            view.numberOfLines = 0
+            view.font = UIFont.get(size: 24, style: ["bold"])
+            view.textColor = UIColor(argb: 0xFF000000)
+            view.textAlignment = .center
+            view.baselineAdjustment = .alignCenters
+        }
+        
+        view.addSubview(
+            UITableView(frame: .zero),
+            minimumSize: CGSize(width: 0, height: 0),
+            size: CGSize(width: 0, height: 0),
+            margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+            gravity: .topFill,
+            weight: 1.0
+        ) { view in 
+            self.list = view
+            view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        }
+        
+        
+        xmlRoot = view
+        return view
     }
     
 }

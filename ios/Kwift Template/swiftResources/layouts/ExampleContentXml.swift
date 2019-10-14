@@ -15,98 +15,112 @@ class ExampleContentXml {
     unowned var xmlRoot: UIView!
     
     func setup(_ dependency: ViewDependency) -> UIView {
-        let result = LinearLayout(frame: .zero)
-        result.orientation = .y
-        
-        func addOrientationTest(color: UIColor, align: Align, weight: CGFloat = 0) {
-            let view = UIView(frame: .zero)
-            view.backgroundColor = color
-            result.addSubview(view, LinearLayout.LayoutParams(
-                size: CGSize(width: 20, height: 20),
+        let view = UIScrollView(frame: .zero)
+        view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        view.addVerticalSubview(LinearLayout(frame: .zero)) { view in 
+            view.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+            view.orientation = .y
+            view.padding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+            
+            view.addSubview(
+                UILabel(frame: .zero),
+                minimumSize: CGSize(width: 0, height: 0),
+                size: CGSize(width: 0, height: 0),
                 margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
-                gravity: AlignPair(horizontal: align, vertical: .start),
-                weight: weight
-            ))
+                gravity: .topLeft,
+                weight: 0
+            ) { view in 
+                view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+                view.text = ResourcesStrings.welcome
+                view.numberOfLines = 0
+                view.font = UIFont.get(size: 24, style: ["bold"])
+                view.textColor = UIColor(argb: 0xFF000000)
+            }
+            
+            view.addSubview(
+                UILabel(frame: .zero),
+                minimumSize: CGSize(width: 0, height: 0),
+                size: CGSize(width: 0, height: 0),
+                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                gravity: .topLeft,
+                weight: 0
+            ) { view in 
+                view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+                view.text = ResourcesStrings.welcomeMessage
+                view.numberOfLines = 0
+                view.font = UIFont.get(size: 16, style: [])
+                view.textColor = UIColor(argb: 0xFF222222)
+            }
+            
+            view.addSubview(
+                LinearLayout(frame: .zero),
+                minimumSize: CGSize(width: 0, height: 0),
+                size: CGSize(width: 0, height: 0),
+                margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                gravity: .topFill,
+                weight: 0
+            ) { view in 
+                view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+                view.orientation = .x
+                view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+                
+                view.addSubview(
+                    UILabel(frame: .zero),
+                    minimumSize: CGSize(width: 0, height: 0),
+                    size: CGSize(width: 0, height: 0),
+                    margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                    gravity: .centerCenter,
+                    weight: 1.0
+                ) { view in 
+                    self.exampleContentNumber = view
+                    view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+                    view.text = "0"
+                    view.numberOfLines = 0
+                    view.font = UIFont.get(size: 16, style: [])
+                    view.textColor = UIColor(argb: 0xFF222222)
+                }
+                
+                view.addSubview(
+                    UIButton(frame: .zero),
+                    minimumSize: CGSize(width: 0, height: 0),
+                    size: CGSize(width: 0, height: 0),
+                    margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                    gravity: .centerCenter,
+                    weight: 0
+                ) { view in 
+                    self.exampleContentIncrement = view
+                    view.backgroundLayer = ResourcesDrawables.buttonPrimary(view: view)
+                    view.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+                    view.setTitle(ResourcesStrings.incrementTheNumber, for: .normal)
+                    view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
+                    view.contentHorizontalAlignment = .center
+                    view.contentMode = .scaleAspectFit
+                    view.contentEdgeInsets = UIEdgeInsets(top: 8, left:8, bottom:8, right:8)
+                    view.titleLabel?.text = ResourcesStrings.incrementTheNumber
+                    view.titleLabel?.numberOfLines = 0
+                    view.titleLabel?.font = UIFont.get(size: 16, style: [])
+                    view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
+                }
+                
+            }
+            
+            view.addSubview(
+                UIImageView(frame: .zero),
+                minimumSize: CGSize(width: 0, height: 0),
+                size: CGSize(width: 100, height: 50),
+                margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                gravity: .topLeft,
+                weight: 0
+            ) { view in 
+                view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+                view.image = UIImage(named: "reason_expertise") ?? ResourcesDrawables.reasonExpertise(view: view).toImage()?.withInset(insets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+                view.contentMode = .scaleAspectFit
+            }
+            
         }
         
-        addOrientationTest(color: .red, align: .start)
-        addOrientationTest(color: .red, align: .center)
-        addOrientationTest(color: .red, align: .end)
-        addOrientationTest(color: .red, align: .start)
-        addOrientationTest(color: .red, align: .center)
-        addOrientationTest(color: .red, align: .end)
-        addOrientationTest(color: .green, align: .fill)
-        addOrientationTest(color: .red, align: .start)
-        addOrientationTest(color: .red, align: .center)
-        addOrientationTest(color: .red, align: .end)
-        
-        
-        let horizontal = LinearLayout(frame: .zero)
-        horizontal.orientation = .x
-        
-        let numLabel = UILabel(frame: .zero)
-        numLabel.text = "0"
-        horizontal.addSubview(numLabel, LinearLayout.LayoutParams(
-            size: .zero,
-            margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
-            gravity: .center,
-            weight: 1
-        ))
-        exampleContentNumber = numLabel
-        
-        let button = UIButton(frame: .zero)
-        button.setTitle("Increment", for: .normal)
-        button.backgroundLayer = ResourcesDrawables.buttonPrimary(view: button)
-        horizontal.addSubview(button, LinearLayout.LayoutParams(
-            size: .zero,
-            margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
-            gravity: .center,
-            weight: 0
-        ))
-        exampleContentIncrement = button
-        
-        result.addSubview(horizontal, LinearLayout.LayoutParams(
-            size: .zero,
-            margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
-            gravity: AlignPair(horizontal: .fill, vertical: .start),
-            weight: 0
-        ))
-        
-        let frame = FrameLayout(frame: .zero)
-        func addFrameTest(color: UIColor, align: AlignPair) {
-            let sub = UIView()
-            sub.backgroundColor = color
-            frame.addSubview(sub, FrameLayout.LayoutParams(
-                size: CGSize(width: 20, height: 20),
-                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
-                gravity: align
-            ))
-        }
-        addFrameTest(color: .black, align: .fill)
-        addFrameTest(color: .red, align: .topFill)
-        addFrameTest(color: .red, align: .centerFill)
-        addFrameTest(color: .red, align: .bottomFill)
-        addFrameTest(color: .green, align: .fillLeft)
-        addFrameTest(color: .green, align: .fillCenter)
-        addFrameTest(color: .green, align: .fillRight)
-        addFrameTest(color: .blue, align: .topLeft)
-        addFrameTest(color: .blue, align: .topCenter)
-        addFrameTest(color: .blue, align: .topRight)
-        addFrameTest(color: .blue, align: .centerLeft)
-        addFrameTest(color: .blue, align: .centerCenter)
-        addFrameTest(color: .blue, align: .centerRight)
-        addFrameTest(color: .blue, align: .bottomLeft)
-        addFrameTest(color: .blue, align: .bottomCenter)
-        addFrameTest(color: .blue, align: .bottomRight)
-        result.addSubview(frame, LinearLayout.LayoutParams(
-            size: .zero,
-            margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
-            gravity: AlignPair(horizontal: .fill, vertical: .start),
-            weight: 1
-        ))
-        
-        xmlRoot = result
-        return result
+        xmlRoot = view
+        return view
     }
     
 }

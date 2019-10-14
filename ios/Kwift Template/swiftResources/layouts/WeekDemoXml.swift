@@ -14,24 +14,26 @@ class WeekDemoXml {
     unowned var xmlRoot: UIView!
     
     func setup(_ dependency: ViewDependency) -> UIView {
-        let result = { () -> UIView in 
-            let view = UIView(frame: .zero)
-            view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-            view.flex.direction(.column).padding(0, 0, 0, 0).alignContent(.start).justifyContent(.start).define{ (flex) in 
-                flex.addItem({ () -> UIWeekView in 
-                    let view = UIWeekView(frame: .zero)
-                    self.week = view
-                    view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-                    return view
-                }()
-                ).margin(0, 0, 0, 0).grow(1.0).shrink(1.0).alignSelf(.stretch)
-                
-            }
-            return view
-        }()
+        let view = LinearLayout(frame: .zero)
+        view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        view.orientation = .y
+        view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
-        xmlRoot = result
-        return result
+        view.addSubview(
+            UIWeekView(frame: .zero),
+            minimumSize: CGSize(width: 0, height: 0),
+            size: CGSize(width: 0, height: 0),
+            margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+            gravity: .topFill,
+            weight: 1.0
+        ) { view in 
+            self.week = view
+            view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        }
+        
+        
+        xmlRoot = view
+        return view
     }
     
 }
