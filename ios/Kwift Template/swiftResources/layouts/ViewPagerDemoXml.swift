@@ -10,11 +10,12 @@ import Kwift
 
 class ViewPagerDemoXml {
     
-    weak var viewPagerIndicator: UIPageControl!
-    weak var viewPager: UICollectionView!
+    unowned var viewPagerIndicator: UIPageControl!
+    unowned var viewPager: UICollectionView!
+    unowned var xmlRoot: UIView!
     
     func setup(_ dependency: ViewDependency) -> UIView {
-        return { () -> UIView in 
+        let result = { () -> UIView in 
             let view = UIView(frame: .zero)
             view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             view.addSubview({
@@ -30,7 +31,7 @@ class ViewPagerDemoXml {
                 
                 view.addOnLayoutSubviews { [weak view, weak sub] in
                     if let view = view, let sub = sub {
-                        sub.pin.width(100%).height(100%)
+                        sub.pin.left(0 + 0).right(0 + 0).top(0 + 0).bottom(0 + 0)
                     }
                 }
                 return sub
@@ -48,7 +49,9 @@ class ViewPagerDemoXml {
                 
                 view.addOnLayoutSubviews { [weak view, weak sub] in
                     if let view = view, let sub = sub {
-                        sub.pin.width(sub.intrinsicContentSize.width).height(sub.intrinsicContentSize.height).hCenter().bottom(8 + 0)
+                        sub.flex.layout(mode: .adjustWidth)
+                        sub.flex.layout(mode: .adjustHeight)
+                        sub.pin.hCenter((-8 + 8) / 2).bottom(8 + 0)
                     }
                 }
                 return sub
@@ -57,6 +60,8 @@ class ViewPagerDemoXml {
             return view
         }()
         
+        xmlRoot = result
+        return result
     }
     
 }

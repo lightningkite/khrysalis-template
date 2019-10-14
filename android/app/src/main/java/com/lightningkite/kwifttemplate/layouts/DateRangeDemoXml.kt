@@ -14,12 +14,14 @@ class DateRangeDemoXml {
     lateinit var select: com.lightningkite.kwift.views.android.SelectDayView
     lateinit var range: com.lightningkite.kwift.views.android.SelectDateRangeView
 
+    lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
         val view = LayoutInflater.from(dependency.context).inflate(R.layout.date_range_demo, null, false)
         return setup(view)
     }
     fun setup(view: View): View {
+        xmlRoot = view
         select = view.findViewById<com.lightningkite.kwift.views.android.SelectDayView>(R.id.select)
         range = view.findViewById<com.lightningkite.kwift.views.android.SelectDateRangeView>(R.id.range)
 

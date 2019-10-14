@@ -5,8 +5,8 @@
 
 package com.lightningkite.kwifttemplate.shared.api
 
-import com.lightningkite.kwift.actuals.HttpClient
-import com.lightningkite.kwift.actuals.escaping
+import com.lightningkite.kwift.actual.HttpClient
+import com.lightningkite.kwift.actual.escaping
 import com.lightningkite.kwifttemplate.shared.models.Post
 
 

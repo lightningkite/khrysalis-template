@@ -11,9 +11,10 @@ import Kwift
 class DrawableDemoXml {
     
     
+    unowned var xmlRoot: UIView!
     
     func setup(_ dependency: ViewDependency) -> UIView {
-        return { () -> UIScrollView in 
+        let result = { () -> UIScrollView in 
             let view = UIScrollView(frame: .zero)
             view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             view.flex.direction(.column).alignContent(.center).addItem({
@@ -49,7 +50,7 @@ class DrawableDemoXml {
                                     view.titleLabel?.font = UIFont.get(size: 12, style: [])
                                     return view
                                 }()
-                                ).margin(8, 8, 8, 8).grow(1).shrink(1).width(0).height(50).alignSelf(.center)
+                                ).margin(8, 8, 8, 8).grow(1.0).shrink(1.0).height(50).alignSelf(.center)
                                 
                                 flex.addItem({ () -> UIButton in 
                                     let view = UIButton(frame: .zero)
@@ -64,7 +65,7 @@ class DrawableDemoXml {
                                     view.titleLabel?.font = UIFont.get(size: 12, style: [])
                                     return view
                                 }()
-                                ).margin(8, 8, 8, 8).grow(1).shrink(1).width(0).height(50).alignSelf(.center)
+                                ).margin(8, 8, 8, 8).grow(1.0).shrink(1.0).height(50).alignSelf(.center)
                                 
                                 flex.addItem({ () -> UIButton in 
                                     let view = UIButton(frame: .zero)
@@ -79,7 +80,7 @@ class DrawableDemoXml {
                                     view.titleLabel?.font = UIFont.get(size: 12, style: [])
                                     return view
                                 }()
-                                ).margin(8, 8, 8, 8).grow(1).shrink(1).width(0).height(50).alignSelf(.center)
+                                ).margin(8, 8, 8, 8).grow(1.0).shrink(1.0).height(50).alignSelf(.center)
                                 
                             }
                             return view
@@ -97,7 +98,7 @@ class DrawableDemoXml {
                                     view.contentMode = .scaleAspectFit
                                     return view
                                 }()
-                                ).margin(8, 8, 8, 8).grow(1).shrink(1).width(0).height(50).alignSelf(.center)
+                                ).margin(8, 8, 8, 8).grow(1.0).shrink(1.0).height(50).alignSelf(.center)
                                 
                                 flex.addItem({ () -> UIButton in 
                                     let view = UIButton(frame: .zero)
@@ -112,7 +113,7 @@ class DrawableDemoXml {
                                     view.titleLabel?.font = UIFont.get(size: 12, style: [])
                                     return view
                                 }()
-                                ).margin(8, 8, 8, 8).grow(1).shrink(1).width(0).height(50).alignSelf(.center)
+                                ).margin(8, 8, 8, 8).grow(1.0).shrink(1.0).height(50).alignSelf(.center)
                                 
                                 flex.addItem({ () -> UIImageView in 
                                     let view = UIImageView(frame: .zero)
@@ -122,7 +123,7 @@ class DrawableDemoXml {
                                     view.contentMode = .scaleAspectFit
                                     return view
                                 }()
-                                ).margin(8, 8, 8, 8).grow(1).shrink(1).width(0).height(50).alignSelf(.center)
+                                ).margin(8, 8, 8, 8).grow(1.0).shrink(1.0).height(50).alignSelf(.center)
                                 
                             }
                             return view
@@ -140,7 +141,7 @@ class DrawableDemoXml {
                                     view.contentMode = .scaleAspectFit
                                     return view
                                 }()
-                                ).margin(8, 8, 8, 8).grow(1).shrink(1).width(0).height(50).alignSelf(.center)
+                                ).margin(8, 8, 8, 8).grow(1.0).shrink(1.0).height(50).alignSelf(.center)
                                 
                                 flex.addItem({ () -> UIImageView in 
                                     let view = UIImageView(frame: .zero)
@@ -149,7 +150,7 @@ class DrawableDemoXml {
                                     view.contentMode = .scaleAspectFit
                                     return view
                                 }()
-                                ).margin(8, 8, 8, 8).grow(1).shrink(1).width(0).height(50).alignSelf(.center)
+                                ).margin(8, 8, 8, 8).grow(1.0).shrink(1.0).height(50).alignSelf(.center)
                                 
                                 flex.addItem({ () -> UIImageView in 
                                     let view = UIImageView(frame: .zero)
@@ -158,7 +159,7 @@ class DrawableDemoXml {
                                     view.contentMode = .scaleAspectFit
                                     return view
                                 }()
-                                ).margin(8, 8, 8, 8).grow(1).shrink(1).width(0).height(50).alignSelf(.center)
+                                ).margin(8, 8, 8, 8).grow(1.0).shrink(1.0).height(50).alignSelf(.center)
                                 
                             }
                             return view
@@ -184,6 +185,8 @@ class DrawableDemoXml {
             return view
         }()
         
+        xmlRoot = result
+        return result
     }
     
 }

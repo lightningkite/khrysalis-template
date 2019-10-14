@@ -10,11 +10,12 @@ import Kwift
 
 class RowTestXml {
     
-    weak var button: UIButton!
-    weak var label: UILabel!
+    unowned var button: UIButton!
+    unowned var label: UILabel!
+    unowned var xmlRoot: UIView!
     
     func setup(_ dependency: ViewDependency) -> UIView {
-        return { () -> UIView in 
+        let result = { () -> UIView in 
             let view = UIView(frame: .zero)
             view.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
             view.flex.direction(.row).padding(8, 8, 8, 8).alignContent(.center).justifyContent(.center).define{ (flex) in 
@@ -28,7 +29,7 @@ class RowTestXml {
                     view.textColor = UIColor(argb: 0xFF222222)
                     return view
                 }()
-                ).margin(8, 8, 8, 8).grow(1).shrink(1).width(0).alignSelf(.center)
+                ).margin(8, 8, 8, 8).grow(1.0).shrink(1.0).alignSelf(.center)
                 
                 flex.addItem({ () -> UIButton in 
                     let view = UIButton(frame: .zero)
@@ -52,6 +53,8 @@ class RowTestXml {
             return view
         }()
         
+        xmlRoot = result
+        return result
     }
     
 }

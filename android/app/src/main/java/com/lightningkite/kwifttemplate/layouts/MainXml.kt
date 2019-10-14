@@ -18,12 +18,14 @@ class MainXml {
     lateinit var title: TextView
     lateinit var mainContent: FrameLayout
 
+    lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
         val view = LayoutInflater.from(dependency.context).inflate(R.layout.main, null, false)
         return setup(view)
     }
     fun setup(view: View): View {
+        xmlRoot = view
         mainBack = view.findViewById<ImageButton>(R.id.mainBack)
         title = view.findViewById<TextView>(R.id.title)
         mainContent = view.findViewById<FrameLayout>(R.id.mainContent)

@@ -19,12 +19,14 @@ class ControlsDemoXml {
     lateinit var editableTextBig: com.lightningkite.kwift.views.android.MultilineEditText
     lateinit var spinner: Spinner
 
+    lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
         val view = LayoutInflater.from(dependency.context).inflate(R.layout.controls_demo, null, false)
         return setup(view)
     }
     fun setup(view: View): View {
+        xmlRoot = view
         editableText = view.findViewById<EditText>(R.id.editableText)
         editableTextCopy = view.findViewById<TextView>(R.id.editableTextCopy)
         editableTextBig =

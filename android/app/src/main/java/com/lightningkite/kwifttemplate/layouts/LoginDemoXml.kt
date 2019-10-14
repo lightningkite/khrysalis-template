@@ -20,12 +20,14 @@ class LoginDemoXml {
     lateinit var agree: CheckBox
     lateinit var submit: Button
 
+    lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
         val view = LayoutInflater.from(dependency.context).inflate(R.layout.login_demo, null, false)
         return setup(view)
     }
     fun setup(view: View): View {
+        xmlRoot = view
         username = view.findViewById<EditText>(R.id.username)
         password = view.findViewById<EditText>(R.id.password)
         verifyPassword = view.findViewById<EditText>(R.id.verifyPassword)

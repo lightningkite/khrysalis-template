@@ -10,19 +10,20 @@ import Kwift
 
 class SliderDemoXml {
     
-    weak var slider: UISlider!
-    weak var valueDisplay: UILabel!
-    weak var ratingDisplayNumber: UILabel!
-    weak var ratingDisplayStars: UIRatingBar!
-    weak var ratingDisplayNumberFloat: UILabel!
-    weak var rating: UIRatingBar!
-    weak var ratingFloat: UIRatingBar!
-    weak var ratingDisplayStarsFloat: UIRatingBar!
-    weak var ratingDisplayStarsSmall: UIRatingBar!
-    weak var ratingDisplayStarsSmallFloat: UIRatingBar!
+    unowned var slider: UISlider!
+    unowned var valueDisplay: UILabel!
+    unowned var ratingDisplayNumber: UILabel!
+    unowned var ratingDisplayStars: UIRatingBar!
+    unowned var ratingDisplayNumberFloat: UILabel!
+    unowned var rating: UIRatingBar!
+    unowned var ratingFloat: UIRatingBar!
+    unowned var ratingDisplayStarsFloat: UIRatingBar!
+    unowned var ratingDisplayStarsSmall: UIRatingBar!
+    unowned var ratingDisplayStarsSmallFloat: UIRatingBar!
+    unowned var xmlRoot: UIView!
     
     func setup(_ dependency: ViewDependency) -> UIView {
-        return { () -> UIScrollView in 
+        let result = { () -> UIScrollView in 
             let view = UIScrollView(frame: .zero)
             view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             view.flex.direction(.column).alignContent(.center).addItem({
@@ -172,6 +173,8 @@ class SliderDemoXml {
             return view
         }()
         
+        xmlRoot = result
+        return result
     }
     
 }

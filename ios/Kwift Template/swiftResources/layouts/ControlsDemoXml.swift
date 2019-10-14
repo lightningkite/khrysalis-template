@@ -10,13 +10,14 @@ import Kwift
 
 class ControlsDemoXml {
     
-    weak var editableText: UITextField!
-    weak var editableTextCopy: UILabel!
-    weak var editableTextBig: UITextView!
-    weak var spinner: Dropdown!
+    unowned var editableText: UITextField!
+    unowned var editableTextCopy: UILabel!
+    unowned var editableTextBig: UITextView!
+    unowned var spinner: Dropdown!
+    unowned var xmlRoot: UIView!
     
     func setup(_ dependency: ViewDependency) -> UIView {
-        return { () -> UIScrollView in 
+        let result = { () -> UIScrollView in 
             let view = UIScrollView(frame: .zero)
             view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             view.flex.direction(.column).alignContent(.center).addItem({
@@ -102,6 +103,7 @@ class ControlsDemoXml {
                             view.numberOfLines = 0
                             view.font = UIFont.get(size: 16, style: [])
                             view.textColor = UIColor(argb: 0xFF222222)
+                            view.addDismissButton()
                             return view
                         }()
                         ).margin(8, 8, 8, 8).height(100).alignSelf(.stretch)
@@ -134,6 +136,8 @@ class ControlsDemoXml {
             return view
         }()
         
+        xmlRoot = result
+        return result
     }
     
 }

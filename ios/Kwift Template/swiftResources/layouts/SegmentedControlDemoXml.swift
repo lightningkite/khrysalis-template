@@ -10,11 +10,12 @@ import Kwift
 
 class SegmentedControlDemoXml {
     
-    weak var tabs2: UISegmentedControl!
-    weak var tabs: UISegmentedControl!
+    unowned var tabs2: UISegmentedControl!
+    unowned var tabs: UISegmentedControl!
+    unowned var xmlRoot: UIView!
     
     func setup(_ dependency: ViewDependency) -> UIView {
-        return { () -> UIView in 
+        let result = { () -> UIView in 
             let view = UIView(frame: .zero)
             view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             view.flex.direction(.column).padding(0, 0, 0, 0).alignContent(.start).justifyContent(.start).define{ (flex) in 
@@ -62,6 +63,8 @@ class SegmentedControlDemoXml {
             return view
         }()
         
+        xmlRoot = result
+        return result
     }
     
 }
