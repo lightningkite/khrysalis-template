@@ -1,8 +1,8 @@
 package com.lightningkite.kwifttemplate.shared.views
 
 import android.view.View
-import com.lightningkite.kwift.actuals.hours
-import com.lightningkite.kwift.actuals.plus
+import com.lightningkite.kwift.actual.hours
+import com.lightningkite.kwift.actual.plus
 import com.lightningkite.kwift.observables.actual.WeekViewEvent
 import com.lightningkite.kwift.observables.actual.bind
 import com.lightningkite.kwift.observables.shared.ConstantObservableProperty

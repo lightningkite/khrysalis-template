@@ -1,7 +1,7 @@
 package com.lightningkite.kwifttemplate.shared.views
 
 import android.view.View
-import com.lightningkite.kwift.actuals.weak
+import com.lightningkite.kwift.actual.weak
 import com.lightningkite.kwift.observables.actual.bind
 import com.lightningkite.kwift.observables.actual.bindString
 import com.lightningkite.kwift.observables.shared.ObservableStack

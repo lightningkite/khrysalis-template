@@ -1,6 +1,6 @@
 package com.lightningkite.kwifttemplate.shared.models
 
-import com.lightningkite.kwift.actuals.Codable
+import com.lightningkite.kwift.actual.Codable
 
 data class Post(
     var userId: Long = 0,

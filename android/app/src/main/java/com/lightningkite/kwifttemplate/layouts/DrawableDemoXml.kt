@@ -12,11 +12,14 @@ import com.lightningkite.kwifttemplate.R
 class DrawableDemoXml {
 
 
+    lateinit var xmlRoot: View
+
     fun setup(dependency: ViewDependency): View {
         val view = LayoutInflater.from(dependency.context).inflate(R.layout.drawable_demo, null, false)
         return setup(view)
     }
     fun setup(view: View): View {
+        xmlRoot = view
 
 
         return view

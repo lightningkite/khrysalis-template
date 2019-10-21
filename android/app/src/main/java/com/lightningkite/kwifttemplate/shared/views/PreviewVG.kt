@@ -1,7 +1,7 @@
 package com.lightningkite.kwifttemplate.shared.views
 
 import android.view.View
-import com.lightningkite.kwift.actuals.escaping
+import com.lightningkite.kwift.actual.escaping
 import com.lightningkite.kwift.observables.actual.bind
 import com.lightningkite.kwift.observables.shared.StandardObservableProperty
 import com.lightningkite.kwift.observables.shared.addAndRunWeak

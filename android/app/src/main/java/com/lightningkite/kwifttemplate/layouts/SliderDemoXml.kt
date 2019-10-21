@@ -24,12 +24,14 @@ class SliderDemoXml {
     lateinit var ratingDisplayStarsSmallFloat: com.lightningkite.kwift.views.android.ColorRatingBar
     lateinit var ratingDisplayNumberFloat: TextView
 
+    lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
         val view = LayoutInflater.from(dependency.context).inflate(R.layout.slider_demo, null, false)
         return setup(view)
     }
     fun setup(view: View): View {
+        xmlRoot = view
         slider = view.findViewById<SeekBar>(R.id.slider)
         valueDisplay = view.findViewById<TextView>(R.id.valueDisplay)
         rating = view.findViewById<com.lightningkite.kwift.views.android.ColorRatingBar>(R.id.rating)
