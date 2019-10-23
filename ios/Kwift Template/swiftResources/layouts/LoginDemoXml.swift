@@ -4,36 +4,26 @@
 //
 
 import UIKit
-import FlexLayout
-import PinLayout
 import Kwift
 
 class LoginDemoXml {
     
-    unowned var verifyPassword: UITextField!
-    unowned var password: UITextField!
-    unowned var submit: UIButton!
-    unowned var agree: LabeledCheckbox!
-    unowned var username: UITextField!
     unowned var xmlRoot: UIView!
-    
     func setup(_ dependency: ViewDependency) -> UIView {
         let view = UIScrollView(frame: .zero)
-        view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        view.addVerticalSubview(LinearLayout(frame: .zero)) { view in 
-            view.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        view.addVerticalSubview(LinearLayout(frame: .zero), fill: false) { view in 
             view.orientation = .y
             view.padding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+            view.gravity = .topLeft
             
             view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                margin: UIEdgeInsets(top: 8 + 0, left: 8 + 0, bottom: 8 + 0, right: 8 + 0),
                 gravity: .topLeft,
                 weight: 0
             ) { view in 
-                view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
                 view.text = ResourcesStrings.welcomeToSwitchTown
                 view.numberOfLines = 0
                 view.font = UIFont.get(size: 24, style: ["bold"])
@@ -49,8 +39,7 @@ class LoginDemoXml {
                 weight: 0
             ) { view in 
                 self.username = view
-                view.backgroundLayer = ResourcesDrawables.border(view: view)
-                view.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+                view.backgroundLayer = ResourcesDrawables.border(view)
                 view.setLeftPaddingPoints(8)
                 view.setRightPaddingPoints(8)
                 view.placeholder = ResourcesStrings.username
@@ -71,8 +60,7 @@ class LoginDemoXml {
                 weight: 0
             ) { view in 
                 self.password = view
-                view.backgroundLayer = ResourcesDrawables.border(view: view)
-                view.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+                view.backgroundLayer = ResourcesDrawables.border(view)
                 view.setLeftPaddingPoints(8)
                 view.setRightPaddingPoints(8)
                 view.placeholder = ResourcesStrings.password
@@ -93,8 +81,7 @@ class LoginDemoXml {
                 weight: 0
             ) { view in 
                 self.verifyPassword = view
-                view.backgroundLayer = ResourcesDrawables.border(view: view)
-                view.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+                view.backgroundLayer = ResourcesDrawables.border(view)
                 view.setLeftPaddingPoints(8)
                 view.setRightPaddingPoints(8)
                 view.placeholder = ResourcesStrings.verifyPassword
@@ -110,19 +97,18 @@ class LoginDemoXml {
                 LabeledCheckbox(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                margin: UIEdgeInsets(top: 8 + 0, left: 8 + 0, bottom: 8 + 0, right: 8 + 0),
                 gravity: .topFill,
                 weight: 0
             ) { view in 
                 self.agree = view
-                view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
                 view.labelView.text = ResourcesStrings.iAgree
                 view.labelView.numberOfLines = 0
                 view.labelView.font = UIFont.get(size: 12, style: [])
             }
             
             view.addSubview(
-                UIButton(frame: .zero),
+                UIButtonWithLayer(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
@@ -130,8 +116,7 @@ class LoginDemoXml {
                 weight: 0
             ) { view in 
                 self.submit = view
-                view.backgroundLayer = ResourcesDrawables.buttonPrimary(view: view)
-                view.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+                view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
                 view.setTitle(ResourcesStrings.submit, for: .normal)
                 view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
                 view.contentHorizontalAlignment = .center
@@ -144,9 +129,14 @@ class LoginDemoXml {
             }
             
         }
-        
         xmlRoot = view
         return view
     }
+    
+    unowned var verifyPassword: UITextField!
+    unowned var password: UITextField!
+    unowned var submit: UIButtonWithLayer!
+    unowned var agree: LabeledCheckbox!
+    unowned var username: UITextField!
     
 }

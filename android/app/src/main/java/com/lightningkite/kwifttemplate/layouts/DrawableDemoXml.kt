@@ -4,14 +4,16 @@
 //
 package com.lightningkite.kwifttemplate.layouts
 
-import android.view.LayoutInflater
-import android.view.View
-import com.lightningkite.kwift.views.actual.ViewDependency
+import android.widget.*
+import android.view.*
+import com.lightningkite.kwift.views.actual.*
+import com.lightningkite.kwift.views.shared.*
 import com.lightningkite.kwifttemplate.R
 
 class DrawableDemoXml {
 
-
+    
+    
     lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
@@ -20,8 +22,8 @@ class DrawableDemoXml {
     }
     fun setup(view: View): View {
         xmlRoot = view
-
-
+        
+        
         return view
     }
 }

@@ -4,7 +4,7 @@ import Kwift
 
 extension ResourcesDrawables {
 
-static func icLauncherBackground(view: UIView? = nil) -> CALayer {
+static func icLauncherBackground(_ view: UIView? = nil) -> CALayer {
     let layer = CALayer()
     layer.addSublayer({
         let sublayer = CAShapeLayer()
@@ -407,6 +407,7 @@ static func icLauncherBackground(view: UIView? = nil) -> CALayer {
         return sublayer
     }())
     layer.bounds.size = CGSize(width: 108, height: 108)
+    layer.scaleOverResize = true
     return layer
 }
 

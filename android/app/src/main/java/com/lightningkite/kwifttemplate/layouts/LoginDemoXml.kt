@@ -4,12 +4,10 @@
 //
 package com.lightningkite.kwifttemplate.layouts
 
-import android.view.LayoutInflater
-import android.view.View
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.EditText
-import com.lightningkite.kwift.views.actual.ViewDependency
+import android.widget.*
+import android.view.*
+import com.lightningkite.kwift.views.actual.*
+import com.lightningkite.kwift.views.shared.*
 import com.lightningkite.kwifttemplate.R
 
 class LoginDemoXml {
@@ -19,7 +17,7 @@ class LoginDemoXml {
     lateinit var verifyPassword: EditText
     lateinit var agree: CheckBox
     lateinit var submit: Button
-
+    
     lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
@@ -33,7 +31,7 @@ class LoginDemoXml {
         verifyPassword = view.findViewById<EditText>(R.id.verifyPassword)
         agree = view.findViewById<CheckBox>(R.id.agree)
         submit = view.findViewById<Button>(R.id.submit)
-
+        
         return view
     }
 }

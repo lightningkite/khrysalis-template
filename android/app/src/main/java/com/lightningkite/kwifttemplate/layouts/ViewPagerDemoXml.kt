@@ -4,16 +4,17 @@
 //
 package com.lightningkite.kwifttemplate.layouts
 
-import android.view.LayoutInflater
-import android.view.View
-import com.lightningkite.kwift.views.actual.ViewDependency
+import android.widget.*
+import android.view.*
+import com.lightningkite.kwift.views.actual.*
+import com.lightningkite.kwift.views.shared.*
 import com.lightningkite.kwifttemplate.R
 
 class ViewPagerDemoXml {
 
     lateinit var viewPager: androidx.viewpager.widget.ViewPager
     lateinit var viewPagerIndicator: com.rd.PageIndicatorView
-
+    
     lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
@@ -24,7 +25,7 @@ class ViewPagerDemoXml {
         xmlRoot = view
         viewPager = view.findViewById<androidx.viewpager.widget.ViewPager>(R.id.viewPager)
         viewPagerIndicator = view.findViewById<com.rd.PageIndicatorView>(R.id.viewPagerIndicator)
-
+        
         return view
     }
 }

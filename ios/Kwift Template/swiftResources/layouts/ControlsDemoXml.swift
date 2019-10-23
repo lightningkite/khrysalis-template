@@ -4,35 +4,26 @@
 //
 
 import UIKit
-import FlexLayout
-import PinLayout
 import Kwift
 
 class ControlsDemoXml {
     
-    unowned var editableText: UITextField!
-    unowned var editableTextCopy: UILabel!
-    unowned var editableTextBig: UITextView!
-    unowned var spinner: Dropdown!
     unowned var xmlRoot: UIView!
-    
     func setup(_ dependency: ViewDependency) -> UIView {
         let view = UIScrollView(frame: .zero)
-        view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        view.addVerticalSubview(LinearLayout(frame: .zero)) { view in 
-            view.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        view.addVerticalSubview(LinearLayout(frame: .zero), fill: false) { view in 
             view.orientation = .y
             view.padding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+            view.gravity = .topLeft
             
             view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                margin: UIEdgeInsets(top: 8 + 0, left: 8 + 0, bottom: 8 + 0, right: 8 + 0),
                 gravity: .topLeft,
                 weight: 0
             ) { view in 
-                view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
                 view.text = ResourcesStrings.welcomeToSwitchTown
                 view.numberOfLines = 0
                 view.font = UIFont.get(size: 24, style: ["bold"])
@@ -43,11 +34,10 @@ class ControlsDemoXml {
                 LabeledSwitch(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                margin: UIEdgeInsets(top: 8 + 0, left: 8 + 0, bottom: 8 + 0, right: 8 + 0),
                 gravity: .topFill,
                 weight: 0
             ) { view in 
-                view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
                 view.labelView.text = ResourcesStrings.iMASwitch
                 view.labelView.numberOfLines = 0
                 view.labelView.font = UIFont.get(size: 12, style: [])
@@ -57,11 +47,10 @@ class ControlsDemoXml {
                 LabeledCheckbox(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                margin: UIEdgeInsets(top: 8 + 0, left: 8 + 0, bottom: 8 + 0, right: 8 + 0),
                 gravity: .topFill,
                 weight: 0
             ) { view in 
-                view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
                 view.labelView.text = ResourcesStrings.iMASwitch
                 view.labelView.numberOfLines = 0
                 view.labelView.font = UIFont.get(size: 12, style: [])
@@ -71,11 +60,10 @@ class ControlsDemoXml {
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                margin: UIEdgeInsets(top: 8 + 0, left: 8 + 0, bottom: 8 + 0, right: 8 + 0),
                 gravity: .topLeft,
                 weight: 0
             ) { view in 
-                view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
                 view.text = ResourcesStrings.textField
                 view.numberOfLines = 0
                 view.font = UIFont.get(size: 16, style: [])
@@ -91,8 +79,7 @@ class ControlsDemoXml {
                 weight: 0
             ) { view in 
                 self.editableText = view
-                view.backgroundLayer = ResourcesDrawables.border(view: view)
-                view.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+                view.backgroundLayer = ResourcesDrawables.border(view)
                 view.setLeftPaddingPoints(8)
                 view.setRightPaddingPoints(8)
                 view.numberOfLines = 0
@@ -104,12 +91,11 @@ class ControlsDemoXml {
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                margin: UIEdgeInsets(top: 8 + 8, left: 8 + 8, bottom: 8 + 8, right: 8 + 8),
                 gravity: .topLeft,
                 weight: 0
             ) { view in 
                 self.editableTextCopy = view
-                view.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
                 view.text = ""
                 view.numberOfLines = 0
                 view.font = UIFont.get(size: 16, style: [])
@@ -120,13 +106,12 @@ class ControlsDemoXml {
                 UITextView(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 100),
-                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                margin: UIEdgeInsets(top: 8 + 8, left: 8 + 8, bottom: 8 + 8, right: 8 + 8),
                 gravity: .topFill,
                 weight: 0
             ) { view in 
                 self.editableTextBig = view
-                view.backgroundLayer = ResourcesDrawables.border(view: view)
-                view.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+                view.backgroundLayer = ResourcesDrawables.border(view)
                 view.setLeftPaddingPoints(8)
                 view.setRightPaddingPoints(8)
                 view.numberOfLines = 0
@@ -139,19 +124,22 @@ class ControlsDemoXml {
                 Dropdown(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 50),
-                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                margin: UIEdgeInsets(top: 8 + 8, left: 8 + 8, bottom: 8 + 8, right: 8 + 8),
                 gravity: .topFill,
                 weight: 0
             ) { view in 
                 self.spinner = view
-                view.backgroundLayer = ResourcesDrawables.border(view: view)
-                view.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+                view.backgroundLayer = ResourcesDrawables.border(view)
             }
             
         }
-        
         xmlRoot = view
         return view
     }
+    
+    unowned var editableText: UITextField!
+    unowned var editableTextCopy: UILabel!
+    unowned var editableTextBig: UITextView!
+    unowned var spinner: Dropdown!
     
 }

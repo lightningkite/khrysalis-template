@@ -4,18 +4,17 @@
 //
 package com.lightningkite.kwifttemplate.layouts
 
-import android.view.LayoutInflater
-import android.view.View
-import android.widget.Button
-import android.widget.TextView
-import com.lightningkite.kwift.views.actual.ViewDependency
+import android.widget.*
+import android.view.*
+import com.lightningkite.kwift.views.actual.*
+import com.lightningkite.kwift.views.shared.*
 import com.lightningkite.kwifttemplate.R
 
 class RowTestXml {
 
     lateinit var label: TextView
     lateinit var button: Button
-
+    
     lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
@@ -26,7 +25,7 @@ class RowTestXml {
         xmlRoot = view
         label = view.findViewById<TextView>(R.id.label)
         button = view.findViewById<Button>(R.id.button)
-
+        
         return view
     }
 }

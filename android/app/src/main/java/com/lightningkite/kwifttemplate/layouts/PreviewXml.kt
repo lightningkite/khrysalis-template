@@ -4,17 +4,17 @@
 //
 package com.lightningkite.kwifttemplate.layouts
 
-import android.view.LayoutInflater
-import android.view.View
-import android.widget.TextView
-import com.lightningkite.kwift.views.actual.ViewDependency
+import android.widget.*
+import android.view.*
+import com.lightningkite.kwift.views.actual.*
+import com.lightningkite.kwift.views.shared.*
 import com.lightningkite.kwifttemplate.R
 
 class PreviewXml {
 
     lateinit var viewName: TextView
     lateinit var pager: androidx.viewpager.widget.ViewPager
-
+    
     lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
@@ -25,7 +25,7 @@ class PreviewXml {
         xmlRoot = view
         viewName = view.findViewById<TextView>(R.id.viewName)
         pager = view.findViewById<androidx.viewpager.widget.ViewPager>(R.id.pager)
-
+        
         return view
     }
 }

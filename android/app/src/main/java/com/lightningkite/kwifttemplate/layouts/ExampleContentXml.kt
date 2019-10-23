@@ -4,18 +4,17 @@
 //
 package com.lightningkite.kwifttemplate.layouts
 
-import android.view.LayoutInflater
-import android.view.View
-import android.widget.Button
-import android.widget.TextView
-import com.lightningkite.kwift.views.actual.ViewDependency
+import android.widget.*
+import android.view.*
+import com.lightningkite.kwift.views.actual.*
+import com.lightningkite.kwift.views.shared.*
 import com.lightningkite.kwifttemplate.R
 
 class ExampleContentXml {
 
     lateinit var exampleContentNumber: TextView
     lateinit var exampleContentIncrement: Button
-
+    
     lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
@@ -26,7 +25,7 @@ class ExampleContentXml {
         xmlRoot = view
         exampleContentNumber = view.findViewById<TextView>(R.id.exampleContentNumber)
         exampleContentIncrement = view.findViewById<Button>(R.id.exampleContentIncrement)
-
+        
         return view
     }
 }

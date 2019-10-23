@@ -4,7 +4,7 @@ import Kwift
 
 extension ResourcesDrawables {
 
-static func icExposureBlack24dp(view: UIView? = nil) -> CALayer {
+static func icExposureBlack24dp(_ view: UIView? = nil) -> CALayer {
     let layer = CALayer()
     layer.addSublayer({
         let sublayer = CAShapeLayer()
@@ -80,6 +80,7 @@ static func icExposureBlack24dp(view: UIView? = nil) -> CALayer {
         return sublayer
     }())
     layer.bounds.size = CGSize(width: 24, height: 24)
+    layer.scaleOverResize = true
     return layer
 }
 

@@ -19,4 +19,7 @@
     <string name="submit">Submit</string>
     <string name="mustAgree">You must agree to the terms of service.</string>
     <string name="verify_password">Verify Password</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <string name="get_location">Get Location</string>
 </resources>

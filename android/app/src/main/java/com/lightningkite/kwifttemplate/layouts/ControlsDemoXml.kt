@@ -4,12 +4,10 @@
 //
 package com.lightningkite.kwifttemplate.layouts
 
-import android.view.LayoutInflater
-import android.view.View
-import android.widget.EditText
-import android.widget.Spinner
-import android.widget.TextView
-import com.lightningkite.kwift.views.actual.ViewDependency
+import android.widget.*
+import android.view.*
+import com.lightningkite.kwift.views.actual.*
+import com.lightningkite.kwift.views.shared.*
 import com.lightningkite.kwifttemplate.R
 
 class ControlsDemoXml {
@@ -18,7 +16,7 @@ class ControlsDemoXml {
     lateinit var editableTextCopy: TextView
     lateinit var editableTextBig: com.lightningkite.kwift.views.android.MultilineEditText
     lateinit var spinner: Spinner
-
+    
     lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
@@ -29,10 +27,9 @@ class ControlsDemoXml {
         xmlRoot = view
         editableText = view.findViewById<EditText>(R.id.editableText)
         editableTextCopy = view.findViewById<TextView>(R.id.editableTextCopy)
-        editableTextBig =
-            view.findViewById<com.lightningkite.kwift.views.android.MultilineEditText>(R.id.editableTextBig)
+        editableTextBig = view.findViewById<com.lightningkite.kwift.views.android.MultilineEditText>(R.id.editableTextBig)
         spinner = view.findViewById<Spinner>(R.id.spinner)
-
+        
         return view
     }
 }

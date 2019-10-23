@@ -56,10 +56,10 @@ public final class Post: Equatable, Hashable, Codable {
     }
     
     enum CodingKeys: String, CodingKey {
-        case userId = "user_id}"
-        case id = "id}"
-        case title = "title}"
-        case body = "body}"
+        case userId = "userId"
+        case id = "id"
+        case title = "title"
+        case body = "body"
     }
     
 }
