@@ -3,7 +3,4 @@
     <cache-path
             path="images"
             name="cached" />
-    <external-path
-            path="Pictures/LKExample"
-            name="public" />
 </paths>

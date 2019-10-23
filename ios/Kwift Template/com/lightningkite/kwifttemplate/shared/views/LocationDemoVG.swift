@@ -20,8 +20,9 @@ public class LocationDemoVG: ViewGenerator {
         var xml = LocationDemoXml()
         var view = xml.setup(dependency)
         xml.getLocation.onClick{ () in 
-            dependency.requestLocation(100.0) { (it) in 
-                self.locationInfo.value = it
+            dependency.requestLocation(accuracyBetterThanMeters: 100.0, timeoutInSeconds: 5.0) { (location, message) in 
+                print(message)
+                self.locationInfo.value = location
             }
         }
         xml.locationDisplay.bindString(locationInfo.transformed{ (it) in 

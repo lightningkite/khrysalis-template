@@ -2,14 +2,13 @@ package com.lightningkite.kwifttemplate.shared.views
 
 import android.view.View
 import com.lightningkite.kwift.observables.actual.bindString
-import com.lightningkite.kwift.observables.actual.bindText
-import com.lightningkite.kwift.observables.actual.loadUrl
 import com.lightningkite.kwift.observables.shared.MutableObservableProperty
 import com.lightningkite.kwift.observables.shared.StandardObservableProperty
 import com.lightningkite.kwift.observables.shared.transformed
 import com.lightningkite.kwift.shared.LocationResult
-import com.lightningkite.kwift.shared.captureWeak
-import com.lightningkite.kwift.views.actual.*
+import com.lightningkite.kwift.views.actual.ViewDependency
+import com.lightningkite.kwift.views.actual.onClick
+import com.lightningkite.kwift.views.actual.requestLocation
 import com.lightningkite.kwift.views.shared.ViewGenerator
 import com.lightningkite.kwifttemplate.layouts.LocationDemoXml
 
@@ -22,8 +21,12 @@ class LocationDemoVG : ViewGenerator() {
         val xml = LocationDemoXml()
         val view = xml.setup(dependency)
         xml.getLocation.onClick {
-            dependency.requestLocation(100.0) { it ->
-                this.locationInfo.value = it
+            dependency.requestLocation(
+                accuracyBetterThanMeters = 100.0,
+                timeoutInSeconds = 5.0
+            ) { location, message ->
+                println(message)
+                this.locationInfo.value = location
             }
         }
         xml.locationDisplay.bindString(locationInfo.transformed { it ->
