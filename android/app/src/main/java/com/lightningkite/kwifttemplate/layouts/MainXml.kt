@@ -4,11 +4,10 @@
 //
 package com.lightningkite.kwifttemplate.layouts
 
-import android.view.LayoutInflater
-import android.view.View
-import android.widget.ImageButton
-import android.widget.TextView
-import com.lightningkite.kwift.views.actual.ViewDependency
+import android.widget.*
+import android.view.*
+import com.lightningkite.kwift.views.actual.*
+import com.lightningkite.kwift.views.shared.*
 import com.lightningkite.kwifttemplate.R
 
 class MainXml {
@@ -16,7 +15,7 @@ class MainXml {
     lateinit var mainBack: ImageButton
     lateinit var title: TextView
     lateinit var mainContent: com.lightningkite.kwift.views.android.SwapView
-
+    
     lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
@@ -28,7 +27,7 @@ class MainXml {
         mainBack = view.findViewById<ImageButton>(R.id.mainBack)
         title = view.findViewById<TextView>(R.id.title)
         mainContent = view.findViewById<com.lightningkite.kwift.views.android.SwapView>(R.id.mainContent)
-
+        
         return view
     }
 }

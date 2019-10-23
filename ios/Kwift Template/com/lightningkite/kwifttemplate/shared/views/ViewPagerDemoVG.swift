@@ -24,7 +24,7 @@ public class ViewPagerDemoVG: ViewGenerator {
         xml.viewPager.bind(items, selectedIndex) { (it) in 
             var xml = RowTestXml()
             var view = xml.setup(dependency)
-            xml.label .text = it
+            xml.label.text = it
             return view
         }
         xml.viewPagerIndicator.bind(items.size, selectedIndex)

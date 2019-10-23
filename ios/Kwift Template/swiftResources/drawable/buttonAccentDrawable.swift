@@ -4,18 +4,24 @@ import Kwift
 
 extension ResourcesDrawables {
 
-static func buttonAccent(view: UIView? = nil) -> CALayer {
+static func buttonAccent(_ view: UIView? = nil) -> CALayer {
     let layer = CALayer()
     let part1: CALayer = {
-        let sublayer = buttonAccentPart1(view: view)
+        let sublayer = buttonAccentPart1(view)
+        layer.bounds.size = layer.bounds.size.expand(sublayer.bounds.size)
+        layer.onResize.addAndRunWeak(sublayer, layer.bounds) { (sublayer, bounds) in sublayer.frame = bounds }
         return sublayer
     }()
     let part2: CALayer = {
-        let sublayer = buttonAccentPart2(view: view)
+        let sublayer = buttonAccentPart2(view)
+        layer.bounds.size = layer.bounds.size.expand(sublayer.bounds.size)
+        layer.onResize.addAndRunWeak(sublayer, layer.bounds) { (sublayer, bounds) in sublayer.frame = bounds }
         return sublayer
     }()
     let part3: CALayer = {
-        let sublayer = buttonAccentPart3(view: view)
+        let sublayer = buttonAccentPart3(view)
+        layer.bounds.size = layer.bounds.size.expand(sublayer.bounds.size)
+        layer.onResize.addAndRunWeak(sublayer, layer.bounds) { (sublayer, bounds) in sublayer.frame = bounds }
         return sublayer
     }()
     
@@ -32,28 +38,27 @@ static func buttonAccent(view: UIView? = nil) -> CALayer {
         layer.addSublayer(part3)
     }
     
-    layer.matchSize(view)
     return layer
 }
-static func buttonAccentPart1(view: UIView? = nil) -> CALayer {
+static func buttonAccentPart1(_ view: UIView? = nil) -> CALayer {
     let layer = CALayer()
     layer.backgroundColor = ResourcesColors.colorAccentDark.cgColor
     layer.cornerRadius = 3
-    layer.matchSize(view)
+    layer.bounds.size = CGSize(width: 100, height: 100)
     return layer
 }
-static func buttonAccentPart2(view: UIView? = nil) -> CALayer {
+static func buttonAccentPart2(_ view: UIView? = nil) -> CALayer {
     let layer = CALayer()
     layer.backgroundColor = ResourcesColors.disabled.cgColor
     layer.cornerRadius = 3
-    layer.matchSize(view)
+    layer.bounds.size = CGSize(width: 100, height: 100)
     return layer
 }
-static func buttonAccentPart3(view: UIView? = nil) -> CALayer {
+static func buttonAccentPart3(_ view: UIView? = nil) -> CALayer {
     let layer = CALayer()
     layer.backgroundColor = ResourcesColors.colorAccent.cgColor
     layer.cornerRadius = 3
-    layer.matchSize(view)
+    layer.bounds.size = CGSize(width: 100, height: 100)
     return layer
 }
 

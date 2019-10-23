@@ -21,9 +21,9 @@ public class MainVG: ViewGenerator {
         var xml = MainXml()
         var view = xml.setup(dependency)
         xml.mainContent.bindStack(dependency, stack)
-        xml.title.bindText(stack) { (it) in 
+        xml.title.bindString(stack.transformed{ (it) in 
             it.lastOrNull()?.title ?? ""
-        }
+        })
         xml.mainBack.bindVisible(shouldBackBeShown)
         xml.mainBack.onClick(captureWeak(self) { (self) in 
             self.stack.pop()

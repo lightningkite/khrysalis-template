@@ -4,18 +4,24 @@ import Kwift
 
 extension ResourcesDrawables {
 
-static func border(view: UIView? = nil) -> CALayer {
+static func border(_ view: UIView? = nil) -> CALayer {
     let layer = CALayer()
     let part1: CALayer = {
-        let sublayer = borderPart1(view: view)
+        let sublayer = borderPart1(view)
+        layer.bounds.size = layer.bounds.size.expand(sublayer.bounds.size)
+        layer.onResize.addAndRunWeak(sublayer, layer.bounds) { (sublayer, bounds) in sublayer.frame = bounds }
         return sublayer
     }()
     let part2: CALayer = {
-        let sublayer = borderPart2(view: view)
+        let sublayer = borderPart2(view)
+        layer.bounds.size = layer.bounds.size.expand(sublayer.bounds.size)
+        layer.onResize.addAndRunWeak(sublayer, layer.bounds) { (sublayer, bounds) in sublayer.frame = bounds }
         return sublayer
     }()
     let part3: CALayer = {
-        let sublayer = borderPart3(view: view)
+        let sublayer = borderPart3(view)
+        layer.bounds.size = layer.bounds.size.expand(sublayer.bounds.size)
+        layer.onResize.addAndRunWeak(sublayer, layer.bounds) { (sublayer, bounds) in sublayer.frame = bounds }
         return sublayer
     }()
     
@@ -32,34 +38,33 @@ static func border(view: UIView? = nil) -> CALayer {
         layer.addSublayer(part3)
     }
     
-    layer.matchSize(view)
     return layer
 }
-static func borderPart1(view: UIView? = nil) -> CALayer {
+static func borderPart1(_ view: UIView? = nil) -> CALayer {
     let layer = CALayer()
     layer.borderWidth = 1
     layer.borderColor = ResourcesColors.disabled.cgColor
     layer.backgroundColor = ResourcesColors.disabled.cgColor
     layer.cornerRadius = 3
-    layer.matchSize(view)
+    layer.bounds.size = CGSize(width: 100, height: 100)
     return layer
 }
-static func borderPart2(view: UIView? = nil) -> CALayer {
+static func borderPart2(_ view: UIView? = nil) -> CALayer {
     let layer = CALayer()
     layer.borderWidth = 1
     layer.borderColor = ResourcesColors.disabled.cgColor
     layer.backgroundColor = ResourcesColors.disabled.cgColor
     layer.cornerRadius = 3
-    layer.matchSize(view)
+    layer.bounds.size = CGSize(width: 100, height: 100)
     return layer
 }
-static func borderPart3(view: UIView? = nil) -> CALayer {
+static func borderPart3(_ view: UIView? = nil) -> CALayer {
     let layer = CALayer()
     layer.borderWidth = 1
     layer.borderColor = ResourcesColors.disabled.cgColor
     layer.backgroundColor = ResourcesColors.white.cgColor
     layer.cornerRadius = 3
-    layer.matchSize(view)
+    layer.bounds.size = CGSize(width: 100, height: 100)
     return layer
 }
 

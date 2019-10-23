@@ -6,29 +6,21 @@
               android:layout_height="match_parent">
 
     <Button
-            android:id="@+id/gallery"
+            android:id="@+id/get_location"
             style="@style/ButtonPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="@string/gallery"
+            android:text="@string/get_location"
     />
 
-    <Button
-            android:id="@+id/camera"
-            style="@style/ButtonPrimary"
+    <TextView
+            android:id="@+id/location_display"
+            style="@style/Body"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:text="@string/camera"
     />
-
-    <ImageView
-            android:id="@+id/image"
-            android:layout_width="match_parent"
-            android:layout_margin="8dp"
-            android:scaleType="centerInside"
-            android:background="#888"
-            android:layout_height="200dp"/>
 
 </LinearLayout>

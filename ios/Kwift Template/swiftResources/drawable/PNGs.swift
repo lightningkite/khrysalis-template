@@ -4,6 +4,6 @@ import Kwift
 
 extension ResourcesDrawables {
 
-static func reasonExpertise(view: UIView? = nil) -> CAImageLayer { return CAImageLayer(UIImage(named: "reason_expertise")) }
+static func reasonExpertise(_ view: UIView? = nil) -> CAImageLayer { return CAImageLayer(UIImage(named: "reason_expertise")) }
 
 }

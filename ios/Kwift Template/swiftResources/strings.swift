@@ -29,4 +29,7 @@ public enum ResourcesStrings {
     static let submit = NSLocalizedString("Submit", comment: "submit")
     static let mustAgree = NSLocalizedString("You must agree to the terms of service.", comment: "mustAgree")
     static let verifyPassword = NSLocalizedString("Verify Password", comment: "verify_password")
+    static let gallery = NSLocalizedString("Gallery", comment: "gallery")
+    static let camera = NSLocalizedString("Camera", comment: "camera")
+    static let getLocation = NSLocalizedString("Get Location", comment: "get_location")
 }

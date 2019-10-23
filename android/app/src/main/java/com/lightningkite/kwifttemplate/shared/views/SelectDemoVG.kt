@@ -18,6 +18,8 @@ class SelectDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator() {
     override val title: String get() = "Select Demo"
 
     val options: List<ViewGenerator> = listOf(
+        LocationDemoVG(),
+        LoadImageDemoVG(),
         ControlsDemoVG(),
         ExampleContentVG(),
         ViewPagerDemoVG(stack),
