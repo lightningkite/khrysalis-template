@@ -59,12 +59,17 @@
                 android:layout_margin="8dp"
                 android:text="@string/i_agree"/>
 
-        <Button
-                style="@style/ButtonPrimary"
-                android:id="@+id/submit"
-                android:text="@string/submit"
+        <ViewFlipper
+                android:id="@+id/submitLoading"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content">
+            <Button
+                    style="@style/ButtonPrimary"
+                    android:id="@+id/submit"
+                    android:text="@string/submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+        </ViewFlipper>
 
     </LinearLayout>
 </ScrollView>

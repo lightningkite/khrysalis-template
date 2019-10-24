@@ -6,12 +6,13 @@ import Kwift
 
 
 
-public final class Post: Equatable, Hashable, Codable {
+public class Post: Codable, Equatable, Hashable {
     
     public var userId: Int64
     public var id: Int64
     public var title: String
     public var body: String
+    
     public static func == (lhs: Post, rhs: Post) -> Bool {
         return lhs.userId == rhs.userId &&
             lhs.id == rhs.id &&
@@ -38,6 +39,7 @@ public final class Post: Equatable, Hashable, Codable {
         )
     }
     
+    
     public init(userId: Int64 = 0, id: Int64 = 0, title: String = "", body: String = "") {
         self.userId = userId
         self.id = id
@@ -61,6 +63,5 @@ public final class Post: Equatable, Hashable, Codable {
         case title = "title"
         case body = "body"
     }
-    
 }
  

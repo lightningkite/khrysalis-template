@@ -1,11 +1,14 @@
 package com.lightningkite.kwifttemplate.shared.views
 
 import android.view.View
+import com.lightningkite.kwift.actual.delay
 import com.lightningkite.kwift.actual.weak
 import com.lightningkite.kwift.observables.actual.bind
+import com.lightningkite.kwift.observables.actual.bindLoading
 import com.lightningkite.kwift.observables.actual.bindString
+import com.lightningkite.kwift.observables.shared.MutableObservableProperty
 import com.lightningkite.kwift.observables.shared.ObservableStack
-import com.lightningkite.kwift.shared.captureWeak
+import com.lightningkite.kwift.observables.shared.StandardObservableProperty
 import com.lightningkite.kwift.views.actual.ViewDependency
 import com.lightningkite.kwift.views.actual.onClick
 import com.lightningkite.kwift.views.shared.*
@@ -25,6 +28,7 @@ class LoginDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator() {
         form.field(R.string.verify_password, "") { field -> field.required() ?: field.matches(password) }
     val agree: FormField<Boolean> =
         form.field(R.string.password, false) { field -> ViewStringResource(R.string.mustAgree).unless(field.value) }
+    val loading: MutableObservableProperty<Boolean> = StandardObservableProperty(false)
 
     override fun generate(dependency: ViewDependency): View {
         val xml = LoginDemoXml()
@@ -34,16 +38,22 @@ class LoginDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator() {
         xml.password.bindString(password.observable)
         xml.verifyPassword.bindString(verifyPassword.observable)
         xml.agree.bind(agree.observable)
-        xml.submit.onClick(captureWeak(this) { self ->
-            val errors = self.form.check()
-            if (errors.isNotEmpty()) {
-                showDialog(errors.map { it -> it.string }.joinToViewString())
-                return@captureWeak
-            }
-            println("Submit!")
-            self.stack?.push(ExampleContentVG())
-        })
+        xml.submitLoading.bindLoading(loading)
+        xml.submit.onClick {
+            this.submit()
+        }
 
         return view
+    }
+
+    private fun submit() {
+        this.form.runOrDialog {
+            println("Submit!")
+            this.loading.value = true
+            delay(1000) {
+                this.loading.value = false
+                this.stack?.push(ExampleContentVG())
+            }
+        }
     }
 }

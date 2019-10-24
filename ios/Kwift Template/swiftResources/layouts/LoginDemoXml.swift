@@ -108,24 +108,35 @@ class LoginDemoXml {
             }
             
             view.addSubview(
-                UIButtonWithLayer(frame: .zero),
+                ViewFlipper(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topFill,
                 weight: 0
             ) { view in 
-                self.submit = view
-                view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
-                view.setTitle(ResourcesStrings.submit, for: .normal)
-                view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
-                view.contentHorizontalAlignment = .center
-                view.contentMode = .scaleAspectFit
-                view.contentEdgeInsets = UIEdgeInsets(top: 8, left:8, bottom:8, right:8)
-                view.titleLabel?.text = ResourcesStrings.submit
-                view.titleLabel?.numberOfLines = 0
-                view.titleLabel?.font = UIFont.get(size: 16, style: [])
-                view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
+                self.submitLoading = view
+                view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+                view.addSubview(
+                    UIButtonWithLayer(frame: .zero),
+                    minimumSize: CGSize(width: 0, height: 0),
+                    size: CGSize(width: 0, height: 0),
+                    margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                    gravity: .topFill
+                ) { view in 
+                    self.submit = view
+                    view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
+                    view.setTitle(ResourcesStrings.submit, for: .normal)
+                    view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
+                    view.contentHorizontalAlignment = .center
+                    view.contentMode = .scaleAspectFit
+                    view.contentEdgeInsets = UIEdgeInsets(top: 8, left:8, bottom:8, right:8)
+                    view.titleLabel?.text = ResourcesStrings.submit
+                    view.titleLabel?.numberOfLines = 0
+                    view.titleLabel?.font = UIFont.get(size: 16, style: [])
+                    view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
+                }
+                
             }
             
         }
@@ -136,6 +147,7 @@ class LoginDemoXml {
     unowned var verifyPassword: UITextField!
     unowned var password: UITextField!
     unowned var submit: UIButtonWithLayer!
+    unowned var submitLoading: ViewFlipper!
     unowned var agree: LabeledCheckbox!
     unowned var username: UITextField!
     

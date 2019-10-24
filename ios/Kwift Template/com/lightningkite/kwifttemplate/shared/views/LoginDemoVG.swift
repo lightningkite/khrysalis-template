@@ -20,6 +20,7 @@ public class LoginDemoVG: ViewGenerator {
     public var password: FormField<String>
     public var verifyPassword: FormField<String>
     public var agree: FormField<Bool>
+    public var loading: MutableObservableProperty<Bool>
     
     override public func generate(dependency: ViewDependency) -> View {
         var xml = LoginDemoXml()
@@ -28,21 +29,25 @@ public class LoginDemoVG: ViewGenerator {
         xml.password.bindString(password.observable)
         xml.verifyPassword.bindString(verifyPassword.observable)
         xml.agree.bind(agree.observable)
-        xml.submit.onClick(captureWeak(self) { (self) in 
-            var errors = self.form.check()
-            if errors.isNotEmpty() {
-                showDialog(errors.map{ (it) in 
-                    it.string
-                }.joinToViewString())
-                return
-            }
-            print("Submit!")
-            self.stack?.push(ExampleContentVG())
-        })
+        xml.submitLoading.bindLoading(loading)
+        xml.submit.onClick{ () in 
+            self.submit()
+        }
         return view
     }
     override public func generate(_ dependency: ViewDependency) -> View {
         return generate(dependency: dependency)
+    }
+    
+    private func submit() -> Void {
+        self.form.runOrDialog{ () in 
+            print("Submit!")
+            self.loading.value = true
+            delay(1000) { () in 
+                self.loading.value = false
+                self.stack?.push(ExampleContentVG())
+            }
+        }
     }
     
     public init(stack: ObservableStack<ViewGenerator>) {
@@ -65,6 +70,8 @@ public class LoginDemoVG: ViewGenerator {
             ViewStringResource(ResourcesStrings.mustAgree).unless(field.value)
         }
         self.agree = agree
+        let loading: MutableObservableProperty<Bool> = StandardObservableProperty(false)
+        self.loading = loading
         super.init()
     }
     convenience public init(_ stack: ObservableStack<ViewGenerator>) {
