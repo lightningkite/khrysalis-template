@@ -10,7 +10,8 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ViewFlipper
-import com.lightningkite.kwift.views.actual.ViewDependency
+import com.lightningkite.kwift.views.actual.*
+import com.lightningkite.kwift.views.shared.*
 import com.lightningkite.kwifttemplate.R
 
 class LoginDemoXml {

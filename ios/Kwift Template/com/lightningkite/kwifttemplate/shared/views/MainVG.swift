@@ -6,7 +6,7 @@ import Kwift
 
 
 
-public class MainVG: ViewGenerator {
+public class MainVG: ViewGenerator, EntryPoint {
     
     
     override public var title: String {
@@ -15,6 +15,11 @@ public class MainVG: ViewGenerator {
         }
     }
     public var stack: ObservableStack<ViewGenerator>
+    public var mainStack: ObservableStack<ViewGenerator>? {
+        get {
+            return stack
+        }
+    }
     public var shouldBackBeShown: ObservableProperty<Bool>
     
     override public func generate(dependency: ViewDependency) -> View {
@@ -33,6 +38,13 @@ public class MainVG: ViewGenerator {
     }
     override public func generate(_ dependency: ViewDependency) -> View {
         return generate(dependency: dependency)
+    }
+    
+    public func handleDeepLink(schema: String, host: String, path: String, params: Dictionary<String, String>) -> Void {
+        stack.push(ExampleContentVG())
+    }
+    public func handleDeepLink(_ schema: String, _ host: String, _ path: String, _ params: Dictionary<String, String>) -> Void {
+        return handleDeepLink(schema: schema, host: host, path: path, params: params)
     }
     
     override public init() {

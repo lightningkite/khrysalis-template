@@ -8,13 +8,18 @@ import com.lightningkite.kwift.observables.shared.transformed
 import com.lightningkite.kwift.shared.captureWeak
 import com.lightningkite.kwift.views.actual.ViewDependency
 import com.lightningkite.kwift.views.actual.onClick
+import com.lightningkite.kwift.views.shared.EntryPoint
 import com.lightningkite.kwift.views.shared.ViewGenerator
-import com.lightningkite.kwifttemplate.layouts.*
+import com.lightningkite.kwifttemplate.layouts.MainXml
 
-class MainVG : ViewGenerator() {
+class MainVG : ViewGenerator(), EntryPoint {
     override val title: String get() = "Main"
 
+
+    //invalidatee
     val stack: ObservableStack<ViewGenerator> = ObservableStack<ViewGenerator>()
+    override val mainStack: ObservableStack<ViewGenerator>?
+        get() = stack
     val shouldBackBeShown: ObservableProperty<Boolean> = stack.transformed { it -> it.size > 1 }
 
     init {
@@ -32,4 +37,9 @@ class MainVG : ViewGenerator() {
 
         return view
     }
+
+    override fun handleDeepLink(schema: String, host: String, path: String, params: Map<String, String>) {
+        stack.push(ExampleContentVG())
+    }
+
 }

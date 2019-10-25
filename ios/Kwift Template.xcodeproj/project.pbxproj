@@ -17,7 +17,6 @@
 		5E4B9CC2233C077800A43522 /* opensans_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B9C5D233C077800A43522 /* opensans_regular.ttf */; };
 		5E4B9CC3233C077800A43522 /* opensans_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B9C5E233C077800A43522 /* opensans_italic.ttf */; };
 		5E4B9CC4233C077800A43522 /* opensans_bold_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B9C5F233C077800A43522 /* opensans_bold_italic.ttf */; };
-		5E4B9CC5233C077800A43522 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B9C60233C077800A43522 /* ViewController.swift */; };
 		5EE7402A2360D3DB00EB5B6E /* strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE73FF12360D3DB00EB5B6E /* strings.swift */; };
 		5EE7402B2360D3DB00EB5B6E /* buttonAccentDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE73FF32360D3DB00EB5B6E /* buttonAccentDrawable.swift */; };
 		5EE7402C2360D3DB00EB5B6E /* icExposureBlack24dpDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE73FF42360D3DB00EB5B6E /* icExposureBlack24dpDrawable.swift */; };
@@ -103,7 +102,6 @@
 		5E4B9C5D233C077800A43522 /* opensans_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = opensans_regular.ttf; sourceTree = "<group>"; };
 		5E4B9C5E233C077800A43522 /* opensans_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = opensans_italic.ttf; sourceTree = "<group>"; };
 		5E4B9C5F233C077800A43522 /* opensans_bold_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = opensans_bold_italic.ttf; sourceTree = "<group>"; };
-		5E4B9C60233C077800A43522 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5EE73FF12360D3DB00EB5B6E /* strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = strings.swift; sourceTree = "<group>"; };
 		5EE73FF32360D3DB00EB5B6E /* buttonAccentDrawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = buttonAccentDrawable.swift; sourceTree = "<group>"; };
 		5EE73FF42360D3DB00EB5B6E /* icExposureBlack24dpDrawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = icExposureBlack24dpDrawable.swift; sourceTree = "<group>"; };
@@ -229,7 +227,6 @@
 				5EE73FF02360D3DB00EB5B6E /* swiftResources */,
 				5E4B9C5B233C077800A43522 /* fonts */,
 				5E4B9B0E233C04DA00A43522 /* AppDelegate.swift */,
-				5E4B9C60233C077800A43522 /* ViewController.swift */,
 				5E4B9B14233C04DB00A43522 /* Assets.xcassets */,
 				5E4B9B19233C04DB00A43522 /* LaunchScreen.storyboard */,
 				5E4B9B1C233C04DB00A43522 /* Info.plist */,
@@ -624,7 +621,6 @@
 				5EE740592360D3DB00EB5B6E /* MainVG.swift in Sources */,
 				5EE740442360D3DB00EB5B6E /* SegmentedControlDemoXml.swift in Sources */,
 				5EE740482360D3DB00EB5B6E /* APIMock.swift in Sources */,
-				5E4B9CC5233C077800A43522 /* ViewController.swift in Sources */,
 				5EE7402A2360D3DB00EB5B6E /* strings.swift in Sources */,
 				5EE7402F2360D3DB00EB5B6E /* borderDrawable.swift in Sources */,
 				5EE7403B2360D3DB00EB5B6E /* ControlsDemoXml.swift in Sources */,

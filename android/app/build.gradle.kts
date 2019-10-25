@@ -1,8 +1,6 @@
-import com.lightningkite.kwift.KwiftSettings
-import com.lightningkite.kwift.convertResourcesToIos
-import com.lightningkite.kwift.layout.convertLayoutsToSwift
-import com.lightningkite.kwift.layout.createAndroidLayoutClasses
-import com.lightningkite.kwift.swift.convertKotlinToSwift
+import com.lightningkite.kwift.gradle.configureGradle
+
+val packageName = "com.lightningkite.kwifttemplate"
 
 buildscript {
     repositories {
@@ -25,7 +23,7 @@ android {
     defaultConfig {
         minSdkVersion(19)
         targetSdkVersion(29)
-        applicationId = "com.lightningkite.kwifttemplate"
+        applicationId = packageName
         versionCode = 5
         versionName = "1.0.5"
     }
@@ -66,61 +64,32 @@ dependencies {
     implementation("com.github.marcoscgdev:Android-Week-View:1.2.7")
 }
 
-KwiftSettings.verbose = true
-val androidBase = project.projectDir
-val iosBase = project.projectDir.resolve("../../ios/Kwift Template")
+project.configureGradle("../../ios/Kwift Template")
 
-tasks.create("kwiftConvertKotlinToSwift") {
-    this.group = "build"
-    doLast {
-        println("Started")
-        convertKotlinToSwift(
-            androidFolder = androidBase,
-            iosFolder = iosBase,
-            clean = true
-        ) {
-            imports = listOf("Kwift")
-        }
-        println("Finished")
-    }
+val exampleDeepLink = "exampledeeplink://host/path?query=yes"
+tasks.create("testDeepLinkAndroid", Exec::class.java) {
+    this.group = "run"
+    commandLine(
+        android.getAdbExe(),
+        "shell",
+        "am",
+        "start",
+        "-a",
+        "android.intent.action.VIEW",
+        "-d",
+        exampleDeepLink,
+        packageName
+    )
 }
-tasks.create("kwiftCreateAndroidLayoutClasses") {
-    this.group = "build"
-    doLast {
-        println("Started")
-        createAndroidLayoutClasses(
-            androidFolder = androidBase,
-            applicationPackage = "com.lightningkite.kwifttemplate"
-        )
-        println("Finished")
-    }
-}
-tasks.create("kwiftConvertLayoutsToSwift") {
-    this.group = "build"
-    doLast {
-        println("Started")
-        convertLayoutsToSwift(
-            androidFolder = androidBase,
-            iosFolder = iosBase
-        )
-        println("Finished")
-    }
-}
-tasks.create("kwiftConvertResourcesToIos") {
-    this.group = "build"
-    doLast {
-        println("Started")
-        convertResourcesToIos(
-            androidFolder = androidBase,
-            iosFolder = iosBase
-        )
-        println("Finished")
-    }
-}
-tasks.create("kwiftIos") {
-    this.group = "build"
-    this.dependsOn("kwiftConvertKotlinToSwift")
-    this.dependsOn("kwiftConvertLayoutsToSwift")
-    this.dependsOn("kwiftConvertResourcesToIos")
-    this.dependsOn("kwiftCreateAndroidLayoutClasses")
+
+
+tasks.create("testDeepLinkIos", Exec::class.java) {
+    this.group = "run"
+    commandLine(
+        "xcrun",
+        "simctl",
+        "openurl",
+        "booted",
+        exampleDeepLink
+    )
 }
