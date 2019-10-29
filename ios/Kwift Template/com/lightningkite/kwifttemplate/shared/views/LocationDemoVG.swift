@@ -3,6 +3,7 @@
 
 import Foundation
 import Kwift
+import KwiftMaps
 
 
 
@@ -27,7 +28,7 @@ public class LocationDemoVG: ViewGenerator {
         }
         xml.locationDisplay.bindString(locationInfo.transformed{ (it) in 
             if let it = it {
-                return "\(it.latitude), \(it.longitude)"
+                return "\(it.coordinate)"
             } else {
                 return "Nothing yet"
             }

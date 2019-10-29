@@ -3,6 +3,7 @@
 
 import Foundation
 import Kwift
+import KwiftMaps
 
 
 
@@ -46,7 +47,7 @@ public class Post: Codable, Equatable, Hashable {
         self.title = title
         self.body = body
     }
-    convenience public init(_ userId: Int64 = 0, _ id: Int64 = 0, _ title: String = "", _ body: String = "") {
+    convenience public init(_ userId: Int64, _ id: Int64 = 0, _ title: String = "", _ body: String = "") {
         self.init(userId: userId, id: id, title: title, body: body)
     }
     required public init(from decoder: Decoder) throws {

@@ -1,14 +1,14 @@
 package com.lightningkite.kwifttemplate.shared.views
 
 import android.view.View
+import com.lightningkite.kwift.location.actual.requestLocation
+import com.lightningkite.kwift.location.shared.LocationResult
 import com.lightningkite.kwift.observables.actual.bindString
 import com.lightningkite.kwift.observables.shared.MutableObservableProperty
 import com.lightningkite.kwift.observables.shared.StandardObservableProperty
 import com.lightningkite.kwift.observables.shared.transformed
-import com.lightningkite.kwift.shared.LocationResult
 import com.lightningkite.kwift.views.actual.ViewDependency
 import com.lightningkite.kwift.views.actual.onClick
-import com.lightningkite.kwift.views.actual.requestLocation
 import com.lightningkite.kwift.views.shared.ViewGenerator
 import com.lightningkite.kwifttemplate.layouts.LocationDemoXml
 
@@ -31,7 +31,7 @@ class LocationDemoVG : ViewGenerator() {
         }
         xml.locationDisplay.bindString(locationInfo.transformed { it ->
             if(it != null){
-                return@transformed "${it.latitude}, ${it.longitude}"
+                return@transformed "${it.coordinate}"
             } else {
                 return@transformed "Nothing yet"
             }

@@ -1,8 +1,10 @@
 package com.lightningkite.kwifttemplate
 
 import android.app.Application
+import android.content.pm.PackageManager
 import android.content.res.Resources
 import android.preference.PreferenceManager
+import com.google.android.libraries.places.api.Places
 import com.lightningkite.kwift.actual.Preferences
 
 class MyApplication: Application() {
@@ -12,7 +14,13 @@ class MyApplication: Application() {
     override fun onCreate() {
         super.onCreate()
         Companion.resources = this.resources
-
+        Places.initialize(
+            this,
+            packageManager
+                .getApplicationInfo(packageName, PackageManager.GET_META_DATA)
+                .metaData
+                .getString("com.google.android.geo.API_KEY", "")
+        )
         Preferences.sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
     }
 }

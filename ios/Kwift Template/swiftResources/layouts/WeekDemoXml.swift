@@ -5,6 +5,7 @@
 
 import UIKit
 import Kwift
+import MapKit
 
 class WeekDemoXml {
     

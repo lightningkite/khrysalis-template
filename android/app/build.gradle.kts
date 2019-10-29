@@ -1,4 +1,7 @@
 import com.lightningkite.kwift.gradle.configureGradle
+import com.lightningkite.kwift.layout.normal
+import com.lightningkite.kwift.layout.LayoutConverter
+import com.lightningkite.kwift.layout.mapViews
 
 val packageName = "com.lightningkite.kwifttemplate"
 
@@ -23,6 +26,7 @@ android {
     defaultConfig {
         minSdkVersion(19)
         targetSdkVersion(29)
+        multiDexEnabled = true
         applicationId = packageName
         versionCode = 5
         versionName = "1.0.5"
@@ -42,7 +46,8 @@ repositories {
 
 val kotlin_version = "1.3.41"
 dependencies {
-    implementation("com.lightningkite.kwift:android:0.1.0")
+    implementation("com.lightningkite.kwift:android:0.1.1")
+    implementation("com.lightningkite.kwift:android-maps:0.1.1")
     testImplementation("junit:junit:4.12")
     androidTestImplementation("androidx.test:runner:1.2.0")
     androidTestImplementation("com.android.support.test.espresso:espresso-core:3.0.2")
@@ -62,9 +67,17 @@ dependencies {
     implementation("com.romandanylyk:pageindicatorview:1.0.3")
     implementation("com.theartofdev.edmodo:android-image-cropper:2.7.0")
     implementation("com.github.marcoscgdev:Android-Week-View:1.2.7")
+    implementation("com.android.support:multidex:1.0.3")
 }
 
-project.configureGradle("../../ios/Kwift Template")
+project.configureGradle(
+    packageName = packageName,
+    iosRelativeBase = "../../ios/Kwift Template",
+    setupCodeConversion = {
+        imports += listOf("KwiftMaps")
+    },
+    setupLayoutConversion = LayoutConverter.normal + LayoutConverter.mapViews
+)
 
 val exampleDeepLink = "exampledeeplink://host/path?query=yes"
 tasks.create("testDeepLinkAndroid", Exec::class.java) {

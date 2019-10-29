@@ -3,6 +3,7 @@
 
 import Foundation
 import Kwift
+import KwiftMaps
 
 
 
@@ -18,7 +19,7 @@ public class APIOnline: APIInterface {
     public init(baseUrl: String = "https://jsonplaceholder.typicode.com") {
         self.baseUrl = baseUrl
     }
-    convenience public init(_ baseUrl: String = "https://jsonplaceholder.typicode.com") {
+    convenience public init(_ baseUrl: String) {
         self.init(baseUrl: baseUrl)
     }
 }

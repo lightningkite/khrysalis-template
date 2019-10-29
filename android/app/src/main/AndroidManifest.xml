@@ -18,6 +18,8 @@
             android:theme="@style/AppTheme"
             android:name=".MyApplication"
             tools:ignore="GoogleAppIndexingWarning">
+
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyD9HgCjYghz5oa173XlXUyRTKFT46MVMg4"/>
         <activity android:name=".MainActivity"
                   android:windowSoftInputMode="adjustResize"
                   android:launchMode="singleInstance">

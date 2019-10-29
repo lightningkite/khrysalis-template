@@ -16,11 +16,14 @@ PODS:
     - KeychainAccess
     - QVRWeekView
     - "UITextView+Placeholder"
+  - KwiftMaps (0.1.0):
+    - Kwift
   - QVRWeekView (0.13.3)
   - "UITextView+Placeholder (1.3.3)"
 
 DEPENDENCIES:
-  - Kwift (from `~/StudioProjects/kwift/kwift.podspec`)
+  - Kwift (from `~/StudioProjects/kwift/Kwift.podspec`)
+  - KwiftMaps (from `~/StudioProjects/kwift/KwiftMaps.podspec`)
   - QVRWeekView (from `https://github.com/Quivr/iOS-Week-View.git`)
 
 SPEC REPOS:
@@ -35,7 +38,9 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Kwift:
-    :path: "~/StudioProjects/kwift/kwift.podspec"
+    :path: "~/StudioProjects/kwift/Kwift.podspec"
+  KwiftMaps:
+    :path: "~/StudioProjects/kwift/KwiftMaps.podspec"
   QVRWeekView:
     :git: https://github.com/Quivr/iOS-Week-View.git
 
@@ -51,10 +56,11 @@ SPEC CHECKSUMS:
   Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
-  Kwift: 03dc7eeff597c97f1d3b8cb0fecf6f4ee9be7a21
+  Kwift: deaa5256f18aad6645e97f9c874c3eeded4452a1
+  KwiftMaps: c5a770dcd21928febb65c6c3195875a80db2cacb
   QVRWeekView: d3941741f5c5b324a097d30d4ea8f4c9a2c2c59c
   "UITextView+Placeholder": c407b27599ea23cca425946fee3cf1db5d547008
 
-PODFILE CHECKSUM: b13f2096f911a2c6698b855bce4b7a4996b78a93
+PODFILE CHECKSUM: e368f15528c01370cf98ea3fe6aa11ad8bf229d1
 
 COCOAPODS: 1.8.1
