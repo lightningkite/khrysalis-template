@@ -14,6 +14,8 @@ class ExampleContentXml {
 
     lateinit var exampleContentNumber: TextView
     lateinit var exampleContentIncrement: Button
+    lateinit var chainedNumber: TextView
+    lateinit var chainedIncrement: Button
     
     lateinit var xmlRoot: View
 
@@ -25,6 +27,8 @@ class ExampleContentXml {
         xmlRoot = view
         exampleContentNumber = view.findViewById<TextView>(R.id.exampleContentNumber)
         exampleContentIncrement = view.findViewById<Button>(R.id.exampleContentIncrement)
+        chainedNumber = view.findViewById<TextView>(R.id.chainedNumber)
+        chainedIncrement = view.findViewById<Button>(R.id.chainedIncrement)
         
         return view
     }

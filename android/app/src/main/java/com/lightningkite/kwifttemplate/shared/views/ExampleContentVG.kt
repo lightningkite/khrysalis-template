@@ -1,8 +1,8 @@
 package com.lightningkite.kwifttemplate.shared.views
 
 import android.view.View
-import com.lightningkite.kwift.observables.actual.bindText
-import com.lightningkite.kwift.observables.shared.StandardObservableProperty
+import com.lightningkite.kwift.observables.actual.*
+import com.lightningkite.kwift.observables.shared.*
 import com.lightningkite.kwift.shared.captureWeak
 import com.lightningkite.kwift.views.actual.ViewDependency
 import com.lightningkite.kwift.views.actual.onClick
@@ -13,6 +13,7 @@ class ExampleContentVG : ViewGenerator() {
     override val title: String get() = "Example Content"
 
     val number: StandardObservableProperty<Int> = StandardObservableProperty(0)
+    val chained: StandardObservableProperty<MutableObservableProperty<Int>> = StandardObservableProperty(StandardObservableProperty(0))
 
     fun increment(){
         number.value += 1
@@ -23,6 +24,8 @@ class ExampleContentVG : ViewGenerator() {
         val view = xml.setup(dependency)
         xml.exampleContentIncrement.onClick(captureWeak(this) { self -> self.increment() })
         xml.exampleContentNumber.bindText(number) { it -> it.toString() }
+        xml.chainedIncrement.onClick { this.chained.value.value = this.chained.value.value + 1 }
+        xml.chainedNumber.bindString(chained.flatMap { it -> it }.map { it -> it.toString() } )
         return view
     }
 }
