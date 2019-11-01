@@ -13,13 +13,15 @@ class DateRangeDemoVG() : ViewGenerator() {
 
     val start: StandardObservableProperty<Date?> = StandardObservableProperty(Date())
     val endInclusive: StandardObservableProperty<Date?> = StandardObservableProperty(Date())
+    val dates: StandardObservableProperty<Set<Date>> = StandardObservableProperty(setOf())
 
     override fun generate(dependency: ViewDependency): View {
         val xml = DateRangeDemoXml()
         val view = xml.setup(dependency)
 
         xml.range.bind(start, endInclusive)
-        xml.select.bind(start)
+//        xml.select.bind(start)
+        xml.multi.bind(dates)
 
         return view
     }

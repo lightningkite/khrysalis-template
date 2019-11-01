@@ -1,0 +1,80 @@
+//
+// MapDemoXml.swift
+// Created by Kwift XML
+//
+
+import UIKit
+import Kwift
+import MapKit
+
+class MapDemoXml {
+    
+    unowned var xmlRoot: UIView!
+    func setup(_ dependency: ViewDependency) -> UIView {
+        let view = LinearLayout(frame: .zero)
+        view.orientation = .y
+        view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        view.gravity = .topLeft
+        
+        view.addSubview(
+            MKMapView(frame: .zero),
+            minimumSize: CGSize(width: 0, height: 0),
+            size: CGSize(width: 0, height: 0),
+            margin: UIEdgeInsets(top: 0 + 0, left: 0 + 0, bottom: 0 + 0, right: 0 + 0),
+            gravity: .topFill,
+            weight: 1.0
+        ) { view in 
+            self.map = view
+        }
+        
+        view.addSubview(
+            UIScrollView(frame: .zero),
+            minimumSize: CGSize(width: 0, height: 0),
+            size: CGSize(width: 0, height: 0),
+            margin: UIEdgeInsets(top: 0 + 0, left: 0 + 0, bottom: 0 + 0, right: 0 + 0),
+            gravity: .topFill,
+            weight: 1.0
+        ) { view in 
+            view.addVerticalSubview(LinearLayout(frame: .zero), fill: false) { view in 
+                view.orientation = .y
+                view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+                view.gravity = .topLeft
+                
+                view.addSubview(
+                    UITextField(frame: .zero),
+                    minimumSize: CGSize(width: 0, height: 0),
+                    size: CGSize(width: 0, height: 0),
+                    margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                    gravity: .topFill,
+                    weight: 0
+                ) { view in 
+                    self.select = view
+                    view.backgroundLayer = view.underlineLayer(boldColor: UIColor(argb: 0xFF222222), hintColor: nil)
+                    view.numberOfLines = 0
+                    view.font = UIFont.get(size: 16, style: [])
+                    view.textColor = UIColor(argb: 0xFF222222)
+                }
+                
+                view.addSubview(
+                    UITableView(frame: .zero),
+                    minimumSize: CGSize(width: 0, height: 0),
+                    size: CGSize(width: 0, height: 100),
+                    margin: UIEdgeInsets(top: 0 + 0, left: 0 + 0, bottom: 0 + 0, right: 0 + 0),
+                    gravity: .topFill,
+                    weight: 0
+                ) { view in 
+                    self.options = view
+                }
+                
+            }
+        }
+        
+        xmlRoot = view
+        return view
+    }
+    
+    unowned var select: UITextField!
+    unowned var options: UITableView!
+    unowned var map: MKMapView!
+    
+}
