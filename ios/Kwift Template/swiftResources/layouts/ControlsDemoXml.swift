@@ -89,6 +89,23 @@ class ControlsDemoXml {
             }
             
             view.addSubview(
+                UIAutoCompleteTextField(frame: .zero),
+                minimumSize: CGSize(width: 0, height: 40),
+                size: CGSize(width: 0, height: 0),
+                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                gravity: .topFill,
+                weight: 0
+            ) { view in 
+                self.editableAutoText = view
+                view.backgroundLayer = ResourcesDrawables.border(view)
+                view.setLeftPaddingPoints(8)
+                view.setRightPaddingPoints(8)
+                view.numberOfLines = 0
+                view.font = UIFont.get(size: 16, style: [])
+                view.textColor = UIColor(argb: 0xFF222222)
+            }
+            
+            view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
@@ -124,8 +141,8 @@ class ControlsDemoXml {
             view.addSubview(
                 Dropdown(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 50),
-                margin: UIEdgeInsets(top: 8 + 8, left: 8 + 8, bottom: 8 + 8, right: 8 + 8),
+                size: CGSize(width: 0, height: 0),
+                margin: UIEdgeInsets(top: 8 + 0, left: 8 + 0, bottom: 8 + 0, right: 8 + 0),
                 gravity: .topFill,
                 weight: 0
             ) { view in 
@@ -140,6 +157,7 @@ class ControlsDemoXml {
     
     unowned var editableText: UITextField!
     unowned var editableTextCopy: UILabel!
+    unowned var editableAutoText: UIAutoCompleteTextField!
     unowned var editableTextBig: UITextView!
     unowned var spinner: Dropdown!
     

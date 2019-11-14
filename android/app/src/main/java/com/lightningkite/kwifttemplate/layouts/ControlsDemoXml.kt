@@ -13,6 +13,7 @@ import com.lightningkite.kwifttemplate.R
 class ControlsDemoXml {
 
     lateinit var editableText: EditText
+    lateinit var editableAutoText: AutoCompleteTextView
     lateinit var editableTextCopy: TextView
     lateinit var editableTextBig: com.lightningkite.kwift.views.android.MultilineEditText
     lateinit var spinner: Spinner
@@ -26,6 +27,7 @@ class ControlsDemoXml {
     fun setup(view: View): View {
         xmlRoot = view
         editableText = view.findViewById<EditText>(R.id.editableText)
+        editableAutoText = view.findViewById<AutoCompleteTextView>(R.id.editableAutoText)
         editableTextCopy = view.findViewById<TextView>(R.id.editableTextCopy)
         editableTextBig = view.findViewById<com.lightningkite.kwift.views.android.MultilineEditText>(R.id.editableTextBig)
         spinner = view.findViewById<Spinner>(R.id.spinner)

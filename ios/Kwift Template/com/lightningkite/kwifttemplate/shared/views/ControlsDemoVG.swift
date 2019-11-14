@@ -22,7 +22,14 @@ public class ControlsDemoVG: ViewGenerator {
         var xml = ControlsDemoXml()
         var view = xml.setup(dependency)
         xml.editableText.bindString(text)
+        xml.editableAutoText.bindString(text)
+        xml.editableAutoText.bind(options: options, toString: { (it) in 
+            it
+        }, onItemSelected: { (item) in 
+            self.text.value = item
+        })
         xml.editableTextCopy.bindString(text)
+        xml.editableTextBig.bindString(text)
         xml.spinner.bind(options: options, selected: text, makeView: { (obs) in 
             var xml = RowTextXml()
             var view = xml.setup(dependency)
@@ -38,7 +45,7 @@ public class ControlsDemoVG: ViewGenerator {
     override public init() {
         let text: StandardObservableProperty<String> = StandardObservableProperty("")
         self.text = text
-        let options: StandardObservableProperty<Array<String>> = StandardObservableProperty(["A", "B", "C", "D"])
+        let options: StandardObservableProperty<Array<String>> = StandardObservableProperty(["Apple", "Banana", "Chili Pepper", "Dragon Fruit"])
         self.options = options
         super.init()
     }

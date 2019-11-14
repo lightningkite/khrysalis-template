@@ -14,14 +14,23 @@ class ControlsDemoVG() : ViewGenerator() {
 
     val text: StandardObservableProperty<String> = StandardObservableProperty("")
     val options: StandardObservableProperty<List<String>> =
-        StandardObservableProperty(listOf("A", "B", "C", "D"))
+        StandardObservableProperty(listOf("Apple", "Banana", "Chili Pepper", "Dragon Fruit"))
 
     override fun generate(dependency: ViewDependency): View {
         val xml = ControlsDemoXml()
         val view = xml.setup(dependency)
 
         xml.editableText.bindString(text)
+        xml.editableAutoText.bindString(text)
+        xml.editableAutoText.bind(
+            options = options,
+            toString = { it -> it },
+            onItemSelected = { item ->
+                this.text.value = item
+            }
+        )
         xml.editableTextCopy.bindString(text)
+        xml.editableTextBig.bindString(text)
         xml.spinner.bind(
             options = options,
             selected = text,

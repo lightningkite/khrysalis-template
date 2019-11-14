@@ -15,10 +15,12 @@ PODS:
     - Fabric
     - KeychainAccess
     - QVRWeekView
+    - SearchTextField
     - "UITextView+Placeholder"
   - KwiftMaps (0.1.0):
     - Kwift
   - QVRWeekView (0.13.3)
+  - SearchTextField (1.2.4)
   - "UITextView+Placeholder (1.3.3)"
 
 DEPENDENCIES:
@@ -34,6 +36,7 @@ SPEC REPOS:
     - Crashlytics
     - Fabric
     - KeychainAccess
+    - SearchTextField
     - "UITextView+Placeholder"
 
 EXTERNAL SOURCES:
@@ -56,11 +59,12 @@ SPEC CHECKSUMS:
   Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
-  Kwift: deaa5256f18aad6645e97f9c874c3eeded4452a1
+  Kwift: 2a7d43bfe326353d02918bb4029515ba5effa4c5
   KwiftMaps: c5a770dcd21928febb65c6c3195875a80db2cacb
   QVRWeekView: d3941741f5c5b324a097d30d4ea8f4c9a2c2c59c
+  SearchTextField: 40dc3cc57def5a211f263cac263622c163bbc25a
   "UITextView+Placeholder": c407b27599ea23cca425946fee3cf1db5d547008
 
 PODFILE CHECKSUM: e368f15528c01370cf98ea3fe6aa11ad8bf229d1
 
-COCOAPODS: 1.8.1
+COCOAPODS: 1.8.4
