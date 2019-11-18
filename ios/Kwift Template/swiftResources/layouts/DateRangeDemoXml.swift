@@ -7,10 +7,10 @@ import UIKit
 import Kwift
 import MapKit
 
-class DateRangeDemoXml {
+public class DateRangeDemoXml {
     
-    unowned var xmlRoot: UIView!
-    func setup(_ dependency: ViewDependency) -> UIView {
+    public unowned var xmlRoot: UIView!
+    public func setup(_ dependency: ViewDependency) -> UIView {
         let view = LinearLayout(frame: .zero)
         view.orientation = .y
         view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -42,7 +42,7 @@ class DateRangeDemoXml {
         return view
     }
     
-    unowned var range: SelectDateRangeView!
-    unowned var multi: SelectMultipleDatesView!
+    public unowned var range: SelectDateRangeView!
+    public unowned var multi: SelectMultipleDatesView!
     
 }

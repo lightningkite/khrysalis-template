@@ -7,10 +7,10 @@ import UIKit
 import Kwift
 import MapKit
 
-class RowTestXml {
+public class RowTestXml {
     
-    unowned var xmlRoot: UIView!
-    func setup(_ dependency: ViewDependency) -> UIView {
+    public unowned var xmlRoot: UIView!
+    public func setup(_ dependency: ViewDependency) -> UIView {
         let view = LinearLayout(frame: .zero)
         view.orientation = .x
         view.padding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
@@ -56,7 +56,7 @@ class RowTestXml {
         return view
     }
     
-    unowned var button: UIButtonWithLayer!
-    unowned var label: UILabel!
+    public unowned var button: UIButtonWithLayer!
+    public unowned var label: UILabel!
     
 }

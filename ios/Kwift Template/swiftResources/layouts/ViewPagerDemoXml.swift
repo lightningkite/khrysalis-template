@@ -7,10 +7,10 @@ import UIKit
 import Kwift
 import MapKit
 
-class ViewPagerDemoXml {
+public class ViewPagerDemoXml {
     
-    unowned var xmlRoot: UIView!
-    func setup(_ dependency: ViewDependency) -> UIView {
+    public unowned var xmlRoot: UIView!
+    public func setup(_ dependency: ViewDependency) -> UIView {
         let view = FrameLayout(frame: .zero)
         view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         view.addSubview(
@@ -42,7 +42,7 @@ class ViewPagerDemoXml {
         return view
     }
     
-    unowned var viewPagerIndicator: UIPageControl!
-    unowned var viewPager: UICollectionView!
+    public unowned var viewPagerIndicator: UIPageControl!
+    public unowned var viewPager: UICollectionView!
     
 }

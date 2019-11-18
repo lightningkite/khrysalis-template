@@ -22,4 +22,5 @@
     <string name="gallery">Gallery</string>
     <string name="camera">Camera</string>
     <string name="get_location">Get Location</string>
+    <string name="check_out_my_multiple_rows">Check out my multiple rows</string>
 </resources>

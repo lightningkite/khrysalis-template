@@ -7,10 +7,10 @@ import UIKit
 import Kwift
 import MapKit
 
-class LoginDemoXml {
+public class LoginDemoXml {
     
-    unowned var xmlRoot: UIView!
-    func setup(_ dependency: ViewDependency) -> UIView {
+    public unowned var xmlRoot: UIView!
+    public func setup(_ dependency: ViewDependency) -> UIView {
         let view = UIScrollView(frame: .zero)
         view.addVerticalSubview(LinearLayout(frame: .zero), fill: false) { view in 
             view.orientation = .y
@@ -145,11 +145,11 @@ class LoginDemoXml {
         return view
     }
     
-    unowned var verifyPassword: UITextField!
-    unowned var password: UITextField!
-    unowned var submit: UIButtonWithLayer!
-    unowned var submitLoading: ViewFlipper!
-    unowned var agree: LabeledCheckbox!
-    unowned var username: UITextField!
+    public unowned var verifyPassword: UITextField!
+    public unowned var password: UITextField!
+    public unowned var submit: UIButtonWithLayer!
+    public unowned var submitLoading: ViewFlipper!
+    public unowned var agree: LabeledCheckbox!
+    public unowned var username: UITextField!
     
 }

@@ -32,4 +32,5 @@ public enum ResourcesStrings {
     static let gallery = NSLocalizedString("Gallery", comment: "gallery")
     static let camera = NSLocalizedString("Camera", comment: "camera")
     static let getLocation = NSLocalizedString("Get Location", comment: "get_location")
+    static let checkOutMyMultipleRows = NSLocalizedString("Check out my multiple rows", comment: "check_out_my_multiple_rows")
 }

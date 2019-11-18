@@ -7,10 +7,10 @@ import UIKit
 import Kwift
 import MapKit
 
-class LoadImageDemoXml {
+public class LoadImageDemoXml {
     
-    unowned var xmlRoot: UIView!
-    func setup(_ dependency: ViewDependency) -> UIView {
+    public unowned var xmlRoot: UIView!
+    public func setup(_ dependency: ViewDependency) -> UIView {
         let view = LinearLayout(frame: .zero)
         view.orientation = .y
         view.padding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
@@ -75,8 +75,8 @@ class LoadImageDemoXml {
         return view
     }
     
-    unowned var image: UIImageView!
-    unowned var camera: UIButtonWithLayer!
-    unowned var gallery: UIButtonWithLayer!
+    public unowned var image: UIImageView!
+    public unowned var camera: UIButtonWithLayer!
+    public unowned var gallery: UIButtonWithLayer!
     
 }

@@ -7,10 +7,10 @@ import UIKit
 import Kwift
 import MapKit
 
-class SliderDemoXml {
+public class SliderDemoXml {
     
-    unowned var xmlRoot: UIView!
-    func setup(_ dependency: ViewDependency) -> UIView {
+    public unowned var xmlRoot: UIView!
+    public func setup(_ dependency: ViewDependency) -> UIView {
         let view = UIScrollView(frame: .zero)
         view.addVerticalSubview(LinearLayout(frame: .zero), fill: false) { view in 
             view.orientation = .y
@@ -175,15 +175,15 @@ class SliderDemoXml {
         return view
     }
     
-    unowned var slider: UISlider!
-    unowned var valueDisplay: UILabel!
-    unowned var ratingDisplayNumber: UILabel!
-    unowned var ratingDisplayStars: UIRatingBar!
-    unowned var ratingDisplayNumberFloat: UILabel!
-    unowned var rating: UIRatingBar!
-    unowned var ratingFloat: UIRatingBar!
-    unowned var ratingDisplayStarsFloat: UIRatingBar!
-    unowned var ratingDisplayStarsSmall: UIRatingBar!
-    unowned var ratingDisplayStarsSmallFloat: UIRatingBar!
+    public unowned var slider: UISlider!
+    public unowned var valueDisplay: UILabel!
+    public unowned var ratingDisplayNumber: UILabel!
+    public unowned var ratingDisplayStars: UIRatingBar!
+    public unowned var ratingDisplayNumberFloat: UILabel!
+    public unowned var rating: UIRatingBar!
+    public unowned var ratingFloat: UIRatingBar!
+    public unowned var ratingDisplayStarsFloat: UIRatingBar!
+    public unowned var ratingDisplayStarsSmall: UIRatingBar!
+    public unowned var ratingDisplayStarsSmallFloat: UIRatingBar!
     
 }

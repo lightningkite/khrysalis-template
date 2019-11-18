@@ -7,10 +7,10 @@ import UIKit
 import Kwift
 import MapKit
 
-class ControlsDemoXml {
+public class ControlsDemoXml {
     
-    unowned var xmlRoot: UIView!
-    func setup(_ dependency: ViewDependency) -> UIView {
+    public unowned var xmlRoot: UIView!
+    public func setup(_ dependency: ViewDependency) -> UIView {
         let view = UIScrollView(frame: .zero)
         view.addVerticalSubview(LinearLayout(frame: .zero), fill: false) { view in 
             view.orientation = .y
@@ -155,10 +155,10 @@ class ControlsDemoXml {
         return view
     }
     
-    unowned var editableText: UITextField!
-    unowned var editableTextCopy: UILabel!
-    unowned var editableAutoText: UIAutoCompleteTextField!
-    unowned var editableTextBig: UITextView!
-    unowned var spinner: Dropdown!
+    public unowned var editableText: UITextField!
+    public unowned var editableTextCopy: UILabel!
+    public unowned var editableAutoText: UIAutoCompleteTextField!
+    public unowned var editableTextBig: UITextView!
+    public unowned var spinner: Dropdown!
     
 }

@@ -7,10 +7,10 @@ import UIKit
 import Kwift
 import MapKit
 
-class DrawableDemoXml {
+public class DrawableDemoXml {
     
-    unowned var xmlRoot: UIView!
-    func setup(_ dependency: ViewDependency) -> UIView {
+    public unowned var xmlRoot: UIView!
+    public func setup(_ dependency: ViewDependency) -> UIView {
         let view = UIScrollView(frame: .zero)
         view.addVerticalSubview(LinearLayout(frame: .zero), fill: false) { view in 
             view.orientation = .y

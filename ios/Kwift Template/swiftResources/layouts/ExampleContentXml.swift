@@ -7,10 +7,10 @@ import UIKit
 import Kwift
 import MapKit
 
-class ExampleContentXml {
+public class ExampleContentXml {
     
-    unowned var xmlRoot: UIView!
-    func setup(_ dependency: ViewDependency) -> UIView {
+    public unowned var xmlRoot: UIView!
+    public func setup(_ dependency: ViewDependency) -> UIView {
         let view = UIScrollView(frame: .zero)
         view.addVerticalSubview(LinearLayout(frame: .zero), fill: false) { view in 
             view.orientation = .y
@@ -163,9 +163,9 @@ class ExampleContentXml {
         return view
     }
     
-    unowned var chainedNumber: UILabel!
-    unowned var chainedIncrement: UIButtonWithLayer!
-    unowned var exampleContentNumber: UILabel!
-    unowned var exampleContentIncrement: UIButtonWithLayer!
+    public unowned var chainedNumber: UILabel!
+    public unowned var chainedIncrement: UIButtonWithLayer!
+    public unowned var exampleContentNumber: UILabel!
+    public unowned var exampleContentIncrement: UIButtonWithLayer!
     
 }

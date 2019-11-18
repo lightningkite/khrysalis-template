@@ -7,10 +7,10 @@ import UIKit
 import Kwift
 import MapKit
 
-class RowTextXml {
+public class RowTextXml {
     
-    unowned var xmlRoot: UIView!
-    func setup(_ dependency: ViewDependency) -> UIView {
+    public unowned var xmlRoot: UIView!
+    public func setup(_ dependency: ViewDependency) -> UIView {
         let view = FrameLayout(frame: .zero)
         view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         view.addSubview(
@@ -30,6 +30,6 @@ class RowTextXml {
         return view
     }
     
-    unowned var label: UILabel!
+    public unowned var label: UILabel!
     
 }

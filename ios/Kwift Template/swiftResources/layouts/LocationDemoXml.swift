@@ -7,10 +7,10 @@ import UIKit
 import Kwift
 import MapKit
 
-class LocationDemoXml {
+public class LocationDemoXml {
     
-    unowned var xmlRoot: UIView!
-    func setup(_ dependency: ViewDependency) -> UIView {
+    public unowned var xmlRoot: UIView!
+    public func setup(_ dependency: ViewDependency) -> UIView {
         let view = LinearLayout(frame: .zero)
         view.orientation = .y
         view.padding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
@@ -56,7 +56,7 @@ class LocationDemoXml {
         return view
     }
     
-    unowned var getLocation: UIButtonWithLayer!
-    unowned var locationDisplay: UILabel!
+    public unowned var getLocation: UIButtonWithLayer!
+    public unowned var locationDisplay: UILabel!
     
 }

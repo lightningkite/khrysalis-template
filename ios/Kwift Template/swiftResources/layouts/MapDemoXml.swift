@@ -7,10 +7,10 @@ import UIKit
 import Kwift
 import MapKit
 
-class MapDemoXml {
+public class MapDemoXml {
     
-    unowned var xmlRoot: UIView!
-    func setup(_ dependency: ViewDependency) -> UIView {
+    public unowned var xmlRoot: UIView!
+    public func setup(_ dependency: ViewDependency) -> UIView {
         let view = LinearLayout(frame: .zero)
         view.orientation = .y
         view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -73,8 +73,8 @@ class MapDemoXml {
         return view
     }
     
-    unowned var select: UITextField!
-    unowned var options: UITableView!
-    unowned var map: MKMapView!
+    public unowned var select: UITextField!
+    public unowned var options: UITableView!
+    public unowned var map: MKMapView!
     
 }

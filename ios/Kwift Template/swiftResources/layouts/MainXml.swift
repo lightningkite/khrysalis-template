@@ -7,10 +7,10 @@ import UIKit
 import Kwift
 import MapKit
 
-class MainXml {
+public class MainXml {
     
-    unowned var xmlRoot: UIView!
-    func setup(_ dependency: ViewDependency) -> UIView {
+    public unowned var xmlRoot: UIView!
+    public func setup(_ dependency: ViewDependency) -> UIView {
         let view = LinearLayout(frame: .zero)
         view.backgroundColor = ResourcesColors.white
         view.orientation = .y
@@ -80,8 +80,8 @@ class MainXml {
         return view
     }
     
-    unowned var mainBack: UIButtonWithLayer!
-    unowned var mainContent: UIView!
-    unowned var title: UILabel!
+    public unowned var mainBack: UIButtonWithLayer!
+    public unowned var mainContent: UIView!
+    public unowned var title: UILabel!
     
 }
