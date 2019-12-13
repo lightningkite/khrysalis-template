@@ -16,5 +16,8 @@ class AppDelegate: KwiftAppDelegate {
     override func makeMain() -> ViewGenerator {
         return MainVG()
     }
+    
+    override open func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+    }
 }
-

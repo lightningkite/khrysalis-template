@@ -406,7 +406,7 @@ static func icLauncherBackground(_ view: UIView? = nil) -> CALayer {
         sublayer.strokeColor = UIColor(argb: 0x33FFFFFF).cgColor
         return sublayer
     }())
-    layer.bounds.size = CGSize(width: 108, height: 108)
+    layer.bounds.size = CGSize(width: 108.0, height: 108.0)
     layer.scaleOverResize = true
     return layer
 }

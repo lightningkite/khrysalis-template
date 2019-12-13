@@ -21,13 +21,16 @@ public class LoadImageDemoVG: ViewGenerator {
         var view = xml.setup(dependency)
         xml.camera.onClick{ () in 
             dependency.requestImageCamera{ (url) in 
-                xml.image.loadUrl(url.toString())
+                xml.image.loadImage(ImageReference(url))
             }
         }
         xml.gallery.onClick{ () in 
             dependency.requestImageGallery{ (url) in 
-                xml.image.loadUrl(url.toString())
+                xml.image.loadImage(ImageReference(url))
             }
+        }
+        xml.loremPixel.onClick{ () in 
+            xml.image.loadImage(ImageRemoteUrl("https://picsum.photos/200"))
         }
         return view
     }

@@ -34,18 +34,18 @@ public class MainXml {
                 UIButtonWithLayer(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 0 + 8, left: 0 + 8, bottom: 0 + 8, right: 0 + 8),
+                margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .centerCenter,
                 weight: 0
             ) { view in 
                 self.mainBack = view
+                view.titleLabel?.font = UIFont.get(size: 12, style: [])
+                view.titleLabel?.numberOfLines = 0
                 view.contentHorizontalAlignment = .center
                 view.iconPosition = .top
                 view.iconLayer = ResourcesDrawables.icArrowBackWhite24dp(view)
                 view.contentMode = .scaleAspectFit
                 view.contentEdgeInsets = UIEdgeInsets(top: 8, left:8, bottom:8, right:8)
-                view.titleLabel?.numberOfLines = 0
-                view.titleLabel?.font = UIFont.get(size: 12, style: [])
             }
             
             view.addSubview(
@@ -57,16 +57,16 @@ public class MainXml {
                 weight: 1.0
             ) { view in 
                 self.title = view
-                view.text = ResourcesStrings.appName
-                view.numberOfLines = 0
                 view.font = UIFont.get(size: 18, style: ["bold"])
+                view.textString = ResourcesStrings.appName
+                view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFFffffff)
             }
             
         }
         
         view.addSubview(
-            UIView(frame: .zero),
+            SwapView(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
             size: CGSize(width: 0, height: 0),
             margin: UIEdgeInsets(top: 0 + 0, left: 0 + 0, bottom: 0 + 0, right: 0 + 0),
@@ -81,7 +81,7 @@ public class MainXml {
     }
     
     public unowned var mainBack: UIButtonWithLayer!
-    public unowned var mainContent: UIView!
+    public unowned var mainContent: SwapView!
     public unowned var title: UILabel!
     
 }

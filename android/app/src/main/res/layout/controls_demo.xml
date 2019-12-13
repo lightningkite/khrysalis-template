@@ -20,13 +20,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="@string/i_m_a_switch"/>
+                android:text="@string/lorem_ipsum"
+                android:gravity="top"/>
 
         <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="@string/i_m_a_switch"/>
+                android:text="@string/lorem_ipsum"
+                android:gravity="top"/>
 
         <TextView
                 style="@style/Body"

@@ -11,8 +11,8 @@ public class DrawableDemoXml {
     
     public unowned var xmlRoot: UIView!
     public func setup(_ dependency: ViewDependency) -> UIView {
-        let view = UIScrollView(frame: .zero)
-        view.addVerticalSubview(LinearLayout(frame: .zero), fill: false) { view in 
+        let view = ScrollViewVertical(frame: .zero)
+        view.addSubview(LinearLayout(frame: .zero)) { view in 
             view.orientation = .y
             view.padding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
             view.gravity = .topLeft
@@ -25,9 +25,9 @@ public class DrawableDemoXml {
                 gravity: .topLeft,
                 weight: 0
             ) { view in 
-                view.text = ResourcesStrings.welcome
-                view.numberOfLines = 0
                 view.font = UIFont.get(size: 24, style: ["bold"])
+                view.textString = ResourcesStrings.welcome
+                view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF000000)
             }
             
@@ -52,13 +52,13 @@ public class DrawableDemoXml {
                     weight: 1.0
                 ) { view in 
                     view.backgroundLayer = ResourcesDrawables.buttonAccent(view)
-                    view.setTitle(ResourcesStrings.ok.toUpperCase(), for: .normal)
+                    view.titleLabel?.font = UIFont.get(size: 12, style: [])
+                    view.titleLabel?.textString = ResourcesStrings.ok
+                    view.titleLabel?.numberOfLines = 0
+                    view.textString = ResourcesStrings.ok
                     view.contentHorizontalAlignment = .center
                     view.contentMode = .scaleAspectFit
                     view.contentEdgeInsets = UIEdgeInsets(top: 0, left:0, bottom:0, right:0)
-                    view.titleLabel?.text = ResourcesStrings.ok
-                    view.titleLabel?.numberOfLines = 0
-                    view.titleLabel?.font = UIFont.get(size: 12, style: [])
                 }
                 
                 view.addSubview(
@@ -70,13 +70,13 @@ public class DrawableDemoXml {
                     weight: 1.0
                 ) { view in 
                     view.backgroundLayer = ResourcesDrawables.buttonDisabled(view)
-                    view.setTitle(ResourcesStrings.ok.toUpperCase(), for: .normal)
+                    view.titleLabel?.font = UIFont.get(size: 12, style: [])
+                    view.titleLabel?.textString = ResourcesStrings.ok
+                    view.titleLabel?.numberOfLines = 0
+                    view.textString = ResourcesStrings.ok
                     view.contentHorizontalAlignment = .center
                     view.contentMode = .scaleAspectFit
                     view.contentEdgeInsets = UIEdgeInsets(top: 0, left:0, bottom:0, right:0)
-                    view.titleLabel?.text = ResourcesStrings.ok
-                    view.titleLabel?.numberOfLines = 0
-                    view.titleLabel?.font = UIFont.get(size: 12, style: [])
                 }
                 
                 view.addSubview(
@@ -88,13 +88,13 @@ public class DrawableDemoXml {
                     weight: 1.0
                 ) { view in 
                     view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
-                    view.setTitle(ResourcesStrings.ok.toUpperCase(), for: .normal)
+                    view.titleLabel?.font = UIFont.get(size: 12, style: [])
+                    view.titleLabel?.textString = ResourcesStrings.ok
+                    view.titleLabel?.numberOfLines = 0
+                    view.textString = ResourcesStrings.ok
                     view.contentHorizontalAlignment = .center
                     view.contentMode = .scaleAspectFit
                     view.contentEdgeInsets = UIEdgeInsets(top: 0, left:0, bottom:0, right:0)
-                    view.titleLabel?.text = ResourcesStrings.ok
-                    view.titleLabel?.numberOfLines = 0
-                    view.titleLabel?.font = UIFont.get(size: 12, style: [])
                 }
                 
             }
@@ -133,13 +133,13 @@ public class DrawableDemoXml {
                     weight: 1.0
                 ) { view in 
                     view.backgroundLayer = ResourcesDrawables.border(view)
-                    view.setTitle(ResourcesStrings.ok.toUpperCase(), for: .normal)
+                    view.titleLabel?.font = UIFont.get(size: 12, style: [])
+                    view.titleLabel?.textString = ResourcesStrings.ok
+                    view.titleLabel?.numberOfLines = 0
+                    view.textString = ResourcesStrings.ok
                     view.contentHorizontalAlignment = .center
                     view.contentMode = .scaleAspectFit
                     view.contentEdgeInsets = UIEdgeInsets(top: 0, left:0, bottom:0, right:0)
-                    view.titleLabel?.text = ResourcesStrings.ok
-                    view.titleLabel?.numberOfLines = 0
-                    view.titleLabel?.font = UIFont.get(size: 12, style: [])
                 }
                 
                 view.addSubview(

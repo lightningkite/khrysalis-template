@@ -11,8 +11,8 @@ public class LoginDemoXml {
     
     public unowned var xmlRoot: UIView!
     public func setup(_ dependency: ViewDependency) -> UIView {
-        let view = UIScrollView(frame: .zero)
-        view.addVerticalSubview(LinearLayout(frame: .zero), fill: false) { view in 
+        let view = ScrollViewVertical(frame: .zero)
+        view.addSubview(LinearLayout(frame: .zero)) { view in 
             view.orientation = .y
             view.padding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
             view.gravity = .topLeft
@@ -25,9 +25,9 @@ public class LoginDemoXml {
                 gravity: .topLeft,
                 weight: 0
             ) { view in 
-                view.text = ResourcesStrings.welcomeToSwitchTown
-                view.numberOfLines = 0
                 view.font = UIFont.get(size: 24, style: ["bold"])
+                view.textString = ResourcesStrings.welcomeToSwitchTown
+                view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF000000)
             }
             
@@ -47,8 +47,8 @@ public class LoginDemoXml {
                 view.autocapitalizationType = .none
                 view.textContentType = .emailAddress
                 view.keyboardType = .emailAddress
-                view.numberOfLines = 0
                 view.font = UIFont.get(size: 16, style: [])
+                view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF222222)
             }
             
@@ -68,8 +68,8 @@ public class LoginDemoXml {
                 view.autocapitalizationType = .none
                 view.textContentType = .password
                 view.isSecureTextEntry = true
-                view.numberOfLines = 0
                 view.font = UIFont.get(size: 16, style: [])
+                view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF222222)
             }
             
@@ -89,8 +89,8 @@ public class LoginDemoXml {
                 view.autocapitalizationType = .none
                 view.textContentType = .password
                 view.isSecureTextEntry = true
-                view.numberOfLines = 0
                 view.font = UIFont.get(size: 16, style: [])
+                view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF222222)
             }
             
@@ -103,9 +103,9 @@ public class LoginDemoXml {
                 weight: 0
             ) { view in 
                 self.agree = view
-                view.labelView.text = ResourcesStrings.iAgree
-                view.labelView.numberOfLines = 0
                 view.labelView.font = UIFont.get(size: 12, style: [])
+                view.labelView.textString = ResourcesStrings.iAgree
+                view.labelView.numberOfLines = 0
             }
             
             view.addSubview(
@@ -127,15 +127,17 @@ public class LoginDemoXml {
                 ) { view in 
                     self.submit = view
                     view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
-                    view.setTitle(ResourcesStrings.submit, for: .normal)
+                    view.titleLabel?.font = UIFont.get(size: 16, style: [])
+                    view.titleLabel?.textAllCaps = false
+                    view.titleLabel?.textString = ResourcesStrings.submit
+                    view.titleLabel?.numberOfLines = 0
+                    view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
+                    view.textAllCaps = false
+                    view.textString = ResourcesStrings.submit
                     view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
                     view.contentHorizontalAlignment = .center
                     view.contentMode = .scaleAspectFit
                     view.contentEdgeInsets = UIEdgeInsets(top: 8, left:8, bottom:8, right:8)
-                    view.titleLabel?.text = ResourcesStrings.submit
-                    view.titleLabel?.numberOfLines = 0
-                    view.titleLabel?.font = UIFont.get(size: 16, style: [])
-                    view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
                 }
                 
             }

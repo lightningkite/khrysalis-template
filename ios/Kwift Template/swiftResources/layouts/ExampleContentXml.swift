@@ -11,8 +11,8 @@ public class ExampleContentXml {
     
     public unowned var xmlRoot: UIView!
     public func setup(_ dependency: ViewDependency) -> UIView {
-        let view = UIScrollView(frame: .zero)
-        view.addVerticalSubview(LinearLayout(frame: .zero), fill: false) { view in 
+        let view = ScrollViewVertical(frame: .zero)
+        view.addSubview(LinearLayout(frame: .zero)) { view in 
             view.orientation = .y
             view.padding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
             view.gravity = .topLeft
@@ -25,9 +25,9 @@ public class ExampleContentXml {
                 gravity: .topLeft,
                 weight: 0
             ) { view in 
-                view.text = ResourcesStrings.welcome
-                view.numberOfLines = 0
                 view.font = UIFont.get(size: 24, style: ["bold"])
+                view.textString = ResourcesStrings.welcome
+                view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF000000)
             }
             
@@ -39,9 +39,9 @@ public class ExampleContentXml {
                 gravity: .topLeft,
                 weight: 0
             ) { view in 
-                view.text = ResourcesStrings.welcomeMessage
-                view.numberOfLines = 0
                 view.font = UIFont.get(size: 16, style: [])
+                view.textString = ResourcesStrings.welcomeMessage
+                view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF222222)
             }
             
@@ -66,9 +66,9 @@ public class ExampleContentXml {
                     weight: 1.0
                 ) { view in 
                     self.exampleContentNumber = view
-                    view.text = "0"
-                    view.numberOfLines = 0
                     view.font = UIFont.get(size: 16, style: [])
+                    view.textString = "0"
+                    view.numberOfLines = 0
                     view.textColor = UIColor(argb: 0xFF222222)
                 }
                 
@@ -82,15 +82,17 @@ public class ExampleContentXml {
                 ) { view in 
                     self.exampleContentIncrement = view
                     view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
-                    view.setTitle(ResourcesStrings.incrementTheNumber, for: .normal)
+                    view.titleLabel?.font = UIFont.get(size: 16, style: [])
+                    view.titleLabel?.textAllCaps = false
+                    view.titleLabel?.textString = ResourcesStrings.incrementTheNumber
+                    view.titleLabel?.numberOfLines = 0
+                    view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
+                    view.textAllCaps = false
+                    view.textString = ResourcesStrings.incrementTheNumber
                     view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
                     view.contentHorizontalAlignment = .center
                     view.contentMode = .scaleAspectFit
                     view.contentEdgeInsets = UIEdgeInsets(top: 8, left:8, bottom:8, right:8)
-                    view.titleLabel?.text = ResourcesStrings.incrementTheNumber
-                    view.titleLabel?.numberOfLines = 0
-                    view.titleLabel?.font = UIFont.get(size: 16, style: [])
-                    view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
                 }
                 
             }
@@ -116,9 +118,9 @@ public class ExampleContentXml {
                     weight: 1.0
                 ) { view in 
                     self.chainedNumber = view
-                    view.text = "0"
-                    view.numberOfLines = 0
                     view.font = UIFont.get(size: 16, style: [])
+                    view.textString = "0"
+                    view.numberOfLines = 0
                     view.textColor = UIColor(argb: 0xFF222222)
                 }
                 
@@ -132,15 +134,17 @@ public class ExampleContentXml {
                 ) { view in 
                     self.chainedIncrement = view
                     view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
-                    view.setTitle(ResourcesStrings.incrementTheNumber, for: .normal)
+                    view.titleLabel?.font = UIFont.get(size: 16, style: [])
+                    view.titleLabel?.textAllCaps = false
+                    view.titleLabel?.textString = ResourcesStrings.incrementTheNumber
+                    view.titleLabel?.numberOfLines = 0
+                    view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
+                    view.textAllCaps = false
+                    view.textString = ResourcesStrings.incrementTheNumber
                     view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
                     view.contentHorizontalAlignment = .center
                     view.contentMode = .scaleAspectFit
                     view.contentEdgeInsets = UIEdgeInsets(top: 8, left:8, bottom:8, right:8)
-                    view.titleLabel?.text = ResourcesStrings.incrementTheNumber
-                    view.titleLabel?.numberOfLines = 0
-                    view.titleLabel?.font = UIFont.get(size: 16, style: [])
-                    view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
                 }
                 
             }

@@ -36,6 +36,7 @@ public class DateRangeDemoXml {
             weight: 1.0
         ) { view in 
             self.multi = view
+            view.labelFont = 8
         }
         
         xmlRoot = view

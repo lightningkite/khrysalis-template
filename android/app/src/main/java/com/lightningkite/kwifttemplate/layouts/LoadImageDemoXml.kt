@@ -14,6 +14,7 @@ class LoadImageDemoXml {
 
     lateinit var gallery: Button
     lateinit var camera: Button
+    lateinit var loremPixel: Button
     lateinit var image: ImageView
     
     lateinit var xmlRoot: View
@@ -26,6 +27,7 @@ class LoadImageDemoXml {
         xmlRoot = view
         gallery = view.findViewById<Button>(R.id.gallery)
         camera = view.findViewById<Button>(R.id.camera)
+        loremPixel = view.findViewById<Button>(R.id.lorem_pixel)
         image = view.findViewById<ImageView>(R.id.image)
         
         return view

@@ -26,15 +26,17 @@ public class LocationDemoXml {
         ) { view in 
             self.getLocation = view
             view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
-            view.setTitle(ResourcesStrings.getLocation, for: .normal)
+            view.titleLabel?.font = UIFont.get(size: 16, style: [])
+            view.titleLabel?.textAllCaps = false
+            view.titleLabel?.textString = ResourcesStrings.getLocation
+            view.titleLabel?.numberOfLines = 0
+            view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
+            view.textAllCaps = false
+            view.textString = ResourcesStrings.getLocation
             view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
             view.contentHorizontalAlignment = .center
             view.contentMode = .scaleAspectFit
             view.contentEdgeInsets = UIEdgeInsets(top: 8, left:8, bottom:8, right:8)
-            view.titleLabel?.text = ResourcesStrings.getLocation
-            view.titleLabel?.numberOfLines = 0
-            view.titleLabel?.font = UIFont.get(size: 16, style: [])
-            view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
         }
         
         view.addSubview(
@@ -46,9 +48,9 @@ public class LocationDemoXml {
             weight: 0
         ) { view in 
             self.locationDisplay = view
-            view.text = ResourcesStrings.camera
-            view.numberOfLines = 0
             view.font = UIFont.get(size: 16, style: [])
+            view.textString = ResourcesStrings.camera
+            view.numberOfLines = 0
             view.textColor = UIColor(argb: 0xFF222222)
         }
         

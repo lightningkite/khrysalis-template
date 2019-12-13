@@ -25,9 +25,9 @@ public class RowTestXml {
             weight: 1.0
         ) { view in 
             self.label = view
-            view.text = ResourcesStrings.welcomeToSwitchTown
-            view.numberOfLines = 0
             view.font = UIFont.get(size: 16, style: [])
+            view.textString = ResourcesStrings.welcomeToSwitchTown
+            view.numberOfLines = 0
             view.textColor = UIColor(argb: 0xFF222222)
         }
         
@@ -41,15 +41,17 @@ public class RowTestXml {
         ) { view in 
             self.button = view
             view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
-            view.setTitle(ResourcesStrings.ok, for: .normal)
+            view.titleLabel?.font = UIFont.get(size: 16, style: [])
+            view.titleLabel?.textAllCaps = false
+            view.titleLabel?.textString = ResourcesStrings.ok
+            view.titleLabel?.numberOfLines = 0
+            view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
+            view.textAllCaps = false
+            view.textString = ResourcesStrings.ok
             view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
             view.contentHorizontalAlignment = .center
             view.contentMode = .scaleAspectFit
             view.contentEdgeInsets = UIEdgeInsets(top: 8, left:8, bottom:8, right:8)
-            view.titleLabel?.text = ResourcesStrings.ok
-            view.titleLabel?.numberOfLines = 0
-            view.titleLabel?.font = UIFont.get(size: 16, style: [])
-            view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
         }
         
         xmlRoot = view

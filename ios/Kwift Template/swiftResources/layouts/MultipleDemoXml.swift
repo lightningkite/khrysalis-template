@@ -24,9 +24,9 @@ public class MultipleDemoXml {
             gravity: .topFill,
             weight: 0
         ) { view in 
-            view.text = ResourcesStrings.checkOutMyMultipleRows
-            view.numberOfLines = 0
             view.font = UIFont.get(size: 24, style: ["bold"])
+            view.textString = ResourcesStrings.checkOutMyMultipleRows
+            view.numberOfLines = 0
             view.textColor = UIColor(argb: 0xFF000000)
             view.textAlignment = .center
             view.baselineAdjustment = .alignCenters

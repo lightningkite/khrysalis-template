@@ -11,8 +11,8 @@ public class ControlsDemoXml {
     
     public unowned var xmlRoot: UIView!
     public func setup(_ dependency: ViewDependency) -> UIView {
-        let view = UIScrollView(frame: .zero)
-        view.addVerticalSubview(LinearLayout(frame: .zero), fill: false) { view in 
+        let view = ScrollViewVertical(frame: .zero)
+        view.addSubview(LinearLayout(frame: .zero)) { view in 
             view.orientation = .y
             view.padding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
             view.gravity = .topLeft
@@ -25,9 +25,9 @@ public class ControlsDemoXml {
                 gravity: .topLeft,
                 weight: 0
             ) { view in 
-                view.text = ResourcesStrings.welcomeToSwitchTown
-                view.numberOfLines = 0
                 view.font = UIFont.get(size: 24, style: ["bold"])
+                view.textString = ResourcesStrings.welcomeToSwitchTown
+                view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF000000)
             }
             
@@ -39,9 +39,11 @@ public class ControlsDemoXml {
                 gravity: .topFill,
                 weight: 0
             ) { view in 
-                view.labelView.text = ResourcesStrings.iMASwitch
-                view.labelView.numberOfLines = 0
+                view.verticalAlign = .start
                 view.labelView.font = UIFont.get(size: 12, style: [])
+                view.labelView.textString = ResourcesStrings.loremIpsum
+                view.labelView.numberOfLines = 0
+                view.labelView.baselineAdjustment = .none
             }
             
             view.addSubview(
@@ -52,9 +54,11 @@ public class ControlsDemoXml {
                 gravity: .topFill,
                 weight: 0
             ) { view in 
-                view.labelView.text = ResourcesStrings.iMASwitch
-                view.labelView.numberOfLines = 0
+                view.verticalAlign = .start
                 view.labelView.font = UIFont.get(size: 12, style: [])
+                view.labelView.textString = ResourcesStrings.loremIpsum
+                view.labelView.numberOfLines = 0
+                view.labelView.baselineAdjustment = .none
             }
             
             view.addSubview(
@@ -65,9 +69,9 @@ public class ControlsDemoXml {
                 gravity: .topLeft,
                 weight: 0
             ) { view in 
-                view.text = ResourcesStrings.textField
-                view.numberOfLines = 0
                 view.font = UIFont.get(size: 16, style: [])
+                view.textString = ResourcesStrings.textField
+                view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF222222)
             }
             
@@ -83,8 +87,8 @@ public class ControlsDemoXml {
                 view.backgroundLayer = ResourcesDrawables.border(view)
                 view.setLeftPaddingPoints(8)
                 view.setRightPaddingPoints(8)
-                view.numberOfLines = 0
                 view.font = UIFont.get(size: 16, style: [])
+                view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF222222)
             }
             
@@ -100,8 +104,8 @@ public class ControlsDemoXml {
                 view.backgroundLayer = ResourcesDrawables.border(view)
                 view.setLeftPaddingPoints(8)
                 view.setRightPaddingPoints(8)
-                view.numberOfLines = 0
                 view.font = UIFont.get(size: 16, style: [])
+                view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF222222)
             }
             
@@ -114,9 +118,9 @@ public class ControlsDemoXml {
                 weight: 0
             ) { view in 
                 self.editableTextCopy = view
-                view.text = ""
-                view.numberOfLines = 0
                 view.font = UIFont.get(size: 16, style: [])
+                view.textString = ""
+                view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF222222)
             }
             
@@ -124,7 +128,7 @@ public class ControlsDemoXml {
                 UITextView(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 100),
-                margin: UIEdgeInsets(top: 8 + 8, left: 8 + 8, bottom: 8 + 8, right: 8 + 8),
+                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
                 gravity: .topFill,
                 weight: 0
             ) { view in 
@@ -132,8 +136,8 @@ public class ControlsDemoXml {
                 view.backgroundLayer = ResourcesDrawables.border(view)
                 view.setLeftPaddingPoints(8)
                 view.setRightPaddingPoints(8)
-                view.numberOfLines = 0
                 view.font = UIFont.get(size: 16, style: [])
+                view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF222222)
                 view.addDismissButton()
             }
@@ -142,12 +146,13 @@ public class ControlsDemoXml {
                 Dropdown(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 8 + 0, left: 8 + 0, bottom: 8 + 0, right: 8 + 0),
+                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
                 gravity: .topFill,
                 weight: 0
             ) { view in 
                 self.spinner = view
                 view.backgroundLayer = ResourcesDrawables.border(view)
+                view.contentEdgeInsets = UIEdgeInsets(top: 0, left:0, bottom:0, right:0)
             }
             
         }

@@ -26,15 +26,17 @@ public class LoadImageDemoXml {
         ) { view in 
             self.gallery = view
             view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
-            view.setTitle(ResourcesStrings.gallery, for: .normal)
+            view.titleLabel?.font = UIFont.get(size: 16, style: [])
+            view.titleLabel?.textAllCaps = false
+            view.titleLabel?.textString = ResourcesStrings.gallery
+            view.titleLabel?.numberOfLines = 0
+            view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
+            view.textAllCaps = false
+            view.textString = ResourcesStrings.gallery
             view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
             view.contentHorizontalAlignment = .center
             view.contentMode = .scaleAspectFit
             view.contentEdgeInsets = UIEdgeInsets(top: 8, left:8, bottom:8, right:8)
-            view.titleLabel?.text = ResourcesStrings.gallery
-            view.titleLabel?.numberOfLines = 0
-            view.titleLabel?.font = UIFont.get(size: 16, style: [])
-            view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
         }
         
         view.addSubview(
@@ -47,15 +49,40 @@ public class LoadImageDemoXml {
         ) { view in 
             self.camera = view
             view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
-            view.setTitle(ResourcesStrings.camera, for: .normal)
+            view.titleLabel?.font = UIFont.get(size: 16, style: [])
+            view.titleLabel?.textAllCaps = false
+            view.titleLabel?.textString = ResourcesStrings.camera
+            view.titleLabel?.numberOfLines = 0
+            view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
+            view.textAllCaps = false
+            view.textString = ResourcesStrings.camera
             view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
             view.contentHorizontalAlignment = .center
             view.contentMode = .scaleAspectFit
             view.contentEdgeInsets = UIEdgeInsets(top: 8, left:8, bottom:8, right:8)
-            view.titleLabel?.text = ResourcesStrings.camera
-            view.titleLabel?.numberOfLines = 0
+        }
+        
+        view.addSubview(
+            UIButtonWithLayer(frame: .zero),
+            minimumSize: CGSize(width: 0, height: 0),
+            size: CGSize(width: 0, height: 0),
+            margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+            gravity: .topFill,
+            weight: 0
+        ) { view in 
+            self.loremPixel = view
+            view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
             view.titleLabel?.font = UIFont.get(size: 16, style: [])
+            view.titleLabel?.textAllCaps = false
+            view.titleLabel?.textString = ResourcesStrings.loremPixel
+            view.titleLabel?.numberOfLines = 0
             view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
+            view.textAllCaps = false
+            view.textString = ResourcesStrings.loremPixel
+            view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
+            view.contentHorizontalAlignment = .center
+            view.contentMode = .scaleAspectFit
+            view.contentEdgeInsets = UIEdgeInsets(top: 8, left:8, bottom:8, right:8)
         }
         
         view.addSubview(
@@ -76,6 +103,7 @@ public class LoadImageDemoXml {
     }
     
     public unowned var image: UIImageView!
+    public unowned var loremPixel: UIButtonWithLayer!
     public unowned var camera: UIButtonWithLayer!
     public unowned var gallery: UIButtonWithLayer!
     

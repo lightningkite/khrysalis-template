@@ -25,8 +25,8 @@ public class PreviewXml {
             weight: 0
         ) { view in 
             self.viewName = view
-            view.numberOfLines = 0
             view.font = UIFont.get(size: 16, style: [])
+            view.numberOfLines = 0
             view.textColor = UIColor(argb: 0xFF222222)
             view.textAlignment = .center
             view.baselineAdjustment = .alignCenters

@@ -1,0 +1,37 @@
+//
+// MarginTestsXml.swift
+// Created by Kwift XML Android
+//
+package com.lightningkite.kwifttemplate.layouts
+
+import android.widget.*
+import android.view.*
+import com.lightningkite.kwift.views.actual.*
+import com.lightningkite.kwift.views.shared.*
+import com.lightningkite.kwifttemplate.R
+
+class MarginTestsXml {
+
+    lateinit var one: TextView
+    lateinit var two: TextView
+    lateinit var three: TextView
+    lateinit var four: TextView
+    lateinit var five: TextView
+    
+    lateinit var xmlRoot: View
+
+    fun setup(dependency: ViewDependency): View {
+        val view = LayoutInflater.from(dependency.context).inflate(R.layout.margin_tests, null, false)
+        return setup(view)
+    }
+    fun setup(view: View): View {
+        xmlRoot = view
+        one = view.findViewById<TextView>(R.id.one)
+        two = view.findViewById<TextView>(R.id.two)
+        three = view.findViewById<TextView>(R.id.three)
+        four = view.findViewById<TextView>(R.id.four)
+        five = view.findViewById<TextView>(R.id.five)
+        
+        return view
+    }
+}

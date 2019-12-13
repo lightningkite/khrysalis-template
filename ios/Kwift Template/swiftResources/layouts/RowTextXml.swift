@@ -21,8 +21,8 @@ public class RowTextXml {
             gravity: .topFill
         ) { view in 
             self.label = view
-            view.numberOfLines = 0
             view.font = UIFont.get(size: 16, style: [])
+            view.numberOfLines = 0
             view.textColor = UIColor(argb: 0xFF222222)
         }
         

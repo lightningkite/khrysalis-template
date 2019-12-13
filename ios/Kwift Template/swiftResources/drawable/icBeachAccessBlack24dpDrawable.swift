@@ -49,7 +49,7 @@ static func icBeachAccessBlack24dp(_ view: UIView? = nil) -> CALayer {
         sublayer.fillColor = UIColor(argb: 0xFF000000).cgColor
         return sublayer
     }())
-    layer.bounds.size = CGSize(width: 24, height: 24)
+    layer.bounds.size = CGSize(width: 24.0, height: 24.0)
     layer.scaleOverResize = true
     return layer
 }
