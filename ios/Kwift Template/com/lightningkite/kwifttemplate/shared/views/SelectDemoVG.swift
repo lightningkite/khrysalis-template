@@ -7,7 +7,7 @@ import KwiftMaps
 
 
 
-public class SelectDemoVG: ViewGenerator {
+public class SelectDemoVG: ViewGenerator, EntryPoint {
     
     
     public weak var stack: ObservableStack<ViewGenerator>? 
@@ -44,10 +44,15 @@ public class SelectDemoVG: ViewGenerator {
     override public func generate(_ dependency: ViewDependency) -> View {
         return generate(dependency: dependency)
     }
+    public var mainStack: ObservableStack<ViewGenerator>? {
+        get {
+            return stack
+        }
+    }
     
     public init(stack: ObservableStack<ViewGenerator>) {
         self.stack = stack
-        let options: Array<ViewGenerator> = [MarginTestsVG(), MultipleDemoVG(), DateButtonDemoVG(), MapDemoVG(), LocationDemoVG(), LoadImageDemoVG(), ControlsDemoVG(), ExampleContentVG(), ViewPagerDemoVG(stack), SegmentedControlDemoVG(), SliderDemoVG(), WeekDemoVG(), DateRangeDemoVG(), LoginDemoVG(stack), DrawableDemoVG(), PreviewVG()]
+        let options: Array<ViewGenerator> = [PongDemoVG(), MarginTestsVG(), MultipleDemoVG(), DateButtonDemoVG(), MapDemoVG(), LocationDemoVG(), LoadImageDemoVG(), ControlsDemoVG(), ExampleContentVG(), ViewPagerDemoVG(stack), SegmentedControlDemoVG(), SliderDemoVG(), WeekDemoVG(), DateRangeDemoVG(), LoginDemoVG(stack), DrawableDemoVG(), PreviewVG()]
         self.options = options
         super.init()
     }

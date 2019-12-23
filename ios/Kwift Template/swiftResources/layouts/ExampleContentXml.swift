@@ -21,7 +21,8 @@ public class ExampleContentXml {
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 8 + 0, left: 8 + 0, bottom: 8 + 0, right: 8 + 0),
+                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
                 weight: 0
             ) { view in 
@@ -35,7 +36,8 @@ public class ExampleContentXml {
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 8 + 0, left: 8 + 0, bottom: 8 + 0, right: 8 + 0),
+                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
                 weight: 0
             ) { view in 
@@ -50,6 +52,7 @@ public class ExampleContentXml {
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                padding: UIEdgeInsets.zero,
                 gravity: .topFill,
                 weight: 0
             ) { view in 
@@ -61,7 +64,8 @@ public class ExampleContentXml {
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
                     size: CGSize(width: 0, height: 0),
-                    margin: UIEdgeInsets(top: 8 + 0, left: 8 + 0, bottom: 8 + 0, right: 8 + 0),
+                    margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                    padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                     gravity: .centerCenter,
                     weight: 1.0
                 ) { view in 
@@ -77,6 +81,7 @@ public class ExampleContentXml {
                     minimumSize: CGSize(width: 0, height: 0),
                     size: CGSize(width: 0, height: 0),
                     margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                    padding: UIEdgeInsets.zero,
                     gravity: .centerCenter,
                     weight: 0
                 ) { view in 
@@ -102,6 +107,7 @@ public class ExampleContentXml {
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                padding: UIEdgeInsets.zero,
                 gravity: .topFill,
                 weight: 0
             ) { view in 
@@ -113,7 +119,8 @@ public class ExampleContentXml {
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
                     size: CGSize(width: 0, height: 0),
-                    margin: UIEdgeInsets(top: 8 + 0, left: 8 + 0, bottom: 8 + 0, right: 8 + 0),
+                    margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                    padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                     gravity: .centerCenter,
                     weight: 1.0
                 ) { view in 
@@ -129,6 +136,7 @@ public class ExampleContentXml {
                     minimumSize: CGSize(width: 0, height: 0),
                     size: CGSize(width: 0, height: 0),
                     margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                    padding: UIEdgeInsets.zero,
                     gravity: .centerCenter,
                     weight: 0
                 ) { view in 
@@ -153,7 +161,8 @@ public class ExampleContentXml {
                 UIImageView(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 100, height: 50),
-                margin: UIEdgeInsets(top: 0 + 0, left: 0 + 0, bottom: 0 + 0, right: 0 + 0),
+                margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
                 weight: 0
             ) { view in 

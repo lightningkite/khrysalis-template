@@ -9,15 +9,17 @@ import com.lightningkite.kwift.observables.shared.ObservableStack
 import com.lightningkite.kwift.shared.captureWeak
 import com.lightningkite.kwift.views.actual.ViewDependency
 import com.lightningkite.kwift.views.actual.onClick
+import com.lightningkite.kwift.views.shared.EntryPoint
 import com.lightningkite.kwift.views.shared.ViewGenerator
 import com.lightningkite.kwifttemplate.layouts.RowTestXml
 import com.lightningkite.kwifttemplate.layouts.SelectDemoXml
 
-class SelectDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator() {
+class SelectDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator(), EntryPoint {
     val stack: ObservableStack<ViewGenerator>? by weak(stack)
     override val title: String get() = "Select Demo"
 
     val options: List<ViewGenerator> = listOf(
+        PongDemoVG(),
         MarginTestsVG(),
         MultipleDemoVG(),
         DateButtonDemoVG(),
@@ -58,4 +60,7 @@ class SelectDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator() {
 
         return view
     }
+
+    override val mainStack: ObservableStack<ViewGenerator>?
+        get() = stack
 }

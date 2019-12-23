@@ -24,12 +24,16 @@ android {
     //    buildToolsVersion = "28.0.3"
     compileSdkVersion(29)
     defaultConfig {
-        minSdkVersion(19)
+        minSdkVersion(21)
         targetSdkVersion(29)
         multiDexEnabled = true
         applicationId = packageName
         versionCode = 5
         versionName = "1.0.5"
+    }
+    compileOptions {
+        setSourceCompatibility(JavaVersion.VERSION_1_8)
+        setTargetCompatibility(JavaVersion.VERSION_1_8)
     }
     buildTypes {
         //        release {

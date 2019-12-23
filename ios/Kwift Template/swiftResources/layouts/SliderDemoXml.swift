@@ -21,7 +21,8 @@ public class SliderDemoXml {
                 UISlider(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 16 + 0, left: 16 + 0, bottom: 16 + 0, right: 16 + 0),
+                margin: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16),
+                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topFill,
                 weight: 0
             ) { view in 
@@ -32,7 +33,8 @@ public class SliderDemoXml {
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 16 + 0, left: 16 + 0, bottom: 16 + 0, right: 16 + 0),
+                margin: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16),
+                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topFill,
                 weight: 0
             ) { view in 
@@ -46,7 +48,8 @@ public class SliderDemoXml {
                 UIRatingBar(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 16 + 0, left: 16 + 0, bottom: 16 + 0, right: 16 + 0),
+                margin: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16),
+                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
                 weight: 0
             ) { view in 
@@ -62,7 +65,8 @@ public class SliderDemoXml {
                 UIRatingBar(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 16 + 0, left: 16 + 0, bottom: 16 + 0, right: 16 + 0),
+                margin: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16),
+                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
                 weight: 0
             ) { view in 
@@ -79,7 +83,8 @@ public class SliderDemoXml {
                 UIRatingBar(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 16 + 0, left: 16 + 0, bottom: 16 + 0, right: 16 + 0),
+                margin: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16),
+                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
                 weight: 0
             ) { view in 
@@ -96,7 +101,8 @@ public class SliderDemoXml {
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 16 + 0, left: 16 + 0, bottom: 16 + 0, right: 16 + 0),
+                margin: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16),
+                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topFill,
                 weight: 0
             ) { view in 
@@ -110,7 +116,8 @@ public class SliderDemoXml {
                 UIRatingBar(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 16 + 0, left: 16 + 0, bottom: 16 + 0, right: 16 + 0),
+                margin: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16),
+                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
                 weight: 0
             ) { view in 
@@ -126,7 +133,8 @@ public class SliderDemoXml {
                 UIRatingBar(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 16 + 0, left: 16 + 0, bottom: 16 + 0, right: 16 + 0),
+                margin: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16),
+                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
                 weight: 0
             ) { view in 
@@ -143,7 +151,8 @@ public class SliderDemoXml {
                 UIRatingBar(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 16 + 0, left: 16 + 0, bottom: 16 + 0, right: 16 + 0),
+                margin: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16),
+                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
                 weight: 0
             ) { view in 
@@ -160,7 +169,8 @@ public class SliderDemoXml {
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 16 + 0, left: 16 + 0, bottom: 16 + 0, right: 16 + 0),
+                margin: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16),
+                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topFill,
                 weight: 0
             ) { view in 

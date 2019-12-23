@@ -17,7 +17,8 @@ public class RowTextXml {
             UILabel(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
             size: CGSize(width: 0, height: 0),
-            margin: UIEdgeInsets(top: 8 + 8, left: 8 + 8, bottom: 8 + 8, right: 8 + 8),
+            margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+            padding: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
             gravity: .topFill
         ) { view in 
             self.label = view

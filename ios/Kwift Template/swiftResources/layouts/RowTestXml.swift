@@ -20,7 +20,8 @@ public class RowTestXml {
             UILabel(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
             size: CGSize(width: 0, height: 0),
-            margin: UIEdgeInsets(top: 8 + 0, left: 8 + 0, bottom: 8 + 0, right: 8 + 0),
+            margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+            padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .centerCenter,
             weight: 1.0
         ) { view in 
@@ -36,6 +37,7 @@ public class RowTestXml {
             minimumSize: CGSize(width: 0, height: 0),
             size: CGSize(width: 0, height: 0),
             margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+            padding: UIEdgeInsets.zero,
             gravity: .centerCenter,
             weight: 0
         ) { view in 

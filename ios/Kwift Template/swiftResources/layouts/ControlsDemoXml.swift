@@ -21,7 +21,8 @@ public class ControlsDemoXml {
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 8 + 0, left: 8 + 0, bottom: 8 + 0, right: 8 + 0),
+                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
                 weight: 0
             ) { view in 
@@ -35,7 +36,8 @@ public class ControlsDemoXml {
                 LabeledSwitch(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 8 + 0, left: 8 + 0, bottom: 8 + 0, right: 8 + 0),
+                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topFill,
                 weight: 0
             ) { view in 
@@ -50,7 +52,8 @@ public class ControlsDemoXml {
                 LabeledCheckbox(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 8 + 0, left: 8 + 0, bottom: 8 + 0, right: 8 + 0),
+                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topFill,
                 weight: 0
             ) { view in 
@@ -65,7 +68,8 @@ public class ControlsDemoXml {
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 8 + 0, left: 8 + 0, bottom: 8 + 0, right: 8 + 0),
+                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
                 weight: 0
             ) { view in 
@@ -80,6 +84,7 @@ public class ControlsDemoXml {
                 minimumSize: CGSize(width: 0, height: 40),
                 size: CGSize(width: 0, height: 0),
                 margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                padding: UIEdgeInsets.zero,
                 gravity: .topFill,
                 weight: 0
             ) { view in 
@@ -97,6 +102,7 @@ public class ControlsDemoXml {
                 minimumSize: CGSize(width: 0, height: 40),
                 size: CGSize(width: 0, height: 0),
                 margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                padding: UIEdgeInsets.zero,
                 gravity: .topFill,
                 weight: 0
             ) { view in 
@@ -113,7 +119,8 @@ public class ControlsDemoXml {
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 8 + 8, left: 8 + 8, bottom: 8 + 8, right: 8 + 8),
+                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                padding: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
                 gravity: .topLeft,
                 weight: 0
             ) { view in 
@@ -129,6 +136,7 @@ public class ControlsDemoXml {
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 100),
                 margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                padding: UIEdgeInsets.zero,
                 gravity: .topFill,
                 weight: 0
             ) { view in 
@@ -147,6 +155,7 @@ public class ControlsDemoXml {
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
                 margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                padding: UIEdgeInsets.zero,
                 gravity: .topFill,
                 weight: 0
             ) { view in 

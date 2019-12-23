@@ -20,7 +20,8 @@ public class PreviewXml {
             UILabel(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
             size: CGSize(width: 0, height: 0),
-            margin: UIEdgeInsets(top: 0 + 8, left: 0 + 8, bottom: 0 + 8, right: 0 + 8),
+            margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+            padding: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
             gravity: .topFill,
             weight: 0
         ) { view in 
@@ -36,7 +37,8 @@ public class PreviewXml {
             UICollectionView(frame: .zero, collectionViewLayout: ViewPagerLayout()),
             minimumSize: CGSize(width: 0, height: 0),
             size: CGSize(width: 0, height: 0),
-            margin: UIEdgeInsets(top: 0 + 0, left: 0 + 0, bottom: 0 + 0, right: 0 + 0),
+            margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+            padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .topFill,
             weight: 1.0
         ) { view in 

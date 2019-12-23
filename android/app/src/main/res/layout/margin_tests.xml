@@ -154,49 +154,221 @@
 
         </FrameLayout>
 
+
+        <FrameLayout android:layout_width="match_parent" android:layout_height="200dp">
+            <Button
+                    style="@style/ButtonPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="16dp"
+                    android:layout_gravity="left|top"
+                    android:text="left|top"/>
+            <Button
+                    style="@style/ButtonPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="16dp"
+                    android:layout_gravity="left|bottom"
+                    android:text="left|bottom"/>
+            <Button
+                    style="@style/ButtonPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="16dp"
+                    android:layout_gravity="left|center_vertical"
+                    android:text="left|cv"/>
+
+            <Button
+                    style="@style/ButtonPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="16dp"
+                    android:layout_gravity="center_horizontal|top"
+                    android:text="ch|top"/>
+            <Button
+                    style="@style/ButtonPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="16dp"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:text="ch|bottom"/>
+            <Button
+                    style="@style/ButtonPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="16dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:text="ch|cv"/>
+
+            <Button
+                    style="@style/ButtonPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="16dp"
+                    android:layout_gravity="right|top"
+                    android:text="right|top"/>
+            <Button
+                    style="@style/ButtonPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="16dp"
+                    android:layout_gravity="right|bottom"
+                    android:text="right|bottom"/>
+            <Button
+                    style="@style/ButtonPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="16dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:text="right|cv"/>
+
+        </FrameLayout>
+
+        <FrameLayout android:layout_width="match_parent" android:layout_height="200dp">
+            <Button
+                    style="@style/ButtonPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="16dp"
+                    android:layout_gravity="left|top"
+                    android:text="top"/>
+            <Button
+                    style="@style/ButtonPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="16dp"
+                    android:layout_gravity="left|bottom"
+                    android:text="bottom"/>
+            <Button
+                    style="@style/ButtonPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="16dp"
+                    android:layout_gravity="left|center_vertical"
+                    android:text="cv"/>
+
+        </FrameLayout>
+
+        <FrameLayout android:layout_width="match_parent" android:layout_height="200dp">
+            <Button
+                    style="@style/ButtonPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:padding="16dp"
+                    android:layout_gravity="left|center_vertical"
+                    android:text="left"/>
+            <Button
+                    style="@style/ButtonPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:padding="16dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:text="right"/>
+            <Button
+                    style="@style/ButtonPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:padding="16dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:text="ch"/>
+
+        </FrameLayout>
+
+        <FrameLayout android:layout_width="match_parent" android:layout_height="200dp">
+            <Button
+                    style="@style/ButtonPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:padding="16dp"
+                    android:text="fill"/>
+
+        </FrameLayout>
+
         <TextView
-                android:id="@+id/one"
                 style="@style/Body"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:layout_gravity="start"
                 android:padding="16dp"
                 android:text="View One"/>
 
         <TextView
-                android:id="@+id/two"
                 style="@style/Body"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:layout_gravity="center"
                 android:padding="16dp"
                 android:text="View Two"/>
 
         <TextView
-                android:id="@+id/three"
                 style="@style/Body"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:layout_gravity="end"
                 android:padding="16dp"
                 android:text="View Three"/>
 
         <TextView
-                android:id="@+id/four"
                 style="@style/Body"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:padding="16dp"
                 android:text="View Four"/>
 
-        <TextView
-                android:id="@+id/five"
-                style="@style/Body"
+        <Button
+                style="@style/ButtonPrimary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:layout_gravity="start"
                 android:padding="16dp"
-                android:text="View Five"/>
+                android:text="View One"/>
+
+        <Button
+                style="@style/ButtonPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_gravity="center"
+                android:padding="16dp"
+                android:text="View Two"/>
+
+        <Button
+                style="@style/ButtonPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_gravity="end"
+                android:padding="16dp"
+                android:text="View Three"/>
+
+        <Button
+                style="@style/ButtonPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:padding="16dp"
+                android:text="View Four"/>
+
     </LinearLayout>
 </ScrollView>
