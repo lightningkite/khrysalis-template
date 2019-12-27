@@ -16,6 +16,7 @@ class MainXml {
     lateinit var title: TextView
     lateinit var mainContent: com.lightningkite.kwift.views.android.SwapView
     
+    
     lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
@@ -27,6 +28,7 @@ class MainXml {
         mainBack = view.findViewById<ImageButton>(R.id.mainBack)
         title = view.findViewById<TextView>(R.id.title)
         mainContent = view.findViewById<com.lightningkite.kwift.views.android.SwapView>(R.id.mainContent)
+        
         
         return view
     }

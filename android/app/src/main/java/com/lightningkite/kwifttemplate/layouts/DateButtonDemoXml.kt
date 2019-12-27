@@ -16,6 +16,7 @@ class DateButtonDemoXml {
     lateinit var dateButton: com.lightningkite.kwift.views.android.DateButton
     lateinit var timeButton: com.lightningkite.kwift.views.android.TimeButton
     
+    
     lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
@@ -27,6 +28,7 @@ class DateButtonDemoXml {
         text = view.findViewById<TextView>(R.id.text)
         dateButton = view.findViewById<com.lightningkite.kwift.views.android.DateButton>(R.id.dateButton)
         timeButton = view.findViewById<com.lightningkite.kwift.views.android.TimeButton>(R.id.timeButton)
+        
         
         return view
     }

@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-<!--    <com.lightningkite.kwift.views.android.SelectDayView-->
-<!--            android:id="@+id/select"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:gravity="center"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="20sp"-->
-<!--    />-->
+    <!--    <com.lightningkite.kwift.views.android.SelectDayView-->
+    <!--            android:id="@+id/select"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="0dp"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:gravity="center"-->
+    <!--            android:textColor="@color/black"-->
+    <!--            android:textSize="20sp"-->
+    <!--    />-->
 
     <com.lightningkite.kwift.views.android.SelectDateRangeView
             android:id="@+id/range"
@@ -24,16 +25,25 @@
             android:textSize="20sp"
     />
 
-    <com.lightningkite.kwift.views.android.SelectMultipleDatesView
-            android:id="@+id/multi"
+    <!--    <com.lightningkite.kwift.views.android.SelectMultipleDatesView-->
+    <!--            android:id="@+id/multi"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="0dp"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:gravity="center"-->
+    <!--            android:textColor="@color/black"-->
+    <!--            android:textSize="16sp"-->
+    <!--            xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--            app:labelSize="8sp"-->
+    <!--    />-->
+
+    <com.lightningkite.kwift.views.actual.CustomView
+            android:id="@+id/month"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            app:labelSize="8sp"
+            android:background="@android:color/white"
+            app:delegateClass="com.lightningkite.kwift.views.shared.MonthCVD"
     />
 
 </LinearLayout>

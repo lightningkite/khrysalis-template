@@ -14,6 +14,7 @@ class MultipleDemoXml {
 
     lateinit var list: androidx.recyclerview.widget.RecyclerView
     
+    
     lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
@@ -23,6 +24,7 @@ class MultipleDemoXml {
     fun setup(view: View): View {
         xmlRoot = view
         list = view.findViewById<androidx.recyclerview.widget.RecyclerView>(R.id.list)
+        
         
         return view
     }

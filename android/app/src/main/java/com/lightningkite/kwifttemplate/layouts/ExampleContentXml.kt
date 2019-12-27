@@ -17,6 +17,7 @@ class ExampleContentXml {
     lateinit var chainedNumber: TextView
     lateinit var chainedIncrement: Button
     
+    
     lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
@@ -29,6 +30,7 @@ class ExampleContentXml {
         exampleContentIncrement = view.findViewById<Button>(R.id.exampleContentIncrement)
         chainedNumber = view.findViewById<TextView>(R.id.chainedNumber)
         chainedIncrement = view.findViewById<Button>(R.id.chainedIncrement)
+        
         
         return view
     }

@@ -15,6 +15,7 @@ class SegmentedControlDemoXml {
     lateinit var tabs: com.google.android.material.tabs.TabLayout
     lateinit var tabs2: com.google.android.material.tabs.TabLayout
     
+    
     lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
@@ -25,6 +26,7 @@ class SegmentedControlDemoXml {
         xmlRoot = view
         tabs = view.findViewById<com.google.android.material.tabs.TabLayout>(R.id.tabs)
         tabs2 = view.findViewById<com.google.android.material.tabs.TabLayout>(R.id.tabs2)
+        
         
         return view
     }

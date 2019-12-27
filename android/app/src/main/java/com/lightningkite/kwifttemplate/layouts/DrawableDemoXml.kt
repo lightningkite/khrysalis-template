@@ -14,6 +14,7 @@ class DrawableDemoXml {
 
     
     
+    
     lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
@@ -22,6 +23,7 @@ class DrawableDemoXml {
     }
     fun setup(view: View): View {
         xmlRoot = view
+        
         
         
         return view

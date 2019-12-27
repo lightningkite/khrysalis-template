@@ -14,6 +14,7 @@ class WeekDemoXml {
 
     lateinit var week: com.lightningkite.kwift.views.android.WeekView
     
+    
     lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
@@ -23,6 +24,7 @@ class WeekDemoXml {
     fun setup(view: View): View {
         xmlRoot = view
         week = view.findViewById<com.lightningkite.kwift.views.android.WeekView>(R.id.week)
+        
         
         return view
     }

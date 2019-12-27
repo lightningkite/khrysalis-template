@@ -19,6 +19,7 @@ class LoginDemoXml {
     lateinit var submitLoading: ViewFlipper
     lateinit var submit: Button
     
+    
     lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
@@ -33,6 +34,7 @@ class LoginDemoXml {
         agree = view.findViewById<CheckBox>(R.id.agree)
         submitLoading = view.findViewById<ViewFlipper>(R.id.submitLoading)
         submit = view.findViewById<Button>(R.id.submit)
+        
         
         return view
     }

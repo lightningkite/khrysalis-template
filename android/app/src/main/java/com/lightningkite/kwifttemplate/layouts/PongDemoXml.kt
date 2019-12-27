@@ -13,6 +13,7 @@ import com.lightningkite.kwifttemplate.R
 class PongDemoXml {
 
     lateinit var customView: com.lightningkite.kwift.views.actual.CustomView
+    lateinit var customViewDelegate: com.lightningkite.kwifttemplate.shared.views.PongDelegate
     
     lateinit var xmlRoot: View
 
@@ -23,6 +24,7 @@ class PongDemoXml {
     fun setup(view: View): View {
         xmlRoot = view
         customView = view.findViewById<com.lightningkite.kwift.views.actual.CustomView>(R.id.customView)
+        customViewDelegate = view.findViewById<CustomView>(R.id.customView).delegate as com.lightningkite.kwifttemplate.shared.views.PongDelegate
         
         return view
     }

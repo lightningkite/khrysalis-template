@@ -13,7 +13,8 @@ import com.lightningkite.kwifttemplate.R
 class DateRangeDemoXml {
 
     lateinit var range: com.lightningkite.kwift.views.android.SelectDateRangeView
-    lateinit var multi: com.lightningkite.kwift.views.android.SelectMultipleDatesView
+    lateinit var month: com.lightningkite.kwift.views.actual.CustomView
+    lateinit var monthDelegate: com.lightningkite.kwift.views.shared.MonthCVD
     
     lateinit var xmlRoot: View
 
@@ -24,7 +25,8 @@ class DateRangeDemoXml {
     fun setup(view: View): View {
         xmlRoot = view
         range = view.findViewById<com.lightningkite.kwift.views.android.SelectDateRangeView>(R.id.range)
-        multi = view.findViewById<com.lightningkite.kwift.views.android.SelectMultipleDatesView>(R.id.multi)
+        month = view.findViewById<com.lightningkite.kwift.views.actual.CustomView>(R.id.month)
+        monthDelegate = view.findViewById<CustomView>(R.id.month).delegate as com.lightningkite.kwift.views.shared.MonthCVD
         
         return view
     }

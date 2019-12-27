@@ -15,6 +15,7 @@ class LocationDemoXml {
     lateinit var getLocation: Button
     lateinit var locationDisplay: TextView
     
+    
     lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
@@ -25,6 +26,7 @@ class LocationDemoXml {
         xmlRoot = view
         getLocation = view.findViewById<Button>(R.id.get_location)
         locationDisplay = view.findViewById<TextView>(R.id.location_display)
+        
         
         return view
     }

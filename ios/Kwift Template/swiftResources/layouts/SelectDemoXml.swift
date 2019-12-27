@@ -43,6 +43,7 @@ public class SelectDemoXml {
             weight: 1.0
         ) { view in 
             self.list = view
+            view.separatorStyle = .none
         }
         
         xmlRoot = view

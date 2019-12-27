@@ -16,6 +16,7 @@ class MapDemoXml {
     lateinit var select: EditText
     lateinit var options: androidx.recyclerview.widget.RecyclerView
     
+    
     lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
@@ -27,6 +28,7 @@ class MapDemoXml {
         map = view.findViewById<com.google.android.gms.maps.MapView>(R.id.map)
         select = view.findViewById<EditText>(R.id.select)
         options = view.findViewById<androidx.recyclerview.widget.RecyclerView>(R.id.options)
+        
         
         return view
     }

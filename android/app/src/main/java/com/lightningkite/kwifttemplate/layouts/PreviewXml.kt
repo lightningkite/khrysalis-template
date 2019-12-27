@@ -15,6 +15,7 @@ class PreviewXml {
     lateinit var viewName: TextView
     lateinit var pager: androidx.viewpager.widget.ViewPager
     
+    
     lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
@@ -25,6 +26,7 @@ class PreviewXml {
         xmlRoot = view
         viewName = view.findViewById<TextView>(R.id.viewName)
         pager = view.findViewById<androidx.viewpager.widget.ViewPager>(R.id.pager)
+        
         
         return view
     }

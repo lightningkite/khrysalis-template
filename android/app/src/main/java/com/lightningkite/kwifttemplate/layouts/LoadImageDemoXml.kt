@@ -17,6 +17,7 @@ class LoadImageDemoXml {
     lateinit var loremPixel: Button
     lateinit var image: ImageView
     
+    
     lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
@@ -29,6 +30,7 @@ class LoadImageDemoXml {
         camera = view.findViewById<Button>(R.id.camera)
         loremPixel = view.findViewById<Button>(R.id.lorem_pixel)
         image = view.findViewById<ImageView>(R.id.image)
+        
         
         return view
     }

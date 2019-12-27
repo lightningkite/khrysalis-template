@@ -14,6 +14,7 @@ class RowTextXml {
 
     lateinit var label: TextView
     
+    
     lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
@@ -23,6 +24,7 @@ class RowTextXml {
     fun setup(view: View): View {
         xmlRoot = view
         label = view.findViewById<TextView>(R.id.label)
+        
         
         return view
     }

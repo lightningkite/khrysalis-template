@@ -18,6 +18,7 @@ class ControlsDemoXml {
     lateinit var editableTextBig: com.lightningkite.kwift.views.android.MultilineEditText
     lateinit var spinner: Spinner
     
+    
     lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
@@ -31,6 +32,7 @@ class ControlsDemoXml {
         editableTextCopy = view.findViewById<TextView>(R.id.editableTextCopy)
         editableTextBig = view.findViewById<com.lightningkite.kwift.views.android.MultilineEditText>(R.id.editableTextBig)
         spinner = view.findViewById<Spinner>(R.id.spinner)
+        
         
         return view
     }

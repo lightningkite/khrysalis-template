@@ -23,6 +23,7 @@ class SliderDemoXml {
     lateinit var ratingDisplayStarsSmallFloat: com.lightningkite.kwift.views.android.ColorRatingBar
     lateinit var ratingDisplayNumberFloat: TextView
     
+    
     lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
@@ -41,6 +42,7 @@ class SliderDemoXml {
         ratingDisplayStarsFloat = view.findViewById<com.lightningkite.kwift.views.android.ColorRatingBar>(R.id.ratingDisplayStarsFloat)
         ratingDisplayStarsSmallFloat = view.findViewById<com.lightningkite.kwift.views.android.ColorRatingBar>(R.id.ratingDisplayStarsSmallFloat)
         ratingDisplayNumberFloat = view.findViewById<TextView>(R.id.ratingDisplayNumberFloat)
+        
         
         return view
     }

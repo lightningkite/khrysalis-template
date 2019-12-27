@@ -15,6 +15,7 @@ class RowTestXml {
     lateinit var label: TextView
     lateinit var button: Button
     
+    
     lateinit var xmlRoot: View
 
     fun setup(dependency: ViewDependency): View {
@@ -25,6 +26,7 @@ class RowTestXml {
         xmlRoot = view
         label = view.findViewById<TextView>(R.id.label)
         button = view.findViewById<Button>(R.id.button)
+        
         
         return view
     }

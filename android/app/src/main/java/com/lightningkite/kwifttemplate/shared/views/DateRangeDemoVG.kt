@@ -21,8 +21,9 @@ class DateRangeDemoVG() : ViewGenerator() {
 
         xml.range.bind(start, endInclusive)
 //        xml.select.bind(start)
-        xml.multi.bind(dates)
+//        xml.multi.bind(dates)
 
         return view
     }
+
 }

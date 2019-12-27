@@ -15,7 +15,7 @@ class APIOnline(val baseUrl: String = "https://jsonplaceholder.typicode.com") : 
         HttpClient.call(
             url = baseUrl + "/posts",
             method = HttpClient.GET,
-            headers = mapOf<String, String>(),
+            headers = mapOf(),
             body = null,
             onResult = onResult
         )

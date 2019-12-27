@@ -68,6 +68,7 @@ public class MapDemoXml {
                     weight: 0
                 ) { view in 
                     self.options = view
+                    view.separatorStyle = .none
                 }
                 
             }
