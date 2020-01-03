@@ -20,6 +20,7 @@ class SelectDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator(), Ent
 
     val options: List<ViewGenerator> = listOf(
         PongDemoVG(),
+        FloatingHexagonsDemoVG(),
         MarginTestsVG(),
         MultipleDemoVG(),
         DateButtonDemoVG(),

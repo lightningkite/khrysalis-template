@@ -4,10 +4,11 @@
 //
 package com.lightningkite.kwifttemplate.layouts
 
-import android.widget.*
-import android.view.*
-import com.lightningkite.kwift.views.actual.*
-import com.lightningkite.kwift.views.shared.*
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.SeekBar
+import android.widget.TextView
+import com.lightningkite.kwift.views.actual.ViewDependency
 import com.lightningkite.kwifttemplate.R
 
 class SliderDemoXml {
