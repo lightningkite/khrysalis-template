@@ -70,12 +70,11 @@ class FloatingHexagonsDelegate : CustomViewDelegate() {
             for (i in 0..7) {
                 tempList.add(
                     Hexagon(
-                        (Math.random() * width * 1.5).toFloat(),
-                        (Math.random() * height).toFloat(),
-                        ((Math.random() + 0.2) * width / 4).toFloat(),
-                        (Math.random() * 4).toInt() + 1,
+                        (Random.nextFloat() * width * 1.5f),
+                        (Random.nextFloat() * height),
+                        ((Random.nextFloat() + 0.2) * width / 4).toFloat(),
+                        Random.nextInt(1,5),
                         hexagonPaint
-
                     )
                 )
             }
