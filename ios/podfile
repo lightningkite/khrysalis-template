@@ -5,5 +5,4 @@ use_modular_headers!
 target 'Kwift Template' do
     pod 'Kwift', :path => '~/StudioProjects/kwift/Kwift.podspec'
     pod 'KwiftMaps', :path => '~/StudioProjects/kwift/KwiftMaps.podspec'
-    pod 'QVRWeekView', :git => 'https://github.com/Quivr/iOS-Week-View.git'
 end

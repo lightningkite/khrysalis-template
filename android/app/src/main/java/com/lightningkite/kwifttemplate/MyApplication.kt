@@ -5,7 +5,7 @@ import android.content.pm.PackageManager
 import android.content.res.Resources
 import android.preference.PreferenceManager
 import com.google.android.libraries.places.api.Places
-import com.lightningkite.kwift.actual.Preferences
+import com.lightningkite.kwift.Preferences
 
 class MyApplication: Application() {
     companion object {

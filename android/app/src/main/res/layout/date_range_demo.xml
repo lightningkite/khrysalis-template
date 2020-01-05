@@ -37,13 +37,13 @@
     <!--            app:labelSize="8sp"-->
     <!--    />-->
 
-    <com.lightningkite.kwift.views.actual.CustomView
+    <com.lightningkite.kwift.views.CustomView
             android:id="@+id/month"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:background="@android:color/white"
-            app:delegateClass="com.lightningkite.kwift.views.shared.MonthCVD"
+            app:delegateClass="com.lightningkite.kwift.views.MonthCVD"
     />
 
 </LinearLayout>

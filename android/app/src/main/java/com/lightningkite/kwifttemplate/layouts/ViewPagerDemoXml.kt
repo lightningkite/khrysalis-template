@@ -6,8 +6,7 @@ package com.lightningkite.kwifttemplate.layouts
 
 import android.widget.*
 import android.view.*
-import com.lightningkite.kwift.views.actual.*
-import com.lightningkite.kwift.views.shared.*
+import com.lightningkite.kwift.views.*
 import com.lightningkite.kwifttemplate.R
 
 class ViewPagerDemoXml {
