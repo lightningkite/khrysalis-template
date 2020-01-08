@@ -3,12 +3,12 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.lightningkite.kwift.views.actual.CustomView
+    <com.lightningkite.kwift.views.CustomView
             android:id="@+id/customView"
             android:layout_gravity="center"
             android:background="@color/black"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:delegateClass="com.lightningkite.kwifttemplate.shared.views.FloatingHexagonsDelegate"
+            app:delegateClass="com.lightningkite.kwifttemplate.views.FloatingHexagonsDelegate"
     />
 </FrameLayout>

@@ -1,18 +1,19 @@
-package com.lightningkite.kwifttemplate.shared.views
+package com.lightningkite.kwifttemplate.views
 
 import android.graphics.*
 import android.util.DisplayMetrics
 import android.view.View
-import com.lightningkite.kwift.actual.animationFrame
-import com.lightningkite.kwift.observables.shared.addWeak
-import com.lightningkite.kwift.views.actual.ViewDependency
-import com.lightningkite.kwift.views.actual.asColor
-import com.lightningkite.kwift.views.shared.CustomViewDelegate
-import com.lightningkite.kwift.views.shared.ViewGenerator
+import com.lightningkite.kwift.animationFrame
+import com.lightningkite.kwift.observables.addWeak
+import com.lightningkite.kwift.views.ViewDependency
+import com.lightningkite.kwift.views.asColor
+import com.lightningkite.kwift.views.CustomViewDelegate
+import com.lightningkite.kwift.views.ViewGenerator
 import com.lightningkite.kwifttemplate.layouts.FloatingHexagonsDemoXml
 import kotlin.math.abs
 import kotlin.math.cos
 import kotlin.math.sin
+import kotlin.random.Random
 
 class FloatingHexagonsDemoVG() : ViewGenerator() {
 
