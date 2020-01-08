@@ -1,49 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
-
-    <!--    <com.lightningkite.kwift.views.android.SelectDayView-->
-    <!--            android:id="@+id/select"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="0dp"-->
-    <!--            android:layout_weight="1"-->
-    <!--            android:gravity="center"-->
-    <!--            android:textColor="@color/black"-->
-    <!--            android:textSize="20sp"-->
-    <!--    />-->
-
-    <com.lightningkite.kwift.views.android.SelectDateRangeView
-            android:id="@+id/range"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-    />
+            android:layout_height="wrap_content">
 
-    <!--    <com.lightningkite.kwift.views.android.SelectMultipleDatesView-->
-    <!--            android:id="@+id/multi"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="0dp"-->
-    <!--            android:layout_weight="1"-->
-    <!--            android:gravity="center"-->
-    <!--            android:textColor="@color/black"-->
-    <!--            android:textSize="16sp"-->
-    <!--            xmlns:app="http://schemas.android.com/apk/res-auto"-->
-    <!--            app:labelSize="8sp"-->
-    <!--    />-->
+        <com.lightningkite.kwift.views.CustomView
+                android:id="@+id/month"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_marginEnd="40dp"
+                android:background="@android:color/white"
+                app:delegateClass="com.lightningkite.kwift.views.MonthCVD"
+        />
 
-    <com.lightningkite.kwift.views.CustomView
-            android:id="@+id/month"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@android:color/white"
-            app:delegateClass="com.lightningkite.kwift.views.MonthCVD"
-    />
+        <com.lightningkite.kwift.views.CustomView
+                android:id="@+id/month2"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_marginEnd="40dp"
+                android:background="@android:color/white"
+                app:delegateClass="com.lightningkite.kwift.views.SelectDateMonthCVD"
+        />
 
-</LinearLayout>
+        <com.lightningkite.kwift.views.CustomView
+                android:id="@+id/month3"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_marginEnd="40dp"
+                android:background="@android:color/white"
+                app:delegateClass="com.lightningkite.kwift.views.SelectDateRangeMonthCVD"
+        />
+
+        <com.lightningkite.kwift.views.CustomView
+                android:id="@+id/month4"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_marginEnd="40dp"
+                android:background="@android:color/white"
+                app:delegateClass="com.lightningkite.kwift.views.SelectMultipleDatesMonthCVD"
+        />
+
+    </LinearLayout>
+</ScrollView>
