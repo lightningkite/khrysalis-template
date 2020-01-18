@@ -290,6 +290,81 @@ public class MarginTestsXml {
             }
             
             view.addSubview(
+                LinearLayout(frame: .zero),
+                minimumSize: CGSize(width: 0, height: 0),
+                size: CGSize(width: 0, height: 200),
+                margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                padding: UIEdgeInsets.zero,
+                gravity: .topFill,
+                weight: 0
+            ) { view in 
+                view.orientation = .x
+                view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+                view.gravity = .topLeft
+                
+                view.addSubview(
+                    UILabel(frame: .zero),
+                    minimumSize: CGSize(width: 0, height: 0),
+                    size: CGSize(width: 0, height: 0),
+                    margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                    padding: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16),
+                    gravity: .fillLeft,
+                    weight: 0
+                ) { view in 
+                    view.font = UIFont.get(size: 16, style: [])
+                    view.textString = "a"
+                    view.numberOfLines = 0
+                    view.textColor = UIColor(argb: 0xFF222222)
+                }
+                
+                view.addSubview(
+                    UILabel(frame: .zero),
+                    minimumSize: CGSize(width: 0, height: 0),
+                    size: CGSize(width: 0, height: 0),
+                    margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                    padding: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16),
+                    gravity: .fillLeft,
+                    weight: 0
+                ) { view in 
+                    view.font = UIFont.get(size: 16, style: [])
+                    view.textString = "b"
+                    view.numberOfLines = 0
+                    view.textColor = UIColor(argb: 0xFF222222)
+                }
+                
+                view.addSubview(
+                    UILabel(frame: .zero),
+                    minimumSize: CGSize(width: 0, height: 0),
+                    size: CGSize(width: 0, height: 0),
+                    margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                    padding: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16),
+                    gravity: .fillLeft,
+                    weight: 0
+                ) { view in 
+                    view.font = UIFont.get(size: 16, style: [])
+                    view.textString = "c"
+                    view.numberOfLines = 0
+                    view.textColor = UIColor(argb: 0xFF222222)
+                }
+                
+                view.addSubview(
+                    UILabel(frame: .zero),
+                    minimumSize: CGSize(width: 0, height: 0),
+                    size: CGSize(width: 0, height: 0),
+                    margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                    padding: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16),
+                    gravity: .fillLeft,
+                    weight: 0
+                ) { view in 
+                    view.font = UIFont.get(size: 16, style: [])
+                    view.textString = "d"
+                    view.numberOfLines = 0
+                    view.textColor = UIColor(argb: 0xFF222222)
+                }
+                
+            }
+            
+            view.addSubview(
                 FrameLayout(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 200),

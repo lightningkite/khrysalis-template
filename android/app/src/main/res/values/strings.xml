@@ -31,4 +31,5 @@
         PageMaker including versions of Lorem Ipsum.
     </string>
     <string name="lorem_pixel">Lorem Pixel</string>
+    <string name="connect">Connect</string>
 </resources>

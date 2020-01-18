@@ -9,6 +9,6 @@
             android:background="@color/black"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:delegateClass="com.lightningkite.kwifttemplate.views.FloatingHexagonsDelegate"
+            app:delegateClass="com.lightningkite.kwifttemplate.vg.FloatingHexagonsDelegate"
     />
 </FrameLayout>

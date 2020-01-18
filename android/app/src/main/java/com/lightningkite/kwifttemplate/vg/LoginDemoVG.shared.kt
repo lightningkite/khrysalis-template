@@ -1,4 +1,4 @@
-package com.lightningkite.kwifttemplate.views
+package com.lightningkite.kwifttemplate.vg
 
 import android.view.View
 import com.lightningkite.kwift.delay

@@ -1,10 +1,10 @@
-package com.lightningkite.kwifttemplate.views
+package com.lightningkite.kwifttemplate.vg
 
 import android.graphics.*
 import android.util.DisplayMetrics
 import android.view.View
 import com.lightningkite.kwift.animationFrame
-import com.lightningkite.kwift.observables.addWeak
+import com.lightningkite.kwift.rx.addWeak
 import com.lightningkite.kwift.views.ViewDependency
 import com.lightningkite.kwift.views.asColor
 import com.lightningkite.kwift.views.CustomViewDelegate
@@ -31,9 +31,10 @@ class FloatingHexagonsDelegate : CustomViewDelegate() {
 
 
     val backgroundPaint: Paint = Paint()
-    val hexagonPaint: Paint = Paint().apply {
-        this.strokeWidth = 4f
-        color = Color.WHITE
+    val hexagonPaint: Paint = Paint()
+    init {
+        this.hexagonPaint.strokeWidth = 4f
+        this.hexagonPaint.color = 0xFFFFFFFF.asColor()
     }
     var location: Float? = null
     var moveTo: Float? = null
@@ -144,9 +145,9 @@ class Hexagon(var centerX: Float, var centerY: Float, val radius: Float, val lay
     }
 
     fun draw(canvas: Canvas) {
-        for (i in 0..5) {
-            val angle1: Float = (i * 60f) * degreesToRadians
-            val angle2: Float = (i * 60 + 60f) * degreesToRadians
+        for (i in 0.toInt()..5.toInt()) {
+            val angle1: Float = (i.toFloat() * 60f) * degreesToRadians
+            val angle2: Float = (i.toFloat() * 60f + 60f) * degreesToRadians
             val cornerX1 = sin(angle1) * radius + centerX
             val cornerY1 = (cos(angle1) * 1.1f) * radius + centerY
             val cornerX2 = sin(angle2) * radius + centerX
@@ -157,12 +158,12 @@ class Hexagon(var centerX: Float, var centerY: Float, val radius: Float, val lay
     }
 
     fun move(x: Float, y: Float) {
-        centerX += x / layer
-        centerY += y / layer
+        centerX += x / layer.toFloat()
+        centerY += y / layer.toFloat()
     }
 
     fun moveX(x: Float) {
-        centerX += x / layer
+        centerX += x / layer.toFloat()
     }
 
     private val degreesToRadians: Float = 3.14159f / 180f

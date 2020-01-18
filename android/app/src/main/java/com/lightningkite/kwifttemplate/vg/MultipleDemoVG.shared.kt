@@ -1,22 +1,13 @@
-package com.lightningkite.kwifttemplate.views
+package com.lightningkite.kwifttemplate.vg
 
 import android.view.View
-import com.lightningkite.kwift.weak
-import com.lightningkite.kwift.observables.binding.bind
 import com.lightningkite.kwift.observables.binding.bindMulti
 import com.lightningkite.kwift.observables.binding.bindString
-import com.lightningkite.kwift.observables.binding.bindText
 import com.lightningkite.kwift.observables.ConstantObservableProperty
-import com.lightningkite.kwift.observables.ObservableStack
 import com.lightningkite.kwift.observables.map
-import com.lightningkite.kwift.captureWeak
 import com.lightningkite.kwift.views.ViewDependency
-import com.lightningkite.kwift.views.onClick
 import com.lightningkite.kwift.views.ViewGenerator
-import com.lightningkite.kwifttemplate.layouts.MultipleDemoXml
-import com.lightningkite.kwifttemplate.layouts.RowTestXml
-import com.lightningkite.kwifttemplate.layouts.RowTextXml
-import com.lightningkite.kwifttemplate.layouts.SelectDemoXml
+import com.lightningkite.kwifttemplate.layouts.*
 
 class MultipleDemoVG() : ViewGenerator() {
     override val title: String get() = "Multiple List Demo"
@@ -41,19 +32,19 @@ class MultipleDemoVG() : ViewGenerator() {
             data = ConstantObservableProperty(data),
             typeHandlerSetup = { handler ->
                 handler.handle(0.toInt()) { obs ->
-                    val cellXml = RowTestXml()
+                    val cellXml = ComponentTestXml()
                     val cellView = cellXml.setup(dependency)
                     cellXml.label.bindString(obs.map { it ->"The number $it" })
                     return@handle cellView
                 }
                 handler.handle("") { obs ->
-                    val cellXml = RowTestXml()
+                    val cellXml = ComponentTestXml()
                     val cellView = cellXml.setup(dependency)
                     cellXml.label.bindString(obs.map { it ->"The string '$it'" })
                     return@handle cellView
                 }
                 handler.handle(Unit) { obs ->
-                    val cellXml = RowTextXml()
+                    val cellXml = ComponentTextXml()
                     val cellView = cellXml.setup(dependency)
                     cellXml.label.text = "-----"
                     return@handle cellView

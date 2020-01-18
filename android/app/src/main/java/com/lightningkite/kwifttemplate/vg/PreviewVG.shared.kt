@@ -1,4 +1,4 @@
-package com.lightningkite.kwifttemplate.views
+package com.lightningkite.kwifttemplate.vg
 
 import android.view.View
 import com.lightningkite.kwift.escaping
@@ -21,8 +21,6 @@ class PreviewVG : ViewGenerator() {
         XmlPreview("ExampleContentXml") { it -> ExampleContentXml().setup(it) },
         XmlPreview("LoginDemoXml") { it -> LoginDemoXml().setup(it) },
         XmlPreview("MainXml") { it -> MainXml().setup(it) },
-        XmlPreview("RowTestXml") { it -> RowTestXml().setup(it) },
-        XmlPreview("RowTextXml") { it -> RowTextXml().setup(it) },
         XmlPreview("SegmentedControlDemoXml") { it -> SegmentedControlDemoXml().setup(it) },
         XmlPreview("SelectDemoXml") { it -> SelectDemoXml().setup(it) },
         XmlPreview("SliderDemoXml") { it -> SliderDemoXml().setup(it) },

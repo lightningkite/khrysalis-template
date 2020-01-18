@@ -1,4 +1,4 @@
-package com.lightningkite.kwifttemplate.views
+package com.lightningkite.kwifttemplate.vg
 
 import android.view.View
 import com.lightningkite.kwift.observables.binding.bind
@@ -6,7 +6,7 @@ import com.lightningkite.kwift.observables.ObservableStack
 import com.lightningkite.kwift.observables.StandardObservableProperty
 import com.lightningkite.kwift.views.ViewDependency
 import com.lightningkite.kwift.views.ViewGenerator
-import com.lightningkite.kwifttemplate.layouts.RowTestXml
+import com.lightningkite.kwifttemplate.layouts.ComponentTestXml
 import com.lightningkite.kwifttemplate.layouts.ViewPagerDemoXml
 
 class ViewPagerDemoVG(val stack: ObservableStack<ViewGenerator>) : ViewGenerator() {
@@ -24,7 +24,7 @@ class ViewPagerDemoVG(val stack: ObservableStack<ViewGenerator>) : ViewGenerator
         val view = xml.setup(dependency)
 
         xml.viewPager.bind(items, selectedIndex) { it ->
-            val xml = RowTestXml()
+            val xml = ComponentTestXml()
             val view = xml.setup(dependency)
             xml.label.text = it
             return@bind view

@@ -12,7 +12,7 @@ import com.lightningkite.kwifttemplate.R
 class FloatingHexagonsDemoXml {
 
     lateinit var customView: com.lightningkite.kwift.views.CustomView
-    lateinit var customViewDelegate: com.lightningkite.kwifttemplate.views.FloatingHexagonsDelegate
+    lateinit var customViewDelegate: com.lightningkite.kwifttemplate.vg.FloatingHexagonsDelegate
     
     lateinit var xmlRoot: View
 
@@ -23,7 +23,7 @@ class FloatingHexagonsDemoXml {
     fun setup(view: View): View {
         xmlRoot = view
         customView = view.findViewById<com.lightningkite.kwift.views.CustomView>(R.id.customView)
-        customViewDelegate = view.findViewById<CustomView>(R.id.customView).delegate as com.lightningkite.kwifttemplate.views.FloatingHexagonsDelegate
+        customViewDelegate = view.findViewById<CustomView>(R.id.customView).delegate as com.lightningkite.kwifttemplate.vg.FloatingHexagonsDelegate
         
         return view
     }

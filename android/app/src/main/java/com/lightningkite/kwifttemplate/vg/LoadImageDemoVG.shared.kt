@@ -1,12 +1,9 @@
-package com.lightningkite.kwifttemplate.views
+package com.lightningkite.kwifttemplate.vg
 
 import android.view.View
-import com.lightningkite.kwift.observables.binding.bindText
 import com.lightningkite.kwift.observables.binding.loadImage
-import com.lightningkite.kwift.observables.StandardObservableProperty
 import com.lightningkite.kwift.ImageReference
 import com.lightningkite.kwift.ImageRemoteUrl
-import com.lightningkite.kwift.captureWeak
 import com.lightningkite.kwift.views.ViewDependency
 import com.lightningkite.kwift.views.onClick
 import com.lightningkite.kwift.views.requestImageCamera

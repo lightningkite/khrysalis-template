@@ -1,12 +1,10 @@
-package com.lightningkite.kwifttemplate.views
+package com.lightningkite.kwifttemplate.vg
 
 import android.view.View
-import com.lightningkite.kwift.observables.binding.bind
 import com.lightningkite.kwift.observables.StandardObservableProperty
 import com.lightningkite.kwift.views.ViewDependency
 import com.lightningkite.kwift.views.ViewGenerator
 import com.lightningkite.kwift.views.asColor
-import com.lightningkite.kwift.views.getColor
 import com.lightningkite.kwifttemplate.layouts.DateRangeDemoXml
 import java.util.*
 

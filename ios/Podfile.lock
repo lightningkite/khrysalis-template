@@ -1,12 +1,12 @@
 PODS:
-  - Alamofire (4.9.0)
-  - AlamofireImage (3.5.2):
-    - Alamofire (~> 4.8)
+  - Alamofire (4.9.1)
+  - AlamofireImage (3.6.0):
+    - Alamofire (~> 4.9)
   - Cosmos (19.0.3)
   - Crashlytics (3.14.0):
     - Fabric (~> 1.10.2)
   - Fabric (1.10.2)
-  - KeychainAccess (3.2.0)
+  - KeychainAccess (4.1.0)
   - Kwift (0.1.0):
     - Alamofire
     - AlamofireImage
@@ -14,10 +14,15 @@ PODS:
     - Crashlytics
     - Fabric
     - KeychainAccess
+    - RxRelay
+    - RxSwift
     - SearchTextField
     - "UITextView+Placeholder"
   - KwiftMaps (0.1.0):
     - Kwift
+  - RxRelay (5.0.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.1)
   - SearchTextField (1.2.4)
   - "UITextView+Placeholder (1.3.3)"
 
@@ -33,6 +38,8 @@ SPEC REPOS:
     - Crashlytics
     - Fabric
     - KeychainAccess
+    - RxRelay
+    - RxSwift
     - SearchTextField
     - "UITextView+Placeholder"
 
@@ -43,14 +50,16 @@ EXTERNAL SOURCES:
     :path: "~/StudioProjects/kwift/KwiftMaps.podspec"
 
 SPEC CHECKSUMS:
-  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
-  AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   Cosmos: a6fb17284281fa12cf4c85c2efecd440a215ec44
   Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
-  KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
-  Kwift: 152f0cfdc3abf3f961d0e1dc15fa2b2da8bbe80e
+  KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
+  Kwift: cbd2edc33ddcfa170086303aae6926095dbc62ec
   KwiftMaps: c5a770dcd21928febb65c6c3195875a80db2cacb
+  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   SearchTextField: 40dc3cc57def5a211f263cac263622c163bbc25a
   "UITextView+Placeholder": c407b27599ea23cca425946fee3cf1db5d547008
 

@@ -1,4 +1,4 @@
-package com.lightningkite.kwifttemplate.views
+package com.lightningkite.kwifttemplate.vg
 
 import android.view.View
 import com.lightningkite.kwift.observables.binding.bind
@@ -6,8 +6,8 @@ import com.lightningkite.kwift.observables.binding.bindString
 import com.lightningkite.kwift.observables.StandardObservableProperty
 import com.lightningkite.kwift.views.ViewDependency
 import com.lightningkite.kwift.views.ViewGenerator
+import com.lightningkite.kwifttemplate.layouts.ComponentTestXml
 import com.lightningkite.kwifttemplate.layouts.ControlsDemoXml
-import com.lightningkite.kwifttemplate.layouts.RowTextXml
 
 class ControlsDemoVG() : ViewGenerator() {
     override val title: String get() = "Controls Demo"
@@ -35,7 +35,7 @@ class ControlsDemoVG() : ViewGenerator() {
             options = options,
             selected = text,
             makeView = { obs ->
-                val xml = RowTextXml()
+                val xml = ComponentTestXml()
                 val view = xml.setup(dependency)
 
                 xml.label.bindString(obs)

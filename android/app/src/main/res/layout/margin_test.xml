@@ -12,6 +12,7 @@
         <FrameLayout android:layout_width="match_parent" android:layout_height="200dp">
             <TextView
                     style="@style/Body"
+                    android:background="#FF8080"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -20,6 +21,7 @@
                     android:text="left|top"/>
             <TextView
                     style="@style/Body"
+                    android:background="#FF8080"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -28,6 +30,7 @@
                     android:text="left|bottom"/>
             <TextView
                     style="@style/Body"
+                    android:background="#FF8080"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -37,6 +40,7 @@
 
             <TextView
                     style="@style/Body"
+                    android:background="#FF8080"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -45,6 +49,7 @@
                     android:text="ch|top"/>
             <TextView
                     style="@style/Body"
+                    android:background="#FF8080"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -53,6 +58,7 @@
                     android:text="ch|bottom"/>
             <TextView
                     style="@style/Body"
+                    android:background="#FF8080"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -62,6 +68,7 @@
 
             <TextView
                     style="@style/Body"
+                    android:background="#FF8080"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -70,6 +77,7 @@
                     android:text="right|top"/>
             <TextView
                     style="@style/Body"
+                    android:background="#FF8080"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -78,6 +86,7 @@
                     android:text="right|bottom"/>
             <TextView
                     style="@style/Body"
+                    android:background="#FF8080"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -90,6 +99,7 @@
         <FrameLayout android:layout_width="match_parent" android:layout_height="200dp">
             <TextView
                     style="@style/Body"
+                    android:background="#FF8080"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -98,6 +108,7 @@
                     android:text="top"/>
             <TextView
                     style="@style/Body"
+                    android:background="#FF8080"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -106,6 +117,7 @@
                     android:text="bottom"/>
             <TextView
                     style="@style/Body"
+                    android:background="#FF8080"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -118,6 +130,7 @@
         <FrameLayout android:layout_width="match_parent" android:layout_height="200dp">
             <TextView
                     style="@style/Body"
+                    android:background="#FF8080"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_margin="8dp"
@@ -126,6 +139,7 @@
                     android:text="left"/>
             <TextView
                     style="@style/Body"
+                    android:background="#FF8080"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_margin="8dp"
@@ -134,6 +148,7 @@
                     android:text="right"/>
             <TextView
                     style="@style/Body"
+                    android:background="#FF8080"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_margin="8dp"
@@ -146,6 +161,7 @@
         <FrameLayout android:layout_width="match_parent" android:layout_height="200dp">
             <TextView
                     style="@style/Body"
+                    android:background="#FF8080"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="8dp"
@@ -153,6 +169,41 @@
                     android:text="fill"/>
 
         </FrameLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="200dp" android:orientation="horizontal">
+            <TextView
+                    style="@style/Body"
+                    android:background="#FF8080"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:padding="16dp"
+                    android:text="a"/>
+            <TextView
+                    style="@style/Body"
+                    android:background="#FF8080"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:padding="16dp"
+                    android:text="b"/>
+            <TextView
+                    style="@style/Body"
+                    android:background="#FF8080"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:padding="16dp"
+                    android:text="c"/>
+            <TextView
+                    style="@style/Body"
+                    android:background="#FF8080"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:padding="16dp"
+                    android:text="d"/>
+        </LinearLayout>
 
 
         <FrameLayout android:layout_width="match_parent" android:layout_height="200dp">
@@ -302,6 +353,7 @@
 
         <TextView
                 style="@style/Body"
+                android:background="#FF8080"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -311,6 +363,7 @@
 
         <TextView
                 style="@style/Body"
+                android:background="#FF8080"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -320,6 +373,7 @@
 
         <TextView
                 style="@style/Body"
+                android:background="#FF8080"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -329,6 +383,7 @@
 
         <TextView
                 style="@style/Body"
+                android:background="#FF8080"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"

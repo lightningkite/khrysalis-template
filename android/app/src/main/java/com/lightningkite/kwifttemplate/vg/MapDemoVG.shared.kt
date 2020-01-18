@@ -1,4 +1,4 @@
-package com.lightningkite.kwifttemplate.views
+package com.lightningkite.kwifttemplate.vg
 
 import android.view.View
 import com.lightningkite.kwift.delay
@@ -7,7 +7,6 @@ import com.lightningkite.kwift.location.coordinate
 import com.lightningkite.kwift.location.geocode
 import com.lightningkite.kwift.location.oneLine
 import com.lightningkite.kwift.location.GeoCoordinate
-import com.lightningkite.kwift.maps.PlacesAutocomplete
 import com.lightningkite.kwift.maps.bindSelect
 import com.lightningkite.kwift.observables.binding.bind
 import com.lightningkite.kwift.observables.binding.bindString
@@ -17,9 +16,7 @@ import com.lightningkite.kwift.observables.transformed
 import com.lightningkite.kwift.views.ViewDependency
 import com.lightningkite.kwift.views.onClick
 import com.lightningkite.kwift.views.ViewGenerator
-import com.lightningkite.kwifttemplate.layouts.ControlsDemoXml
-import com.lightningkite.kwifttemplate.layouts.MapDemoXml
-import com.lightningkite.kwifttemplate.layouts.RowTextXml
+import com.lightningkite.kwifttemplate.layouts.*
 
 class MapDemoVG() : ViewGenerator() {
     override val title: String get() = "Map Demo"
@@ -35,7 +32,7 @@ class MapDemoVG() : ViewGenerator() {
         xml.map.bindSelect(dependency, position)
         xml.select.bindString(text)
         xml.options.bind(options, GeoAddress()) { obs ->
-            val xml = RowTextXml()
+            val xml = ComponentTextXml()
             val view = xml.setup(dependency)
             xml.label.bindString(obs.transformed { it -> it.oneLine() })
             xml.xmlRoot.onClick {

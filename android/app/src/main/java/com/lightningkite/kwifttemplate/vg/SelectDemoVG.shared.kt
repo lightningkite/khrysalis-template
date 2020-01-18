@@ -1,4 +1,4 @@
-package com.lightningkite.kwifttemplate.views
+package com.lightningkite.kwifttemplate.vg
 
 import android.view.View
 import com.lightningkite.kwift.weak
@@ -11,7 +11,7 @@ import com.lightningkite.kwift.views.ViewDependency
 import com.lightningkite.kwift.views.onClick
 import com.lightningkite.kwift.views.EntryPoint
 import com.lightningkite.kwift.views.ViewGenerator
-import com.lightningkite.kwifttemplate.layouts.RowTestXml
+import com.lightningkite.kwifttemplate.layouts.ComponentTestXml
 import com.lightningkite.kwifttemplate.layouts.SelectDemoXml
 
 class SelectDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator(), EntryPoint {
@@ -19,6 +19,7 @@ class SelectDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator(), Ent
     override val title: String get() = "Select Demo"
 
     val options: List<ViewGenerator> = listOf(
+        BleScanDemoVG(stack),
         PongDemoVG(),
         FloatingHexagonsDemoVG(),
         MarginTestsVG(),
@@ -50,7 +51,7 @@ class SelectDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator(), Ent
             data = ConstantObservableProperty(options),
             defaultValue = options.first(),
             makeView = { obs ->
-                val xml = RowTestXml()
+                val xml = ComponentTestXml()
                 val view = xml.setup(dependency)
                 xml.label.bindText(obs) { it -> it.title }
                 xml.button.onClick(captureWeak(this){ self -> self.selectVG(obs.value) })

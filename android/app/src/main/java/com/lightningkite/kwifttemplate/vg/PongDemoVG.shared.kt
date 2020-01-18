@@ -1,6 +1,5 @@
-package com.lightningkite.kwifttemplate.views
+package com.lightningkite.kwifttemplate.vg
 
-import android.content.Context
 import android.graphics.Canvas
 import android.graphics.LinearGradient
 import android.graphics.Paint
@@ -8,10 +7,7 @@ import android.graphics.Shader
 import android.util.DisplayMetrics
 import android.view.View
 import com.lightningkite.kwift.animationFrame
-import com.lightningkite.kwift.delay
-import com.lightningkite.kwift.weak
-import com.lightningkite.kwift.observables.addWeak
-import com.lightningkite.kwift.views.CustomView
+import com.lightningkite.kwift.rx.addWeak
 import com.lightningkite.kwift.views.ViewDependency
 import com.lightningkite.kwift.views.asColor
 import com.lightningkite.kwift.views.draw.drawTextCentered
