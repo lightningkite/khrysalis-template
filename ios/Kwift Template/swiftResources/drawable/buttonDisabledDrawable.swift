@@ -9,19 +9,19 @@ static func buttonDisabled(_ view: UIView? = nil) -> CALayer {
     let part1: CALayer = {
         let sublayer = buttonDisabledPart1(view)
         layer.bounds.size = layer.bounds.size.expand(sublayer.bounds.size)
-        layer.onResize.addAndRunWeak(sublayer, layer.bounds) { (sublayer, bounds) in sublayer.frame = bounds }
+        layer.onResize.startWith(layer.bounds).addWeak(sublayer) { (sublayer, bounds) in sublayer.frame = bounds }
         return sublayer
     }()
     let part2: CALayer = {
         let sublayer = buttonDisabledPart2(view)
         layer.bounds.size = layer.bounds.size.expand(sublayer.bounds.size)
-        layer.onResize.addAndRunWeak(sublayer, layer.bounds) { (sublayer, bounds) in sublayer.frame = bounds }
+        layer.onResize.startWith(layer.bounds).addWeak(sublayer) { (sublayer, bounds) in sublayer.frame = bounds }
         return sublayer
     }()
     let part3: CALayer = {
         let sublayer = buttonDisabledPart3(view)
         layer.bounds.size = layer.bounds.size.expand(sublayer.bounds.size)
-        layer.onResize.addAndRunWeak(sublayer, layer.bounds) { (sublayer, bounds) in sublayer.frame = bounds }
+        layer.onResize.startWith(layer.bounds).addWeak(sublayer) { (sublayer, bounds) in sublayer.frame = bounds }
         return sublayer
     }()
     
@@ -43,21 +43,21 @@ static func buttonDisabled(_ view: UIView? = nil) -> CALayer {
 static func buttonDisabledPart1(_ view: UIView? = nil) -> CALayer {
     let layer = CALayer()
     layer.backgroundColor = ResourcesColors.disabled.cgColor
-    layer.cornerRadius = 3
+    layer.maxCornerRadius = 3
     layer.bounds.size = CGSize(width: 100, height: 100)
     return layer
 }
 static func buttonDisabledPart2(_ view: UIView? = nil) -> CALayer {
     let layer = CALayer()
     layer.backgroundColor = ResourcesColors.disabled.cgColor
-    layer.cornerRadius = 3
+    layer.maxCornerRadius = 3
     layer.bounds.size = CGSize(width: 100, height: 100)
     return layer
 }
 static func buttonDisabledPart3(_ view: UIView? = nil) -> CALayer {
     let layer = CALayer()
     layer.backgroundColor = ResourcesColors.disabled.cgColor
-    layer.cornerRadius = 3
+    layer.maxCornerRadius = 3
     layer.bounds.size = CGSize(width: 100, height: 100)
     return layer
 }

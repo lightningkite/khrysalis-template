@@ -3,8 +3,6 @@ package com.lightningkite.kwifttemplate.vg
 import android.widget.*
 import android.view.*
 import com.lightningkite.kwift.*
-import com.lightningkite.kwift.async.then
-import com.lightningkite.kwift.async.thenImmediate
 import com.lightningkite.kwift.bluetooth.Ble
 import com.lightningkite.kwift.bluetooth.PropertyBleCharacteristicServer
 import com.lightningkite.kwift.lifecycle.and

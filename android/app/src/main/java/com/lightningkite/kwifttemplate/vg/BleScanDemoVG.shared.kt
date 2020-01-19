@@ -29,20 +29,21 @@ class BleScanDemoVG(
             val closeable = Ble.scan(
                 viewDependency = dependency,
                 withServices = listOf(),
+                intensity = .5f,
                 onDeviceFound = { device ->
                     println("Found device $device")
-                    this.devices.value = this.devices.value + (device.id to device)
+                    this.devices.value = this.devices.value + Pair(device.id, device)
                 }
             )
             (button.lifecycle and appInForeground).closeWhenOff(closeable)
         })
 
         xml.host.onClick {
-            stack.push(BleHostDemoVG())
+            this.stack.push(BleHostDemoVG())
         }
 
         xml.items.bind(
-            data = devices.map { it -> it.values.sortedByDescending { it.rssi } },
+            data = devices.map { it -> it.values.sortedByDescending { it -> it.rssi } },
             defaultValue = BleDeviceInfo("", "", 0),
             makeView = label@ { obs ->
                 val cellXml = ComponentBleDeviceXml()
