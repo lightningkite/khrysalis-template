@@ -6,40 +6,40 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        <com.lightningkite.kwift.views.CustomView
+        <com.lightningkite.khrysalis.views.CustomView
                 android:id="@+id/month"
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
                 android:layout_marginEnd="40dp"
                 android:background="@android:color/white"
-                app:delegateClass="com.lightningkite.kwift.views.MonthCVD"
+                app:delegateClass="com.lightningkite.khrysalis.views.MonthCVD"
         />
 
-        <com.lightningkite.kwift.views.CustomView
+        <com.lightningkite.khrysalis.views.CustomView
                 android:id="@+id/month2"
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
                 android:layout_marginEnd="40dp"
                 android:background="@android:color/white"
-                app:delegateClass="com.lightningkite.kwift.views.SelectDateMonthCVD"
+                app:delegateClass="com.lightningkite.khrysalis.views.SelectDateMonthCVD"
         />
 
-        <com.lightningkite.kwift.views.CustomView
+        <com.lightningkite.khrysalis.views.CustomView
                 android:id="@+id/month3"
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
                 android:layout_marginEnd="40dp"
                 android:background="@android:color/white"
-                app:delegateClass="com.lightningkite.kwift.views.SelectDateRangeMonthCVD"
+                app:delegateClass="com.lightningkite.khrysalis.views.SelectDateRangeMonthCVD"
         />
 
-        <com.lightningkite.kwift.views.CustomView
+        <com.lightningkite.khrysalis.views.CustomView
                 android:id="@+id/month4"
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
                 android:layout_marginEnd="40dp"
                 android:background="@android:color/white"
-                app:delegateClass="com.lightningkite.kwift.views.SelectMultipleDatesMonthCVD"
+                app:delegateClass="com.lightningkite.khrysalis.views.SelectMultipleDatesMonthCVD"
         />
 
     </LinearLayout>

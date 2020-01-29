@@ -35,7 +35,7 @@
 
     </LinearLayout>
 
-    <com.lightningkite.kwift.views.android.SwapView
+    <com.lightningkite.khrysalis.views.android.SwapView
             android:id="@+id/mainContent"
             android:layout_width="match_parent"
             android:layout_height="0px"

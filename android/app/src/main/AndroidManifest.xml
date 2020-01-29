@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
-          package="com.lightningkite.kwifttemplate">
+          package="com.lightningkite.khrysalistemplate">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
@@ -39,7 +39,7 @@
         </activity>
         <provider
                 android:name="androidx.core.content.FileProvider"
-                android:authorities="com.lightningkite.kwifttemplate.fileprovider"
+                android:authorities="com.lightningkite.khrysalistemplate.fileprovider"
                 android:exported="false"
                 android:grantUriPermissions="true">
             <meta-data

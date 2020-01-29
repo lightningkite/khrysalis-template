@@ -2,7 +2,8 @@
 platform :ios, '11.0'
 use_modular_headers!
 
-target 'Kwift Template' do
-    pod 'Kwift', :path => '~/StudioProjects/kwift/Kwift.podspec'
-    pod 'KwiftMaps', :path => '~/StudioProjects/kwift/KwiftMaps.podspec'
+target 'Khrysalis Template' do
+    pod 'Khrysalis', :path => '~/StudioProjects/khrysalis/Khrysalis.podspec'
+    pod 'KhrysalisMaps', :path => '~/StudioProjects/khrysalis/KhrysalisMaps.podspec'
+    pod 'KhrysalisBluetooth', :path => '~/StudioProjects/khrysalis/KhrysalisBluetooth.podspec'
 end

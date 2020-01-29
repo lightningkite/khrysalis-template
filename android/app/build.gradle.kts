@@ -1,16 +1,16 @@
-import com.lightningkite.kwift.gradle.configureGradle
-import com.lightningkite.kwift.layout.normal
-import com.lightningkite.kwift.layout.LayoutConverter
-import com.lightningkite.kwift.layout.mapViews
+import com.lightningkite.khrysalis.gradle.configureGradle
+import com.lightningkite.khrysalis.layout.normal
+import com.lightningkite.khrysalis.layout.LayoutConverter
+import com.lightningkite.khrysalis.layout.mapViews
 
-val packageName = "com.lightningkite.kwifttemplate"
+val packageName = "com.lightningkite.khrysalistemplate"
 
 buildscript {
     repositories {
         mavenLocal()
     }
     dependencies {
-        classpath("com.lightningkite.kwift:plugin:0.1.0")
+        classpath("com.lightningkite.khrysalis:plugin:0.1.0")
     }
 }
 
@@ -50,8 +50,9 @@ repositories {
 
 val kotlin_version = "1.3.41"
 dependencies {
-    implementation("com.lightningkite.kwift:android:0.1.1")
-    implementation("com.lightningkite.kwift:android-maps:0.1.1")
+    implementation("com.lightningkite.khrysalis:android:0.1.1")
+    implementation("com.lightningkite.khrysalis:android-maps:0.1.1")
+    implementation("com.lightningkite.khrysalis:android-bluetooth:0.1.1")
     testImplementation("junit:junit:4.12")
     androidTestImplementation("androidx.test:runner:1.2.0")
     androidTestImplementation("com.android.support.test.espresso:espresso-core:3.0.2")
@@ -76,9 +77,9 @@ dependencies {
 
 project.configureGradle(
     packageName = packageName,
-    iosRelativeBase = "../../ios/Kwift Template",
+    iosRelativeBase = "../../ios/Khrysalis Template",
     setupCodeConversion = {
-        imports += listOf("KwiftMaps")
+        imports += listOf("KhrysalisMaps", "KhrysalisBluetooth")
     },
     setupLayoutConversion = LayoutConverter.normal + LayoutConverter.mapViews
 )

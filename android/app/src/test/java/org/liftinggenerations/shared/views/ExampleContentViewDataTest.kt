@@ -1,6 +1,6 @@
 package org.liftinggenerations.shared.views
 
-import com.lightningkite.kwifttemplate.shared.views.ExampleContentVG
+import com.lightningkite.khrysalistemplate.shared.views.ExampleContentVG
 import org.junit.Test
 
 class ExampleContentViewDataTest {

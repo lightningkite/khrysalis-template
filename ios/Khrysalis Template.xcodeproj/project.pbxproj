@@ -1,0 +1,1003 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5E4B9B0F233C04DA00A43522 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B9B0E233C04DA00A43522 /* AppDelegate.swift */; };
+		5E4B9B15233C04DB00A43522 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B9B14233C04DB00A43522 /* Assets.xcassets */; };
+		5E4B9B18233C04DB00A43522 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B9B17233C04DB00A43522 /* Preview Assets.xcassets */; };
+		5E4B9B1B233C04DB00A43522 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B9B19233C04DB00A43522 /* LaunchScreen.storyboard */; };
+		5E4B9B26233C04DB00A43522 /* Khrysalis_TemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B9B25233C04DB00A43522 /* Khrysalis_TemplateTests.swift */; };
+		5E4B9B31233C04DB00A43522 /* Khrysalis_TemplateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B9B30233C04DB00A43522 /* Khrysalis_TemplateUITests.swift */; };
+		5E4B9CC1233C077800A43522 /* opensans_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B9C5C233C077800A43522 /* opensans_bold.ttf */; };
+		5E4B9CC2233C077800A43522 /* opensans_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B9C5D233C077800A43522 /* opensans_regular.ttf */; };
+		5E4B9CC3233C077800A43522 /* opensans_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B9C5E233C077800A43522 /* opensans_italic.ttf */; };
+		5E4B9CC4233C077800A43522 /* opensans_bold_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B9C5F233C077800A43522 /* opensans_bold_italic.ttf */; };
+		5EE8E2C123D3ED6C00A6D468 /* ControlsDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E27A23D3ED6B00A6D468 /* ControlsDemoVG.shared.swift */; };
+		5EE8E2C223D3ED6C00A6D468 /* DateRangeDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E27B23D3ED6B00A6D468 /* DateRangeDemoVG.shared.swift */; };
+		5EE8E2C323D3ED6C00A6D468 /* FloatingHexagonsDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E27C23D3ED6B00A6D468 /* FloatingHexagonsDemoVG.shared.swift */; };
+		5EE8E2C423D3ED6C00A6D468 /* LocationDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E27D23D3ED6B00A6D468 /* LocationDemoVG.shared.swift */; };
+		5EE8E2C523D3ED6C00A6D468 /* SegmentedControlDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E27E23D3ED6B00A6D468 /* SegmentedControlDemoVG.shared.swift */; };
+		5EE8E2C623D3ED6C00A6D468 /* MainVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E27F23D3ED6B00A6D468 /* MainVG.shared.swift */; };
+		5EE8E2C723D3ED6C00A6D468 /* LoadImageDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E28023D3ED6B00A6D468 /* LoadImageDemoVG.shared.swift */; };
+		5EE8E2C823D3ED6C00A6D468 /* DrawableDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E28123D3ED6B00A6D468 /* DrawableDemoVG.shared.swift */; };
+		5EE8E2C923D3ED6C00A6D468 /* ExampleContentVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E28223D3ED6B00A6D468 /* ExampleContentVG.shared.swift */; };
+		5EE8E2CA23D3ED6C00A6D468 /* SliderDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E28323D3ED6B00A6D468 /* SliderDemoVG.shared.swift */; };
+		5EE8E2CB23D3ED6C00A6D468 /* MarginTestVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E28423D3ED6B00A6D468 /* MarginTestVG.shared.swift */; };
+		5EE8E2CC23D3ED6C00A6D468 /* MultipleDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E28523D3ED6B00A6D468 /* MultipleDemoVG.shared.swift */; };
+		5EE8E2CD23D3ED6C00A6D468 /* ViewPagerDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E28623D3ED6B00A6D468 /* ViewPagerDemoVG.shared.swift */; };
+		5EE8E2CE23D3ED6C00A6D468 /* BleHostDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E28723D3ED6B00A6D468 /* BleHostDemoVG.shared.swift */; };
+		5EE8E2CF23D3ED6C00A6D468 /* BleClientDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E28823D3ED6B00A6D468 /* BleClientDemoVG.shared.swift */; };
+		5EE8E2D023D3ED6C00A6D468 /* PongDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E28923D3ED6B00A6D468 /* PongDemoVG.shared.swift */; };
+		5EE8E2D123D3ED6C00A6D468 /* MapDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E28A23D3ED6B00A6D468 /* MapDemoVG.shared.swift */; };
+		5EE8E2D223D3ED6C00A6D468 /* SelectDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E28B23D3ED6B00A6D468 /* SelectDemoVG.shared.swift */; };
+		5EE8E2D323D3ED6C00A6D468 /* BleScanDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E28C23D3ED6B00A6D468 /* BleScanDemoVG.shared.swift */; };
+		5EE8E2D423D3ED6C00A6D468 /* LoginDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E28D23D3ED6B00A6D468 /* LoginDemoVG.shared.swift */; };
+		5EE8E2D523D3ED6C00A6D468 /* PreviewVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E28E23D3ED6B00A6D468 /* PreviewVG.shared.swift */; };
+		5EE8E2D623D3ED6C00A6D468 /* DateButtonDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E28F23D3ED6B00A6D468 /* DateButtonDemoVG.shared.swift */; };
+		5EE8E2D723D3ED6C00A6D468 /* Post.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E29123D3ED6B00A6D468 /* Post.shared.swift */; };
+		5EE8E2D823D3ED6C00A6D468 /* APIMock.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E29323D3ED6B00A6D468 /* APIMock.shared.swift */; };
+		5EE8E2D923D3ED6C00A6D468 /* API.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E29423D3ED6B00A6D468 /* API.shared.swift */; };
+		5EE8E2DA23D3ED6C00A6D468 /* APIInterface.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E29523D3ED6B00A6D468 /* APIInterface.shared.swift */; };
+		5EE8E2DB23D3ED6C00A6D468 /* APIOnline.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E29623D3ED6B00A6D468 /* APIOnline.shared.swift */; };
+		5EE8E2DC23D3ED6C00A6D468 /* strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E29823D3ED6B00A6D468 /* strings.swift */; };
+		5EE8E2DD23D3ED6C00A6D468 /* buttonAccentDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E29A23D3ED6B00A6D468 /* buttonAccentDrawable.swift */; };
+		5EE8E2DE23D3ED6C00A6D468 /* icExposureBlack24dpDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E29B23D3ED6B00A6D468 /* icExposureBlack24dpDrawable.swift */; };
+		5EE8E2DF23D3ED6C00A6D468 /* buttonPrimaryDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E29C23D3ED6B00A6D468 /* buttonPrimaryDrawable.swift */; };
+		5EE8E2E023D3ED6C00A6D468 /* icArrowBackWhite24dpDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E29D23D3ED6B00A6D468 /* icArrowBackWhite24dpDrawable.swift */; };
+		5EE8E2E123D3ED6C00A6D468 /* borderDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E29E23D3ED6B00A6D468 /* borderDrawable.swift */; };
+		5EE8E2E223D3ED6C00A6D468 /* icAndroidBlack24dpDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E29F23D3ED6B00A6D468 /* icAndroidBlack24dpDrawable.swift */; };
+		5EE8E2E323D3ED6C00A6D468 /* buttonDisabledDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2A023D3ED6B00A6D468 /* buttonDisabledDrawable.swift */; };
+		5EE8E2E423D3ED6C00A6D468 /* icLauncherForegroundDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2A123D3ED6B00A6D468 /* icLauncherForegroundDrawable.swift */; };
+		5EE8E2E523D3ED6C00A6D468 /* icLauncherBackgroundDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2A223D3ED6B00A6D468 /* icLauncherBackgroundDrawable.swift */; };
+		5EE8E2E623D3ED6C00A6D468 /* ResourcesDrawables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2A323D3ED6B00A6D468 /* ResourcesDrawables.swift */; };
+		5EE8E2E723D3ED6C00A6D468 /* icBeachAccessBlack24dpDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2A423D3ED6B00A6D468 /* icBeachAccessBlack24dpDrawable.swift */; };
+		5EE8E2E823D3ED6C00A6D468 /* PNGs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2A523D3ED6B00A6D468 /* PNGs.swift */; };
+		5EE8E2E923D3ED6C00A6D468 /* ComponentTextXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2A723D3ED6B00A6D468 /* ComponentTextXml.swift */; };
+		5EE8E2EA23D3ED6C00A6D468 /* FloatingHexagonsDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2A823D3ED6B00A6D468 /* FloatingHexagonsDemoXml.swift */; };
+		5EE8E2EB23D3ED6C00A6D468 /* MultipleDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2A923D3ED6B00A6D468 /* MultipleDemoXml.swift */; };
+		5EE8E2EC23D3ED6C00A6D468 /* DateButtonDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2AA23D3ED6B00A6D468 /* DateButtonDemoXml.swift */; };
+		5EE8E2ED23D3ED6C00A6D468 /* BleScanDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2AB23D3ED6B00A6D468 /* BleScanDemoXml.swift */; };
+		5EE8E2EE23D3ED6C00A6D468 /* LocationDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2AC23D3ED6B00A6D468 /* LocationDemoXml.swift */; };
+		5EE8E2EF23D3ED6C00A6D468 /* PongDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2AD23D3ED6B00A6D468 /* PongDemoXml.swift */; };
+		5EE8E2F023D3ED6C00A6D468 /* DrawableDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2AE23D3ED6B00A6D468 /* DrawableDemoXml.swift */; };
+		5EE8E2F123D3ED6C00A6D468 /* ViewPagerDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2AF23D3ED6B00A6D468 /* ViewPagerDemoXml.swift */; };
+		5EE8E2F223D3ED6C00A6D468 /* PreviewXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2B023D3ED6B00A6D468 /* PreviewXml.swift */; };
+		5EE8E2F323D3ED6C00A6D468 /* SliderDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2B123D3ED6B00A6D468 /* SliderDemoXml.swift */; };
+		5EE8E2F423D3ED6C00A6D468 /* ComponentTestXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2B223D3ED6B00A6D468 /* ComponentTestXml.swift */; };
+		5EE8E2F523D3ED6C00A6D468 /* ControlsDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2B323D3ED6B00A6D468 /* ControlsDemoXml.swift */; };
+		5EE8E2F623D3ED6C00A6D468 /* MarginTestXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2B423D3ED6B00A6D468 /* MarginTestXml.swift */; };
+		5EE8E2F723D3ED6C00A6D468 /* LoginDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2B523D3ED6B00A6D468 /* LoginDemoXml.swift */; };
+		5EE8E2F823D3ED6C00A6D468 /* LoadImageDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2B623D3ED6B00A6D468 /* LoadImageDemoXml.swift */; };
+		5EE8E2F923D3ED6C00A6D468 /* ExampleContentXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2B723D3ED6B00A6D468 /* ExampleContentXml.swift */; };
+		5EE8E2FA23D3ED6C00A6D468 /* SelectDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2B823D3ED6B00A6D468 /* SelectDemoXml.swift */; };
+		5EE8E2FB23D3ED6C00A6D468 /* BleClientDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2B923D3ED6B00A6D468 /* BleClientDemoXml.swift */; };
+		5EE8E2FC23D3ED6C00A6D468 /* ComponentBleDeviceXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2BA23D3ED6B00A6D468 /* ComponentBleDeviceXml.swift */; };
+		5EE8E2FD23D3ED6C00A6D468 /* DateRangeDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2BB23D3ED6B00A6D468 /* DateRangeDemoXml.swift */; };
+		5EE8E2FE23D3ED6C00A6D468 /* MapDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2BC23D3ED6B00A6D468 /* MapDemoXml.swift */; };
+		5EE8E2FF23D3ED6C00A6D468 /* BleHostDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2BD23D3ED6B00A6D468 /* BleHostDemoXml.swift */; };
+		5EE8E30023D3ED6C00A6D468 /* SegmentedControlDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2BE23D3ED6B00A6D468 /* SegmentedControlDemoXml.swift */; };
+		5EE8E30123D3ED6C00A6D468 /* MainXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2BF23D3ED6B00A6D468 /* MainXml.swift */; };
+		5EE8E30223D3ED6C00A6D468 /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8E2C023D3ED6B00A6D468 /* colors.swift */; };
+		B5A7AC6FBFCE9F0743FD5292 /* libPods-Khrysalis Template.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 627F9DFAB329F4B7F3C656BE /* libPods-Khrysalis Template.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5E4B9B22233C04DB00A43522 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E4B9B03233C04DA00A43522 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E4B9B0A233C04DA00A43522;
+			remoteInfo = "Khrysalis Template";
+		};
+		5E4B9B2D233C04DB00A43522 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E4B9B03233C04DA00A43522 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E4B9B0A233C04DA00A43522;
+			remoteInfo = "Khrysalis Template";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5E4B9B0B233C04DA00A43522 /* Khrysalis Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Khrysalis Template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E4B9B0E233C04DA00A43522 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5E4B9B14233C04DB00A43522 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5E4B9B17233C04DB00A43522 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5E4B9B1A233C04DB00A43522 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5E4B9B1C233C04DB00A43522 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E4B9B21233C04DB00A43522 /* Khrysalis TemplateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Khrysalis TemplateTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E4B9B25233C04DB00A43522 /* Khrysalis_TemplateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Khrysalis_TemplateTests.swift; sourceTree = "<group>"; };
+		5E4B9B27233C04DB00A43522 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E4B9B2C233C04DB00A43522 /* Khrysalis TemplateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Khrysalis TemplateUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E4B9B30233C04DB00A43522 /* Khrysalis_TemplateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Khrysalis_TemplateUITests.swift; sourceTree = "<group>"; };
+		5E4B9B32233C04DB00A43522 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E4B9C5C233C077800A43522 /* opensans_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = opensans_bold.ttf; sourceTree = "<group>"; };
+		5E4B9C5D233C077800A43522 /* opensans_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = opensans_regular.ttf; sourceTree = "<group>"; };
+		5E4B9C5E233C077800A43522 /* opensans_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = opensans_italic.ttf; sourceTree = "<group>"; };
+		5E4B9C5F233C077800A43522 /* opensans_bold_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = opensans_bold_italic.ttf; sourceTree = "<group>"; };
+		5EE8E27A23D3ED6B00A6D468 /* ControlsDemoVG.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsDemoVG.shared.swift; sourceTree = "<group>"; };
+		5EE8E27B23D3ED6B00A6D468 /* DateRangeDemoVG.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateRangeDemoVG.shared.swift; sourceTree = "<group>"; };
+		5EE8E27C23D3ED6B00A6D468 /* FloatingHexagonsDemoVG.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingHexagonsDemoVG.shared.swift; sourceTree = "<group>"; };
+		5EE8E27D23D3ED6B00A6D468 /* LocationDemoVG.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDemoVG.shared.swift; sourceTree = "<group>"; };
+		5EE8E27E23D3ED6B00A6D468 /* SegmentedControlDemoVG.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlDemoVG.shared.swift; sourceTree = "<group>"; };
+		5EE8E27F23D3ED6B00A6D468 /* MainVG.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVG.shared.swift; sourceTree = "<group>"; };
+		5EE8E28023D3ED6B00A6D468 /* LoadImageDemoVG.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadImageDemoVG.shared.swift; sourceTree = "<group>"; };
+		5EE8E28123D3ED6B00A6D468 /* DrawableDemoVG.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawableDemoVG.shared.swift; sourceTree = "<group>"; };
+		5EE8E28223D3ED6B00A6D468 /* ExampleContentVG.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleContentVG.shared.swift; sourceTree = "<group>"; };
+		5EE8E28323D3ED6B00A6D468 /* SliderDemoVG.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderDemoVG.shared.swift; sourceTree = "<group>"; };
+		5EE8E28423D3ED6B00A6D468 /* MarginTestVG.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarginTestVG.shared.swift; sourceTree = "<group>"; };
+		5EE8E28523D3ED6B00A6D468 /* MultipleDemoVG.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleDemoVG.shared.swift; sourceTree = "<group>"; };
+		5EE8E28623D3ED6B00A6D468 /* ViewPagerDemoVG.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPagerDemoVG.shared.swift; sourceTree = "<group>"; };
+		5EE8E28723D3ED6B00A6D468 /* BleHostDemoVG.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleHostDemoVG.shared.swift; sourceTree = "<group>"; };
+		5EE8E28823D3ED6B00A6D468 /* BleClientDemoVG.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleClientDemoVG.shared.swift; sourceTree = "<group>"; };
+		5EE8E28923D3ED6B00A6D468 /* PongDemoVG.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PongDemoVG.shared.swift; sourceTree = "<group>"; };
+		5EE8E28A23D3ED6B00A6D468 /* MapDemoVG.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapDemoVG.shared.swift; sourceTree = "<group>"; };
+		5EE8E28B23D3ED6B00A6D468 /* SelectDemoVG.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDemoVG.shared.swift; sourceTree = "<group>"; };
+		5EE8E28C23D3ED6B00A6D468 /* BleScanDemoVG.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleScanDemoVG.shared.swift; sourceTree = "<group>"; };
+		5EE8E28D23D3ED6B00A6D468 /* LoginDemoVG.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDemoVG.shared.swift; sourceTree = "<group>"; };
+		5EE8E28E23D3ED6B00A6D468 /* PreviewVG.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewVG.shared.swift; sourceTree = "<group>"; };
+		5EE8E28F23D3ED6B00A6D468 /* DateButtonDemoVG.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateButtonDemoVG.shared.swift; sourceTree = "<group>"; };
+		5EE8E29123D3ED6B00A6D468 /* Post.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.shared.swift; sourceTree = "<group>"; };
+		5EE8E29323D3ED6B00A6D468 /* APIMock.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIMock.shared.swift; sourceTree = "<group>"; };
+		5EE8E29423D3ED6B00A6D468 /* API.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.shared.swift; sourceTree = "<group>"; };
+		5EE8E29523D3ED6B00A6D468 /* APIInterface.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIInterface.shared.swift; sourceTree = "<group>"; };
+		5EE8E29623D3ED6B00A6D468 /* APIOnline.shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIOnline.shared.swift; sourceTree = "<group>"; };
+		5EE8E29823D3ED6B00A6D468 /* strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = strings.swift; sourceTree = "<group>"; };
+		5EE8E29A23D3ED6B00A6D468 /* buttonAccentDrawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = buttonAccentDrawable.swift; sourceTree = "<group>"; };
+		5EE8E29B23D3ED6B00A6D468 /* icExposureBlack24dpDrawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = icExposureBlack24dpDrawable.swift; sourceTree = "<group>"; };
+		5EE8E29C23D3ED6B00A6D468 /* buttonPrimaryDrawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = buttonPrimaryDrawable.swift; sourceTree = "<group>"; };
+		5EE8E29D23D3ED6B00A6D468 /* icArrowBackWhite24dpDrawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = icArrowBackWhite24dpDrawable.swift; sourceTree = "<group>"; };
+		5EE8E29E23D3ED6B00A6D468 /* borderDrawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = borderDrawable.swift; sourceTree = "<group>"; };
+		5EE8E29F23D3ED6B00A6D468 /* icAndroidBlack24dpDrawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = icAndroidBlack24dpDrawable.swift; sourceTree = "<group>"; };
+		5EE8E2A023D3ED6B00A6D468 /* buttonDisabledDrawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = buttonDisabledDrawable.swift; sourceTree = "<group>"; };
+		5EE8E2A123D3ED6B00A6D468 /* icLauncherForegroundDrawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = icLauncherForegroundDrawable.swift; sourceTree = "<group>"; };
+		5EE8E2A223D3ED6B00A6D468 /* icLauncherBackgroundDrawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = icLauncherBackgroundDrawable.swift; sourceTree = "<group>"; };
+		5EE8E2A323D3ED6B00A6D468 /* ResourcesDrawables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesDrawables.swift; sourceTree = "<group>"; };
+		5EE8E2A423D3ED6B00A6D468 /* icBeachAccessBlack24dpDrawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = icBeachAccessBlack24dpDrawable.swift; sourceTree = "<group>"; };
+		5EE8E2A523D3ED6B00A6D468 /* PNGs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNGs.swift; sourceTree = "<group>"; };
+		5EE8E2A723D3ED6B00A6D468 /* ComponentTextXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentTextXml.swift; sourceTree = "<group>"; };
+		5EE8E2A823D3ED6B00A6D468 /* FloatingHexagonsDemoXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingHexagonsDemoXml.swift; sourceTree = "<group>"; };
+		5EE8E2A923D3ED6B00A6D468 /* MultipleDemoXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleDemoXml.swift; sourceTree = "<group>"; };
+		5EE8E2AA23D3ED6B00A6D468 /* DateButtonDemoXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateButtonDemoXml.swift; sourceTree = "<group>"; };
+		5EE8E2AB23D3ED6B00A6D468 /* BleScanDemoXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleScanDemoXml.swift; sourceTree = "<group>"; };
+		5EE8E2AC23D3ED6B00A6D468 /* LocationDemoXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDemoXml.swift; sourceTree = "<group>"; };
+		5EE8E2AD23D3ED6B00A6D468 /* PongDemoXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PongDemoXml.swift; sourceTree = "<group>"; };
+		5EE8E2AE23D3ED6B00A6D468 /* DrawableDemoXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawableDemoXml.swift; sourceTree = "<group>"; };
+		5EE8E2AF23D3ED6B00A6D468 /* ViewPagerDemoXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPagerDemoXml.swift; sourceTree = "<group>"; };
+		5EE8E2B023D3ED6B00A6D468 /* PreviewXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewXml.swift; sourceTree = "<group>"; };
+		5EE8E2B123D3ED6B00A6D468 /* SliderDemoXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderDemoXml.swift; sourceTree = "<group>"; };
+		5EE8E2B223D3ED6B00A6D468 /* ComponentTestXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentTestXml.swift; sourceTree = "<group>"; };
+		5EE8E2B323D3ED6B00A6D468 /* ControlsDemoXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsDemoXml.swift; sourceTree = "<group>"; };
+		5EE8E2B423D3ED6B00A6D468 /* MarginTestXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarginTestXml.swift; sourceTree = "<group>"; };
+		5EE8E2B523D3ED6B00A6D468 /* LoginDemoXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDemoXml.swift; sourceTree = "<group>"; };
+		5EE8E2B623D3ED6B00A6D468 /* LoadImageDemoXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadImageDemoXml.swift; sourceTree = "<group>"; };
+		5EE8E2B723D3ED6B00A6D468 /* ExampleContentXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleContentXml.swift; sourceTree = "<group>"; };
+		5EE8E2B823D3ED6B00A6D468 /* SelectDemoXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDemoXml.swift; sourceTree = "<group>"; };
+		5EE8E2B923D3ED6B00A6D468 /* BleClientDemoXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleClientDemoXml.swift; sourceTree = "<group>"; };
+		5EE8E2BA23D3ED6B00A6D468 /* ComponentBleDeviceXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentBleDeviceXml.swift; sourceTree = "<group>"; };
+		5EE8E2BB23D3ED6B00A6D468 /* DateRangeDemoXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateRangeDemoXml.swift; sourceTree = "<group>"; };
+		5EE8E2BC23D3ED6B00A6D468 /* MapDemoXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapDemoXml.swift; sourceTree = "<group>"; };
+		5EE8E2BD23D3ED6B00A6D468 /* BleHostDemoXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleHostDemoXml.swift; sourceTree = "<group>"; };
+		5EE8E2BE23D3ED6B00A6D468 /* SegmentedControlDemoXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlDemoXml.swift; sourceTree = "<group>"; };
+		5EE8E2BF23D3ED6B00A6D468 /* MainXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainXml.swift; sourceTree = "<group>"; };
+		5EE8E2C023D3ED6B00A6D468 /* colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
+		627F9DFAB329F4B7F3C656BE /* libPods-Khrysalis Template.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Khrysalis Template.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7468484A0C58EB8A64BDAF30 /* Pods-Khrysalis Template.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Khrysalis Template.release.xcconfig"; path = "Pods/Target Support Files/Pods-Khrysalis Template/Pods-Khrysalis Template.release.xcconfig"; sourceTree = "<group>"; };
+		C7B8007981CA49C05BBAAA76 /* Pods-Khrysalis Template.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Khrysalis Template.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Khrysalis Template/Pods-Khrysalis Template.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5E4B9B08233C04DA00A43522 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5A7AC6FBFCE9F0743FD5292 /* libPods-Khrysalis Template.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E4B9B1E233C04DB00A43522 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E4B9B29233C04DB00A43522 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A8CC139B4318757B99CB344 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				627F9DFAB329F4B7F3C656BE /* libPods-Khrysalis Template.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4F58773D51F6464912E99FFD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C7B8007981CA49C05BBAAA76 /* Pods-Khrysalis Template.debug.xcconfig */,
+				7468484A0C58EB8A64BDAF30 /* Pods-Khrysalis Template.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5E4B9B02233C04DA00A43522 = {
+			isa = PBXGroup;
+			children = (
+				5E4B9B0D233C04DA00A43522 /* Khrysalis Template */,
+				5E4B9B24233C04DB00A43522 /* Khrysalis TemplateTests */,
+				5E4B9B2F233C04DB00A43522 /* Khrysalis TemplateUITests */,
+				5E4B9B0C233C04DA00A43522 /* Products */,
+				4F58773D51F6464912E99FFD /* Pods */,
+				2A8CC139B4318757B99CB344 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5E4B9B0C233C04DA00A43522 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5E4B9B0B233C04DA00A43522 /* Khrysalis Template.app */,
+				5E4B9B21233C04DB00A43522 /* Khrysalis TemplateTests.xctest */,
+				5E4B9B2C233C04DB00A43522 /* Khrysalis TemplateUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5E4B9B0D233C04DA00A43522 /* Khrysalis Template */ = {
+			isa = PBXGroup;
+			children = (
+				5EE8E27623D3ED6B00A6D468 /* com */,
+				5EE8E29723D3ED6B00A6D468 /* swiftResources */,
+				5E4B9C5B233C077800A43522 /* fonts */,
+				5E4B9B0E233C04DA00A43522 /* AppDelegate.swift */,
+				5E4B9B14233C04DB00A43522 /* Assets.xcassets */,
+				5E4B9B19233C04DB00A43522 /* LaunchScreen.storyboard */,
+				5E4B9B1C233C04DB00A43522 /* Info.plist */,
+				5E4B9B16233C04DB00A43522 /* Preview Content */,
+			);
+			path = "Khrysalis Template";
+			sourceTree = "<group>";
+		};
+		5E4B9B16233C04DB00A43522 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5E4B9B17233C04DB00A43522 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5E4B9B24233C04DB00A43522 /* Khrysalis TemplateTests */ = {
+			isa = PBXGroup;
+			children = (
+				5E4B9B25233C04DB00A43522 /* Khrysalis_TemplateTests.swift */,
+				5E4B9B27233C04DB00A43522 /* Info.plist */,
+			);
+			path = "Khrysalis TemplateTests";
+			sourceTree = "<group>";
+		};
+		5E4B9B2F233C04DB00A43522 /* Khrysalis TemplateUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5E4B9B30233C04DB00A43522 /* Khrysalis_TemplateUITests.swift */,
+				5E4B9B32233C04DB00A43522 /* Info.plist */,
+			);
+			path = "Khrysalis TemplateUITests";
+			sourceTree = "<group>";
+		};
+		5E4B9C5B233C077800A43522 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5E4B9C5C233C077800A43522 /* opensans_bold.ttf */,
+				5E4B9C5D233C077800A43522 /* opensans_regular.ttf */,
+				5E4B9C5E233C077800A43522 /* opensans_italic.ttf */,
+				5E4B9C5F233C077800A43522 /* opensans_bold_italic.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		5EE8E27623D3ED6B00A6D468 /* com */ = {
+			isa = PBXGroup;
+			children = (
+				5EE8E27723D3ED6B00A6D468 /* lightningkite */,
+			);
+			path = com;
+			sourceTree = "<group>";
+		};
+		5EE8E27723D3ED6B00A6D468 /* lightningkite */ = {
+			isa = PBXGroup;
+			children = (
+				5EE8E27823D3ED6B00A6D468 /* khrysalistemplate */,
+			);
+			path = lightningkite;
+			sourceTree = "<group>";
+		};
+		5EE8E27823D3ED6B00A6D468 /* khrysalistemplate */ = {
+			isa = PBXGroup;
+			children = (
+				5EE8E27923D3ED6B00A6D468 /* vg */,
+				5EE8E29023D3ED6B00A6D468 /* models */,
+				5EE8E29223D3ED6B00A6D468 /* api */,
+			);
+			path = khrysalistemplate;
+			sourceTree = "<group>";
+		};
+		5EE8E27923D3ED6B00A6D468 /* vg */ = {
+			isa = PBXGroup;
+			children = (
+				5EE8E27A23D3ED6B00A6D468 /* ControlsDemoVG.shared.swift */,
+				5EE8E27B23D3ED6B00A6D468 /* DateRangeDemoVG.shared.swift */,
+				5EE8E27C23D3ED6B00A6D468 /* FloatingHexagonsDemoVG.shared.swift */,
+				5EE8E27D23D3ED6B00A6D468 /* LocationDemoVG.shared.swift */,
+				5EE8E27E23D3ED6B00A6D468 /* SegmentedControlDemoVG.shared.swift */,
+				5EE8E27F23D3ED6B00A6D468 /* MainVG.shared.swift */,
+				5EE8E28023D3ED6B00A6D468 /* LoadImageDemoVG.shared.swift */,
+				5EE8E28123D3ED6B00A6D468 /* DrawableDemoVG.shared.swift */,
+				5EE8E28223D3ED6B00A6D468 /* ExampleContentVG.shared.swift */,
+				5EE8E28323D3ED6B00A6D468 /* SliderDemoVG.shared.swift */,
+				5EE8E28423D3ED6B00A6D468 /* MarginTestVG.shared.swift */,
+				5EE8E28523D3ED6B00A6D468 /* MultipleDemoVG.shared.swift */,
+				5EE8E28623D3ED6B00A6D468 /* ViewPagerDemoVG.shared.swift */,
+				5EE8E28723D3ED6B00A6D468 /* BleHostDemoVG.shared.swift */,
+				5EE8E28823D3ED6B00A6D468 /* BleClientDemoVG.shared.swift */,
+				5EE8E28923D3ED6B00A6D468 /* PongDemoVG.shared.swift */,
+				5EE8E28A23D3ED6B00A6D468 /* MapDemoVG.shared.swift */,
+				5EE8E28B23D3ED6B00A6D468 /* SelectDemoVG.shared.swift */,
+				5EE8E28C23D3ED6B00A6D468 /* BleScanDemoVG.shared.swift */,
+				5EE8E28D23D3ED6B00A6D468 /* LoginDemoVG.shared.swift */,
+				5EE8E28E23D3ED6B00A6D468 /* PreviewVG.shared.swift */,
+				5EE8E28F23D3ED6B00A6D468 /* DateButtonDemoVG.shared.swift */,
+			);
+			path = vg;
+			sourceTree = "<group>";
+		};
+		5EE8E29023D3ED6B00A6D468 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				5EE8E29123D3ED6B00A6D468 /* Post.shared.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		5EE8E29223D3ED6B00A6D468 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				5EE8E29323D3ED6B00A6D468 /* APIMock.shared.swift */,
+				5EE8E29423D3ED6B00A6D468 /* API.shared.swift */,
+				5EE8E29523D3ED6B00A6D468 /* APIInterface.shared.swift */,
+				5EE8E29623D3ED6B00A6D468 /* APIOnline.shared.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		5EE8E29723D3ED6B00A6D468 /* swiftResources */ = {
+			isa = PBXGroup;
+			children = (
+				5EE8E29823D3ED6B00A6D468 /* strings.swift */,
+				5EE8E29923D3ED6B00A6D468 /* drawable */,
+				5EE8E2A623D3ED6B00A6D468 /* layouts */,
+				5EE8E2C023D3ED6B00A6D468 /* colors.swift */,
+			);
+			path = swiftResources;
+			sourceTree = "<group>";
+		};
+		5EE8E29923D3ED6B00A6D468 /* drawable */ = {
+			isa = PBXGroup;
+			children = (
+				5EE8E29A23D3ED6B00A6D468 /* buttonAccentDrawable.swift */,
+				5EE8E29B23D3ED6B00A6D468 /* icExposureBlack24dpDrawable.swift */,
+				5EE8E29C23D3ED6B00A6D468 /* buttonPrimaryDrawable.swift */,
+				5EE8E29D23D3ED6B00A6D468 /* icArrowBackWhite24dpDrawable.swift */,
+				5EE8E29E23D3ED6B00A6D468 /* borderDrawable.swift */,
+				5EE8E29F23D3ED6B00A6D468 /* icAndroidBlack24dpDrawable.swift */,
+				5EE8E2A023D3ED6B00A6D468 /* buttonDisabledDrawable.swift */,
+				5EE8E2A123D3ED6B00A6D468 /* icLauncherForegroundDrawable.swift */,
+				5EE8E2A223D3ED6B00A6D468 /* icLauncherBackgroundDrawable.swift */,
+				5EE8E2A323D3ED6B00A6D468 /* ResourcesDrawables.swift */,
+				5EE8E2A423D3ED6B00A6D468 /* icBeachAccessBlack24dpDrawable.swift */,
+				5EE8E2A523D3ED6B00A6D468 /* PNGs.swift */,
+			);
+			path = drawable;
+			sourceTree = "<group>";
+		};
+		5EE8E2A623D3ED6B00A6D468 /* layouts */ = {
+			isa = PBXGroup;
+			children = (
+				5EE8E2A723D3ED6B00A6D468 /* ComponentTextXml.swift */,
+				5EE8E2A823D3ED6B00A6D468 /* FloatingHexagonsDemoXml.swift */,
+				5EE8E2A923D3ED6B00A6D468 /* MultipleDemoXml.swift */,
+				5EE8E2AA23D3ED6B00A6D468 /* DateButtonDemoXml.swift */,
+				5EE8E2AB23D3ED6B00A6D468 /* BleScanDemoXml.swift */,
+				5EE8E2AC23D3ED6B00A6D468 /* LocationDemoXml.swift */,
+				5EE8E2AD23D3ED6B00A6D468 /* PongDemoXml.swift */,
+				5EE8E2AE23D3ED6B00A6D468 /* DrawableDemoXml.swift */,
+				5EE8E2AF23D3ED6B00A6D468 /* ViewPagerDemoXml.swift */,
+				5EE8E2B023D3ED6B00A6D468 /* PreviewXml.swift */,
+				5EE8E2B123D3ED6B00A6D468 /* SliderDemoXml.swift */,
+				5EE8E2B223D3ED6B00A6D468 /* ComponentTestXml.swift */,
+				5EE8E2B323D3ED6B00A6D468 /* ControlsDemoXml.swift */,
+				5EE8E2B423D3ED6B00A6D468 /* MarginTestXml.swift */,
+				5EE8E2B523D3ED6B00A6D468 /* LoginDemoXml.swift */,
+				5EE8E2B623D3ED6B00A6D468 /* LoadImageDemoXml.swift */,
+				5EE8E2B723D3ED6B00A6D468 /* ExampleContentXml.swift */,
+				5EE8E2B823D3ED6B00A6D468 /* SelectDemoXml.swift */,
+				5EE8E2B923D3ED6B00A6D468 /* BleClientDemoXml.swift */,
+				5EE8E2BA23D3ED6B00A6D468 /* ComponentBleDeviceXml.swift */,
+				5EE8E2BB23D3ED6B00A6D468 /* DateRangeDemoXml.swift */,
+				5EE8E2BC23D3ED6B00A6D468 /* MapDemoXml.swift */,
+				5EE8E2BD23D3ED6B00A6D468 /* BleHostDemoXml.swift */,
+				5EE8E2BE23D3ED6B00A6D468 /* SegmentedControlDemoXml.swift */,
+				5EE8E2BF23D3ED6B00A6D468 /* MainXml.swift */,
+			);
+			path = layouts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5E4B9B0A233C04DA00A43522 /* Khrysalis Template */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E4B9B35233C04DB00A43522 /* Build configuration list for PBXNativeTarget "Khrysalis Template" */;
+			buildPhases = (
+				23895643C798690ABC035818 /* [CP] Check Pods Manifest.lock */,
+				5E4B9B07233C04DA00A43522 /* Sources */,
+				5E4B9B08233C04DA00A43522 /* Frameworks */,
+				5E4B9B09233C04DA00A43522 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Khrysalis Template";
+			productName = "Khrysalis Template";
+			productReference = 5E4B9B0B233C04DA00A43522 /* Khrysalis Template.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5E4B9B20233C04DB00A43522 /* Khrysalis TemplateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E4B9B38233C04DB00A43522 /* Build configuration list for PBXNativeTarget "Khrysalis TemplateTests" */;
+			buildPhases = (
+				5E4B9B1D233C04DB00A43522 /* Sources */,
+				5E4B9B1E233C04DB00A43522 /* Frameworks */,
+				5E4B9B1F233C04DB00A43522 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5E4B9B23233C04DB00A43522 /* PBXTargetDependency */,
+			);
+			name = "Khrysalis TemplateTests";
+			productName = "Khrysalis TemplateTests";
+			productReference = 5E4B9B21233C04DB00A43522 /* Khrysalis TemplateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5E4B9B2B233C04DB00A43522 /* Khrysalis TemplateUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E4B9B3B233C04DB00A43522 /* Build configuration list for PBXNativeTarget "Khrysalis TemplateUITests" */;
+			buildPhases = (
+				5E4B9B28233C04DB00A43522 /* Sources */,
+				5E4B9B29233C04DB00A43522 /* Frameworks */,
+				5E4B9B2A233C04DB00A43522 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5E4B9B2E233C04DB00A43522 /* PBXTargetDependency */,
+			);
+			name = "Khrysalis TemplateUITests";
+			productName = "Khrysalis TemplateUITests";
+			productReference = 5E4B9B2C233C04DB00A43522 /* Khrysalis TemplateUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5E4B9B03233C04DA00A43522 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "Joseph Ivie";
+				TargetAttributes = {
+					5E4B9B0A233C04DA00A43522 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					5E4B9B20233C04DB00A43522 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 5E4B9B0A233C04DA00A43522;
+					};
+					5E4B9B2B233C04DB00A43522 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 5E4B9B0A233C04DA00A43522;
+					};
+				};
+			};
+			buildConfigurationList = 5E4B9B06233C04DA00A43522 /* Build configuration list for PBXProject "Khrysalis Template" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5E4B9B02233C04DA00A43522;
+			productRefGroup = 5E4B9B0C233C04DA00A43522 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5E4B9B0A233C04DA00A43522 /* Khrysalis Template */,
+				5E4B9B20233C04DB00A43522 /* Khrysalis TemplateTests */,
+				5E4B9B2B233C04DB00A43522 /* Khrysalis TemplateUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5E4B9B09233C04DA00A43522 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E4B9CC2233C077800A43522 /* opensans_regular.ttf in Resources */,
+				5E4B9CC1233C077800A43522 /* opensans_bold.ttf in Resources */,
+				5E4B9B1B233C04DB00A43522 /* LaunchScreen.storyboard in Resources */,
+				5E4B9B18233C04DB00A43522 /* Preview Assets.xcassets in Resources */,
+				5E4B9B15233C04DB00A43522 /* Assets.xcassets in Resources */,
+				5E4B9CC3233C077800A43522 /* opensans_italic.ttf in Resources */,
+				5E4B9CC4233C077800A43522 /* opensans_bold_italic.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E4B9B1F233C04DB00A43522 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E4B9B2A233C04DB00A43522 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23895643C798690ABC035818 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Khrysalis Template-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5E4B9B07233C04DA00A43522 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EE8E2CF23D3ED6C00A6D468 /* BleClientDemoVG.shared.swift in Sources */,
+				5EE8E2DA23D3ED6C00A6D468 /* APIInterface.shared.swift in Sources */,
+				5EE8E2CC23D3ED6C00A6D468 /* MultipleDemoVG.shared.swift in Sources */,
+				5EE8E2F423D3ED6C00A6D468 /* ComponentTestXml.swift in Sources */,
+				5EE8E2E523D3ED6C00A6D468 /* icLauncherBackgroundDrawable.swift in Sources */,
+				5EE8E2CA23D3ED6C00A6D468 /* SliderDemoVG.shared.swift in Sources */,
+				5E4B9B0F233C04DA00A43522 /* AppDelegate.swift in Sources */,
+				5EE8E2E923D3ED6C00A6D468 /* ComponentTextXml.swift in Sources */,
+				5EE8E2D123D3ED6C00A6D468 /* MapDemoVG.shared.swift in Sources */,
+				5EE8E2D523D3ED6C00A6D468 /* PreviewVG.shared.swift in Sources */,
+				5EE8E2DD23D3ED6C00A6D468 /* buttonAccentDrawable.swift in Sources */,
+				5EE8E2C723D3ED6C00A6D468 /* LoadImageDemoVG.shared.swift in Sources */,
+				5EE8E30223D3ED6C00A6D468 /* colors.swift in Sources */,
+				5EE8E2E023D3ED6C00A6D468 /* icArrowBackWhite24dpDrawable.swift in Sources */,
+				5EE8E2EC23D3ED6C00A6D468 /* DateButtonDemoXml.swift in Sources */,
+				5EE8E2E223D3ED6C00A6D468 /* icAndroidBlack24dpDrawable.swift in Sources */,
+				5EE8E2C223D3ED6C00A6D468 /* DateRangeDemoVG.shared.swift in Sources */,
+				5EE8E2D923D3ED6C00A6D468 /* API.shared.swift in Sources */,
+				5EE8E2FB23D3ED6C00A6D468 /* BleClientDemoXml.swift in Sources */,
+				5EE8E2D223D3ED6C00A6D468 /* SelectDemoVG.shared.swift in Sources */,
+				5EE8E30023D3ED6C00A6D468 /* SegmentedControlDemoXml.swift in Sources */,
+				5EE8E2F623D3ED6C00A6D468 /* MarginTestXml.swift in Sources */,
+				5EE8E2E423D3ED6C00A6D468 /* icLauncherForegroundDrawable.swift in Sources */,
+				5EE8E2EE23D3ED6C00A6D468 /* LocationDemoXml.swift in Sources */,
+				5EE8E2FF23D3ED6C00A6D468 /* BleHostDemoXml.swift in Sources */,
+				5EE8E2D023D3ED6C00A6D468 /* PongDemoVG.shared.swift in Sources */,
+				5EE8E2F923D3ED6C00A6D468 /* ExampleContentXml.swift in Sources */,
+				5EE8E2F023D3ED6C00A6D468 /* DrawableDemoXml.swift in Sources */,
+				5EE8E2CB23D3ED6C00A6D468 /* MarginTestVG.shared.swift in Sources */,
+				5EE8E2FD23D3ED6C00A6D468 /* DateRangeDemoXml.swift in Sources */,
+				5EE8E2C823D3ED6C00A6D468 /* DrawableDemoVG.shared.swift in Sources */,
+				5EE8E2EF23D3ED6C00A6D468 /* PongDemoXml.swift in Sources */,
+				5EE8E2E323D3ED6C00A6D468 /* buttonDisabledDrawable.swift in Sources */,
+				5EE8E2C323D3ED6C00A6D468 /* FloatingHexagonsDemoVG.shared.swift in Sources */,
+				5EE8E2ED23D3ED6C00A6D468 /* BleScanDemoXml.swift in Sources */,
+				5EE8E2F123D3ED6C00A6D468 /* ViewPagerDemoXml.swift in Sources */,
+				5EE8E2EA23D3ED6C00A6D468 /* FloatingHexagonsDemoXml.swift in Sources */,
+				5EE8E2F523D3ED6C00A6D468 /* ControlsDemoXml.swift in Sources */,
+				5EE8E2E123D3ED6C00A6D468 /* borderDrawable.swift in Sources */,
+				5EE8E2D323D3ED6C00A6D468 /* BleScanDemoVG.shared.swift in Sources */,
+				5EE8E2CD23D3ED6C00A6D468 /* ViewPagerDemoVG.shared.swift in Sources */,
+				5EE8E2DC23D3ED6C00A6D468 /* strings.swift in Sources */,
+				5EE8E2F723D3ED6C00A6D468 /* LoginDemoXml.swift in Sources */,
+				5EE8E2DE23D3ED6C00A6D468 /* icExposureBlack24dpDrawable.swift in Sources */,
+				5EE8E2FC23D3ED6C00A6D468 /* ComponentBleDeviceXml.swift in Sources */,
+				5EE8E2D723D3ED6C00A6D468 /* Post.shared.swift in Sources */,
+				5EE8E2F323D3ED6C00A6D468 /* SliderDemoXml.swift in Sources */,
+				5EE8E2C423D3ED6C00A6D468 /* LocationDemoVG.shared.swift in Sources */,
+				5EE8E2C623D3ED6C00A6D468 /* MainVG.shared.swift in Sources */,
+				5EE8E30123D3ED6C00A6D468 /* MainXml.swift in Sources */,
+				5EE8E2FA23D3ED6C00A6D468 /* SelectDemoXml.swift in Sources */,
+				5EE8E2D623D3ED6C00A6D468 /* DateButtonDemoVG.shared.swift in Sources */,
+				5EE8E2E623D3ED6C00A6D468 /* ResourcesDrawables.swift in Sources */,
+				5EE8E2F823D3ED6C00A6D468 /* LoadImageDemoXml.swift in Sources */,
+				5EE8E2DF23D3ED6C00A6D468 /* buttonPrimaryDrawable.swift in Sources */,
+				5EE8E2F223D3ED6C00A6D468 /* PreviewXml.swift in Sources */,
+				5EE8E2C923D3ED6C00A6D468 /* ExampleContentVG.shared.swift in Sources */,
+				5EE8E2E723D3ED6C00A6D468 /* icBeachAccessBlack24dpDrawable.swift in Sources */,
+				5EE8E2C523D3ED6C00A6D468 /* SegmentedControlDemoVG.shared.swift in Sources */,
+				5EE8E2D823D3ED6C00A6D468 /* APIMock.shared.swift in Sources */,
+				5EE8E2CE23D3ED6C00A6D468 /* BleHostDemoVG.shared.swift in Sources */,
+				5EE8E2DB23D3ED6C00A6D468 /* APIOnline.shared.swift in Sources */,
+				5EE8E2C123D3ED6C00A6D468 /* ControlsDemoVG.shared.swift in Sources */,
+				5EE8E2D423D3ED6C00A6D468 /* LoginDemoVG.shared.swift in Sources */,
+				5EE8E2EB23D3ED6C00A6D468 /* MultipleDemoXml.swift in Sources */,
+				5EE8E2E823D3ED6C00A6D468 /* PNGs.swift in Sources */,
+				5EE8E2FE23D3ED6C00A6D468 /* MapDemoXml.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E4B9B1D233C04DB00A43522 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E4B9B26233C04DB00A43522 /* Khrysalis_TemplateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E4B9B28233C04DB00A43522 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E4B9B31233C04DB00A43522 /* Khrysalis_TemplateUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5E4B9B23233C04DB00A43522 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5E4B9B0A233C04DA00A43522 /* Khrysalis Template */;
+			targetProxy = 5E4B9B22233C04DB00A43522 /* PBXContainerItemProxy */;
+		};
+		5E4B9B2E233C04DB00A43522 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5E4B9B0A233C04DA00A43522 /* Khrysalis Template */;
+			targetProxy = 5E4B9B2D233C04DB00A43522 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5E4B9B19233C04DB00A43522 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5E4B9B1A233C04DB00A43522 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5E4B9B33233C04DB00A43522 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5E4B9B34233C04DB00A43522 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5E4B9B36233C04DB00A43522 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7B8007981CA49C05BBAAA76 /* Pods-Khrysalis Template.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Khrysalis Template/Preview Content\"";
+				DEVELOPMENT_TEAM = EF4N5K3F2Q;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Khrysalis Template/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lightningkite.Khrysalis-Template";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5E4B9B37233C04DB00A43522 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7468484A0C58EB8A64BDAF30 /* Pods-Khrysalis Template.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Khrysalis Template/Preview Content\"";
+				DEVELOPMENT_TEAM = EF4N5K3F2Q;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Khrysalis Template/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lightningkite.Khrysalis-Template";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5E4B9B39233C04DB00A43522 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EF4N5K3F2Q;
+				INFOPLIST_FILE = "Khrysalis TemplateTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lightningkite.Khrysalis-TemplateTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Khrysalis Template.app/Khrysalis Template";
+			};
+			name = Debug;
+		};
+		5E4B9B3A233C04DB00A43522 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EF4N5K3F2Q;
+				INFOPLIST_FILE = "Khrysalis TemplateTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lightningkite.Khrysalis-TemplateTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Khrysalis Template.app/Khrysalis Template";
+			};
+			name = Release;
+		};
+		5E4B9B3C233C04DB00A43522 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EF4N5K3F2Q;
+				INFOPLIST_FILE = "Khrysalis TemplateUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lightningkite.Khrysalis-TemplateUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Khrysalis Template";
+			};
+			name = Debug;
+		};
+		5E4B9B3D233C04DB00A43522 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EF4N5K3F2Q;
+				INFOPLIST_FILE = "Khrysalis TemplateUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lightningkite.Khrysalis-TemplateUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Khrysalis Template";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5E4B9B06233C04DA00A43522 /* Build configuration list for PBXProject "Khrysalis Template" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E4B9B33233C04DB00A43522 /* Debug */,
+				5E4B9B34233C04DB00A43522 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E4B9B35233C04DB00A43522 /* Build configuration list for PBXNativeTarget "Khrysalis Template" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E4B9B36233C04DB00A43522 /* Debug */,
+				5E4B9B37233C04DB00A43522 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E4B9B38233C04DB00A43522 /* Build configuration list for PBXNativeTarget "Khrysalis TemplateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E4B9B39233C04DB00A43522 /* Debug */,
+				5E4B9B3A233C04DB00A43522 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E4B9B3B233C04DB00A43522 /* Build configuration list for PBXNativeTarget "Khrysalis TemplateUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E4B9B3C233C04DB00A43522 /* Debug */,
+				5E4B9B3D233C04DB00A43522 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5E4B9B03233C04DA00A43522 /* Project object */;
+}

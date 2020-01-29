@@ -66,7 +66,7 @@
                 android:layout_margin="8dp"
                 android:text=""/>
 
-        <com.lightningkite.kwift.views.android.MultilineEditText
+        <com.lightningkite.khrysalis.views.android.MultilineEditText
                 android:id="@+id/editableTextBig"
                 style="@style/Body"
                 android:layout_width="match_parent"
