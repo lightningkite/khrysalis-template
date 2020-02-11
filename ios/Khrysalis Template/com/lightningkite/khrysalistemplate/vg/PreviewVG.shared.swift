@@ -6,6 +6,7 @@ import Khrysalis
 import RxSwift
 import RxRelay
 import KhrysalisMaps
+import KhrysalisBluetooth
 
 
 

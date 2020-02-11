@@ -6,6 +6,7 @@ import Khrysalis
 import RxSwift
 import RxRelay
 import KhrysalisMaps
+import KhrysalisBluetooth
 
 
 
@@ -40,6 +41,9 @@ public class ExampleContentVG: ViewGenerator {
             it
         }.map{ (it) in 
             it.toString()
+        })
+        xml.scrollToTop.onClick(captureWeak(xml.scrollView) { (it) in 
+            it.smoothScrollTo(0, 0)
         })
         return view
     }

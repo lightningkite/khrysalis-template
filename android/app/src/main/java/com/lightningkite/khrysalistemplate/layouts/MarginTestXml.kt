@@ -11,7 +11,8 @@ import com.lightningkite.khrysalistemplate.R
 
 class MarginTestXml {
 
-    
+    lateinit var scrollView: ScrollView
+    lateinit var scrollToTop: Button
     
     
     lateinit var xmlRoot: View
@@ -22,7 +23,8 @@ class MarginTestXml {
     }
     fun setup(view: View): View {
         xmlRoot = view
-        
+        scrollView = view.findViewById<ScrollView>(R.id.scrollView)
+        scrollToTop = view.findViewById<Button>(R.id.scrollToTop)
         
         
         return view

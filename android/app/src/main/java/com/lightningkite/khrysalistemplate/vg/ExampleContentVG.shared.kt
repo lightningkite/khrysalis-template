@@ -26,6 +26,7 @@ class ExampleContentVG : ViewGenerator() {
         xml.exampleContentNumber.bindText(number) { it -> it.toString() }
         xml.chainedIncrement.onClick { this.chained.value.value = this.chained.value.value + 1 }
         xml.chainedNumber.bindString(chained.flatMap { it -> it }.map { it -> it.toString() } )
+        xml.scrollToTop.onClick(captureWeak(xml.scrollView){ it -> it.smoothScrollTo(0,0) })
         return view
     }
 }

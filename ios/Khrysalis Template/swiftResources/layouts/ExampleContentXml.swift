@@ -12,6 +12,7 @@ public class ExampleContentXml {
     public unowned var xmlRoot: UIView!
     public func setup(_ dependency: ViewDependency) -> UIView {
         let view = ScrollViewVertical(frame: .zero)
+        self.scrollView = view
         view.addSubview(LinearLayout(frame: .zero)) { view in 
             view.orientation = .y
             view.padding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
@@ -171,13 +172,39 @@ public class ExampleContentXml {
                 view.contentMode = .scaleAspectFit
             }
             
+            view.addSubview(
+                UIButtonWithLayer(frame: .zero),
+                minimumSize: CGSize(width: 0, height: 0),
+                size: CGSize(width: 0, height: 0),
+                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                padding: UIEdgeInsets.zero,
+                gravity: .topLeft,
+                weight: 0
+            ) { view in 
+                self.scrollToTop = view
+                view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
+                view.titleLabel?.font = UIFont.get(size: 16, style: [])
+                view.titleLabel?.textAllCaps = false
+                view.titleLabel?.textString = "Scroll to Top"
+                view.titleLabel?.numberOfLines = 0
+                view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
+                view.textAllCaps = false
+                view.textString = "Scroll to Top"
+                view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
+                view.contentHorizontalAlignment = .center
+                view.contentMode = .scaleAspectFit
+                view.contentEdgeInsets = UIEdgeInsets(top: 8, left:8, bottom:8, right:8)
+            }
+            
         }
         xmlRoot = view
         return view
     }
     
     public unowned var chainedNumber: UILabel!
+    public unowned var scrollToTop: UIButtonWithLayer!
     public unowned var chainedIncrement: UIButtonWithLayer!
+    public unowned var scrollView: ScrollViewVertical!
     public unowned var exampleContentNumber: UILabel!
     public unowned var exampleContentIncrement: UIButtonWithLayer!
     

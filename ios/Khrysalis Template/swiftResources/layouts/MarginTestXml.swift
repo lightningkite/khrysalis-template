@@ -12,10 +12,41 @@ public class MarginTestXml {
     public unowned var xmlRoot: UIView!
     public func setup(_ dependency: ViewDependency) -> UIView {
         let view = ScrollViewVertical(frame: .zero)
+        self.scrollView = view
         view.addSubview(LinearLayout(frame: .zero)) { view in 
             view.orientation = .y
             view.padding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
             view.gravity = .topLeft
+            
+            view.addSubview(
+                UILabel(frame: .zero),
+                minimumSize: CGSize(width: 0, height: 0),
+                size: CGSize(width: 0, height: 0),
+                margin: UIEdgeInsets(top: 32, left: 32, bottom: 32, right: 32),
+                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                gravity: .topLeft,
+                weight: 0
+            ) { view in 
+                view.font = UIFont.get(size: 16, style: [])
+                view.textString = "This is some longer content that is used in an attempt to debug iOS's weirdness involving padding on LinearLayout. Hopefully it works soon."
+                view.numberOfLines = 0
+                view.textColor = UIColor(argb: 0xFF222222)
+            }
+            
+            view.addSubview(
+                UILabel(frame: .zero),
+                minimumSize: CGSize(width: 0, height: 0),
+                size: CGSize(width: 0, height: 0),
+                margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                padding: UIEdgeInsets(top: 32, left: 32, bottom: 32, right: 32),
+                gravity: .topLeft,
+                weight: 0
+            ) { view in 
+                view.font = UIFont.get(size: 16, style: [])
+                view.textString = "This is some longer content that is used in an attempt to debug iOS's weirdness involving padding on LinearLayout. Hopefully it works soon."
+                view.numberOfLines = 0
+                view.textColor = UIColor(argb: 0xFF222222)
+            }
             
             view.addSubview(
                 FrameLayout(frame: .zero),
@@ -833,14 +864,15 @@ public class MarginTestXml {
                 gravity: .topLeft,
                 weight: 0
             ) { view in 
+                self.scrollToTop = view
                 view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
                 view.titleLabel?.font = UIFont.get(size: 16, style: [])
                 view.titleLabel?.textAllCaps = false
-                view.titleLabel?.textString = "View One"
+                view.titleLabel?.textString = "Scroll to Top"
                 view.titleLabel?.numberOfLines = 0
                 view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
                 view.textAllCaps = false
-                view.textString = "View One"
+                view.textString = "Scroll to Top"
                 view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
                 view.contentHorizontalAlignment = .center
                 view.contentMode = .scaleAspectFit
@@ -916,10 +948,29 @@ public class MarginTestXml {
                 view.contentEdgeInsets = UIEdgeInsets(top: 16, left:16, bottom:16, right:16)
             }
             
+            view.addSubview(
+                UITextField(frame: .zero),
+                minimumSize: CGSize(width: 0, height: 0),
+                size: CGSize(width: 0, height: 0),
+                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                padding: UIEdgeInsets.zero,
+                gravity: .topFill,
+                weight: 0
+            ) { view in 
+                view.setLeftPaddingPoints(8)
+                view.setRightPaddingPoints(8)
+                view.backgroundLayer = view.underlineLayer(boldColor: UIColor(argb: 0xFF222222), hintColor: nil)
+                view.font = UIFont.get(size: 16, style: [])
+                view.numberOfLines = 0
+                view.textColor = UIColor(argb: 0xFF222222)
+            }
+            
         }
         xmlRoot = view
         return view
     }
     
+    public unowned var scrollToTop: UIButtonWithLayer!
+    public unowned var scrollView: ScrollViewVertical!
     
 }

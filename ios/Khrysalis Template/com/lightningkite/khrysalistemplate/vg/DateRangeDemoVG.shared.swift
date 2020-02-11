@@ -6,6 +6,7 @@ import Khrysalis
 import RxSwift
 import RxRelay
 import KhrysalisMaps
+import KhrysalisBluetooth
 
 
 
@@ -24,10 +25,13 @@ public class DateRangeDemoVG: ViewGenerator {
     override public func generate(dependency: ViewDependency) -> View {
         var xml = DateRangeDemoXml()
         var view = xml.setup(dependency)
+        xml.month2Delegate.dragEnabled = false
         xml.month2Delegate.selectedDayPaint.color = 0xFFFFFFFF.asColor()
         xml.month2Delegate.selectedPaint.color = 0xFFFF0000.asColor()
+        xml.month3Delegate.dragEnabled = false
         xml.month3Delegate.selectedDayPaint.color = 0xFFFFFFFF.asColor()
         xml.month3Delegate.selectedPaint.color = 0xFFFF0000.asColor()
+        xml.month4Delegate.dragEnabled = false
         xml.month4Delegate.selectedDayPaint.color = 0xFFFFFFFF.asColor()
         xml.month4Delegate.selectedPaint.color = 0xFFFF0000.asColor()
         return view
