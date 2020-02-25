@@ -4,11 +4,7 @@ import android.view.View
 import com.lightningkite.khrysalis.observables.binding.loadImage
 import com.lightningkite.khrysalis.ImageReference
 import com.lightningkite.khrysalis.ImageRemoteUrl
-import com.lightningkite.khrysalis.views.ViewDependency
-import com.lightningkite.khrysalis.views.onClick
-import com.lightningkite.khrysalis.views.requestImageCamera
-import com.lightningkite.khrysalis.views.requestImageGallery
-import com.lightningkite.khrysalis.views.ViewGenerator
+import com.lightningkite.khrysalis.views.*
 import com.lightningkite.khrysalistemplate.layouts.LoadImageDemoXml
 
 class LoadImageDemoVG : ViewGenerator() {
@@ -20,6 +16,13 @@ class LoadImageDemoVG : ViewGenerator() {
         xml.camera.onClick {
             dependency.requestImageCamera { url ->
                 xml.image.loadImage(ImageReference(url))
+            }
+        }
+        xml.galleryMultiple.onClick {
+            dependency.requestImagesGallery { urls ->
+                urls.firstOrNull()?.let { url ->
+                    xml.image.loadImage(ImageReference(url))
+                }
             }
         }
         xml.gallery.onClick {

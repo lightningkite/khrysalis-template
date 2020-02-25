@@ -19,6 +19,7 @@ class SelectDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator(), Ent
     override val title: String get() = "Select Demo"
 
     val options: List<ViewGenerator> = listOf(
+        ExternalTestVG(),
         BleScanDemoVG(stack),
         PongDemoVG(),
         FloatingHexagonsDemoVG(),

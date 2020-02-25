@@ -10,20 +10,6 @@
             android:orientation="vertical"
             android:padding="8dp">
 
-        <TextView
-                style="@style/Body"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="32dp"
-                android:text="This is some longer content that is used in an attempt to debug iOS's weirdness involving padding on LinearLayout.  Hopefully it works soon."/>
-
-        <TextView
-                style="@style/Body"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="32dp"
-                android:text="This is some longer content that is used in an attempt to debug iOS's weirdness involving padding on LinearLayout.  Hopefully it works soon."/>
-
         <FrameLayout android:layout_width="match_parent" android:layout_height="200dp">
             <TextView
                     style="@style/Body"
@@ -448,6 +434,20 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:padding="8dp"/>
+
+        <TextView
+                style="@style/Body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="32dp"
+                android:text="This is some longer content that is used in an attempt to debug iOS's weirdness involving padding on LinearLayout.  Hopefully it works soon."/>
+
+        <TextView
+                style="@style/Body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="32dp"
+                android:text="This is some longer content that is used in an attempt to debug iOS's weirdness involving padding on LinearLayout.  Hopefully it works soon."/>
 
     </LinearLayout>
 </ScrollView>

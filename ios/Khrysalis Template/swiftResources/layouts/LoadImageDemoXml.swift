@@ -49,6 +49,30 @@ public class LoadImageDemoXml {
             gravity: .topFill,
             weight: 0
         ) { view in 
+            self.galleryMultiple = view
+            view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
+            view.titleLabel?.font = UIFont.get(size: 16, style: [])
+            view.titleLabel?.textAllCaps = false
+            view.titleLabel?.textString = "Multiple Gallery"
+            view.titleLabel?.numberOfLines = 0
+            view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
+            view.textAllCaps = false
+            view.textString = "Multiple Gallery"
+            view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
+            view.contentHorizontalAlignment = .center
+            view.contentMode = .scaleAspectFit
+            view.contentEdgeInsets = UIEdgeInsets(top: 8, left:8, bottom:8, right:8)
+        }
+        
+        view.addSubview(
+            UIButtonWithLayer(frame: .zero),
+            minimumSize: CGSize(width: 0, height: 0),
+            size: CGSize(width: 0, height: 0),
+            margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+            padding: UIEdgeInsets.zero,
+            gravity: .topFill,
+            weight: 0
+        ) { view in 
             self.camera = view
             view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
             view.titleLabel?.font = UIFont.get(size: 16, style: [])
@@ -108,6 +132,7 @@ public class LoadImageDemoXml {
     
     public unowned var image: UIImageView!
     public unowned var loremPixel: UIButtonWithLayer!
+    public unowned var galleryMultiple: UIButtonWithLayer!
     public unowned var camera: UIButtonWithLayer!
     public unowned var gallery: UIButtonWithLayer!
     

@@ -6,6 +6,7 @@ import android.content.res.Resources
 import android.preference.PreferenceManager
 import com.google.android.libraries.places.api.Places
 import com.lightningkite.khrysalis.Preferences
+import com.lightningkite.khrysalis.net.HttpClient
 
 class MyApplication: Application() {
     companion object {
@@ -13,6 +14,7 @@ class MyApplication: Application() {
     }
     override fun onCreate() {
         super.onCreate()
+        HttpClient.appContext = this
         Companion.resources = this.resources
         Places.initialize(
             this,

@@ -2,6 +2,7 @@
 platform :ios, '11.0'
 use_modular_headers!
 
+
 target 'Khrysalis Template' do
     pod 'Khrysalis', :path => '~/StudioProjects/khrysalis/Khrysalis.podspec'
     pod 'KhrysalisMaps', :path => '~/StudioProjects/khrysalis/KhrysalisMaps.podspec'

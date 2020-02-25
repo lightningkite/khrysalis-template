@@ -19,36 +19,6 @@ public class MarginTestXml {
             view.gravity = .topLeft
             
             view.addSubview(
-                UILabel(frame: .zero),
-                minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 32, left: 32, bottom: 32, right: 32),
-                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
-                gravity: .topLeft,
-                weight: 0
-            ) { view in 
-                view.font = UIFont.get(size: 16, style: [])
-                view.textString = "This is some longer content that is used in an attempt to debug iOS's weirdness involving padding on LinearLayout. Hopefully it works soon."
-                view.numberOfLines = 0
-                view.textColor = UIColor(argb: 0xFF222222)
-            }
-            
-            view.addSubview(
-                UILabel(frame: .zero),
-                minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
-                padding: UIEdgeInsets(top: 32, left: 32, bottom: 32, right: 32),
-                gravity: .topLeft,
-                weight: 0
-            ) { view in 
-                view.font = UIFont.get(size: 16, style: [])
-                view.textString = "This is some longer content that is used in an attempt to debug iOS's weirdness involving padding on LinearLayout. Hopefully it works soon."
-                view.numberOfLines = 0
-                view.textColor = UIColor(argb: 0xFF222222)
-            }
-            
-            view.addSubview(
                 FrameLayout(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 200),
@@ -961,6 +931,36 @@ public class MarginTestXml {
                 view.setRightPaddingPoints(8)
                 view.backgroundLayer = view.underlineLayer(boldColor: UIColor(argb: 0xFF222222), hintColor: nil)
                 view.font = UIFont.get(size: 16, style: [])
+                view.numberOfLines = 0
+                view.textColor = UIColor(argb: 0xFF222222)
+            }
+            
+            view.addSubview(
+                UILabel(frame: .zero),
+                minimumSize: CGSize(width: 0, height: 0),
+                size: CGSize(width: 0, height: 0),
+                margin: UIEdgeInsets(top: 32, left: 32, bottom: 32, right: 32),
+                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                gravity: .topLeft,
+                weight: 0
+            ) { view in 
+                view.font = UIFont.get(size: 16, style: [])
+                view.textString = "This is some longer content that is used in an attempt to debug iOS's weirdness involving padding on LinearLayout. Hopefully it works soon."
+                view.numberOfLines = 0
+                view.textColor = UIColor(argb: 0xFF222222)
+            }
+            
+            view.addSubview(
+                UILabel(frame: .zero),
+                minimumSize: CGSize(width: 0, height: 0),
+                size: CGSize(width: 0, height: 0),
+                margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                padding: UIEdgeInsets(top: 32, left: 32, bottom: 32, right: 32),
+                gravity: .topLeft,
+                weight: 0
+            ) { view in 
+                view.font = UIFont.get(size: 16, style: [])
+                view.textString = "This is some longer content that is used in an attempt to debug iOS's weirdness involving padding on LinearLayout. Hopefully it works soon."
                 view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF222222)
             }

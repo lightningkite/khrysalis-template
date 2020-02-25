@@ -12,6 +12,7 @@ import com.lightningkite.khrysalistemplate.R
 class LoadImageDemoXml {
 
     lateinit var gallery: Button
+    lateinit var galleryMultiple: Button
     lateinit var camera: Button
     lateinit var loremPixel: Button
     lateinit var image: ImageView
@@ -26,6 +27,7 @@ class LoadImageDemoXml {
     fun setup(view: View): View {
         xmlRoot = view
         gallery = view.findViewById<Button>(R.id.gallery)
+        galleryMultiple = view.findViewById<Button>(R.id.galleryMultiple)
         camera = view.findViewById<Button>(R.id.camera)
         loremPixel = view.findViewById<Button>(R.id.lorem_pixel)
         image = view.findViewById<ImageView>(R.id.image)

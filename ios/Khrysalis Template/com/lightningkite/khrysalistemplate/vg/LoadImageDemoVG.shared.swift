@@ -27,6 +27,14 @@ public class LoadImageDemoVG: ViewGenerator {
                 xml.image.loadImage(ImageReference(url))
             }
         }
+        xml.galleryMultiple.onClick{ () in 
+            dependency.requestImagesGallery{ (urls) in 
+                
+                if let url = (urls.firstOrNull()) {
+                    xml.image.loadImage(ImageReference(url)) 
+                }
+            }
+        }
         xml.gallery.onClick{ () in 
             dependency.requestImageGallery{ (url) in 
                 xml.image.loadImage(ImageReference(url))

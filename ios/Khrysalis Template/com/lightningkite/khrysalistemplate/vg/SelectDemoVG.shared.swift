@@ -55,7 +55,7 @@ public class SelectDemoVG: ViewGenerator, EntryPoint {
     
     public init(stack: ObservableStack<ViewGenerator>) {
         self.stack = stack
-        let options: Array<ViewGenerator> = [BleScanDemoVG(stack), PongDemoVG(), FloatingHexagonsDemoVG(), MarginTestsVG(), MultipleDemoVG(), DateButtonDemoVG(), MapDemoVG(), LocationDemoVG(), LoadImageDemoVG(), ControlsDemoVG(), ExampleContentVG(), ViewPagerDemoVG(stack), SegmentedControlDemoVG(), SliderDemoVG(), DateRangeDemoVG(), LoginDemoVG(stack), DrawableDemoVG(), PreviewVG()]
+        let options: Array<ViewGenerator> = [ExternalTestVG(), BleScanDemoVG(stack), PongDemoVG(), FloatingHexagonsDemoVG(), MarginTestsVG(), MultipleDemoVG(), DateButtonDemoVG(), MapDemoVG(), LocationDemoVG(), LoadImageDemoVG(), ControlsDemoVG(), ExampleContentVG(), ViewPagerDemoVG(stack), SegmentedControlDemoVG(), SliderDemoVG(), DateRangeDemoVG(), LoginDemoVG(stack), DrawableDemoVG(), PreviewVG()]
         self.options = options
         super.init()
     }

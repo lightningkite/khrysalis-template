@@ -124,6 +124,7 @@ public class BleScanDemoXml {
                 view.separatorStyle = .none
                 view.separatorStyle = .none
                 view.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+                view.backgroundColor = UIColor.clear
             }
             
         }
