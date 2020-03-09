@@ -27,6 +27,7 @@ class LocationDemoXml {
         locationDisplay = view.findViewById<TextView>(R.id.location_display)
         
         
+        
         return view
     }
 }

@@ -35,6 +35,7 @@ class LoginDemoXml {
         submit = view.findViewById<Button>(R.id.submit)
         
         
+        
         return view
     }
 }

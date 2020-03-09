@@ -33,6 +33,7 @@ class LoadImageDemoXml {
         image = view.findViewById<ImageView>(R.id.image)
         
         
+        
         return view
     }
 }

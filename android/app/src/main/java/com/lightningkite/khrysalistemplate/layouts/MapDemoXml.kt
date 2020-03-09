@@ -29,6 +29,7 @@ class MapDemoXml {
         options = view.findViewById<androidx.recyclerview.widget.RecyclerView>(R.id.options)
         
         
+        
         return view
     }
 }

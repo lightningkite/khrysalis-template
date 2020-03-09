@@ -27,6 +27,7 @@ class PreviewXml {
         pager = view.findViewById<androidx.viewpager.widget.ViewPager>(R.id.pager)
         
         
+        
         return view
     }
 }

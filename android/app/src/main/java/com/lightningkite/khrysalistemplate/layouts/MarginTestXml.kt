@@ -27,6 +27,7 @@ class MarginTestXml {
         scrollToTop = view.findViewById<Button>(R.id.scrollToTop)
         
         
+        
         return view
     }
 }

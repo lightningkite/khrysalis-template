@@ -31,6 +31,7 @@ class BleScanDemoXml {
         items = view.findViewById<com.lightningkite.khrysalis.views.android.VerticalRecyclerView>(R.id.items)
         
         
+        
         return view
     }
 }

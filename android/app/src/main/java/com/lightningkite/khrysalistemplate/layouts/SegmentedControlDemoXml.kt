@@ -27,6 +27,7 @@ class SegmentedControlDemoXml {
         tabs2 = view.findViewById<com.google.android.material.tabs.TabLayout>(R.id.tabs2)
         
         
+        
         return view
     }
 }

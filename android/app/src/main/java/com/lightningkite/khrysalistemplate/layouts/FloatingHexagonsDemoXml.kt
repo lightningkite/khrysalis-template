@@ -25,6 +25,7 @@ class FloatingHexagonsDemoXml {
         customView = view.findViewById<com.lightningkite.khrysalis.views.CustomView>(R.id.customView)
         customViewDelegate = view.findViewById<CustomView>(R.id.customView).delegate as com.lightningkite.khrysalistemplate.vg.FloatingHexagonsDelegate
         
+        
         return view
     }
 }

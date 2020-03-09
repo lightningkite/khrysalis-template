@@ -27,6 +27,7 @@ class ComponentTestXml {
         button = view.findViewById<Button>(R.id.button)
         
         
+        
         return view
     }
 }

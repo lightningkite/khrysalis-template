@@ -31,6 +31,7 @@ class ExternalTestXml {
         openEvent = view.findViewById<Button>(R.id.openEvent)
         
         
+        
         return view
     }
 }

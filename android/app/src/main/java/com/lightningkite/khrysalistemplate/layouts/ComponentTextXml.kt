@@ -25,6 +25,7 @@ class ComponentTextXml {
         label = view.findViewById<TextView>(R.id.label)
         
         
+        
         return view
     }
 }

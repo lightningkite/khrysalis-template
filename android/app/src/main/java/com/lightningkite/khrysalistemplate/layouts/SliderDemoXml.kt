@@ -43,6 +43,7 @@ class SliderDemoXml {
         ratingDisplayNumberFloat = view.findViewById<TextView>(R.id.ratingDisplayNumberFloat)
         
         
+        
         return view
     }
 }

@@ -31,6 +31,7 @@ class ComponentBleDeviceXml {
         connect = view.findViewById<Button>(R.id.connect)
         
         
+        
         return view
     }
 }

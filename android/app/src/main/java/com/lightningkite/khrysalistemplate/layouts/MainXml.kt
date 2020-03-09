@@ -11,9 +11,11 @@ import com.lightningkite.khrysalistemplate.R
 
 class MainXml {
 
+    lateinit var topBar: LinearLayout
     lateinit var mainBack: ImageButton
     lateinit var title: TextView
     lateinit var mainContent: com.lightningkite.khrysalis.views.android.SwapView
+    lateinit var bottom: FrameLayout
     
     
     lateinit var xmlRoot: View
@@ -24,11 +26,15 @@ class MainXml {
     }
     fun setup(view: View): View {
         xmlRoot = view
+        topBar = view.findViewById<LinearLayout>(R.id.topBar)
         mainBack = view.findViewById<ImageButton>(R.id.mainBack)
         title = view.findViewById<TextView>(R.id.title)
         mainContent = view.findViewById<com.lightningkite.khrysalis.views.android.SwapView>(R.id.mainContent)
+        bottom = view.findViewById<FrameLayout>(R.id.bottom)
         
         
+        topBar.safeInsets(49)
+        bottom.safeInsets(81)
         return view
     }
 }

@@ -25,6 +25,7 @@ class SelectDemoXml {
         list = view.findViewById<androidx.recyclerview.widget.RecyclerView>(R.id.list)
         
         
+        
         return view
     }
 }

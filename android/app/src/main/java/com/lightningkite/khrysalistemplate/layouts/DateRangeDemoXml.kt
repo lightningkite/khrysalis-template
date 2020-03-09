@@ -37,6 +37,7 @@ class DateRangeDemoXml {
         month3Delegate = view.findViewById<CustomView>(R.id.month3).delegate as com.lightningkite.khrysalis.views.SelectDateRangeMonthCVD
         month4Delegate = view.findViewById<CustomView>(R.id.month4).delegate as com.lightningkite.khrysalis.views.SelectMultipleDatesMonthCVD
         
+        
         return view
     }
 }

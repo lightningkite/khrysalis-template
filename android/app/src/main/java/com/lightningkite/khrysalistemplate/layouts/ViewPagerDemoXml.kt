@@ -27,6 +27,7 @@ class ViewPagerDemoXml {
         viewPagerIndicator = view.findViewById<com.rd.PageIndicatorView>(R.id.viewPagerIndicator)
         
         
+        
         return view
     }
 }

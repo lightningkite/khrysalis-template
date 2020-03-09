@@ -27,6 +27,7 @@ class BleHostDemoXml {
         charValue = view.findViewById<EditText>(R.id.charValue)
         
         
+        
         return view
     }
 }

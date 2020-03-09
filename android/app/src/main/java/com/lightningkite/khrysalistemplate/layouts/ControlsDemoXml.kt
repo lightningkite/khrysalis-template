@@ -33,6 +33,7 @@ class ControlsDemoXml {
         spinner = view.findViewById<Spinner>(R.id.spinner)
         
         
+        
         return view
     }
 }

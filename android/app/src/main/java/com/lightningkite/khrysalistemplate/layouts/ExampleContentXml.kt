@@ -35,6 +35,7 @@ class ExampleContentXml {
         scrollToTop = view.findViewById<Button>(R.id.scrollToTop)
         
         
+        
         return view
     }
 }

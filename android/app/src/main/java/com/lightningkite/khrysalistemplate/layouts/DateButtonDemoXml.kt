@@ -29,6 +29,7 @@ class DateButtonDemoXml {
         timeButton = view.findViewById<com.lightningkite.khrysalis.views.android.TimeButton>(R.id.timeButton)
         
         
+        
         return view
     }
 }
