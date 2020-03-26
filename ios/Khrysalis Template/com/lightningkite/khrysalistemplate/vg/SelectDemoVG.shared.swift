@@ -34,6 +34,9 @@ public class SelectDemoVG: ViewGenerator, EntryPoint {
         xml.list.bind(data: ConstantObservableProperty(options), defaultValue: options.first(), makeView: { (obs) in 
             var xml = ComponentTestXml()
             var view = xml.setup(dependency)
+            obs.subscribeBy{ (it) in 
+                print("Element changed to \(it)")
+            }.until(xml.label.removed)
             xml.label.bindText(obs){ (it) in 
                 it.title
             }

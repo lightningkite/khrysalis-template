@@ -11,6 +11,7 @@ import android.widget.*
 import android.view.*
 import com.lightningkite.khrysalis.*
 import com.lightningkite.khrysalis.lifecycle.lifecycle
+import com.lightningkite.khrysalis.net.ConnectedWebSocket
 import com.lightningkite.khrysalis.net.HttpClient
 import com.lightningkite.khrysalis.net.WebSocketFrame
 import com.lightningkite.khrysalis.net.webSocket
@@ -34,17 +35,24 @@ class WebsocketDemoVG(
     override val title: String get() = "Websocket Demo"
 
     //--- Data
-    val socket = HttpClient.webSocket("wss://echo.websocket.org").toObservable().publish().refCount()
-    val text = StandardObservableProperty("")
+    val socket: Observable<ConnectedWebSocket> = HttpClient.webSocket("wss://echo.websocket.org").toObservable().publish().refCount()
+    val text: StandardObservableProperty<String> = StandardObservableProperty("")
 
     //--- Generate Start (overwritten on flow generation)
     override fun generate(dependency: ViewDependency): View {
         val xml = WebsocketDemoXml()
         val view = xml.setup(dependency)
 
-        //--- Set Up xml.items (overwritten on flow generation)
+        //--- Set Up xml.items
+        var itemsList = ArrayList<WebSocketFrame>()
         xml.items.bind(
-                data = socket.switchMap { it -> it.read }.buffer(5, 1).asObservableProperty(listOf()),
+                data = socket.switchMap { it -> it.read }.map { it ->
+                    itemsList.add(it)
+                    while(itemsList.size > 20){
+                        itemsList.removeAt(0)
+                    }
+                    return@map itemsList as List<WebSocketFrame>
+                }.asObservableProperty(itemsList),
                 defaultValue = WebSocketFrame(),
                 makeView = label@{ observable ->
                     //--- Make Subview For xml.items (overwritten on flow generation)
@@ -63,7 +71,7 @@ class WebsocketDemoVG(
 
         //--- Set Up xml.submit
         xml.submit.onClick {
-            socket.take(1).subscribe { it -> it.writeText(this.text.value) }
+            this.socket.take(1).subscribe { it -> it.writeText(this.text.value) }
         }
 
         //--- Generate End (overwritten on flow generation)
