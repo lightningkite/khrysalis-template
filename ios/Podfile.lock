@@ -13,6 +13,7 @@ PODS:
     - RxRelay
     - RxSwift
     - SearchTextField
+    - Starscream
     - "UITextView+Placeholder"
   - KhrysalisBluetooth (0.1.0):
     - Khrysalis
@@ -26,6 +27,7 @@ PODS:
     - RxSwift (~> 5)
   - RxSwift (5.0.1)
   - SearchTextField (1.2.4)
+  - Starscream (4.0.0)
   - "UITextView+Placeholder (1.3.3)"
 
 DEPENDENCIES:
@@ -44,6 +46,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SearchTextField
+    - Starscream
     - "UITextView+Placeholder"
 
 EXTERNAL SOURCES:
@@ -59,7 +62,7 @@ SPEC CHECKSUMS:
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   Cosmos: a6fb17284281fa12cf4c85c2efecd440a215ec44
   KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
-  Khrysalis: 0074a0ccab873199443ee492bb7e7b8ac707f629
+  Khrysalis: dc7f6aa6f7e9146075ad1e88eb2bbdddac531cb3
   KhrysalisBluetooth: e75154fde089bb873b29c277e3ebd4ddfc67afe1
   KhrysalisMaps: e45e5c34aa576a90bc3ee09808de5cb1d77f2f38
   OpalImagePicker: 51cbf714f337a93c2631219f1a90389ba936077f
@@ -67,6 +70,7 @@ SPEC CHECKSUMS:
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   SearchTextField: 40dc3cc57def5a211f263cac263622c163bbc25a
+  Starscream: 04b26f02727e10a002e6b5d21b188ba0d049910b
   "UITextView+Placeholder": c407b27599ea23cca425946fee3cf1db5d547008
 
 PODFILE CHECKSUM: f04656b121c8389d3385f49362558bfdb1d5cca2

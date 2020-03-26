@@ -12,7 +12,6 @@ public class MainXml {
     public unowned var xmlRoot: UIView!
     public func setup(_ dependency: ViewDependency) -> UIView {
         let view = LinearLayout(frame: .zero)
-        view.backgroundColor = ResourcesColors.white
         view.orientation = .y
         view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         view.gravity = .topLeft
@@ -26,7 +25,9 @@ public class MainXml {
             gravity: .topFill,
             weight: 0
         ) { view in 
+            self.topBar = view
             view.backgroundColor = ResourcesColors.colorPrimary
+            view.safeInsets(align: .topFill)
             view.orientation = .x
             view.padding = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
             view.gravity = .centerCenter
@@ -80,12 +81,28 @@ public class MainXml {
             self.mainContent = view
         }
         
+        view.addSubview(
+            UIView(frame: .zero),
+            minimumSize: CGSize(width: 0, height: 0),
+            size: CGSize(width: 0, height: 0),
+            margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+            padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+            gravity: .topFill,
+            weight: 0
+        ) { view in 
+            self.bottom0 = view
+            view.backgroundColor = ResourcesColors.colorPrimary
+            view.safeInsetsSizing(align: .bottomFill)
+        }
+        
         xmlRoot = view
         return view
     }
     
+    public unowned var bottom0: UIView!
     public unowned var mainBack: UIButtonWithLayer!
     public unowned var mainContent: SwapView!
+    public unowned var topBar: LinearLayout!
     public unowned var title: UILabel!
     
 }

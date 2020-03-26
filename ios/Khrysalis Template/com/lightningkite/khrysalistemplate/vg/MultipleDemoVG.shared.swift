@@ -24,7 +24,7 @@ public class MultipleDemoVG: ViewGenerator {
         var xml = MultipleDemoXml()
         var view = xml.setup(dependency)
         xml.list.bindMulti(viewDependency: dependency, data: ConstantObservableProperty(data), typeHandlerSetup: { (handler) in 
-            handler.handle(0.toInt()) { (obs) in 
+            handler.handle(0.toInt()){ (obs) in 
                 var cellXml = ComponentTestXml()
                 var cellView = cellXml.setup(dependency)
                 cellXml.label.bindString(obs.map{ (it) in 
@@ -32,7 +32,7 @@ public class MultipleDemoVG: ViewGenerator {
                 })
                 return cellView
             }
-            handler.handle("") { (obs) in 
+            handler.handle(""){ (obs) in 
                 var cellXml = ComponentTestXml()
                 var cellView = cellXml.setup(dependency)
                 cellXml.label.bindString(obs.map{ (it) in 
@@ -40,7 +40,7 @@ public class MultipleDemoVG: ViewGenerator {
                 })
                 return cellView
             }
-            handler.handle(()) { (obs) in 
+            handler.handle(()){ (obs) in 
                 var cellXml = ComponentTextXml()
                 var cellView = cellXml.setup(dependency)
                 cellXml.label.text = "-----"

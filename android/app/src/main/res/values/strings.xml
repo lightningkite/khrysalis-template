@@ -32,4 +32,7 @@
     </string>
     <string name="lorem_pixel">Lorem Pixel</string>
     <string name="connect">Connect</string>
+    <string name="this_data_is_loaded_from_json_placeholder_typicode">This data is loaded from JSON Placeholder
+        Typicode.
+    </string>
 </resources>

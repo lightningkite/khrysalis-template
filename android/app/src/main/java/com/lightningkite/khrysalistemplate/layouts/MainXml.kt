@@ -15,7 +15,7 @@ class MainXml {
     lateinit var mainBack: ImageButton
     lateinit var title: TextView
     lateinit var mainContent: com.lightningkite.khrysalis.views.android.SwapView
-    lateinit var bottom: FrameLayout
+    lateinit var bottom0: View
     
     
     lateinit var xmlRoot: View
@@ -30,11 +30,11 @@ class MainXml {
         mainBack = view.findViewById<ImageButton>(R.id.mainBack)
         title = view.findViewById<TextView>(R.id.title)
         mainContent = view.findViewById<com.lightningkite.khrysalis.views.android.SwapView>(R.id.mainContent)
-        bottom = view.findViewById<FrameLayout>(R.id.bottom)
+        bottom0 = view.findViewById<View>(R.id.bottom0)
         
         
-        topBar.safeInsets(49)
-        bottom.safeInsets(81)
+        topBar.safeInsets(11)
+        bottom0.safeInsetsSizing(14)
         return view
     }
 }

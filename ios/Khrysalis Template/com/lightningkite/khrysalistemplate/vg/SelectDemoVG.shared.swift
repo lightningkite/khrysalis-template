@@ -34,10 +34,10 @@ public class SelectDemoVG: ViewGenerator, EntryPoint {
         xml.list.bind(data: ConstantObservableProperty(options), defaultValue: options.first(), makeView: { (obs) in 
             var xml = ComponentTestXml()
             var view = xml.setup(dependency)
-            xml.label.bindText(obs) { (it) in 
+            xml.label.bindText(obs){ (it) in 
                 it.title
             }
-            xml.button.onClick(captureWeak(self) { (self) in 
+            xml.button.onClick(captureWeak(self){ (self) in 
                 self.selectVG(obs.value)
             })
             return view
@@ -55,7 +55,7 @@ public class SelectDemoVG: ViewGenerator, EntryPoint {
     
     public init(stack: ObservableStack<ViewGenerator>) {
         self.stack = stack
-        let options: Array<ViewGenerator> = [ExternalTestVG(), BleScanDemoVG(stack), PongDemoVG(), FloatingHexagonsDemoVG(), MarginTestsVG(), MultipleDemoVG(), DateButtonDemoVG(), MapDemoVG(), LocationDemoVG(), LoadImageDemoVG(), ControlsDemoVG(), ExampleContentVG(), ViewPagerDemoVG(stack), SegmentedControlDemoVG(), SliderDemoVG(), DateRangeDemoVG(), LoginDemoVG(stack), DrawableDemoVG(), PreviewVG()]
+        let options: Array<ViewGenerator> = [WebsocketDemoVG(), HttpDemoVG(), ExternalTestVG(), BleScanDemoVG(stack), PongDemoVG(), FloatingHexagonsDemoVG(), MarginTestsVG(), MultipleDemoVG(), DateButtonDemoVG(), MapDemoVG(), LocationDemoVG(), LoadImageDemoVG(), ControlsDemoVG(), ExampleContentVG(), ViewPagerDemoVG(stack), SegmentedControlDemoVG(), SliderDemoVG(), DateRangeDemoVG(), LoginDemoVG(stack), DrawableDemoVG(), PreviewVG()]
         self.options = options
         super.init()
     }

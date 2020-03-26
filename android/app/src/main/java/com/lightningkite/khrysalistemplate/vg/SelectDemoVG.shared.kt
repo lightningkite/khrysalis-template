@@ -7,6 +7,9 @@ import com.lightningkite.khrysalis.observables.binding.bindText
 import com.lightningkite.khrysalis.observables.ConstantObservableProperty
 import com.lightningkite.khrysalis.observables.ObservableStack
 import com.lightningkite.khrysalis.captureWeak
+import com.lightningkite.khrysalis.observables.subscribeBy
+import com.lightningkite.khrysalis.rx.removed
+import com.lightningkite.khrysalis.rx.until
 import com.lightningkite.khrysalis.views.ViewDependency
 import com.lightningkite.khrysalis.views.onClick
 import com.lightningkite.khrysalis.views.EntryPoint
@@ -19,6 +22,8 @@ class SelectDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator(), Ent
     override val title: String get() = "Select Demo"
 
     val options: List<ViewGenerator> = listOf(
+        WebsocketDemoVG(),
+        HttpDemoVG(),
         ExternalTestVG(),
         BleScanDemoVG(stack),
         PongDemoVG(),
@@ -54,6 +59,9 @@ class SelectDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator(), Ent
             makeView = { obs ->
                 val xml = ComponentTestXml()
                 val view = xml.setup(dependency)
+                obs.subscribeBy { it ->
+                    println("Element changed to $it")
+                }.until(xml.label.removed)
                 xml.label.bindText(obs) { it -> it.title }
                 xml.button.onClick(captureWeak(this){ self -> self.selectVG(obs.value) })
                 return@bind view

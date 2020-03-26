@@ -28,18 +28,18 @@ class ExternalTestVG(
     //--- Dependencies (overwritten on flow generation)
     //--- Extends (overwritten on flow generation)
 ) : ViewGenerator() {
-
-
+    
+    
     //--- Title (overwritten on flow generation)
     override val title: String get() = "External Test"
-
+    
     //--- Generate Start (overwritten on flow generation)
     override fun generate(dependency: ViewDependency): View {
         val xml = ExternalTestXml()
         val view = xml.setup(dependency)
-
+        
         //--- Set Up xml.scrollView (overwritten on flow generation)
-
+        
         //--- Set Up xml.openMap
         xml.openMap.onClick {
             dependency.openMap(GeoCoordinate(41.7269, -111.8432), "Lightning Kite", 14f)
@@ -62,10 +62,10 @@ class ExternalTestVG(
         }
 
         //--- Generate End (overwritten on flow generation)
-
+        
         return view
     }
-
+    
     //--- Init
 
     init {

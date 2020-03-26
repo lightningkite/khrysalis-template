@@ -43,12 +43,10 @@
             android:layout_height="0px"
             android:layout_weight="1"/>
 
-    <FrameLayout
-            android:id="@+id/bottom"
+    <View
+            android:id="@+id/bottom0"
+            tools:systemEdgesSizing="center_horizontal|bottom"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:systemEdges="center_horizontal|bottom"
-            android:background="@color/colorPrimary">
-        <Space android:layout_width="1dp" android:layout_height="1dp"/>
-    </FrameLayout>
+            android:background="@color/colorPrimary"
+            android:layout_height="0dp"/>
 </LinearLayout>
