@@ -5,12 +5,16 @@ import android.view.*
 import com.lightningkite.khrysalis.*
 import com.lightningkite.khrysalis.bluetooth.Ble
 import com.lightningkite.khrysalis.bluetooth.BleDeviceInfo
+import com.lightningkite.khrysalis.bluetooth.BleScanResult
 import com.lightningkite.khrysalis.lifecycle.*
 import com.lightningkite.khrysalis.views.*
 import com.lightningkite.khrysalis.observables.*
 import com.lightningkite.khrysalis.observables.binding.*
+import com.lightningkite.khrysalis.rx.removed
+import com.lightningkite.khrysalis.rx.until
 import com.lightningkite.khrysalistemplate.R
 import com.lightningkite.khrysalistemplate.layouts.*
+import io.reactivex.rxkotlin.subscribeBy
 
 @Suppress("NAME_SHADOWING")
 class BleScanDemoVG(
@@ -19,42 +23,37 @@ class BleScanDemoVG(
 
     override val title: String get() = "BleScanDemo"
 
-    val devices: MutableObservableProperty<Map<String, BleDeviceInfo>> = StandardObservableProperty(mapOf())
+    val devices: MutableObservableProperty<Map<String, BleScanResult>> = StandardObservableProperty(mapOf())
 
     override fun generate(dependency: ViewDependency): View {
         val xml = BleScanDemoXml()
         val view = xml.setup(dependency)
 
-//        xml.button.onClick(captureWeak(xml.button){ button ->
-//            val closeable = Ble.scan(
-//                viewDependency = dependency,
-//                withServices = listOf(),
-//                intensity = .5f,
-//                onDeviceFound = { device ->
-//                    println("Found device $device")
-//                    this.devices.value = this.devices.value + Pair(device.id, device)
-//                }
-//            )
-//            (button.lifecycle and appInForeground).closeWhenOff(closeable)
-//        })
-//
-//        xml.host.onClick {
-//            this.stack.push(BleHostDemoVG())
-//        }
-//
-//        xml.items.bind(
-//            data = devices.map { it -> it.values.sortedByDescending { it -> it.rssi } },
-//            defaultValue = BleDeviceInfo("", "", 0),
-//            makeView = label@ { obs ->
-//                val cellXml = ComponentBleDeviceXml()
-//                val cellView = cellXml.setup(dependency)
-//                cellXml.deviceName.bindString(obs.map { it -> it.name })
-//                cellXml.deviceId.bindString(obs.map { it -> it.id })
-//                cellXml.rssi.bindString(obs.map { it -> it.rssi.toString() })
-//                cellXml.connect.onClick {  }
-//                return@label cellView
-//            }
-//        )
+        xml.button.onClick(captureWeak(xml.button){ button ->
+            Ble.scan(viewDependency = dependency)
+                .subscribeBy { result ->
+                    devices.value = devices.value + (result.info.id to result)
+                }
+                .until(button.removed)
+        })
+
+        xml.host.onClick {
+            this.stack.push(BleHostDemoVG())
+        }
+
+        xml.items.bind(
+            data = devices.map { it -> it.values.sortedByDescending { it -> it.rssi } },
+            defaultValue = BleScanResult(BleDeviceInfo("", ""), -1000),
+            makeView = label@ { obs ->
+                val cellXml = ComponentBleDeviceXml()
+                val cellView = cellXml.setup(dependency)
+                cellXml.deviceName.bindString(obs.map { it -> it.info.name ?: "No Name"})
+                cellXml.deviceId.bindString(obs.map { it -> it.info.id })
+                cellXml.rssi.bindString(obs.map { it -> it.rssi.toString() })
+                cellXml.connect.onClick {  }
+                return@label cellView
+            }
+        )
 
         return view
     }

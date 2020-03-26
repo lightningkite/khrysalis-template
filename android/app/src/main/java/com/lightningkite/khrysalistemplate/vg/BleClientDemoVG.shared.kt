@@ -4,6 +4,7 @@ import android.widget.*
 import android.view.*
 import com.lightningkite.khrysalis.*
 import com.lightningkite.khrysalis.bluetooth.Ble
+import com.lightningkite.khrysalis.bluetooth.BleCharacteristic
 import com.lightningkite.khrysalis.bluetooth.PropertyBleCharacteristicServer
 import com.lightningkite.khrysalis.lifecycle.and
 import com.lightningkite.khrysalis.lifecycle.appInForeground
@@ -24,15 +25,14 @@ class BleClientDemoVG(val deviceId: String) : ViewGenerator() {
         val xml = BleClientDemoXml()
         val view = xml.setup(dependency)
 
-        //OpenConnectionObservable -> Event -> Observable
-        //Is a DRF just an event?!
-        //Ble.connect(dependency, deviceId).flatMap { it?.subscribe() }.asObservable(default = "")
+        val connection = Ble.connect(dependency, deviceId).flatMap { it.notify(
+            BleCharacteristic(
+                serviceUuid = UUID.fromString("7eab90f5-7c6e-4152-ab3e-9d4ebe39ac1c"),
+                characteristicUuid = UUID.fromString("7b476b68-50fa-4d13-b2fc-e54f8a299212")
+            )
+        ) }
 
-//        xml.status.bindString(server.clients.map { it -> "Serving ${it.size} clients" })
-//        xml.charValue.bindString(characteristic.map(
-//            read = { it -> it.toString(Charsets.UTF_8) },
-//            write = { it -> it.toByteArray(Charsets.UTF_8) }
-//        ))
+        xml.charValue.bindString(connection.map { it.toString(Charsets.UTF_8) }.asObservableProperty("Not loaded"))
 
         return view
     }
