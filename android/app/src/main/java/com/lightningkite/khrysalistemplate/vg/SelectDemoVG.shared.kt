@@ -59,9 +59,6 @@ class SelectDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator(), Ent
             makeView = { obs ->
                 val xml = ComponentTestXml()
                 val view = xml.setup(dependency)
-                obs.subscribeBy { it ->
-                    println("Element changed to $it")
-                }.until(xml.label.removed)
                 xml.label.bindText(obs) { it -> it.title }
                 xml.button.onClick(captureWeak(this){ self -> self.selectVG(obs.value) })
                 return@bind view

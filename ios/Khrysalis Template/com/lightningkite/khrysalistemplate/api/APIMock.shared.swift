@@ -21,7 +21,7 @@ public class APIMock: APIInterface {
     
     
     public func getExamplePosts(onResult: @escaping (Int32, Array<Post>?, String?) -> Void) -> Void {
-        delay(APIMock.delayMs) { () in 
+        delay(APIMock.delayMs){ () in 
             onResult(200, [Post(title: "First", body: APIMock.lorem)], nil)
         }
     }

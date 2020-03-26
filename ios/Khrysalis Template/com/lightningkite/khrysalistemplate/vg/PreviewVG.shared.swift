@@ -39,10 +39,10 @@ public class PreviewVG: ViewGenerator {
     override public func generate(dependency: ViewDependency) -> View {
         var xml = PreviewXml()
         var view = xml.setup(dependency)
-        xml.pager.bind(previews, previewIndex) { (it) in 
+        xml.pager.bind(previews, previewIndex){ (it) in 
             it.make(dependency)
         }
-        previewIndex.addAndRunWeak(self, xml.viewName) { (self, view, it) in 
+        previewIndex.addAndRunWeak(self, xml.viewName){ (self, view, it) in 
             view.text = self.previews[ it ].name
         }
         return view
@@ -52,23 +52,23 @@ public class PreviewVG: ViewGenerator {
     }
     
     override public init() {
-        let previews: Array<XmlPreview> = [XmlPreview("ControlsDemoXml") { (it) in 
+        let previews: Array<XmlPreview> = [XmlPreview("ControlsDemoXml"){ (it) in 
             ControlsDemoXml().setup(it)
-        }, XmlPreview("DateRangeDemoXml") { (it) in 
+        }, XmlPreview("DateRangeDemoXml"){ (it) in 
             DateRangeDemoXml().setup(it)
-        }, XmlPreview("ExampleContentXml") { (it) in 
+        }, XmlPreview("ExampleContentXml"){ (it) in 
             ExampleContentXml().setup(it)
-        }, XmlPreview("LoginDemoXml") { (it) in 
+        }, XmlPreview("LoginDemoXml"){ (it) in 
             LoginDemoXml().setup(it)
-        }, XmlPreview("MainXml") { (it) in 
+        }, XmlPreview("MainXml"){ (it) in 
             MainXml().setup(it)
-        }, XmlPreview("SegmentedControlDemoXml") { (it) in 
+        }, XmlPreview("SegmentedControlDemoXml"){ (it) in 
             SegmentedControlDemoXml().setup(it)
-        }, XmlPreview("SelectDemoXml") { (it) in 
+        }, XmlPreview("SelectDemoXml"){ (it) in 
             SelectDemoXml().setup(it)
-        }, XmlPreview("SliderDemoXml") { (it) in 
+        }, XmlPreview("SliderDemoXml"){ (it) in 
             SliderDemoXml().setup(it)
-        }, XmlPreview("ViewPagerDemoXml") { (it) in 
+        }, XmlPreview("ViewPagerDemoXml"){ (it) in 
             ViewPagerDemoXml().setup(it)
         }]
         self.previews = previews

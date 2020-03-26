@@ -34,7 +34,7 @@ public class MainVG: ViewGenerator, EntryPoint {
             it.lastOrNull()?.title ?? ""
         })
         xml.mainBack.bindVisible(shouldBackBeShown)
-        xml.mainBack.onClick(captureWeak(self) { (self) in 
+        xml.mainBack.onClick(captureWeak(self){ (self) in 
             self.stack.pop()
             ()
         })

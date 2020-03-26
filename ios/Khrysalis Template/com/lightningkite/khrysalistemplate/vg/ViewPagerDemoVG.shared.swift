@@ -25,7 +25,7 @@ public class ViewPagerDemoVG: ViewGenerator {
     override public func generate(dependency: ViewDependency) -> View {
         var xml = ViewPagerDemoXml()
         var view = xml.setup(dependency)
-        xml.viewPager.bind(items, selectedIndex) { (it) in 
+        xml.viewPager.bind(items, selectedIndex){ (it) in 
             var xml = ComponentTestXml()
             var view = xml.setup(dependency)
             xml.label.text = it

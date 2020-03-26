@@ -28,10 +28,10 @@ public class ExampleContentVG: ViewGenerator {
     override public func generate(dependency: ViewDependency) -> View {
         var xml = ExampleContentXml()
         var view = xml.setup(dependency)
-        xml.exampleContentIncrement.onClick(captureWeak(self) { (self) in 
+        xml.exampleContentIncrement.onClick(captureWeak(self){ (self) in 
             self.increment()
         })
-        xml.exampleContentNumber.bindText(number) { (it) in 
+        xml.exampleContentNumber.bindText(number){ (it) in 
             it.toString()
         }
         xml.chainedIncrement.onClick{ () in 
@@ -42,7 +42,7 @@ public class ExampleContentVG: ViewGenerator {
         }.map{ (it) in 
             it.toString()
         })
-        xml.scrollToTop.onClick(captureWeak(xml.scrollView) { (it) in 
+        xml.scrollToTop.onClick(captureWeak(xml.scrollView){ (it) in 
             it.smoothScrollTo(0, 0)
         })
         return view

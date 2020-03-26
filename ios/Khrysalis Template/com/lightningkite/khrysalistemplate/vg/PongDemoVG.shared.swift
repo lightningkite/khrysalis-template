@@ -219,7 +219,7 @@ public class PongDelegate: CustomViewDelegate {
         super.init()
         self.paint.color = 0xFFFFFFFF.asColor()
         self.paint.textSize = Float(12)
-        animationFrame.addWeak(self) { (self, time) in 
+        animationFrame.addWeak(self){ (self, time) in 
             self.frame(time)
             self.postInvalidate()
         }

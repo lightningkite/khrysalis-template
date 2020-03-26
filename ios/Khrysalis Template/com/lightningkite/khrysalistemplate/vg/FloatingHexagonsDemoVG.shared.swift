@@ -157,7 +157,7 @@ public class FloatingHexagonsDelegate: CustomViewDelegate {
         self.hexagonPaint.color = 0xFFFFFFFF.asColor()
         self.backgroundPaint.color = 0xFFFFFFFF.asColor()
         self.backgroundPaint.textSize = Float(12)
-        animationFrame.addWeak(self) { (self, time) in 
+        animationFrame.addWeak(self){ (self, time) in 
             self.frame(time)
             self.postInvalidate()
         }

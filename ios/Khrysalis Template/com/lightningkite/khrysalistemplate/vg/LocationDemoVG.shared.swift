@@ -24,7 +24,7 @@ public class LocationDemoVG: ViewGenerator {
         var xml = LocationDemoXml()
         var view = xml.setup(dependency)
         xml.getLocation.onClick{ () in 
-            dependency.requestLocation(accuracyBetterThanMeters: 100.0, timeoutInSeconds: 5.0) { (location, message) in 
+            dependency.requestLocation(accuracyBetterThanMeters: 100.0, timeoutInSeconds: 5.0){ (location, message) in 
                 print(message)
                 self.locationInfo.value = location
             }

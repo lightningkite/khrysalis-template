@@ -27,7 +27,7 @@ public class MapDemoVG: ViewGenerator {
         var view = xml.setup(dependency)
         xml.map.bindSelect(dependency, position)
         xml.select.bindString(text)
-        xml.options.bind(options, GeoAddress()) { (obs) in 
+        xml.options.bind(options, GeoAddress()){ (obs) in 
             var xml = ComponentTextXml()
             var view = xml.setup(dependency)
             xml.label.bindString(obs.transformed{ (it) in 
@@ -38,10 +38,10 @@ public class MapDemoVG: ViewGenerator {
             }
             return view
         }
-        text.addAndRunWeak(self) { (self, value) in 
-            delay(1000) { () in 
+        text.addAndRunWeak(self){ (self, value) in 
+            delay(1000){ () in 
                 if self.text.value == value, value.isNotBlank() {
-                    dependency.geocode(value) { (addresses) in 
+                    dependency.geocode(value){ (addresses) in 
                         self.options.value = addresses
                     }
                 }

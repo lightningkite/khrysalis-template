@@ -27,19 +27,19 @@ public class SliderDemoVG: ViewGenerator {
         var xml = SliderDemoXml()
         var view = xml.setup(dependency)
         xml.slider.bind(0, 100, percent)
-        xml.valueDisplay.bindText(percent) { (it) in 
+        xml.valueDisplay.bindText(percent){ (it) in 
             it.toString()
         }
         xml.rating.bind(5, obsRatingInt)
         xml.ratingDisplayStars.bind(5, obsRatingInt)
         xml.ratingDisplayStarsSmall.bind(5, obsRatingInt)
-        xml.ratingDisplayNumber.bindText(obsRatingInt) { (it) in 
+        xml.ratingDisplayNumber.bindText(obsRatingInt){ (it) in 
             it.toString()
         }
         xml.ratingFloat.bindFloat(5, obsRatingFloat)
         xml.ratingDisplayStarsFloat.bindFloat(5, obsRatingFloat)
         xml.ratingDisplayStarsSmallFloat.bindFloat(5, obsRatingFloat)
-        xml.ratingDisplayNumberFloat.bindText(obsRatingFloat) { (it) in 
+        xml.ratingDisplayNumberFloat.bindText(obsRatingFloat){ (it) in 
             it.toString()
         }
         return view

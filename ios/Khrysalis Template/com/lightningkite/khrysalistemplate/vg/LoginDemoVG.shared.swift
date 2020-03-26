@@ -47,7 +47,7 @@ public class LoginDemoVG: ViewGenerator {
         self.form.runOrDialog{ () in 
             print("Submit!")
             self.loading.value = true
-            delay(1000) { () in 
+            delay(1000){ () in 
                 self.loading.value = false
                 self.stack?.push(ExampleContentVG())
             }
@@ -58,19 +58,19 @@ public class LoginDemoVG: ViewGenerator {
         self.stack = stack
         let form: Form = Form()
         self.form = form
-        let username: FormField<String> = form.field(ResourcesStrings.username, "") { (field) in 
+        let username: FormField<String> = form.field(ResourcesStrings.username, ""){ (field) in 
             field.required()
         }
         self.username = username
-        let password: FormField<String> = form.field(ResourcesStrings.password, "") { (field) in 
+        let password: FormField<String> = form.field(ResourcesStrings.password, ""){ (field) in 
             field.required()
         }
         self.password = password
-        let verifyPassword: FormField<String> = form.field(ResourcesStrings.verifyPassword, "") { (field) in 
+        let verifyPassword: FormField<String> = form.field(ResourcesStrings.verifyPassword, ""){ (field) in 
             field.required() ?? field.matches(password)
         }
         self.verifyPassword = verifyPassword
-        let agree: FormField<Bool> = form.field(ResourcesStrings.password, false) { (field) in 
+        let agree: FormField<Bool> = form.field(ResourcesStrings.password, false){ (field) in 
             ViewStringResource(ResourcesStrings.mustAgree).unless(field.value)
         }
         self.agree = agree
