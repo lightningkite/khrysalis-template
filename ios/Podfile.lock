@@ -3,13 +3,20 @@ PODS:
   - AlamofireImage (3.6.0):
     - Alamofire (~> 4.9)
   - Cosmos (19.0.3)
+  - DKImagePickerController/Core (4.2.2):
+    - DKImagePickerController/ImageDataManager
+    - DKImagePickerController/Resource
+  - DKImagePickerController/ImageDataManager (4.2.2)
+  - DKImagePickerController/Resource (4.2.2)
   - KeychainAccess (4.1.0)
   - Khrysalis (0.1.0):
-    - Alamofire
-    - AlamofireImage
+    - Alamofire (~> 4.9.1)
+    - AlamofireImage (~> 3.6.0)
     - Cosmos (~> 19.0)
+    - DKImagePickerController/Core
+    - DKImagePickerController/ImageDataManager
+    - DKImagePickerController/Resource
     - KeychainAccess
-    - OpalImagePicker
     - RxRelay
     - RxSwift
     - SearchTextField
@@ -20,15 +27,14 @@ PODS:
     - RxBluetoothKit
   - KhrysalisMaps (0.1.0):
     - Khrysalis
-  - OpalImagePicker (2.1.2)
   - RxBluetoothKit (5.3.0):
     - RxSwift (~> 5.0)
-  - RxRelay (5.0.1):
+  - RxRelay (5.1.1):
     - RxSwift (~> 5)
-  - RxSwift (5.0.1)
+  - RxSwift (5.1.1)
   - SearchTextField (1.2.4)
-  - Starscream (4.0.0)
-  - "UITextView+Placeholder (1.3.3)"
+  - Starscream (4.0.1)
+  - "UITextView+Placeholder (1.4.0)"
 
 DEPENDENCIES:
   - Khrysalis (from `~/StudioProjects/khrysalis/Khrysalis.podspec`)
@@ -40,8 +46,8 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - Cosmos
+    - DKImagePickerController
     - KeychainAccess
-    - OpalImagePicker
     - RxBluetoothKit
     - RxRelay
     - RxSwift
@@ -61,18 +67,18 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   Cosmos: a6fb17284281fa12cf4c85c2efecd440a215ec44
+  DKImagePickerController: 4a3e7948a848c4348e600b3fe5ce41478835fa10
   KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
-  Khrysalis: dc7f6aa6f7e9146075ad1e88eb2bbdddac531cb3
+  Khrysalis: fcef7bce1727227b1a4c64cce8a2f95c3bd05073
   KhrysalisBluetooth: e75154fde089bb873b29c277e3ebd4ddfc67afe1
   KhrysalisMaps: e45e5c34aa576a90bc3ee09808de5cb1d77f2f38
-  OpalImagePicker: 51cbf714f337a93c2631219f1a90389ba936077f
   RxBluetoothKit: 0e781978e8a0df70ac3c611dcf44800b76c69f8a
-  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
-  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SearchTextField: 40dc3cc57def5a211f263cac263622c163bbc25a
-  Starscream: 04b26f02727e10a002e6b5d21b188ba0d049910b
-  "UITextView+Placeholder": c407b27599ea23cca425946fee3cf1db5d547008
+  Starscream: 9dbeec17a9ae4fd4904e8ac36b1ea96b20755959
+  "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
-PODFILE CHECKSUM: f04656b121c8389d3385f49362558bfdb1d5cca2
+PODFILE CHECKSUM: 49689f9261b87c59cf2b5ffef9b9a8acc25d0cd2
 
 COCOAPODS: 1.9.0

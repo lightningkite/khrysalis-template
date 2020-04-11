@@ -1,0 +1,1013 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05894591ADBDD7FF110E2C12 /* MainVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7A4A4090EBEE8CE459994F /* MainVG.shared.swift */; };
+		07194D0184EE77145AE88D8E /* WebsocketDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB46B4BC8B7CB3E396068C /* WebsocketDemoVG.shared.swift */; };
+		0DCE4D369B118F0755B4F039 /* DateRangeDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D34ACDB7C127F20D4D4541 /* DateRangeDemoVG.shared.swift */; };
+		126247B088CED852233FF4AE /* ExternalTestXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8045FD945A870A714B2004 /* ExternalTestXml.swift */; };
+		174145E89CEE038C7A8F9B0A /* LoginDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B5460385502171893AA862 /* LoginDemoXml.swift */; };
+		18DF4FFEA96D7766F8AF2871 /* ComponentTestXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B244DA9B0F6DA25C38341A /* ComponentTestXml.swift */; };
+		25294B80A16FC5CC430B2FEC /* icSendBlack24dpDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27D4BB381B43D561026E4E7 /* icSendBlack24dpDrawable.swift */; };
+		254F4AEA831ACB57C7F8A632 /* ControlsDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937457F8CDA5124531EAAE6 /* ControlsDemoVG.shared.swift */; };
+		26AA485CAEBB9E5A2082F06B /* FloatingHexagonsDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE04A11ADAFFC26BBAE73ED /* FloatingHexagonsDemoVG.shared.swift */; };
+		278240E68E92F04F04664D92 /* BleClientDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDD45CFA471F07F9F4C5C39 /* BleClientDemoVG.shared.swift */; };
+		287246F2AFAF72CD38ADAF35 /* ResourcesDrawables.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D14DCC91F49A6B223DC077 /* ResourcesDrawables.swift */; };
+		28924D518C509A9554F18498 /* BleClientDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C947508DD38EAEF90C8332 /* BleClientDemoXml.swift */; };
+		29B14DC4A09F04AF0D1DBD1E /* ViewPagerDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146A45E6929890176988A9CA /* ViewPagerDemoXml.swift */; };
+		2BE04C53BB0889CA09104CA5 /* buttonDisabledDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC44EC8B808C7F55318A0D /* buttonDisabledDrawable.swift */; };
+		33E74769ACE175E0BCABDFCB /* ExampleContentVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9A4246AB03DFC60F5E488D /* ExampleContentVG.shared.swift */; };
+		385F4AFB8AEB32B2E0BF071A /* borderDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C744388D1106393F33C51C /* borderDrawable.swift */; };
+		39414D87BB1467F57680AF7D /* MapDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D44F0882BCC0D910D91663 /* MapDemoVG.shared.swift */; };
+		3B2643699226DC3C0A61A048 /* LocationDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE5464E885F4080B7ADA8C4 /* LocationDemoXml.swift */; };
+		3BFF4BE0864C18FFBDEA585A /* buttonAccentDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678C4FD1B6CAA2B6D2B42FB3 /* buttonAccentDrawable.swift */; };
+		3F7B4C9288C32FB998C2BEF1 /* Post.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5468089EFD16E319DD931 /* Post.shared.swift */; };
+		4B0C47D4B7043E96D9711E4C /* LoadImageDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB24742A32B6CAB5178F2F1 /* LoadImageDemoVG.shared.swift */; };
+		4E55408F81F4151C0C7CF85A /* MultipleDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC4468B467F2E2CC702E86 /* MultipleDemoVG.shared.swift */; };
+		4F7844B1A248F60507D6724A /* SliderDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CB4DC7AEDEA3B21E312104 /* SliderDemoVG.shared.swift */; };
+		563742F48070104A8F43F373 /* LoginDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0540038E7E5EB7D71C2719 /* LoginDemoVG.shared.swift */; };
+		58A445A1B493688EF04491E6 /* BleHostDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = C351459C9C554855CB483A04 /* BleHostDemoXml.swift */; };
+		599C4995939C58285A37FBDD /* DateRangeDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80634478BB5D1B1143E49383 /* DateRangeDemoXml.swift */; };
+		5B6B4C64B94D716FDC1029B5 /* SelectDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF474989B1582D51125211 /* SelectDemoVG.shared.swift */; };
+		5C164BECA628F01B69854F00 /* icArrowBackWhite24dpDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2D49D5B8D19A135B41EFAC /* icArrowBackWhite24dpDrawable.swift */; };
+		5D034D1AB18DF27ED5C6269F /* MultipleDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EB4342B556D83EC580AAA1 /* MultipleDemoXml.swift */; };
+		5ED4770E244140DC007BE5E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4770D244140DC007BE5E2 /* AppDelegate.swift */; };
+		5ED47717244140DD007BE5E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ED47716244140DD007BE5E2 /* Assets.xcassets */; };
+		5ED4771A244140DD007BE5E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED47718244140DD007BE5E2 /* LaunchScreen.storyboard */; };
+		5ED47725244140DE007BE5E2 /* KhrysalisTemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED47724244140DE007BE5E2 /* KhrysalisTemplateTests.swift */; };
+		5ED47730244140DE007BE5E2 /* KhrysalisTemplateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4772F244140DE007BE5E2 /* KhrysalisTemplateUITests.swift */; };
+		628E4644B956A63A400EAC3F /* APIMock.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F8413FAB1A3566554B9495 /* APIMock.shared.swift */; };
+		62B54420A42513B9F80E6DD1 /* MarginTestVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3B4D84B11309891E426359 /* MarginTestVG.shared.swift */; };
+		69A94361BB94DA8EEF5CA765 /* icLauncherBackgroundDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9764403A466FE0E3B432421 /* icLauncherBackgroundDrawable.swift */; };
+		6A8BC3954AA803CC0AC525C1 /* libPods-KhrysalisTemplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F1B812A01485C718BE2210 /* libPods-KhrysalisTemplate.a */; };
+		6DD942DFBA1EDDF9BA46906A /* BleScanDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16946CBB7B5027958AB6B91 /* BleScanDemoVG.shared.swift */; };
+		6E0C465D85520778E4C9C31C /* ControlsDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227249D0B1B482D95D4FDB33 /* ControlsDemoXml.swift */; };
+		6F174EC5B22BDFA4E92BF274 /* PreviewXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17214662BE5E8D17BCCDE4B2 /* PreviewXml.swift */; };
+		71AE42F388BB9864820AB72E /* LoadImageDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A44E839B40878B4BFB1C12 /* LoadImageDemoXml.swift */; };
+		737F45EFB908FB020D07E89F /* SliderDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0244E5BCE2FDDB96B391B9 /* SliderDemoXml.swift */; };
+		77884F24B03F8564E6798D87 /* LocationDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5E4EA0B9B1F9FA76EA95CB /* LocationDemoVG.shared.swift */; };
+		783142B9BE39AB0E2267EA0E /* icLauncherForegroundDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424741AD9E7E6B35685A7FF7 /* icLauncherForegroundDrawable.swift */; };
+		7B494DD98F4D1C69A2854BA9 /* icAndroidBlack24dpDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9544EC84E3A377F0F3BA31 /* icAndroidBlack24dpDrawable.swift */; };
+		802441C7A41A52C30CA487F1 /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB4E9792B9C51A801BF893 /* colors.swift */; };
+		85574274A2BAFBA3D5CFCC3C /* APIInterface.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401147F2AC46300A91FEE9D5 /* APIInterface.shared.swift */; };
+		888E42F1A5D7608F32FE441B /* MarginTestXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51264B2C91DCC10FE6951857 /* MarginTestXml.swift */; };
+		8AFD48029EEC0896D6AF82F1 /* API.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F014D1FA5239F5365ADB65C /* API.shared.swift */; };
+		8BB5475C852A913B8CC16D07 /* DrawableDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574413FAD731F95F28DD92F /* DrawableDemoXml.swift */; };
+		8D2E4EC49784DF9626350222 /* MapDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = B844412388E6393977B08648 /* MapDemoXml.swift */; };
+		8E0542AC9E8287C615C047B8 /* DrawableDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908E475C96DF68F3CE071284 /* DrawableDemoVG.shared.swift */; };
+		8E7344CFA979E41B5D63CD64 /* strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD44248E6D7903E3C0DBD7 /* strings.swift */; };
+		917E4A99B9950A971742FB24 /* ExternalTestVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DC4042B20649B51188AFA8 /* ExternalTestVG.shared.swift */; };
+		98394780962242F808FCEB1F /* DateButtonDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4240BDA2AB6E7D8508A094 /* DateButtonDemoXml.swift */; };
+		9D9F4D418495C1F330C132E8 /* MainXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430245F98D401F1626FFFC91 /* MainXml.swift */; };
+		9F314BBBA34B9653B853CA23 /* ComponentTextXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AD47ADB3ED7A1B10A0B8F6 /* ComponentTextXml.swift */; };
+		A5E84106872EAFCB8A26189C /* icBeachAccessBlack24dpDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9F47459FF72142FB26D2A3 /* icBeachAccessBlack24dpDrawable.swift */; };
+		ABFD4F179CF75D4A4D255D13 /* DateButtonDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB14C3F82876634B9697FE1 /* DateButtonDemoVG.shared.swift */; };
+		AF214239BF16B1B4C153D978 /* ExampleContentXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19644B5977B03B1508432EF /* ExampleContentXml.swift */; };
+		B32B4D098928BF276F25F60A /* icExposureBlack24dpDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21425BB1D4872F66136F00 /* icExposureBlack24dpDrawable.swift */; };
+		B5374F6D918B6667B98F3519 /* buttonPrimaryDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81854091939048837B84B370 /* buttonPrimaryDrawable.swift */; };
+		BA3B4975A9D0592C51B4DF4A /* APIOnline.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5584B3F9335EA09DB127C33 /* APIOnline.shared.swift */; };
+		BB7345F4A04C813619057963 /* SegmentedControlDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4044C33ACD74AA0BEA4C73F /* SegmentedControlDemoVG.shared.swift */; };
+		D0A443159290E143861747C2 /* ViewPagerDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B4456BBBCFC50C2CE66BBB /* ViewPagerDemoVG.shared.swift */; };
+		D1824DD5BBBEE73BC17681D4 /* PreviewVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097486FB4160BBC638C547F /* PreviewVG.shared.swift */; };
+		D2604DBDABD0334A313BD16C /* BleHostDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57354313A2A83D2CCF94A47E /* BleHostDemoVG.shared.swift */; };
+		D5E841E8821C4D41ED8A8D27 /* PNGs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C94AEBA9988E823A9E2DE3 /* PNGs.swift */; };
+		D8914D17912018B20AD64B6A /* HttpDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EF491D97D8711DBC587514 /* HttpDemoVG.shared.swift */; };
+		E4734BE696AE532A3A89BCCB /* BleScanDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729C4F1F80EE1FC954B1E9A4 /* BleScanDemoXml.swift */; };
+		EBF44AF3B558F75F52F7D13B /* PongDemoVG.shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA541A39C08AE6ECDCBF720 /* PongDemoVG.shared.swift */; };
+		EC9D4620B658C290AC347C62 /* ComponentBleDeviceXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF22473AB833CBF3860047FD /* ComponentBleDeviceXml.swift */; };
+		EF2A424B92B1D97D008C371B /* SegmentedControlDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E454DFEA629A40BE1E5B9E7 /* SegmentedControlDemoXml.swift */; };
+		F0A14C3EA2F07465614B5C0F /* SelectDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802344A48858192D3A30E663 /* SelectDemoXml.swift */; };
+		F4F544BE9236E7B4D2D9765F /* FloatingHexagonsDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DF4D8A868AED56D6EE0E96 /* FloatingHexagonsDemoXml.swift */; };
+		F8D94691B43006DAE702E142 /* HttpDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD64BD9A873EDBA6E096777 /* HttpDemoXml.swift */; };
+		FE1F40728E277EBB0EB5FF9A /* WebsocketDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF4163A9669B8C7C865840 /* WebsocketDemoXml.swift */; };
+		FE2648D49192D91E8F6C3B9F /* PongDemoXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B64C368521E293BFB1DE30 /* PongDemoXml.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5ED47721244140DE007BE5E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5ED47702244140DC007BE5E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5ED47709244140DC007BE5E2 /* KhrysalisTemplate */;
+			remoteInfo = KhrysalisTemplate;
+		};
+		5ED4772C244140DE007BE5E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5ED47702244140DC007BE5E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5ED47709244140DC007BE5E2 /* KhrysalisTemplate */;
+			remoteInfo = KhrysalisTemplate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02B4456BBBCFC50C2CE66BBB /* ViewPagerDemoVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewPagerDemoVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/ViewPagerDemoVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		08EF491D97D8711DBC587514 /* HttpDemoVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HttpDemoVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/HttpDemoVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		146A45E6929890176988A9CA /* ViewPagerDemoXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewPagerDemoXml.swift; path = KhrysalisTemplate/swiftResources/layouts/ViewPagerDemoXml.swift; sourceTree = SOURCE_ROOT; };
+		17214662BE5E8D17BCCDE4B2 /* PreviewXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviewXml.swift; path = KhrysalisTemplate/swiftResources/layouts/PreviewXml.swift; sourceTree = SOURCE_ROOT; };
+		1937457F8CDA5124531EAAE6 /* ControlsDemoVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ControlsDemoVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/ControlsDemoVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		2097486FB4160BBC638C547F /* PreviewVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviewVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/PreviewVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		227249D0B1B482D95D4FDB33 /* ControlsDemoXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ControlsDemoXml.swift; path = KhrysalisTemplate/swiftResources/layouts/ControlsDemoXml.swift; sourceTree = SOURCE_ROOT; };
+		26DC4468B467F2E2CC702E86 /* MultipleDemoVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MultipleDemoVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/MultipleDemoVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		2B9F47459FF72142FB26D2A3 /* icBeachAccessBlack24dpDrawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = icBeachAccessBlack24dpDrawable.swift; path = KhrysalisTemplate/swiftResources/drawable/icBeachAccessBlack24dpDrawable.swift; sourceTree = SOURCE_ROOT; };
+		3171D844B322420250DD8589 /* Pods-KhrysalisTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhrysalisTemplate.debug.xcconfig"; path = "Target Support Files/Pods-KhrysalisTemplate/Pods-KhrysalisTemplate.debug.xcconfig"; sourceTree = "<group>"; };
+		34A44E839B40878B4BFB1C12 /* LoadImageDemoXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadImageDemoXml.swift; path = KhrysalisTemplate/swiftResources/layouts/LoadImageDemoXml.swift; sourceTree = SOURCE_ROOT; };
+		401147F2AC46300A91FEE9D5 /* APIInterface.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIInterface.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/api/APIInterface.shared.swift; sourceTree = SOURCE_ROOT; };
+		424741AD9E7E6B35685A7FF7 /* icLauncherForegroundDrawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = icLauncherForegroundDrawable.swift; path = KhrysalisTemplate/swiftResources/drawable/icLauncherForegroundDrawable.swift; sourceTree = SOURCE_ROOT; };
+		430245F98D401F1626FFFC91 /* MainXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainXml.swift; path = KhrysalisTemplate/swiftResources/layouts/MainXml.swift; sourceTree = SOURCE_ROOT; };
+		45EFE928048C0D11D9B3356C /* Pods-KhrysalisTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhrysalisTemplate.release.xcconfig"; path = "Target Support Files/Pods-KhrysalisTemplate/Pods-KhrysalisTemplate.release.xcconfig"; sourceTree = "<group>"; };
+		4AB14C3F82876634B9697FE1 /* DateButtonDemoVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateButtonDemoVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/DateButtonDemoVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		4F014D1FA5239F5365ADB65C /* API.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = API.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/api/API.shared.swift; sourceTree = SOURCE_ROOT; };
+		4FA541A39C08AE6ECDCBF720 /* PongDemoVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PongDemoVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/PongDemoVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		50BB46B4BC8B7CB3E396068C /* WebsocketDemoVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebsocketDemoVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/WebsocketDemoVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		51264B2C91DCC10FE6951857 /* MarginTestXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MarginTestXml.swift; path = KhrysalisTemplate/swiftResources/layouts/MarginTestXml.swift; sourceTree = SOURCE_ROOT; };
+		52C94AEBA9988E823A9E2DE3 /* PNGs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PNGs.swift; path = KhrysalisTemplate/swiftResources/drawable/PNGs.swift; sourceTree = SOURCE_ROOT; };
+		52F5468089EFD16E319DD931 /* Post.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Post.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/models/Post.shared.swift; sourceTree = SOURCE_ROOT; };
+		55C947508DD38EAEF90C8332 /* BleClientDemoXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BleClientDemoXml.swift; path = KhrysalisTemplate/swiftResources/layouts/BleClientDemoXml.swift; sourceTree = SOURCE_ROOT; };
+		55CB4DC7AEDEA3B21E312104 /* SliderDemoVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SliderDemoVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/SliderDemoVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		57354313A2A83D2CCF94A47E /* BleHostDemoVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BleHostDemoVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/BleHostDemoVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		5ED4770A244140DC007BE5E2 /* KhrysalisTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KhrysalisTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ED4770D244140DC007BE5E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5ED47716244140DD007BE5E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5ED47719244140DD007BE5E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5ED4771B244140DD007BE5E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5ED47720244140DE007BE5E2 /* KhrysalisTemplateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KhrysalisTemplateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ED47724244140DE007BE5E2 /* KhrysalisTemplateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhrysalisTemplateTests.swift; sourceTree = "<group>"; };
+		5ED47726244140DE007BE5E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5ED4772B244140DE007BE5E2 /* KhrysalisTemplateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KhrysalisTemplateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ED4772F244140DE007BE5E2 /* KhrysalisTemplateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhrysalisTemplateUITests.swift; sourceTree = "<group>"; };
+		5ED47731244140DE007BE5E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FD64BD9A873EDBA6E096777 /* HttpDemoXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HttpDemoXml.swift; path = KhrysalisTemplate/swiftResources/layouts/HttpDemoXml.swift; sourceTree = SOURCE_ROOT; };
+		678C4FD1B6CAA2B6D2B42FB3 /* buttonAccentDrawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = buttonAccentDrawable.swift; path = KhrysalisTemplate/swiftResources/drawable/buttonAccentDrawable.swift; sourceTree = SOURCE_ROOT; };
+		6AE5464E885F4080B7ADA8C4 /* LocationDemoXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationDemoXml.swift; path = KhrysalisTemplate/swiftResources/layouts/LocationDemoXml.swift; sourceTree = SOURCE_ROOT; };
+		6D7A4A4090EBEE8CE459994F /* MainVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/MainVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		729C4F1F80EE1FC954B1E9A4 /* BleScanDemoXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BleScanDemoXml.swift; path = KhrysalisTemplate/swiftResources/layouts/BleScanDemoXml.swift; sourceTree = SOURCE_ROOT; };
+		73BF474989B1582D51125211 /* SelectDemoVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectDemoVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/SelectDemoVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		7574413FAD731F95F28DD92F /* DrawableDemoXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DrawableDemoXml.swift; path = KhrysalisTemplate/swiftResources/layouts/DrawableDemoXml.swift; sourceTree = SOURCE_ROOT; };
+		7D5E4EA0B9B1F9FA76EA95CB /* LocationDemoVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationDemoVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/LocationDemoVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		7DDD45CFA471F07F9F4C5C39 /* BleClientDemoVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BleClientDemoVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/BleClientDemoVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		7E454DFEA629A40BE1E5B9E7 /* SegmentedControlDemoXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SegmentedControlDemoXml.swift; path = KhrysalisTemplate/swiftResources/layouts/SegmentedControlDemoXml.swift; sourceTree = SOURCE_ROOT; };
+		802344A48858192D3A30E663 /* SelectDemoXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectDemoXml.swift; path = KhrysalisTemplate/swiftResources/layouts/SelectDemoXml.swift; sourceTree = SOURCE_ROOT; };
+		80634478BB5D1B1143E49383 /* DateRangeDemoXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateRangeDemoXml.swift; path = KhrysalisTemplate/swiftResources/layouts/DateRangeDemoXml.swift; sourceTree = SOURCE_ROOT; };
+		80B244DA9B0F6DA25C38341A /* ComponentTestXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ComponentTestXml.swift; path = KhrysalisTemplate/swiftResources/layouts/ComponentTestXml.swift; sourceTree = SOURCE_ROOT; };
+		81854091939048837B84B370 /* buttonPrimaryDrawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = buttonPrimaryDrawable.swift; path = KhrysalisTemplate/swiftResources/drawable/buttonPrimaryDrawable.swift; sourceTree = SOURCE_ROOT; };
+		84F8413FAB1A3566554B9495 /* APIMock.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIMock.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/api/APIMock.shared.swift; sourceTree = SOURCE_ROOT; };
+		8BDD44248E6D7903E3C0DBD7 /* strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = strings.swift; path = KhrysalisTemplate/swiftResources/strings.swift; sourceTree = SOURCE_ROOT; };
+		8C0244E5BCE2FDDB96B391B9 /* SliderDemoXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SliderDemoXml.swift; path = KhrysalisTemplate/swiftResources/layouts/SliderDemoXml.swift; sourceTree = SOURCE_ROOT; };
+		8C21425BB1D4872F66136F00 /* icExposureBlack24dpDrawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = icExposureBlack24dpDrawable.swift; path = KhrysalisTemplate/swiftResources/drawable/icExposureBlack24dpDrawable.swift; sourceTree = SOURCE_ROOT; };
+		8F4240BDA2AB6E7D8508A094 /* DateButtonDemoXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateButtonDemoXml.swift; path = KhrysalisTemplate/swiftResources/layouts/DateButtonDemoXml.swift; sourceTree = SOURCE_ROOT; };
+		908E475C96DF68F3CE071284 /* DrawableDemoVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DrawableDemoVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/DrawableDemoVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		95D44F0882BCC0D910D91663 /* MapDemoVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapDemoVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/MapDemoVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		9CB24742A32B6CAB5178F2F1 /* LoadImageDemoVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadImageDemoVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/LoadImageDemoVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		9DEB4E9792B9C51A801BF893 /* colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = colors.swift; path = KhrysalisTemplate/swiftResources/colors.swift; sourceTree = SOURCE_ROOT; };
+		A2DF4D8A868AED56D6EE0E96 /* FloatingHexagonsDemoXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FloatingHexagonsDemoXml.swift; path = KhrysalisTemplate/swiftResources/layouts/FloatingHexagonsDemoXml.swift; sourceTree = SOURCE_ROOT; };
+		A9764403A466FE0E3B432421 /* icLauncherBackgroundDrawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = icLauncherBackgroundDrawable.swift; path = KhrysalisTemplate/swiftResources/drawable/icLauncherBackgroundDrawable.swift; sourceTree = SOURCE_ROOT; };
+		AD0540038E7E5EB7D71C2719 /* LoginDemoVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginDemoVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/LoginDemoVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		AF22473AB833CBF3860047FD /* ComponentBleDeviceXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ComponentBleDeviceXml.swift; path = KhrysalisTemplate/swiftResources/layouts/ComponentBleDeviceXml.swift; sourceTree = SOURCE_ROOT; };
+		B7DC4042B20649B51188AFA8 /* ExternalTestVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExternalTestVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/ExternalTestVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		B844412388E6393977B08648 /* MapDemoXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapDemoXml.swift; path = KhrysalisTemplate/swiftResources/layouts/MapDemoXml.swift; sourceTree = SOURCE_ROOT; };
+		BC2D49D5B8D19A135B41EFAC /* icArrowBackWhite24dpDrawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = icArrowBackWhite24dpDrawable.swift; path = KhrysalisTemplate/swiftResources/drawable/icArrowBackWhite24dpDrawable.swift; sourceTree = SOURCE_ROOT; };
+		BE9A4246AB03DFC60F5E488D /* ExampleContentVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExampleContentVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/ExampleContentVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		C351459C9C554855CB483A04 /* BleHostDemoXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BleHostDemoXml.swift; path = KhrysalisTemplate/swiftResources/layouts/BleHostDemoXml.swift; sourceTree = SOURCE_ROOT; };
+		C3B64C368521E293BFB1DE30 /* PongDemoXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PongDemoXml.swift; path = KhrysalisTemplate/swiftResources/layouts/PongDemoXml.swift; sourceTree = SOURCE_ROOT; };
+		C4044C33ACD74AA0BEA4C73F /* SegmentedControlDemoVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SegmentedControlDemoVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/SegmentedControlDemoVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		C4AD47ADB3ED7A1B10A0B8F6 /* ComponentTextXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ComponentTextXml.swift; path = KhrysalisTemplate/swiftResources/layouts/ComponentTextXml.swift; sourceTree = SOURCE_ROOT; };
+		C4DF4163A9669B8C7C865840 /* WebsocketDemoXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebsocketDemoXml.swift; path = KhrysalisTemplate/swiftResources/layouts/WebsocketDemoXml.swift; sourceTree = SOURCE_ROOT; };
+		CAFC44EC8B808C7F55318A0D /* buttonDisabledDrawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = buttonDisabledDrawable.swift; path = KhrysalisTemplate/swiftResources/drawable/buttonDisabledDrawable.swift; sourceTree = SOURCE_ROOT; };
+		CF9544EC84E3A377F0F3BA31 /* icAndroidBlack24dpDrawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = icAndroidBlack24dpDrawable.swift; path = KhrysalisTemplate/swiftResources/drawable/icAndroidBlack24dpDrawable.swift; sourceTree = SOURCE_ROOT; };
+		D2B5460385502171893AA862 /* LoginDemoXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginDemoXml.swift; path = KhrysalisTemplate/swiftResources/layouts/LoginDemoXml.swift; sourceTree = SOURCE_ROOT; };
+		D4EB4342B556D83EC580AAA1 /* MultipleDemoXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MultipleDemoXml.swift; path = KhrysalisTemplate/swiftResources/layouts/MultipleDemoXml.swift; sourceTree = SOURCE_ROOT; };
+		D5584B3F9335EA09DB127C33 /* APIOnline.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIOnline.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/api/APIOnline.shared.swift; sourceTree = SOURCE_ROOT; };
+		D8D14DCC91F49A6B223DC077 /* ResourcesDrawables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResourcesDrawables.swift; path = KhrysalisTemplate/swiftResources/drawable/ResourcesDrawables.swift; sourceTree = SOURCE_ROOT; };
+		D9F1B812A01485C718BE2210 /* libPods-KhrysalisTemplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KhrysalisTemplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA3B4D84B11309891E426359 /* MarginTestVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MarginTestVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/MarginTestVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		DA8045FD945A870A714B2004 /* ExternalTestXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExternalTestXml.swift; path = KhrysalisTemplate/swiftResources/layouts/ExternalTestXml.swift; sourceTree = SOURCE_ROOT; };
+		ECE04A11ADAFFC26BBAE73ED /* FloatingHexagonsDemoVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FloatingHexagonsDemoVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/FloatingHexagonsDemoVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		F16946CBB7B5027958AB6B91 /* BleScanDemoVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BleScanDemoVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/BleScanDemoVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		F19644B5977B03B1508432EF /* ExampleContentXml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExampleContentXml.swift; path = KhrysalisTemplate/swiftResources/layouts/ExampleContentXml.swift; sourceTree = SOURCE_ROOT; };
+		F1C744388D1106393F33C51C /* borderDrawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = borderDrawable.swift; path = KhrysalisTemplate/swiftResources/drawable/borderDrawable.swift; sourceTree = SOURCE_ROOT; };
+		F1D34ACDB7C127F20D4D4541 /* DateRangeDemoVG.shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateRangeDemoVG.shared.swift; path = KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg/DateRangeDemoVG.shared.swift; sourceTree = SOURCE_ROOT; };
+		F27D4BB381B43D561026E4E7 /* icSendBlack24dpDrawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = icSendBlack24dpDrawable.swift; path = KhrysalisTemplate/swiftResources/drawable/icSendBlack24dpDrawable.swift; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5ED47707244140DC007BE5E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A8BC3954AA803CC0AC525C1 /* libPods-KhrysalisTemplate.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5ED4771D244140DE007BE5E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5ED47728244140DE007BE5E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09DF4F73B2CCB9C1EB075BD4 /* vg */ = {
+			isa = PBXGroup;
+			children = (
+				1937457F8CDA5124531EAAE6 /* ControlsDemoVG.shared.swift */,
+				F1D34ACDB7C127F20D4D4541 /* DateRangeDemoVG.shared.swift */,
+				ECE04A11ADAFFC26BBAE73ED /* FloatingHexagonsDemoVG.shared.swift */,
+				7D5E4EA0B9B1F9FA76EA95CB /* LocationDemoVG.shared.swift */,
+				C4044C33ACD74AA0BEA4C73F /* SegmentedControlDemoVG.shared.swift */,
+				6D7A4A4090EBEE8CE459994F /* MainVG.shared.swift */,
+				9CB24742A32B6CAB5178F2F1 /* LoadImageDemoVG.shared.swift */,
+				B7DC4042B20649B51188AFA8 /* ExternalTestVG.shared.swift */,
+				908E475C96DF68F3CE071284 /* DrawableDemoVG.shared.swift */,
+				BE9A4246AB03DFC60F5E488D /* ExampleContentVG.shared.swift */,
+				55CB4DC7AEDEA3B21E312104 /* SliderDemoVG.shared.swift */,
+				DA3B4D84B11309891E426359 /* MarginTestVG.shared.swift */,
+				26DC4468B467F2E2CC702E86 /* MultipleDemoVG.shared.swift */,
+				02B4456BBBCFC50C2CE66BBB /* ViewPagerDemoVG.shared.swift */,
+				50BB46B4BC8B7CB3E396068C /* WebsocketDemoVG.shared.swift */,
+				57354313A2A83D2CCF94A47E /* BleHostDemoVG.shared.swift */,
+				7DDD45CFA471F07F9F4C5C39 /* BleClientDemoVG.shared.swift */,
+				4FA541A39C08AE6ECDCBF720 /* PongDemoVG.shared.swift */,
+				95D44F0882BCC0D910D91663 /* MapDemoVG.shared.swift */,
+				08EF491D97D8711DBC587514 /* HttpDemoVG.shared.swift */,
+				73BF474989B1582D51125211 /* SelectDemoVG.shared.swift */,
+				F16946CBB7B5027958AB6B91 /* BleScanDemoVG.shared.swift */,
+				AD0540038E7E5EB7D71C2719 /* LoginDemoVG.shared.swift */,
+				2097486FB4160BBC638C547F /* PreviewVG.shared.swift */,
+				4AB14C3F82876634B9697FE1 /* DateButtonDemoVG.shared.swift */,
+			);
+			name = vg;
+			path = "/Users/josephivie/StudioProjects/khrysalis-template/ios/KhrysalisTemplate/com/lightningkite/khrysalistemplate/vg";
+			sourceTree = "<group>";
+		};
+		198B4D86BFA4653EA784380F /* layouts */ = {
+			isa = PBXGroup;
+			children = (
+				C4AD47ADB3ED7A1B10A0B8F6 /* ComponentTextXml.swift */,
+				C4DF4163A9669B8C7C865840 /* WebsocketDemoXml.swift */,
+				A2DF4D8A868AED56D6EE0E96 /* FloatingHexagonsDemoXml.swift */,
+				D4EB4342B556D83EC580AAA1 /* MultipleDemoXml.swift */,
+				8F4240BDA2AB6E7D8508A094 /* DateButtonDemoXml.swift */,
+				729C4F1F80EE1FC954B1E9A4 /* BleScanDemoXml.swift */,
+				6AE5464E885F4080B7ADA8C4 /* LocationDemoXml.swift */,
+				5FD64BD9A873EDBA6E096777 /* HttpDemoXml.swift */,
+				C3B64C368521E293BFB1DE30 /* PongDemoXml.swift */,
+				7574413FAD731F95F28DD92F /* DrawableDemoXml.swift */,
+				146A45E6929890176988A9CA /* ViewPagerDemoXml.swift */,
+				17214662BE5E8D17BCCDE4B2 /* PreviewXml.swift */,
+				8C0244E5BCE2FDDB96B391B9 /* SliderDemoXml.swift */,
+				80B244DA9B0F6DA25C38341A /* ComponentTestXml.swift */,
+				227249D0B1B482D95D4FDB33 /* ControlsDemoXml.swift */,
+				51264B2C91DCC10FE6951857 /* MarginTestXml.swift */,
+				D2B5460385502171893AA862 /* LoginDemoXml.swift */,
+				34A44E839B40878B4BFB1C12 /* LoadImageDemoXml.swift */,
+				F19644B5977B03B1508432EF /* ExampleContentXml.swift */,
+				802344A48858192D3A30E663 /* SelectDemoXml.swift */,
+				55C947508DD38EAEF90C8332 /* BleClientDemoXml.swift */,
+				AF22473AB833CBF3860047FD /* ComponentBleDeviceXml.swift */,
+				80634478BB5D1B1143E49383 /* DateRangeDemoXml.swift */,
+				DA8045FD945A870A714B2004 /* ExternalTestXml.swift */,
+				B844412388E6393977B08648 /* MapDemoXml.swift */,
+				C351459C9C554855CB483A04 /* BleHostDemoXml.swift */,
+				7E454DFEA629A40BE1E5B9E7 /* SegmentedControlDemoXml.swift */,
+				430245F98D401F1626FFFC91 /* MainXml.swift */,
+			);
+			name = layouts;
+			path = "/Users/josephivie/StudioProjects/khrysalis-template/ios/KhrysalisTemplate/swiftResources/layouts";
+			sourceTree = "<group>";
+		};
+		3CB3435197357CD90A196732 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				84F8413FAB1A3566554B9495 /* APIMock.shared.swift */,
+				4F014D1FA5239F5365ADB65C /* API.shared.swift */,
+				401147F2AC46300A91FEE9D5 /* APIInterface.shared.swift */,
+				D5584B3F9335EA09DB127C33 /* APIOnline.shared.swift */,
+			);
+			name = api;
+			path = "/Users/josephivie/StudioProjects/khrysalis-template/ios/KhrysalisTemplate/com/lightningkite/khrysalistemplate/api";
+			sourceTree = "<group>";
+		};
+		4AC44153BE4CEC32BA899987 /* com */ = {
+			isa = PBXGroup;
+			children = (
+				F7074403A6D6BCD2DFE38A6D /* lightningkite */,
+			);
+			name = com;
+			path = "/Users/josephivie/StudioProjects/khrysalis-template/ios/KhrysalisTemplate/com";
+			sourceTree = "<group>";
+		};
+		5BA64245992877C75BF77770 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				52F5468089EFD16E319DD931 /* Post.shared.swift */,
+			);
+			name = models;
+			path = "/Users/josephivie/StudioProjects/khrysalis-template/ios/KhrysalisTemplate/com/lightningkite/khrysalistemplate/models";
+			sourceTree = "<group>";
+		};
+		5ED47701244140DC007BE5E2 = {
+			isa = PBXGroup;
+			children = (
+				5ED4770C244140DC007BE5E2 /* KhrysalisTemplate */,
+				5ED47723244140DE007BE5E2 /* KhrysalisTemplateTests */,
+				5ED4772E244140DE007BE5E2 /* KhrysalisTemplateUITests */,
+				5ED4770B244140DC007BE5E2 /* Products */,
+				88C555BEC9627D2257E4F098 /* Pods */,
+				6BF50CD967355F66A1725352 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5ED4770B244140DC007BE5E2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5ED4770A244140DC007BE5E2 /* KhrysalisTemplate.app */,
+				5ED47720244140DE007BE5E2 /* KhrysalisTemplateTests.xctest */,
+				5ED4772B244140DE007BE5E2 /* KhrysalisTemplateUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5ED4770C244140DC007BE5E2 /* KhrysalisTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				5ED4770D244140DC007BE5E2 /* AppDelegate.swift */,
+				5ED47716244140DD007BE5E2 /* Assets.xcassets */,
+				5ED47718244140DD007BE5E2 /* LaunchScreen.storyboard */,
+				5ED4771B244140DD007BE5E2 /* Info.plist */,
+				E82A432E94EDC500748B5311 /* swiftResources */,
+				4AC44153BE4CEC32BA899987 /* com */,
+			);
+			path = KhrysalisTemplate;
+			sourceTree = "<group>";
+		};
+		5ED47723244140DE007BE5E2 /* KhrysalisTemplateTests */ = {
+			isa = PBXGroup;
+			children = (
+				5ED47724244140DE007BE5E2 /* KhrysalisTemplateTests.swift */,
+				5ED47726244140DE007BE5E2 /* Info.plist */,
+			);
+			path = KhrysalisTemplateTests;
+			sourceTree = "<group>";
+		};
+		5ED4772E244140DE007BE5E2 /* KhrysalisTemplateUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5ED4772F244140DE007BE5E2 /* KhrysalisTemplateUITests.swift */,
+				5ED47731244140DE007BE5E2 /* Info.plist */,
+			);
+			path = KhrysalisTemplateUITests;
+			sourceTree = "<group>";
+		};
+		6BF50CD967355F66A1725352 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9F1B812A01485C718BE2210 /* libPods-KhrysalisTemplate.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88C555BEC9627D2257E4F098 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3171D844B322420250DD8589 /* Pods-KhrysalisTemplate.debug.xcconfig */,
+				45EFE928048C0D11D9B3356C /* Pods-KhrysalisTemplate.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B3324EA694709BC12B2D1D6B /* drawable */ = {
+			isa = PBXGroup;
+			children = (
+				F27D4BB381B43D561026E4E7 /* icSendBlack24dpDrawable.swift */,
+				678C4FD1B6CAA2B6D2B42FB3 /* buttonAccentDrawable.swift */,
+				8C21425BB1D4872F66136F00 /* icExposureBlack24dpDrawable.swift */,
+				81854091939048837B84B370 /* buttonPrimaryDrawable.swift */,
+				BC2D49D5B8D19A135B41EFAC /* icArrowBackWhite24dpDrawable.swift */,
+				F1C744388D1106393F33C51C /* borderDrawable.swift */,
+				CF9544EC84E3A377F0F3BA31 /* icAndroidBlack24dpDrawable.swift */,
+				CAFC44EC8B808C7F55318A0D /* buttonDisabledDrawable.swift */,
+				424741AD9E7E6B35685A7FF7 /* icLauncherForegroundDrawable.swift */,
+				A9764403A466FE0E3B432421 /* icLauncherBackgroundDrawable.swift */,
+				D8D14DCC91F49A6B223DC077 /* ResourcesDrawables.swift */,
+				2B9F47459FF72142FB26D2A3 /* icBeachAccessBlack24dpDrawable.swift */,
+				52C94AEBA9988E823A9E2DE3 /* PNGs.swift */,
+			);
+			name = drawable;
+			path = "/Users/josephivie/StudioProjects/khrysalis-template/ios/KhrysalisTemplate/swiftResources/drawable";
+			sourceTree = "<group>";
+		};
+		C8B84D1785C00EF1407256BE /* khrysalistemplate */ = {
+			isa = PBXGroup;
+			children = (
+				09DF4F73B2CCB9C1EB075BD4 /* vg */,
+				5BA64245992877C75BF77770 /* models */,
+				3CB3435197357CD90A196732 /* api */,
+			);
+			name = khrysalistemplate;
+			path = "/Users/josephivie/StudioProjects/khrysalis-template/ios/KhrysalisTemplate/com/lightningkite/khrysalistemplate";
+			sourceTree = "<group>";
+		};
+		E82A432E94EDC500748B5311 /* swiftResources */ = {
+			isa = PBXGroup;
+			children = (
+				8BDD44248E6D7903E3C0DBD7 /* strings.swift */,
+				B3324EA694709BC12B2D1D6B /* drawable */,
+				198B4D86BFA4653EA784380F /* layouts */,
+				9DEB4E9792B9C51A801BF893 /* colors.swift */,
+			);
+			name = swiftResources;
+			path = "/Users/josephivie/StudioProjects/khrysalis-template/ios/KhrysalisTemplate/swiftResources";
+			sourceTree = "<group>";
+		};
+		F7074403A6D6BCD2DFE38A6D /* lightningkite */ = {
+			isa = PBXGroup;
+			children = (
+				C8B84D1785C00EF1407256BE /* khrysalistemplate */,
+			);
+			name = lightningkite;
+			path = "/Users/josephivie/StudioProjects/khrysalis-template/ios/KhrysalisTemplate/com/lightningkite";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5ED47709244140DC007BE5E2 /* KhrysalisTemplate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5ED47734244140DE007BE5E2 /* Build configuration list for PBXNativeTarget "KhrysalisTemplate" */;
+			buildPhases = (
+				AD69EBC2EE265F6271FAA369 /* [CP] Check Pods Manifest.lock */,
+				5ED47706244140DC007BE5E2 /* Sources */,
+				5ED47707244140DC007BE5E2 /* Frameworks */,
+				5ED47708244140DC007BE5E2 /* Resources */,
+				53DCE6321853276606422E82 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KhrysalisTemplate;
+			productName = KhrysalisTemplate;
+			productReference = 5ED4770A244140DC007BE5E2 /* KhrysalisTemplate.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5ED4771F244140DE007BE5E2 /* KhrysalisTemplateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5ED47737244140DE007BE5E2 /* Build configuration list for PBXNativeTarget "KhrysalisTemplateTests" */;
+			buildPhases = (
+				5ED4771C244140DE007BE5E2 /* Sources */,
+				5ED4771D244140DE007BE5E2 /* Frameworks */,
+				5ED4771E244140DE007BE5E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5ED47722244140DE007BE5E2 /* PBXTargetDependency */,
+			);
+			name = KhrysalisTemplateTests;
+			productName = KhrysalisTemplateTests;
+			productReference = 5ED47720244140DE007BE5E2 /* KhrysalisTemplateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5ED4772A244140DE007BE5E2 /* KhrysalisTemplateUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5ED4773A244140DE007BE5E2 /* Build configuration list for PBXNativeTarget "KhrysalisTemplateUITests" */;
+			buildPhases = (
+				5ED47727244140DE007BE5E2 /* Sources */,
+				5ED47728244140DE007BE5E2 /* Frameworks */,
+				5ED47729244140DE007BE5E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5ED4772D244140DE007BE5E2 /* PBXTargetDependency */,
+			);
+			name = KhrysalisTemplateUITests;
+			productName = KhrysalisTemplateUITests;
+			productReference = 5ED4772B244140DE007BE5E2 /* KhrysalisTemplateUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5ED47702244140DC007BE5E2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Lightning Kite";
+				TargetAttributes = {
+					5ED47709244140DC007BE5E2 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					5ED4771F244140DE007BE5E2 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 5ED47709244140DC007BE5E2;
+					};
+					5ED4772A244140DE007BE5E2 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 5ED47709244140DC007BE5E2;
+					};
+				};
+			};
+			buildConfigurationList = 5ED47705244140DC007BE5E2 /* Build configuration list for PBXProject "KhrysalisTemplate" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5ED47701244140DC007BE5E2;
+			productRefGroup = 5ED4770B244140DC007BE5E2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5ED47709244140DC007BE5E2 /* KhrysalisTemplate */,
+				5ED4771F244140DE007BE5E2 /* KhrysalisTemplateTests */,
+				5ED4772A244140DE007BE5E2 /* KhrysalisTemplateUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5ED47708244140DC007BE5E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ED4771A244140DD007BE5E2 /* LaunchScreen.storyboard in Resources */,
+				5ED47717244140DD007BE5E2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5ED4771E244140DE007BE5E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5ED47729244140DE007BE5E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		53DCE6321853276606422E82 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KhrysalisTemplate/Pods-KhrysalisTemplate-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KhrysalisTemplate/Pods-KhrysalisTemplate-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KhrysalisTemplate/Pods-KhrysalisTemplate-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD69EBC2EE265F6271FAA369 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KhrysalisTemplate-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5ED47706244140DC007BE5E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ED4770E244140DC007BE5E2 /* AppDelegate.swift in Sources */,
+				8E7344CFA979E41B5D63CD64 /* strings.swift in Sources */,
+				25294B80A16FC5CC430B2FEC /* icSendBlack24dpDrawable.swift in Sources */,
+				3BFF4BE0864C18FFBDEA585A /* buttonAccentDrawable.swift in Sources */,
+				B32B4D098928BF276F25F60A /* icExposureBlack24dpDrawable.swift in Sources */,
+				B5374F6D918B6667B98F3519 /* buttonPrimaryDrawable.swift in Sources */,
+				5C164BECA628F01B69854F00 /* icArrowBackWhite24dpDrawable.swift in Sources */,
+				385F4AFB8AEB32B2E0BF071A /* borderDrawable.swift in Sources */,
+				7B494DD98F4D1C69A2854BA9 /* icAndroidBlack24dpDrawable.swift in Sources */,
+				2BE04C53BB0889CA09104CA5 /* buttonDisabledDrawable.swift in Sources */,
+				783142B9BE39AB0E2267EA0E /* icLauncherForegroundDrawable.swift in Sources */,
+				69A94361BB94DA8EEF5CA765 /* icLauncherBackgroundDrawable.swift in Sources */,
+				287246F2AFAF72CD38ADAF35 /* ResourcesDrawables.swift in Sources */,
+				A5E84106872EAFCB8A26189C /* icBeachAccessBlack24dpDrawable.swift in Sources */,
+				D5E841E8821C4D41ED8A8D27 /* PNGs.swift in Sources */,
+				9F314BBBA34B9653B853CA23 /* ComponentTextXml.swift in Sources */,
+				FE1F40728E277EBB0EB5FF9A /* WebsocketDemoXml.swift in Sources */,
+				F4F544BE9236E7B4D2D9765F /* FloatingHexagonsDemoXml.swift in Sources */,
+				5D034D1AB18DF27ED5C6269F /* MultipleDemoXml.swift in Sources */,
+				98394780962242F808FCEB1F /* DateButtonDemoXml.swift in Sources */,
+				E4734BE696AE532A3A89BCCB /* BleScanDemoXml.swift in Sources */,
+				3B2643699226DC3C0A61A048 /* LocationDemoXml.swift in Sources */,
+				F8D94691B43006DAE702E142 /* HttpDemoXml.swift in Sources */,
+				FE2648D49192D91E8F6C3B9F /* PongDemoXml.swift in Sources */,
+				8BB5475C852A913B8CC16D07 /* DrawableDemoXml.swift in Sources */,
+				29B14DC4A09F04AF0D1DBD1E /* ViewPagerDemoXml.swift in Sources */,
+				6F174EC5B22BDFA4E92BF274 /* PreviewXml.swift in Sources */,
+				737F45EFB908FB020D07E89F /* SliderDemoXml.swift in Sources */,
+				18DF4FFEA96D7766F8AF2871 /* ComponentTestXml.swift in Sources */,
+				6E0C465D85520778E4C9C31C /* ControlsDemoXml.swift in Sources */,
+				888E42F1A5D7608F32FE441B /* MarginTestXml.swift in Sources */,
+				174145E89CEE038C7A8F9B0A /* LoginDemoXml.swift in Sources */,
+				71AE42F388BB9864820AB72E /* LoadImageDemoXml.swift in Sources */,
+				AF214239BF16B1B4C153D978 /* ExampleContentXml.swift in Sources */,
+				F0A14C3EA2F07465614B5C0F /* SelectDemoXml.swift in Sources */,
+				28924D518C509A9554F18498 /* BleClientDemoXml.swift in Sources */,
+				EC9D4620B658C290AC347C62 /* ComponentBleDeviceXml.swift in Sources */,
+				599C4995939C58285A37FBDD /* DateRangeDemoXml.swift in Sources */,
+				126247B088CED852233FF4AE /* ExternalTestXml.swift in Sources */,
+				8D2E4EC49784DF9626350222 /* MapDemoXml.swift in Sources */,
+				58A445A1B493688EF04491E6 /* BleHostDemoXml.swift in Sources */,
+				EF2A424B92B1D97D008C371B /* SegmentedControlDemoXml.swift in Sources */,
+				9D9F4D418495C1F330C132E8 /* MainXml.swift in Sources */,
+				802441C7A41A52C30CA487F1 /* colors.swift in Sources */,
+				254F4AEA831ACB57C7F8A632 /* ControlsDemoVG.shared.swift in Sources */,
+				0DCE4D369B118F0755B4F039 /* DateRangeDemoVG.shared.swift in Sources */,
+				26AA485CAEBB9E5A2082F06B /* FloatingHexagonsDemoVG.shared.swift in Sources */,
+				77884F24B03F8564E6798D87 /* LocationDemoVG.shared.swift in Sources */,
+				BB7345F4A04C813619057963 /* SegmentedControlDemoVG.shared.swift in Sources */,
+				05894591ADBDD7FF110E2C12 /* MainVG.shared.swift in Sources */,
+				4B0C47D4B7043E96D9711E4C /* LoadImageDemoVG.shared.swift in Sources */,
+				917E4A99B9950A971742FB24 /* ExternalTestVG.shared.swift in Sources */,
+				8E0542AC9E8287C615C047B8 /* DrawableDemoVG.shared.swift in Sources */,
+				33E74769ACE175E0BCABDFCB /* ExampleContentVG.shared.swift in Sources */,
+				4F7844B1A248F60507D6724A /* SliderDemoVG.shared.swift in Sources */,
+				62B54420A42513B9F80E6DD1 /* MarginTestVG.shared.swift in Sources */,
+				4E55408F81F4151C0C7CF85A /* MultipleDemoVG.shared.swift in Sources */,
+				D0A443159290E143861747C2 /* ViewPagerDemoVG.shared.swift in Sources */,
+				07194D0184EE77145AE88D8E /* WebsocketDemoVG.shared.swift in Sources */,
+				D2604DBDABD0334A313BD16C /* BleHostDemoVG.shared.swift in Sources */,
+				278240E68E92F04F04664D92 /* BleClientDemoVG.shared.swift in Sources */,
+				EBF44AF3B558F75F52F7D13B /* PongDemoVG.shared.swift in Sources */,
+				39414D87BB1467F57680AF7D /* MapDemoVG.shared.swift in Sources */,
+				D8914D17912018B20AD64B6A /* HttpDemoVG.shared.swift in Sources */,
+				5B6B4C64B94D716FDC1029B5 /* SelectDemoVG.shared.swift in Sources */,
+				6DD942DFBA1EDDF9BA46906A /* BleScanDemoVG.shared.swift in Sources */,
+				563742F48070104A8F43F373 /* LoginDemoVG.shared.swift in Sources */,
+				D1824DD5BBBEE73BC17681D4 /* PreviewVG.shared.swift in Sources */,
+				ABFD4F179CF75D4A4D255D13 /* DateButtonDemoVG.shared.swift in Sources */,
+				3F7B4C9288C32FB998C2BEF1 /* Post.shared.swift in Sources */,
+				628E4644B956A63A400EAC3F /* APIMock.shared.swift in Sources */,
+				8AFD48029EEC0896D6AF82F1 /* API.shared.swift in Sources */,
+				85574274A2BAFBA3D5CFCC3C /* APIInterface.shared.swift in Sources */,
+				BA3B4975A9D0592C51B4DF4A /* APIOnline.shared.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5ED4771C244140DE007BE5E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ED47725244140DE007BE5E2 /* KhrysalisTemplateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5ED47727244140DE007BE5E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ED47730244140DE007BE5E2 /* KhrysalisTemplateUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5ED47722244140DE007BE5E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5ED47709244140DC007BE5E2 /* KhrysalisTemplate */;
+			targetProxy = 5ED47721244140DE007BE5E2 /* PBXContainerItemProxy */;
+		};
+		5ED4772D244140DE007BE5E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5ED47709244140DC007BE5E2 /* KhrysalisTemplate */;
+			targetProxy = 5ED4772C244140DE007BE5E2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5ED47718244140DD007BE5E2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5ED47719244140DD007BE5E2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5ED47732244140DE007BE5E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5ED47733244140DE007BE5E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5ED47735244140DE007BE5E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3171D844B322420250DD8589 /* Pods-KhrysalisTemplate.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KhrysalisTemplate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "khrysalis-template.KhrysalisTemplate";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5ED47736244140DE007BE5E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45EFE928048C0D11D9B3356C /* Pods-KhrysalisTemplate.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KhrysalisTemplate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "khrysalis-template.KhrysalisTemplate";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5ED47738244140DE007BE5E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KhrysalisTemplateTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "khrysalis-template.KhrysalisTemplateTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KhrysalisTemplate.app/KhrysalisTemplate";
+			};
+			name = Debug;
+		};
+		5ED47739244140DE007BE5E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KhrysalisTemplateTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "khrysalis-template.KhrysalisTemplateTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KhrysalisTemplate.app/KhrysalisTemplate";
+			};
+			name = Release;
+		};
+		5ED4773B244140DE007BE5E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KhrysalisTemplateUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "khrysalis-template.KhrysalisTemplateUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KhrysalisTemplate;
+			};
+			name = Debug;
+		};
+		5ED4773C244140DE007BE5E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KhrysalisTemplateUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "khrysalis-template.KhrysalisTemplateUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KhrysalisTemplate;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5ED47705244140DC007BE5E2 /* Build configuration list for PBXProject "KhrysalisTemplate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5ED47732244140DE007BE5E2 /* Debug */,
+				5ED47733244140DE007BE5E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5ED47734244140DE007BE5E2 /* Build configuration list for PBXNativeTarget "KhrysalisTemplate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5ED47735244140DE007BE5E2 /* Debug */,
+				5ED47736244140DE007BE5E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5ED47737244140DE007BE5E2 /* Build configuration list for PBXNativeTarget "KhrysalisTemplateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5ED47738244140DE007BE5E2 /* Debug */,
+				5ED47739244140DE007BE5E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5ED4773A244140DE007BE5E2 /* Build configuration list for PBXNativeTarget "KhrysalisTemplateUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5ED4773B244140DE007BE5E2 /* Debug */,
+				5ED4773C244140DE007BE5E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5ED47702244140DC007BE5E2 /* Project object */;
+}
