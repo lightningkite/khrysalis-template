@@ -113,3 +113,7 @@ tasks.create("testDeepLinkIos", Exec::class.java) {
         exampleDeepLink
     )
 }
+
+tasks.create("wrapper"){
+
+}
