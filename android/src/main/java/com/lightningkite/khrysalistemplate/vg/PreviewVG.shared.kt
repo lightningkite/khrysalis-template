@@ -5,6 +5,9 @@ import com.lightningkite.khrysalis.escaping
 import com.lightningkite.khrysalis.observables.binding.bind
 import com.lightningkite.khrysalis.observables.StandardObservableProperty
 import com.lightningkite.khrysalis.observables.addAndRunWeak
+import com.lightningkite.khrysalis.observables.subscribeBy
+import com.lightningkite.khrysalis.rx.removed
+import com.lightningkite.khrysalis.rx.until
 import com.lightningkite.khrysalis.views.ViewDependency
 import com.lightningkite.khrysalis.views.ViewGenerator
 import com.lightningkite.khrysalistemplate.layouts.*
@@ -33,9 +36,9 @@ class PreviewVG : ViewGenerator() {
         val xml = PreviewXml()
         val view = xml.setup(dependency)
         xml.pager.bind(previews, previewIndex) { it -> it.make(dependency) }
-        previewIndex.addAndRunWeak(this, xml.viewName) { self, view, it ->
-            view.text = self.previews[it].name
-        }
+        previewIndex.subscribeBy { it ->
+            xml.viewName.text = this.previews[it].name
+        }.until(view.removed)
         return view
     }
 

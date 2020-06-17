@@ -14,7 +14,6 @@ import com.lightningkite.khrysalis.lifecycle.lifecycle
 import com.lightningkite.khrysalis.net.ConnectedWebSocket
 import com.lightningkite.khrysalis.net.HttpClient
 import com.lightningkite.khrysalis.net.WebSocketFrame
-import com.lightningkite.khrysalis.net.webSocket
 import com.lightningkite.khrysalis.views.*
 import com.lightningkite.khrysalis.observables.*
 import com.lightningkite.khrysalis.observables.binding.*

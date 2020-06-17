@@ -25,13 +25,13 @@ class SelectDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator(), Ent
         WebsocketDemoVG(),
         HttpDemoVG(),
         ExternalTestVG(),
-        BleScanDemoVG(stack),
+//        BleScanDemoVG(stack),
         PongDemoVG(),
         FloatingHexagonsDemoVG(),
         MarginTestsVG(),
         MultipleDemoVG(),
         DateButtonDemoVG(),
-        MapDemoVG(),
+//        MapDemoVG(),
         LocationDemoVG(),
         LoadImageDemoVG(),
         ControlsDemoVG(),
@@ -60,7 +60,7 @@ class SelectDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator(), Ent
                 val xml = ComponentTestXml()
                 val view = xml.setup(dependency)
                 xml.label.bindText(obs) { it -> it.title }
-                xml.button.onClick(captureWeak(this){ self -> self.selectVG(obs.value) })
+                xml.button.onClick { this.selectVG(obs.value) }
                 return@bind view
             }
         )

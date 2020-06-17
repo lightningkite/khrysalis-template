@@ -85,10 +85,11 @@ class PongDelegate : CustomViewDelegate() {
     init {
         this.paint.color = 0xFFFFFFFF.asColor()
         this.paint.textSize = 12f
-        animationFrame.addWeak(this){ self, time ->
-            self.frame(time)
-            self.postInvalidate()
-        }
+        //TODO: Until
+//        animationFrame.addWeak(this){ self, time ->
+//            self.frame(time)
+//            self.postInvalidate()
+//        }
     }
 
     override fun draw(canvas: Canvas, width: Float, height: Float, displayMetrics: DisplayMetrics) {

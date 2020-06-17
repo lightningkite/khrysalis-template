@@ -9,14 +9,16 @@ import com.lightningkite.khrysalis.observables.binding.bindString
 import com.lightningkite.khrysalis.observables.MutableObservableProperty
 import com.lightningkite.khrysalis.observables.ObservableStack
 import com.lightningkite.khrysalis.observables.StandardObservableProperty
+import com.lightningkite.khrysalis.unowned
 import com.lightningkite.khrysalis.views.ViewDependency
 import com.lightningkite.khrysalis.views.onClick
 import com.lightningkite.khrysalis.views.*
 import com.lightningkite.khrysalistemplate.R
 import com.lightningkite.khrysalistemplate.layouts.LoginDemoXml
 
-class LoginDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator() {
-    val stack: ObservableStack<ViewGenerator>? by weak(stack)
+class LoginDemoVG(
+    @unowned val stack: ObservableStack<ViewGenerator>
+) : ViewGenerator() {
     override val title: String get() = "Log In Demo"
 
     val form: Form = Form()

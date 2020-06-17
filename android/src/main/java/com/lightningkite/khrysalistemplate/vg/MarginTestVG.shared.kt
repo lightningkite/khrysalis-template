@@ -13,9 +13,9 @@ class MarginTestsVG : ViewGenerator() {
     override fun generate(dependency: ViewDependency): View {
         val xml = MarginTestXml()
         val view = xml.setup(dependency)
-        xml.scrollToTop.onClick( captureWeak(xml.scrollView){ scrollView ->
-            scrollView.smoothScrollTo(0,0)
-        })
+        xml.scrollToTop.onClick {
+            xml.scrollView.smoothScrollTo(0,0)
+        }
         return view
     }
 }

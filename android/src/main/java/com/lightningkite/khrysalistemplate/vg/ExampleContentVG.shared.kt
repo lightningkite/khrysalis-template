@@ -3,7 +3,6 @@ package com.lightningkite.khrysalistemplate.vg
 import android.view.View
 import com.lightningkite.khrysalis.observables.binding.*
 import com.lightningkite.khrysalis.observables.*
-import com.lightningkite.khrysalis.captureWeak
 import com.lightningkite.khrysalis.views.ViewDependency
 import com.lightningkite.khrysalis.views.onClick
 import com.lightningkite.khrysalis.views.ViewGenerator
@@ -22,11 +21,11 @@ class ExampleContentVG : ViewGenerator() {
     override fun generate(dependency: ViewDependency): View {
         val xml = ExampleContentXml()
         val view = xml.setup(dependency)
-        xml.exampleContentIncrement.onClick(captureWeak(this) { self -> self.increment() })
+        xml.exampleContentIncrement.onClick{ this.increment() }
         xml.exampleContentNumber.bindText(number) { it -> it.toString() }
         xml.chainedIncrement.onClick { this.chained.value.value = this.chained.value.value + 1 }
         xml.chainedNumber.bindString(chained.flatMap { it -> it }.map { it -> it.toString() } )
-        xml.scrollToTop.onClick(captureWeak(xml.scrollView){ it -> it.smoothScrollTo(0,0) })
+        xml.scrollToTop.onClick { xml.scrollView.smoothScrollTo(0,0) }
         return view
     }
 }

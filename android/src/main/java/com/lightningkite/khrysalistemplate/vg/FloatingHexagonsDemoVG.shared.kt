@@ -3,8 +3,6 @@ package com.lightningkite.khrysalistemplate.vg
 import android.graphics.*
 import android.util.DisplayMetrics
 import android.view.View
-import com.lightningkite.khrysalis.animationFrame
-import com.lightningkite.khrysalis.rx.addWeak
 import com.lightningkite.khrysalis.views.ViewDependency
 import com.lightningkite.khrysalis.views.asColor
 import com.lightningkite.khrysalis.views.CustomViewDelegate
@@ -61,10 +59,11 @@ class FloatingHexagonsDelegate : CustomViewDelegate() {
     init {
         this.backgroundPaint.color = 0xFFFFFFFF.asColor()
         this.backgroundPaint.textSize = 12f
-        animationFrame.addWeak(this) { self, time ->
-            self.frame(time)
-            self.postInvalidate()
-        }
+        //TODO: Until
+//        animationFrame.addWeak(this) { self, time ->
+//            self.frame(time)
+//            self.postInvalidate()
+//        }
     }
 
     override fun draw(canvas: Canvas, width: Float, height: Float, displayMetrics: DisplayMetrics) {
@@ -108,13 +107,13 @@ class FloatingHexagonsDelegate : CustomViewDelegate() {
         hexagons?.forEach { it -> it.draw(canvas) }
     }
 
-    fun moveTo(x: Float, time: Float) {
+    fun moveToPos(x: Float, time: Float) {
         moveTo = x
         animationTime = time
     }
 
     override fun onTouchDown(id: Int, x: Float, y: Float, width: Float, height: Float): Boolean {
-        moveTo(x, 10f)
+        moveToPos(x, 10f)
         return true
     }
 

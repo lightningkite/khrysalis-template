@@ -1,5 +1,5 @@
 //
-// ExampleContentXml.swift
+// ExampleContentXml.kt
 // Created by Khrysalis XML Android
 //
 package com.lightningkite.khrysalistemplate.layouts
