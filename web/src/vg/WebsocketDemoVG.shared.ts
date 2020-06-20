@@ -37,8 +37,8 @@
 // FQImport: com.lightningkite.khrysalistemplate.vg.WebsocketDemoVG.generate.view TS view
 // FQImport: com.lightningkite.khrysalis.net.WebSocketFrame.text TS text
 import { map as rxMap, publishReplay as rxPublishReplay, refCount as rxRefCount, switchMap as rxSwitchMap, take as rxTake } from 'rxjs/operators'
-import { WebSocketFrame } from 'khrysalis/dist/net/WebSocketFrame.shared'
 import { androidWidgetEditTextBindString } from 'khrysalis/dist/observables/binding/EditText.binding.actual'
+import { WebSocketFrame } from 'khrysalis/dist/net/WebSocketFrame.actual'
 import { comLightningkiteKhrysalisObservablesObservablePropertyMap } from 'khrysalis/dist/observables/TransformedObservableProperty.shared'
 import { Observable } from 'rxjs'
 import { getAndroidViewViewRemoved, ioReactivexDisposablesDisposableUntil } from 'khrysalis/dist/rx/DisposeCondition.actual'

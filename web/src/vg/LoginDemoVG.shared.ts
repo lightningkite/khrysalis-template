@@ -74,7 +74,7 @@ export class LoginDemoVG extends ViewGenerator {
         this.form = new Form();
         this.username = this.form.fieldRes(R._string.username, "", (field) => comLightningkiteKhrysalisViewsFormFieldRequired(field));
         this.password = this.form.fieldRes(R._string.password, "", (field) => comLightningkiteKhrysalisViewsFormFieldRequired(field));
-        this.verifyPassword = this.form.fieldRes(R._string.verify_password, "", (field) => comLightningkiteKhrysalisViewsFormFieldRequired(field) ?? comLightningkiteKhrysalisViewsFormFieldMatches<string>(field, this.password));
+        this.verifyPassword = this.form.fieldRes(R._string.verify_password, "", (field) => comLightningkiteKhrysalisViewsFormFieldRequired(field) ?? comLightningkiteKhrysalisViewsFormFieldMatches(field, this.password));
         this.agree = this.form.fieldRes(R._string.password, false, (field) => comLightningkiteKhrysalisViewsViewStringUnless(new ViewStringResource(R._string.mustAgree), field.value));
         this.loading = new StandardObservableProperty(false, undefined);
     }
