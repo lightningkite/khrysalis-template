@@ -107,9 +107,9 @@ export class LoginDemoVG extends ViewGenerator {
         androidWidgetEditTextBindString(xml.verifyPassword, this.verifyPassword.observable);
         androidWidgetCompoundButtonBind(xml.agree, this.agree.observable);
         androidWidgetViewFlipperBindLoading(xml.submitLoading, this.loading, undefined);
-        xml.submit.addEventListener("onclick", (_ev) => { _ev.stopPropagation(); 
-                this.submit();
-        });
+        xml.submit.onclick = (_ev) => { _ev.stopPropagation(); 
+            this.submit();
+        };
         
         return view;
     }

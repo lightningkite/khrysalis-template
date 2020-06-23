@@ -8,6 +8,7 @@ import android.util.DisplayMetrics
 import android.view.View
 import com.lightningkite.khrysalis.animationFrame
 import com.lightningkite.khrysalis.rx.addWeak
+import com.lightningkite.khrysalis.rx.until
 import com.lightningkite.khrysalis.views.ViewDependency
 import com.lightningkite.khrysalis.views.asColor
 import com.lightningkite.khrysalis.views.draw.drawTextCentered
@@ -85,11 +86,10 @@ class PongDelegate : CustomViewDelegate() {
     init {
         this.paint.color = 0xFFFFFFFF.asColor()
         this.paint.textSize = 12f
-        //TODO: Until
-//        animationFrame.addWeak(this){ self, time ->
-//            self.frame(time)
-//            self.postInvalidate()
-//        }
+        animationFrame.subscribe{ time ->
+            this.frame(time)
+            this.postInvalidate()
+        }.until(removed)
     }
 
     override fun draw(canvas: Canvas, width: Float, height: Float, displayMetrics: DisplayMetrics) {

@@ -8,6 +8,7 @@
 // FQImport: com.lightningkite.khrysalistemplate.vg.PongDelegate.reverseY.y TS y
 // FQImport: android.graphics.Paint.textSize TS textSize
 // FQImport: com.lightningkite.khrysalistemplate.vg.PongDelegate.onTouchUp TS onTouchUp
+// FQImport: com.lightningkite.khrysalistemplate.vg.PongDelegate.<init>.<anonymous>.time TS time
 // FQImport: android.graphics.Paint.color TS color
 // FQImport: com.lightningkite.khrysalistemplate.vg.PongDelegate.stageHalfLength TS stageHalfLength
 // FQImport: com.lightningkite.khrysalistemplate.vg.PongDelegate.frame.time TS time
@@ -15,11 +16,14 @@
 // FQImport: com.lightningkite.khrysalistemplate.vg.PongDelegate.reverseX.x TS x
 // FQImport: com.lightningkite.khrysalis.views.ViewGenerator TS ViewGenerator
 // FQImport: com.lightningkite.khrysalistemplate.vg.PongDemoVG.generate.xml TS xml
+// FQImport: com.lightningkite.khrysalistemplate.vg.PongDelegate.postInvalidate TS postInvalidate
 // FQImport: com.lightningkite.khrysalistemplate.vg.PongDelegate.stageHalfWidth TS stageHalfWidth
 // FQImport: com.lightningkite.khrysalistemplate.vg.PongDelegate.onTouchDown.y TS y
+// FQImport: com.lightningkite.khrysalis.rx.until>io.reactivex.disposables.Disposable TS ioReactivexDisposablesDisposableUntil
 // FQImport: com.lightningkite.khrysalistemplate.vg.PongDelegate.width TS width
 // FQImport: com.lightningkite.khrysalistemplate.vg.PongDelegate.paint TS paint
 // FQImport: android.util.DisplayMetrics TS DisplayMetrics
+// FQImport: io.reactivex.subjects.PublishSubject.subscribe TS subscribe
 // FQImport: com.lightningkite.khrysalistemplate.vg.PongDelegate.onTouchUp.x TS x
 // FQImport: com.lightningkite.khrysalistemplate.vg.PongDelegate.draw.width TS width
 // FQImport: com.lightningkite.khrysalistemplate.vg.PongDelegate.onTouchDown.x TS x
@@ -54,7 +58,10 @@
 // FQImport: com.lightningkite.khrysalistemplate.vg.PongDelegate.onTouchDown.width TS width
 // FQImport: com.lightningkite.khrysalistemplate.vg.PongDemoVG.generate.dependency TS dependency
 // FQImport: com.lightningkite.khrysalistemplate.vg.PongDelegate.transformX TS transformX
+// FQImport: com.lightningkite.khrysalis.animationFrame TS getAnimationFrame
 // FQImport: com.lightningkite.khrysalis.views.draw.drawTextCentered>android.graphics.Canvas TS androidGraphicsCanvasDrawTextCentered
+// FQImport: com.lightningkite.khrysalistemplate.vg.PongDelegate.removed TS removed
+// FQImport: com.lightningkite.khrysalistemplate.vg.PongDelegate.frame TS frame
 // FQImport: android.graphics.Shader.TileMode TS TileMode
 // FQImport: com.lightningkite.khrysalistemplate.vg.PongDelegate.paddleOffset TS paddleOffset
 // FQImport: android.graphics.Paint TS Paint
@@ -63,14 +70,16 @@
 // FQImport: android.graphics.Shader TS Shader
 // FQImport: com.lightningkite.khrysalistemplate.vg.PongDelegate.onTouchMove.id TS id
 import { Paint } from 'khrysalis/dist/views/draw/Paint.actual'
+import { PongDemoXml } from '../layout/PongDemoXml'
+import { getAnimationFrame } from 'khrysalis/dist/delay.actual'
+import { ioReactivexDisposablesDisposableUntil } from 'khrysalis/dist/rx/DisposeCondition.actual'
+import { androidGraphicsCanvasDrawTextCentered } from 'khrysalis/dist/views/draw/Canvas.actual'
 import { ViewGenerator } from 'khrysalis/dist/views/ViewGenerator.shared'
 import { DisplayMetrics } from 'khrysalis/dist/views/DisplayMetrics.actual'
 import { Shader, newLinearGradient } from 'khrysalis/dist/views/draw/LinearGradient.actual'
 import { pathFromLTRB, pathOvalFromLTRB } from 'khrysalis/dist/views/draw/Path.actual'
 import { CustomViewDelegate } from 'khrysalis/dist/views/CustomViewDelegate.shared'
 import { numberToColor } from 'khrysalis/dist/views/Colors.actual'
-import { PongDemoXml } from '../layout/PongDemoXml'
-import { androidGraphicsCanvasDrawTextCentered } from 'khrysalis/dist/views/draw/Canvas.actual'
 
 //! Declares com.lightningkite.khrysalistemplate.vg.PongDemoVG
 export class PongDemoVG extends ViewGenerator {
@@ -110,9 +119,13 @@ export class PongDelegate extends CustomViewDelegate {
         this.paddleRightY = 0;
         this.scoreLeft = 0;
         this.scoreRight = 0;
-        this.paint = Paint.constructor();
+        this.paint = new Paint();
         this.paint.color = numberToColor(0xFFFFFFFF);
         this.paint.textSize = 12;
+        ioReactivexDisposablesDisposableUntil(getAnimationFrame().subscribe((time) => {
+                    this.frame(time);
+                    this.postInvalidate();
+        }), this.removed);
         this.width = 1;
         this.height = 1;
     }
@@ -189,12 +202,12 @@ export class PongDelegate extends CustomViewDelegate {
     public draw(canvas: CanvasRenderingContext2D, width: number, height: number, displayMetrics: DisplayMetrics): void {
         this.width = width;
         this.height = height;
-        if (this.paint.shader.equals(null)) {
+        // if (this.paint.shader === null && width > 10 && height > 10) {
             this.paint.shader = newLinearGradient(0, 0, width, height, [numberToColor(0xFFFF0000), numberToColor(0xFF0000FF)], [0, 1], Shader.TileMode.REPEAT);
-        }
-        canvas.clip(pathFromLTRB(this.transformX(-this.stageHalfLength + this.paddleOffset - this.paddleHalfThickness), this.transformY(this.paddleLeftY - this.paddleHalfWidth), this.transformX(-this.stageHalfLength + this.paddleOffset + this.paddleHalfThickness), this.transformY(this.paddleLeftY + this.paddleHalfWidth))); this.paint.complete(canvas);
-        canvas.clip(pathFromLTRB(this.transformX(this.stageHalfLength - this.paddleOffset - this.paddleHalfThickness), this.transformY(this.paddleRightY - this.paddleHalfWidth), this.transformX(this.stageHalfLength - this.paddleOffset + this.paddleHalfThickness), this.transformY(this.paddleRightY + this.paddleHalfWidth))); this.paint.complete(canvas);
-        canvas.clip(pathOvalFromLTRB(this.transformX(this.ballX - this.ballRadius), this.transformY(this.ballY - this.ballRadius), this.transformX(this.ballX + this.ballRadius), this.transformY(this.ballY + this.ballRadius))); this.paint.complete(canvas);
+        // }
+        this.paint.render(canvas, (pathFromLTRB(this.transformX(-this.stageHalfLength + this.paddleOffset - this.paddleHalfThickness), this.transformY(this.paddleLeftY - this.paddleHalfWidth), this.transformX(-this.stageHalfLength + this.paddleOffset + this.paddleHalfThickness), this.transformY(this.paddleLeftY + this.paddleHalfWidth))));
+        this.paint.render(canvas, (pathFromLTRB(this.transformX(this.stageHalfLength - this.paddleOffset - this.paddleHalfThickness), this.transformY(this.paddleRightY - this.paddleHalfWidth), this.transformX(this.stageHalfLength - this.paddleOffset + this.paddleHalfThickness), this.transformY(this.paddleRightY + this.paddleHalfWidth))));
+        this.paint.render(canvas, (pathOvalFromLTRB(this.transformX(this.ballX - this.ballRadius), this.transformY(this.ballY - this.ballRadius), this.transformX(this.ballX + this.ballRadius), this.transformY(this.ballY + this.ballRadius))));
         this.paint.textSize = height / 6;
         androidGraphicsCanvasDrawTextCentered(canvas, `${this.scoreLeft} - ${this.scoreRight}`, this.transformX(0), this.transformY(-this.stageHalfWidth / 2), this.paint);
     }

@@ -104,11 +104,11 @@ export class WebsocketDemoVG extends ViewGenerator {
         androidWidgetEditTextBindString(xml.input, this.text);
         
         //--- Set Up xml.submit
-        xml.submit.addEventListener("onclick", (_ev) => { _ev.stopPropagation(); 
-                ioReactivexDisposablesDisposableUntil(this.socket.pipe(rxTake(1)).subscribe((it) => {
-                            it.next(new WebSocketFrame(undefined, this.text.value))
-                }, undefined, undefined), getAndroidViewViewRemoved(xml.submit));
-        });
+        xml.submit.onclick = (_ev) => { _ev.stopPropagation(); 
+            ioReactivexDisposablesDisposableUntil(this.socket.pipe(rxTake(1)).subscribe((it) => {
+                        it.next(new WebSocketFrame(undefined, this.text.value))
+            }, undefined, undefined), getAndroidViewViewRemoved(xml.submit));
+        };
         
         //--- Generate End (overwritten on flow generation)
         

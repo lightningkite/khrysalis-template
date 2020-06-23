@@ -36,7 +36,7 @@ import { ClockPartSize } from 'khrysalis/dist/time/ClockPartSize.shared'
 export class DateButtonDemoVG extends ViewGenerator {
     public constructor() {
         super();
-        this.date = new StandardObservableProperty(Date.constructor(), undefined);
+        this.date = new StandardObservableProperty(new Date(), undefined);
     }
     
     //! Declares com.lightningkite.khrysalistemplate.vg.DateButtonDemoVG.title

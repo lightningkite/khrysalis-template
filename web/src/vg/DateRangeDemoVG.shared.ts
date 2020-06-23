@@ -32,8 +32,8 @@ import { numberToColor } from 'khrysalis/dist/views/Colors.actual'
 export class DateRangeDemoVG extends ViewGenerator {
     public constructor() {
         super();
-        this.start = new StandardObservableProperty(Date.constructor(), undefined);
-        this.endInclusive = new StandardObservableProperty(Date.constructor(), undefined);
+        this.start = new StandardObservableProperty(new Date(), undefined);
+        this.endInclusive = new StandardObservableProperty(new Date(), undefined);
         this.dates = new StandardObservableProperty(new Set([]), undefined);
     }
     

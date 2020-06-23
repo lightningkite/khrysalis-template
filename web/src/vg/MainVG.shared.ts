@@ -73,9 +73,9 @@ export class MainVG extends ViewGenerator implements EntryPoint {
         comLightningkiteKhrysalisViewsAndroidSwapViewBindStack(xml.mainContent, dependency, this.stack);
         androidWidgetTextViewBindString(xml.title, comLightningkiteKhrysalisObservablesObservablePropertyMap(this.stack, (it) => (it[it.length - 1] ?? null)?.title ?? ""));
         androidViewViewBindVisible(xml.mainBack, this.shouldBackBeShown);
-        xml.mainBack.addEventListener("onclick", (_ev) => { _ev.stopPropagation(); 
-                this.stack.pop();
-        });
+        xml.mainBack.onclick = (_ev) => { _ev.stopPropagation(); 
+            this.stack.pop();
+        };
         
         return view;
     }

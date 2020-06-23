@@ -60,17 +60,17 @@ export class ExampleContentVG extends ViewGenerator {
         
         const view = xml.setup(dependency);
         
-        xml.exampleContentIncrement.addEventListener("onclick", (_ev) => { _ev.stopPropagation(); 
-                this.increment();
-        });
+        xml.exampleContentIncrement.onclick = (_ev) => { _ev.stopPropagation(); 
+            this.increment();
+        };
         androidWidgetTextViewBindText(xml.exampleContentNumber, this._number, (it) => it.toString());
-        xml.chainedIncrement.addEventListener("onclick", (_ev) => { _ev.stopPropagation(); 
-                this.chained.value.value = this.chained.value.value + 1;
-        });
+        xml.chainedIncrement.onclick = (_ev) => { _ev.stopPropagation(); 
+            this.chained.value.value = this.chained.value.value + 1;
+        };
         androidWidgetTextViewBindString(xml.chainedNumber, comLightningkiteKhrysalisObservablesObservablePropertyMap(comLightningkiteKhrysalisObservablesObservablePropertyFlatMap(this.chained, (it) => it), (it) => it.toString()));
-        xml.scrollToTop.addEventListener("onclick", (_ev) => { _ev.stopPropagation(); 
-                xml.scrollView.scroll(0, 0);
-        });
+        xml.scrollToTop.onclick = (_ev) => { _ev.stopPropagation(); 
+            xml.scrollView.scroll(0, 0);
+        };
         return view;
     }
 }

@@ -27,9 +27,9 @@ export class MarginTestsVG extends ViewGenerator {
         
         const view = xml.setup(dependency);
         
-        xml.scrollToTop.addEventListener("onclick", (_ev) => { _ev.stopPropagation(); 
-                xml.scrollView.scroll(0, 0);
-        });
+        xml.scrollToTop.onclick = (_ev) => { _ev.stopPropagation(); 
+            xml.scrollView.scroll(0, 0);
+        };
         return view;
     }
 }

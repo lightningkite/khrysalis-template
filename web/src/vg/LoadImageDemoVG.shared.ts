@@ -42,25 +42,25 @@ export class LoadImageDemoVG extends ViewGenerator {
         
         const view = xml.setup(dependency);
         
-        xml.camera.addEventListener("onclick", (_ev) => { _ev.stopPropagation(); 
-                comLightningkiteKhrysalisAndroidActivityAccessRequestImageCamera(dependency, undefined, (url) => {
-                        androidWidgetImageViewLoadImage(xml.image, new ImageReference(url))
-                });
-        });
-        xml.galleryMultiple.addEventListener("onclick", (_ev) => { _ev.stopPropagation(); 
-                comLightningkiteKhrysalisAndroidActivityAccessRequestImagesGallery(dependency, (urls) => {
-                        const temp87 = (urls[0] ?? null);
-                        if(temp87 !== null) ((url) => androidWidgetImageViewLoadImage(xml.image, new ImageReference(url)))(temp87)
-                });
-        });
-        xml.gallery.addEventListener("onclick", (_ev) => { _ev.stopPropagation(); 
-                comLightningkiteKhrysalisAndroidActivityAccessRequestImageGallery(dependency, (url) => {
-                        androidWidgetImageViewLoadImage(xml.image, new ImageReference(url))
-                });
-        });
-        xml.loremPixel.addEventListener("onclick", (_ev) => { _ev.stopPropagation(); 
-                androidWidgetImageViewLoadImage(xml.image, new ImageRemoteUrl("https://picsum.photos/200"));
-        });
+        xml.camera.onclick = (_ev) => { _ev.stopPropagation(); 
+            comLightningkiteKhrysalisAndroidActivityAccessRequestImageCamera(dependency, undefined, (url) => {
+                    androidWidgetImageViewLoadImage(xml.image, new ImageReference(url))
+            });
+        };
+        xml.galleryMultiple.onclick = (_ev) => { _ev.stopPropagation(); 
+            comLightningkiteKhrysalisAndroidActivityAccessRequestImagesGallery(dependency, (urls) => {
+                    const temp87 = (urls[0] ?? null);
+                    if(temp87 !== null) ((url) => androidWidgetImageViewLoadImage(xml.image, new ImageReference(url)))(temp87)
+            });
+        };
+        xml.gallery.onclick = (_ev) => { _ev.stopPropagation(); 
+            comLightningkiteKhrysalisAndroidActivityAccessRequestImageGallery(dependency, (url) => {
+                    androidWidgetImageViewLoadImage(xml.image, new ImageReference(url))
+            });
+        };
+        xml.loremPixel.onclick = (_ev) => { _ev.stopPropagation(); 
+            androidWidgetImageViewLoadImage(xml.image, new ImageRemoteUrl("https://picsum.photos/200"));
+        };
         return view;
     }
 }

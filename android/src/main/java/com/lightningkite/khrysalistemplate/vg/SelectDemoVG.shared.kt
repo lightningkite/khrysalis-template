@@ -10,6 +10,7 @@ import com.lightningkite.khrysalis.captureWeak
 import com.lightningkite.khrysalis.observables.subscribeBy
 import com.lightningkite.khrysalis.rx.removed
 import com.lightningkite.khrysalis.rx.until
+import com.lightningkite.khrysalis.unowned
 import com.lightningkite.khrysalis.views.ViewDependency
 import com.lightningkite.khrysalis.views.onClick
 import com.lightningkite.khrysalis.views.EntryPoint
@@ -17,8 +18,7 @@ import com.lightningkite.khrysalis.views.ViewGenerator
 import com.lightningkite.khrysalistemplate.layouts.ComponentTestXml
 import com.lightningkite.khrysalistemplate.layouts.SelectDemoXml
 
-class SelectDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator(), EntryPoint {
-    val stack: ObservableStack<ViewGenerator>? by weak(stack)
+class SelectDemoVG(@unowned val stack: ObservableStack<ViewGenerator>) : ViewGenerator(), EntryPoint {
     override val title: String get() = "Select Demo"
 
     val options: List<ViewGenerator> = listOf(
@@ -46,7 +46,7 @@ class SelectDemoVG(stack: ObservableStack<ViewGenerator>) : ViewGenerator(), Ent
     )
 
     fun selectVG(viewGenerator: ViewGenerator){
-        stack?.push(viewGenerator)
+        stack.push(viewGenerator)
     }
 
     override fun generate(dependency: ViewDependency): View {

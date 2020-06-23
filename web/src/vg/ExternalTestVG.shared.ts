@@ -40,19 +40,19 @@ export class ExternalTestVG extends ViewGenerator {
         //--- Set Up xml.scrollView (overwritten on flow generation)
         
         //--- Set Up xml.openMap
-        xml.openMap.addEventListener("onclick", (_ev) => { _ev.stopPropagation(); 
-                comLightningkiteKhrysalisAndroidActivityAccessOpenMap(dependency, new GeoCoordinate(41.7269, -111.8432), "Lightning Kite", 14);
-        });
+        xml.openMap.onclick = (_ev) => { _ev.stopPropagation(); 
+            comLightningkiteKhrysalisAndroidActivityAccessOpenMap(dependency, new GeoCoordinate(41.7269, -111.8432), "Lightning Kite", 14);
+        };
         
         //--- Set Up xml.openWeb
-        xml.openWeb.addEventListener("onclick", (_ev) => { _ev.stopPropagation(); 
-                window.open("https://lightningkite.com", "_blank");
-        });
+        xml.openWeb.onclick = (_ev) => { _ev.stopPropagation(); 
+            window.open("https://lightningkite.com", "_blank");
+        };
         
         //--- Set Up xml.openEvent
-        xml.openEvent.addEventListener("onclick", (_ev) => { _ev.stopPropagation(); 
-                comLightningkiteKhrysalisAndroidActivityAccessOpenEvent(dependency, "A Virtual Lunch with LK", "Come eat virtual food with us!", "Lightning Kite in Logan Utah", copyDateMod(copyDateMod(copyDateMod(copyDateModRelative(Date.constructor(), Date.prototype.getDate, Date.prototype.setDate, 1), Date.prototype.setHours, 12), Date.prototype.setMinutes, 0), Date.prototype.setSeconds, 0), copyDateMod(copyDateMod(copyDateMod(copyDateModRelative(Date.constructor(), Date.prototype.getDate, Date.prototype.setDate, 1), Date.prototype.setHours, 13), Date.prototype.setMinutes, 0), Date.prototype.setSeconds, 0));
-        });
+        xml.openEvent.onclick = (_ev) => { _ev.stopPropagation(); 
+            comLightningkiteKhrysalisAndroidActivityAccessOpenEvent(dependency, "A Virtual Lunch with LK", "Come eat virtual food with us!", "Lightning Kite in Logan Utah", copyDateMod(copyDateMod(copyDateMod(copyDateModRelative(new Date(), Date.prototype.getDate, Date.prototype.setDate, 1), Date.prototype.setHours, 12), Date.prototype.setMinutes, 0), Date.prototype.setSeconds, 0), copyDateMod(copyDateMod(copyDateMod(copyDateModRelative(new Date(), Date.prototype.getDate, Date.prototype.setDate, 1), Date.prototype.setHours, 13), Date.prototype.setMinutes, 0), Date.prototype.setSeconds, 0));
+        };
         
         //--- Generate End (overwritten on flow generation)
         

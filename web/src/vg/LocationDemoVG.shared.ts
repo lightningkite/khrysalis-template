@@ -49,13 +49,13 @@ export class LocationDemoVG extends ViewGenerator {
         
         const view = xml.setup(dependency);
         
-        xml.getLocation.addEventListener("onclick", (_ev) => { _ev.stopPropagation(); 
-                comLightningkiteKhrysalisAndroidActivityAccessRequestLocation(dependency, 100.0, 5.0, (location, message) => {
-                        console.log(message);
-                        this.locationInfo.value = location;
-                });
-        });
-        androidWidgetTextViewBindString(xml.locationDisplay, comLightningkiteKhrysalisObservablesObservablePropertyTransformed(this.locationInfo, (it) => (() => {if (!(it.equals(null))) {
+        xml.getLocation.onclick = (_ev) => { _ev.stopPropagation(); 
+            comLightningkiteKhrysalisAndroidActivityAccessRequestLocation(dependency, 100.0, 5.0, (location, message) => {
+                    console.log(message);
+                    this.locationInfo.value = location;
+            });
+        };
+        androidWidgetTextViewBindString(xml.locationDisplay, comLightningkiteKhrysalisObservablesObservablePropertyTransformed(this.locationInfo, (it) => (() => {if (it !== null) {
                             return `${it.coordinate}`;
                         } else {
                             return "Nothing yet";

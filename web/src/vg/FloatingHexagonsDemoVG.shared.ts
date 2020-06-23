@@ -96,8 +96,8 @@ export class FloatingHexagonsDemoVG extends ViewGenerator {
 export class FloatingHexagonsDelegate extends CustomViewDelegate {
     public constructor() {
         super();
-        this.backgroundPaint = Paint.constructor();
-        this.hexagonPaint = Paint.constructor();
+        this.backgroundPaint = new Paint();
+        this.hexagonPaint = new Paint();
         this.hexagonPaint.strokeWidth = 4;
         this.hexagonPaint.color = numberToColor(0xFFFFFFFF);
         this.location = null;
@@ -146,7 +146,7 @@ export class FloatingHexagonsDelegate extends CustomViewDelegate {
     
     
     public draw(canvas: CanvasRenderingContext2D, width: number, height: number, displayMetrics: DisplayMetrics): void {
-        if (this.hexagons.equals(null)) {
+        if (this.hexagons === null) {
             const tempList: Array<Hexagon> = [];
             
             for (const i of new NumberRange(0, 7)) {
@@ -158,10 +158,10 @@ export class FloatingHexagonsDelegate extends CustomViewDelegate {
             this.location = width / 2;
             this.moveTo = width / 2;
         }
-        if (this.backgroundPaint.shader.equals(null)) {
+        if (this.backgroundPaint.shader === null) {
             this.backgroundPaint.shader = newLinearGradient(width, 0, 0, height, [numberToColor(0xFF773DBD), numberToColor(0xFF1226AA)], [.25, 1], Shader.TileMode.REPEAT);
         }
-        canvas.clip(pathFromLTRB(0, 0, width, height)); this.backgroundPaint.complete(canvas);
+        this.backgroundPaint.render(canvas, (pathFromLTRB(0, 0, width, height)));
         const temp48 = this.hexagons;
         if(temp48 !== null) for(const _x of temp48) { 
             const it = _x;
