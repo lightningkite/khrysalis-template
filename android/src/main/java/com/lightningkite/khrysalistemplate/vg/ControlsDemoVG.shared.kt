@@ -24,7 +24,7 @@ class ControlsDemoVG() : ViewGenerator() {
         val view = xml.setup(dependency)
 
         xml.numberText.bindInteger(number)
-        xml.editableText.bindString(text.combine(number){ t, n -> "$t ($n)"})
+        xml.editableText.bindString(text)
         xml.editableAutoText.bindString(text)
         xml.editableAutoText.bind(
             options = options,
@@ -37,15 +37,7 @@ class ControlsDemoVG() : ViewGenerator() {
         xml.editableTextBig.bindString(text)
         xml.spinner.bind(
             options = options,
-            selected = text,
-            makeView = { obs ->
-                val xml = ComponentTestXml()
-                val view = xml.setup(dependency)
-
-                xml.label.bindString(obs)
-
-                return@bind view
-            }
+            selected = text
         )
 
         return view

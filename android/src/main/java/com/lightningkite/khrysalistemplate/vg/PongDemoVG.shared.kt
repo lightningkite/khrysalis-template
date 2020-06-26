@@ -17,6 +17,8 @@ import com.lightningkite.khrysalis.views.ViewGenerator
 import com.lightningkite.khrysalis.views.draw.newLinearGradient
 import com.lightningkite.khrysalistemplate.layouts.PongDemoXml
 import kotlin.math.abs
+import kotlin.math.max
+import kotlin.math.min
 
 class PongDemoVG() : ViewGenerator() {
 
@@ -86,7 +88,7 @@ class PongDelegate : CustomViewDelegate() {
     init {
         this.paint.color = 0xFFFFFFFF.asColor()
         this.paint.textSize = 12f
-        animationFrame.subscribe{ time ->
+        animationFrame.subscribe { time ->
             this.frame(time)
             this.postInvalidate()
         }.until(removed)
@@ -95,7 +97,7 @@ class PongDelegate : CustomViewDelegate() {
     override fun draw(canvas: Canvas, width: Float, height: Float, displayMetrics: DisplayMetrics) {
         this.width = width
         this.height = height
-        if(paint.shader == null){
+        if (paint.shader == null) {
             paint.shader = newLinearGradient(
                 0f,
                 0f,
@@ -131,7 +133,7 @@ class PongDelegate : CustomViewDelegate() {
         canvas.drawTextCentered(
             "$scoreLeft - $scoreRight",
             transformX(0f),
-            transformY(-stageHalfWidth/2f),
+            transformY(-stageHalfWidth / 2f),
             paint
         )
     }
@@ -174,9 +176,18 @@ class PongDelegate : CustomViewDelegate() {
     override fun generateAccessibilityView(): View? = null
 
     override fun sizeThatFitsWidth(width: Float, height: Float): Float {
-        return height * stageHalfLength / stageHalfWidth
+        val scale = min(
+            (width)/(stageHalfLength),
+            (height)/(stageHalfWidth)
+        )
+        return stageHalfLength * scale
     }
+
     override fun sizeThatFitsHeight(width: Float, height: Float): Float {
-        return width * stageHalfWidth / stageHalfLength
+        val scale = min(
+            (width)/(stageHalfLength),
+            (height)/(stageHalfWidth)
+        )
+        return stageHalfWidth * scale
     }
 }

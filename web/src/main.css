@@ -26,6 +26,13 @@
 :root {
 --color-state-accent: var(--color-color-accent);
 }
+/*state-login-text*/
+:disabled {
+--color-state-login-text: var(--color-disabled);
+}
+:root {
+--color-state-login-text: var(--color-color-primary);
+}
 /*state-accent-toggle*/
 :disabled {
 --color-state-accent-toggle: var(--color-disabled);
@@ -38,13 +45,6 @@
 }
 :root {
 --color-state-accent-toggle: var(--color-disabled);
-}
-/*state-login-text*/
-:disabled {
---color-state-login-text: var(--color-disabled);
-}
-:root {
---color-state-login-text: var(--color-color-primary);
 }
 /* reason-expertise */
 .drawable-reason-expertise {
