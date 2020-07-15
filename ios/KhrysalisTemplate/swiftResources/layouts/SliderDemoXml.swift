@@ -10,7 +10,7 @@ import MapKit
 public class SliderDemoXml {
     
     public unowned var xmlRoot: UIView!
-    public func setup(_ dependency: ViewDependency) -> UIView {
+    public func setup(dependency: ViewDependency) -> UIView {
         let view = ScrollViewVertical(frame: .zero)
         view.addSubview(LinearLayout(frame: .zero)) { view in 
             view.orientation = .y

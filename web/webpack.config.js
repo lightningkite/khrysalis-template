@@ -1,6 +1,10 @@
 const path = require('path');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
+    plugins: [
+        new BundleAnalyzerPlugin()
+    ],
     entry: './compiled/index.js',
     devtool: 'inline-source-map',
     module: {

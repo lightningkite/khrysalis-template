@@ -6,8 +6,8 @@
   "dependencies": {
     "khrysalis": "file:~/IdeaProjects/khrysalis/web",
     "rxjs": "^6.5.5",
-    "sprintf": "^0.1.5",
-    "@types/sprintf": "^0.1.0",
+    "sprintf-js": "^1.1.2",
+    "@types/sprintf-js": "1.1.2",
     "mersenne-twister": "^1.1.0",
     "@types/mersenne-twister": "^1.1.2",
     "uuid": "^8.1.0",
@@ -28,7 +28,8 @@
     "html-loader": "^1.1.0",
     "node-sass": "^4.13.1",
     "sass": "^1.26.3",
-    "fibers": "^4.0.2"
+    "fibers": "^4.0.2",
+    "webpack-bundle-analyzer": "^3.8.0"
   },
   "scripts": {
     "build": "webpack --mode=production",

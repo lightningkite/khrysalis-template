@@ -10,7 +10,7 @@ import MapKit
 public class HttpDemoXml {
     
     public unowned var xmlRoot: UIView!
-    public func setup(_ dependency: ViewDependency) -> UIView {
+    public func setup(dependency: ViewDependency) -> UIView {
         let view = LinearLayout(frame: .zero)
         view.orientation = .y
         view.padding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
@@ -26,7 +26,7 @@ public class HttpDemoXml {
             weight: 0
         ) { view in 
             view.font = UIFont.get(size: 16, style: [])
-            view.textString = ResourcesStrings.thisDataIsLoadedFromJsonPlaceholderTypicode
+            view.textString = R.string.this_data_is_loaded_from_json_placeholder_typicode
             view.numberOfLines = 0
             view.textColor = UIColor(argb: 0xFF222222)
         }

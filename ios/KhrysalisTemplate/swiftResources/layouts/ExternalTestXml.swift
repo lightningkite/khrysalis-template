@@ -10,7 +10,7 @@ import MapKit
 public class ExternalTestXml {
     
     public unowned var xmlRoot: UIView!
-    public func setup(_ dependency: ViewDependency) -> UIView {
+    public func setup(dependency: ViewDependency) -> UIView {
         let view = ScrollViewVertical(frame: .zero)
         self.scrollView = view
         view.addSubview(LinearLayout(frame: .zero)) { view in 
@@ -28,7 +28,7 @@ public class ExternalTestXml {
                 weight: 0
             ) { view in 
                 self.openMap = view
-                view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
+                view.backgroundLayer = R.drawable.button_primary(view)
                 view.titleLabel?.font = UIFont.get(size: 16, style: [])
                 view.titleLabel?.textAllCaps = false
                 view.titleLabel?.textString = "Show me Lightning Kite's Location"
@@ -52,7 +52,7 @@ public class ExternalTestXml {
                 weight: 0
             ) { view in 
                 self.openWeb = view
-                view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
+                view.backgroundLayer = R.drawable.button_primary(view)
                 view.titleLabel?.font = UIFont.get(size: 16, style: [])
                 view.titleLabel?.textAllCaps = false
                 view.titleLabel?.textString = "Show me Lightning Kite's Website"
@@ -76,7 +76,7 @@ public class ExternalTestXml {
                 weight: 0
             ) { view in 
                 self.openEvent = view
-                view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
+                view.backgroundLayer = R.drawable.button_primary(view)
                 view.titleLabel?.font = UIFont.get(size: 16, style: [])
                 view.titleLabel?.textAllCaps = false
                 view.titleLabel?.textString = "Show me a future event"

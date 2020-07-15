@@ -10,7 +10,7 @@ import MapKit
 public class DateButtonDemoXml {
     
     public unowned var xmlRoot: UIView!
-    public func setup(_ dependency: ViewDependency) -> UIView {
+    public func setup(dependency: ViewDependency) -> UIView {
         let view = ScrollViewVertical(frame: .zero)
         view.addSubview(LinearLayout(frame: .zero)) { view in 
             view.orientation = .y
@@ -42,7 +42,7 @@ public class DateButtonDemoXml {
                 weight: 0
             ) { view in 
                 self.dateButton = view
-                view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
+                view.backgroundLayer = R.drawable.button_primary(view)
                 view.titleLabel?.font = UIFont.get(size: 16, style: [])
                 view.titleLabel?.textAllCaps = false
                 view.titleLabel?.numberOfLines = 0
@@ -64,7 +64,7 @@ public class DateButtonDemoXml {
                 weight: 0
             ) { view in 
                 self.timeButton = view
-                view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
+                view.backgroundLayer = R.drawable.button_primary(view)
                 view.titleLabel?.font = UIFont.get(size: 16, style: [])
                 view.titleLabel?.textAllCaps = false
                 view.titleLabel?.numberOfLines = 0

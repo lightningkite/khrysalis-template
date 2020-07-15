@@ -10,7 +10,7 @@ import MapKit
 public class LocationDemoXml {
     
     public unowned var xmlRoot: UIView!
-    public func setup(_ dependency: ViewDependency) -> UIView {
+    public func setup(dependency: ViewDependency) -> UIView {
         let view = LinearLayout(frame: .zero)
         view.orientation = .y
         view.padding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
@@ -26,14 +26,14 @@ public class LocationDemoXml {
             weight: 0
         ) { view in 
             self.getLocation = view
-            view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
+            view.backgroundLayer = R.drawable.button_primary(view)
             view.titleLabel?.font = UIFont.get(size: 16, style: [])
             view.titleLabel?.textAllCaps = false
-            view.titleLabel?.textString = ResourcesStrings.getLocation
+            view.titleLabel?.textString = R.string.get_location
             view.titleLabel?.numberOfLines = 0
             view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
             view.textAllCaps = false
-            view.textString = ResourcesStrings.getLocation
+            view.textString = R.string.get_location
             view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
             view.contentHorizontalAlignment = .center
             view.contentMode = .scaleAspectFit
@@ -51,7 +51,7 @@ public class LocationDemoXml {
         ) { view in 
             self.locationDisplay = view
             view.font = UIFont.get(size: 16, style: [])
-            view.textString = ResourcesStrings.camera
+            view.textString = R.string.camera
             view.numberOfLines = 0
             view.textColor = UIColor(argb: 0xFF222222)
         }

@@ -1,4 +1,3 @@
-import com.lightningkite.khrysalis.gradle.configureGradle
 import com.lightningkite.khrysalis.ios.layout.mapViews
 import com.lightningkite.khrysalis.ios.layout.LayoutConverter
 import com.lightningkite.khrysalis.gradle.KhrysalisPluginExtension
@@ -18,6 +17,7 @@ plugins {
     id("com.android.application")
     id("kotlin-android")
     id("kotlin-android-extensions")
+//    id("com.jakeout.gradle-inspector") version "0.3.0"
 }
 
 apply(plugin="com.lightningkite.khrysalis")
@@ -37,6 +37,9 @@ android {
         setSourceCompatibility(JavaVersion.VERSION_1_8)
         setTargetCompatibility(JavaVersion.VERSION_1_8)
     }
+    packagingOptions {
+        exclude("META-INF/**")
+    }
     buildTypes {
         //        release {
 //            minifyEnabled = false
@@ -49,9 +52,6 @@ configure<KhrysalisPluginExtension> {
     projectName = "KhrysalisTemplate"
     organizationName = "Lightning Kite"
     swiftLayoutConversion += LayoutConverter.mapViews
-    swiftConversion = {
-        imports += listOf("KhrysalisMaps", "KhrysalisBluetooth")
-    }
 }
 
 repositories {

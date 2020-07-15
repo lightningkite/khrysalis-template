@@ -15,6 +15,7 @@ import com.lightningkite.khrysalis.views.draw.drawTextCentered
 import com.lightningkite.khrysalis.views.CustomViewDelegate
 import com.lightningkite.khrysalis.views.ViewGenerator
 import com.lightningkite.khrysalis.views.draw.newLinearGradient
+import com.lightningkite.khrysalis.views.geometry.GFloat
 import com.lightningkite.khrysalistemplate.layouts.PongDemoXml
 import kotlin.math.abs
 import kotlin.math.max
@@ -33,23 +34,23 @@ class PongDemoVG() : ViewGenerator() {
 }
 
 class PongDelegate : CustomViewDelegate() {
-    var ballX: Float = 0f
-    var ballY: Float = 0f
-    var ballRadius: Float = 5f
-    var ballVX: Float = 100f
-    var ballVY: Float = 100f
-    var stageHalfLength: Float = 100f
-    var stageHalfWidth: Float = 50f
-    var paddleOffset: Float = 20f
-    var paddleHalfThickness: Float = 5f
-    var paddleHalfWidth: Float = 10f
-    var paddleLeftY: Float = 0f
-    var paddleRightY: Float = 0f
+    var ballX: GFloat = 0f
+    var ballY: GFloat = 0f
+    var ballRadius: GFloat = 5f
+    var ballVX: GFloat = 100f
+    var ballVY: GFloat = 100f
+    var stageHalfLength: GFloat = 100f
+    var stageHalfWidth: GFloat = 50f
+    var paddleOffset: GFloat = 20f
+    var paddleHalfThickness: GFloat = 5f
+    var paddleHalfWidth: GFloat = 10f
+    var paddleLeftY: GFloat = 0f
+    var paddleRightY: GFloat = 0f
 
     var scoreLeft: Int = 0
     var scoreRight: Int = 0
 
-    fun frame(time: Float) {
+    fun frame(time: GFloat) {
         ballX += ballVX * time
         ballY += ballVY * time
         if (ballY > stageHalfWidth - ballRadius) {
@@ -88,13 +89,13 @@ class PongDelegate : CustomViewDelegate() {
     init {
         this.paint.color = 0xFFFFFFFF.asColor()
         this.paint.textSize = 12f
-        animationFrame.subscribe { time ->
+        animationFrame.subscribe { time: GFloat ->
             this.frame(time)
             this.postInvalidate()
         }.until(removed)
     }
 
-    override fun draw(canvas: Canvas, width: Float, height: Float, displayMetrics: DisplayMetrics) {
+    override fun draw(canvas: Canvas, width: GFloat, height: GFloat, displayMetrics: DisplayMetrics) {
         this.width = width
         this.height = height
         if (paint.shader == null) {
@@ -138,15 +139,15 @@ class PongDelegate : CustomViewDelegate() {
         )
     }
 
-    override fun onTouchDown(id: Int, x: Float, y: Float, width: Float, height: Float): Boolean {
+    override fun onTouchDown(id: Int, x: GFloat, y: GFloat, width: GFloat, height: GFloat): Boolean {
         return onTouchUp(id, x, y, width, height)
     }
 
-    override fun onTouchMove(id: Int, x: Float, y: Float, width: Float, height: Float): Boolean {
+    override fun onTouchMove(id: Int, x: GFloat, y: GFloat, width: GFloat, height: GFloat): Boolean {
         return onTouchUp(id, x, y, width, height)
     }
 
-    override fun onTouchUp(id: Int, x: Float, y: Float, width: Float, height: Float): Boolean {
+    override fun onTouchUp(id: Int, x: GFloat, y: GFloat, width: GFloat, height: GFloat): Boolean {
         if (reverseX(x) < 0) {
             paddleLeftY = reverseY(y)
         } else {
@@ -155,27 +156,27 @@ class PongDelegate : CustomViewDelegate() {
         return true
     }
 
-    var width: Float = 1f
-    var height: Float = 1f
-    fun transformX(x: Float): Float {
+    var width: GFloat = 1f
+    var height: GFloat = 1f
+    fun transformX(x: GFloat): GFloat {
         return (x + stageHalfLength) / (stageHalfLength * 2) * width
     }
 
-    fun transformY(y: Float): Float {
+    fun transformY(y: GFloat): GFloat {
         return (y + stageHalfWidth) / (stageHalfWidth * 2) * height
     }
 
-    fun reverseX(x: Float): Float {
+    fun reverseX(x: GFloat): GFloat {
         return (x - width / 2) / width * stageHalfLength * 2
     }
 
-    fun reverseY(y: Float): Float {
+    fun reverseY(y: GFloat): GFloat {
         return (y - height / 2) / height * stageHalfWidth * 2
     }
 
     override fun generateAccessibilityView(): View? = null
 
-    override fun sizeThatFitsWidth(width: Float, height: Float): Float {
+    override fun sizeThatFitsWidth(width: GFloat, height: GFloat): GFloat {
         val scale = min(
             (width)/(stageHalfLength),
             (height)/(stageHalfWidth)
@@ -183,7 +184,7 @@ class PongDelegate : CustomViewDelegate() {
         return stageHalfLength * scale
     }
 
-    override fun sizeThatFitsHeight(width: Float, height: Float): Float {
+    override fun sizeThatFitsHeight(width: GFloat, height: GFloat): GFloat {
         val scale = min(
             (width)/(stageHalfLength),
             (height)/(stageHalfWidth)

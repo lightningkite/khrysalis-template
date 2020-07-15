@@ -10,7 +10,7 @@ import MapKit
 public class SegmentedControlDemoXml {
     
     public unowned var xmlRoot: UIView!
-    public func setup(_ dependency: ViewDependency) -> UIView {
+    public func setup(dependency: ViewDependency) -> UIView {
         let view = LinearLayout(frame: .zero)
         view.orientation = .y
         view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -30,13 +30,13 @@ public class SegmentedControlDemoXml {
             view.backgroundColor = .clear
             view.setTitleTextAttributes(
                 [NSAttributedString.Key.foregroundColor: UIColor.black], 
-                for: .normal
-            )
-            view.setTitleTextAttributes(
-                [NSAttributedString.Key.foregroundColor: ResourcesColors.colorPrimary], 
                 for: .selected
             )
-            view.addIndicator(color: ResourcesColors.colorPrimary)
+            view.setTitleTextAttributes(
+                [NSAttributedString.Key.foregroundColor: UIColor.black], 
+                for: .normal
+            )
+            view.addIndicator(color: UIColor.black)
         }
         
         view.addSubview(
@@ -55,13 +55,13 @@ public class SegmentedControlDemoXml {
             view.apportionsSegmentWidthsByContent = true
             view.setTitleTextAttributes(
                 [NSAttributedString.Key.foregroundColor: UIColor.black], 
-                for: .normal
-            )
-            view.setTitleTextAttributes(
-                [NSAttributedString.Key.foregroundColor: ResourcesColors.colorPrimary], 
                 for: .selected
             )
-            view.addIndicator(color: ResourcesColors.colorPrimary)
+            view.setTitleTextAttributes(
+                [NSAttributedString.Key.foregroundColor: UIColor.black], 
+                for: .normal
+            )
+            view.addIndicator(color: UIColor.black)
         }
         
         xmlRoot = view

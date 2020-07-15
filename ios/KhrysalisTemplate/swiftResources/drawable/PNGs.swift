@@ -2,8 +2,8 @@
 import UIKit
 import Khrysalis
 
-extension ResourcesDrawables {
+extension R.drawable {
 
-static func reasonExpertise(_ view: UIView? = nil) -> CAImageLayer { return CAImageLayer(UIImage(named: "reason_expertise")) }
+static func reason_expertise(_ view: UIView? = nil) -> CAImageLayer { return CAImageLayer(UIImage(named: "reason_expertise")) }
 
 }

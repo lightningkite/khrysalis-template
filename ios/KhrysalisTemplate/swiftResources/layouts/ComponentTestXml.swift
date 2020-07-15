@@ -10,7 +10,7 @@ import MapKit
 public class ComponentTestXml {
     
     public unowned var xmlRoot: UIView!
-    public func setup(_ dependency: ViewDependency) -> UIView {
+    public func setup(dependency: ViewDependency) -> UIView {
         let view = LinearLayout(frame: .zero)
         view.orientation = .x
         view.padding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
@@ -27,7 +27,7 @@ public class ComponentTestXml {
         ) { view in 
             self.label = view
             view.font = UIFont.get(size: 16, style: [])
-            view.textString = ResourcesStrings.welcomeToSwitchTown
+            view.textString = R.string.welcome_to_switch_town
             view.numberOfLines = 0
             view.textColor = UIColor(argb: 0xFF222222)
         }
@@ -42,14 +42,14 @@ public class ComponentTestXml {
             weight: 0
         ) { view in 
             self.button = view
-            view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
+            view.backgroundLayer = R.drawable.button_primary(view)
             view.titleLabel?.font = UIFont.get(size: 16, style: [])
             view.titleLabel?.textAllCaps = false
-            view.titleLabel?.textString = ResourcesStrings.ok
+            view.titleLabel?.textString = R.string.ok
             view.titleLabel?.numberOfLines = 0
             view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
             view.textAllCaps = false
-            view.textString = ResourcesStrings.ok
+            view.textString = R.string.ok
             view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
             view.contentHorizontalAlignment = .center
             view.contentMode = .scaleAspectFit

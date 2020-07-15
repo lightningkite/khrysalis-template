@@ -10,7 +10,7 @@ import MapKit
 public class LoginDemoXml {
     
     public unowned var xmlRoot: UIView!
-    public func setup(_ dependency: ViewDependency) -> UIView {
+    public func setup(dependency: ViewDependency) -> UIView {
         let view = ScrollViewVertical(frame: .zero)
         view.addSubview(LinearLayout(frame: .zero)) { view in 
             view.orientation = .y
@@ -27,7 +27,7 @@ public class LoginDemoXml {
                 weight: 0
             ) { view in 
                 view.font = UIFont.get(size: 24, style: ["bold"])
-                view.textString = ResourcesStrings.welcomeToSwitchTown
+                view.textString = R.string.welcome_to_switch_town
                 view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF000000)
             }
@@ -42,10 +42,10 @@ public class LoginDemoXml {
                 weight: 0
             ) { view in 
                 self.username = view
-                view.backgroundLayer = ResourcesDrawables.border(view)
+                view.backgroundLayer = R.drawable.border(view)
                 view.setLeftPaddingPoints(8)
                 view.setRightPaddingPoints(8)
-                view.placeholder = ResourcesStrings.username
+                view.placeholder = R.string.username
                 view.autocapitalizationType = .none
                 view.textContentType = .emailAddress
                 view.keyboardType = .emailAddress
@@ -64,10 +64,10 @@ public class LoginDemoXml {
                 weight: 0
             ) { view in 
                 self.password = view
-                view.backgroundLayer = ResourcesDrawables.border(view)
+                view.backgroundLayer = R.drawable.border(view)
                 view.setLeftPaddingPoints(8)
                 view.setRightPaddingPoints(8)
-                view.placeholder = ResourcesStrings.password
+                view.placeholder = R.string.password
                 view.autocapitalizationType = .none
                 view.textContentType = .password
                 view.isSecureTextEntry = true
@@ -86,10 +86,10 @@ public class LoginDemoXml {
                 weight: 0
             ) { view in 
                 self.verifyPassword = view
-                view.backgroundLayer = ResourcesDrawables.border(view)
+                view.backgroundLayer = R.drawable.border(view)
                 view.setLeftPaddingPoints(8)
                 view.setRightPaddingPoints(8)
-                view.placeholder = ResourcesStrings.verifyPassword
+                view.placeholder = R.string.verify_password
                 view.autocapitalizationType = .none
                 view.textContentType = .password
                 view.isSecureTextEntry = true
@@ -109,7 +109,7 @@ public class LoginDemoXml {
             ) { view in 
                 self.agree = view
                 view.labelView.font = UIFont.get(size: 12, style: [])
-                view.labelView.textString = ResourcesStrings.iAgree
+                view.labelView.textString = R.string.i_agree
                 view.labelView.numberOfLines = 0
             }
             
@@ -133,14 +133,14 @@ public class LoginDemoXml {
                     gravity: .topFill
                 ) { view in 
                     self.submit = view
-                    view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
+                    view.backgroundLayer = R.drawable.button_primary(view)
                     view.titleLabel?.font = UIFont.get(size: 16, style: [])
                     view.titleLabel?.textAllCaps = false
-                    view.titleLabel?.textString = ResourcesStrings.submit
+                    view.titleLabel?.textString = R.string.submit
                     view.titleLabel?.numberOfLines = 0
                     view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
                     view.textAllCaps = false
-                    view.textString = ResourcesStrings.submit
+                    view.textString = R.string.submit
                     view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
                     view.contentHorizontalAlignment = .center
                     view.contentMode = .scaleAspectFit

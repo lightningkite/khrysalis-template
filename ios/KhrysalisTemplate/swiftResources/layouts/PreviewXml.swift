@@ -10,7 +10,7 @@ import MapKit
 public class PreviewXml {
     
     public unowned var xmlRoot: UIView!
-    public func setup(_ dependency: ViewDependency) -> UIView {
+    public func setup(dependency: ViewDependency) -> UIView {
         let view = LinearLayout(frame: .zero)
         view.orientation = .y
         view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -43,7 +43,9 @@ public class PreviewXml {
             weight: 1.0
         ) { view in 
             self.pager = view
-            view.backgroundColor = ResourcesColors.white
+            applyColor(view, R.color.white) { c in
+                view.backgroundColor = c
+            }
             view.canCancelContentTouches = false
             view.showsHorizontalScrollIndicator = false
             view.backgroundColor = .clear

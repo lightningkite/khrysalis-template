@@ -19,6 +19,10 @@
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
     </style>
 
+    <style name="SpinnerStyle" parent="AppTheme">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
     <style name="DarkAppTheme" parent="Theme.AppCompat">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>

@@ -10,7 +10,7 @@ import MapKit
 public class DateRangeDemoXml {
     
     public unowned var xmlRoot: UIView!
-    public func setup(_ dependency: ViewDependency) -> UIView {
+    public func setup(dependency: ViewDependency) -> UIView {
         let view = ScrollViewVertical(frame: .zero)
         view.addSubview(LinearLayout(frame: .zero)) { view in 
             view.orientation = .y
@@ -27,7 +27,9 @@ public class DateRangeDemoXml {
                 weight: 0
             ) { view in 
                 self.month = view
-                view.backgroundColor = ResourcesColors.white
+                applyColor(view, R.color.white) { c in
+                    view.backgroundColor = c
+                }
                 let dg = MonthCVD()
                 view.delegate = dg
                 self.monthDelegate = dg
@@ -43,7 +45,9 @@ public class DateRangeDemoXml {
                 weight: 0
             ) { view in 
                 self.month2 = view
-                view.backgroundColor = ResourcesColors.white
+                applyColor(view, R.color.white) { c in
+                    view.backgroundColor = c
+                }
                 let dg = SelectDateMonthCVD()
                 view.delegate = dg
                 self.month2Delegate = dg
@@ -59,7 +63,9 @@ public class DateRangeDemoXml {
                 weight: 0
             ) { view in 
                 self.month3 = view
-                view.backgroundColor = ResourcesColors.white
+                applyColor(view, R.color.white) { c in
+                    view.backgroundColor = c
+                }
                 let dg = SelectDateRangeMonthCVD()
                 view.delegate = dg
                 self.month3Delegate = dg
@@ -75,7 +81,9 @@ public class DateRangeDemoXml {
                 weight: 0
             ) { view in 
                 self.month4 = view
-                view.backgroundColor = ResourcesColors.white
+                applyColor(view, R.color.white) { c in
+                    view.backgroundColor = c
+                }
                 let dg = SelectMultipleDatesMonthCVD()
                 view.delegate = dg
                 self.month4Delegate = dg

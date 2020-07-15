@@ -10,7 +10,7 @@ import MapKit
 public class FloatingHexagonsDemoXml {
     
     public unowned var xmlRoot: UIView!
-    public func setup(_ dependency: ViewDependency) -> UIView {
+    public func setup(dependency: ViewDependency) -> UIView {
         let view = FrameLayout(frame: .zero)
         view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         view.addSubview(
@@ -22,7 +22,9 @@ public class FloatingHexagonsDemoXml {
             gravity: .fillFill
         ) { view in 
             self.customView = view
-            view.backgroundColor = ResourcesColors.black
+            applyColor(view, R.color.black) { c in
+                view.backgroundColor = c
+            }
             let dg = FloatingHexagonsDelegate()
             view.delegate = dg
             self.customViewDelegate = dg

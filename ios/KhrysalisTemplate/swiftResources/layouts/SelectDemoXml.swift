@@ -10,7 +10,7 @@ import MapKit
 public class SelectDemoXml {
     
     public unowned var xmlRoot: UIView!
-    public func setup(_ dependency: ViewDependency) -> UIView {
+    public func setup(dependency: ViewDependency) -> UIView {
         let view = LinearLayout(frame: .zero)
         view.orientation = .y
         view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -26,7 +26,7 @@ public class SelectDemoXml {
             weight: 0
         ) { view in 
             view.font = UIFont.get(size: 24, style: ["bold"])
-            view.textString = ResourcesStrings.selectDemo
+            view.textString = R.string.select_demo
             view.numberOfLines = 0
             view.textColor = UIColor(argb: 0xFF000000)
             view.textAlignment = .center

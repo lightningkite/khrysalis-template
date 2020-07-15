@@ -10,7 +10,7 @@ import MapKit
 public class ViewPagerDemoXml {
     
     public unowned var xmlRoot: UIView!
-    public func setup(_ dependency: ViewDependency) -> UIView {
+    public func setup(dependency: ViewDependency) -> UIView {
         let view = FrameLayout(frame: .zero)
         view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         view.addSubview(
@@ -36,7 +36,9 @@ public class ViewPagerDemoXml {
             gravity: .bottomCenter
         ) { view in 
             self.viewPagerIndicator = view
-            view.currentPageIndicatorTintColor = ResourcesColors.colorPrimary
+            applyColor(view, R.color.colorPrimary) { c in
+                view.currentPageIndicatorTintColor = c
+            }
             view.pageIndicatorTintColor = UIColor(argb: 0xFF888888)
         }
         

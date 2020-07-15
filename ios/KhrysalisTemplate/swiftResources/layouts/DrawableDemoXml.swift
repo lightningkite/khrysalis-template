@@ -10,7 +10,7 @@ import MapKit
 public class DrawableDemoXml {
     
     public unowned var xmlRoot: UIView!
-    public func setup(_ dependency: ViewDependency) -> UIView {
+    public func setup(dependency: ViewDependency) -> UIView {
         let view = ScrollViewVertical(frame: .zero)
         view.addSubview(LinearLayout(frame: .zero)) { view in 
             view.orientation = .y
@@ -27,7 +27,7 @@ public class DrawableDemoXml {
                 weight: 0
             ) { view in 
                 view.font = UIFont.get(size: 24, style: ["bold"])
-                view.textString = ResourcesStrings.welcome
+                view.textString = R.string.welcome
                 view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF000000)
             }
@@ -54,11 +54,11 @@ public class DrawableDemoXml {
                     gravity: .centerCenter,
                     weight: 1.0
                 ) { view in 
-                    view.backgroundLayer = ResourcesDrawables.buttonAccent(view)
+                    view.backgroundLayer = R.drawable.button_accent(view)
                     view.titleLabel?.font = UIFont.get(size: 12, style: [])
-                    view.titleLabel?.textString = ResourcesStrings.ok
+                    view.titleLabel?.textString = R.string.ok
                     view.titleLabel?.numberOfLines = 0
-                    view.textString = ResourcesStrings.ok
+                    view.textString = R.string.ok
                     view.contentHorizontalAlignment = .center
                     view.contentMode = .scaleAspectFit
                     view.contentEdgeInsets = UIEdgeInsets(top: 0, left:0, bottom:0, right:0)
@@ -73,11 +73,11 @@ public class DrawableDemoXml {
                     gravity: .centerCenter,
                     weight: 1.0
                 ) { view in 
-                    view.backgroundLayer = ResourcesDrawables.buttonDisabled(view)
+                    view.backgroundLayer = R.drawable.button_disabled(view)
                     view.titleLabel?.font = UIFont.get(size: 12, style: [])
-                    view.titleLabel?.textString = ResourcesStrings.ok
+                    view.titleLabel?.textString = R.string.ok
                     view.titleLabel?.numberOfLines = 0
-                    view.textString = ResourcesStrings.ok
+                    view.textString = R.string.ok
                     view.contentHorizontalAlignment = .center
                     view.contentMode = .scaleAspectFit
                     view.contentEdgeInsets = UIEdgeInsets(top: 0, left:0, bottom:0, right:0)
@@ -92,11 +92,11 @@ public class DrawableDemoXml {
                     gravity: .centerCenter,
                     weight: 1.0
                 ) { view in 
-                    view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
+                    view.backgroundLayer = R.drawable.button_primary(view)
                     view.titleLabel?.font = UIFont.get(size: 12, style: [])
-                    view.titleLabel?.textString = ResourcesStrings.ok
+                    view.titleLabel?.textString = R.string.ok
                     view.titleLabel?.numberOfLines = 0
-                    view.textString = ResourcesStrings.ok
+                    view.textString = R.string.ok
                     view.contentHorizontalAlignment = .center
                     view.contentMode = .scaleAspectFit
                     view.contentEdgeInsets = UIEdgeInsets(top: 0, left:0, bottom:0, right:0)
@@ -126,7 +126,7 @@ public class DrawableDemoXml {
                     gravity: .centerCenter,
                     weight: 1.0
                 ) { view in 
-                    view.image = UIImage(named: "reason_expertise") ?? ResourcesDrawables.reasonExpertise(view).toImage()
+                    view.image = UIImage(named: "reason_expertise") ?? R.drawable.reason_expertise(view).toImage()
                     view.clipsToBounds = true
                     view.contentMode = .scaleAspectFit
                 }
@@ -140,11 +140,11 @@ public class DrawableDemoXml {
                     gravity: .centerCenter,
                     weight: 1.0
                 ) { view in 
-                    view.backgroundLayer = ResourcesDrawables.border(view)
+                    view.backgroundLayer = R.drawable.border(view)
                     view.titleLabel?.font = UIFont.get(size: 12, style: [])
-                    view.titleLabel?.textString = ResourcesStrings.ok
+                    view.titleLabel?.textString = R.string.ok
                     view.titleLabel?.numberOfLines = 0
-                    view.textString = ResourcesStrings.ok
+                    view.textString = R.string.ok
                     view.contentHorizontalAlignment = .center
                     view.contentMode = .scaleAspectFit
                     view.contentEdgeInsets = UIEdgeInsets(top: 0, left:0, bottom:0, right:0)
@@ -159,8 +159,10 @@ public class DrawableDemoXml {
                     gravity: .centerCenter,
                     weight: 1.0
                 ) { view in 
-                    view.backgroundColor = ResourcesColors.colorPrimary
-                    view.image = UIImage(named: "ic_arrow_back_white_24dp") ?? ResourcesDrawables.icArrowBackWhite24dp(view).toImage()
+                    applyColor(view, R.color.colorPrimary) { c in
+                        view.backgroundColor = c
+                    }
+                    view.image = UIImage(named: "ic_arrow_back_white_24dp") ?? R.drawable.ic_arrow_back_white_24dp(view).toImage()
                     view.clipsToBounds = true
                     view.contentMode = .scaleAspectFit
                 }
@@ -189,7 +191,7 @@ public class DrawableDemoXml {
                     gravity: .centerCenter,
                     weight: 1.0
                 ) { view in 
-                    view.image = UIImage(named: "ic_android_black_24dp") ?? ResourcesDrawables.icAndroidBlack24dp(view).toImage()
+                    view.image = UIImage(named: "ic_android_black_24dp") ?? R.drawable.ic_android_black_24dp(view).toImage()
                     view.clipsToBounds = true
                     view.contentMode = .scaleAspectFit
                 }
@@ -203,7 +205,7 @@ public class DrawableDemoXml {
                     gravity: .centerCenter,
                     weight: 1.0
                 ) { view in 
-                    view.image = UIImage(named: "ic_beach_access_black_24dp") ?? ResourcesDrawables.icBeachAccessBlack24dp(view).toImage()
+                    view.image = UIImage(named: "ic_beach_access_black_24dp") ?? R.drawable.ic_beach_access_black_24dp(view).toImage()
                     view.clipsToBounds = true
                     view.contentMode = .scaleAspectFit
                 }
@@ -217,7 +219,7 @@ public class DrawableDemoXml {
                     gravity: .centerCenter,
                     weight: 1.0
                 ) { view in 
-                    view.image = UIImage(named: "ic_exposure_black_24dp") ?? ResourcesDrawables.icExposureBlack24dp(view).toImage()
+                    view.image = UIImage(named: "ic_exposure_black_24dp") ?? R.drawable.ic_exposure_black_24dp(view).toImage()
                     view.clipsToBounds = true
                     view.contentMode = .scaleAspectFit
                 }

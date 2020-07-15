@@ -10,7 +10,7 @@ import MapKit
 public class ControlsDemoXml {
     
     public unowned var xmlRoot: UIView!
-    public func setup(_ dependency: ViewDependency) -> UIView {
+    public func setup(dependency: ViewDependency) -> UIView {
         let view = ScrollViewVertical(frame: .zero)
         view.addSubview(LinearLayout(frame: .zero)) { view in 
             view.orientation = .y
@@ -27,7 +27,7 @@ public class ControlsDemoXml {
                 weight: 0
             ) { view in 
                 view.font = UIFont.get(size: 24, style: ["bold"])
-                view.textString = ResourcesStrings.welcomeToSwitchTown
+                view.textString = R.string.welcome_to_switch_town
                 view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF000000)
             }
@@ -43,7 +43,7 @@ public class ControlsDemoXml {
             ) { view in 
                 view.verticalAlign = .start
                 view.labelView.font = UIFont.get(size: 12, style: [])
-                view.labelView.textString = ResourcesStrings.loremIpsum
+                view.labelView.textString = R.string.lorem_ipsum
                 view.labelView.numberOfLines = 0
                 view.labelView.baselineAdjustment = .none
             }
@@ -59,7 +59,7 @@ public class ControlsDemoXml {
             ) { view in 
                 view.verticalAlign = .start
                 view.labelView.font = UIFont.get(size: 12, style: [])
-                view.labelView.textString = ResourcesStrings.loremIpsum
+                view.labelView.textString = R.string.lorem_ipsum
                 view.labelView.numberOfLines = 0
                 view.labelView.baselineAdjustment = .none
             }
@@ -74,7 +74,7 @@ public class ControlsDemoXml {
                 weight: 0
             ) { view in 
                 view.font = UIFont.get(size: 16, style: [])
-                view.textString = ResourcesStrings.textField
+                view.textString = R.string.text_field
                 view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF222222)
             }
@@ -89,7 +89,7 @@ public class ControlsDemoXml {
                 weight: 0
             ) { view in 
                 self.editableText = view
-                view.backgroundLayer = ResourcesDrawables.border(view)
+                view.backgroundLayer = R.drawable.border(view)
                 view.setLeftPaddingPoints(8)
                 view.setRightPaddingPoints(8)
                 view.font = UIFont.get(size: 16, style: [])
@@ -107,7 +107,7 @@ public class ControlsDemoXml {
                 weight: 0
             ) { view in 
                 self.numberText = view
-                view.backgroundLayer = ResourcesDrawables.border(view)
+                view.backgroundLayer = R.drawable.border(view)
                 view.setLeftPaddingPoints(8)
                 view.setRightPaddingPoints(8)
                 view.autocapitalizationType = .none
@@ -128,7 +128,7 @@ public class ControlsDemoXml {
                 weight: 0
             ) { view in 
                 self.editableAutoText = view
-                view.backgroundLayer = ResourcesDrawables.border(view)
+                view.backgroundLayer = R.drawable.border(view)
                 view.setLeftPaddingPoints(8)
                 view.setRightPaddingPoints(8)
                 view.font = UIFont.get(size: 16, style: [])
@@ -162,7 +162,7 @@ public class ControlsDemoXml {
                 weight: 0
             ) { view in 
                 self.editableTextBig = view
-                view.backgroundLayer = ResourcesDrawables.border(view)
+                view.backgroundLayer = R.drawable.border(view)
                 view.setLeftPaddingPoints(8)
                 view.setRightPaddingPoints(8)
                 view.font = UIFont.get(size: 16, style: [])
@@ -181,7 +181,7 @@ public class ControlsDemoXml {
                 weight: 0
             ) { view in 
                 self.spinner = view
-                view.backgroundLayer = ResourcesDrawables.border(view)
+                view.backgroundLayer = R.drawable.border(view)
                 view.contentEdgeInsets = UIEdgeInsets(top: 0, left:0, bottom:0, right:0)
             }
             

@@ -10,7 +10,7 @@ import MapKit
 public class ComponentBleDeviceXml {
     
     public unowned var xmlRoot: UIView!
-    public func setup(_ dependency: ViewDependency) -> UIView {
+    public func setup(dependency: ViewDependency) -> UIView {
         let view = LinearLayout(frame: .zero)
         view.orientation = .x
         view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -97,14 +97,14 @@ public class ComponentBleDeviceXml {
             weight: 0
         ) { view in 
             self.connect = view
-            view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
+            view.backgroundLayer = R.drawable.button_primary(view)
             view.titleLabel?.font = UIFont.get(size: 16, style: [])
             view.titleLabel?.textAllCaps = false
-            view.titleLabel?.textString = ResourcesStrings.connect
+            view.titleLabel?.textString = R.string.connect
             view.titleLabel?.numberOfLines = 0
             view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
             view.textAllCaps = false
-            view.textString = ResourcesStrings.connect
+            view.textString = R.string.connect
             view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
             view.contentHorizontalAlignment = .center
             view.contentMode = .scaleAspectFit

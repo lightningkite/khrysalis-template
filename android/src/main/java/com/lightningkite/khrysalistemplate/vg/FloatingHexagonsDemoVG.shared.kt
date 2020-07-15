@@ -8,6 +8,8 @@ import com.lightningkite.khrysalis.views.asColor
 import com.lightningkite.khrysalis.views.CustomViewDelegate
 import com.lightningkite.khrysalis.views.ViewGenerator
 import com.lightningkite.khrysalis.views.draw.newLinearGradient
+import com.lightningkite.khrysalis.views.geometry.GFloat
+import com.lightningkite.khrysalis.views.geometry.toGFloat
 import com.lightningkite.khrysalistemplate.layouts.FloatingHexagonsDemoXml
 import kotlin.math.abs
 import kotlin.math.cos
@@ -35,13 +37,13 @@ class FloatingHexagonsDelegate : CustomViewDelegate() {
         this.hexagonPaint.strokeWidth = 4f
         this.hexagonPaint.color = 0xFFFFFFFF.asColor()
     }
-    var location: Float? = null
-    var moveTo: Float? = null
-    var animationTime: Float = 0f
+    var location: GFloat? = null
+    var moveTo: GFloat? = null
+    var animationTime: GFloat = 0f
 
     var hexagons: List<Hexagon>? = null
 
-    fun frame(time: Float) {
+    fun frame(time: GFloat) {
         location?.let { loc ->
             moveTo?.let { moveTo ->
                 if (abs(loc - moveTo) > .01f && animationTime > 0) {
@@ -66,15 +68,15 @@ class FloatingHexagonsDelegate : CustomViewDelegate() {
 //        }
     }
 
-    override fun draw(canvas: Canvas, width: Float, height: Float, displayMetrics: DisplayMetrics) {
+    override fun draw(canvas: Canvas, width: GFloat, height: GFloat, displayMetrics: DisplayMetrics) {
         if (hexagons == null) {
             val tempList: MutableList<Hexagon> = mutableListOf()
             for (i in 0..7) {
                 tempList.add(
                     Hexagon(
-                        (Random.nextFloat() * width * 1.5f),
-                        (Random.nextFloat() * height),
-                        ((Random.nextFloat() + 0.2) * width / 4).toFloat(),
+                        (Random.nextFloat().toGFloat() * width * 1.5f),
+                        (Random.nextFloat().toGFloat() * height),
+                        ((Random.nextFloat().toGFloat() + 0.2) * width / 4).toGFloat(),
                         Random.nextInt(1,5),
                         hexagonPaint
                     )
@@ -107,38 +109,38 @@ class FloatingHexagonsDelegate : CustomViewDelegate() {
         hexagons?.forEach { it -> it.draw(canvas) }
     }
 
-    fun moveToPos(x: Float, time: Float) {
+    fun moveToPos(x: GFloat, time: GFloat) {
         moveTo = x
         animationTime = time
     }
 
-    override fun onTouchDown(id: Int, x: Float, y: Float, width: Float, height: Float): Boolean {
+    override fun onTouchDown(id: Int, x: GFloat, y: GFloat, width: GFloat, height: GFloat): Boolean {
         moveToPos(x, 10f)
         return true
     }
 
-    override fun onTouchMove(id: Int, x: Float, y: Float, width: Float, height: Float): Boolean {
+    override fun onTouchMove(id: Int, x: GFloat, y: GFloat, width: GFloat, height: GFloat): Boolean {
         return true
     }
 
-    override fun onTouchUp(id: Int, x: Float, y: Float, width: Float, height: Float): Boolean {
+    override fun onTouchUp(id: Int, x: GFloat, y: GFloat, width: GFloat, height: GFloat): Boolean {
         return true
     }
 
 
     override fun generateAccessibilityView(): View? = null
 
-    override fun sizeThatFitsWidth(width: Float, height: Float): Float {
+    override fun sizeThatFitsWidth(width: GFloat, height: GFloat): GFloat {
         return height
     }
 
-    override fun sizeThatFitsHeight(width: Float, height: Float): Float {
+    override fun sizeThatFitsHeight(width: GFloat, height: GFloat): GFloat {
         return width
     }
 }
 
 
-class Hexagon(var centerX: Float, var centerY: Float, val radius: Float, val layer: Int, val paint: Paint) {
+class Hexagon(var centerX: GFloat, var centerY: GFloat, val radius: GFloat, val layer: Int, val paint: Paint) {
 
     init {
         println(layer)
@@ -146,8 +148,8 @@ class Hexagon(var centerX: Float, var centerY: Float, val radius: Float, val lay
 
     fun draw(canvas: Canvas) {
         for (i in 0.toInt()..5.toInt()) {
-            val angle1: Float = (i.toFloat() * 60f) * degreesToRadians
-            val angle2: Float = (i.toFloat() * 60f + 60f) * degreesToRadians
+            val angle1: GFloat = (i.toGFloat() * 60f) * degreesToRadians
+            val angle2: GFloat = (i.toGFloat() * 60f + 60f) * degreesToRadians
             val cornerX1 = sin(angle1) * radius + centerX
             val cornerY1 = (cos(angle1) * 1.1f) * radius + centerY
             val cornerX2 = sin(angle2) * radius + centerX
@@ -157,14 +159,14 @@ class Hexagon(var centerX: Float, var centerY: Float, val radius: Float, val lay
         }
     }
 
-    fun move(x: Float, y: Float) {
-        centerX += x / layer.toFloat()
-        centerY += y / layer.toFloat()
+    fun move(x: GFloat, y: GFloat) {
+        centerX += x / layer.toGFloat()
+        centerY += y / layer.toGFloat()
     }
 
-    fun moveX(x: Float) {
-        centerX += x / layer.toFloat()
+    fun moveX(x: GFloat) {
+        centerX += x / layer.toGFloat()
     }
 
-    private val degreesToRadians: Float = 3.14159f / 180f
+    private val degreesToRadians: GFloat = 3.14159f / 180f
 }

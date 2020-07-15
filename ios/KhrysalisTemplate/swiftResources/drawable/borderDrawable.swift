@@ -2,7 +2,7 @@
 import UIKit
 import Khrysalis
 
-extension ResourcesDrawables {
+extension R.drawable {
 
 static func border(_ view: UIView? = nil) -> CALayer {
     let layer = CALayer()
@@ -43,8 +43,12 @@ static func border(_ view: UIView? = nil) -> CALayer {
 static func borderPart1(_ view: UIView? = nil) -> CALayer {
     let layer = CALayer()
     layer.borderWidth = 1
-    layer.borderColor = ResourcesColors.disabled.cgColor
-    layer.backgroundColor = ResourcesColors.disabled.cgColor
+applyColor(view, R.color.disabled) { c in
+    layer.borderColor = c.cgColor
+}
+applyColor(view, R.color.disabled) { c in
+    layer.backgroundColor = c.cgColor
+}
     layer.maxCornerRadius = 3
     layer.cornerRadius = 3
     layer.bounds.size = CGSize(width: 100, height: 100)
@@ -53,8 +57,12 @@ static func borderPart1(_ view: UIView? = nil) -> CALayer {
 static func borderPart2(_ view: UIView? = nil) -> CALayer {
     let layer = CALayer()
     layer.borderWidth = 1
-    layer.borderColor = ResourcesColors.disabled.cgColor
-    layer.backgroundColor = ResourcesColors.disabled.cgColor
+applyColor(view, R.color.disabled) { c in
+    layer.borderColor = c.cgColor
+}
+applyColor(view, R.color.disabled) { c in
+    layer.backgroundColor = c.cgColor
+}
     layer.maxCornerRadius = 3
     layer.cornerRadius = 3
     layer.bounds.size = CGSize(width: 100, height: 100)
@@ -63,8 +71,12 @@ static func borderPart2(_ view: UIView? = nil) -> CALayer {
 static func borderPart3(_ view: UIView? = nil) -> CALayer {
     let layer = CALayer()
     layer.borderWidth = 1
-    layer.borderColor = ResourcesColors.disabled.cgColor
-    layer.backgroundColor = ResourcesColors.white.cgColor
+applyColor(view, R.color.disabled) { c in
+    layer.borderColor = c.cgColor
+}
+applyColor(view, R.color.white) { c in
+    layer.backgroundColor = c.cgColor
+}
     layer.maxCornerRadius = 3
     layer.cornerRadius = 3
     layer.bounds.size = CGSize(width: 100, height: 100)

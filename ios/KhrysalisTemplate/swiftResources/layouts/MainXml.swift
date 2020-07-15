@@ -10,7 +10,7 @@ import MapKit
 public class MainXml {
     
     public unowned var xmlRoot: UIView!
-    public func setup(_ dependency: ViewDependency) -> UIView {
+    public func setup(dependency: ViewDependency) -> UIView {
         let view = LinearLayout(frame: .zero)
         view.orientation = .y
         view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -26,7 +26,9 @@ public class MainXml {
             weight: 0
         ) { view in 
             self.topBar = view
-            view.backgroundColor = ResourcesColors.colorPrimary
+            applyColor(view, R.color.colorPrimary) { c in
+                view.backgroundColor = c
+            }
             view.safeInsets(align: .topFill)
             view.orientation = .x
             view.padding = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
@@ -46,7 +48,7 @@ public class MainXml {
                 view.titleLabel?.numberOfLines = 0
                 view.contentHorizontalAlignment = .center
                 view.iconPosition = .top
-                view.iconLayer = ResourcesDrawables.icArrowBackWhite24dp(view)
+                view.iconLayer = R.drawable.ic_arrow_back_white_24dp(view)
                 view.contentMode = .scaleAspectFit
                 view.contentEdgeInsets = UIEdgeInsets(top: 8, left:8, bottom:8, right:8)
             }
@@ -62,7 +64,7 @@ public class MainXml {
             ) { view in 
                 self.title = view
                 view.font = UIFont.get(size: 18, style: ["bold"])
-                view.textString = ResourcesStrings.appName
+                view.textString = R.string.app_name
                 view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFFffffff)
             }
@@ -91,7 +93,9 @@ public class MainXml {
             weight: 0
         ) { view in 
             self.bottom0 = view
-            view.backgroundColor = ResourcesColors.colorPrimary
+            applyColor(view, R.color.colorPrimary) { c in
+                view.backgroundColor = c
+            }
             view.safeInsetsSizing(align: .bottomFill)
         }
         

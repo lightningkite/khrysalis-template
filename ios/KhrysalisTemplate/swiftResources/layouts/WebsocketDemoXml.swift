@@ -10,7 +10,7 @@ import MapKit
 public class WebsocketDemoXml {
     
     public unowned var xmlRoot: UIView!
-    public func setup(_ dependency: ViewDependency) -> UIView {
+    public func setup(dependency: ViewDependency) -> UIView {
         let view = LinearLayout(frame: .zero)
         view.orientation = .y
         view.padding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
@@ -90,7 +90,7 @@ public class WebsocketDemoXml {
                 view.titleLabel?.numberOfLines = 0
                 view.contentHorizontalAlignment = .center
                 view.iconPosition = .top
-                view.iconLayer = ResourcesDrawables.icSendBlack24dp(view)
+                view.iconLayer = R.drawable.ic_send_black_24dp(view)
                 view.contentMode = .scaleAspectFit
                 view.contentEdgeInsets = UIEdgeInsets(top: 0, left:0, bottom:0, right:0)
             }

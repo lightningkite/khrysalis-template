@@ -10,7 +10,7 @@ import MapKit
 public class ExampleContentXml {
     
     public unowned var xmlRoot: UIView!
-    public func setup(_ dependency: ViewDependency) -> UIView {
+    public func setup(dependency: ViewDependency) -> UIView {
         let view = ScrollViewVertical(frame: .zero)
         self.scrollView = view
         view.addSubview(LinearLayout(frame: .zero)) { view in 
@@ -28,7 +28,7 @@ public class ExampleContentXml {
                 weight: 0
             ) { view in 
                 view.font = UIFont.get(size: 24, style: ["bold"])
-                view.textString = ResourcesStrings.welcome
+                view.textString = R.string.welcome
                 view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF000000)
             }
@@ -43,7 +43,7 @@ public class ExampleContentXml {
                 weight: 0
             ) { view in 
                 view.font = UIFont.get(size: 16, style: [])
-                view.textString = ResourcesStrings.welcomeMessage
+                view.textString = R.string.welcome_message
                 view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF222222)
             }
@@ -87,14 +87,14 @@ public class ExampleContentXml {
                     weight: 0
                 ) { view in 
                     self.exampleContentIncrement = view
-                    view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
+                    view.backgroundLayer = R.drawable.button_primary(view)
                     view.titleLabel?.font = UIFont.get(size: 16, style: [])
                     view.titleLabel?.textAllCaps = false
-                    view.titleLabel?.textString = ResourcesStrings.incrementTheNumber
+                    view.titleLabel?.textString = R.string.increment_the_number
                     view.titleLabel?.numberOfLines = 0
                     view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
                     view.textAllCaps = false
-                    view.textString = ResourcesStrings.incrementTheNumber
+                    view.textString = R.string.increment_the_number
                     view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
                     view.contentHorizontalAlignment = .center
                     view.contentMode = .scaleAspectFit
@@ -142,14 +142,14 @@ public class ExampleContentXml {
                     weight: 0
                 ) { view in 
                     self.chainedIncrement = view
-                    view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
+                    view.backgroundLayer = R.drawable.button_primary(view)
                     view.titleLabel?.font = UIFont.get(size: 16, style: [])
                     view.titleLabel?.textAllCaps = false
-                    view.titleLabel?.textString = ResourcesStrings.incrementTheNumber
+                    view.titleLabel?.textString = R.string.increment_the_number
                     view.titleLabel?.numberOfLines = 0
                     view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
                     view.textAllCaps = false
-                    view.textString = ResourcesStrings.incrementTheNumber
+                    view.textString = R.string.increment_the_number
                     view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
                     view.contentHorizontalAlignment = .center
                     view.contentMode = .scaleAspectFit
@@ -167,7 +167,7 @@ public class ExampleContentXml {
                 gravity: .topLeft,
                 weight: 0
             ) { view in 
-                view.image = UIImage(named: "reason_expertise") ?? ResourcesDrawables.reasonExpertise(view).toImage()
+                view.image = UIImage(named: "reason_expertise") ?? R.drawable.reason_expertise(view).toImage()
                 view.clipsToBounds = true
                 view.contentMode = .scaleAspectFit
             }
@@ -182,7 +182,7 @@ public class ExampleContentXml {
                 weight: 0
             ) { view in 
                 self.scrollToTop = view
-                view.backgroundLayer = ResourcesDrawables.buttonPrimary(view)
+                view.backgroundLayer = R.drawable.button_primary(view)
                 view.titleLabel?.font = UIFont.get(size: 16, style: [])
                 view.titleLabel?.textAllCaps = false
                 view.titleLabel?.textString = "Scroll to Top"

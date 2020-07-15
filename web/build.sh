@@ -7,4 +7,4 @@ find . -name '*.svg' | cpio -pdm ../dist
 find . -name '*.png' | cpio -pdm ../dist
 cp ./index.html ../dist/index.html
 cd ..
-npm run start
+npm run build
