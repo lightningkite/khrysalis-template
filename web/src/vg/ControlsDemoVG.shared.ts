@@ -13,9 +13,9 @@ import { spinnerBind } from 'khrysalis/dist/observables/binding/Spinner.binding.
 export class ControlsDemoVG extends ViewGenerator {
     public constructor() {
         super();
-        this.text = new StandardObservableProperty("", undefined);
-        this.options = new StandardObservableProperty(["Apple", "Banana", "Chili Pepper", "Dragon Fruit"], undefined);
-        this._number = new StandardObservableProperty(32, undefined);
+        this.text = new StandardObservableProperty<string>("", undefined);
+        this.options = new StandardObservableProperty<Array<string>>(["Apple", "Banana", "Chili Pepper", "Dragon Fruit"], undefined);
+        this._number = new StandardObservableProperty<number>(32, undefined);
     }
     
     //! Declares com.lightningkite.khrysalistemplate.vg.ControlsDemoVG.title
@@ -38,12 +38,12 @@ export class ControlsDemoVG extends ViewGenerator {
         androidWidgetEditTextBindInteger(xml.numberText, this._number);
         androidWidgetEditTextBindString(xml.editableText, this.text);
         androidWidgetEditTextBindString(xml.editableAutoText, this.text);
-        androidWidgetAutoCompleteTextViewBind(xml.editableAutoText, this.options, (it) => it, (item) => {
+        androidWidgetAutoCompleteTextViewBind<string>(xml.editableAutoText, this.options, (it: string): string => it, (item: string): void => {
                 this.text.value = item
         });
         androidWidgetTextViewBindString(xml.editableTextCopy, this.text);
         androidWidgetEditTextBindString(xml.editableTextBig, this.text);
-        spinnerBind(xml.spinner, this.options, this.text, undefined);
+        spinnerBind<string>(xml.spinner, this.options, this.text, undefined);
         
         return view;
     }

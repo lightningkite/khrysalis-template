@@ -8,11 +8,13 @@ import { DrawableDemoVG } from './DrawableDemoVG.shared'
 import { PreviewVG } from './PreviewVG.shared'
 import { EntryPoint, EntryPointDefaults } from 'khrysalis/dist/views/EntryPoint.shared'
 import { MultipleDemoVG } from './MultipleDemoVG.shared'
+import { ObservableProperty } from 'khrysalis/dist/observables/ObservableProperty.shared'
 import { SegmentedControlDemoVG } from './SegmentedControlDemoVG.shared'
 import { PongDemoVG } from './PongDemoVG.shared'
 import { DateButtonDemoVG } from './DateButtonDemoVG.shared'
 import { LoadImageDemoVG } from './LoadImageDemoVG.shared'
 import { MarginTestsVG } from './MarginTestVG.shared'
+import { MapDemoVG } from './MapDemoVG.shared'
 import { ControlsDemoVG } from './ControlsDemoVG.shared'
 import { DateRangeDemoVG } from './DateRangeDemoVG.shared'
 import { HttpDemoVG } from './HttpDemoVG.shared'
@@ -36,7 +38,7 @@ export class SelectDemoVG extends ViewGenerator implements EntryPoint {
     public constructor(stack: ObservableStack<ViewGenerator>) {
         super();
         this.stack = stack;
-        this.options = [new WebsocketDemoVG(), new HttpDemoVG(), new ExternalTestVG(), new PongDemoVG(), new FloatingHexagonsDemoVG(), new MarginTestsVG(), new MultipleDemoVG(), new DateButtonDemoVG(), new LocationDemoVG(), new LoadImageDemoVG(), new ControlsDemoVG(), new ExampleContentVG(), new ViewPagerDemoVG(this.stack), new SegmentedControlDemoVG(), new SliderDemoVG(), new DateRangeDemoVG(), new LoginDemoVG(this.stack), new DrawableDemoVG(), new PreviewVG()];
+        this.options = [new WebsocketDemoVG(), new HttpDemoVG(), new ExternalTestVG(), new PongDemoVG(), new FloatingHexagonsDemoVG(), new MarginTestsVG(), new MultipleDemoVG(), new DateButtonDemoVG(), new MapDemoVG(), new LocationDemoVG(), new LoadImageDemoVG(), new ControlsDemoVG(), new ExampleContentVG(), new ViewPagerDemoVG(this.stack), new SegmentedControlDemoVG(), new SliderDemoVG(), new DateRangeDemoVG(), new LoginDemoVG(this.stack), new DrawableDemoVG(), new PreviewVG()];
     }
     
     //! Declares com.lightningkite.khrysalistemplate.vg.SelectDemoVG.title
@@ -56,12 +58,12 @@ export class SelectDemoVG extends ViewGenerator implements EntryPoint {
         const view = xml.setup(dependency);
         
         
-        androidxRecyclerviewWidgetRecyclerViewBind(xml.list, new ConstantObservableProperty(this.options), this.options[0], (obs) => {
+        androidxRecyclerviewWidgetRecyclerViewBind<ViewGenerator>(xml.list, new ConstantObservableProperty<Array<ViewGenerator>>(this.options), this.options[0], (obs: ObservableProperty<ViewGenerator>): HTMLElement => {
                 const xml = new ComponentTestXml();
                 
                 const view = xml.setup(dependency);
                 
-                androidWidgetTextViewBindText(xml.label, obs, (it) => it.title);
+                androidWidgetTextViewBindText<ViewGenerator>(xml.label, obs, (it: ViewGenerator): string => it.title);
                 xml.button.onclick = (_ev) => { _ev.stopPropagation(); 
                     this.selectVG(obs.value);
                 };

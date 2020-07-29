@@ -5,8 +5,9 @@ import { map as rxMap, publishReplay as rxPublishReplay, refCount as rxRefCount,
 import { androidWidgetEditTextBindString } from 'khrysalis/dist/observables/binding/EditText.binding.actual'
 import { WebSocketFrame } from 'khrysalis/dist/net/WebSocketFrame.actual'
 import { comLightningkiteKhrysalisObservablesObservablePropertyMap } from 'khrysalis/dist/observables/TransformedObservableProperty.shared'
-import { Observable } from 'rxjs'
+import { Observable, SubscriptionLike } from 'rxjs'
 import { getAndroidViewViewRemoved, ioReactivexDisposablesDisposableUntil } from 'khrysalis/dist/rx/DisposeCondition.actual'
+import { ObservableProperty } from 'khrysalis/dist/observables/ObservableProperty.shared'
 import { WebsocketDemoXml } from '../layout/WebsocketDemoXml'
 import { ComponentTextXml } from '../layout/ComponentTextXml'
 import { StandardObservableProperty } from 'khrysalis/dist/observables/StandardObservableProperty.shared'
@@ -22,7 +23,7 @@ export class WebsocketDemoVG extends ViewGenerator {
     public constructor() {
         super();
         this.socket = HttpClient.INSTANCE.webSocket("wss://echo.websocket.org").pipe(rxPublishReplay(1)).pipe(rxRefCount());
-        this.text = new StandardObservableProperty("", undefined);
+        this.text = new StandardObservableProperty<string>("", undefined);
     }
     
     
@@ -43,16 +44,16 @@ export class WebsocketDemoVG extends ViewGenerator {
         
         
         //--- Set Up xml.items
-        const itemsList = [] as Array<WebSocketFrame>;
+        const itemsList = ([] as Array<WebSocketFrame>);
         
-        androidxRecyclerviewWidgetRecyclerViewBind(xml.items, ioReactivexObservableAsObservableProperty(this.socket.pipe(rxSwitchMap((it) => it.read)).pipe(rxMap((it) => {
+        androidxRecyclerviewWidgetRecyclerViewBind<WebSocketFrame>(xml.items, ioReactivexObservableAsObservableProperty<(Array<WebSocketFrame> | null)>(this.socket.pipe(rxSwitchMap((it: ConnectedWebSocket): Observable<WebSocketFrame> => it.read)).pipe(rxMap((it: WebSocketFrame): Array<WebSocketFrame> => {
                             console.log("Adding item");
                             itemsList.push(it);
                             while (itemsList.length > 20) {
-                                itemsList.splice(0, 1);
+                                itemsList.splice(0, 1)[0];
                             }
                             return itemsList as Array<WebSocketFrame>;
-            })), itemsList), new WebSocketFrame(undefined, undefined), (observable) => {
+            })), itemsList), new WebSocketFrame(undefined, undefined), (observable: ObservableProperty<WebSocketFrame>): HTMLElement => {
                 //--- Make Subview For xml.items (overwritten on flow generation)
                 const cellXml = new ComponentTextXml();
                 
@@ -60,7 +61,7 @@ export class WebsocketDemoVG extends ViewGenerator {
                 
                 
                 //--- Set Up cellXml.label (overwritten on flow generation)
-                androidWidgetTextViewBindString(cellXml.label, comLightningkiteKhrysalisObservablesObservablePropertyMap(observable, (it) => it.text ?? "---"));
+                androidWidgetTextViewBindString(cellXml.label, comLightningkiteKhrysalisObservablesObservablePropertyMap<WebSocketFrame, string>(observable, (it: WebSocketFrame): string => it.text ?? "---"));
                 //--- End Make Subview For xml.items (overwritten on flow generation)
                 return cellView;
         });
@@ -70,7 +71,7 @@ export class WebsocketDemoVG extends ViewGenerator {
         
         //--- Set Up xml.submit
         xml.submit.onclick = (_ev) => { _ev.stopPropagation(); 
-            ioReactivexDisposablesDisposableUntil(this.socket.pipe(rxTake(1)).subscribe((it) => {
+            ioReactivexDisposablesDisposableUntil<(SubscriptionLike | null)>(this.socket.pipe(rxTake(1)).subscribe((it: (ConnectedWebSocket | null)): void => {
                         it.next(new WebSocketFrame(undefined, this.text.value))
             }, undefined, undefined), getAndroidViewViewRemoved(xml.submit));
         };

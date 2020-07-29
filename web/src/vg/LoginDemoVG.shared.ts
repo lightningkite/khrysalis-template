@@ -4,6 +4,7 @@
 import { androidWidgetEditTextBindString } from 'khrysalis/dist/observables/binding/EditText.binding.actual'
 import { R } from '../R'
 import { Form, FormField, comLightningkiteKhrysalisViewsFormFieldMatches, comLightningkiteKhrysalisViewsFormFieldRequired, comLightningkiteKhrysalisViewsViewStringUnless } from 'khrysalis/dist/views/Form.shared'
+import { ViewString, ViewStringResource } from 'khrysalis/dist/views/Strings.shared'
 import { ExampleContentVG } from './ExampleContentVG.shared'
 import { androidWidgetCompoundButtonBind } from 'khrysalis/dist/observables/binding/CompoundButton.binding.actual'
 import { MutableObservableProperty } from 'khrysalis/dist/observables/MutableObservableProperty.shared'
@@ -13,7 +14,6 @@ import { ObservableStack } from 'khrysalis/dist/observables/ObservableStack.shar
 import { androidWidgetViewFlipperBindLoading } from 'khrysalis/dist/observables/binding/ViewFlipper.binding.actual'
 import { LoginDemoXml } from '../layout/LoginDemoXml'
 import { delay } from 'khrysalis/dist/delay.actual'
-import { ViewStringResource } from 'khrysalis/dist/views/Strings.shared'
 
 //! Declares com.lightningkite.khrysalistemplate.vg.LoginDemoVG
 export class LoginDemoVG extends ViewGenerator {
@@ -22,11 +22,11 @@ export class LoginDemoVG extends ViewGenerator {
         super();
         this.stack = stack;
         this.form = new Form();
-        this.username = this.form.fieldRes(R._string.username, "", (field) => comLightningkiteKhrysalisViewsFormFieldRequired(field));
-        this.password = this.form.fieldRes(R._string.password, "", (field) => comLightningkiteKhrysalisViewsFormFieldRequired(field));
-        this.verifyPassword = this.form.fieldRes(R._string.verify_password, "", (field) => comLightningkiteKhrysalisViewsFormFieldRequired(field) ?? comLightningkiteKhrysalisViewsFormFieldMatches(field, this.password));
-        this.agree = this.form.fieldRes(R._string.password, false, (field) => comLightningkiteKhrysalisViewsViewStringUnless(new ViewStringResource(R._string.mustAgree), field.value));
-        this.loading = new StandardObservableProperty(false, undefined);
+        this.username = this.form.fieldRes<string>(R._string.username, "", (field: FormField<string>): (ViewString | null) => comLightningkiteKhrysalisViewsFormFieldRequired(field));
+        this.password = this.form.fieldRes<string>(R._string.password, "", (field: FormField<string>): (ViewString | null) => comLightningkiteKhrysalisViewsFormFieldRequired(field));
+        this.verifyPassword = this.form.fieldRes<string>(R._string.verify_password, "", (field: FormField<string>): (ViewString | null) => comLightningkiteKhrysalisViewsFormFieldRequired(field) ?? comLightningkiteKhrysalisViewsFormFieldMatches<string>(field, this.password));
+        this.agree = this.form.fieldRes<boolean>(R._string.password, false, (field: FormField<boolean>): (ViewString | null) => comLightningkiteKhrysalisViewsViewStringUnless(new ViewStringResource(R._string.mustAgree), field.value));
+        this.loading = new StandardObservableProperty<boolean>(false, undefined);
     }
     
     //! Declares com.lightningkite.khrysalistemplate.vg.LoginDemoVG.title
@@ -65,10 +65,10 @@ export class LoginDemoVG extends ViewGenerator {
     }
     
     private submit(): void {
-        this.form.runOrDialog(() => {
+        this.form.runOrDialog((): void => {
                 console.log("Submit!");
                 this.loading.value = true;
-                delay(1000, () => {
+                delay(1000, (): void => {
                         this.loading.value = false;
                         this.stack?.push(new ExampleContentVG());
                 });

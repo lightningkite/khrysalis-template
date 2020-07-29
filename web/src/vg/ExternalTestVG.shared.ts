@@ -29,7 +29,7 @@ export class ExternalTestVG extends ViewGenerator {
         
         //--- Set Up xml.openMap
         xml.openMap.onclick = (_ev) => { _ev.stopPropagation(); 
-            comLightningkiteKhrysalisAndroidActivityAccessOpenMap(dependency, new GeoCoordinate(41.7269, -111.8432), "Lightning Kite", 14);
+            comLightningkiteKhrysalisAndroidActivityAccessOpenMap(dependency, new GeoCoordinate(41.7269, (-111.8432)), "Lightning Kite", 14);
         };
         
         //--- Set Up xml.openWeb

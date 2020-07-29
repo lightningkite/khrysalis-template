@@ -30,16 +30,18 @@ export class LocationDemoVG extends ViewGenerator {
         const view = xml.setup(dependency);
         
         xml.getLocation.onclick = (_ev) => { _ev.stopPropagation(); 
-            comLightningkiteKhrysalisAndroidActivityAccessRequestLocation(dependency, 100.0, 5.0, (location, message) => {
+            comLightningkiteKhrysalisAndroidActivityAccessRequestLocation(dependency, 100.0, 5.0, (location: (LocationResult | null), message: (string | null)): void => {
                     console.log(message);
                     this.locationInfo.value = location;
             });
         };
-        androidWidgetTextViewBindString(xml.locationDisplay, comLightningkiteKhrysalisObservablesObservablePropertyTransformed(this.locationInfo, (it) => (() => {if (it !== null) {
-                            return `${it.coordinate}`;
-                        } else {
-                            return "Nothing yet";
-        }})()));
+        androidWidgetTextViewBindString(xml.locationDisplay, comLightningkiteKhrysalisObservablesObservablePropertyTransformed<(LocationResult | null), string>(this.locationInfo, (it: (LocationResult | null)): string => {
+                    if (it !== null) {
+                        return `${it.coordinate}`;
+                    } else {
+                        return "Nothing yet";
+                    }
+        }));
         return view;
     }
 }

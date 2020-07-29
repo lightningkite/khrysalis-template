@@ -21,7 +21,7 @@
             android:name="com.lightningkite.khrysalis.android.KhrysalisApplication"
             tools:ignore="GoogleAppIndexingWarning">
 
-        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyD9HgCjYghz5oa173XlXUyRTKFT46MVMg4"/>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyApDP0Mxm_dcKUesN21jwmvElbEPE4_GXc"/>
         <activity android:name=".MainActivity"
                   android:windowSoftInputMode="adjustResize"
                   android:launchMode="singleInstance">

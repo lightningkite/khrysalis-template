@@ -19,7 +19,7 @@ export class MainVG extends ViewGenerator implements EntryPoint {
     public constructor() {
         super();
         this.stack = new ObservableStack<ViewGenerator>();
-        this.shouldBackBeShown = comLightningkiteKhrysalisObservablesObservablePropertyMap(this.stack, (it) => it.length > 1);
+        this.shouldBackBeShown = comLightningkiteKhrysalisObservablesObservablePropertyMap<Array<ViewGenerator>, boolean>(this.stack, (it: Array<ViewGenerator>): boolean => it.length > 1);
         this.stack.push(new SelectDemoVG(this.stack));
     }
     
@@ -44,8 +44,7 @@ export class MainVG extends ViewGenerator implements EntryPoint {
         
         
         comLightningkiteKhrysalisViewsAndroidSwapViewBindStack(xml.mainContent, dependency, this.stack);
-        androidWidgetTextViewBindString(xml.title, comLightningkiteKhrysalisObservablesObservablePropertyMap(this.stack, (it) => (()=>{const temp160 = it;
-        (temp160[temp160.length - 1] ?? null)})()?.title ?? ""));
+        androidWidgetTextViewBindString(xml.title, comLightningkiteKhrysalisObservablesObservablePropertyMap<Array<ViewGenerator>, string>(this.stack, (it: Array<ViewGenerator>): string => ((it[it.length - 1] ?? null)?.title ?? null) ?? ""));
         androidViewViewBindVisible(xml.mainBack, this.shouldBackBeShown);
         xml.mainBack.onclick = (_ev) => { _ev.stopPropagation(); 
             this.stack.pop();

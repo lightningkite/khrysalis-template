@@ -23,20 +23,20 @@ export class LoadImageDemoVG extends ViewGenerator {
         const view = xml.setup(dependency);
         
         xml.camera.onclick = (_ev) => { _ev.stopPropagation(); 
-            comLightningkiteKhrysalisAndroidActivityAccessRequestImageCamera(dependency, undefined, (url) => {
+            comLightningkiteKhrysalisAndroidActivityAccessRequestImageCamera(dependency, undefined, (url: File): void => {
                     androidWidgetImageViewLoadImage(xml.image, new ImageReference(url))
             });
         };
         xml.galleryMultiple.onclick = (_ev) => { _ev.stopPropagation(); 
-            comLightningkiteKhrysalisAndroidActivityAccessRequestImagesGallery(dependency, (urls) => {
-                    let temp_149;
-                    if ((temp_149 = (urls[0] ?? null)) !== null) { 
-                        androidWidgetImageViewLoadImage(xml.image, new ImageReference(temp_149));
+            comLightningkiteKhrysalisAndroidActivityAccessRequestImagesGallery(dependency, (urls: Array<File>): void => {
+                    let temp_118;
+                    if ((temp_118 = (urls[0] ?? null)) !== null) { 
+                        androidWidgetImageViewLoadImage(xml.image, new ImageReference(temp_118));
                     }
             });
         };
         xml.gallery.onclick = (_ev) => { _ev.stopPropagation(); 
-            comLightningkiteKhrysalisAndroidActivityAccessRequestImageGallery(dependency, (url) => {
+            comLightningkiteKhrysalisAndroidActivityAccessRequestImageGallery(dependency, (url: File): void => {
                     androidWidgetImageViewLoadImage(xml.image, new ImageReference(url))
             });
         };

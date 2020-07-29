@@ -16,7 +16,7 @@ export class APIOnline implements APIInterface {
     }
     
     public getExamplePosts(): Observable<Array<Post>> {
-        return ioReactivexSingleReadJson(HttpClient.INSTANCE.call(this.baseUrl + "/posts", HttpClient.INSTANCE.GET, new Map([]), undefined), [Array, [Post]]);
+        return ioReactivexSingleReadJson<Array<Post>>(HttpClient.INSTANCE.call(this.baseUrl + "/posts", HttpClient.INSTANCE.GET, new Map([]), undefined), [Array, [Post]]);
     }
     
 }

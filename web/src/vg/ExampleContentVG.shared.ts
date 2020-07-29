@@ -13,8 +13,8 @@ import { comLightningkiteKhrysalisObservablesObservablePropertyFlatMap } from 'k
 export class ExampleContentVG extends ViewGenerator {
     public constructor() {
         super();
-        this._number = new StandardObservableProperty(0, undefined);
-        this.chained = new StandardObservableProperty(new StandardObservableProperty(0, undefined), undefined);
+        this._number = new StandardObservableProperty<number>(0, undefined);
+        this.chained = new StandardObservableProperty<MutableObservableProperty<number>>(new StandardObservableProperty<number>(0, undefined), undefined);
     }
     
     //! Declares com.lightningkite.khrysalistemplate.vg.ExampleContentVG.title
@@ -28,7 +28,7 @@ export class ExampleContentVG extends ViewGenerator {
     
     public increment(): void {
         const temp16 = this._number;
-        this._number.value += 1;
+        temp16.value = temp16.value + 1;
     }
     
     public generate(dependency: Window): HTMLElement {
@@ -39,11 +39,11 @@ export class ExampleContentVG extends ViewGenerator {
         xml.exampleContentIncrement.onclick = (_ev) => { _ev.stopPropagation(); 
             this.increment();
         };
-        androidWidgetTextViewBindText(xml.exampleContentNumber, this._number, (it) => it.toString());
+        androidWidgetTextViewBindText<number>(xml.exampleContentNumber, this._number, (it: number): string => it.toString());
         xml.chainedIncrement.onclick = (_ev) => { _ev.stopPropagation(); 
             this.chained.value.value = this.chained.value.value + 1;
         };
-        androidWidgetTextViewBindString(xml.chainedNumber, comLightningkiteKhrysalisObservablesObservablePropertyMap(comLightningkiteKhrysalisObservablesObservablePropertyFlatMap(this.chained, (it) => it), (it) => it.toString()));
+        androidWidgetTextViewBindString(xml.chainedNumber, comLightningkiteKhrysalisObservablesObservablePropertyMap<number, string>(comLightningkiteKhrysalisObservablesObservablePropertyFlatMap<MutableObservableProperty<number>, number>(this.chained, (it: MutableObservableProperty<number>): MutableObservableProperty<number> => it), (it: number): string => it.toString()));
         xml.scrollToTop.onclick = (_ev) => { _ev.stopPropagation(); 
             xml.scrollView.scroll(0, 0);
         };

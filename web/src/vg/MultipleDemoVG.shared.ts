@@ -4,12 +4,13 @@
 import { ComponentTextXml } from '../layout/ComponentTextXml'
 import { ComponentTestXml } from '../layout/ComponentTestXml'
 import { ViewGenerator } from 'khrysalis/dist/views/ViewGenerator.shared'
+import { RVTypeHandler, recyclerViewBindMultiType } from 'khrysalis/dist/observables/binding/RecyclerView.binding.actual'
 import { comLightningkiteKhrysalisObservablesObservablePropertyMap } from 'khrysalis/dist/observables/TransformedObservableProperty.shared'
 import { MultipleDemoXml } from '../layout/MultipleDemoXml'
 import { androidWidgetTextViewBindString } from 'khrysalis/dist/observables/binding/TextView.binding.actual'
 import { setViewText } from 'khrysalis/dist/views/ViewWithText.ext.actual'
-import { recyclerViewBindMultiType } from 'khrysalis/dist/observables/binding/RecyclerView.binding.actual'
 import { ConstantObservableProperty } from 'khrysalis/dist/observables/ConstantObservableProperty.shared'
+import { ObservableProperty } from 'khrysalis/dist/observables/ObservableProperty.shared'
 
 //! Declares com.lightningkite.khrysalistemplate.vg.MultipleDemoVG
 export class MultipleDemoVG extends ViewGenerator {
@@ -31,24 +32,24 @@ export class MultipleDemoVG extends ViewGenerator {
         const view = xml.setup(dependency);
         
         
-        recyclerViewBindMultiType(xml.list, dependency, new ConstantObservableProperty(this.data), (handler) => {
-                handler.handle([Number], 0, (obs) => {
+        recyclerViewBindMultiType(xml.list, dependency, new ConstantObservableProperty<Array<any>>(this.data), (handler: RVTypeHandler): void => {
+                handler.handle<number>([Number], 0, (obs: ObservableProperty<number>): HTMLElement => {
                         const cellXml = new ComponentTestXml();
                         
                         const cellView = cellXml.setup(dependency);
                         
-                        androidWidgetTextViewBindString(cellXml.label, comLightningkiteKhrysalisObservablesObservablePropertyMap(obs, (it) => `The number ${it}`));
+                        androidWidgetTextViewBindString(cellXml.label, comLightningkiteKhrysalisObservablesObservablePropertyMap<number, string>(obs, (it: number): string => `The number ${it}`));
                         return cellView;
                 });
-                handler.handle([String], "", (obs) => {
+                handler.handle<string>([String], "", (obs: ObservableProperty<string>): HTMLElement => {
                         const cellXml = new ComponentTestXml();
                         
                         const cellView = cellXml.setup(dependency);
                         
-                        androidWidgetTextViewBindString(cellXml.label, comLightningkiteKhrysalisObservablesObservablePropertyMap(obs, (it) => `The string '${it}'`));
+                        androidWidgetTextViewBindString(cellXml.label, comLightningkiteKhrysalisObservablesObservablePropertyMap<string, string>(obs, (it: string): string => `The string '${it}'`));
                         return cellView;
                 });
-                handler.handle([undefined], undefined, (obs) => {
+                handler.handle<void>([undefined], undefined, (obs: ObservableProperty<void>): HTMLElement => {
                         const cellXml = new ComponentTextXml();
                         
                         const cellView = cellXml.setup(dependency);

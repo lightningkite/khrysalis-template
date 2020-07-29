@@ -4,6 +4,7 @@
 import { Paint } from 'khrysalis/dist/views/draw/Paint.actual'
 import { PongDemoXml } from '../layout/PongDemoXml'
 import { getAnimationFrame } from 'khrysalis/dist/delay.actual'
+import { SubscriptionLike } from 'rxjs'
 import { ioReactivexDisposablesDisposableUntil } from 'khrysalis/dist/rx/DisposeCondition.actual'
 import { androidGraphicsCanvasDrawTextCentered } from 'khrysalis/dist/views/draw/Canvas.actual'
 import { ViewGenerator } from 'khrysalis/dist/views/ViewGenerator.shared'
@@ -54,10 +55,10 @@ export class PongDelegate extends CustomViewDelegate {
         this.paint = new Paint();
         this.paint.color = numberToColor(0xFFFFFFFF);
         this.paint.textSize = 12;
-        ioReactivexDisposablesDisposableUntil(getAnimationFrame().subscribe((time) => {
+        ioReactivexDisposablesDisposableUntil<(SubscriptionLike | null)>(getAnimationFrame().subscribe((time: number): void => {
                     this.frame(time);
                     this.postInvalidate();
-        }), this.removed);
+        }, undefined, undefined), this.removed);
         this.width = 1;
         this.height = 1;
     }
@@ -96,34 +97,34 @@ export class PongDelegate extends CustomViewDelegate {
         this.ballX = this.ballX + this.ballVX * time;
         this.ballY = this.ballY + this.ballVY * time;
         if (this.ballY > this.stageHalfWidth - this.ballRadius) {
-            this.ballVY = -Math.abs(this.ballVY);
+            this.ballVY = (-Math.abs(this.ballVY));
             this.ballY = this.stageHalfWidth - this.ballRadius;
         }
-        if (this.ballY < -this.stageHalfWidth + this.ballRadius) {
+        if (this.ballY < (-this.stageHalfWidth) + this.ballRadius) {
             this.ballVY = Math.abs(this.ballVY);
-            this.ballY = -this.stageHalfWidth + this.ballRadius;
+            this.ballY = (-this.stageHalfWidth) + this.ballRadius;
         }
-        if (Math.abs(this.ballX - -(this.stageHalfLength - this.paddleOffset)) < this.paddleHalfThickness + this.ballRadius) {
+        if (Math.abs(this.ballX - (-(this.stageHalfLength - this.paddleOffset))) < this.paddleHalfThickness + this.ballRadius) {
             if (Math.abs(this.ballY - this.paddleLeftY) < this.paddleHalfWidth + this.ballRadius) {
                 this.ballVX = Math.abs(this.ballVX);
             }
         }
         if (Math.abs(this.ballX - (this.stageHalfLength - this.paddleOffset)) < this.paddleHalfThickness + this.ballRadius) {
             if (Math.abs(this.ballY - this.paddleRightY) < this.paddleHalfWidth + this.ballRadius) {
-                this.ballVX = -Math.abs(this.ballVX);
+                this.ballVX = (-Math.abs(this.ballVX));
             }
         }
-        if (this.ballX < -this.stageHalfLength) {
+        if (this.ballX < (-this.stageHalfLength)) {
             this.ballX = 0;
             this.ballY = 0;
-            this.ballVX = -this.ballVX;
-            this.scoreRight++;
-        } else if (this.ballX > this.stageHalfLength) {
-            this.ballX = 0;
-            this.ballY = 0;
-            this.ballVX = -this.ballVX;
-            this.scoreLeft++;
-        }
+            this.ballVX = (-this.ballVX);
+            this.scoreRight = this.scoreRight + 1;
+        } else { if (this.ballX > this.stageHalfLength) {
+                this.ballX = 0;
+                this.ballY = 0;
+                this.ballVX = (-this.ballVX);
+                this.scoreLeft = this.scoreLeft + 1;
+        } }
     }
     
     public readonly paint: Paint;
@@ -137,11 +138,11 @@ export class PongDelegate extends CustomViewDelegate {
         if (this.paint.shader === null) {
             this.paint.shader = newLinearGradient(0, 0, width, height, [numberToColor(0xFFFF0000), numberToColor(0xFF0000FF)], [0, 1], Shader.TileMode.REPEAT);
         }
-        this.paint.render(canvas, pathFromLTRB(this.transformX(-this.stageHalfLength + this.paddleOffset - this.paddleHalfThickness), this.transformY(this.paddleLeftY - this.paddleHalfWidth), this.transformX(-this.stageHalfLength + this.paddleOffset + this.paddleHalfThickness), this.transformY(this.paddleLeftY + this.paddleHalfWidth)));
+        this.paint.render(canvas, pathFromLTRB(this.transformX((-this.stageHalfLength) + this.paddleOffset - this.paddleHalfThickness), this.transformY(this.paddleLeftY - this.paddleHalfWidth), this.transformX((-this.stageHalfLength) + this.paddleOffset + this.paddleHalfThickness), this.transformY(this.paddleLeftY + this.paddleHalfWidth)));
         this.paint.render(canvas, pathFromLTRB(this.transformX(this.stageHalfLength - this.paddleOffset - this.paddleHalfThickness), this.transformY(this.paddleRightY - this.paddleHalfWidth), this.transformX(this.stageHalfLength - this.paddleOffset + this.paddleHalfThickness), this.transformY(this.paddleRightY + this.paddleHalfWidth)));
         this.paint.render(canvas, pathOvalFromLTRB(this.transformX(this.ballX - this.ballRadius), this.transformY(this.ballY - this.ballRadius), this.transformX(this.ballX + this.ballRadius), this.transformY(this.ballY + this.ballRadius)));
         this.paint.textSize = height / 6;
-        androidGraphicsCanvasDrawTextCentered(canvas, `${this.scoreLeft} - ${this.scoreRight}`, this.transformX(0), this.transformY(-this.stageHalfWidth / 2), this.paint);
+        androidGraphicsCanvasDrawTextCentered(canvas, `${this.scoreLeft} - ${this.scoreRight}`, this.transformX(0), this.transformY((-this.stageHalfWidth) / 2), this.paint);
     }
     
     public onTouchDown(id: number, x: number, y: number, width: number, height: number): boolean {

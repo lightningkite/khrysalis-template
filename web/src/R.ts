@@ -1,5 +1,22 @@
 //! Declares com.lightningkite.khrysalistemplate.R
 export namespace R {
+    export namespace color {
+        export const colorPrimary: string = "--color-color-primary";
+        export const colorPrimaryDark: string = "--color-color-primary-dark";
+        export const colorPrimaryDarker: string = "--color-color-primary-darker";
+        export const colorAccent: string = "--color-color-accent";
+        export const colorAccentDark: string = "--color-color-accent-dark";
+        export const disabled: string = "--color-disabled";
+        export const calendar_selected_day_bg: string = "--color-calendar-selected-day-bg";
+        export const calendar_selected_range_bg: string = "--color-calendar-selected-range-bg";
+        export const calendar_unavailable_bg: string = "--color-calendar-unavailable-bg";
+        export const calendar_range_middle_unavailable_bg: string = "--color-calendar-range-middle-unavailable-bg";
+        export const calendar_range_middle_deactivated_bg: string = "--color-calendar-range-middle-deactivated-bg";
+        export const state_primary: string = "--color-state-primary";
+        export const state_accent: string = "--color-state-accent";
+        export const state_login_text: string = "--color-state-login-text";
+        export const state_accent_toggle: string = "--color-state-accent-toggle";
+    }
     export interface Strings {
         empty: string;
         app_name: string;

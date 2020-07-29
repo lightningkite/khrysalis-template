@@ -12,11 +12,11 @@ body {
     width: 100%;
     margin: 0;
 }
-body > * {
+body > .khr {
     height: 100%;
     width: 100%;
 }
-* {
+.khr {
     overflow-x: hidden;
     overflow-y: hidden;
     box-sizing: border-box;

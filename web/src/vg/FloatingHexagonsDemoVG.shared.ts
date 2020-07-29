@@ -66,19 +66,21 @@ export class FloatingHexagonsDelegate extends CustomViewDelegate {
     
     
     public frame(time: number): void {
-        let temp_34;
-        if ((temp_34 = this.location) !== null) { 
-            let temp_35;
-            if ((temp_35 = this.moveTo) !== null) { 
-                if (Math.abs(temp_34 - temp_35) > .01 && this.animationTime > 0) {
-                    const delta = (temp_35 - temp_34) / this.animationTime;
+        let temp_35;
+        if ((temp_35 = this.location) !== null) { 
+            let temp_36;
+            if ((temp_36 = this.moveTo) !== null) { 
+                if (Math.abs(temp_35 - temp_36) > .01 && this.animationTime > 0) {
+                    const delta = (temp_36 - temp_35) / this.animationTime;
                     
-                    const temp45 = this.hexagons;
-                    if(temp45 !== null) for(const _x of temp45) { 
-                        const it = _x;
-                        it.moveX(delta);
+                    const temp42 = this.hexagons;
+                    if(temp42 !== null) { 
+                        for(const _x of temp42) { 
+                            const it = _x;
+                            it.moveX(delta);
+                        }
                     };
-                    this.location = temp_34 + delta;
+                    this.location = temp_35 + delta;
                     this.animationTime = this.animationTime - time;
                 }
             }
@@ -104,10 +106,12 @@ export class FloatingHexagonsDelegate extends CustomViewDelegate {
             this.backgroundPaint.shader = newLinearGradient(width, 0, 0, height, [numberToColor(0xFF773DBD), numberToColor(0xFF1226AA)], [.25, 1], Shader.TileMode.REPEAT);
         }
         this.backgroundPaint.render(canvas, pathFromLTRB(0, 0, width, height));
-        const temp74 = this.hexagons;
-        if(temp74 !== null) for(const _x of temp74) { 
-            const it = _x;
-            it.draw(canvas);
+        const temp60 = this.hexagons;
+        if(temp60 !== null) { 
+            for(const _x of temp60) { 
+                const it = _x;
+                it.draw(canvas);
+            }
         };
     }
     
@@ -177,8 +181,7 @@ export class Hexagon {
             const cornerY2 = (Math.cos(angle2) * 1.1) * this.radius + this.centerY;
             
             this.paint.alpha = 200 / this.layer;
-            const temp118 = canvas;
-            temp118.beginPath(); temp118.moveTo(cornerX1, cornerY1); temp118.lineTo(cornerX2, cornerY2); this.paint.complete(temp118);
+            canvas.beginPath(); canvas.moveTo(cornerX1, cornerY1); canvas.lineTo(cornerX2, cornerY2); this.paint.complete(canvas);
         }
     }
     

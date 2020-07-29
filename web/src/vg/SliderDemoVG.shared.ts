@@ -14,10 +14,10 @@ import { SliderDemoXml } from '../layout/SliderDemoXml'
 export class SliderDemoVG extends ViewGenerator {
     public constructor() {
         super();
-        this.ratio = new StandardObservableProperty(0, undefined);
-        this.percent = comLightningkiteKhrysalisObservablesMutableObservablePropertyTransformed(this.ratio, (it) => Math.floor((it * 100)), (it) => it / 100);
-        this.obsRatingInt = comLightningkiteKhrysalisObservablesMutableObservablePropertyTransformed(this.ratio, (it) => Math.floor((it * 5)), (it) => it / 5);
-        this.obsRatingFloat = comLightningkiteKhrysalisObservablesMutableObservablePropertyTransformed(this.ratio, (it) => it * 5, (it) => it / 5);
+        this.ratio = new StandardObservableProperty<number>(0, undefined);
+        this.percent = comLightningkiteKhrysalisObservablesMutableObservablePropertyTransformed<number, number>(this.ratio, (it: number): number => Math.floor((it * 100)), (it: number): number => it / 100);
+        this.obsRatingInt = comLightningkiteKhrysalisObservablesMutableObservablePropertyTransformed<number, number>(this.ratio, (it: number): number => Math.floor((it * 5)), (it: number): number => it / 5);
+        this.obsRatingFloat = comLightningkiteKhrysalisObservablesMutableObservablePropertyTransformed<number, number>(this.ratio, (it: number): number => it * 5, (it: number): number => it / 5);
     }
     
     //! Declares com.lightningkite.khrysalistemplate.vg.SliderDemoVG.title
@@ -40,17 +40,17 @@ export class SliderDemoVG extends ViewGenerator {
         
         
         androidWidgetSeekBarBind(xml.slider, 0, 100, this.percent);
-        androidWidgetTextViewBindText(xml.valueDisplay, this.percent, (it) => it.toString());
+        androidWidgetTextViewBindText<number>(xml.valueDisplay, this.percent, (it: number): string => it.toString());
         
         ratingBarBindMutable(xml.rating, 5, this.obsRatingInt);
         ratingBarBindMutable(xml.ratingDisplayStars, 5, this.obsRatingInt);
         ratingBarBindMutable(xml.ratingDisplayStarsSmall, 5, this.obsRatingInt);
-        androidWidgetTextViewBindText(xml.ratingDisplayNumber, this.obsRatingInt, (it) => it.toString());
+        androidWidgetTextViewBindText<number>(xml.ratingDisplayNumber, this.obsRatingInt, (it: number): string => it.toString());
         
         ratingBarBindFloatMutable(xml.ratingFloat, 5, this.obsRatingFloat);
         ratingBarBindFloatMutable(xml.ratingDisplayStarsFloat, 5, this.obsRatingFloat);
         ratingBarBindFloatMutable(xml.ratingDisplayStarsSmallFloat, 5, this.obsRatingFloat);
-        androidWidgetTextViewBindText(xml.ratingDisplayNumberFloat, this.obsRatingFloat, (it) => it.toString());
+        androidWidgetTextViewBindText<number>(xml.ratingDisplayNumberFloat, this.obsRatingFloat, (it: number): string => it.toString());
         
         return view;
     }

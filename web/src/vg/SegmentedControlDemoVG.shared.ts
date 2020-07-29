@@ -4,7 +4,7 @@
 import { StandardObservableProperty } from 'khrysalis/dist/observables/StandardObservableProperty.shared'
 import { ViewGenerator } from 'khrysalis/dist/views/ViewGenerator.shared'
 import { SegmentedControlDemoXml } from '../layout/SegmentedControlDemoXml'
-import { comGoogleAndroidMaterialTabsTabLayoutBind } from 'khrysalis/dist/observables/binding/TabLayout.binding.actual'
+import { tabLayoutBindIndex } from 'khrysalis/dist/observables/binding/TabLayout.binding.actual'
 
 //! Declares com.lightningkite.khrysalistemplate.vg.SegmentedControlDemoVG
 export class SegmentedControlDemoVG extends ViewGenerator {
@@ -22,8 +22,8 @@ export class SegmentedControlDemoVG extends ViewGenerator {
         const view = xml.setup(dependency);
         
         
-        comGoogleAndroidMaterialTabsTabLayoutBind(xml.tabs, ["A", "B", "C"], new StandardObservableProperty(0, undefined), undefined);
-        comGoogleAndroidMaterialTabsTabLayoutBind(xml.tabs2, ["A", "B", "C", "D", "E", "F", "G"], new StandardObservableProperty(0, undefined), undefined);
+        tabLayoutBindIndex(xml.tabs, ["A", "B", "C"], new StandardObservableProperty<number>(0, undefined), undefined);
+        tabLayoutBindIndex(xml.tabs2, ["A", "B", "C", "D", "E", "F", "G"], new StandardObservableProperty<number>(0, undefined), undefined);
         
         return view;
     }

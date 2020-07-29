@@ -31,7 +31,7 @@ class SelectDemoVG(@unowned val stack: ObservableStack<ViewGenerator>) : ViewGen
         MarginTestsVG(),
         MultipleDemoVG(),
         DateButtonDemoVG(),
-//        MapDemoVG(),
+        MapDemoVG(),
         LocationDemoVG(),
         LoadImageDemoVG(),
         ControlsDemoVG(),

@@ -17,7 +17,7 @@ export class ViewPagerDemoVG extends ViewGenerator {
         super();
         this.stack = stack;
         this.items = ["First", "Second", "Third"];
-        this.selectedIndex = new StandardObservableProperty(0, undefined);
+        this.selectedIndex = new StandardObservableProperty<number>(0, undefined);
     }
     
     //! Declares com.lightningkite.khrysalistemplate.vg.ViewPagerDemoVG.title
@@ -35,7 +35,7 @@ export class ViewPagerDemoVG extends ViewGenerator {
         const view = xml.setup(dependency);
         
         
-        androidxViewpagerWidgetViewPagerBindStatic(xml.viewPager, this.items, this.selectedIndex, (it) => {
+        androidxViewpagerWidgetViewPagerBindStatic<string>(xml.viewPager, this.items, this.selectedIndex, (it: string): HTMLElement => {
                 const xml = new ComponentTestXml();
                 
                 const view = xml.setup(dependency);

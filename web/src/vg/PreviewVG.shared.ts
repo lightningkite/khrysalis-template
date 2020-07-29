@@ -5,6 +5,7 @@ import { SelectDemoXml } from '../layout/SelectDemoXml'
 import { ViewPagerDemoXml } from '../layout/ViewPagerDemoXml'
 import { MainXml } from '../layout/MainXml'
 import { setViewText } from 'khrysalis/dist/views/ViewWithText.ext.actual'
+import { SubscriptionLike } from 'rxjs'
 import { getAndroidViewViewRemoved, ioReactivexDisposablesDisposableUntil } from 'khrysalis/dist/rx/DisposeCondition.actual'
 import { SliderDemoXml } from '../layout/SliderDemoXml'
 import { DateRangeDemoXml } from '../layout/DateRangeDemoXml'
@@ -22,8 +23,8 @@ import { comLightningkiteKhrysalisObservablesObservablePropertySubscribeBy } fro
 export class PreviewVG extends ViewGenerator {
     public constructor() {
         super();
-        this.previews = [new PreviewVG.XmlPreview("ControlsDemoXml", (it) => new ControlsDemoXml().setup(it)), new PreviewVG.XmlPreview("DateRangeDemoXml", (it) => new DateRangeDemoXml().setup(it)), new PreviewVG.XmlPreview("ExampleContentXml", (it) => new ExampleContentXml().setup(it)), new PreviewVG.XmlPreview("LoginDemoXml", (it) => new LoginDemoXml().setup(it)), new PreviewVG.XmlPreview("MainXml", (it) => new MainXml().setup(it)), new PreviewVG.XmlPreview("SegmentedControlDemoXml", (it) => new SegmentedControlDemoXml().setup(it)), new PreviewVG.XmlPreview("SelectDemoXml", (it) => new SelectDemoXml().setup(it)), new PreviewVG.XmlPreview("SliderDemoXml", (it) => new SliderDemoXml().setup(it)), new PreviewVG.XmlPreview("ViewPagerDemoXml", (it) => new ViewPagerDemoXml().setup(it))];
-        this.previewIndex = new StandardObservableProperty(0, undefined);
+        this.previews = [new PreviewVG.XmlPreview("ControlsDemoXml", (it: Window): HTMLElement => new ControlsDemoXml().setup(it)), new PreviewVG.XmlPreview("DateRangeDemoXml", (it: Window): HTMLElement => new DateRangeDemoXml().setup(it)), new PreviewVG.XmlPreview("ExampleContentXml", (it: Window): HTMLElement => new ExampleContentXml().setup(it)), new PreviewVG.XmlPreview("LoginDemoXml", (it: Window): HTMLElement => new LoginDemoXml().setup(it)), new PreviewVG.XmlPreview("MainXml", (it: Window): HTMLElement => new MainXml().setup(it)), new PreviewVG.XmlPreview("SegmentedControlDemoXml", (it: Window): HTMLElement => new SegmentedControlDemoXml().setup(it)), new PreviewVG.XmlPreview("SelectDemoXml", (it: Window): HTMLElement => new SelectDemoXml().setup(it)), new PreviewVG.XmlPreview("SliderDemoXml", (it: Window): HTMLElement => new SliderDemoXml().setup(it)), new PreviewVG.XmlPreview("ViewPagerDemoXml", (it: Window): HTMLElement => new ViewPagerDemoXml().setup(it))];
+        this.previewIndex = new StandardObservableProperty<number>(0, undefined);
     }
     
     //! Declares com.lightningkite.khrysalistemplate.vg.PreviewVG.title
@@ -43,8 +44,8 @@ export class PreviewVG extends ViewGenerator {
         
         const view = xml.setup(dependency);
         
-        androidxViewpagerWidgetViewPagerBindStatic(xml.pager, this.previews, this.previewIndex, (it) => it.make(dependency));
-        ioReactivexDisposablesDisposableUntil(comLightningkiteKhrysalisObservablesObservablePropertySubscribeBy(this.previewIndex, undefined, undefined, (it) => {
+        androidxViewpagerWidgetViewPagerBindStatic<PreviewVG.XmlPreview>(xml.pager, this.previews, this.previewIndex, (it: PreviewVG.XmlPreview): HTMLElement => it.make(dependency));
+        ioReactivexDisposablesDisposableUntil<SubscriptionLike>(comLightningkiteKhrysalisObservablesObservablePropertySubscribeBy<number>(this.previewIndex, undefined, undefined, (it: number): void => {
                     setViewText(xml.viewName, this.previews[it].name)
         }), getAndroidViewViewRemoved(view));
         return view;
@@ -55,8 +56,8 @@ export namespace PreviewVG {
     //! Declares com.lightningkite.khrysalistemplate.vg.PreviewVG.XmlPreview
     export class XmlPreview {
         public readonly name: string;
-        public readonly make:  (a: Window) => HTMLElement;
-        public constructor(name: string, make:  (a: Window) => HTMLElement) {
+        public readonly make:  ((a: Window) => HTMLElement);
+        public constructor(name: string, make:  ((a: Window) => HTMLElement)) {
             this.name = name;
             this.make = make;
         }

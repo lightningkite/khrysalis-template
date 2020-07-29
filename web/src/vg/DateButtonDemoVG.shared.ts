@@ -15,7 +15,7 @@ import { ClockPartSize } from 'khrysalis/dist/time/ClockPartSize.shared'
 export class DateButtonDemoVG extends ViewGenerator {
     public constructor() {
         super();
-        this.date = new StandardObservableProperty(new Date(), undefined);
+        this.date = new StandardObservableProperty<Date>(new Date(), undefined);
     }
     
     //! Declares com.lightningkite.khrysalistemplate.vg.DateButtonDemoVG.title
@@ -31,7 +31,7 @@ export class DateButtonDemoVG extends ViewGenerator {
         const view = xml.setup(dependency);
         
         
-        androidWidgetTextViewBindString(xml.text, comLightningkiteKhrysalisObservablesObservablePropertyMap(this.date, (it) => javaUtilDateFormat(it, ClockPartSize.Medium, ClockPartSize.Medium)));
+        androidWidgetTextViewBindString(xml.text, comLightningkiteKhrysalisObservablesObservablePropertyMap<Date, string>(this.date, (it: Date): string => javaUtilDateFormat(it, ClockPartSize.Medium, ClockPartSize.Medium)));
         comLightningkiteKhrysalisViewsAndroidDateButtonBind(xml.dateButton, this.date);
         comLightningkiteKhrysalisViewsAndroidTimeButtonBind(xml.timeButton, this.date, undefined);
         

@@ -24,7 +24,7 @@ export class Post implements Codable {
             parseJsonTyped(obj["title"], [String]) as string, 
             parseJsonTyped(obj["body"], [String]) as string
     ) }
-    public toJson(): object { return {
+    public toJSON(): object { return {
             userId: this.userId, 
             id: this.id, 
             title: this.title, 
@@ -40,6 +40,6 @@ export class Post implements Codable {
     }
     public equals(other: any): boolean { return other instanceof Post && this.userId === other.userId && this.id === other.id && this.title === other.title && this.body === other.body }
     public toString(): string { return `Post(userId = ${this.userId}, id = ${this.id}, title = ${this.title}, body = ${this.body})` }
-    public copy(userId: number = this.userId, id: number = this.id, title: string = this.title, body: string = this.body) { return new Post(userId, id, title, body); }
+    public copy(userId: number = this.userId, id: number = this.id, title: string = this.title, body: string = this.body): Post { return new Post(userId, id, title, body); }
 }
 
