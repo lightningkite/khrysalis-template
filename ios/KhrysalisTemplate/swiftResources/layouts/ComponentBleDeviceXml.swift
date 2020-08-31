@@ -20,7 +20,7 @@ public class ComponentBleDeviceXml {
             LinearLayout(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
             size: CGSize(width: 0, height: 0),
-            margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+            margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
             padding: UIEdgeInsets.zero,
             gravity: .centerCenter,
             weight: 0
@@ -39,7 +39,7 @@ public class ComponentBleDeviceXml {
                 weight: 0
             ) { view in 
                 self.deviceName = view
-                view.font = UIFont.get(size: 16, style: [])
+                view.font = UIFont.get(size: 16.0, style: [])
                 view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF222222)
             }
@@ -54,7 +54,7 @@ public class ComponentBleDeviceXml {
                 weight: 0
             ) { view in 
                 self.deviceId = view
-                view.font = UIFont.get(size: 16, style: [])
+                view.font = UIFont.get(size: 16.0, style: [])
                 view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF222222)
             }
@@ -64,7 +64,7 @@ public class ComponentBleDeviceXml {
         view.addSubview(
             UIView(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 8),
+            size: CGSize(width: 0.0, height: 8.0),
             margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .centerCenter,
@@ -76,13 +76,13 @@ public class ComponentBleDeviceXml {
             UILabel(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
             size: CGSize(width: 0, height: 0),
-            margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+            margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .centerCenter,
             weight: 0
         ) { view in 
             self.rssi = view
-            view.font = UIFont.get(size: 16, style: [])
+            view.font = UIFont.get(size: 16.0, style: [])
             view.numberOfLines = 0
             view.textColor = UIColor(argb: 0xFF222222)
         }
@@ -91,14 +91,14 @@ public class ComponentBleDeviceXml {
             UIButtonWithLayer(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
             size: CGSize(width: 0, height: 0),
-            margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+            margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
             padding: UIEdgeInsets.zero,
             gravity: .centerCenter,
             weight: 0
         ) { view in 
             self.connect = view
-            view.backgroundLayer = R.drawable.button_primary(view)
-            view.titleLabel?.font = UIFont.get(size: 16, style: [])
+            view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+            view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
             view.titleLabel?.textAllCaps = false
             view.titleLabel?.textString = R.string.connect
             view.titleLabel?.numberOfLines = 0
@@ -108,7 +108,7 @@ public class ComponentBleDeviceXml {
             view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
             view.contentHorizontalAlignment = .center
             view.contentMode = .scaleAspectFit
-            view.contentEdgeInsets = UIEdgeInsets(top: 8, left:8, bottom:8, right:8)
+            view.contentEdgeInsets = UIEdgeInsets(top: 8.0, left:8.0, bottom:8.0, right:8.0)
         }
         
         xmlRoot = view

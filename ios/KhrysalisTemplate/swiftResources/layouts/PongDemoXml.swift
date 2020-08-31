@@ -22,7 +22,7 @@ public class PongDemoXml {
             gravity: .centerFill
         ) { view in 
             self.customView = view
-            applyColor(view, R.color.black) { c in
+            applyColor(view, R.color.black) { (c, s) in
                 view.backgroundColor = c
             }
             let dg = PongDelegate()

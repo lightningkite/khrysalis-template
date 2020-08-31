@@ -22,7 +22,7 @@ public class FloatingHexagonsDemoXml {
             gravity: .fillFill
         ) { view in 
             self.customView = view
-            applyColor(view, R.color.black) { c in
+            applyColor(view, R.color.black) { (c, s) in
                 view.backgroundColor = c
             }
             let dg = FloatingHexagonsDelegate()

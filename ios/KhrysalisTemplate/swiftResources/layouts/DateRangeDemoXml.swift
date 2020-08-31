@@ -20,14 +20,14 @@ public class DateRangeDemoXml {
             view.addSubview(
                 CustomView(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 350),
-                margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 40),
+                size: CGSize(width: 0, height: 350.0),
+                margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 40.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topFill,
                 weight: 0
             ) { view in 
                 self.month = view
-                applyColor(view, R.color.white) { c in
+                applyColor(view, R.color.white) { (c, s) in
                     view.backgroundColor = c
                 }
                 let dg = MonthCVD()
@@ -38,14 +38,14 @@ public class DateRangeDemoXml {
             view.addSubview(
                 CustomView(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 350),
-                margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 40),
+                size: CGSize(width: 0, height: 350.0),
+                margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 40.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topFill,
                 weight: 0
             ) { view in 
                 self.month2 = view
-                applyColor(view, R.color.white) { c in
+                applyColor(view, R.color.white) { (c, s) in
                     view.backgroundColor = c
                 }
                 let dg = SelectDateMonthCVD()
@@ -56,14 +56,14 @@ public class DateRangeDemoXml {
             view.addSubview(
                 CustomView(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 350),
-                margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 40),
+                size: CGSize(width: 0, height: 350.0),
+                margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 40.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topFill,
                 weight: 0
             ) { view in 
                 self.month3 = view
-                applyColor(view, R.color.white) { c in
+                applyColor(view, R.color.white) { (c, s) in
                     view.backgroundColor = c
                 }
                 let dg = SelectDateRangeMonthCVD()
@@ -74,14 +74,14 @@ public class DateRangeDemoXml {
             view.addSubview(
                 CustomView(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 350),
-                margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 40),
+                size: CGSize(width: 0, height: 350.0),
+                margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 40.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topFill,
                 weight: 0
             ) { view in 
                 self.month4 = view
-                applyColor(view, R.color.white) { c in
+                applyColor(view, R.color.white) { (c, s) in
                     view.backgroundColor = c
                 }
                 let dg = SelectMultipleDatesMonthCVD()

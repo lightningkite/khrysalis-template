@@ -14,19 +14,19 @@ public class LoginDemoXml {
         let view = ScrollViewVertical(frame: .zero)
         view.addSubview(LinearLayout(frame: .zero)) { view in 
             view.orientation = .y
-            view.padding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+            view.padding = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
             view.gravity = .topLeft
             
             view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
                 weight: 0
             ) { view in 
-                view.font = UIFont.get(size: 24, style: ["bold"])
+                view.font = UIFont.get(size: 24.0, style: ["bold"])
                 view.textString = R.string.welcome_to_switch_town
                 view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF000000)
@@ -34,66 +34,66 @@ public class LoginDemoXml {
             
             view.addSubview(
                 UITextField(frame: .zero),
-                minimumSize: CGSize(width: 0, height: 40),
+                minimumSize: CGSize(width: 0, height: 40.0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
                 weight: 0
             ) { view in 
                 self.username = view
-                view.backgroundLayer = R.drawable.border(view)
-                view.setLeftPaddingPoints(8)
-                view.setRightPaddingPoints(8)
+                view.backgroundLayer = R.drawable.border.makeLayer(view)
+                view.setLeftPaddingPoints(8.0)
+                view.setRightPaddingPoints(8.0)
                 view.placeholder = R.string.username
                 view.autocapitalizationType = .none
                 view.textContentType = .emailAddress
                 view.keyboardType = .emailAddress
-                view.font = UIFont.get(size: 16, style: [])
+                view.font = UIFont.get(size: 16.0, style: [])
                 view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF222222)
             }
             
             view.addSubview(
                 UITextField(frame: .zero),
-                minimumSize: CGSize(width: 0, height: 40),
+                minimumSize: CGSize(width: 0, height: 40.0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
                 weight: 0
             ) { view in 
                 self.password = view
-                view.backgroundLayer = R.drawable.border(view)
-                view.setLeftPaddingPoints(8)
-                view.setRightPaddingPoints(8)
+                view.backgroundLayer = R.drawable.border.makeLayer(view)
+                view.setLeftPaddingPoints(8.0)
+                view.setRightPaddingPoints(8.0)
                 view.placeholder = R.string.password
                 view.autocapitalizationType = .none
                 view.textContentType = .password
                 view.isSecureTextEntry = true
-                view.font = UIFont.get(size: 16, style: [])
+                view.font = UIFont.get(size: 16.0, style: [])
                 view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF222222)
             }
             
             view.addSubview(
                 UITextField(frame: .zero),
-                minimumSize: CGSize(width: 0, height: 40),
+                minimumSize: CGSize(width: 0, height: 40.0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
                 weight: 0
             ) { view in 
                 self.verifyPassword = view
-                view.backgroundLayer = R.drawable.border(view)
-                view.setLeftPaddingPoints(8)
-                view.setRightPaddingPoints(8)
+                view.backgroundLayer = R.drawable.border.makeLayer(view)
+                view.setLeftPaddingPoints(8.0)
+                view.setRightPaddingPoints(8.0)
                 view.placeholder = R.string.verify_password
                 view.autocapitalizationType = .none
                 view.textContentType = .password
                 view.isSecureTextEntry = true
-                view.font = UIFont.get(size: 16, style: [])
+                view.font = UIFont.get(size: 16.0, style: [])
                 view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF222222)
             }
@@ -102,7 +102,7 @@ public class LoginDemoXml {
                 LabeledCheckbox(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topFill,
                 weight: 0
@@ -133,8 +133,8 @@ public class LoginDemoXml {
                     gravity: .topFill
                 ) { view in 
                     self.submit = view
-                    view.backgroundLayer = R.drawable.button_primary(view)
-                    view.titleLabel?.font = UIFont.get(size: 16, style: [])
+                    view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                    view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
                     view.titleLabel?.textAllCaps = false
                     view.titleLabel?.textString = R.string.submit
                     view.titleLabel?.numberOfLines = 0
@@ -144,7 +144,7 @@ public class LoginDemoXml {
                     view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
                     view.contentHorizontalAlignment = .center
                     view.contentMode = .scaleAspectFit
-                    view.contentEdgeInsets = UIEdgeInsets(top: 8, left:8, bottom:8, right:8)
+                    view.contentEdgeInsets = UIEdgeInsets(top: 8.0, left:8.0, bottom:8.0, right:8.0)
                 }
                 
             }

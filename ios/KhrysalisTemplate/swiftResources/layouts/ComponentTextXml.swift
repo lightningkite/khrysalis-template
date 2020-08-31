@@ -17,12 +17,12 @@ public class ComponentTextXml {
             UILabel(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
             size: CGSize(width: 0, height: 0),
-            margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
-            padding: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+            margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
+            padding: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
             gravity: .topFill
         ) { view in 
             self.label = view
-            view.font = UIFont.get(size: 16, style: [])
+            view.font = UIFont.get(size: 16.0, style: [])
             view.numberOfLines = 0
             view.textColor = UIColor(argb: 0xFF222222)
         }

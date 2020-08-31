@@ -26,12 +26,12 @@ public class MainXml {
             weight: 0
         ) { view in 
             self.topBar = view
-            applyColor(view, R.color.colorPrimary) { c in
+            applyColor(view, R.color.colorPrimary) { (c, s) in
                 view.backgroundColor = c
             }
             view.safeInsets(align: .topFill)
             view.orientation = .x
-            view.padding = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
+            view.padding = UIEdgeInsets(top: 0, left: 8.0, bottom: 0, right: 8.0)
             view.gravity = .centerCenter
             
             view.addSubview(
@@ -48,22 +48,22 @@ public class MainXml {
                 view.titleLabel?.numberOfLines = 0
                 view.contentHorizontalAlignment = .center
                 view.iconPosition = .top
-                view.iconLayer = R.drawable.ic_arrow_back_white_24dp(view)
+                view.iconLayer = R.drawable.ic_arrow_back_white_24dp.makeLayer(view)
                 view.contentMode = .scaleAspectFit
-                view.contentEdgeInsets = UIEdgeInsets(top: 8, left:8, bottom:8, right:8)
+                view.contentEdgeInsets = UIEdgeInsets(top: 8.0, left:8.0, bottom:8.0, right:8.0)
             }
             
             view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: 0.0, height: 0),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
-                padding: UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4),
+                padding: UIEdgeInsets(top: 4.0, left: 4.0, bottom: 4.0, right: 4.0),
                 gravity: .centerCenter,
                 weight: 1.0
             ) { view in 
                 self.title = view
-                view.font = UIFont.get(size: 18, style: ["bold"])
+                view.font = UIFont.get(size: 18.0, style: ["bold"])
                 view.textString = R.string.app_name
                 view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFFffffff)
@@ -74,7 +74,7 @@ public class MainXml {
         view.addSubview(
             SwapView(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0),
+            size: CGSize(width: 0, height: 0.0),
             margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .topFill,
@@ -86,14 +86,14 @@ public class MainXml {
         view.addSubview(
             UIView(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0),
+            size: CGSize(width: 0, height: 0.0),
             margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .topFill,
             weight: 0
         ) { view in 
             self.bottom0 = view
-            applyColor(view, R.color.colorPrimary) { c in
+            applyColor(view, R.color.colorPrimary) { (c, s) in
                 view.backgroundColor = c
             }
             view.safeInsetsSizing(align: .bottomFill)

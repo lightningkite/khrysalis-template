@@ -22,6 +22,12 @@ plugins {
 
 apply(plugin="com.lightningkite.khrysalis")
 
+configure<KhrysalisPluginExtension> {
+    projectName = "KhrysalisTemplate"
+    organizationName = "Lightning Kite"
+    swiftLayoutConversion += LayoutConverter.mapViews
+}
+
 android {
     //    buildToolsVersion = "28.0.3"
     compileSdkVersion(29)
@@ -48,18 +54,12 @@ android {
     }
 }
 
-configure<KhrysalisPluginExtension> {
-    projectName = "KhrysalisTemplate"
-    organizationName = "Lightning Kite"
-    swiftLayoutConversion += LayoutConverter.mapViews
-}
-
 repositories {
     maven("https://jitpack.io")
     mavenLocal()
 }
 
-val kotlin_version = "1.3.41"
+val kotlin_version = "1.3.72"
 dependencies {
     implementation("com.lightningkite.khrysalis:android:0.1.1")
     implementation("com.lightningkite.khrysalis:android-maps:0.1.1")
@@ -82,38 +82,13 @@ dependencies {
     implementation("com.squareup.picasso:picasso:2.71828")
     implementation("com.romandanylyk:pageindicatorview:1.0.3")
     implementation("com.theartofdev.edmodo:android-image-cropper:2.7.0")
-    implementation("com.github.marcoscgdev:Android-Week-View:1.2.7")
     implementation("com.android.support:multidex:1.0.3")
 }
 
-val exampleDeepLink = "exampledeeplink://host/path?query=yes"
-tasks.create("testDeepLinkAndroid", Exec::class.java) {
-    this.group = "run"
-    commandLine(
-        android.getAdbExe(),
-        "shell",
-        "am",
-        "start",
-        "-a",
-        "android.intent.action.VIEW",
-        "-d",
-        exampleDeepLink,
-        packageName
-    )
-}
-
-
-tasks.create("testDeepLinkIos", Exec::class.java) {
-    this.group = "run"
-    commandLine(
-        "xcrun",
-        "simctl",
-        "openurl",
-        "booted",
-        exampleDeepLink
-    )
-}
 
 tasks.create("wrapper"){
+
+}
+tasks.create("prepareKotlinBuildScriptModel"){
 
 }

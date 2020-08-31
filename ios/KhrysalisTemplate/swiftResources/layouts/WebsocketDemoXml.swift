@@ -13,7 +13,7 @@ public class WebsocketDemoXml {
     public func setup(dependency: ViewDependency) -> UIView {
         let view = LinearLayout(frame: .zero)
         view.orientation = .y
-        view.padding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        view.padding = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
         view.gravity = .topLeft
         
         view.addSubview(
@@ -25,7 +25,7 @@ public class WebsocketDemoXml {
             gravity: .topFill,
             weight: 0
         ) { view in 
-            view.font = UIFont.get(size: 16, style: [])
+            view.font = UIFont.get(size: 16.0, style: [])
             view.textString = "This attaches to a socket that just echos the value back."
             view.numberOfLines = 0
             view.textColor = UIColor(argb: 0xFF222222)
@@ -34,7 +34,7 @@ public class WebsocketDemoXml {
         view.addSubview(
             UITableView(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0),
+            size: CGSize(width: 0, height: 0.0),
             margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .topFill,
@@ -63,15 +63,15 @@ public class WebsocketDemoXml {
             view.addSubview(
                 UITextField(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
-                margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+                size: CGSize(width: 0.0, height: 0),
+                margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets.zero,
                 gravity: .centerCenter,
                 weight: 1.0
             ) { view in 
                 self.input = view
                 view.backgroundLayer = view.underlineLayer(boldColor: UIColor(argb: 0xFF222222), hintColor: nil)
-                view.font = UIFont.get(size: 16, style: [])
+                view.font = UIFont.get(size: 16.0, style: [])
                 view.numberOfLines = 0
                 view.textColor = UIColor(argb: 0xFF222222)
             }
@@ -90,7 +90,7 @@ public class WebsocketDemoXml {
                 view.titleLabel?.numberOfLines = 0
                 view.contentHorizontalAlignment = .center
                 view.iconPosition = .top
-                view.iconLayer = R.drawable.ic_send_black_24dp(view)
+                view.iconLayer = R.drawable.ic_send_black_24dp.makeLayer(view)
                 view.contentMode = .scaleAspectFit
                 view.contentEdgeInsets = UIEdgeInsets(top: 0, left:0, bottom:0, right:0)
             }

@@ -31,12 +31,12 @@ public class ViewPagerDemoXml {
             UIPageControl(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
             size: CGSize(width: 0, height: 0),
-            margin: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+            margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .bottomCenter
         ) { view in 
             self.viewPagerIndicator = view
-            applyColor(view, R.color.colorPrimary) { c in
+            applyColor(view, R.color.colorPrimary) { (c, s) in
                 view.currentPageIndicatorTintColor = c
             }
             view.pageIndicatorTintColor = UIColor(argb: 0xFF888888)

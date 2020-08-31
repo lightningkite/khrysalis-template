@@ -20,12 +20,12 @@ public class MultipleDemoXml {
             UILabel(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
             size: CGSize(width: 0, height: 0),
-            margin: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16),
+            margin: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .topFill,
             weight: 0
         ) { view in 
-            view.font = UIFont.get(size: 24, style: ["bold"])
+            view.font = UIFont.get(size: 24.0, style: ["bold"])
             view.textString = R.string.check_out_my_multiple_rows
             view.numberOfLines = 0
             view.textColor = UIColor(argb: 0xFF000000)
@@ -36,7 +36,7 @@ public class MultipleDemoXml {
         view.addSubview(
             UITableView(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0),
+            size: CGSize(width: 0, height: 0.0),
             margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .topFill,

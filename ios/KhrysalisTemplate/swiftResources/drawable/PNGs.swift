@@ -4,6 +4,6 @@ import Khrysalis
 
 extension R.drawable {
 
-static func reason_expertise(_ view: UIView? = nil) -> CAImageLayer { return CAImageLayer(UIImage(named: "reason_expertise")) }
+static let reason_expertise: Drawable = Drawable { (view: UIView?) -> CALayer in CAImageLayer(UIImage(named: "reason_expertise")) }
 
 }
