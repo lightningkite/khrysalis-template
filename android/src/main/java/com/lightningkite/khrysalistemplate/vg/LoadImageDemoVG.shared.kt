@@ -1,7 +1,6 @@
 package com.lightningkite.khrysalistemplate.vg
 
 import android.view.View
-import com.lightningkite.khrysalis.observables.binding.loadImage
 import com.lightningkite.khrysalis.ImageReference
 import com.lightningkite.khrysalis.ImageRemoteUrl
 import com.lightningkite.khrysalis.views.*

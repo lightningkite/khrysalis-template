@@ -31,11 +31,11 @@ class WebsocketDemoVG(
     //--- Dependencies (overwritten on flow generation)
     //--- Extends (overwritten on flow generation)
 ) : ViewGenerator() {
-
-
+    
+    
     //--- Title (overwritten on flow generation)
     override val title: String get() = "Websocket Demo"
-
+    
     //--- Data
     val socket: Observable<ConnectedWebSocket> = HttpClient.webSocket("wss://echo.websocket.org").replay(1).refCount()
     val text: StandardObservableProperty<String> = StandardObservableProperty("")
@@ -44,7 +44,7 @@ class WebsocketDemoVG(
     override fun generate(dependency: ViewDependency): View {
         val xml = WebsocketDemoXml()
         val view = xml.setup(dependency)
-
+        
         //--- Set Up xml.items
         val itemsList = ArrayList<WebSocketFrame>()
         xml.items.bind(
@@ -61,14 +61,14 @@ class WebsocketDemoVG(
                 //--- Make Subview For xml.items (overwritten on flow generation)
                 val cellXml = ComponentTextXml()
                 val cellView = cellXml.setup(dependency)
-
+                
                 //--- Set Up cellXml.label (overwritten on flow generation)
-                cellXml.label.bindString(observable.map { it -> it.text ?: "---" })
+                cellXml.label.bindString(ConstantObservableProperty("Some Text"))
                 //--- End Make Subview For xml.items (overwritten on flow generation)
                 return@label cellView
             }
         )
-
+        
         //--- Set Up xml.input
         xml.input.bindString(text)
 
@@ -78,10 +78,10 @@ class WebsocketDemoVG(
         }
 
         //--- Generate End (overwritten on flow generation)
-
+        
         return view
     }
-
+    
     //--- Init
 
     init {
@@ -94,6 +94,6 @@ class WebsocketDemoVG(
     //--- Action submitClick (overwritten on flow generation)
     fun submitClick() {
     }
-
+    
     //--- Body End
 }

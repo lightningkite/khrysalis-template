@@ -35,4 +35,7 @@
     <string name="this_data_is_loaded_from_json_placeholder_typicode">This data is loaded from JSON Placeholder
         Typicode.
     </string>
+    <string name="play_video">Play video</string>
+    <string name="gallery_multi">Gallery Multiple</string>
+    <string name="camera_multi">Camera Multiple</string>
 </resources>

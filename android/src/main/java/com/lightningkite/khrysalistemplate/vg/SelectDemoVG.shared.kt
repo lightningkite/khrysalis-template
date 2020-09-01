@@ -22,12 +22,12 @@ class SelectDemoVG(@unowned val stack: ObservableStack<ViewGenerator>) : ViewGen
     override val title: String get() = "Select Demo"
 
     val options: List<ViewGenerator> = listOf(
+        VideoDemoVG(),
         WebsocketDemoVG(),
         HttpDemoVG(),
         ExternalTestVG(),
 //        BleScanDemoVG(stack),
         PongDemoVG(),
-        FloatingHexagonsDemoVG(),
         MarginTestsVG(),
         MultipleDemoVG(),
         DateButtonDemoVG(),

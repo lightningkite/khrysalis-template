@@ -3,4 +3,7 @@
     <cache-path
             path="images"
             name="cached" />
+    <cache-path
+            path="videos"
+            name="cached" />
 </paths>
