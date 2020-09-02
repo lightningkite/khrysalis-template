@@ -13,6 +13,7 @@ class SliderDemoXml {
 
     lateinit var slider: SeekBar
     lateinit var valueDisplay: TextView
+    lateinit var progress: com.lightningkite.khrysalis.views.android.HorizontalProgressBar
     lateinit var rating: com.lightningkite.khrysalis.views.android.ColorRatingBar
     lateinit var ratingDisplayStars: com.lightningkite.khrysalis.views.android.ColorRatingBar
     lateinit var ratingDisplayStarsSmall: com.lightningkite.khrysalis.views.android.ColorRatingBar
@@ -33,6 +34,7 @@ class SliderDemoXml {
         xmlRoot = view
         slider = view.findViewById<SeekBar>(R.id.slider)
         valueDisplay = view.findViewById<TextView>(R.id.valueDisplay)
+        progress = view.findViewById<com.lightningkite.khrysalis.views.android.HorizontalProgressBar>(R.id.progress)
         rating = view.findViewById<com.lightningkite.khrysalis.views.android.ColorRatingBar>(R.id.rating)
         ratingDisplayStars = view.findViewById<com.lightningkite.khrysalis.views.android.ColorRatingBar>(R.id.ratingDisplayStars)
         ratingDisplayStarsSmall = view.findViewById<com.lightningkite.khrysalis.views.android.ColorRatingBar>(R.id.ratingDisplayStarsSmall)

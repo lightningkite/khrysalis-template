@@ -16,6 +16,8 @@ class LoadImageDemoXml {
     lateinit var camera: Button
     lateinit var loremPixel: Button
     lateinit var image: ImageView
+    lateinit var checkCanUpload: Button
+    lateinit var canUpload: TextView
     
     
     lateinit var xmlRoot: View
@@ -31,6 +33,8 @@ class LoadImageDemoXml {
         camera = view.findViewById<Button>(R.id.camera)
         loremPixel = view.findViewById<Button>(R.id.lorem_pixel)
         image = view.findViewById<ImageView>(R.id.image)
+        checkCanUpload = view.findViewById<Button>(R.id.checkCanUpload)
+        canUpload = view.findViewById<TextView>(R.id.canUpload)
         
         
         

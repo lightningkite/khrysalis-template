@@ -2,8 +2,8 @@
 <paths>
     <cache-path
             path="images"
-            name="cached" />
+            name="image-cache" />
     <cache-path
             path="videos"
-            name="cached" />
+            name="video-cache" />
 </paths>

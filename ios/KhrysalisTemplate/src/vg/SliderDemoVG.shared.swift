@@ -10,9 +10,9 @@ public class SliderDemoVG : ViewGenerator {
         self.ratio = ratio
         super.init()
         //Necessary properties should be initialized now
-        self.percent = self.ratio.transformed(read: { (it) -> Int in Int((it * 100)) }, write: { (it) -> Float in Float(it) / 100 })
-        self.obsRatingInt = self.ratio.transformed(read: { (it) -> Int in Int((it * 5)) }, write: { (it) -> Float in Float(it) / 5 })
-        self.obsRatingFloat = self.ratio.transformed(read: { (it) -> Float in it * 5 }, write: { (it) -> Float in it / 5 })
+        self.percent = self.ratio.map(read: { (it) -> Int in Int((it * 100)) }, write: { (it) -> Float in Float(it) / 100 })
+        self.obsRatingInt = self.ratio.map(read: { (it) -> Int in Int((it * 5)) }, write: { (it) -> Float in Float(it) / 5 })
+        self.obsRatingFloat = self.ratio.map(read: { (it) -> Float in it * 5 }, write: { (it) -> Float in it / 5 })
     }
     
     override public var title: String {
@@ -30,6 +30,7 @@ public class SliderDemoVG : ViewGenerator {
         
         xml.slider.bind(start: 0, endInclusive: 100, observable: self.percent)
         xml.valueDisplay.bindText(observable: self.percent, transform: { (it) -> String in String(describing: it) })
+        xml.progress.bindFloat(observable: self.ratio)
         
         xml.rating.bind(stars: 5, observable: self.obsRatingInt)
         xml.ratingDisplayStars.bind(stars: 5, observable: self.obsRatingInt)

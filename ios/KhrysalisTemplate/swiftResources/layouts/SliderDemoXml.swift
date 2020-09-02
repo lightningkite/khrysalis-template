@@ -45,6 +45,20 @@ public class SliderDemoXml {
             }
             
             view.addSubview(
+                UIProgressView(frame: .zero),
+                minimumSize: CGSize(width: 0, height: 0),
+                size: CGSize(width: 0, height: 0),
+                margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
+                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                gravity: .topFill,
+                weight: 0
+            ) { view in 
+                self.progress = view
+                view.progressViewStyle = .bar
+                view.progressTintColor = UIColor(argb: 0xFFFFFF00)
+            }
+            
+            view.addSubview(
                 UIRatingBar(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
@@ -191,6 +205,7 @@ public class SliderDemoXml {
     public unowned var ratingDisplayStars: UIRatingBar!
     public unowned var ratingDisplayNumberFloat: UILabel!
     public unowned var rating: UIRatingBar!
+    public unowned var progress: UIProgressView!
     public unowned var ratingFloat: UIRatingBar!
     public unowned var ratingDisplayStarsFloat: UIRatingBar!
     public unowned var ratingDisplayStarsSmall: UIRatingBar!

@@ -126,14 +126,55 @@ public class LoadImageDemoXml {
             view.contentMode = .scaleAspectFit
         }
         
+        view.addSubview(
+            UIButtonWithLayer(frame: .zero),
+            minimumSize: CGSize(width: 0, height: 0),
+            size: CGSize(width: 0, height: 0),
+            margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
+            padding: UIEdgeInsets.zero,
+            gravity: .topFill,
+            weight: 0
+        ) { view in 
+            self.checkCanUpload = view
+            view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+            view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
+            view.titleLabel?.textAllCaps = false
+            view.titleLabel?.textString = "Check if it can upload"
+            view.titleLabel?.numberOfLines = 0
+            view.titleLabel?.textColor = UIColor(argb: 0xFFFFFFFF)
+            view.textAllCaps = false
+            view.textString = "Check if it can upload"
+            view.setTitleColor(UIColor(argb: 0xFFFFFFFF), for: .normal)
+            view.contentHorizontalAlignment = .center
+            view.contentMode = .scaleAspectFit
+            view.contentEdgeInsets = UIEdgeInsets(top: 8.0, left:8.0, bottom:8.0, right:8.0)
+        }
+        
+        view.addSubview(
+            UILabel(frame: .zero),
+            minimumSize: CGSize(width: 0, height: 0),
+            size: CGSize(width: 0, height: 0),
+            margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+            padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+            gravity: .topLeft,
+            weight: 0
+        ) { view in 
+            self.canUpload = view
+            view.font = UIFont.get(size: 12, style: [])
+            view.textString = "Don't know"
+            view.numberOfLines = 0
+        }
+        
         xmlRoot = view
         return view
     }
     
     public unowned var image: UIImageView!
     public unowned var loremPixel: UIButtonWithLayer!
+    public unowned var checkCanUpload: UIButtonWithLayer!
     public unowned var galleryMultiple: UIButtonWithLayer!
     public unowned var camera: UIButtonWithLayer!
     public unowned var gallery: UIButtonWithLayer!
+    public unowned var canUpload: UILabel!
     
 }

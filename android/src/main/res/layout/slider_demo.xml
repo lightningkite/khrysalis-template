@@ -23,6 +23,17 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"/>
 
+        <com.lightningkite.khrysalis.views.android.HorizontalProgressBar
+                android:id="@+id/progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:indeterminate="false"
+                android:progress="50"
+                android:max="100"
+                android:progressTint="#FF0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"/>
+
         <com.lightningkite.khrysalis.views.android.ColorRatingBar
                 android:id="@+id/rating"
                 style="?android:attr/ratingBarStyle"
