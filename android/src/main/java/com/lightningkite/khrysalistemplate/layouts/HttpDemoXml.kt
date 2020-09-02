@@ -11,6 +11,7 @@ import com.lightningkite.khrysalistemplate.R
 
 class HttpDemoXml {
 
+    lateinit var progress: com.lightningkite.khrysalis.views.android.HorizontalProgressBar
     lateinit var items: com.lightningkite.khrysalis.views.android.VerticalRecyclerView
     
     
@@ -22,6 +23,7 @@ class HttpDemoXml {
     }
     fun setup(view: View): View {
         xmlRoot = view
+        progress = view.findViewById<com.lightningkite.khrysalis.views.android.HorizontalProgressBar>(R.id.progress)
         items = view.findViewById<com.lightningkite.khrysalis.views.android.VerticalRecyclerView>(R.id.items)
         
         

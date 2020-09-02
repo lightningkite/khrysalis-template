@@ -39,9 +39,17 @@ class HttpDemoVG(
         val xml = HttpDemoXml()
         val view = xml.setup(dependency)
         
+        //--- Call
+        val pair = HttpClient.callWithProgress("https://jsonplaceholder.typicode.com/posts/")
+        val progress = pair.first
+        val call = pair.second
+
+        //--- Set Up xml.progress
+        xml.progress.bindFloat(progress.map { it.approximate })
+
         //--- Set Up xml.items
         xml.items.bind(
-            data = HttpClient.call("https://jsonplaceholder.typicode.com/posts/")
+            data = call
                 .readJson<List<Post>>()
                 .toObservable()
                 .asObservableProperty(listOf(Post(0, 0, "Loading...", "-"))),

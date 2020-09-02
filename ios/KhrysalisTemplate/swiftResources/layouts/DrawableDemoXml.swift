@@ -54,7 +54,7 @@ public class DrawableDemoXml {
                     gravity: .centerCenter,
                     weight: 1.0
                 ) { view in 
-                    view.backgroundLayer = R.drawable.button_accent.makeLayer(view)
+                    view.backgroundDrawable = R.drawable.button_accent
                     view.titleLabel?.font = UIFont.get(size: 12, style: [])
                     view.titleLabel?.textString = R.string.ok
                     view.titleLabel?.numberOfLines = 0
@@ -73,7 +73,7 @@ public class DrawableDemoXml {
                     gravity: .centerCenter,
                     weight: 1.0
                 ) { view in 
-                    view.backgroundLayer = R.drawable.button_disabled.makeLayer(view)
+                    view.backgroundDrawable = R.drawable.button_disabled
                     view.titleLabel?.font = UIFont.get(size: 12, style: [])
                     view.titleLabel?.textString = R.string.ok
                     view.titleLabel?.numberOfLines = 0
@@ -92,7 +92,7 @@ public class DrawableDemoXml {
                     gravity: .centerCenter,
                     weight: 1.0
                 ) { view in 
-                    view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                    view.backgroundDrawable = R.drawable.button_primary
                     view.titleLabel?.font = UIFont.get(size: 12, style: [])
                     view.titleLabel?.textString = R.string.ok
                     view.titleLabel?.numberOfLines = 0
@@ -140,7 +140,7 @@ public class DrawableDemoXml {
                     gravity: .centerCenter,
                     weight: 1.0
                 ) { view in 
-                    view.backgroundLayer = R.drawable.border.makeLayer(view)
+                    view.backgroundDrawable = R.drawable.border
                     view.titleLabel?.font = UIFont.get(size: 12, style: [])
                     view.titleLabel?.textString = R.string.ok
                     view.titleLabel?.numberOfLines = 0

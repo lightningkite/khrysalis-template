@@ -33,7 +33,7 @@ public class LoginDemoXml {
             }
             
             view.addSubview(
-                UITextField(frame: .zero),
+                UITextFieldPadded(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 40.0),
                 size: CGSize(width: 0, height: 0),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
@@ -42,9 +42,8 @@ public class LoginDemoXml {
                 weight: 0
             ) { view in 
                 self.username = view
-                view.backgroundLayer = R.drawable.border.makeLayer(view)
-                view.setLeftPaddingPoints(8.0)
-                view.setRightPaddingPoints(8.0)
+                view.backgroundDrawable = R.drawable.border
+                view.padding = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
                 view.placeholder = R.string.username
                 view.autocapitalizationType = .none
                 view.textContentType = .emailAddress
@@ -55,7 +54,7 @@ public class LoginDemoXml {
             }
             
             view.addSubview(
-                UITextField(frame: .zero),
+                UITextFieldPadded(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 40.0),
                 size: CGSize(width: 0, height: 0),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
@@ -64,9 +63,8 @@ public class LoginDemoXml {
                 weight: 0
             ) { view in 
                 self.password = view
-                view.backgroundLayer = R.drawable.border.makeLayer(view)
-                view.setLeftPaddingPoints(8.0)
-                view.setRightPaddingPoints(8.0)
+                view.backgroundDrawable = R.drawable.border
+                view.padding = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
                 view.placeholder = R.string.password
                 view.autocapitalizationType = .none
                 view.textContentType = .password
@@ -77,7 +75,7 @@ public class LoginDemoXml {
             }
             
             view.addSubview(
-                UITextField(frame: .zero),
+                UITextFieldPadded(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 40.0),
                 size: CGSize(width: 0, height: 0),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
@@ -86,9 +84,8 @@ public class LoginDemoXml {
                 weight: 0
             ) { view in 
                 self.verifyPassword = view
-                view.backgroundLayer = R.drawable.border.makeLayer(view)
-                view.setLeftPaddingPoints(8.0)
-                view.setRightPaddingPoints(8.0)
+                view.backgroundDrawable = R.drawable.border
+                view.padding = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
                 view.placeholder = R.string.verify_password
                 view.autocapitalizationType = .none
                 view.textContentType = .password
@@ -133,7 +130,7 @@ public class LoginDemoXml {
                     gravity: .topFill
                 ) { view in 
                     self.submit = view
-                    view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                    view.backgroundDrawable = R.drawable.button_primary
                     view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
                     view.titleLabel?.textAllCaps = false
                     view.titleLabel?.textString = R.string.submit
@@ -154,11 +151,11 @@ public class LoginDemoXml {
         return view
     }
     
-    public unowned var verifyPassword: UITextField!
-    public unowned var password: UITextField!
+    public unowned var verifyPassword: UITextFieldPadded!
+    public unowned var password: UITextFieldPadded!
     public unowned var submit: UIButtonWithLayer!
     public unowned var submitLoading: ViewFlipper!
     public unowned var agree: LabeledCheckbox!
-    public unowned var username: UITextField!
+    public unowned var username: UITextFieldPadded!
     
 }

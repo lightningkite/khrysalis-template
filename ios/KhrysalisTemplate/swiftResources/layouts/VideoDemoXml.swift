@@ -58,7 +58,7 @@ public class VideoDemoXml {
             weight: 0
         ) { view in 
             self.play = view
-            view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+            view.backgroundDrawable = R.drawable.button_primary
             view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
             view.titleLabel?.textAllCaps = false
             view.titleLabel?.textString = R.string.play_video
@@ -82,7 +82,7 @@ public class VideoDemoXml {
             weight: 0
         ) { view in 
             self.gallery = view
-            view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+            view.backgroundDrawable = R.drawable.button_primary
             view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
             view.titleLabel?.textAllCaps = false
             view.titleLabel?.textString = R.string.gallery
@@ -106,7 +106,7 @@ public class VideoDemoXml {
             weight: 0
         ) { view in 
             self.camera = view
-            view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+            view.backgroundDrawable = R.drawable.button_primary
             view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
             view.titleLabel?.textAllCaps = false
             view.titleLabel?.textString = R.string.camera
@@ -130,7 +130,7 @@ public class VideoDemoXml {
             weight: 0
         ) { view in 
             self.galleryMulti = view
-            view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+            view.backgroundDrawable = R.drawable.button_primary
             view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
             view.titleLabel?.textAllCaps = false
             view.titleLabel?.textString = R.string.gallery_multi

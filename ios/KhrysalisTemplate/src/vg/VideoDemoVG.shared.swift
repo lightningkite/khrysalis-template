@@ -79,8 +79,6 @@ public class VideoDemoVG : ViewGenerator {
     }
     public func galleryMultiClick() -> Void {
     }
-    public func cameraMultiClick() -> Void {
-    }
     
     //--- Body End
 }

@@ -69,8 +69,16 @@ public class HttpDemoVG : ViewGenerator {
         let xml = HttpDemoXml()
         let view = xml.setup(dependency: dependency)
         
+        //--- Call
+        let pair = HttpClient.INSTANCE.callWithProgress(url: "https://jsonplaceholder.typicode.com/posts/")
+        let progress = pair.first
+        let call = pair.second
+        
+        //--- Set Up xml.progress
+        xml.progress.bindFloat(observable: progress.map(read: { (it) -> Float in it.approximate }))
+        
         //--- Set Up xml.items
-        xml.items.bind(data: (HttpClient.INSTANCE.call(url: "https://jsonplaceholder.typicode.com/posts/")
+        xml.items.bind(data: (call
                 .readJson() as Single<Array<HttpDemoVG.Post>>)
                 .toObservable()
                 .asObservableProperty(defaultValue: [Post(userId: 0, id: 0, title: "Loading...", body: "-")]), defaultValue: Post(userId: 0, id: 0, title: "Default", body: "Failure"), makeView: { (observable) -> View in 

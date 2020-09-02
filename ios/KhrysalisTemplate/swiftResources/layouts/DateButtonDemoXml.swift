@@ -42,7 +42,7 @@ public class DateButtonDemoXml {
                 weight: 0
             ) { view in 
                 self.dateButton = view
-                view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                view.backgroundDrawable = R.drawable.button_primary
                 view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
                 view.titleLabel?.textAllCaps = false
                 view.titleLabel?.numberOfLines = 0
@@ -64,7 +64,7 @@ public class DateButtonDemoXml {
                 weight: 0
             ) { view in 
                 self.timeButton = view
-                view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                view.backgroundDrawable = R.drawable.button_primary
                 view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
                 view.titleLabel?.textAllCaps = false
                 view.titleLabel?.numberOfLines = 0

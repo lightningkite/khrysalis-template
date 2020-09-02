@@ -26,7 +26,7 @@ public class LocationDemoXml {
             weight: 0
         ) { view in 
             self.getLocation = view
-            view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+            view.backgroundDrawable = R.drawable.button_primary
             view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
             view.titleLabel?.textAllCaps = false
             view.titleLabel?.textString = R.string.get_location

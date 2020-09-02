@@ -383,7 +383,7 @@ public class MarginTestXml {
                     padding: UIEdgeInsets.zero,
                     gravity: .topLeft
                 ) { view in 
-                    view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                    view.backgroundDrawable = R.drawable.button_primary
                     view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
                     view.titleLabel?.textAllCaps = false
                     view.titleLabel?.textString = "left|top"
@@ -405,7 +405,7 @@ public class MarginTestXml {
                     padding: UIEdgeInsets.zero,
                     gravity: .bottomLeft
                 ) { view in 
-                    view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                    view.backgroundDrawable = R.drawable.button_primary
                     view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
                     view.titleLabel?.textAllCaps = false
                     view.titleLabel?.textString = "left|bottom"
@@ -427,7 +427,7 @@ public class MarginTestXml {
                     padding: UIEdgeInsets.zero,
                     gravity: .centerLeft
                 ) { view in 
-                    view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                    view.backgroundDrawable = R.drawable.button_primary
                     view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
                     view.titleLabel?.textAllCaps = false
                     view.titleLabel?.textString = "left|cv"
@@ -449,7 +449,7 @@ public class MarginTestXml {
                     padding: UIEdgeInsets.zero,
                     gravity: .topCenter
                 ) { view in 
-                    view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                    view.backgroundDrawable = R.drawable.button_primary
                     view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
                     view.titleLabel?.textAllCaps = false
                     view.titleLabel?.textString = "ch|top"
@@ -471,7 +471,7 @@ public class MarginTestXml {
                     padding: UIEdgeInsets.zero,
                     gravity: .bottomCenter
                 ) { view in 
-                    view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                    view.backgroundDrawable = R.drawable.button_primary
                     view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
                     view.titleLabel?.textAllCaps = false
                     view.titleLabel?.textString = "ch|bottom"
@@ -493,7 +493,7 @@ public class MarginTestXml {
                     padding: UIEdgeInsets.zero,
                     gravity: .centerCenter
                 ) { view in 
-                    view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                    view.backgroundDrawable = R.drawable.button_primary
                     view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
                     view.titleLabel?.textAllCaps = false
                     view.titleLabel?.textString = "ch|cv"
@@ -515,7 +515,7 @@ public class MarginTestXml {
                     padding: UIEdgeInsets.zero,
                     gravity: .topRight
                 ) { view in 
-                    view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                    view.backgroundDrawable = R.drawable.button_primary
                     view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
                     view.titleLabel?.textAllCaps = false
                     view.titleLabel?.textString = "right|top"
@@ -537,7 +537,7 @@ public class MarginTestXml {
                     padding: UIEdgeInsets.zero,
                     gravity: .bottomRight
                 ) { view in 
-                    view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                    view.backgroundDrawable = R.drawable.button_primary
                     view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
                     view.titleLabel?.textAllCaps = false
                     view.titleLabel?.textString = "right|bottom"
@@ -559,7 +559,7 @@ public class MarginTestXml {
                     padding: UIEdgeInsets.zero,
                     gravity: .centerRight
                 ) { view in 
-                    view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                    view.backgroundDrawable = R.drawable.button_primary
                     view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
                     view.titleLabel?.textAllCaps = false
                     view.titleLabel?.textString = "right|cv"
@@ -593,7 +593,7 @@ public class MarginTestXml {
                     padding: UIEdgeInsets.zero,
                     gravity: .topFill
                 ) { view in 
-                    view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                    view.backgroundDrawable = R.drawable.button_primary
                     view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
                     view.titleLabel?.textAllCaps = false
                     view.titleLabel?.textString = "top"
@@ -615,7 +615,7 @@ public class MarginTestXml {
                     padding: UIEdgeInsets.zero,
                     gravity: .bottomFill
                 ) { view in 
-                    view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                    view.backgroundDrawable = R.drawable.button_primary
                     view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
                     view.titleLabel?.textAllCaps = false
                     view.titleLabel?.textString = "bottom"
@@ -637,7 +637,7 @@ public class MarginTestXml {
                     padding: UIEdgeInsets.zero,
                     gravity: .centerFill
                 ) { view in 
-                    view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                    view.backgroundDrawable = R.drawable.button_primary
                     view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
                     view.titleLabel?.textAllCaps = false
                     view.titleLabel?.textString = "cv"
@@ -671,7 +671,7 @@ public class MarginTestXml {
                     padding: UIEdgeInsets.zero,
                     gravity: .fillLeft
                 ) { view in 
-                    view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                    view.backgroundDrawable = R.drawable.button_primary
                     view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
                     view.titleLabel?.textAllCaps = false
                     view.titleLabel?.textString = "left"
@@ -693,7 +693,7 @@ public class MarginTestXml {
                     padding: UIEdgeInsets.zero,
                     gravity: .fillRight
                 ) { view in 
-                    view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                    view.backgroundDrawable = R.drawable.button_primary
                     view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
                     view.titleLabel?.textAllCaps = false
                     view.titleLabel?.textString = "right"
@@ -715,7 +715,7 @@ public class MarginTestXml {
                     padding: UIEdgeInsets.zero,
                     gravity: .fillCenter
                 ) { view in 
-                    view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                    view.backgroundDrawable = R.drawable.button_primary
                     view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
                     view.titleLabel?.textAllCaps = false
                     view.titleLabel?.textString = "ch"
@@ -749,7 +749,7 @@ public class MarginTestXml {
                     padding: UIEdgeInsets.zero,
                     gravity: .fillFill
                 ) { view in 
-                    view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                    view.backgroundDrawable = R.drawable.button_primary
                     view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
                     view.titleLabel?.textAllCaps = false
                     view.titleLabel?.textString = "fill"
@@ -835,7 +835,7 @@ public class MarginTestXml {
                 weight: 0
             ) { view in 
                 self.scrollToTop = view
-                view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                view.backgroundDrawable = R.drawable.button_primary
                 view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
                 view.titleLabel?.textAllCaps = false
                 view.titleLabel?.textString = "Scroll to Top"
@@ -858,7 +858,7 @@ public class MarginTestXml {
                 gravity: .centerCenter,
                 weight: 0
             ) { view in 
-                view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                view.backgroundDrawable = R.drawable.button_primary
                 view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
                 view.titleLabel?.textAllCaps = false
                 view.titleLabel?.textString = "View Two"
@@ -881,7 +881,7 @@ public class MarginTestXml {
                 gravity: .topRight,
                 weight: 0
             ) { view in 
-                view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                view.backgroundDrawable = R.drawable.button_primary
                 view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
                 view.titleLabel?.textAllCaps = false
                 view.titleLabel?.textString = "View Three"
@@ -904,7 +904,7 @@ public class MarginTestXml {
                 gravity: .topFill,
                 weight: 0
             ) { view in 
-                view.backgroundLayer = R.drawable.button_primary.makeLayer(view)
+                view.backgroundDrawable = R.drawable.button_primary
                 view.titleLabel?.font = UIFont.get(size: 16.0, style: [])
                 view.titleLabel?.textAllCaps = false
                 view.titleLabel?.textString = "View Four"
@@ -919,7 +919,7 @@ public class MarginTestXml {
             }
             
             view.addSubview(
-                UITextField(frame: .zero),
+                UITextFieldPadded(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
@@ -927,8 +927,7 @@ public class MarginTestXml {
                 gravity: .topFill,
                 weight: 0
             ) { view in 
-                view.setLeftPaddingPoints(8.0)
-                view.setRightPaddingPoints(8.0)
+                view.padding = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
                 view.backgroundLayer = view.underlineLayer(boldColor: UIColor(argb: 0xFF222222), hintColor: nil)
                 view.font = UIFont.get(size: 16.0, style: [])
                 view.numberOfLines = 0

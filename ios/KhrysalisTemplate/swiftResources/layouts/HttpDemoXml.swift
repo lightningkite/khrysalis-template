@@ -32,6 +32,20 @@ public class HttpDemoXml {
         }
         
         view.addSubview(
+            UIProgressView(frame: .zero),
+            minimumSize: CGSize(width: 0, height: 0),
+            size: CGSize(width: 0, height: 0),
+            margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+            padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+            gravity: .topFill,
+            weight: 0
+        ) { view in 
+            self.progress = view
+            view.progressViewStyle = .bar
+            view.progressTintColor = R.color.colorPrimary
+        }
+        
+        view.addSubview(
             UITableView(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
             size: CGSize(width: 0, height: 0.0),
@@ -51,6 +65,7 @@ public class HttpDemoXml {
         return view
     }
     
+    public unowned var progress: UIProgressView!
     public unowned var items: UITableView!
     
 }

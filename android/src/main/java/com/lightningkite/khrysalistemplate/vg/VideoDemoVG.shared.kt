@@ -99,9 +99,6 @@ class VideoDemoVG(
     //--- Action galleryMultiClick (overwritten on flow generation)
     fun galleryMultiClick() {
     }
-    //--- Action cameraMultiClick (overwritten on flow generation)
-    fun cameraMultiClick() {
-    }
     
     //--- Body End
 }
