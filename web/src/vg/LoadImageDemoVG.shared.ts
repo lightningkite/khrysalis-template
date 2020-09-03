@@ -3,11 +3,11 @@
 // Package: com.lightningkite.khrysalistemplate.vg
 import { xDisposableUntil, xViewRemovedGet } from 'khrysalis/dist/rx/DisposeCondition.actual'
 import { xImageViewBindImage } from 'khrysalis/dist/observables/binding/ImageView.binding.actual'
+import { HttpBody, xImageToHttpBody } from 'khrysalis/dist/net/HttpBody.actual'
 import { xActivityAccessRequestImageCamera, xActivityAccessRequestImageGallery, xActivityAccessRequestImagesGallery } from 'khrysalis/dist/views/ViewDependency.actual'
 import { Image, ImageReference, ImageRemoteUrl } from 'khrysalis/dist/Image.shared'
 import { SubscriptionLike } from 'rxjs'
 import { xObservablePropertySubscribeBy } from 'khrysalis/dist/observables/ObservableProperty.ext.shared'
-import { xImageToHttpBody } from 'khrysalis/dist/net/HttpBody.actual'
 import { printStackTrace, runOrNull } from 'khrysalis/dist/kotlin/Language'
 import { StandardObservableProperty } from 'khrysalis/dist/observables/StandardObservableProperty.shared'
 import { ViewGenerator } from 'khrysalis/dist/views/ViewGenerator.shared'
@@ -67,7 +67,7 @@ export class LoadImageDemoVG extends ViewGenerator {
         xml.checkCanUpload.onclick = (_ev) => { _ev.stopPropagation(); 
             const i_30 = this.currentImage.value;
             if (i_30 !== null) { 
-                xImageToHttpBody(i_30, undefined).subscribe((it: BodyInit): void => {
+                xImageToHttpBody(i_30, undefined).subscribe((it: HttpBody): void => {
                         this.canUpload.value = true;
                     }, (it: any): void => {
                         printStackTrace(it);

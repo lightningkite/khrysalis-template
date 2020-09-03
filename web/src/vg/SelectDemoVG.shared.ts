@@ -2,6 +2,7 @@
 // File: vg/SelectDemoVG.shared.kt
 // Package: com.lightningkite.khrysalistemplate.vg
 import { ExternalTestVG } from './ExternalTestVG.shared'
+import { HasBackAction, HasBackActionDefaults } from 'khrysalis/dist/views/HasBackAction.shared'
 import { SliderDemoVG } from './SliderDemoVG.shared'
 import { DrawableDemoVG } from './DrawableDemoVG.shared'
 import { PreviewVG } from './PreviewVG.shared'
@@ -78,6 +79,6 @@ export class SelectDemoVG extends ViewGenerator implements EntryPoint {
     public get mainStack(): (ObservableStack<ViewGenerator> | null) { return this.stack; }
     
     public handleDeepLink(schema: string, host: string, path: string, params: Map<string, string>): void { return EntryPointDefaults.handleDeepLink(this, schema, host, path, params); }
-    public onBackPressed(): boolean { return EntryPointDefaults.onBackPressed(this); }
+    public onBackPressed(): boolean { return HasBackActionDefaults.onBackPressed(this); }
 }
 
