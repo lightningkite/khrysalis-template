@@ -2,7 +2,6 @@
 // File: vg/SelectDemoVG.shared.kt
 // Package: com.lightningkite.khrysalistemplate.vg
 import { ExternalTestVG } from './ExternalTestVG.shared'
-import { androidWidgetTextViewBindText } from 'khrysalis/dist/observables/binding/TextView.binding.actual'
 import { SliderDemoVG } from './SliderDemoVG.shared'
 import { DrawableDemoVG } from './DrawableDemoVG.shared'
 import { PreviewVG } from './PreviewVG.shared'
@@ -16,29 +15,31 @@ import { LoadImageDemoVG } from './LoadImageDemoVG.shared'
 import { MarginTestsVG } from './MarginTestVG.shared'
 import { MapDemoVG } from './MapDemoVG.shared'
 import { ControlsDemoVG } from './ControlsDemoVG.shared'
+import { VideoDemoVG } from './VideoDemoVG.shared'
 import { DateRangeDemoVG } from './DateRangeDemoVG.shared'
 import { HttpDemoVG } from './HttpDemoVG.shared'
-import { androidxRecyclerviewWidgetRecyclerViewBind } from 'khrysalis/dist/observables/binding/RecyclerView.binding.actual'
 import { SelectDemoXml } from '../layout/SelectDemoXml'
 import { WebsocketDemoVG } from './WebsocketDemoVG.shared'
 import { ComponentTestXml } from '../layout/ComponentTestXml'
 import { ExampleContentVG } from './ExampleContentVG.shared'
+import { xTextViewBindText } from 'khrysalis/dist/observables/binding/TextView.binding.actual'
 import { LocationDemoVG } from './LocationDemoVG.shared'
 import { ConstantObservableProperty } from 'khrysalis/dist/observables/ConstantObservableProperty.shared'
 import { ViewPagerDemoVG } from './ViewPagerDemoVG.shared'
 import { ViewGenerator } from 'khrysalis/dist/views/ViewGenerator.shared'
 import { LoginDemoVG } from './LoginDemoVG.shared'
-import { FloatingHexagonsDemoVG } from './FloatingHexagonsDemoVG.shared'
 import { ObservableStack } from 'khrysalis/dist/observables/ObservableStack.shared'
+import { xRecyclerViewBind } from 'khrysalis/dist/observables/binding/RecyclerView.binding.actual'
 
 //! Declares com.lightningkite.khrysalistemplate.vg.SelectDemoVG
 export class SelectDemoVG extends ViewGenerator implements EntryPoint {
     public static implementsInterfaceComLightningkiteKhrysalisViewsEntryPoint = true;
+    public static implementsInterfaceComLightningkiteKhrysalisViewsHasBackAction = true;
     public readonly stack: ObservableStack<ViewGenerator>;
     public constructor(stack: ObservableStack<ViewGenerator>) {
         super();
         this.stack = stack;
-        this.options = [new WebsocketDemoVG(), new HttpDemoVG(), new ExternalTestVG(), new PongDemoVG(), new FloatingHexagonsDemoVG(), new MarginTestsVG(), new MultipleDemoVG(), new DateButtonDemoVG(), new MapDemoVG(), new LocationDemoVG(), new LoadImageDemoVG(), new ControlsDemoVG(), new ExampleContentVG(), new ViewPagerDemoVG(this.stack), new SegmentedControlDemoVG(), new SliderDemoVG(), new DateRangeDemoVG(), new LoginDemoVG(this.stack), new DrawableDemoVG(), new PreviewVG()];
+        this.options = [new VideoDemoVG(), new WebsocketDemoVG(), new HttpDemoVG(), new ExternalTestVG(), new PongDemoVG(), new MarginTestsVG(), new MultipleDemoVG(), new DateButtonDemoVG(), new MapDemoVG(), new LocationDemoVG(), new LoadImageDemoVG(), new ControlsDemoVG(), new ExampleContentVG(), new ViewPagerDemoVG(this.stack), new SegmentedControlDemoVG(), new SliderDemoVG(), new DateRangeDemoVG(), new LoginDemoVG(this.stack), new DrawableDemoVG(), new PreviewVG()];
     }
     
     //! Declares com.lightningkite.khrysalistemplate.vg.SelectDemoVG.title
@@ -58,12 +59,12 @@ export class SelectDemoVG extends ViewGenerator implements EntryPoint {
         const view = xml.setup(dependency);
         
         
-        androidxRecyclerviewWidgetRecyclerViewBind<ViewGenerator>(xml.list, new ConstantObservableProperty<Array<ViewGenerator>>(this.options), this.options[0], (obs: ObservableProperty<ViewGenerator>): HTMLElement => {
+        xRecyclerViewBind<ViewGenerator>(xml.list, new ConstantObservableProperty<Array<ViewGenerator>>(this.options), this.options[0], (obs: ObservableProperty<ViewGenerator>): HTMLElement => {
                 const xml = new ComponentTestXml();
                 
                 const view = xml.setup(dependency);
                 
-                androidWidgetTextViewBindText<ViewGenerator>(xml.label, obs, (it: ViewGenerator): string => it.title);
+                xTextViewBindText<ViewGenerator>(xml.label, obs, (it: ViewGenerator): string => it.title);
                 xml.button.onclick = (_ev) => { _ev.stopPropagation(); 
                     this.selectVG(obs.value);
                 };

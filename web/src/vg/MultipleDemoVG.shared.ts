@@ -5,10 +5,10 @@ import { ComponentTextXml } from '../layout/ComponentTextXml'
 import { ComponentTestXml } from '../layout/ComponentTestXml'
 import { ViewGenerator } from 'khrysalis/dist/views/ViewGenerator.shared'
 import { RVTypeHandler, recyclerViewBindMultiType } from 'khrysalis/dist/observables/binding/RecyclerView.binding.actual'
-import { comLightningkiteKhrysalisObservablesObservablePropertyMap } from 'khrysalis/dist/observables/TransformedObservableProperty.shared'
 import { MultipleDemoXml } from '../layout/MultipleDemoXml'
-import { androidWidgetTextViewBindString } from 'khrysalis/dist/observables/binding/TextView.binding.actual'
+import { xTextViewBindString } from 'khrysalis/dist/observables/binding/TextView.binding.actual'
 import { setViewText } from 'khrysalis/dist/views/ViewWithText.ext.actual'
+import { xObservablePropertyMap } from 'khrysalis/dist/observables/TransformedObservableProperty.shared'
 import { ConstantObservableProperty } from 'khrysalis/dist/observables/ConstantObservableProperty.shared'
 import { ObservableProperty } from 'khrysalis/dist/observables/ObservableProperty.shared'
 
@@ -38,7 +38,7 @@ export class MultipleDemoVG extends ViewGenerator {
                         
                         const cellView = cellXml.setup(dependency);
                         
-                        androidWidgetTextViewBindString(cellXml.label, comLightningkiteKhrysalisObservablesObservablePropertyMap<number, string>(obs, (it: number): string => `The number ${it}`));
+                        xTextViewBindString(cellXml.label, xObservablePropertyMap<number, string>(obs, (it: number): string => `The number ${it}`));
                         return cellView;
                 });
                 handler.handle<string>([String], "", (obs: ObservableProperty<string>): HTMLElement => {
@@ -46,7 +46,7 @@ export class MultipleDemoVG extends ViewGenerator {
                         
                         const cellView = cellXml.setup(dependency);
                         
-                        androidWidgetTextViewBindString(cellXml.label, comLightningkiteKhrysalisObservablesObservablePropertyMap<string, string>(obs, (it: string): string => `The string '${it}'`));
+                        xTextViewBindString(cellXml.label, xObservablePropertyMap<string, string>(obs, (it: string): string => `The string '${it}'`));
                         return cellView;
                 });
                 handler.handle<void>([undefined], undefined, (obs: ObservableProperty<void>): HTMLElement => {

@@ -13,6 +13,8 @@ export class LoadImageDemoXml {
     camera!: HTMLButtonElement;
     loremPixel!: HTMLButtonElement;
     image!: HTMLImageElement;
+    checkCanUpload!: HTMLButtonElement;
+    canUpload!: HTMLElement;
     loadHtmlString(): string {
         return htmlForDefault;
     }
@@ -24,6 +26,8 @@ export class LoadImageDemoXml {
         this.camera = getViewById<HTMLButtonElement>(view, "camera");
         this.loremPixel = getViewById<HTMLButtonElement>(view, "lorem_pixel");
         this.image = getViewById<HTMLImageElement>(view, "image");
+        this.checkCanUpload = getViewById<HTMLButtonElement>(view, "checkCanUpload");
+        this.canUpload = getViewById<HTMLElement>(view, "canUpload");
         return view
     }
 }

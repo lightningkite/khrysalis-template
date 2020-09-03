@@ -10,6 +10,7 @@ export class SliderDemoXml {
     xmlRoot!: HTMLElement;
     slider!: HTMLInputElement;
     valueDisplay!: HTMLElement;
+    progress!: HTMLProgressElement;
     rating!: HTMLDivElement;
     ratingDisplayStars!: HTMLDivElement;
     ratingDisplayStarsSmall!: HTMLDivElement;
@@ -26,6 +27,7 @@ export class SliderDemoXml {
         this.xmlRoot = view
         this.slider = getViewById<HTMLInputElement>(view, "slider");
         this.valueDisplay = getViewById<HTMLElement>(view, "valueDisplay");
+        this.progress = getViewById<HTMLProgressElement>(view, "progress");
         this.rating = getViewById<HTMLDivElement>(view, "rating");
         this.ratingDisplayStars = getViewById<HTMLDivElement>(view, "ratingDisplayStars");
         this.ratingDisplayStarsSmall = getViewById<HTMLDivElement>(view, "ratingDisplayStarsSmall");

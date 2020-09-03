@@ -5,14 +5,14 @@ import { Paint } from 'khrysalis/dist/views/draw/Paint.actual'
 import { PongDemoXml } from '../layout/PongDemoXml'
 import { getAnimationFrame } from 'khrysalis/dist/delay.actual'
 import { SubscriptionLike } from 'rxjs'
-import { ioReactivexDisposablesDisposableUntil } from 'khrysalis/dist/rx/DisposeCondition.actual'
-import { androidGraphicsCanvasDrawTextCentered } from 'khrysalis/dist/views/draw/Canvas.actual'
+import { xCanvasDrawTextCentered } from 'khrysalis/dist/views/draw/Canvas.actual'
 import { ViewGenerator } from 'khrysalis/dist/views/ViewGenerator.shared'
 import { DisplayMetrics } from 'khrysalis/dist/views/DisplayMetrics.actual'
 import { Shader, newLinearGradient } from 'khrysalis/dist/views/draw/LinearGradient.actual'
 import { pathFromLTRB, pathOvalFromLTRB } from 'khrysalis/dist/views/draw/Path.actual'
 import { CustomViewDelegate } from 'khrysalis/dist/views/CustomViewDelegate.shared'
 import { numberToColor } from 'khrysalis/dist/views/Colors.actual'
+import { xDisposableUntil } from 'khrysalis/dist/rx/DisposeCondition.actual'
 
 //! Declares com.lightningkite.khrysalistemplate.vg.PongDemoVG
 export class PongDemoVG extends ViewGenerator {
@@ -55,7 +55,7 @@ export class PongDelegate extends CustomViewDelegate {
         this.paint = new Paint();
         this.paint.color = numberToColor(0xFFFFFFFF);
         this.paint.textSize = 12;
-        ioReactivexDisposablesDisposableUntil<(SubscriptionLike | null)>(getAnimationFrame().subscribe((time: number): void => {
+        xDisposableUntil<SubscriptionLike>(getAnimationFrame().subscribe((time: number): void => {
                     this.frame(time);
                     this.postInvalidate();
         }, undefined, undefined), this.removed);
@@ -142,7 +142,7 @@ export class PongDelegate extends CustomViewDelegate {
         this.paint.render(canvas, pathFromLTRB(this.transformX(this.stageHalfLength - this.paddleOffset - this.paddleHalfThickness), this.transformY(this.paddleRightY - this.paddleHalfWidth), this.transformX(this.stageHalfLength - this.paddleOffset + this.paddleHalfThickness), this.transformY(this.paddleRightY + this.paddleHalfWidth)));
         this.paint.render(canvas, pathOvalFromLTRB(this.transformX(this.ballX - this.ballRadius), this.transformY(this.ballY - this.ballRadius), this.transformX(this.ballX + this.ballRadius), this.transformY(this.ballY + this.ballRadius)));
         this.paint.textSize = height / 6;
-        androidGraphicsCanvasDrawTextCentered(canvas, `${this.scoreLeft} - ${this.scoreRight}`, this.transformX(0), this.transformY((-this.stageHalfWidth) / 2), this.paint);
+        xCanvasDrawTextCentered(canvas, `${this.scoreLeft} - ${this.scoreRight}`, this.transformX(0), this.transformY((-this.stageHalfWidth) / 2), this.paint);
     }
     
     public onTouchDown(id: number, x: number, y: number, width: number, height: number): boolean {
@@ -182,7 +182,9 @@ export class PongDelegate extends CustomViewDelegate {
         return (y - this.height / 2) / this.height * this.stageHalfWidth * 2;
     }
     
-    public generateAccessibilityView(): (HTMLElement | null) { return null; }
+    public generateAccessibilityView(): (HTMLElement | null) { 
+        return null; 
+    }
     
     public sizeThatFitsWidth(width: number, height: number): number {
         const scale = Math.min((width) / (this.stageHalfLength), (height) / (this.stageHalfWidth));

@@ -4,10 +4,10 @@
 import { MutableObservableProperty } from 'khrysalis/dist/observables/MutableObservableProperty.shared'
 import { StandardObservableProperty } from 'khrysalis/dist/observables/StandardObservableProperty.shared'
 import { ViewGenerator } from 'khrysalis/dist/views/ViewGenerator.shared'
-import { androidWidgetTextViewBindString } from 'khrysalis/dist/observables/binding/TextView.binding.actual'
+import { xTextViewBindString } from 'khrysalis/dist/observables/binding/TextView.binding.actual'
 import { LocationDemoXml } from '../layout/LocationDemoXml'
-import { comLightningkiteKhrysalisAndroidActivityAccessRequestLocation } from 'khrysalis/dist/location/ViewDependency.location.actual'
-import { comLightningkiteKhrysalisObservablesObservablePropertyTransformed } from 'khrysalis/dist/observables/TransformedObservableProperty.shared'
+import { xActivityAccessRequestLocation } from 'khrysalis/dist/location/ViewDependency.location.actual'
+import { xObservablePropertyTransformed } from 'khrysalis/dist/observables/TransformedObservableProperty.shared'
 import { LocationResult } from 'khrysalis/dist/location/LocationResult.shared'
 
 //! Declares com.lightningkite.khrysalistemplate.vg.LocationDemoVG
@@ -30,14 +30,14 @@ export class LocationDemoVG extends ViewGenerator {
         const view = xml.setup(dependency);
         
         xml.getLocation.onclick = (_ev) => { _ev.stopPropagation(); 
-            comLightningkiteKhrysalisAndroidActivityAccessRequestLocation(dependency, 100.0, 5.0, (location: (LocationResult | null), message: (string | null)): void => {
+            xActivityAccessRequestLocation(dependency, 100.0, 5.0, (location: (LocationResult | null), message: (string | null)): void => {
                     console.log(message);
                     this.locationInfo.value = location;
             });
         };
-        androidWidgetTextViewBindString(xml.locationDisplay, comLightningkiteKhrysalisObservablesObservablePropertyTransformed<(LocationResult | null), string>(this.locationInfo, (it: (LocationResult | null)): string => {
+        xTextViewBindString(xml.locationDisplay, xObservablePropertyTransformed<(LocationResult | null), string>(this.locationInfo, (it: (LocationResult | null)): string => {
                     if (it !== null) {
-                        return `${it.coordinate}`;
+                        return `${it!.coordinate}`;
                     } else {
                         return "Nothing yet";
                     }

@@ -3,21 +3,21 @@
 // Package: com.lightningkite.khrysalistemplate.vg
 import { SelectDemoXml } from '../layout/SelectDemoXml'
 import { ViewPagerDemoXml } from '../layout/ViewPagerDemoXml'
+import { xDisposableUntil, xViewRemovedGet } from 'khrysalis/dist/rx/DisposeCondition.actual'
 import { MainXml } from '../layout/MainXml'
 import { setViewText } from 'khrysalis/dist/views/ViewWithText.ext.actual'
 import { SubscriptionLike } from 'rxjs'
-import { getAndroidViewViewRemoved, ioReactivexDisposablesDisposableUntil } from 'khrysalis/dist/rx/DisposeCondition.actual'
+import { xObservablePropertySubscribeBy } from 'khrysalis/dist/observables/ObservableProperty.ext.shared'
 import { SliderDemoXml } from '../layout/SliderDemoXml'
 import { DateRangeDemoXml } from '../layout/DateRangeDemoXml'
 import { ExampleContentXml } from '../layout/ExampleContentXml'
-import { androidxViewpagerWidgetViewPagerBindStatic } from 'khrysalis/dist/observables/binding/ViewPager.binding.actual'
 import { StandardObservableProperty } from 'khrysalis/dist/observables/StandardObservableProperty.shared'
 import { ViewGenerator } from 'khrysalis/dist/views/ViewGenerator.shared'
 import { SegmentedControlDemoXml } from '../layout/SegmentedControlDemoXml'
 import { PreviewXml } from '../layout/PreviewXml'
 import { ControlsDemoXml } from '../layout/ControlsDemoXml'
+import { xViewPagerBindStatic } from 'khrysalis/dist/observables/binding/ViewPager.binding.actual'
 import { LoginDemoXml } from '../layout/LoginDemoXml'
-import { comLightningkiteKhrysalisObservablesObservablePropertySubscribeBy } from 'khrysalis/dist/observables/ObservableProperty.ext.shared'
 
 //! Declares com.lightningkite.khrysalistemplate.vg.PreviewVG
 export class PreviewVG extends ViewGenerator {
@@ -44,10 +44,10 @@ export class PreviewVG extends ViewGenerator {
         
         const view = xml.setup(dependency);
         
-        androidxViewpagerWidgetViewPagerBindStatic<PreviewVG.XmlPreview>(xml.pager, this.previews, this.previewIndex, (it: PreviewVG.XmlPreview): HTMLElement => it.make(dependency));
-        ioReactivexDisposablesDisposableUntil<SubscriptionLike>(comLightningkiteKhrysalisObservablesObservablePropertySubscribeBy<number>(this.previewIndex, undefined, undefined, (it: number): void => {
-                    setViewText(xml.viewName, this.previews[it].name)
-        }), getAndroidViewViewRemoved(view));
+        xViewPagerBindStatic<PreviewVG.XmlPreview>(xml.pager, this.previews, this.previewIndex, (it: PreviewVG.XmlPreview): HTMLElement => it.make(dependency));
+        xDisposableUntil<SubscriptionLike>(xObservablePropertySubscribeBy<number>(this.previewIndex, undefined, undefined, (it: number): void => {
+                    setViewText(xml.viewName, this.previews[it].name);
+        }), xViewRemovedGet(view));
         return view;
     }
     

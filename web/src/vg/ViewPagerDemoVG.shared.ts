@@ -2,13 +2,13 @@
 // File: vg/ViewPagerDemoVG.shared.kt
 // Package: com.lightningkite.khrysalistemplate.vg
 import { ViewPagerDemoXml } from '../layout/ViewPagerDemoXml'
-import { androidxViewpagerWidgetViewPagerBindStatic } from 'khrysalis/dist/observables/binding/ViewPager.binding.actual'
 import { ComponentTestXml } from '../layout/ComponentTestXml'
 import { StandardObservableProperty } from 'khrysalis/dist/observables/StandardObservableProperty.shared'
 import { ViewGenerator } from 'khrysalis/dist/views/ViewGenerator.shared'
 import { setViewText } from 'khrysalis/dist/views/ViewWithText.ext.actual'
+import { xPageIndicatorViewBind } from 'khrysalis/dist/observables/binding/PageIndicatorView.binding.actual'
 import { ObservableStack } from 'khrysalis/dist/observables/ObservableStack.shared'
-import { comRdPageIndicatorViewBind } from 'khrysalis/dist/observables/binding/PageIndicatorView.binding.actual'
+import { xViewPagerBindStatic } from 'khrysalis/dist/observables/binding/ViewPager.binding.actual'
 
 //! Declares com.lightningkite.khrysalistemplate.vg.ViewPagerDemoVG
 export class ViewPagerDemoVG extends ViewGenerator {
@@ -35,7 +35,7 @@ export class ViewPagerDemoVG extends ViewGenerator {
         const view = xml.setup(dependency);
         
         
-        androidxViewpagerWidgetViewPagerBindStatic<string>(xml.viewPager, this.items, this.selectedIndex, (it: string): HTMLElement => {
+        xViewPagerBindStatic<string>(xml.viewPager, this.items, this.selectedIndex, (it: string): HTMLElement => {
                 const xml = new ComponentTestXml();
                 
                 const view = xml.setup(dependency);
@@ -43,7 +43,7 @@ export class ViewPagerDemoVG extends ViewGenerator {
                 setViewText(xml.label, it);
                 return view;
         });
-        comRdPageIndicatorViewBind(xml.viewPagerIndicator, this.items.length, this.selectedIndex);
+        xPageIndicatorViewBind(xml.viewPagerIndicator, this.items.length, this.selectedIndex);
         
         return view;
     }

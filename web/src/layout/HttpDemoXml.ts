@@ -8,6 +8,7 @@ import htmlForDefault from './http_demo.html'
 //! Declares com.lightningkite.khrysalistemplate.layouts.HttpDemoXml
 export class HttpDemoXml {
     xmlRoot!: HTMLElement;
+    progress!: HTMLProgressElement;
     items!: HTMLDivElement;
     loadHtmlString(): string {
         return htmlForDefault;
@@ -15,6 +16,7 @@ export class HttpDemoXml {
     setup(dependency: Window): HTMLElement {
         const view = loadHtmlFromString(this.loadHtmlString());
         this.xmlRoot = view
+        this.progress = getViewById<HTMLProgressElement>(view, "progress");
         this.items = getViewById<HTMLDivElement>(view, "items");
         return view
     }

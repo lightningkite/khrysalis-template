@@ -2,21 +2,21 @@
 // File: vg/WebsocketDemoVG.shared.kt
 // Package: com.lightningkite.khrysalistemplate.vg
 import { map as rxMap, publishReplay as rxPublishReplay, refCount as rxRefCount, switchMap as rxSwitchMap, take as rxTake } from 'rxjs/operators'
-import { androidWidgetEditTextBindString } from 'khrysalis/dist/observables/binding/EditText.binding.actual'
+import { xDisposableUntil, xViewRemovedGet } from 'khrysalis/dist/rx/DisposeCondition.actual'
 import { WebSocketFrame } from 'khrysalis/dist/net/WebSocketFrame.actual'
-import { comLightningkiteKhrysalisObservablesObservablePropertyMap } from 'khrysalis/dist/observables/TransformedObservableProperty.shared'
-import { Observable, SubscriptionLike } from 'rxjs'
-import { getAndroidViewViewRemoved, ioReactivexDisposablesDisposableUntil } from 'khrysalis/dist/rx/DisposeCondition.actual'
+import { Observable, ObservableInput, SubscriptionLike } from 'rxjs'
+import { xObservableAsObservableProperty } from 'khrysalis/dist/observables/EventToObservableProperty.shared'
 import { ObservableProperty } from 'khrysalis/dist/observables/ObservableProperty.shared'
+import { ConstantObservableProperty } from 'khrysalis/dist/observables/ConstantObservableProperty.shared'
 import { WebsocketDemoXml } from '../layout/WebsocketDemoXml'
 import { ComponentTextXml } from '../layout/ComponentTextXml'
 import { StandardObservableProperty } from 'khrysalis/dist/observables/StandardObservableProperty.shared'
-import { ioReactivexObservableAsObservableProperty } from 'khrysalis/dist/observables/EventToObservableProperty.shared'
 import { ViewGenerator } from 'khrysalis/dist/views/ViewGenerator.shared'
 import { ConnectedWebSocket } from 'khrysalis/dist/net/ConnectedWebSocket.actual'
-import { androidWidgetTextViewBindString } from 'khrysalis/dist/observables/binding/TextView.binding.actual'
+import { xTextViewBindString } from 'khrysalis/dist/observables/binding/TextView.binding.actual'
 import { HttpClient } from 'khrysalis/dist/net/HttpClient.actual'
-import { androidxRecyclerviewWidgetRecyclerViewBind } from 'khrysalis/dist/observables/binding/RecyclerView.binding.actual'
+import { xRecyclerViewBind } from 'khrysalis/dist/observables/binding/RecyclerView.binding.actual'
+import { xEditTextBindString } from 'khrysalis/dist/observables/binding/EditText.binding.actual'
 
 //! Declares com.lightningkite.khrysalistemplate.vg.WebsocketDemoVG
 export class WebsocketDemoVG extends ViewGenerator {
@@ -46,7 +46,7 @@ export class WebsocketDemoVG extends ViewGenerator {
         //--- Set Up xml.items
         const itemsList = ([] as Array<WebSocketFrame>);
         
-        androidxRecyclerviewWidgetRecyclerViewBind<WebSocketFrame>(xml.items, ioReactivexObservableAsObservableProperty<(Array<WebSocketFrame> | null)>(this.socket.pipe(rxSwitchMap((it: ConnectedWebSocket): Observable<WebSocketFrame> => it.read)).pipe(rxMap((it: WebSocketFrame): Array<WebSocketFrame> => {
+        xRecyclerViewBind<WebSocketFrame>(xml.items, xObservableAsObservableProperty<Array<WebSocketFrame>>(this.socket.pipe(rxSwitchMap((it: ConnectedWebSocket): ObservableInput<WebSocketFrame> => it.read)).pipe(rxMap((it: WebSocketFrame): Array<WebSocketFrame> => {
                             console.log("Adding item");
                             itemsList.push(it);
                             while (itemsList.length > 20) {
@@ -61,19 +61,19 @@ export class WebsocketDemoVG extends ViewGenerator {
                 
                 
                 //--- Set Up cellXml.label (overwritten on flow generation)
-                androidWidgetTextViewBindString(cellXml.label, comLightningkiteKhrysalisObservablesObservablePropertyMap<WebSocketFrame, string>(observable, (it: WebSocketFrame): string => it.text ?? "---"));
+                xTextViewBindString(cellXml.label, new ConstantObservableProperty<string>("Some Text"));
                 //--- End Make Subview For xml.items (overwritten on flow generation)
                 return cellView;
         });
         
         //--- Set Up xml.input
-        androidWidgetEditTextBindString(xml.input, this.text);
+        xEditTextBindString(xml.input, this.text);
         
         //--- Set Up xml.submit
         xml.submit.onclick = (_ev) => { _ev.stopPropagation(); 
-            ioReactivexDisposablesDisposableUntil<(SubscriptionLike | null)>(this.socket.pipe(rxTake(1)).subscribe((it: (ConnectedWebSocket | null)): void => {
-                        it.next(new WebSocketFrame(undefined, this.text.value))
-            }, undefined, undefined), getAndroidViewViewRemoved(xml.submit));
+            xDisposableUntil<SubscriptionLike>(this.socket.pipe(rxTake(1)).subscribe((it: ConnectedWebSocket): void => {
+                        it.next(new WebSocketFrame(undefined, this.text.value));
+            }, undefined, undefined), xViewRemovedGet(xml.submit));
         };
         
         //--- Generate End (overwritten on flow generation)

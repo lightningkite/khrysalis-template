@@ -2,12 +2,13 @@
 // File: vg/ExampleContentVG.shared.kt
 // Package: com.lightningkite.khrysalistemplate.vg
 import { ExampleContentXml } from '../layout/ExampleContentXml'
-import { androidWidgetTextViewBindString, androidWidgetTextViewBindText } from 'khrysalis/dist/observables/binding/TextView.binding.actual'
 import { MutableObservableProperty } from 'khrysalis/dist/observables/MutableObservableProperty.shared'
 import { StandardObservableProperty } from 'khrysalis/dist/observables/StandardObservableProperty.shared'
 import { ViewGenerator } from 'khrysalis/dist/views/ViewGenerator.shared'
-import { comLightningkiteKhrysalisObservablesObservablePropertyMap } from 'khrysalis/dist/observables/TransformedObservableProperty.shared'
-import { comLightningkiteKhrysalisObservablesObservablePropertyFlatMap } from 'khrysalis/dist/observables/FlatMappedObservableProperty.shared'
+import { xTextViewBindString, xTextViewBindText } from 'khrysalis/dist/observables/binding/TextView.binding.actual'
+import { xObservablePropertyFlatMap } from 'khrysalis/dist/observables/FlatMappedObservableProperty.shared'
+import { xObservablePropertyMap } from 'khrysalis/dist/observables/TransformedObservableProperty.shared'
+import { ObservableProperty } from 'khrysalis/dist/observables/ObservableProperty.shared'
 
 //! Declares com.lightningkite.khrysalistemplate.vg.ExampleContentVG
 export class ExampleContentVG extends ViewGenerator {
@@ -27,8 +28,8 @@ export class ExampleContentVG extends ViewGenerator {
     
     
     public increment(): void {
-        const temp16 = this._number;
-        temp16.value = temp16.value + 1;
+        const temp4 = this._number;
+        temp4.value = temp4.value + 1;
     }
     
     public generate(dependency: Window): HTMLElement {
@@ -39,11 +40,11 @@ export class ExampleContentVG extends ViewGenerator {
         xml.exampleContentIncrement.onclick = (_ev) => { _ev.stopPropagation(); 
             this.increment();
         };
-        androidWidgetTextViewBindText<number>(xml.exampleContentNumber, this._number, (it: number): string => it.toString());
+        xTextViewBindText<number>(xml.exampleContentNumber, this._number, (it: number): string => it.toString());
         xml.chainedIncrement.onclick = (_ev) => { _ev.stopPropagation(); 
             this.chained.value.value = this.chained.value.value + 1;
         };
-        androidWidgetTextViewBindString(xml.chainedNumber, comLightningkiteKhrysalisObservablesObservablePropertyMap<number, string>(comLightningkiteKhrysalisObservablesObservablePropertyFlatMap<MutableObservableProperty<number>, number>(this.chained, (it: MutableObservableProperty<number>): MutableObservableProperty<number> => it), (it: number): string => it.toString()));
+        xTextViewBindString(xml.chainedNumber, xObservablePropertyMap<number, string>(xObservablePropertyFlatMap<MutableObservableProperty<number>, number>(this.chained, (it: MutableObservableProperty<number>): ObservableProperty<number> => it), (it: number): string => it.toString()));
         xml.scrollToTop.onclick = (_ev) => { _ev.stopPropagation(); 
             xml.scrollView.scroll(0, 0);
         };
