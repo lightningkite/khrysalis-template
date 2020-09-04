@@ -27,9 +27,6 @@ PODS:
     - Alamofire (~> 4.9.1)
     - AlamofireImage (~> 3.6.0)
     - Cosmos (~> 19.0)
-    - DKImagePickerController/Core
-    - DKImagePickerController/ImageDataManager
-    - DKImagePickerController/Resource
     - KeychainAccess
     - RxRelay
     - RxSwift
@@ -107,7 +104,7 @@ SPEC CHECKSUMS:
   Cosmos: a6fb17284281fa12cf4c85c2efecd440a215ec44
   DKImagePickerController: 4a3e7948a848c4348e600b3fe5ce41478835fa10
   KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
-  Khrysalis: 9d0af7cee1205ad1c4dc5510d5b5a5f4faa5ef36
+  Khrysalis: 79d5592932fe2f1778de61eb76d0ad9d36df45e9
   KhrysalisMaps: 752bc00be1db138888c5256de2111b9b34221085
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
@@ -117,4 +114,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 94bef40cea43492a0c65a330bb64b35476185987
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3
