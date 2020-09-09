@@ -65,6 +65,51 @@ public class ControlsDemoXml {
             }
             
             view.addSubview(
+                LinearLayout(frame: .zero),
+                minimumSize: CGSize(width: 0, height: 0),
+                size: CGSize(width: 0, height: 0),
+                margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                padding: UIEdgeInsets.zero,
+                gravity: .topFill,
+                weight: 0
+            ) { view in 
+                view.orientation = .x
+                view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+                view.gravity = .centerCenter
+                
+                view.addSubview(
+                    UILabel(frame: .zero),
+                    minimumSize: CGSize(width: 0, height: 0),
+                    size: CGSize(width: 0.0, height: 0),
+                    margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                    padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                    gravity: .centerCenter,
+                    weight: 1.0
+                ) { view in 
+                    view.font = UIFont.get(size: 16.0, style: [])
+                    view.textString = "Test Check"
+                    view.numberOfLines = 0
+                    view.textColor = UIColor(argb: 0xFF222222)
+                }
+                
+                view.addSubview(
+                    LabeledCheckbox(frame: .zero),
+                    minimumSize: CGSize(width: 0, height: 0),
+                    size: CGSize(width: 0, height: 0),
+                    margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
+                    padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                    gravity: .centerCenter,
+                    weight: 0
+                ) { view in 
+                    view.verticalAlign = .start
+                    view.labelView.font = UIFont.get(size: 12, style: [])
+                    view.labelView.numberOfLines = 0
+                    view.labelView.baselineAdjustment = .none
+                }
+                
+            }
+            
+            view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
                 size: CGSize(width: 0, height: 0),

@@ -17,7 +17,7 @@ public class SegmentedControlDemoXml {
         view.gravity = .topLeft
         
         view.addSubview(
-            UISegmentedControl(frame: .zero),
+            UISegmentedControlSquare(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
             size: CGSize(width: 0, height: 0),
             margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
@@ -26,8 +26,6 @@ public class SegmentedControlDemoXml {
             weight: 0
         ) { view in 
             self.tabs = view
-            view.tintColor = .clear
-            view.backgroundColor = .clear
             view.setTitleTextAttributes(
                 [NSAttributedString.Key.foregroundColor: UIColor.black], 
                 for: .selected
@@ -36,11 +34,11 @@ public class SegmentedControlDemoXml {
                 [NSAttributedString.Key.foregroundColor: UIColor.black], 
                 for: .normal
             )
-            view.addIndicator(color: UIColor.black)
+            view.materialTabStyle(color: UIColor.black)
         }
         
         view.addSubview(
-            UISegmentedControl(frame: .zero),
+            UISegmentedControlSquare(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
             size: CGSize(width: 0, height: 0),
             margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
@@ -49,8 +47,6 @@ public class SegmentedControlDemoXml {
             weight: 0
         ) { view in 
             self.tabs2 = view
-            view.tintColor = .clear
-            view.backgroundColor = .clear
             view.apportionsSegmentWidthsByContent = true
             view.apportionsSegmentWidthsByContent = true
             view.setTitleTextAttributes(
@@ -61,14 +57,14 @@ public class SegmentedControlDemoXml {
                 [NSAttributedString.Key.foregroundColor: UIColor.black], 
                 for: .normal
             )
-            view.addIndicator(color: UIColor.black)
+            view.materialTabStyle(color: UIColor.black)
         }
         
         xmlRoot = view
         return view
     }
     
-    public unowned var tabs2: UISegmentedControl!
-    public unowned var tabs: UISegmentedControl!
+    public unowned var tabs2: UISegmentedControlSquare!
+    public unowned var tabs: UISegmentedControlSquare!
     
 }

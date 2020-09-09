@@ -191,6 +191,20 @@ public class DrawableDemoXml {
                     gravity: .centerCenter,
                     weight: 1.0
                 ) { view in 
+                    view.image = UIImage(named: "test_drawable") ?? R.drawable.test_drawable.makeLayer(view).toImage()
+                    view.clipsToBounds = true
+                    view.contentMode = .scaleAspectFit
+                }
+                
+                view.addSubview(
+                    UIImageView(frame: .zero),
+                    minimumSize: CGSize(width: 0, height: 0),
+                    size: CGSize(width: 0.0, height: 50.0),
+                    margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
+                    padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                    gravity: .centerCenter,
+                    weight: 1.0
+                ) { view in 
                     view.image = UIImage(named: "ic_android_black_24dp") ?? R.drawable.ic_android_black_24dp.makeLayer(view).toImage()
                     view.clipsToBounds = true
                     view.contentMode = .scaleAspectFit
