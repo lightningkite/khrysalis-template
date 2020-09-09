@@ -30,10 +30,10 @@ configure<KhrysalisPluginExtension> {
 
 android {
     //    buildToolsVersion = "28.0.3"
-    compileSdkVersion(29)
+    compileSdkVersion(30)
     defaultConfig {
         minSdkVersion(21)
-        targetSdkVersion(29)
+        targetSdkVersion(30)
         multiDexEnabled = true
         applicationId = packageName
         versionCode = 5
@@ -65,17 +65,17 @@ dependencies {
     implementation("com.lightningkite.khrysalis:android-maps:0.1.1")
     implementation("com.lightningkite.khrysalis:android-bluetooth:0.1.1")
     testImplementation("junit:junit:4.12")
-    androidTestImplementation("androidx.test:runner:1.2.0")
+    androidTestImplementation("androidx.test:runner:1.3.0")
     androidTestImplementation("com.android.support.test.espresso:espresso-core:3.0.2")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version")
     implementation("org.jetbrains.kotlin:kotlin-reflect:$kotlin_version")
-    implementation("androidx.appcompat:appcompat:1.1.0")
-    implementation("com.google.android.material:material:1.0.0")
-    implementation("com.android.support.constraint:constraint-layout:1.1.3")
-    implementation("androidx.recyclerview:recyclerview:1.0.0")
-    implementation("com.fasterxml.jackson.core:jackson-core:2.9.9")
-    implementation("com.fasterxml.jackson.core:jackson-annotations:2.9.7")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.9.9")
+    implementation("androidx.appcompat:appcompat:1.2.0")
+    implementation("com.google.android.material:material:1.2.1")
+    implementation("com.android.support.constraint:constraint-layout:2.0.1")
+    implementation("androidx.recyclerview:recyclerview:1.1.0")
+    implementation("com.fasterxml.jackson.core:jackson-core:2.9.10")
+    implementation("com.fasterxml.jackson.core:jackson-annotations:2.9.10")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.9.10.6")
     implementation("com.squareup.okhttp3:okhttp:3.12.0")
     implementation("de.hdodenhof:circleimageview:2.2.0")
     implementation("br.com.simplepass:loading-button-android:1.14.0")

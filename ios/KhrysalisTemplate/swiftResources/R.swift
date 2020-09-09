@@ -67,6 +67,19 @@ public enum R {
             return R.color.colorPrimary
             return UIColor.white
         }
+        static func state_accent_toggle(_ state: UIControl.State) -> UIColor {
+            if state.contains(.disabled) {
+                return R.color.disabled
+            }
+            if state.contains(.selected) {
+                return R.color.colorAccent
+            }
+            if state.contains(.selected) {
+                return R.color.colorAccent
+            }
+            return R.color.disabled
+            return UIColor.white
+        }
         static func state_accent(_ state: UIControl.State) -> UIColor {
             if state.contains(.disabled) {
                 return R.color.disabled
@@ -79,19 +92,6 @@ public enum R {
                 return R.color.disabled
             }
             return R.color.colorPrimary
-            return UIColor.white
-        }
-        static func state_accent_toggle(_ state: UIControl.State) -> UIColor {
-            if state.contains(.disabled) {
-                return R.color.disabled
-            }
-            if state.contains(.selected) {
-                return R.color.colorAccent
-            }
-            if state.contains(.selected) {
-                return R.color.colorAccent
-            }
-            return R.color.disabled
             return UIColor.white
         }
     }
