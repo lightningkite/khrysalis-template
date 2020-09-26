@@ -1,9 +1,9 @@
 //
 // WebsocketDemoXml.ts
-// Created by Butterfly XML Typescript
+// Created by Khrysalis XML Typescript
 //
 import { loadHtmlFromString, findViewById, getViewById, replaceViewWithId } from 'butterfly/dist/views/html'
-import { customViewSetDelegate } from 'butterfly/dist/views/CustomView.actual'
+import { customViewSetDelegate } from 'butterfly/dist/views/CustomView'
 import htmlForDefault from './websocket_demo.html'
 //! Declares com.lightningkite.butterflytemplate.layouts.WebsocketDemoXml
 export class WebsocketDemoXml {

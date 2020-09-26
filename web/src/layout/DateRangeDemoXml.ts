@@ -1,13 +1,13 @@
 //
 // DateRangeDemoXml.ts
-// Created by Butterfly XML Typescript
+// Created by Khrysalis XML Typescript
 //
 import { loadHtmlFromString, findViewById, getViewById, replaceViewWithId } from 'butterfly/dist/views/html'
-import { customViewSetDelegate } from 'butterfly/dist/views/CustomView.actual'
-import { MonthCVD } from 'butterfly/dist/views/MonthCVD.shared'
-import { SelectDateMonthCVD } from 'butterfly/dist/views/SelectDateMonthCVD.shared'
-import { SelectDateRangeMonthCVD } from 'butterfly/dist/views/SelectDateRangeMonthCVD.shared'
-import { SelectMultipleDatesMonthCVD } from 'butterfly/dist/views/SelectMultipleDatesMonthCVD.shared'
+import { customViewSetDelegate } from 'butterfly/dist/views/CustomView'
+import { MonthCVD } from 'butterfly/dist/views/MonthCVD'
+import { SelectDateMonthCVD } from 'butterfly/dist/views/SelectDateMonthCVD'
+import { SelectDateRangeMonthCVD } from 'butterfly/dist/views/SelectDateRangeMonthCVD'
+import { SelectMultipleDatesMonthCVD } from 'butterfly/dist/views/SelectMultipleDatesMonthCVD'
 import htmlForDefault from './date_range_demo.html'
 //! Declares com.lightningkite.butterflytemplate.layouts.DateRangeDemoXml
 export class DateRangeDemoXml {

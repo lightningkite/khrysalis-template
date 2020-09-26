@@ -1,15 +1,16 @@
 //
 // MarginTestXml.ts
-// Created by Butterfly XML Typescript
+// Created by Khrysalis XML Typescript
 //
 import { loadHtmlFromString, findViewById, getViewById, replaceViewWithId } from 'butterfly/dist/views/html'
-import { customViewSetDelegate } from 'butterfly/dist/views/CustomView.actual'
+import { customViewSetDelegate } from 'butterfly/dist/views/CustomView'
 import htmlForDefault from './margin_test.html'
 //! Declares com.lightningkite.butterflytemplate.layouts.MarginTestXml
 export class MarginTestXml {
     xmlRoot!: HTMLElement;
     scrollView!: HTMLDivElement;
     scrollToTop!: HTMLButtonElement;
+    focusTest!: HTMLInputElement;
     loadHtmlString(): string {
         return htmlForDefault;
     }
@@ -18,6 +19,7 @@ export class MarginTestXml {
         this.xmlRoot = view
         this.scrollView = getViewById<HTMLDivElement>(view, "scrollView");
         this.scrollToTop = getViewById<HTMLButtonElement>(view, "scrollToTop");
+        this.focusTest = getViewById<HTMLInputElement>(view, "focusTest");
         return view
     }
 }

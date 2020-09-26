@@ -1,6 +1,6 @@
 :root {
     --color-foreground-fade: gray;
-    --color-foreground: black;
+    --color-foreground: #000000;
     --color-black: black;
     --color-white: white;
     --color-background-fade: #DDD;
@@ -30,23 +30,48 @@ body > * {
 .khr[hidden] {
     display: none !important;
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #8884;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888A;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
 .khrc {
     display: flex;
     flex-direction: row;
 }
 .khrc > * {
     align-self: stretch;
+    flex-grow: 1;
 }
-.butterfly-box {
+.khrc > input[type="radio"], .khrc > input[type="checkbox"] {
+    align-self: center;
+    flex-grow: 0;
+}
+.khrysalis-box {
     pointer-events: none;
     position: relative;
 }
-.butterfly-box>* {
+.khrysalis-box>* {
     pointer-events: auto;
     width: 100%;
     height: 100%;
 }
-.butterfly-scroll-view > * {
+.khrysalis-scroll-view > * {
     max-height: none;
 }
 button {
@@ -59,7 +84,11 @@ input {
     background: none;
     border: none;
     color: var(--color-foreground);
-    border-bottom: 1px solid var(--color-foreground-fade, gray);
+}
+textarea {
+    background: none;
+    border: none;
+    color: var(--color-foreground);
 }
 select {
     color: var(--color-foreground);
@@ -72,32 +101,32 @@ input:focus {
 button:hover {
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.24), 0 4px 8px 0 rgba(0,0,0,0.19);
 }
-.butterfly-canvas-container {
+.khrysalis-canvas-container {
     position: relative;
 }
-.butterfly-canvas {
+.khrysalis-canvas {
     position: absolute;
     width: 100%;
     height: 100%;
 }
-.butterfly-switch {
+.khrysalis-switch {
     display: flex;
     flex-direction: row;
 }
-.butterfly-switch > div {
+.khrysalis-switch > div {
     flex-grow: 1;
 }
-.butterfly-switch > input {
+.khrysalis-switch > input {
     display: none;
 }
-.butterfly-switch-back {
+.khrysalis-switch-back {
     position: relative;
     width: 40px;
     height: 24px;
     border-radius: 12px;
     background-color: var(--color-background-fade, gray);
 }
-.butterfly-switch-front {
+.khrysalis-switch-front {
     position: absolute;
     width: 20px;
     height: 20px;
@@ -109,44 +138,44 @@ button:hover {
     -webkit-transition: 0.2s;
     transition: 0.2s;
 }
-:checked ~ .butterfly-switch-back > .butterfly-switch-front {
+:checked ~ .khrysalis-switch-back > .khrysalis-switch-front {
     right: 2px;
 }
-.butterfly-swap {
+.khrysalis-swap {
     position: relative;
 }
-.butterfly-flip {
+.khrysalis-flip {
     position: relative;
 }
-.butterfly-pager {
+.khrysalis-pager {
     position: relative;
 }
-.butterfly-pager-left {
+.khrysalis-pager-left {
     position: absolute;
     left: 0;
     bottom: 0;
     font-size: 24px;
     padding: 4px;
 }
-.butterfly-pager-right {
+.khrysalis-pager-right {
     position: absolute;
     right: 0;
     bottom: 0;
     font-size: 24px;
     padding: 4px;
 }
-.butterfly-pager-content {
+.khrysalis-pager-content {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
 }
-.butterfly-compound-on {
+.khrysalis-compound-on {
     background-color: var(--color-color-primary);
     color: white;
 }
-.butterfly-compound-off {
+.khrysalis-compound-off {
     background-color: transparent;
     color: var(--color-foreground);
 }
@@ -447,7 +476,7 @@ button:hover {
     background-color: #4B97D1;
 }
 
-@keyframes butterfly-animate-push-in {
+@keyframes khrysalis-animate-push-in {
     from {
         transform: translateX(100%);
     }
@@ -456,7 +485,7 @@ button:hover {
     }
 }
 
-@keyframes butterfly-animate-push-out {
+@keyframes khrysalis-animate-push-out {
     from {
         transform: translateX(0);
     }
@@ -465,7 +494,7 @@ button:hover {
     }
 }
 
-@keyframes butterfly-animate-pop-in {
+@keyframes khrysalis-animate-pop-in {
     from {
         transform: translateX(-100%);
     }
@@ -474,7 +503,7 @@ button:hover {
     }
 }
 
-@keyframes butterfly-animate-pop-out {
+@keyframes khrysalis-animate-pop-out {
     from {
         transform: translateX(0);
     }
@@ -483,7 +512,7 @@ button:hover {
     }
 }
 
-@keyframes butterfly-animate-fade-in {
+@keyframes khrysalis-animate-fade-in {
     from {
         opacity: 0;
     }
@@ -492,7 +521,7 @@ button:hover {
     }
 }
 
-@keyframes butterfly-animate-fade-out {
+@keyframes khrysalis-animate-fade-out {
     from {
         opacity: 1;
     }
@@ -501,11 +530,11 @@ button:hover {
     }
 }
 
-.butterfly-page-indicator {
+.khrysalis-page-indicator {
     display: flex;
     flex-direction: row;
 }
-.butterfly-page-indicator-dot {
+.khrysalis-page-indicator-dot {
     opacity: 0.5;
     border-color: var(--color-foreground);
     border-width: 2px;
@@ -515,7 +544,7 @@ button:hover {
     height: 12px;
     margin: 4px;
 }
-.butterfly-page-indicator-dot.butterfly-page-indicator-dot-active {
+.khrysalis-page-indicator-dot.khrysalis-page-indicator-dot-active {
     opacity: 1;
     background-color: var(--color-foreground);
     border-color: var(--color-foreground);
@@ -527,32 +556,32 @@ button:hover {
     margin: 4px;
 }
 
-.butterfly-rating-bar-big > .butterfly-rating-bar-star {
+.khrysalis-rating-bar-big > .khrysalis-rating-bar-star {
     width: 48px;
     height: 48px;
 }
-.butterfly-rating-bar-reg > .butterfly-rating-bar-star {
+.khrysalis-rating-bar-reg > .khrysalis-rating-bar-star {
     width: 32px;
     height: 32px;
 }
-.butterfly-rating-bar-small > .butterfly-rating-bar-star {
+.khrysalis-rating-bar-small > .khrysalis-rating-bar-star {
     width: 24px;
     height: 24px;
 }
-.butterfly-rating-bar-tiny > .butterfly-rating-bar-star {
+.khrysalis-rating-bar-tiny > .khrysalis-rating-bar-star {
     width: 16px;
     height: 16px;
 }
-.butterfly-rating-bar-star {
+.khrysalis-rating-bar-star {
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24'><polygon stroke='gray' stroke-width='1' fill='transparent' points='14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10'/></svg>");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
-.butterfly-rating-bar-star.butterfly-rating-bar-star-on {
+.khrysalis-rating-bar-star.khrysalis-rating-bar-star-on {
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24'><polygon stroke='%23AA0' stroke-width='1' fill='yellow' points='14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10'/></svg>");
 }
-.butterfly-flipper-progress {
+.khrysalis-flipper-progress {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -562,44 +591,44 @@ button:hover {
     border: 16px solid #f3f3f3; /* Light grey */
     border-top: 16px solid #3498db; /* Blue */
     border-radius: 50%;
-    animation: butterfly-load-ring-center 2s linear infinite;
+    animation: khrysalis-load-ring-center 2s linear infinite;
 }
-.butterfly-recycler {
+.khrysalis-recycler {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     overflow-y: auto;
 }
-.butterfly-single-item-container {
+.khrysalis-single-item-container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.butterfly-tabs {
+.khrysalis-tabs {
     display: flex;
     flex-direction: row;
     position: relative;
 }
-.butterfly-tab-bar {
+.khrysalis-tab-bar {
     display: flex;
     position: relative;
     flex-direction: row;
     height: min-content;
 }
-.butterfly-tab {
+.khrysalis-tab {
     padding: 8px;
     height: 100%;
 }
-.butterfly-tab-list {
+.khrysalis-tab-list {
     height: min-content;
     display: flex;
     flex-direction: row;
 }
-.butterfly-tab-list input {
+.khrysalis-tab-list input {
     display: none;
 }
-.butterfly-tab-indicator {
+.khrysalis-tab-indicator {
     position: absolute;
     height: 6px;
 
@@ -607,10 +636,10 @@ button:hover {
     background-color: var(--color-color-accent);
     transition: 0.25s;
 }
-.butterfly-refresh {
+.khrysalis-refresh {
     position: relative;
 }
-.butterfly-refresh-button {
+.khrysalis-refresh-button {
     box-sizing: border-box;
     position: absolute;
     background-color: var(--color-background-fade);
@@ -619,7 +648,7 @@ button:hover {
     right: 16px;
     top: 16px;
 }
-.butterfly-refresh-button-loading {
+.khrysalis-refresh-button-loading {
     box-sizing: border-box;
     display: block;
     position: absolute;
@@ -630,11 +659,11 @@ button:hover {
     border: 8px solid;
     border-radius: 50%;
     color: transparent;
-    animation: butterfly-load-ring 1s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    animation: khrysalis-load-ring 1s cubic-bezier(0.5, 0, 0.5, 1) infinite;
     border-color: var(--color-foreground-fade) transparent transparent transparent;
 }
 
-@keyframes butterfly-load-ring {
+@keyframes khrysalis-load-ring {
     0% {
         transform: rotate(0deg);
     }
@@ -642,7 +671,7 @@ button:hover {
         transform: rotate(360deg);
     }
 }
-@keyframes butterfly-load-ring-center {
+@keyframes khrysalis-load-ring-center {
     0% {
         transform: translateX(-50%) translateY(-50%) rotate(0deg);
     }
@@ -650,19 +679,19 @@ button:hover {
         transform: translateX(-50%) translateY(-50%) rotate(360deg);
     }
 }
-.butterfly-autocomplete {
+.khrysalis-autocomplete {
     overflow-x: visible;
     overflow-y: visible;
     position: relative;
     display: inline-block;
     height: min-content;
 }
-.butterfly-autocomplete > input {
+.khrysalis-autocomplete > input {
     width: 100%;
     height: 100%;
     border: none;
 }
-.butterfly-autocomplete-options {
+.khrysalis-autocomplete-options {
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -675,37 +704,37 @@ button:hover {
     overflow-y: auto;
     z-index: 99;
 }
-.butterfly-autocomplete-option {
+.khrysalis-autocomplete-option {
     padding: 10px;
     width: 100%;
     cursor: pointer;
     background-color: var(--color-background);
     border-bottom: 1px solid var(--color-background-fade);
 }
-.butterfly-autocomplete-option:focus {
+.khrysalis-autocomplete-option:focus {
     background-color: var(--color-foreground-fade)
 }
-.butterfly-dialog-front {
+.khrysalis-dialog-front {
     background-color: var(--color-background);
     display: flex;
     flex-direction: column;
     padding: 16px;
 }
-.butterfly-dialog-message {
+.khrysalis-dialog-message {
     text-align: center;
     color: var(--color-foreground);
 }
-.butterfly-dialog-buttons {
+.khrysalis-dialog-buttons {
     display: flex;
     flex-direction: row;
 }
-.butterfly-dialog-cancel {
+.khrysalis-dialog-cancel {
     padding: 8px;
     margin: 8px;
     flex-grow: 1;
     color: var(--color-foreground);
 }
-.butterfly-dialog-ok {
+.khrysalis-dialog-ok {
     padding: 8px;
     margin: 8px;
     flex-grow: 1;

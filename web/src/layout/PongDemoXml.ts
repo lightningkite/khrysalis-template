@@ -1,10 +1,10 @@
 //
 // PongDemoXml.ts
-// Created by Butterfly XML Typescript
+// Created by Khrysalis XML Typescript
 //
 import { loadHtmlFromString, findViewById, getViewById, replaceViewWithId } from 'butterfly/dist/views/html'
-import { customViewSetDelegate } from 'butterfly/dist/views/CustomView.actual'
-import { PongDelegate } from '../vg/PongDemoVG.shared'
+import { customViewSetDelegate } from 'butterfly/dist/views/CustomView'
+import { PongDelegate } from '../vg/PongDemoVG'
 import htmlForDefault from './pong_demo.html'
 //! Declares com.lightningkite.butterflytemplate.layouts.PongDemoXml
 export class PongDemoXml {
