@@ -110,7 +110,7 @@
                 android:text=""
                 />
 
-        <com.lightningkite.khrysalis.views.android.MultilineEditText
+        <com.lightningkite.butterfly.views.widget.MultilineEditText
                 android:id="@+id/editableTextBig"
                 style="@style/Body"
                 android:layout_width="match_parent"

@@ -1,6 +1,6 @@
-./install-khrysalis.sh
+./install-butterfly.sh
 cd ..
-./gradlew khrysalisWeb
+./gradlew butterflyWeb
 cd web
 rsync --delete -azh --prune-empty-dirs --include="*/" --include="**.html" --exclude="*" "./src/" "./dist/"
 rsync --delete -azh --prune-empty-dirs --include="*/" --include="**.css" --exclude="*" "./src/" "./dist/"

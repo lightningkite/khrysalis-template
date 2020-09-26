@@ -3,8 +3,8 @@ platform :ios, '11.0'
 use_modular_headers!
 
 
-target 'KhrysalisTemplate' do
-    pod 'Khrysalis', :path => '~/StudioProjects/khrysalis/Khrysalis.podspec'
-    pod 'KhrysalisMaps', :path => '~/StudioProjects/khrysalis/KhrysalisMaps.podspec'
-#     pod 'KhrysalisBluetooth', :path => '~/StudioProjects/khrysalis/KhrysalisBluetooth.podspec'
+target 'ButterflyTemplate' do
+    pod 'Butterfly', :path => '~/sync/khrysalis-meta/butterfly-ios/Butterfly.podspec'
+    pod 'ButterflyMaps', :path => '~/sync/khrysalis-meta/butterfly-maps-ios/ButterflyMaps.podspec'
+#     pod 'ButterflyBluetooth', :path => '~/StudioProjects/butterfly/ButterflyBluetooth.podspec'
 end

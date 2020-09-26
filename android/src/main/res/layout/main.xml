@@ -36,7 +36,7 @@
 
     </LinearLayout>
 
-    <com.lightningkite.khrysalis.views.android.SwapView
+    <com.lightningkite.butterfly.views.widget.SwapView
             android:id="@+id/mainContent"
             android:background="#FFF"
             android:layout_width="match_parent"

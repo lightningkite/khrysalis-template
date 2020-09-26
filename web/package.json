@@ -1,5 +1,5 @@
 {
-  "name": "KhrysalisTemplate",
+  "name": "ButterflyTemplate",
   "version": "1.0.0",
   "description": "Simple Webpack/Typescript/Preact Playground",
   "main": "src/index.ts",
@@ -35,7 +35,7 @@
     "build": "webpack --mode=production",
     "start": "webpack-dev-server --open",
     "debug": "webpack --mode=development",
-    "install": "./install-khrysalis.sh"
+    "install": "./install-butterfly.sh"
   },
   "author": "Lightning Kite"
 }

@@ -1,11 +1,11 @@
 //
 // MultipleDemoXml.ts
-// Created by Khrysalis XML Typescript
+// Created by Butterfly XML Typescript
 //
-import { loadHtmlFromString, findViewById, getViewById, replaceViewWithId } from 'khrysalis/dist/views/html'
-import { customViewSetDelegate } from 'khrysalis/dist/views/CustomView.actual'
+import { loadHtmlFromString, findViewById, getViewById, replaceViewWithId } from 'butterfly/dist/views/html'
+import { customViewSetDelegate } from 'butterfly/dist/views/CustomView.actual'
 import htmlForDefault from './multiple_demo.html'
-//! Declares com.lightningkite.khrysalistemplate.layouts.MultipleDemoXml
+//! Declares com.lightningkite.butterflytemplate.layouts.MultipleDemoXml
 export class MultipleDemoXml {
     xmlRoot!: HTMLElement;
     list!: HTMLDivElement;

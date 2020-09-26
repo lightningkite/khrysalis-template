@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"/>
 
-        <com.lightningkite.khrysalis.views.android.HorizontalProgressBar
+        <com.lightningkite.butterfly.views.widget.HorizontalProgressBar
                 android:id="@+id/progress"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:indeterminate="false"
@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"/>
 
-        <com.lightningkite.khrysalis.views.android.ColorRatingBar
+        <com.lightningkite.butterfly.views.widget.ColorRatingBar
                 android:id="@+id/rating"
                 style="?android:attr/ratingBarStyle"
                 app:empty_color="#F888"
@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"/>
 
-        <com.lightningkite.khrysalis.views.android.ColorRatingBar
+        <com.lightningkite.butterfly.views.widget.ColorRatingBar
                 android:id="@+id/ratingDisplayStars"
                 style="?android:attr/ratingBarStyleIndicator"
                 app:empty_color="#F888"
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"/>
 
-        <com.lightningkite.khrysalis.views.android.ColorRatingBar
+        <com.lightningkite.butterfly.views.widget.ColorRatingBar
                 android:id="@+id/ratingDisplayStarsSmall"
                 style="?android:attr/ratingBarStyleSmall"
                 app:empty_color="#F888"
@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"/>
 
-        <com.lightningkite.khrysalis.views.android.ColorRatingBar
+        <com.lightningkite.butterfly.views.widget.ColorRatingBar
                 android:id="@+id/ratingFloat"
                 style="?android:attr/ratingBarStyle"
                 app:empty_color="#F888"
@@ -77,7 +77,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"/>
 
-        <com.lightningkite.khrysalis.views.android.ColorRatingBar
+        <com.lightningkite.butterfly.views.widget.ColorRatingBar
                 android:id="@+id/ratingDisplayStarsFloat"
                 style="?android:attr/ratingBarStyleIndicator"
                 app:empty_color="#F888"
@@ -86,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"/>
 
-        <com.lightningkite.khrysalis.views.android.ColorRatingBar
+        <com.lightningkite.butterfly.views.widget.ColorRatingBar
                 android:id="@+id/ratingDisplayStarsSmallFloat"
                 style="?android:attr/ratingBarStyleSmall"
                 app:empty_color="#F888"

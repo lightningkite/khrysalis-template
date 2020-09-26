@@ -2,7 +2,7 @@ import com.lightningkite.khrysalis.ios.layout.mapViews
 import com.lightningkite.khrysalis.ios.layout.LayoutConverter
 import com.lightningkite.khrysalis.gradle.KhrysalisPluginExtension
 
-val packageName = "com.lightningkite.khrysalistemplate"
+val packageName = "com.lightningkite.butterflytemplate"
 
 buildscript {
     repositories {
@@ -23,7 +23,7 @@ plugins {
 apply(plugin="com.lightningkite.khrysalis")
 
 configure<KhrysalisPluginExtension> {
-    projectName = "KhrysalisTemplate"
+    projectName = "ButterflyTemplate"
     organizationName = "Lightning Kite"
     swiftLayoutConversion += LayoutConverter.mapViews
 }
@@ -61,9 +61,9 @@ repositories {
 
 val kotlin_version = "1.3.72"
 dependencies {
-    implementation("com.lightningkite.khrysalis:android:0.1.1")
-    implementation("com.lightningkite.khrysalis:android-maps:0.1.1")
-    implementation("com.lightningkite.khrysalis:android-bluetooth:0.1.1")
+    implementation("com.lightningkite.butterfly:butterfly-android:0.1.1")
+    implementation("com.lightningkite.butterfly:butterfly-maps-android:0.1.1")
+    implementation("com.lightningkite.butterfly:butterfly-bluetooth-android:0.1.1")
     testImplementation("junit:junit:4.12")
     androidTestImplementation("androidx.test:runner:1.3.0")
     androidTestImplementation("com.android.support.test.espresso:espresso-core:3.0.2")

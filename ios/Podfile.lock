@@ -1,52 +1,45 @@
 PODS:
-  - Alamofire (4.9.1)
-  - AlamofireImage (3.6.0):
-    - Alamofire (~> 4.9)
-  - Cosmos (19.0.3)
-  - DKImagePickerController/Core (4.2.2):
-    - DKImagePickerController/ImageDataManager
-    - DKImagePickerController/Resource
-  - DKImagePickerController/ImageDataManager (4.2.2)
-  - DKImagePickerController/Resource (4.2.2)
-  - KeychainAccess (4.1.0)
-  - Khrysalis (0.2.0):
-    - Alamofire (~> 4.9.1)
-    - AlamofireImage (~> 3.6.0)
-    - Cosmos (~> 19.0)
-    - KeychainAccess
-    - Khrysalis/Calendar (= 0.2.0)
-    - Khrysalis/Core (= 0.2.0)
-    - Khrysalis/Images (= 0.2.0)
-    - Khrysalis/Location (= 0.2.0)
-    - RxRelay
-    - RxSwift
-    - SearchTextField
-    - Starscream
-    - "UITextView+Placeholder"
-  - Khrysalis/Calendar (0.2.0):
-    - Alamofire (~> 4.9.1)
-    - AlamofireImage (~> 3.6.0)
-    - Cosmos (~> 19.0)
+  - Alamofire (5.2.2)
+  - AlamofireImage (4.1.0):
+    - Alamofire (~> 5.1)
+  - Butterfly (0.2.0):
+    - Alamofire
+    - AlamofireImage
+    - Butterfly/Calendar (= 0.2.0)
+    - Butterfly/Core (= 0.2.0)
+    - Butterfly/Images (= 0.2.0)
+    - Butterfly/Location (= 0.2.0)
+    - Cosmos
     - KeychainAccess
     - RxRelay
     - RxSwift
     - SearchTextField
     - Starscream
     - "UITextView+Placeholder"
-  - Khrysalis/Core (0.2.0):
-    - Alamofire (~> 4.9.1)
-    - AlamofireImage (~> 3.6.0)
-    - Cosmos (~> 19.0)
+  - Butterfly/Calendar (0.2.0):
+    - Alamofire
+    - AlamofireImage
+    - Cosmos
     - KeychainAccess
     - RxRelay
     - RxSwift
     - SearchTextField
     - Starscream
     - "UITextView+Placeholder"
-  - Khrysalis/Images (0.2.0):
-    - Alamofire (~> 4.9.1)
-    - AlamofireImage (~> 3.6.0)
-    - Cosmos (~> 19.0)
+  - Butterfly/Core (0.2.0):
+    - Alamofire
+    - AlamofireImage
+    - Cosmos
+    - KeychainAccess
+    - RxRelay
+    - RxSwift
+    - SearchTextField
+    - Starscream
+    - "UITextView+Placeholder"
+  - Butterfly/Images (0.2.0):
+    - Alamofire
+    - AlamofireImage
+    - Cosmos
     - DKImagePickerController/Core
     - DKImagePickerController/ImageDataManager
     - DKImagePickerController/Resource
@@ -56,28 +49,35 @@ PODS:
     - SearchTextField
     - Starscream
     - "UITextView+Placeholder"
-  - Khrysalis/Location (0.2.0):
-    - Alamofire (~> 4.9.1)
-    - AlamofireImage (~> 3.6.0)
-    - Cosmos (~> 19.0)
+  - Butterfly/Location (0.2.0):
+    - Alamofire
+    - AlamofireImage
+    - Cosmos
     - KeychainAccess
     - RxRelay
     - RxSwift
     - SearchTextField
     - Starscream
     - "UITextView+Placeholder"
-  - KhrysalisMaps (0.2.0):
-    - Khrysalis/Core
+  - ButterflyMaps (0.2.0):
+    - Butterfly/Core
+  - Cosmos (23.0.0)
+  - DKImagePickerController/Core (4.3.2):
+    - DKImagePickerController/ImageDataManager
+    - DKImagePickerController/Resource
+  - DKImagePickerController/ImageDataManager (4.3.2)
+  - DKImagePickerController/Resource (4.3.2)
+  - KeychainAccess (4.2.1)
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
   - SearchTextField (1.2.4)
-  - Starscream (4.0.1)
+  - Starscream (4.0.4)
   - "UITextView+Placeholder (1.4.0)"
 
 DEPENDENCIES:
-  - Khrysalis (from `~/StudioProjects/khrysalis/Khrysalis.podspec`)
-  - KhrysalisMaps (from `~/StudioProjects/khrysalis/KhrysalisMaps.podspec`)
+  - Butterfly (from `~/sync/khrysalis-meta/butterfly-ios/Butterfly.podspec`)
+  - ButterflyMaps (from `~/sync/khrysalis-meta/butterfly-maps-ios/ButterflyMaps.podspec`)
 
 SPEC REPOS:
   trunk:
@@ -93,25 +93,25 @@ SPEC REPOS:
     - "UITextView+Placeholder"
 
 EXTERNAL SOURCES:
-  Khrysalis:
-    :path: "~/StudioProjects/khrysalis/Khrysalis.podspec"
-  KhrysalisMaps:
-    :path: "~/StudioProjects/khrysalis/KhrysalisMaps.podspec"
+  Butterfly:
+    :path: "~/sync/khrysalis-meta/butterfly-ios/Butterfly.podspec"
+  ButterflyMaps:
+    :path: "~/sync/khrysalis-meta/butterfly-maps-ios/ButterflyMaps.podspec"
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
-  Cosmos: a6fb17284281fa12cf4c85c2efecd440a215ec44
-  DKImagePickerController: 4a3e7948a848c4348e600b3fe5ce41478835fa10
-  KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
-  Khrysalis: 79d5592932fe2f1778de61eb76d0ad9d36df45e9
-  KhrysalisMaps: 752bc00be1db138888c5256de2111b9b34221085
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
+  Butterfly: 20fb86d13d8464cb90483716b5cba1a5bb3aefd6
+  ButterflyMaps: a53223581b625d68476a1000f9057024a1336f2f
+  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
+  DKImagePickerController: b5eb7f7a388e4643264105d648d01f727110fc3d
+  KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SearchTextField: 40dc3cc57def5a211f263cac263622c163bbc25a
-  Starscream: 9dbeec17a9ae4fd4904e8ac36b1ea96b20755959
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
   "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
-PODFILE CHECKSUM: 94bef40cea43492a0c65a330bb64b35476185987
+PODFILE CHECKSUM: 8263f58a110fbfb0db06443bacc52ab642dd6b07
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.9.1

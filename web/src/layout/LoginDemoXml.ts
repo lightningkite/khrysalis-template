@@ -1,11 +1,11 @@
 //
 // LoginDemoXml.ts
-// Created by Khrysalis XML Typescript
+// Created by Butterfly XML Typescript
 //
-import { loadHtmlFromString, findViewById, getViewById, replaceViewWithId } from 'khrysalis/dist/views/html'
-import { customViewSetDelegate } from 'khrysalis/dist/views/CustomView.actual'
+import { loadHtmlFromString, findViewById, getViewById, replaceViewWithId } from 'butterfly/dist/views/html'
+import { customViewSetDelegate } from 'butterfly/dist/views/CustomView.actual'
 import htmlForDefault from './login_demo.html'
-//! Declares com.lightningkite.khrysalistemplate.layouts.LoginDemoXml
+//! Declares com.lightningkite.butterflytemplate.layouts.LoginDemoXml
 export class LoginDemoXml {
     xmlRoot!: HTMLElement;
     username!: HTMLInputElement;

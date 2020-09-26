@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
-          package="com.lightningkite.khrysalistemplate">
+          package="com.lightningkite.butterflytemplate">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
@@ -18,7 +18,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
-            android:name="com.lightningkite.khrysalis.android.KhrysalisApplication"
+            android:name="com.lightningkite.butterfly.android.ButterflyApplication"
             tools:ignore="GoogleAppIndexingWarning">
 
         <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyApDP0Mxm_dcKUesN21jwmvElbEPE4_GXc"/>
@@ -39,7 +39,7 @@
         </activity>
         <provider
                 android:name="androidx.core.content.FileProvider"
-                android:authorities="com.lightningkite.khrysalistemplate.fileprovider"
+                android:authorities="com.lightningkite.butterflytemplate.fileprovider"
                 android:exported="false"
                 android:grantUriPermissions="true">
             <meta-data

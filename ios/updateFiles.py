@@ -12,8 +12,8 @@ except ImportError:
     exit(1)
 from pathlib import Path
 
-project = XcodeProject.load("KhrysalisTemplate.xcodeproj/project.pbxproj")
-project.add_folder('./KhrysalisTemplate/', target_name="KhrysalisTemplate", excludes=["^.*\\.((?!swift).)*$"])
+project = XcodeProject.load("ButterflyTemplate.xcodeproj/project.pbxproj")
+project.add_folder('./ButterflyTemplate/', target_name="ButterflyTemplate", excludes=["^.*\\.((?!swift).)*$"])
 project.remove_flags(XCBuildConfigurationFlags.LIBRARY_SEARCH_PATHS, None)
 project.save()
 

@@ -1,11 +1,11 @@
 //
 // HttpDemoXml.ts
-// Created by Khrysalis XML Typescript
+// Created by Butterfly XML Typescript
 //
-import { loadHtmlFromString, findViewById, getViewById, replaceViewWithId } from 'khrysalis/dist/views/html'
-import { customViewSetDelegate } from 'khrysalis/dist/views/CustomView.actual'
+import { loadHtmlFromString, findViewById, getViewById, replaceViewWithId } from 'butterfly/dist/views/html'
+import { customViewSetDelegate } from 'butterfly/dist/views/CustomView.actual'
 import htmlForDefault from './http_demo.html'
-//! Declares com.lightningkite.khrysalistemplate.layouts.HttpDemoXml
+//! Declares com.lightningkite.butterflytemplate.layouts.HttpDemoXml
 export class HttpDemoXml {
     xmlRoot!: HTMLElement;
     progress!: HTMLProgressElement;

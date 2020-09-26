@@ -5,7 +5,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <com.lightningkite.khrysalis.views.VideoPlayer
+    <com.lightningkite.butterfly.views.widget.VideoPlayer
             android:id="@+id/video"
             android:layout_width="match_parent"
             android:layout_height="200dp"
