@@ -22,7 +22,7 @@ class SelectDemoVG(@Unowned val stack: ObservableStack<ViewGenerator>) : ViewGen
         WebsocketDemoVG(),
         HttpDemoVG(),
         ExternalTestVG(),
-//        BleScanDemoVG(stack),
+        BleServerDemoVG(),
         PongDemoVG(),
         MarginTestsVG(),
         MultipleDemoVG(),
