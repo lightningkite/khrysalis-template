@@ -13,6 +13,7 @@ import { xDisposableUntil, xViewRemovedGet } from 'butterfly/dist/rx/DisposeCond
 import { StandardObservableProperty } from 'butterfly/dist/observables/StandardObservableProperty'
 import { xImageViewBindImage } from 'butterfly/dist/observables/binding/ImageView.binding'
 import { printStackTrace, runOrNull } from 'butterfly/dist/kotlin/Language'
+import { xViewOnClick } from 'butterfly/dist/views/View.ext'
 import { LoadImageDemoXml } from '../layout/LoadImageDemoXml'
 
 //! Declares com.lightningkite.butterflytemplate.vg.LoadImageDemoVG
@@ -43,38 +44,38 @@ export class LoadImageDemoVG extends ViewGenerator {
         }), xViewRemovedGet(view));
         
         xImageViewBindImage(xml.image, this.currentImage);
-        xml.camera.onclick = (_ev) => { _ev.stopPropagation(); 
-            xActivityAccessRequestImageCamera(dependency, undefined, (url: File): void => {
-                    this.currentImage.value = new ImageReference(url);
-            });
-        };
-        xml.galleryMultiple.onclick = (_ev) => { _ev.stopPropagation(); 
-            xActivityAccessRequestImagesGallery(dependency, (urls: Array<File>): void => {
-                    const url_26 = (urls[0] ?? null);
-                    if (url_26 !== null) { 
-                        this.currentImage.value = new ImageReference(url_26);
-                    }
-            });
-        };
-        xml.gallery.onclick = (_ev) => { _ev.stopPropagation(); 
-            xActivityAccessRequestImageGallery(dependency, (url: File): void => {
-                    this.currentImage.value = new ImageReference(url);
-            });
-        };
-        xml.loremPixel.onclick = (_ev) => { _ev.stopPropagation(); 
-            this.currentImage.value = new ImageRemoteUrl("https://picsum.photos/200");
-        };
-        xml.checkCanUpload.onclick = (_ev) => { _ev.stopPropagation(); 
-            const i_30 = this.currentImage.value;
-            if (i_30 !== null) { 
-                xImageToHttpBody(i_30, undefined).subscribe((it: HttpBody): void => {
-                        this.canUpload.value = true;
-                    }, (it: any): void => {
-                        printStackTrace(it);
-                        this.canUpload.value = false;
+        xViewOnClick(xml.camera, undefined, (): void => {
+                xActivityAccessRequestImageCamera(dependency, undefined, (url: File): void => {
+                        this.currentImage.value = new ImageReference(url);
                 });
-            }
-        };
+        });
+        xViewOnClick(xml.galleryMultiple, undefined, (): void => {
+                xActivityAccessRequestImagesGallery(dependency, (urls: Array<File>): void => {
+                        const url_40 = (urls[0] ?? null);
+                        if (url_40 !== null) { 
+                            this.currentImage.value = new ImageReference(url_40);
+                        }
+                });
+        });
+        xViewOnClick(xml.gallery, undefined, (): void => {
+                xActivityAccessRequestImageGallery(dependency, (url: File): void => {
+                        this.currentImage.value = new ImageReference(url);
+                });
+        });
+        xViewOnClick(xml.loremPixel, undefined, (): void => {
+                this.currentImage.value = new ImageRemoteUrl("https://picsum.photos/200");
+        });
+        xViewOnClick(xml.checkCanUpload, undefined, (): void => {
+                const i_41 = this.currentImage.value;
+                if (i_41 !== null) { 
+                    xImageToHttpBody(i_41, undefined, undefined).subscribe((it: HttpBody): void => {
+                            this.canUpload.value = true;
+                        }, (it: any): void => {
+                            printStackTrace(it);
+                            this.canUpload.value = false;
+                    });
+                }
+        });
         xTextViewBindString(xml.canUpload, xObservablePropertyMap<(boolean | null), string>(this.canUpload, (it: (boolean | null)): string => it === null ? "Not checked" : it === true ? "Good to go!" : "FAILED!!!"));
         return view;
     }

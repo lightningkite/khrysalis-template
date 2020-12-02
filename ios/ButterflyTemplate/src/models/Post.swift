@@ -19,10 +19,10 @@ public class Post : Codable, KDataClass {
     convenience required public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         self.init(
-            userId: try values.decodeIfPresent(Int64.self, forKey: .userId) ?? 0,
-            id: try values.decodeIfPresent(Int64.self, forKey: .id) ?? 0,
-            title: try values.decodeIfPresent(String.self, forKey: .title) ?? "",
-            body: try values.decodeIfPresent(String.self, forKey: .body) ?? ""
+            userId: values.contains(.userId) ? try values.decode(Int64.self, forKey: .userId) : 0,
+            id: values.contains(.id) ? try values.decode(Int64.self, forKey: .id) : 0,
+            title: values.contains(.title) ? try values.decode(String.self, forKey: .title) : "",
+            body: values.contains(.body) ? try values.decode(String.self, forKey: .body) : ""
         )
     }
     

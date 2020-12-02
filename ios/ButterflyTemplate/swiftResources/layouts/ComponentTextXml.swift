@@ -16,7 +16,7 @@ public class ComponentTextXml {
         view.addSubview(
             UILabel(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0),
+            size: CGSize(width: -1, height: -1),
             margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
             padding: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
             gravity: .topFill
@@ -31,6 +31,7 @@ public class ComponentTextXml {
         return view
     }
     
-    public unowned var label: UILabel!
+    public var _label: UILabel!
+    public var label: UILabel { get { return _label } set(value){ _label = value } }
     
 }

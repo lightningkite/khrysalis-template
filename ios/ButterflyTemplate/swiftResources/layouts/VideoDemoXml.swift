@@ -19,7 +19,7 @@ public class VideoDemoXml {
         view.addSubview(
             UIVideoView(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 200.0),
+            size: CGSize(width: -1, height: 200.0),
             margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .topFill,
@@ -51,7 +51,7 @@ public class VideoDemoXml {
         view.addSubview(
             UIButtonWithLayer(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0),
+            size: CGSize(width: -1, height: -1),
             margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
             padding: UIEdgeInsets.zero,
             gravity: .topFill,
@@ -75,7 +75,7 @@ public class VideoDemoXml {
         view.addSubview(
             UIButtonWithLayer(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0),
+            size: CGSize(width: -1, height: -1),
             margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
             padding: UIEdgeInsets.zero,
             gravity: .topFill,
@@ -99,7 +99,7 @@ public class VideoDemoXml {
         view.addSubview(
             UIButtonWithLayer(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0),
+            size: CGSize(width: -1, height: -1),
             margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
             padding: UIEdgeInsets.zero,
             gravity: .topFill,
@@ -123,7 +123,7 @@ public class VideoDemoXml {
         view.addSubview(
             UIButtonWithLayer(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0),
+            size: CGSize(width: -1, height: -1),
             margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
             padding: UIEdgeInsets.zero,
             gravity: .topFill,
@@ -148,11 +148,17 @@ public class VideoDemoXml {
         return view
     }
     
-    public unowned var video: UIVideoView!
-    public unowned var thumbnail: UIImageView!
-    public unowned var play: UIButtonWithLayer!
-    public unowned var gallery: UIButtonWithLayer!
-    public unowned var camera: UIButtonWithLayer!
-    public unowned var galleryMulti: UIButtonWithLayer!
+    public var _video: UIVideoView!
+    public var video: UIVideoView { get { return _video } set(value){ _video = value } }
+    public var _thumbnail: UIImageView!
+    public var thumbnail: UIImageView { get { return _thumbnail } set(value){ _thumbnail = value } }
+    public var _play: UIButtonWithLayer!
+    public var play: UIButtonWithLayer { get { return _play } set(value){ _play = value } }
+    public var _gallery: UIButtonWithLayer!
+    public var gallery: UIButtonWithLayer { get { return _gallery } set(value){ _gallery = value } }
+    public var _camera: UIButtonWithLayer!
+    public var camera: UIButtonWithLayer { get { return _camera } set(value){ _camera = value } }
+    public var _galleryMulti: UIButtonWithLayer!
+    public var galleryMulti: UIButtonWithLayer { get { return _galleryMulti } set(value){ _galleryMulti = value } }
     
 }

@@ -4,7 +4,7 @@ use_modular_headers!
 
 
 target 'ButterflyTemplate' do
-    pod 'Butterfly', :path => '~/sync/khrysalis-meta/butterfly-ios/Butterfly.podspec'
-    pod 'ButterflyMaps', :path => '~/sync/khrysalis-meta/butterfly-maps-ios/ButterflyMaps.podspec'
-#     pod 'ButterflyBluetooth', :path => '~/StudioProjects/butterfly/ButterflyBluetooth.podspec'
+    pod 'Butterfly', :path => ENV['KHRYSALIS_META_LOCATION'] + '/butterfly-ios/Butterfly.podspec'
+    pod 'ButterflyMaps', :path => ENV['KHRYSALIS_META_LOCATION'] + '/butterfly-maps-ios/ButterflyMaps.podspec'
+    pod 'ButterflyBluetooth', :path => ENV['KHRYSALIS_META_LOCATION'] + '/butterfly-bluetooth-ios/ButterflyBluetooth.podspec'
 end

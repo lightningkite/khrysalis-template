@@ -11,9 +11,12 @@ import { ViewGenerator } from 'butterfly/dist/views/ViewGenerator'
 import { SliderDemoVG } from './SliderDemoVG'
 import { ExternalTestVG } from './ExternalTestVG'
 import { xRecyclerViewBind } from 'butterfly/dist/observables/binding/RecyclerView.binding'
+import { first as iterFirst } from 'butterfly/dist/kotlin/lazyOp'
 import { MapDemoVG } from './MapDemoVG'
+import { xViewOnClick } from 'butterfly/dist/views/View.ext'
 import { PongDemoVG } from './PongDemoVG'
 import { MultipleDemoVG } from './MultipleDemoVG'
+import { BleServerDemoVG } from './BleServerDemoVG'
 import { DateRangeDemoVG } from './DateRangeDemoVG'
 import { SelectDemoXml } from '../layout/SelectDemoXml'
 import { ObservableProperty } from 'butterfly/dist/observables/ObservableProperty'
@@ -40,7 +43,7 @@ export class SelectDemoVG extends ViewGenerator implements EntryPoint {
     public constructor(stack: ObservableStack<ViewGenerator>) {
         super();
         this.stack = stack;
-        this.options = [new VideoDemoVG(), new WebsocketDemoVG(), new HttpDemoVG(), new ExternalTestVG(), new PongDemoVG(), new MarginTestsVG(), new MultipleDemoVG(), new DateButtonDemoVG(), new MapDemoVG(), new LocationDemoVG(), new LoadImageDemoVG(), new ControlsDemoVG(), new ExampleContentVG(), new ViewPagerDemoVG(this.stack), new SegmentedControlDemoVG(), new SliderDemoVG(), new DateRangeDemoVG(), new LoginDemoVG(this.stack), new DrawableDemoVG(), new PreviewVG()];
+        this.options = [new VideoDemoVG(), new WebsocketDemoVG(), new HttpDemoVG(), new ExternalTestVG(), new BleServerDemoVG(), new PongDemoVG(), new MarginTestsVG(), new MultipleDemoVG(), new DateButtonDemoVG(), new MapDemoVG(), new LocationDemoVG(), new LoadImageDemoVG(), new ControlsDemoVG(), new ExampleContentVG(), new ViewPagerDemoVG(this.stack), new SegmentedControlDemoVG(), new SliderDemoVG(), new DateRangeDemoVG(), new LoginDemoVG(this.stack), new DrawableDemoVG(), new PreviewVG()];
     }
     
     //! Declares com.lightningkite.butterflytemplate.vg.SelectDemoVG.title
@@ -60,15 +63,15 @@ export class SelectDemoVG extends ViewGenerator implements EntryPoint {
         const view = xml.setup(dependency);
         
         
-        xRecyclerViewBind<ViewGenerator>(xml.list, new ConstantObservableProperty<Array<ViewGenerator>>(this.options), this.options[0], (obs: ObservableProperty<ViewGenerator>): HTMLElement => {
+        xRecyclerViewBind<ViewGenerator>(xml.list, new ConstantObservableProperty<Array<ViewGenerator>>(this.options), iterFirst(this.options), (obs: ObservableProperty<ViewGenerator>): HTMLElement => {
                 const xml = new ComponentTestXml();
                 
                 const view = xml.setup(dependency);
                 
                 xTextViewBindText<ViewGenerator>(xml.label, obs, (it: ViewGenerator): string => it.title);
-                xml.button.onclick = (_ev) => { _ev.stopPropagation(); 
-                    this.selectVG(obs.value);
-                };
+                xViewOnClick(xml.button, undefined, (): void => {
+                        this.selectVG(obs.value);
+                });
                 return view;
         });
         

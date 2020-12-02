@@ -29,13 +29,54 @@
     "node-sass": "^4.13.1",
     "sass": "^1.26.3",
     "fibers": "^4.0.2",
-    "webpack-bundle-analyzer": "^3.8.0"
+    "webpack-bundle-analyzer": "^3.8.0",
+    "cpx2": "^3.0.0",
+    "concurrently": "^5.3.0",
+    "npm-run-all": "^4.1.5"
   },
   "scripts": {
-    "build": "webpack --mode=production",
-    "start": "webpack-dev-server --open",
-    "debug": "webpack --mode=development",
-    "install": "./install-butterfly.sh"
+    "setupButterflyPackage": "mkdir -p node_modules/butterfly && cpx $KHRYSALIS_META_LOCATION/butterfly-web/package.json node_modules/butterfly/",
+    "setupButterflyDist": "mkdir -p node_modules/butterfly && cpx \"$KHRYSALIS_META_LOCATION/butterfly-web/dist/**/*\" node_modules/butterfly/dist/",
+    "setupButterflySrc": "mkdir -p node_modules/butterfly && cpx \"$KHRYSALIS_META_LOCATION/butterfly-web/src/**/*\" node_modules/butterfly/src/",
+    "setupButterflyMapsPackage": "mkdir -p node_modules/butterfly-maps-google && cpx $KHRYSALIS_META_LOCATION/butterfly-maps-web-google/package.json node_modules/butterfly-maps-google/",
+    "setupButterflyMapsDist": "mkdir -p node_modules/butterfly-maps-google && cpx \"$KHRYSALIS_META_LOCATION/butterfly-maps-web-google/dist/**/*\" node_modules/butterfly-maps-google/dist/",
+    "setupButterflyMapsSrc": "mkdir -p node_modules/butterfly-maps-google && cpx \"$KHRYSALIS_META_LOCATION/butterfly-maps-web-google/src/**/*\" node_modules/butterfly-maps-google/src/",
+    "setupButterflyFcmPackage": "mkdir -p node_modules/butterfly-fcm && cpx $KHRYSALIS_META_LOCATION/butterfly-fcm-web/package.json node_modules/butterfly-fcm/",
+    "setupButterflyFcmDist": "mkdir -p node_modules/butterfly-fcm && cpx \"$KHRYSALIS_META_LOCATION/butterfly-fcm-web/dist/**/*\" node_modules/butterfly-fcm/dist/",
+    "setupButterflyFcmSrc": "mkdir -p node_modules/butterfly-fcm && cpx \"$KHRYSALIS_META_LOCATION/butterfly-fcm-web/src/**/*\" node_modules/butterfly-fcm/src/",
+    "setupButterflyBluetoothPackage": "mkdir -p node_modules/butterfly-bluetooth && cpx $KHRYSALIS_META_LOCATION/butterfly-bluetooth-web/package.json node_modules/butterfly-bluetooth/",
+    "setupButterflyBluetoothDist": "mkdir -p node_modules/butterfly-bluetooth && cpx \"$KHRYSALIS_META_LOCATION/butterfly-bluetooth-web/dist/**/*\" node_modules/butterfly-bluetooth/dist/",
+    "setupButterflyBluetoothSrc": "mkdir -p node_modules/butterfly-bluetooth && cpx \"$KHRYSALIS_META_LOCATION/butterfly-bluetooth-web/src/**/*\" node_modules/butterfly-bluetooth/src/",
+    "setup": "run-p setupButterflyPackage setupButterflyDist setupButterflySrc setupButterflyMapsPackage setupButterflyMapsDist setupButterflyMapsSrc setupButterflyFcmPackage setupButterflyFcmDist setupButterflyFcmSrc setupButterflyBluetoothPackage setupButterflyBluetoothDist setupButterflyBluetoothSrc",
+
+    "watchButterflyPackage": "mkdir -p node_modules/butterfly && cpx -w $KHRYSALIS_META_LOCATION/butterfly-web/package.json node_modules/butterfly/",
+    "watchButterflyDist": "mkdir -p node_modules/butterfly && cpx -w \"$KHRYSALIS_META_LOCATION/butterfly-web/dist/**/*\" node_modules/butterfly/dist/",
+    "watchButterflySrc": "mkdir -p node_modules/butterfly && cpx -w \"$KHRYSALIS_META_LOCATION/butterfly-web/src/**/*\" node_modules/butterfly/src/",
+    "watchButterflyMapsPackage": "mkdir -p node_modules/butterfly-maps-google && cpx -w $KHRYSALIS_META_LOCATION/butterfly-maps-web-google/package.json node_modules/butterfly-maps-google/",
+    "watchButterflyMapsDist": "mkdir -p node_modules/butterfly-maps-google && cpx -w \"$KHRYSALIS_META_LOCATION/butterfly-maps-web-google/dist/**/*\" node_modules/butterfly-maps-google/dist/",
+    "watchButterflyMapsSrc": "mkdir -p node_modules/butterfly-maps-google && cpx -w \"$KHRYSALIS_META_LOCATION/butterfly-maps-web-google/src/**/*\" node_modules/butterfly-maps-google/src/",
+    "watchButterflyFcmPackage": "mkdir -p node_modules/butterfly-fcm && cpx -w $KHRYSALIS_META_LOCATION/butterfly-fcm-web/package.json node_modules/butterfly-fcm/",
+    "watchButterflyFcmDist": "mkdir -p node_modules/butterfly-fcm && cpx -w \"$KHRYSALIS_META_LOCATION/butterfly-fcm-web/dist/**/*\" node_modules/butterfly-fcm/dist/",
+    "watchButterflyFcmSrc": "mkdir -p node_modules/butterfly-fcm && cpx -w \"$KHRYSALIS_META_LOCATION/butterfly-fcm-web/src/**/*\" node_modules/butterfly-fcm/src/",
+    "watchButterflyBluetoothPackage": "mkdir -p node_modules/butterfly-bluetooth && cpx -w $KHRYSALIS_META_LOCATION/butterfly-bluetooth-web/package.json node_modules/butterfly-bluetooth/",
+    "watchButterflyBluetoothDist": "mkdir -p node_modules/butterfly-bluetooth && cpx -w \"$KHRYSALIS_META_LOCATION/butterfly-bluetooth-web/dist/**/*\" node_modules/butterfly-bluetooth/dist/",
+    "watchButterflyBluetoothSrc": "mkdir -p node_modules/butterfly-bluetooth && cpx -w \"$KHRYSALIS_META_LOCATION/butterfly-bluetooth-web/src/**/*\" node_modules/butterfly-bluetooth/src/",
+    "watchSetup": "run-p  watchButterflyPackage watchButterflyDist watchButterflySrc watchButterflyMapsPackage watchButterflyMapsDist watchButterflyMapsSrc watchButterflyFcmPackage watchButterflyFcmDist watchButterflyFcmSrc watchButterflyBluetoothPackage watchButterflyBluetoothDist watchButterflyBluetoothSrc",
+
+    "watchNonTsToDist": "mkdir -p dist && cpx -w src/**/*.{html,css,png,svg,js,mp3} dist",
+    "watchWebpack": "webpack-dev-server --open",
+    "start": "run-p watchSetup watchNonTsToDist watchWebpack",
+
+    "copyNonTsToDist": "mkdir -p dist && cpx src/**/*.{html,css,png,svg,js,mp3} dist",
+    "buildWebpack": "webpack --mode=production",
+    "build": "run-s setup copyNonTsToDist buildWebpack",
+
+    "khrysalis": "cd .. && ./gradlew android:khrysalisWeb && cd web",
+    "buildKhrysalis": "run-s setup khrysalis copyNonTsToDist buildWebpack",
+    "startKhrysalis": "run-s setup khrysalis copyNonTsToDist watchWebpack",
+
+    "buildWebpackDebug": "webpack --mode=debug",
+    "buildDebug": "run-s setup copyNonTsToDist buildWebpackDebug"
   },
   "author": "Lightning Kite"
 }

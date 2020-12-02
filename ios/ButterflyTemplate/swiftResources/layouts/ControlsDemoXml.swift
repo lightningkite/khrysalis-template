@@ -20,7 +20,7 @@ public class ControlsDemoXml {
             view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
@@ -35,39 +35,47 @@ public class ControlsDemoXml {
             view.addSubview(
                 LabeledSwitch(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
-                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                padding: UIEdgeInsets.zero,
                 gravity: .topFill,
                 weight: 0
             ) { view in 
+                view.titleLabel?.font = UIFont.get(size: 12, style: [])
+                view.titleLabel?.textString = R.string.lorem_ipsum
+                view.titleLabel?.numberOfLines = 0
+                view.titleLabel?.baselineAdjustment = .none
+                view.textString = R.string.lorem_ipsum
+                view.contentHorizontalAlignment = .center
+                view.contentMode = .scaleAspectFit
+                view.contentEdgeInsets = UIEdgeInsets(top: 0, left:0, bottom:0, right:0)
                 view.verticalAlign = .start
-                view.labelView.font = UIFont.get(size: 12, style: [])
-                view.labelView.textString = R.string.lorem_ipsum
-                view.labelView.numberOfLines = 0
-                view.labelView.baselineAdjustment = .none
             }
             
             view.addSubview(
                 LabeledCheckbox(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
-                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                padding: UIEdgeInsets.zero,
                 gravity: .topFill,
                 weight: 0
             ) { view in 
+                view.titleLabel?.font = UIFont.get(size: 12, style: [])
+                view.titleLabel?.textString = R.string.lorem_ipsum
+                view.titleLabel?.numberOfLines = 0
+                view.titleLabel?.baselineAdjustment = .none
+                view.textString = R.string.lorem_ipsum
+                view.contentHorizontalAlignment = .center
+                view.contentMode = .scaleAspectFit
+                view.contentEdgeInsets = UIEdgeInsets(top: 0, left:0, bottom:0, right:0)
                 view.verticalAlign = .start
-                view.labelView.font = UIFont.get(size: 12, style: [])
-                view.labelView.textString = R.string.lorem_ipsum
-                view.labelView.numberOfLines = 0
-                view.labelView.baselineAdjustment = .none
             }
             
             view.addSubview(
                 LinearLayout(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -80,7 +88,7 @@ public class ControlsDemoXml {
                 view.addSubview(
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0.0, height: 0),
+                    size: CGSize(width: 0.0, height: -1),
                     margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                     padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                     gravity: .centerCenter,
@@ -95,16 +103,19 @@ public class ControlsDemoXml {
                 view.addSubview(
                     LabeledCheckbox(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
-                    padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                    padding: UIEdgeInsets.zero,
                     gravity: .centerCenter,
                     weight: 0
                 ) { view in 
+                    view.titleLabel?.font = UIFont.get(size: 12, style: [])
+                    view.titleLabel?.numberOfLines = 0
+                    view.titleLabel?.baselineAdjustment = .none
+                    view.contentHorizontalAlignment = .center
+                    view.contentMode = .scaleAspectFit
+                    view.contentEdgeInsets = UIEdgeInsets(top: 0, left:0, bottom:0, right:0)
                     view.verticalAlign = .start
-                    view.labelView.font = UIFont.get(size: 12, style: [])
-                    view.labelView.numberOfLines = 0
-                    view.labelView.baselineAdjustment = .none
                 }
                 
             }
@@ -112,7 +123,7 @@ public class ControlsDemoXml {
             view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
@@ -127,7 +138,7 @@ public class ControlsDemoXml {
             view.addSubview(
                 UITextFieldPadded(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 40.0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -144,7 +155,7 @@ public class ControlsDemoXml {
             view.addSubview(
                 UITextFieldPadded(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 40.0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -164,7 +175,7 @@ public class ControlsDemoXml {
             view.addSubview(
                 UIAutoCompleteTextFieldPadded(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 40.0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -181,7 +192,7 @@ public class ControlsDemoXml {
             view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 gravity: .topLeft,
@@ -197,7 +208,7 @@ public class ControlsDemoXml {
             view.addSubview(
                 UITextView(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 100.0),
+                size: CGSize(width: -1, height: 100.0),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -215,7 +226,7 @@ public class ControlsDemoXml {
             view.addSubview(
                 Dropdown(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -223,6 +234,11 @@ public class ControlsDemoXml {
             ) { view in 
                 self.spinner = view
                 view.backgroundDrawable = R.drawable.border
+                view.titleLabel?.font = UIFont.get(size: 12, style: [])
+                view.titleLabel?.numberOfLines = 0
+                view.contentHorizontalAlignment = .center
+                view.contentMode = .scaleAspectFit
+                view.contentEdgeInsets = UIEdgeInsets(top: 0, left:0, bottom:0, right:0)
                 view.contentEdgeInsets = UIEdgeInsets(top: 0, left:0, bottom:0, right:0)
             }
             
@@ -231,11 +247,17 @@ public class ControlsDemoXml {
         return view
     }
     
-    public unowned var editableText: UITextFieldPadded!
-    public unowned var numberText: UITextFieldPadded!
-    public unowned var editableAutoText: UIAutoCompleteTextFieldPadded!
-    public unowned var editableTextCopy: UILabel!
-    public unowned var editableTextBig: UITextView!
-    public unowned var spinner: Dropdown!
+    public var _editableText: UITextFieldPadded!
+    public var editableText: UITextFieldPadded { get { return _editableText } set(value){ _editableText = value } }
+    public var _numberText: UITextFieldPadded!
+    public var numberText: UITextFieldPadded { get { return _numberText } set(value){ _numberText = value } }
+    public var _editableAutoText: UIAutoCompleteTextFieldPadded!
+    public var editableAutoText: UIAutoCompleteTextFieldPadded { get { return _editableAutoText } set(value){ _editableAutoText = value } }
+    public var _editableTextCopy: UILabel!
+    public var editableTextCopy: UILabel { get { return _editableTextCopy } set(value){ _editableTextCopy = value } }
+    public var _editableTextBig: UITextView!
+    public var editableTextBig: UITextView { get { return _editableTextBig } set(value){ _editableTextBig = value } }
+    public var _spinner: Dropdown!
+    public var spinner: Dropdown { get { return _spinner } set(value){ _spinner = value } }
     
 }

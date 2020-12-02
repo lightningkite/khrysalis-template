@@ -17,6 +17,14 @@ class ExternalTestXml {
     lateinit var openMap: Button
     lateinit var openWeb: Button
     lateinit var openEvent: Button
+    lateinit var pickImage: Button
+    lateinit var pickImages: Button
+    lateinit var pickVideo: Button
+    lateinit var pickVideos: Button
+    lateinit var pickMedia: Button
+    lateinit var pickMedias: Button
+    lateinit var pickFile: Button
+    lateinit var pickFiles: Button
     
     
     lateinit var xmlRoot: View
@@ -31,6 +39,14 @@ class ExternalTestXml {
         openMap = view.findViewById<Button>(R.id.openMap)
         openWeb = view.findViewById<Button>(R.id.openWeb)
         openEvent = view.findViewById<Button>(R.id.openEvent)
+        pickImage = view.findViewById<Button>(R.id.pick_image)
+        pickImages = view.findViewById<Button>(R.id.pick_images)
+        pickVideo = view.findViewById<Button>(R.id.pick_video)
+        pickVideos = view.findViewById<Button>(R.id.pick_videos)
+        pickMedia = view.findViewById<Button>(R.id.pick_media)
+        pickMedias = view.findViewById<Button>(R.id.pick_medias)
+        pickFile = view.findViewById<Button>(R.id.pick_file)
+        pickFiles = view.findViewById<Button>(R.id.pick_files)
         
         
         

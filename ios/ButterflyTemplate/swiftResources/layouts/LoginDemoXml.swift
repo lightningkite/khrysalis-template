@@ -20,7 +20,7 @@ public class LoginDemoXml {
             view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
@@ -35,7 +35,7 @@ public class LoginDemoXml {
             view.addSubview(
                 UITextFieldPadded(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 40.0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -56,7 +56,7 @@ public class LoginDemoXml {
             view.addSubview(
                 UITextFieldPadded(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 40.0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -67,7 +67,7 @@ public class LoginDemoXml {
                 view.padding = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
                 view.placeholder = R.string.password
                 view.autocapitalizationType = .none
-                view.textContentType = .password
+                if #available(iOS 11.0, *) { view.textContentType = .password }
                 view.isSecureTextEntry = true
                 view.font = UIFont.get(size: 16.0, style: [])
                 view.numberOfLines = 0
@@ -77,7 +77,7 @@ public class LoginDemoXml {
             view.addSubview(
                 UITextFieldPadded(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 40.0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -88,7 +88,7 @@ public class LoginDemoXml {
                 view.padding = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
                 view.placeholder = R.string.verify_password
                 view.autocapitalizationType = .none
-                view.textContentType = .password
+                if #available(iOS 11.0, *) { view.textContentType = .password }
                 view.isSecureTextEntry = true
                 view.font = UIFont.get(size: 16.0, style: [])
                 view.numberOfLines = 0
@@ -98,22 +98,26 @@ public class LoginDemoXml {
             view.addSubview(
                 LabeledCheckbox(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
-                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                padding: UIEdgeInsets.zero,
                 gravity: .topFill,
                 weight: 0
             ) { view in 
                 self.agree = view
-                view.labelView.font = UIFont.get(size: 12, style: [])
-                view.labelView.textString = R.string.i_agree
-                view.labelView.numberOfLines = 0
+                view.titleLabel?.font = UIFont.get(size: 12, style: [])
+                view.titleLabel?.textString = R.string.i_agree
+                view.titleLabel?.numberOfLines = 0
+                view.textString = R.string.i_agree
+                view.contentHorizontalAlignment = .center
+                view.contentMode = .scaleAspectFit
+                view.contentEdgeInsets = UIEdgeInsets(top: 0, left:0, bottom:0, right:0)
             }
             
             view.addSubview(
                 ViewFlipper(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -124,7 +128,7 @@ public class LoginDemoXml {
                 view.addSubview(
                     UIButtonWithLayer(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                     padding: UIEdgeInsets.zero,
                     gravity: .topFill
@@ -151,11 +155,17 @@ public class LoginDemoXml {
         return view
     }
     
-    public unowned var username: UITextFieldPadded!
-    public unowned var password: UITextFieldPadded!
-    public unowned var verifyPassword: UITextFieldPadded!
-    public unowned var agree: LabeledCheckbox!
-    public unowned var submitLoading: ViewFlipper!
-    public unowned var submit: UIButtonWithLayer!
+    public var _username: UITextFieldPadded!
+    public var username: UITextFieldPadded { get { return _username } set(value){ _username = value } }
+    public var _password: UITextFieldPadded!
+    public var password: UITextFieldPadded { get { return _password } set(value){ _password = value } }
+    public var _verifyPassword: UITextFieldPadded!
+    public var verifyPassword: UITextFieldPadded { get { return _verifyPassword } set(value){ _verifyPassword = value } }
+    public var _agree: LabeledCheckbox!
+    public var agree: LabeledCheckbox { get { return _agree } set(value){ _agree = value } }
+    public var _submitLoading: ViewFlipper!
+    public var submitLoading: ViewFlipper { get { return _submitLoading } set(value){ _submitLoading = value } }
+    public var _submit: UIButtonWithLayer!
+    public var submit: UIButtonWithLayer { get { return _submit } set(value){ _submit = value } }
     
 }

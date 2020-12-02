@@ -19,7 +19,7 @@ public class MainXml {
         view.addSubview(
             LinearLayout(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0),
+            size: CGSize(width: -1, height: -1),
             margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             padding: UIEdgeInsets.zero,
             gravity: .topFill,
@@ -37,7 +37,7 @@ public class MainXml {
             view.addSubview(
                 UIButtonWithLayer(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 padding: UIEdgeInsets.zero,
                 gravity: .centerCenter,
@@ -47,16 +47,16 @@ public class MainXml {
                 view.titleLabel?.font = UIFont.get(size: 12, style: [])
                 view.titleLabel?.numberOfLines = 0
                 view.contentHorizontalAlignment = .center
-                view.iconPosition = .top
-                view.iconLayer = R.drawable.ic_arrow_back_white_24dp.makeLayer(view)
                 view.contentMode = .scaleAspectFit
                 view.contentEdgeInsets = UIEdgeInsets(top: 8.0, left:8.0, bottom:8.0, right:8.0)
+                view.iconPosition = .center
+                view.iconLayer = R.drawable.ic_arrow_back_white_24dp.makeLayer(view)
             }
             
             view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0.0, height: 0),
+                size: CGSize(width: 0.0, height: -1),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 padding: UIEdgeInsets(top: 4.0, left: 4.0, bottom: 4.0, right: 4.0),
                 gravity: .centerCenter,
@@ -74,7 +74,7 @@ public class MainXml {
         view.addSubview(
             SwapView(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0.0),
+            size: CGSize(width: -1, height: 0.0),
             margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .topFill,
@@ -86,7 +86,7 @@ public class MainXml {
         view.addSubview(
             UIView(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0.0),
+            size: CGSize(width: -1, height: 0.0),
             margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .topFill,
@@ -103,10 +103,15 @@ public class MainXml {
         return view
     }
     
-    public unowned var topBar: LinearLayout!
-    public unowned var mainBack: UIButtonWithLayer!
-    public unowned var title: UILabel!
-    public unowned var mainContent: SwapView!
-    public unowned var bottom0: UIView!
+    public var _topBar: LinearLayout!
+    public var topBar: LinearLayout { get { return _topBar } set(value){ _topBar = value } }
+    public var _mainBack: UIButtonWithLayer!
+    public var mainBack: UIButtonWithLayer { get { return _mainBack } set(value){ _mainBack = value } }
+    public var _title: UILabel!
+    public var title: UILabel { get { return _title } set(value){ _title = value } }
+    public var _mainContent: SwapView!
+    public var mainContent: SwapView { get { return _mainContent } set(value){ _mainContent = value } }
+    public var _bottom0: UIView!
+    public var bottom0: UIView { get { return _bottom0 } set(value){ _bottom0 = value } }
     
 }

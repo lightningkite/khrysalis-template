@@ -16,6 +16,7 @@ import { xRecyclerViewBind } from 'butterfly/dist/observables/binding/RecyclerVi
 import { HttpClient } from 'butterfly/dist/net/HttpClient'
 import { WebsocketDemoXml } from '../layout/WebsocketDemoXml'
 import { ComponentTextXml } from '../layout/ComponentTextXml'
+import { xViewOnClick } from 'butterfly/dist/views/View.ext'
 import { WebSocketFrame } from 'butterfly/dist/net/WebSocketFrame'
 
 //! Declares com.lightningkite.butterflytemplate.vg.WebsocketDemoVG
@@ -70,11 +71,11 @@ export class WebsocketDemoVG extends ViewGenerator {
         xEditTextBindString(xml.input, this.text);
         
         //--- Set Up xml.submit
-        xml.submit.onclick = (_ev) => { _ev.stopPropagation(); 
-            xDisposableUntil<SubscriptionLike>(this.socket.pipe(rxTake(1)).subscribe((it: ConnectedWebSocket): void => {
-                        it.next(new WebSocketFrame(undefined, this.text.value));
-            }, undefined, undefined), xViewRemovedGet(xml.submit));
-        };
+        xViewOnClick(xml.submit, undefined, (): void => {
+                xDisposableUntil<SubscriptionLike>(this.socket.pipe(rxTake(1)).subscribe((it: ConnectedWebSocket): void => {
+                            it.next(new WebSocketFrame(undefined, this.text.value));
+                }, undefined, undefined), xViewRemovedGet(xml.submit));
+        });
         
         //--- Generate End (overwritten on flow generation)
         

@@ -6,8 +6,9 @@ com.lightningkite.butterflytemplate.api
 com.lightningkite.butterflytemplate.api.APIInterface
 com.lightningkite.butterflytemplate.api.APIMock
 com.lightningkite.butterflytemplate.api.APIOnline
-com.lightningkite.butterflytemplate.layouts.ComponentBleDeviceXml
+com.lightningkite.butterflytemplate.layouts.BleServerDemoXml
 com.lightningkite.butterflytemplate.layouts
+com.lightningkite.butterflytemplate.layouts.ComponentBleDeviceXml
 com.lightningkite.butterflytemplate.layouts.ComponentTestXml
 com.lightningkite.butterflytemplate.layouts.ComponentTextXml
 com.lightningkite.butterflytemplate.layouts.ControlsDemoXml
@@ -35,8 +36,9 @@ com.lightningkite.butterflytemplate.layouts.WebsocketDemoXml
 com.lightningkite.butterflytemplate.models.Post
 com.lightningkite.butterflytemplate.models
 com.lightningkite.butterflytemplate.safeInsets
-com.lightningkite.butterflytemplate.vg.ControlsDemoVG
+com.lightningkite.butterflytemplate.vg.BleServerDemoVG
 com.lightningkite.butterflytemplate.vg
+com.lightningkite.butterflytemplate.vg.ControlsDemoVG
 com.lightningkite.butterflytemplate.vg.DateButtonDemoVG
 com.lightningkite.butterflytemplate.vg.DateRangeDemoVG
 com.lightningkite.butterflytemplate.vg.DrawableDemoVG

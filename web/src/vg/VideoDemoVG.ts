@@ -2,13 +2,14 @@
 // File: vg/VideoDemoVG.kt
 // Package: com.lightningkite.butterflytemplate.vg
 import { Video, VideoReference, VideoRemoteUrl } from 'butterfly/dist/Video'
-import { xImageViewBindVideoThumbnail } from 'butterfly/dist/observables/binding/ImageView.binding'
-import { xActivityAccessRequestVideoCamera, xActivityAccessRequestVideoGallery, xActivityAccessRequestVideosGallery } from 'butterfly/dist/views/ViewDependency'
-import { xVideoPlayerBind } from 'butterfly/dist/observables/binding/VideoPlayer.binding'
 import { VideoDemoXml } from '../layout/VideoDemoXml'
-import { runOrNull } from 'butterfly/dist/kotlin/Language'
+import { xActivityAccessRequestVideoCamera, xActivityAccessRequestVideoGallery, xActivityAccessRequestVideosGallery } from 'butterfly/dist/views/ViewDependency'
 import { ViewGenerator } from 'butterfly/dist/views/ViewGenerator'
 import { StandardObservableProperty } from 'butterfly/dist/observables/StandardObservableProperty'
+import { xViewOnClick } from 'butterfly/dist/views/View.ext'
+import { xImageViewBindVideoThumbnail } from 'butterfly/dist/observables/binding/ImageView.binding'
+import { xVideoPlayerBind } from 'butterfly/dist/observables/binding/VideoPlayer.binding'
+import { runOrNull } from 'butterfly/dist/kotlin/Language'
 
 //! Declares com.lightningkite.butterflytemplate.vg.VideoDemoVG
 export class VideoDemoVG extends ViewGenerator {
@@ -42,33 +43,33 @@ export class VideoDemoVG extends ViewGenerator {
         xImageViewBindVideoThumbnail(xml.thumbnail, this.currentVideo);
         
         //--- Set Up xml.play (overwritten on flow generation)
-        xml.play.onclick = (_ev) => { _ev.stopPropagation(); 
-            this.playClick();
-        };
+        xViewOnClick(xml.play, undefined, (): void => {
+                this.playClick();
+        });
         
         //--- Set Up xml.gallery
-        xml.gallery.onclick = (_ev) => { _ev.stopPropagation(); 
-            xActivityAccessRequestVideoGallery(dependency, (it: File): void => {
-                    this.currentVideo.value = new VideoReference(it);
-            });
-        };
+        xViewOnClick(xml.gallery, undefined, (): void => {
+                xActivityAccessRequestVideoGallery(dependency, (it: File): void => {
+                        this.currentVideo.value = new VideoReference(it);
+                });
+        });
         
         //--- Set Up xml.camera
-        xml.camera.onclick = (_ev) => { _ev.stopPropagation(); 
-            xActivityAccessRequestVideoCamera(dependency, undefined, (it: File): void => {
-                    this.currentVideo.value = new VideoReference(it);
-            });
-        };
+        xViewOnClick(xml.camera, undefined, (): void => {
+                xActivityAccessRequestVideoCamera(dependency, undefined, (it: File): void => {
+                        this.currentVideo.value = new VideoReference(it);
+                });
+        });
         
         //--- Set Up xml.galleryMulti
-        xml.galleryMulti.onclick = (_ev) => { _ev.stopPropagation(); 
-            xActivityAccessRequestVideosGallery(dependency, (it: Array<File>): void => {
-                    const it_227 = (it[0] ?? null);
-                    if (it_227 !== null) { 
-                        this.currentVideo.value = new VideoReference(it_227);
-                    }
-            });
-        };
+        xViewOnClick(xml.galleryMulti, undefined, (): void => {
+                xActivityAccessRequestVideosGallery(dependency, (it: Array<File>): void => {
+                        const it_228 = (it[0] ?? null);
+                        if (it_228 !== null) { 
+                            this.currentVideo.value = new VideoReference(it_228);
+                        }
+                });
+        });
         
         //--- Generate End (overwritten on flow generation)
         

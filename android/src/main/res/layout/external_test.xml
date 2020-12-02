@@ -35,6 +35,70 @@
                 android:layout_margin="8dp"
                 android:text="Show me a future event"
         />
+        <Button
+                style="@style/ButtonPrimary"
+                android:id="@+id/pick_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Pick an image"
+        />
+        <Button
+                style="@style/ButtonPrimary"
+                android:id="@+id/pick_images"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Pick images"
+        />
+        <Button
+                style="@style/ButtonPrimary"
+                android:id="@+id/pick_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Pick a video"
+        />
+        <Button
+                style="@style/ButtonPrimary"
+                android:id="@+id/pick_videos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Pick videos"
+        />
+        <Button
+                style="@style/ButtonPrimary"
+                android:id="@+id/pick_media"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Pick a media"
+        />
+        <Button
+                style="@style/ButtonPrimary"
+                android:id="@+id/pick_medias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Pick medias"
+        />
+        <Button
+                style="@style/ButtonPrimary"
+                android:id="@+id/pick_file"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Pick a file"
+        />
+        <Button
+                style="@style/ButtonPrimary"
+                android:id="@+id/pick_files"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Pick files"
+        />
     </LinearLayout>
 
 </ScrollView>

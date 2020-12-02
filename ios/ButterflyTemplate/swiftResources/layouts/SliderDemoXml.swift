@@ -20,7 +20,7 @@ public class SliderDemoXml {
             view.addSubview(
                 UISlider(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topFill,
@@ -32,7 +32,7 @@ public class SliderDemoXml {
             view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topFill,
@@ -47,7 +47,7 @@ public class SliderDemoXml {
             view.addSubview(
                 UIProgressView(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topFill,
@@ -61,7 +61,7 @@ public class SliderDemoXml {
             view.addSubview(
                 UIRatingBar(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
@@ -78,7 +78,7 @@ public class SliderDemoXml {
             view.addSubview(
                 UIRatingBar(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
@@ -96,7 +96,7 @@ public class SliderDemoXml {
             view.addSubview(
                 UIRatingBar(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
@@ -114,7 +114,7 @@ public class SliderDemoXml {
             view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topFill,
@@ -129,7 +129,7 @@ public class SliderDemoXml {
             view.addSubview(
                 UIRatingBar(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
@@ -146,7 +146,7 @@ public class SliderDemoXml {
             view.addSubview(
                 UIRatingBar(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
@@ -164,7 +164,7 @@ public class SliderDemoXml {
             view.addSubview(
                 UIRatingBar(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
@@ -182,7 +182,7 @@ public class SliderDemoXml {
             view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topFill,
@@ -199,16 +199,27 @@ public class SliderDemoXml {
         return view
     }
     
-    public unowned var slider: UISlider!
-    public unowned var valueDisplay: UILabel!
-    public unowned var progress: UIProgressView!
-    public unowned var rating: UIRatingBar!
-    public unowned var ratingDisplayStars: UIRatingBar!
-    public unowned var ratingDisplayStarsSmall: UIRatingBar!
-    public unowned var ratingDisplayNumber: UILabel!
-    public unowned var ratingFloat: UIRatingBar!
-    public unowned var ratingDisplayStarsFloat: UIRatingBar!
-    public unowned var ratingDisplayStarsSmallFloat: UIRatingBar!
-    public unowned var ratingDisplayNumberFloat: UILabel!
+    public var _slider: UISlider!
+    public var slider: UISlider { get { return _slider } set(value){ _slider = value } }
+    public var _valueDisplay: UILabel!
+    public var valueDisplay: UILabel { get { return _valueDisplay } set(value){ _valueDisplay = value } }
+    public var _progress: UIProgressView!
+    public var progress: UIProgressView { get { return _progress } set(value){ _progress = value } }
+    public var _rating: UIRatingBar!
+    public var rating: UIRatingBar { get { return _rating } set(value){ _rating = value } }
+    public var _ratingDisplayStars: UIRatingBar!
+    public var ratingDisplayStars: UIRatingBar { get { return _ratingDisplayStars } set(value){ _ratingDisplayStars = value } }
+    public var _ratingDisplayStarsSmall: UIRatingBar!
+    public var ratingDisplayStarsSmall: UIRatingBar { get { return _ratingDisplayStarsSmall } set(value){ _ratingDisplayStarsSmall = value } }
+    public var _ratingDisplayNumber: UILabel!
+    public var ratingDisplayNumber: UILabel { get { return _ratingDisplayNumber } set(value){ _ratingDisplayNumber = value } }
+    public var _ratingFloat: UIRatingBar!
+    public var ratingFloat: UIRatingBar { get { return _ratingFloat } set(value){ _ratingFloat = value } }
+    public var _ratingDisplayStarsFloat: UIRatingBar!
+    public var ratingDisplayStarsFloat: UIRatingBar { get { return _ratingDisplayStarsFloat } set(value){ _ratingDisplayStarsFloat = value } }
+    public var _ratingDisplayStarsSmallFloat: UIRatingBar!
+    public var ratingDisplayStarsSmallFloat: UIRatingBar { get { return _ratingDisplayStarsSmallFloat } set(value){ _ratingDisplayStarsSmallFloat = value } }
+    public var _ratingDisplayNumberFloat: UILabel!
+    public var ratingDisplayNumberFloat: UILabel { get { return _ratingDisplayNumberFloat } set(value){ _ratingDisplayNumberFloat = value } }
     
 }

@@ -15,6 +15,7 @@ import { xRecyclerViewBind } from 'butterfly/dist/observables/binding/RecyclerVi
 import { debounceTime as rxDebounceTime, distinctUntilChanged as rxDistinctUntilChanged, flatMap as rxFlatMap } from 'rxjs/operators'
 import { MapDemoXml } from '../layout/MapDemoXml'
 import { ComponentTextXml } from '../layout/ComponentTextXml'
+import { xViewOnClick } from 'butterfly/dist/views/View.ext'
 import { xActivityAccessGeocode } from 'butterfly/dist/location/Geocoding'
 import { xMapViewBindSelect } from 'butterfly-maps-google/dist/MapView.bind'
 import { GeoAddress } from 'butterfly/dist/location/GeoAddress'
@@ -53,9 +54,9 @@ export class MapDemoVG extends ViewGenerator {
                 const view = xml.setup(dependency);
                 
                 xTextViewBindString(xml.label, xObservablePropertyMap<GeoAddress, string>(obs, (it: GeoAddress): string => it.oneLine(undefined, undefined)));
-                xml.xmlRoot.onclick = (_ev) => { _ev.stopPropagation(); 
-                    this.position.value = obs.value.coordinate;
-                };
+                xViewOnClick(xml.xmlRoot, undefined, (): void => {
+                        this.position.value = obs.value.coordinate;
+                });
                 return view;
         });
         

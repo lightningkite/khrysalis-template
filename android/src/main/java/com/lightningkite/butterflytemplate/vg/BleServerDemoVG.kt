@@ -78,7 +78,7 @@ class BleServerDemoVG(
                     )
                 )
             ))
-        )).apply { advertising = true }.until(view.removed)
+        )).until(view.removed)
         
         //--- Set Up xml.utfValue
         xml.utfValue.bindString(utfValue)

@@ -19,7 +19,7 @@ public class PreviewXml {
         view.addSubview(
             UILabel(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0),
+            size: CGSize(width: -1, height: -1),
             margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             padding: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
             gravity: .topFill,
@@ -36,7 +36,7 @@ public class PreviewXml {
         view.addSubview(
             UICollectionView(frame: .zero, collectionViewLayout: ViewPagerLayout()),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0.0),
+            size: CGSize(width: -1, height: 0.0),
             margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .topFill,
@@ -55,7 +55,9 @@ public class PreviewXml {
         return view
     }
     
-    public unowned var viewName: UILabel!
-    public unowned var pager: UICollectionView!
+    public var _viewName: UILabel!
+    public var viewName: UILabel { get { return _viewName } set(value){ _viewName = value } }
+    public var _pager: UICollectionView!
+    public var pager: UICollectionView { get { return _pager } set(value){ _pager = value } }
     
 }

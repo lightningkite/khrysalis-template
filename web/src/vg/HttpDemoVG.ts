@@ -7,14 +7,17 @@ import { xObservableAsObservableProperty } from 'butterfly/dist/observables/Even
 import { hashAnything, safeEq } from 'butterfly/dist/Kotlin'
 import { xProgressBarBindFloat } from 'butterfly/dist/observables/binding/ProgressBar.binding'
 import { xObservablePropertyMap } from 'butterfly/dist/observables/TransformedObservableProperty'
+import { Observable } from 'rxjs'
 import { ViewGenerator } from 'butterfly/dist/views/ViewGenerator'
 import { xRecyclerViewBind } from 'butterfly/dist/observables/binding/RecyclerView.binding'
 import { HttpDemoXml } from '../layout/HttpDemoXml'
 import { parse as parseJsonTyped } from 'butterfly/dist/net/jsonParsing'
-import { xSingleReadJson } from 'butterfly/dist/net/RxHttpAssist'
 import { HttpClient } from 'butterfly/dist/net/HttpClient'
 import { ComponentTextXml } from '../layout/ComponentTextXml'
+import { xResponseReadJson } from 'butterfly/dist/net/RxHttpAssist'
+import { map as rxMap } from 'rxjs/operators'
 import { HttpProgress } from 'butterfly/dist/net/HttpModels'
+import { xObservableMapNotNull } from 'butterfly/dist/rx/RxExtensions'
 
 //! Declares com.lightningkite.butterflytemplate.vg.HttpDemoVG
 export class HttpDemoVG extends ViewGenerator {
@@ -37,18 +40,14 @@ export class HttpDemoVG extends ViewGenerator {
         
         
         //--- Call
-        const pair = HttpClient.INSTANCE.callWithProgress("https://jsonplaceholder.typicode.com/posts/", undefined, undefined, undefined, undefined);
-        
-        const progress = pair[0];
-        
-        const call = pair[1];
+        const obs = HttpClient.INSTANCE.callWithProgress<Array<HttpDemoVG.Post>>("https://jsonplaceholder.typicode.com/posts/", undefined, undefined, undefined, undefined, (it: Response): Observable<Array<HttpDemoVG.Post>> => xResponseReadJson<Array<HttpDemoVG.Post>>(it, [Array, [HttpDemoVG.Post]]));
         
         
         //--- Set Up xml.progress
-        xProgressBarBindFloat(xml.progress, xObservablePropertyMap<HttpProgress, number>(progress, (it: HttpProgress): number => it.approximate));
+        xProgressBarBindFloat(xml.progress, xObservableAsObservableProperty<number>(obs.pipe(rxMap((it: HttpProgress<Array<HttpDemoVG.Post>>): number => it.approximate)), 0));
         
         //--- Set Up xml.items
-        xRecyclerViewBind<HttpDemoVG.Post>(xml.items, xObservableAsObservableProperty<Array<HttpDemoVG.Post>>(xSingleReadJson<Array<HttpDemoVG.Post>>(call, [Array, [HttpDemoVG.Post]]), [new HttpDemoVG.Post(0, 0, "Loading...", "-")]), new HttpDemoVG.Post(0, 0, "Default", "Failure"), (observable: ObservableProperty<HttpDemoVG.Post>): HTMLElement => {
+        xRecyclerViewBind<HttpDemoVG.Post>(xml.items, xObservableAsObservableProperty<Array<HttpDemoVG.Post>>(xObservableMapNotNull<HttpProgress<Array<HttpDemoVG.Post>>, Array<HttpDemoVG.Post>>(obs, (it: HttpProgress<Array<HttpDemoVG.Post>>): (Array<HttpDemoVG.Post> | null) => it.response), [new HttpDemoVG.Post(0, 0, "Loading...", "-")]), new HttpDemoVG.Post(0, 0, "Default", "Failure"), (observable: ObservableProperty<HttpDemoVG.Post>): HTMLElement => {
                 //--- Make Subview For xml.items
                 const cellXml = new ComponentTextXml();
                 

@@ -19,7 +19,7 @@ public class ComponentTestXml {
         view.addSubview(
             UILabel(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0.0, height: 0),
+            size: CGSize(width: 0.0, height: -1),
             margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .centerCenter,
@@ -35,7 +35,7 @@ public class ComponentTestXml {
         view.addSubview(
             UIButtonWithLayer(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0),
+            size: CGSize(width: -1, height: -1),
             margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
             padding: UIEdgeInsets.zero,
             gravity: .centerCenter,
@@ -60,7 +60,9 @@ public class ComponentTestXml {
         return view
     }
     
-    public unowned var label: UILabel!
-    public unowned var button: UIButtonWithLayer!
+    public var _label: UILabel!
+    public var label: UILabel { get { return _label } set(value){ _label = value } }
+    public var _button: UIButtonWithLayer!
+    public var button: UIButtonWithLayer { get { return _button } set(value){ _button = value } }
     
 }

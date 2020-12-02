@@ -19,7 +19,7 @@ public class HttpDemoXml {
         view.addSubview(
             UILabel(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0),
+            size: CGSize(width: -1, height: -1),
             margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .topFill,
@@ -34,7 +34,7 @@ public class HttpDemoXml {
         view.addSubview(
             UIProgressView(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0),
+            size: CGSize(width: -1, height: -1),
             margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .topFill,
@@ -48,21 +48,24 @@ public class HttpDemoXml {
         view.addSubview(
             UICollectionView(frame: .zero, collectionViewLayout: UICollectionView.ReversibleFlowLayout()),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0.0),
+            size: CGSize(width: -1, height: 0.0),
             margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
-            padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+            padding: UIEdgeInsets.zero,
             gravity: .topFill,
             weight: 1.0
         ) { view in 
             self.items = view
             view.backgroundColor = UIColor.clear
+            view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
         
         xmlRoot = view
         return view
     }
     
-    public unowned var progress: UIProgressView!
-    public unowned var items: UICollectionView!
+    public var _progress: UIProgressView!
+    public var progress: UIProgressView { get { return _progress } set(value){ _progress = value } }
+    public var _items: UICollectionView!
+    public var items: UICollectionView { get { return _items } set(value){ _items = value } }
     
 }

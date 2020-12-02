@@ -21,7 +21,7 @@ public class ExampleContentXml {
             view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
@@ -36,7 +36,7 @@ public class ExampleContentXml {
             view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
@@ -51,7 +51,7 @@ public class ExampleContentXml {
             view.addSubview(
                 LinearLayout(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -64,7 +64,7 @@ public class ExampleContentXml {
                 view.addSubview(
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0.0, height: 0),
+                    size: CGSize(width: 0.0, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                     gravity: .centerCenter,
@@ -80,7 +80,7 @@ public class ExampleContentXml {
                 view.addSubview(
                     UIButtonWithLayer(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets.zero,
                     gravity: .centerCenter,
@@ -106,7 +106,7 @@ public class ExampleContentXml {
             view.addSubview(
                 LinearLayout(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -119,7 +119,7 @@ public class ExampleContentXml {
                 view.addSubview(
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0.0, height: 0),
+                    size: CGSize(width: 0.0, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                     gravity: .centerCenter,
@@ -135,7 +135,7 @@ public class ExampleContentXml {
                 view.addSubview(
                     UIButtonWithLayer(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets.zero,
                     gravity: .centerCenter,
@@ -175,7 +175,7 @@ public class ExampleContentXml {
             view.addSubview(
                 UIButtonWithLayer(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topLeft,
@@ -201,11 +201,17 @@ public class ExampleContentXml {
         return view
     }
     
-    public unowned var scrollView: ScrollViewVertical!
-    public unowned var exampleContentNumber: UILabel!
-    public unowned var exampleContentIncrement: UIButtonWithLayer!
-    public unowned var chainedNumber: UILabel!
-    public unowned var chainedIncrement: UIButtonWithLayer!
-    public unowned var scrollToTop: UIButtonWithLayer!
+    public var _scrollView: ScrollViewVertical!
+    public var scrollView: ScrollViewVertical { get { return _scrollView } set(value){ _scrollView = value } }
+    public var _exampleContentNumber: UILabel!
+    public var exampleContentNumber: UILabel { get { return _exampleContentNumber } set(value){ _exampleContentNumber = value } }
+    public var _exampleContentIncrement: UIButtonWithLayer!
+    public var exampleContentIncrement: UIButtonWithLayer { get { return _exampleContentIncrement } set(value){ _exampleContentIncrement = value } }
+    public var _chainedNumber: UILabel!
+    public var chainedNumber: UILabel { get { return _chainedNumber } set(value){ _chainedNumber = value } }
+    public var _chainedIncrement: UIButtonWithLayer!
+    public var chainedIncrement: UIButtonWithLayer { get { return _chainedIncrement } set(value){ _chainedIncrement = value } }
+    public var _scrollToTop: UIButtonWithLayer!
+    public var scrollToTop: UIButtonWithLayer { get { return _scrollToTop } set(value){ _scrollToTop = value } }
     
 }

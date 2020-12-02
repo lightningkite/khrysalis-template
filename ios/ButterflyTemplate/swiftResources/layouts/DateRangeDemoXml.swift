@@ -20,7 +20,7 @@ public class DateRangeDemoXml {
             view.addSubview(
                 CustomView(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 350.0),
+                size: CGSize(width: -1, height: 350.0),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 40.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topFill,
@@ -38,7 +38,7 @@ public class DateRangeDemoXml {
             view.addSubview(
                 CustomView(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 350.0),
+                size: CGSize(width: -1, height: 350.0),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 40.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topFill,
@@ -56,7 +56,7 @@ public class DateRangeDemoXml {
             view.addSubview(
                 CustomView(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 350.0),
+                size: CGSize(width: -1, height: 350.0),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 40.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topFill,
@@ -74,7 +74,7 @@ public class DateRangeDemoXml {
             view.addSubview(
                 CustomView(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 350.0),
+                size: CGSize(width: -1, height: 350.0),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 40.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topFill,
@@ -94,13 +94,21 @@ public class DateRangeDemoXml {
         return view
     }
     
-    public unowned var month: CustomView!
-    public unowned var month2: CustomView!
-    public unowned var month3: CustomView!
-    public unowned var month4: CustomView!
-    public unowned var monthDelegate: MonthCVD!
-    public unowned var month2Delegate: SelectDateMonthCVD!
-    public unowned var month3Delegate: SelectDateRangeMonthCVD!
-    public unowned var month4Delegate: SelectMultipleDatesMonthCVD!
+    public var _month: CustomView!
+    public var month: CustomView { get { return _month } set(value){ _month = value } }
+    public var _month2: CustomView!
+    public var month2: CustomView { get { return _month2 } set(value){ _month2 = value } }
+    public var _month3: CustomView!
+    public var month3: CustomView { get { return _month3 } set(value){ _month3 = value } }
+    public var _month4: CustomView!
+    public var month4: CustomView { get { return _month4 } set(value){ _month4 = value } }
+    public var _monthDelegate: MonthCVD!
+    public var monthDelegate: MonthCVD { get { return _monthDelegate } set(value) { _monthDelegate = value } }
+    public var _month2Delegate: SelectDateMonthCVD!
+    public var month2Delegate: SelectDateMonthCVD { get { return _month2Delegate } set(value) { _month2Delegate = value } }
+    public var _month3Delegate: SelectDateRangeMonthCVD!
+    public var month3Delegate: SelectDateRangeMonthCVD { get { return _month3Delegate } set(value) { _month3Delegate = value } }
+    public var _month4Delegate: SelectMultipleDatesMonthCVD!
+    public var month4Delegate: SelectMultipleDatesMonthCVD { get { return _month4Delegate } set(value) { _month4Delegate = value } }
     
 }

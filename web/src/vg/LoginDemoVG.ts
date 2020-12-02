@@ -12,6 +12,7 @@ import { xViewFlipperBindLoading } from 'butterfly/dist/observables/binding/View
 import { ViewGenerator } from 'butterfly/dist/views/ViewGenerator'
 import { StandardObservableProperty } from 'butterfly/dist/observables/StandardObservableProperty'
 import { ViewString, ViewStringResource } from 'butterfly/dist/views/ViewString'
+import { xViewOnClick } from 'butterfly/dist/views/View.ext'
 import { ObservableStack } from 'butterfly/dist/observables/ObservableStack'
 import { LoginDemoXml } from '../layout/LoginDemoXml'
 import { xCompoundButtonBind } from 'butterfly/dist/observables/binding/CompoundButton.binding'
@@ -58,9 +59,9 @@ export class LoginDemoVG extends ViewGenerator {
         xEditTextBindString(xml.verifyPassword, this.verifyPassword.observable);
         xCompoundButtonBind(xml.agree, this.agree.observable);
         xViewFlipperBindLoading(xml.submitLoading, this.loading, undefined);
-        xml.submit.onclick = (_ev) => { _ev.stopPropagation(); 
-            this.submit();
-        };
+        xViewOnClick(xml.submit, undefined, (): void => {
+                this.submit();
+        });
         
         return view;
     }

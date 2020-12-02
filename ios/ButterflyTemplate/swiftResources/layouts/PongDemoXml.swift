@@ -16,7 +16,7 @@ public class PongDemoXml {
         view.addSubview(
             CustomView(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0),
+            size: CGSize(width: -1, height: -1),
             margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .centerFill
@@ -34,7 +34,9 @@ public class PongDemoXml {
         return view
     }
     
-    public unowned var customView: CustomView!
-    public unowned var customViewDelegate: PongDelegate!
+    public var _customView: CustomView!
+    public var customView: CustomView { get { return _customView } set(value){ _customView = value } }
+    public var _customViewDelegate: PongDelegate!
+    public var customViewDelegate: PongDelegate { get { return _customViewDelegate } set(value) { _customViewDelegate = value } }
     
 }

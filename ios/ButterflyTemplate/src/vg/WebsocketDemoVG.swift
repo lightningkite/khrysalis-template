@@ -2,6 +2,7 @@
 // File: vg/WebsocketDemoVG.kt
 // Package: com.lightningkite.butterflytemplate.vg
 import RxSwift
+import UIKit
 import Butterfly
 import Foundation
 

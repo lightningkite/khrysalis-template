@@ -2,17 +2,17 @@
 // DrawableDemoXml.ts
 // Created by Khrysalis XML Typescript
 //
-import { loadHtmlFromString, findViewById, getViewById, replaceViewWithId } from 'butterfly/dist/views/html'
+import { loadHtmlFromString, findViewById, getViewById, replaceViewWithId, startupAutoResize } from 'butterfly/dist/views/html'
 import { customViewSetDelegate } from 'butterfly/dist/views/CustomView'
 import htmlForDefault from './drawable_demo.html'
 //! Declares com.lightningkite.butterflytemplate.layouts.DrawableDemoXml
 export class DrawableDemoXml {
-    xmlRoot!: HTMLElement;
+    xmlRoot!: HTMLElement
     loadHtmlString(): string {
-        return htmlForDefault;
+        return htmlForDefault
     }
     setup(dependency: Window): HTMLElement {
-        const view = loadHtmlFromString(this.loadHtmlString());
+        const view = loadHtmlFromString(this.loadHtmlString())
         this.xmlRoot = view
         return view
     }

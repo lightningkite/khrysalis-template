@@ -58,6 +58,46 @@ class ExternalTestVG(
             )
         }
 
+        //--- Set Up xml.pickImage
+        xml.pickImage.onClick {
+            dependency.requestImageGallery { println("Got $it") }
+        }
+        
+        //--- Set Up xml.pickImages
+        xml.pickImages.onClick {
+            dependency.requestImagesGallery { println("Got $it") }
+        }
+        
+        //--- Set Up xml.pickVideo
+        xml.pickVideo.onClick {
+            dependency.requestVideoGallery { println("Got $it") }
+        }
+        
+        //--- Set Up xml.pickVideos
+        xml.pickVideos.onClick {
+            dependency.requestVideosGallery { println("Got $it") }
+        }
+        
+        //--- Set Up xml.pickMedia
+        xml.pickMedia.onClick {
+            dependency.requestMediaGallery { println("Got $it") }
+        }
+        
+        //--- Set Up xml.pickMedias
+        xml.pickMedias.onClick {
+            dependency.requestMediasGallery { println("Got $it") }
+        }
+        
+        //--- Set Up xml.pickFile
+        xml.pickFile.onClick {
+            dependency.requestFile { println("Got $it") }
+        }
+        
+        //--- Set Up xml.pickFiles
+        xml.pickFiles.onClick {
+            dependency.requestFiles { println("Got $it") }
+        }
+        
         //--- Generate End (overwritten on flow generation)
         
         return view
@@ -75,5 +115,30 @@ class ExternalTestVG(
     //--- Action openWebClick
     //--- Action openEventClick
 
+    //--- Action pickImageClick (overwritten on flow generation)
+    fun pickImageClick() {
+    }
+    //--- Action pickImagesClick (overwritten on flow generation)
+    fun pickImagesClick() {
+    }
+    //--- Action pickVideoClick (overwritten on flow generation)
+    fun pickVideoClick() {
+    }
+    //--- Action pickVideosClick (overwritten on flow generation)
+    fun pickVideosClick() {
+    }
+    //--- Action pickMediaClick (overwritten on flow generation)
+    fun pickMediaClick() {
+    }
+    //--- Action pickMediasClick (overwritten on flow generation)
+    fun pickMediasClick() {
+    }
+    //--- Action pickFileClick (overwritten on flow generation)
+    fun pickFileClick() {
+    }
+    //--- Action pickFilesClick (overwritten on flow generation)
+    fun pickFilesClick() {
+    }
+    
     //--- Body End
 }

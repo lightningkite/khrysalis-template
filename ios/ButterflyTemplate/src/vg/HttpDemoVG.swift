@@ -2,6 +2,7 @@
 // File: vg/HttpDemoVG.kt
 // Package: com.lightningkite.butterflytemplate.vg
 import RxSwift
+import UIKit
 import Butterfly
 import Foundation
 
@@ -70,17 +71,14 @@ public class HttpDemoVG : ViewGenerator {
         let view = xml.setup(dependency: dependency)
         
         //--- Call
-        let pair = HttpClient.INSTANCE.callWithProgress(url: "https://jsonplaceholder.typicode.com/posts/")
-        let progress = pair.first
-        let call = pair.second
+        let obs = HttpClient.INSTANCE.callWithProgress(url: "https://jsonplaceholder.typicode.com/posts/", parse: { (it) -> Single<Array<HttpDemoVG.Post>> in (it.readJson() as Single<Array<HttpDemoVG.Post>>) })
         
         //--- Set Up xml.progress
-        xml.progress.bindFloat(observable: progress.map(read: { (it) -> Float in it.approximate }))
+        xml.progress.bindFloat(observable: obs.map({ (it) -> Float in it.approximate }).asObservableProperty(defaultValue: 0))
         
         //--- Set Up xml.items
-        xml.items.bind(data: (call
-                .readJson() as Single<Array<HttpDemoVG.Post>>)
-                .toObservable()
+        xml.items.bind(data: obs
+                .mapNotNull(transform: { (it) -> Array<HttpDemoVG.Post>? in it.response })
                 .asObservableProperty(defaultValue: [Post(userId: 0, id: 0, title: "Loading...", body: "-")]), defaultValue: Post(userId: 0, id: 0, title: "Default", body: "Failure"), makeView: { (observable) -> UIView in 
                 //--- Make Subview For xml.items
                 let cellXml = ComponentTextXml()

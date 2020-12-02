@@ -2,6 +2,7 @@
 // File: vg/ExampleContentVG.kt
 // Package: com.lightningkite.butterflytemplate.vg
 import { ObservableProperty } from 'butterfly/dist/observables/ObservableProperty'
+import { xViewOnClick } from 'butterfly/dist/views/View.ext'
 import { ExampleContentXml } from '../layout/ExampleContentXml'
 import { xTextViewBindString, xTextViewBindText } from 'butterfly/dist/observables/binding/TextView.binding'
 import { xObservablePropertyMap } from 'butterfly/dist/observables/TransformedObservableProperty'
@@ -28,8 +29,8 @@ export class ExampleContentVG extends ViewGenerator {
     
     
     public increment(): void {
-        const temp4 = this._number;
-        temp4.value = temp4.value + 1;
+        const temp18 = this._number;
+        temp18.value = temp18.value + 1;
     }
     
     public generate(dependency: Window): HTMLElement {
@@ -37,17 +38,17 @@ export class ExampleContentVG extends ViewGenerator {
         
         const view = xml.setup(dependency);
         
-        xml.exampleContentIncrement.onclick = (_ev) => { _ev.stopPropagation(); 
-            this.increment();
-        };
+        xViewOnClick(xml.exampleContentIncrement, undefined, (): void => {
+                this.increment();
+        });
         xTextViewBindText<number>(xml.exampleContentNumber, this._number, (it: number): string => it.toString());
-        xml.chainedIncrement.onclick = (_ev) => { _ev.stopPropagation(); 
-            this.chained.value.value = this.chained.value.value + 1;
-        };
+        xViewOnClick(xml.chainedIncrement, undefined, (): void => {
+                this.chained.value.value = this.chained.value.value + 1;
+        });
         xTextViewBindString(xml.chainedNumber, xObservablePropertyMap<number, string>(xObservablePropertyFlatMap<MutableObservableProperty<number>, number>(this.chained, (it: MutableObservableProperty<number>): ObservableProperty<number> => it), (it: number): string => it.toString()));
-        xml.scrollToTop.onclick = (_ev) => { _ev.stopPropagation(); 
-            xml.scrollView.scroll(0, 0);
-        };
+        xViewOnClick(xml.scrollToTop, undefined, (): void => {
+                xml.scrollView.scroll(0, 0);
+        });
         return view;
     }
 }

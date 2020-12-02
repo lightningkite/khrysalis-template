@@ -19,7 +19,7 @@ public class MapDemoXml {
         view.addSubview(
             MKMapView(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0.0),
+            size: CGSize(width: -1, height: 0.0),
             margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .topFill,
@@ -31,7 +31,7 @@ public class MapDemoXml {
         view.addSubview(
             ScrollViewVertical(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0.0),
+            size: CGSize(width: -1, height: 0.0),
             margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .topFill,
@@ -45,7 +45,7 @@ public class MapDemoXml {
                 view.addSubview(
                     UITextFieldPadded(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                     padding: UIEdgeInsets.zero,
                     gravity: .topFill,
@@ -62,14 +62,15 @@ public class MapDemoXml {
                 view.addSubview(
                     UICollectionView(frame: .zero, collectionViewLayout: UICollectionView.ReversibleFlowLayout()),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 100.0),
+                    size: CGSize(width: -1, height: 100.0),
                     margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
-                    padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                    padding: UIEdgeInsets.zero,
                     gravity: .topFill,
                     weight: 0
                 ) { view in 
                     self.options = view
                     view.backgroundColor = UIColor.clear
+                    view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
                 }
                 
             }
@@ -79,8 +80,11 @@ public class MapDemoXml {
         return view
     }
     
-    public unowned var map: MKMapView!
-    public unowned var select: UITextFieldPadded!
-    public unowned var options: UICollectionView!
+    public var _map: MKMapView!
+    public var map: MKMapView { get { return _map } set(value){ _map = value } }
+    public var _select: UITextFieldPadded!
+    public var select: UITextFieldPadded { get { return _select } set(value){ _select = value } }
+    public var _options: UICollectionView!
+    public var options: UICollectionView { get { return _options } set(value){ _options = value } }
     
 }

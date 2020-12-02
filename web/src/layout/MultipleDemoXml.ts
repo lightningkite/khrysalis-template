@@ -2,20 +2,20 @@
 // MultipleDemoXml.ts
 // Created by Khrysalis XML Typescript
 //
-import { loadHtmlFromString, findViewById, getViewById, replaceViewWithId } from 'butterfly/dist/views/html'
+import { loadHtmlFromString, findViewById, getViewById, replaceViewWithId, startupAutoResize } from 'butterfly/dist/views/html'
 import { customViewSetDelegate } from 'butterfly/dist/views/CustomView'
 import htmlForDefault from './multiple_demo.html'
 //! Declares com.lightningkite.butterflytemplate.layouts.MultipleDemoXml
 export class MultipleDemoXml {
-    xmlRoot!: HTMLElement;
-    list!: HTMLDivElement;
+    xmlRoot!: HTMLElement
+    list!: HTMLDivElement
     loadHtmlString(): string {
-        return htmlForDefault;
+        return htmlForDefault
     }
     setup(dependency: Window): HTMLElement {
-        const view = loadHtmlFromString(this.loadHtmlString());
+        const view = loadHtmlFromString(this.loadHtmlString())
         this.xmlRoot = view
-        this.list = getViewById<HTMLDivElement>(view, "list");
+        this.list = getViewById<HTMLDivElement>(view, "list")
         return view
     }
 }

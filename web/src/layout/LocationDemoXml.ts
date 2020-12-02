@@ -2,22 +2,22 @@
 // LocationDemoXml.ts
 // Created by Khrysalis XML Typescript
 //
-import { loadHtmlFromString, findViewById, getViewById, replaceViewWithId } from 'butterfly/dist/views/html'
+import { loadHtmlFromString, findViewById, getViewById, replaceViewWithId, startupAutoResize } from 'butterfly/dist/views/html'
 import { customViewSetDelegate } from 'butterfly/dist/views/CustomView'
 import htmlForDefault from './location_demo.html'
 //! Declares com.lightningkite.butterflytemplate.layouts.LocationDemoXml
 export class LocationDemoXml {
-    xmlRoot!: HTMLElement;
-    getLocation!: HTMLButtonElement;
-    locationDisplay!: HTMLElement;
+    xmlRoot!: HTMLElement
+    getLocation!: HTMLButtonElement
+    locationDisplay!: HTMLElement
     loadHtmlString(): string {
-        return htmlForDefault;
+        return htmlForDefault
     }
     setup(dependency: Window): HTMLElement {
-        const view = loadHtmlFromString(this.loadHtmlString());
+        const view = loadHtmlFromString(this.loadHtmlString())
         this.xmlRoot = view
-        this.getLocation = getViewById<HTMLButtonElement>(view, "get_location");
-        this.locationDisplay = getViewById<HTMLElement>(view, "location_display");
+        this.getLocation = getViewById<HTMLButtonElement>(view, "get_location")
+        this.locationDisplay = getViewById<HTMLElement>(view, "location_display")
         return view
     }
 }

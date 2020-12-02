@@ -2,20 +2,20 @@
 // ComponentTextXml.ts
 // Created by Khrysalis XML Typescript
 //
-import { loadHtmlFromString, findViewById, getViewById, replaceViewWithId } from 'butterfly/dist/views/html'
+import { loadHtmlFromString, findViewById, getViewById, replaceViewWithId, startupAutoResize } from 'butterfly/dist/views/html'
 import { customViewSetDelegate } from 'butterfly/dist/views/CustomView'
 import htmlForDefault from './component_text.html'
 //! Declares com.lightningkite.butterflytemplate.layouts.ComponentTextXml
 export class ComponentTextXml {
-    xmlRoot!: HTMLElement;
-    label!: HTMLElement;
+    xmlRoot!: HTMLElement
+    label!: HTMLElement
     loadHtmlString(): string {
-        return htmlForDefault;
+        return htmlForDefault
     }
     setup(dependency: Window): HTMLElement {
-        const view = loadHtmlFromString(this.loadHtmlString());
+        const view = loadHtmlFromString(this.loadHtmlString())
         this.xmlRoot = view
-        this.label = getViewById<HTMLElement>(view, "label");
+        this.label = getViewById<HTMLElement>(view, "label")
         return view
     }
 }
