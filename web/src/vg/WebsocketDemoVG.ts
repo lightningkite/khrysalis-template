@@ -2,21 +2,22 @@
 // File: vg/WebsocketDemoVG.kt
 // Package: com.lightningkite.butterflytemplate.vg
 import { map as rxMap, publishReplay as rxPublishReplay, refCount as rxRefCount, switchMap as rxSwitchMap, take as rxTake } from 'rxjs/operators'
-import { ConnectedWebSocket } from 'butterfly/dist/net/ConnectedWebSocket'
-import { ObservableProperty } from 'butterfly/dist/observables/ObservableProperty'
-import { ConstantObservableProperty } from 'butterfly/dist/observables/ConstantObservableProperty'
-import { xTextViewBindString } from 'butterfly/dist/observables/binding/TextView.binding'
-import { xEditTextBindString } from 'butterfly/dist/observables/binding/EditText.binding'
-import { xObservableAsObservableProperty } from 'butterfly/dist/observables/EventToObservableProperty'
+import { ConnectedWebSocket } from 'butterfly-web/dist/net/ConnectedWebSocket'
+import { HttpClient } from 'butterfly-web/dist/net/HttpClient'
 import { Observable, ObservableInput, SubscriptionLike } from 'rxjs'
-import { ViewGenerator } from 'butterfly/dist/views/ViewGenerator'
-import { xDisposableUntil, xViewRemovedGet } from 'butterfly/dist/rx/DisposeCondition.ext'
-import { StandardObservableProperty } from 'butterfly/dist/observables/StandardObservableProperty'
-import { xRecyclerViewBind } from 'butterfly/dist/observables/binding/RecyclerView.binding'
-import { HttpClient } from 'butterfly/dist/net/HttpClient'
+import { xTextViewBindString } from 'butterfly-web/dist/observables/binding/TextView.binding'
+import { xEditTextBindString } from 'butterfly-web/dist/observables/binding/EditText.binding'
+import { xDisposableUntil, xViewRemovedGet } from 'butterfly-web/dist/rx/DisposeCondition.ext'
+import { ViewGenerator } from 'butterfly-web/dist/views/ViewGenerator'
 import { WebsocketDemoXml } from '../layout/WebsocketDemoXml'
 import { ComponentTextXml } from '../layout/ComponentTextXml'
-import { WebSocketFrame } from 'butterfly/dist/net/WebSocketFrame'
+import { StandardObservableProperty } from 'butterfly-web/dist/observables/StandardObservableProperty'
+import { xObservableAsObservableProperty } from 'butterfly-web/dist/observables/EventToObservableProperty'
+import { ObservableProperty } from 'butterfly-web/dist/observables/ObservableProperty'
+import { WebSocketFrame } from 'butterfly-web/dist/net/WebSocketFrame'
+import { xViewOnClick } from 'butterfly-web/dist/views/View.ext'
+import { ConstantObservableProperty } from 'butterfly-web/dist/observables/ConstantObservableProperty'
+import { xRecyclerViewBind } from 'butterfly-web/dist/observables/binding/RecyclerView.binding'
 
 //! Declares com.lightningkite.butterflytemplate.vg.WebsocketDemoVG
 export class WebsocketDemoVG extends ViewGenerator {
@@ -70,11 +71,11 @@ export class WebsocketDemoVG extends ViewGenerator {
         xEditTextBindString(xml.input, this.text);
         
         //--- Set Up xml.submit
-        xml.submit.onclick = (_ev) => { _ev.stopPropagation(); 
-            xDisposableUntil<SubscriptionLike>(this.socket.pipe(rxTake(1)).subscribe((it: ConnectedWebSocket): void => {
-                        it.next(new WebSocketFrame(undefined, this.text.value));
-            }, undefined, undefined), xViewRemovedGet(xml.submit));
-        };
+        xViewOnClick(xml.submit, undefined, (): void => {
+                xDisposableUntil<SubscriptionLike>(this.socket.pipe(rxTake(1)).subscribe((it: ConnectedWebSocket): void => {
+                            it.next(new WebSocketFrame(undefined, this.text.value));
+                }, undefined, undefined), xViewRemovedGet(xml.submit));
+        });
         
         //--- Generate End (overwritten on flow generation)
         

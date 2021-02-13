@@ -1,6 +1,6 @@
 import {MainVG} from "./vg/MainVG";
-import {listenForDialogs} from "butterfly/dist/views/ViewDependency";
-import {setupGoogleMaps } from "butterfly-maps-google/dist/setup"
+import {listenForDialogs} from "butterfly-web/dist/views/ViewDependency";
+import {setupGoogleMaps } from "butterfly-maps-web-google/dist/setup"
 
 setupGoogleMaps()
 

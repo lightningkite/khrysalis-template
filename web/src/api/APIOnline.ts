@@ -2,10 +2,10 @@
 // File: api/APIOnline.kt
 // Package: com.lightningkite.butterflytemplate.api
 import { Post } from '../models/Post'
-import { HttpClient } from 'butterfly/dist/net/HttpClient'
 import { APIInterface } from './APIInterface'
+import { HttpClient } from 'butterfly-web/dist/net/HttpClient'
 import { Observable } from 'rxjs'
-import { xSingleReadJson } from 'butterfly/dist/net/RxHttpAssist'
+import { xSingleReadJson } from 'butterfly-web/dist/net/RxHttpAssist'
 
 //! Declares com.lightningkite.butterflytemplate.api.APIOnline
 export class APIOnline implements APIInterface {

@@ -2,7 +2,8 @@
 // File: vg/MarginTestVG.kt
 // Package: com.lightningkite.butterflytemplate.vg
 import { MarginTestXml } from '../layout/MarginTestXml'
-import { ViewGenerator } from 'butterfly/dist/views/ViewGenerator'
+import { xViewOnClick } from 'butterfly-web/dist/views/View.ext'
+import { ViewGenerator } from 'butterfly-web/dist/views/ViewGenerator'
 
 //! Declares com.lightningkite.butterflytemplate.vg.MarginTestsVG
 export class MarginTestsVG extends ViewGenerator {
@@ -19,9 +20,9 @@ export class MarginTestsVG extends ViewGenerator {
         
         const view = xml.setup(dependency);
         
-        xml.scrollToTop.onclick = (_ev) => { _ev.stopPropagation(); 
-            xml.scrollView.scroll(0, 0);
-        };
+        xViewOnClick(xml.scrollToTop, undefined, (): void => {
+                xml.scrollView.scroll(0, 0);
+        });
         return view;
     }
 }

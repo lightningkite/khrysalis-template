@@ -18,6 +18,7 @@ import com.lightningkite.butterfly.observables.binding.bind
 import com.lightningkite.butterfly.observables.binding.bindFloat
 import com.lightningkite.butterfly.observables.binding.bindString
 import com.lightningkite.butterfly.observables.map
+import com.lightningkite.butterfly.rx.mapNotNull
 import com.lightningkite.butterfly.views.ViewGenerator
 import com.lightningkite.butterflytemplate.layouts.ComponentTextXml
 import com.lightningkite.butterflytemplate.layouts.HttpDemoXml
@@ -42,18 +43,15 @@ class HttpDemoVG(
         val view = xml.setup(dependency)
         
         //--- Call
-        val pair = HttpClient.callWithProgress("https://jsonplaceholder.typicode.com/posts/")
-        val progress = pair.first
-        val call = pair.second
+        val call = HttpClient.callWithProgress("https://jsonplaceholder.typicode.com/posts/", parse = { it.readJson<List<Post>>() })
 
         //--- Set Up xml.progress
-        xml.progress.bindFloat(progress.map { it.approximate })
+        xml.progress.bindFloat(call.map { it.approximate }.asObservableProperty(0f))
 
         //--- Set Up xml.items
         xml.items.bind(
             data = call
-                .readJson<List<Post>>()
-                .toObservable()
+                .mapNotNull { it.response }
                 .asObservableProperty(listOf(Post(0, 0, "Loading...", "-"))),
             defaultValue = Post(0, 0, "Default", "Failure"),
             makeView = label@ { observable ->

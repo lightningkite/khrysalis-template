@@ -1,4 +1,4 @@
-import { DrawableResource } from 'butterfly/dist/views/DrawableResource'
+import { DrawableResource } from 'butterfly-web/dist/views/DrawableResource'
 //! Declares com.lightningkite.butterflytemplate.R
 export namespace R {
     export namespace color {

@@ -2,10 +2,10 @@
 // File: vg/DateRangeDemoVG.kt
 // Package: com.lightningkite.butterflytemplate.vg
 import { DateRangeDemoXml } from '../layout/DateRangeDemoXml'
-import { numberToColor } from 'butterfly/dist/views/Colors'
-import { EqualOverrideSet } from 'butterfly/dist/KotlinCollections'
-import { ViewGenerator } from 'butterfly/dist/views/ViewGenerator'
-import { StandardObservableProperty } from 'butterfly/dist/observables/StandardObservableProperty'
+import { StandardObservableProperty } from 'butterfly-web/dist/observables/StandardObservableProperty'
+import { numberToColor } from 'butterfly-web/dist/views/Colors'
+import { EqualOverrideSet } from 'butterfly-web/dist/KotlinCollections'
+import { ViewGenerator } from 'butterfly-web/dist/views/ViewGenerator'
 
 //! Declares com.lightningkite.butterflytemplate.vg.DateRangeDemoVG
 export class DateRangeDemoVG extends ViewGenerator {

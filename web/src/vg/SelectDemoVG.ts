@@ -2,35 +2,36 @@
 // File: vg/SelectDemoVG.kt
 // Package: com.lightningkite.butterflytemplate.vg
 import { LoadImageDemoVG } from './LoadImageDemoVG'
-import { ConstantObservableProperty } from 'butterfly/dist/observables/ConstantObservableProperty'
 import { ExampleContentVG } from './ExampleContentVG'
 import { VideoDemoVG } from './VideoDemoVG'
-import { EntryPoint, EntryPointDefaults } from 'butterfly/dist/views/EntryPoint'
-import { HasBackAction, HasBackActionDefaults } from 'butterfly/dist/views/HasBackAction'
-import { ViewGenerator } from 'butterfly/dist/views/ViewGenerator'
 import { SliderDemoVG } from './SliderDemoVG'
 import { ExternalTestVG } from './ExternalTestVG'
-import { xRecyclerViewBind } from 'butterfly/dist/observables/binding/RecyclerView.binding'
 import { MapDemoVG } from './MapDemoVG'
 import { PongDemoVG } from './PongDemoVG'
 import { MultipleDemoVG } from './MultipleDemoVG'
+import { EntryPoint, EntryPointDefaults } from 'butterfly-web/dist/views/EntryPoint'
+import { xViewOnClick } from 'butterfly-web/dist/views/View.ext'
+import { HasBackAction, HasBackActionDefaults } from 'butterfly-web/dist/views/HasBackAction'
+import { xRecyclerViewBind } from 'butterfly-web/dist/observables/binding/RecyclerView.binding'
 import { DateRangeDemoVG } from './DateRangeDemoVG'
 import { SelectDemoXml } from '../layout/SelectDemoXml'
-import { ObservableProperty } from 'butterfly/dist/observables/ObservableProperty'
 import { LocationDemoVG } from './LocationDemoVG'
 import { MarginTestsVG } from './MarginTestVG'
 import { ComponentTestXml } from '../layout/ComponentTestXml'
+import { xTextViewBindText } from 'butterfly-web/dist/observables/binding/TextView.binding'
 import { DateButtonDemoVG } from './DateButtonDemoVG'
 import { SegmentedControlDemoVG } from './SegmentedControlDemoVG'
 import { LoginDemoVG } from './LoginDemoVG'
+import { ViewGenerator } from 'butterfly-web/dist/views/ViewGenerator'
 import { PreviewVG } from './PreviewVG'
 import { ControlsDemoVG } from './ControlsDemoVG'
 import { WebsocketDemoVG } from './WebsocketDemoVG'
 import { HttpDemoVG } from './HttpDemoVG'
+import { ObservableStack } from 'butterfly-web/dist/observables/ObservableStack'
 import { DrawableDemoVG } from './DrawableDemoVG'
-import { xTextViewBindText } from 'butterfly/dist/observables/binding/TextView.binding'
-import { ObservableStack } from 'butterfly/dist/observables/ObservableStack'
+import { ObservableProperty } from 'butterfly-web/dist/observables/ObservableProperty'
 import { ViewPagerDemoVG } from './ViewPagerDemoVG'
+import { ConstantObservableProperty } from 'butterfly-web/dist/observables/ConstantObservableProperty'
 
 //! Declares com.lightningkite.butterflytemplate.vg.SelectDemoVG
 export class SelectDemoVG extends ViewGenerator implements EntryPoint {
@@ -66,9 +67,9 @@ export class SelectDemoVG extends ViewGenerator implements EntryPoint {
                 const view = xml.setup(dependency);
                 
                 xTextViewBindText<ViewGenerator>(xml.label, obs, (it: ViewGenerator): string => it.title);
-                xml.button.onclick = (_ev) => { _ev.stopPropagation(); 
-                    this.selectVG(obs.value);
-                };
+                xViewOnClick(xml.button, undefined, (): void => {
+                        this.selectVG(obs.value);
+                });
                 return view;
         });
         
