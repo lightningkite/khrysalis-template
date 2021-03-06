@@ -59,7 +59,7 @@ repositories {
     mavenLocal()
 }
 
-val kotlin_version = "1.3.72"
+val kotlin_version = "1.4.30"
 dependencies {
     implementation("com.lightningkite.butterfly:butterfly-android:0.1.1")
     implementation("com.lightningkite.butterfly:butterfly-maps-android:0.1.1")
