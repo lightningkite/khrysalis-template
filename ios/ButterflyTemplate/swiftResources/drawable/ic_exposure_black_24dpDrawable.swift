@@ -1,6 +1,6 @@
 //Automatically created by Khrysalis
 import UIKit
-import Butterfly
+import LKButterfly
 
 extension R.drawable {
 
@@ -38,6 +38,7 @@ static let ic_exposure_black_24dp: Drawable = Drawable { (view: UIView?) -> CALa
         //h 2.0
         path.addLine(to: CGPoint(x: 15.0 * scaleX, y: 17.0 * scaleY))
         //z 
+        path.closeSubpath()
         //M 20.0, 2.0
         path.move(to: CGPoint(x: 20.0 * scaleX, y: 2.0 * scaleY))
         //L 4.0, 2.0
@@ -57,6 +58,7 @@ static let ic_exposure_black_24dp: Drawable = Drawable { (view: UIView?) -> CALa
         //c 0.0, -1.1, -0.9, -2.0, -2.0, -2.0
         path.addCurve(to: CGPoint(x: 20.0 * scaleX, y: 2.0 * scaleY), control1: CGPoint(x: 22.0 * scaleX, y: 2.9 * scaleY), control2: CGPoint(x: 21.1 * scaleX, y: 2.0 * scaleY))
         //z 
+        path.closeSubpath()
         //M 5.0, 5.0
         path.move(to: CGPoint(x: 5.0 * scaleX, y: 5.0 * scaleY))
         //h 6.0
@@ -68,6 +70,7 @@ static let ic_exposure_black_24dp: Drawable = Drawable { (view: UIView?) -> CALa
         //L 5.0, 5.0
         path.addLine(to: CGPoint(x: 5.0 * scaleX, y: 5.0 * scaleY))
         //z 
+        path.closeSubpath()
         //M 20.0, 20.0
         path.move(to: CGPoint(x: 20.0 * scaleX, y: 20.0 * scaleY))
         //L 4.0, 20.0

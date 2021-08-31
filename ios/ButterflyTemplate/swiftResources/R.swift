@@ -5,7 +5,7 @@
 
 import Foundation
 import UIKit
-import Butterfly
+import LKButterfly
 
 
 public enum R {
@@ -60,6 +60,26 @@ public enum R {
         static let calendar_unavailable_bg: UIColor = UIColor(argb: 0xFFFFFF00)
         static let calendar_range_middle_unavailable_bg: UIColor = UIColor(argb: 0xFFFFFF00)
         static let calendar_range_middle_deactivated_bg: UIColor = UIColor(argb: 0xFFCCCCCC)
+        static func state_accent_toggle(_ state: UIControl.State) -> UIColor {
+            if state.contains(.disabled) {
+                return R.color.disabled
+            }
+            if state.contains(.selected) {
+                return R.color.colorAccent
+            }
+            if state.contains(.selected) {
+                return R.color.colorAccent
+            }
+            return R.color.disabled
+            return UIColor.white
+        }
+        static func state_login_text(_ state: UIControl.State) -> UIColor {
+            if state.contains(.disabled) {
+                return R.color.disabled
+            }
+            return R.color.colorPrimary
+            return UIColor.white
+        }
         static func state_primary(_ state: UIControl.State) -> UIColor {
             if state.contains(.disabled) {
                 return R.color.disabled
@@ -72,26 +92,6 @@ public enum R {
                 return R.color.disabled
             }
             return R.color.colorAccent
-            return UIColor.white
-        }
-        static func state_login_text(_ state: UIControl.State) -> UIColor {
-            if state.contains(.disabled) {
-                return R.color.disabled
-            }
-            return R.color.colorPrimary
-            return UIColor.white
-        }
-        static func state_accent_toggle(_ state: UIControl.State) -> UIColor {
-            if state.contains(.disabled) {
-                return R.color.disabled
-            }
-            if state.contains(.selected) {
-                return R.color.colorAccent
-            }
-            if state.contains(.selected) {
-                return R.color.colorAccent
-            }
-            return R.color.disabled
             return UIColor.white
         }
     }

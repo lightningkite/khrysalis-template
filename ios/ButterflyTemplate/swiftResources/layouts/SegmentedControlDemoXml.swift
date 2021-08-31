@@ -4,12 +4,17 @@
 //
 
 import UIKit
-import Butterfly
+import LKButterfly
 import MapKit
 
 public class SegmentedControlDemoXml {
     
     public unowned var xmlRoot: UIView!
+    private var _layoutTests: Array<()->Bool> = []
+    private func pickLayout(test: @escaping()->Bool) -> Bool {
+        _layoutTests.append(test)
+        return test()
+    }
     public func setup(dependency: ViewControllerAccess) -> UIView {
         let view = LinearLayout(frame: .zero)
         view.orientation = .y
@@ -19,7 +24,7 @@ public class SegmentedControlDemoXml {
         view.addSubview(
             UISegmentedControlSquare(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0),
+            size: CGSize(width: -1, height: -1),
             margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .topFill,
@@ -40,7 +45,7 @@ public class SegmentedControlDemoXml {
         view.addSubview(
             UISegmentedControlSquare(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0),
+            size: CGSize(width: -1, height: -1),
             margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .topFill,
@@ -61,10 +66,13 @@ public class SegmentedControlDemoXml {
         }
         
         xmlRoot = view
+        for test in _layoutTests { dependency.pickLayout(view: view, passOrFail: test) }
         return view
     }
     
-    public unowned var tabs: UISegmentedControlSquare!
-    public unowned var tabs2: UISegmentedControlSquare!
+    public var _tabs: UISegmentedControlSquare!
+    public var tabs: UISegmentedControlSquare { get { return _tabs } set(value){ _tabs = value } }
+    public var _tabs2: UISegmentedControlSquare!
+    public var tabs2: UISegmentedControlSquare { get { return _tabs2 } set(value){ _tabs2 = value } }
     
 }

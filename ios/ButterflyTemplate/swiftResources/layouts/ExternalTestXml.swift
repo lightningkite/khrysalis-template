@@ -4,12 +4,17 @@
 //
 
 import UIKit
-import Butterfly
+import LKButterfly
 import MapKit
 
 public class ExternalTestXml {
     
     public unowned var xmlRoot: UIView!
+    private var _layoutTests: Array<()->Bool> = []
+    private func pickLayout(test: @escaping()->Bool) -> Bool {
+        _layoutTests.append(test)
+        return test()
+    }
     public func setup(dependency: ViewControllerAccess) -> UIView {
         let view = ScrollViewVertical(frame: .zero)
         self.scrollView = view
@@ -21,7 +26,7 @@ public class ExternalTestXml {
             view.addSubview(
                 UIButtonWithLayer(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topLeft,
@@ -45,7 +50,7 @@ public class ExternalTestXml {
             view.addSubview(
                 UIButtonWithLayer(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topLeft,
@@ -69,7 +74,7 @@ public class ExternalTestXml {
             view.addSubview(
                 UIButtonWithLayer(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topLeft,
@@ -92,12 +97,17 @@ public class ExternalTestXml {
             
         }
         xmlRoot = view
+        for test in _layoutTests { dependency.pickLayout(view: view, passOrFail: test) }
         return view
     }
     
-    public unowned var scrollView: ScrollViewVertical!
-    public unowned var openMap: UIButtonWithLayer!
-    public unowned var openWeb: UIButtonWithLayer!
-    public unowned var openEvent: UIButtonWithLayer!
+    public var _scrollView: ScrollViewVertical!
+    public var scrollView: ScrollViewVertical { get { return _scrollView } set(value){ _scrollView = value } }
+    public var _openMap: UIButtonWithLayer!
+    public var openMap: UIButtonWithLayer { get { return _openMap } set(value){ _openMap = value } }
+    public var _openWeb: UIButtonWithLayer!
+    public var openWeb: UIButtonWithLayer { get { return _openWeb } set(value){ _openWeb = value } }
+    public var _openEvent: UIButtonWithLayer!
+    public var openEvent: UIButtonWithLayer { get { return _openEvent } set(value){ _openEvent = value } }
     
 }

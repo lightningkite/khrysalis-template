@@ -4,12 +4,17 @@
 //
 
 import UIKit
-import Butterfly
+import LKButterfly
 import MapKit
 
 public class MapDemoXml {
     
     public unowned var xmlRoot: UIView!
+    private var _layoutTests: Array<()->Bool> = []
+    private func pickLayout(test: @escaping()->Bool) -> Bool {
+        _layoutTests.append(test)
+        return test()
+    }
     public func setup(dependency: ViewControllerAccess) -> UIView {
         let view = LinearLayout(frame: .zero)
         view.orientation = .y
@@ -19,7 +24,7 @@ public class MapDemoXml {
         view.addSubview(
             MKMapView(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0.0),
+            size: CGSize(width: -1, height: 0.0),
             margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .topFill,
@@ -31,7 +36,7 @@ public class MapDemoXml {
         view.addSubview(
             ScrollViewVertical(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0.0),
+            size: CGSize(width: -1, height: 0.0),
             margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .topFill,
@@ -45,7 +50,7 @@ public class MapDemoXml {
                 view.addSubview(
                     UITextFieldPadded(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                     padding: UIEdgeInsets.zero,
                     gravity: .topFill,
@@ -53,6 +58,7 @@ public class MapDemoXml {
                 ) { view in 
                     self.select = view
                     view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+                    view.setBackgroundColor(.clear)
                     view.backgroundLayer = view.underlineLayer(boldColor: UIColor(argb: 0xFF222222), hintColor: nil)
                     view.font = UIFont.get(size: 16.0, style: [])
                     view.numberOfLines = 0
@@ -62,25 +68,30 @@ public class MapDemoXml {
                 view.addSubview(
                     UICollectionView(frame: .zero, collectionViewLayout: UICollectionView.ReversibleFlowLayout()),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 100.0),
+                    size: CGSize(width: -1, height: 100.0),
                     margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
-                    padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                    padding: UIEdgeInsets.zero,
                     gravity: .topFill,
                     weight: 0
                 ) { view in 
                     self.options = view
                     view.backgroundColor = UIColor.clear
+                    view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
                 }
                 
             }
         }
         
         xmlRoot = view
+        for test in _layoutTests { dependency.pickLayout(view: view, passOrFail: test) }
         return view
     }
     
-    public unowned var map: MKMapView!
-    public unowned var select: UITextFieldPadded!
-    public unowned var options: UICollectionView!
+    public var _map: MKMapView!
+    public var map: MKMapView { get { return _map } set(value){ _map = value } }
+    public var _select: UITextFieldPadded!
+    public var select: UITextFieldPadded { get { return _select } set(value){ _select = value } }
+    public var _options: UICollectionView!
+    public var options: UICollectionView { get { return _options } set(value){ _options = value } }
     
 }

@@ -59,9 +59,9 @@ repositories {
     mavenLocal()
 }
 
-val kotlin_version = "1.4.30"
+val kotlin_version = "1.5.30"
 dependencies {
-    implementation("com.lightningkite.butterfly:butterfly-android:0.1.1")
+    implementation("com.lightningkite.butterfly:butterfly-android:0.1.3")
     implementation("com.lightningkite.butterfly:butterfly-maps-android:0.1.1")
     implementation("com.lightningkite.butterfly:butterfly-bluetooth-android:0.1.1")
     testImplementation("junit:junit:4.12")
@@ -69,20 +69,6 @@ dependencies {
     androidTestImplementation("com.android.support.test.espresso:espresso-core:3.0.2")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version")
     implementation("org.jetbrains.kotlin:kotlin-reflect:$kotlin_version")
-    implementation("androidx.appcompat:appcompat:1.2.0")
-    implementation("com.google.android.material:material:1.2.1")
-    implementation("com.android.support.constraint:constraint-layout:2.0.1")
-    implementation("androidx.recyclerview:recyclerview:1.1.0")
-    implementation("com.fasterxml.jackson.core:jackson-core:2.9.10")
-    implementation("com.fasterxml.jackson.core:jackson-annotations:2.9.10")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.9.10.6")
-    implementation("com.squareup.okhttp3:okhttp:3.12.0")
-    implementation("de.hdodenhof:circleimageview:2.2.0")
-    implementation("br.com.simplepass:loading-button-android:1.14.0")
-    implementation("com.squareup.picasso:picasso:2.71828")
-    implementation("com.romandanylyk:pageindicatorview:1.0.3")
-    implementation("com.theartofdev.edmodo:android-image-cropper:2.7.0")
-    implementation("com.android.support:multidex:1.0.3")
 }
 
 

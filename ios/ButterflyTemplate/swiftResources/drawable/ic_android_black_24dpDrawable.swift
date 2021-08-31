@@ -1,6 +1,6 @@
 //Automatically created by Khrysalis
 import UIKit
-import Butterfly
+import LKButterfly
 
 extension R.drawable {
 
@@ -46,6 +46,7 @@ static let ic_android_black_24dp: Drawable = Drawable { (view: UIView?) -> CALay
         //v 10.0
         path.addLine(to: CGPoint(x: 6.0 * scaleX, y: 18.0 * scaleY))
         //z 
+        path.closeSubpath()
         //M 3.5, 8.0
         path.move(to: CGPoint(x: 3.5 * scaleX, y: 8.0 * scaleY))
         //C 2.67, 8.0, 2.0, 8.67, 2.0, 9.5
@@ -61,6 +62,7 @@ static let ic_android_black_24dp: Drawable = Drawable { (view: UIView?) -> CALay
         //C 5.0, 8.67, 4.33, 8.0, 3.5, 8.0
         path.addCurve(to: CGPoint(x: 3.5 * scaleX, y: 8.0 * scaleY), control1: CGPoint(x: 5.0 * scaleX, y: 8.67 * scaleY), control2: CGPoint(x: 4.33 * scaleX, y: 8.0 * scaleY))
         //z 
+        path.closeSubpath()
         //M 20.5, 8.0
         path.move(to: CGPoint(x: 20.5 * scaleX, y: 8.0 * scaleY))
         //c -0.83, 0.0, -1.5, 0.67, -1.5, 1.5
@@ -76,6 +78,7 @@ static let ic_android_black_24dp: Drawable = Drawable { (view: UIView?) -> CALay
         //c 0.0, -0.83, -0.67, -1.5, -1.5, -1.5
         path.addCurve(to: CGPoint(x: 20.5 * scaleX, y: 8.0 * scaleY), control1: CGPoint(x: 22.0 * scaleX, y: 8.67 * scaleY), control2: CGPoint(x: 21.33 * scaleX, y: 8.0 * scaleY))
         //z 
+        path.closeSubpath()
         //M 15.53, 2.16
         path.move(to: CGPoint(x: 15.53 * scaleX, y: 2.16 * scaleY))
         //l 1.3, -1.3
@@ -103,6 +106,7 @@ static let ic_android_black_24dp: Drawable = Drawable { (view: UIView?) -> CALay
         //c 0.0, -1.99, -0.97, -3.75, -2.47, -4.84
         path.addCurve(to: CGPoint(x: 15.53 * scaleX, y: 2.16 * scaleY), control1: CGPoint(x: 18.0 * scaleX, y: 5.01 * scaleY), control2: CGPoint(x: 17.03 * scaleX, y: 3.25 * scaleY))
         //z 
+        path.closeSubpath()
         //M 10.0, 5.0
         path.move(to: CGPoint(x: 10.0 * scaleX, y: 5.0 * scaleY))
         //L 9.0, 5.0
@@ -114,6 +118,7 @@ static let ic_android_black_24dp: Drawable = Drawable { (view: UIView?) -> CALay
         //v 1.0
         path.addLine(to: CGPoint(x: 10.0 * scaleX, y: 5.0 * scaleY))
         //z 
+        path.closeSubpath()
         //M 15.0, 5.0
         path.move(to: CGPoint(x: 15.0 * scaleX, y: 5.0 * scaleY))
         //h -1.0

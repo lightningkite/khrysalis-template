@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Butterfly
+import LKButterfly
 
 @UIApplicationMain
 class AppDelegate: ButterflyAppDelegate {
