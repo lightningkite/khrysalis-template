@@ -37,7 +37,7 @@ class ControlsDemoXml {
         spinner = view.findViewById<Spinner>(R.id.spinner)
         
         
-        
+        spinner.spinnerTextColor = 0xFF000000.asColor()
         return view
     }
 }

@@ -4,19 +4,24 @@
 //
 
 import UIKit
-import Butterfly
+import LKButterfly
 import MapKit
 
 public class ViewPagerDemoXml {
     
     public unowned var xmlRoot: UIView!
+    private var _layoutTests: Array<()->Bool> = []
+    private func pickLayout(test: @escaping()->Bool) -> Bool {
+        _layoutTests.append(test)
+        return test()
+    }
     public func setup(dependency: ViewControllerAccess) -> UIView {
         let view = FrameLayout(frame: .zero)
         view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         view.addSubview(
             UICollectionView(frame: .zero, collectionViewLayout: ViewPagerLayout()),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0),
+            size: CGSize(width: -1, height: -1),
             margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .fillFill
@@ -30,7 +35,7 @@ public class ViewPagerDemoXml {
         view.addSubview(
             UIPageControl(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0),
+            size: CGSize(width: -1, height: -1),
             margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .bottomCenter
@@ -43,10 +48,13 @@ public class ViewPagerDemoXml {
         }
         
         xmlRoot = view
+        for test in _layoutTests { dependency.pickLayout(view: view, passOrFail: test) }
         return view
     }
     
-    public unowned var viewPager: UICollectionView!
-    public unowned var viewPagerIndicator: UIPageControl!
+    public var _viewPager: UICollectionView!
+    public var viewPager: UICollectionView { get { return _viewPager } set(value){ _viewPager = value } }
+    public var _viewPagerIndicator: UIPageControl!
+    public var viewPagerIndicator: UIPageControl { get { return _viewPagerIndicator } set(value){ _viewPagerIndicator = value } }
     
 }

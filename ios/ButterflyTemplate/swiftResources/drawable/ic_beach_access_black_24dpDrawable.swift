@@ -1,6 +1,6 @@
 //Automatically created by Khrysalis
 import UIKit
-import Butterfly
+import LKButterfly
 
 extension R.drawable {
 
@@ -19,6 +19,7 @@ static let ic_beach_access_black_24dp: Drawable = Drawable { (view: UIView?) -> 
         //L 19.57, 21.0
         path.addLine(to: CGPoint(x: 19.57 * scaleX, y: 21.0 * scaleY))
         //z 
+        path.closeSubpath()
         //M 17.42, 8.83
         path.move(to: CGPoint(x: 17.42 * scaleX, y: 8.83 * scaleY))
         //l 2.86, -2.86
@@ -27,6 +28,7 @@ static let ic_beach_access_black_24dp: Drawable = Drawable { (view: UIView?) -> 
         path.addCurve(to: CGPoint(x: 5.98 * scaleX, y: 5.950000000000001 * scaleY), control1: CGPoint(x: 16.330000000000002 * scaleX, y: 2.0200000000000005 * scaleY), control2: CGPoint(x: 9.930000000000001 * scaleX, y: 2.0100000000000007 * scaleY))
         path.addCurve(to: CGPoint(x: 17.42 * scaleX, y: 8.830000000000002 * scaleY), control1: CGPoint(x: 9.91 * scaleX, y: 4.650000000000001 * scaleY), control2: CGPoint(x: 14.290000000000001 * scaleX, y: 5.700000000000001 * scaleY))
         //z 
+        path.closeSubpath()
         //M 5.95, 5.98
         path.move(to: CGPoint(x: 5.95 * scaleX, y: 5.98 * scaleY))
         //c -3.94, 3.95, -3.93, 10.35, 0.02, 14.3
@@ -36,6 +38,7 @@ static let ic_beach_access_black_24dp: Drawable = Drawable { (view: UIView?) -> 
         //C 5.7, 14.29, 4.65, 9.91, 5.95, 5.98
         path.addCurve(to: CGPoint(x: 5.95 * scaleX, y: 5.98 * scaleY), control1: CGPoint(x: 5.7 * scaleX, y: 14.29 * scaleY), control2: CGPoint(x: 4.65 * scaleX, y: 9.91 * scaleY))
         //z 
+        path.closeSubpath()
         //M 5.97, 5.96
         path.move(to: CGPoint(x: 5.97 * scaleX, y: 5.96 * scaleY))
         //l -0.01, 0.01

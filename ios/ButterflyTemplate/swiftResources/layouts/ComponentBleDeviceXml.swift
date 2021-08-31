@@ -4,12 +4,17 @@
 //
 
 import UIKit
-import Butterfly
+import LKButterfly
 import MapKit
 
 public class ComponentBleDeviceXml {
     
     public unowned var xmlRoot: UIView!
+    private var _layoutTests: Array<()->Bool> = []
+    private func pickLayout(test: @escaping()->Bool) -> Bool {
+        _layoutTests.append(test)
+        return test()
+    }
     public func setup(dependency: ViewControllerAccess) -> UIView {
         let view = LinearLayout(frame: .zero)
         view.orientation = .x
@@ -19,7 +24,7 @@ public class ComponentBleDeviceXml {
         view.addSubview(
             LinearLayout(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0),
+            size: CGSize(width: -1, height: -1),
             margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
             padding: UIEdgeInsets.zero,
             gravity: .centerCenter,
@@ -32,7 +37,7 @@ public class ComponentBleDeviceXml {
             view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
@@ -47,7 +52,7 @@ public class ComponentBleDeviceXml {
             view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
@@ -75,7 +80,7 @@ public class ComponentBleDeviceXml {
         view.addSubview(
             UILabel(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0),
+            size: CGSize(width: -1, height: -1),
             margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .centerCenter,
@@ -90,7 +95,7 @@ public class ComponentBleDeviceXml {
         view.addSubview(
             UIButtonWithLayer(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0),
+            size: CGSize(width: -1, height: -1),
             margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
             padding: UIEdgeInsets.zero,
             gravity: .centerCenter,
@@ -112,12 +117,17 @@ public class ComponentBleDeviceXml {
         }
         
         xmlRoot = view
+        for test in _layoutTests { dependency.pickLayout(view: view, passOrFail: test) }
         return view
     }
     
-    public unowned var deviceName: UILabel!
-    public unowned var deviceId: UILabel!
-    public unowned var rssi: UILabel!
-    public unowned var connect: UIButtonWithLayer!
+    public var _deviceName: UILabel!
+    public var deviceName: UILabel { get { return _deviceName } set(value){ _deviceName = value } }
+    public var _deviceId: UILabel!
+    public var deviceId: UILabel { get { return _deviceId } set(value){ _deviceId = value } }
+    public var _rssi: UILabel!
+    public var rssi: UILabel { get { return _rssi } set(value){ _rssi = value } }
+    public var _connect: UIButtonWithLayer!
+    public var connect: UIButtonWithLayer { get { return _connect } set(value){ _connect = value } }
     
 }

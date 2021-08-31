@@ -4,12 +4,17 @@
 //
 
 import UIKit
-import Butterfly
+import LKButterfly
 import MapKit
 
 public class LocationDemoXml {
     
     public unowned var xmlRoot: UIView!
+    private var _layoutTests: Array<()->Bool> = []
+    private func pickLayout(test: @escaping()->Bool) -> Bool {
+        _layoutTests.append(test)
+        return test()
+    }
     public func setup(dependency: ViewControllerAccess) -> UIView {
         let view = LinearLayout(frame: .zero)
         view.orientation = .y
@@ -19,7 +24,7 @@ public class LocationDemoXml {
         view.addSubview(
             UIButtonWithLayer(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0),
+            size: CGSize(width: -1, height: -1),
             margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
             padding: UIEdgeInsets.zero,
             gravity: .topFill,
@@ -43,7 +48,7 @@ public class LocationDemoXml {
         view.addSubview(
             UILabel(frame: .zero),
             minimumSize: CGSize(width: 0, height: 0),
-            size: CGSize(width: 0, height: 0),
+            size: CGSize(width: -1, height: -1),
             margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
             padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             gravity: .topFill,
@@ -57,10 +62,13 @@ public class LocationDemoXml {
         }
         
         xmlRoot = view
+        for test in _layoutTests { dependency.pickLayout(view: view, passOrFail: test) }
         return view
     }
     
-    public unowned var getLocation: UIButtonWithLayer!
-    public unowned var locationDisplay: UILabel!
+    public var _getLocation: UIButtonWithLayer!
+    public var getLocation: UIButtonWithLayer { get { return _getLocation } set(value){ _getLocation = value } }
+    public var _locationDisplay: UILabel!
+    public var locationDisplay: UILabel { get { return _locationDisplay } set(value){ _locationDisplay = value } }
     
 }

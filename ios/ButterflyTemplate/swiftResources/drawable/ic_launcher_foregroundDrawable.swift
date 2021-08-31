@@ -1,6 +1,6 @@
 //Automatically created by Khrysalis
 import UIKit
-import Butterfly
+import LKButterfly
 
 extension R.drawable {
 
@@ -71,6 +71,7 @@ static let ic_launcher_foreground: Drawable = Drawable { (view: UIView?) -> CALa
         //L 66.94, 46.02
         path.addLine(to: CGPoint(x: 66.94 * scaleX, y: 46.02 * scaleY))
         //Z 
+        path.closeSubpath()
         //M 62.94, 56.92
         path.move(to: CGPoint(x: 62.94 * scaleX, y: 56.92 * scaleY))
         //C 64.08, 56.92, 65.0, 56.01, 65.0, 54.88
@@ -82,6 +83,7 @@ static let ic_launcher_foreground: Drawable = Drawable { (view: UIView?) -> CALa
         //C 60.88, 56.01, 61.8, 56.92, 62.94, 56.92
         path.addCurve(to: CGPoint(x: 62.94 * scaleX, y: 56.92 * scaleY), control1: CGPoint(x: 60.88 * scaleX, y: 56.01 * scaleY), control2: CGPoint(x: 61.8 * scaleX, y: 56.92 * scaleY))
         //Z 
+        path.closeSubpath()
         //M 45.06, 56.92
         path.move(to: CGPoint(x: 45.06 * scaleX, y: 56.92 * scaleY))
         //C 46.2, 56.92, 47.13, 56.01, 47.13, 54.88

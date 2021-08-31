@@ -35,8 +35,8 @@ class MainXml {
         bottom0 = view.findViewById<View>(R.id.bottom0)
         
         
-        topBar.safeInsets(11)
         bottom0.safeInsetsSizing(14)
+        topBar.safeInsets(11)
         return view
     }
 }

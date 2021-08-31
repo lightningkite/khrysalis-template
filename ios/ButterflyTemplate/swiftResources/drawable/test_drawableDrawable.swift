@@ -1,6 +1,6 @@
 //Automatically created by Khrysalis
 import UIKit
-import Butterfly
+import LKButterfly
 
 extension R.drawable {
 
@@ -49,6 +49,7 @@ static let test_drawable: Drawable = Drawable { (view: UIView?) -> CALayer in
         //A 0.23, 0.23, 0.0, 0.0, 1.0, 24.489, 22.366
         path.arcTo(radius: CGSize(width: 0.23 * scaleX, height: 0.23 * scaleY), rotation: 0.0, largeArcFlag: false, sweepFlag: true, end: CGPoint(x: 24.489 * scaleX, y: 22.366 * scaleY))
         //Z 
+        path.closeSubpath()
         //M 20.126, 17.191
         path.move(to: CGPoint(x: 20.126 * scaleX, y: 17.191 * scaleY))
         //a 0.092, 0.092, 0.0, 0.0, 1.0, 0.067, 0.029

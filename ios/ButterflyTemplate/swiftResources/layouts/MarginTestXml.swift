@@ -4,12 +4,17 @@
 //
 
 import UIKit
-import Butterfly
+import LKButterfly
 import MapKit
 
 public class MarginTestXml {
     
     public unowned var xmlRoot: UIView!
+    private var _layoutTests: Array<()->Bool> = []
+    private func pickLayout(test: @escaping()->Bool) -> Bool {
+        _layoutTests.append(test)
+        return test()
+    }
     public func setup(dependency: ViewControllerAccess) -> UIView {
         let view = ScrollViewVertical(frame: .zero)
         self.scrollView = view
@@ -21,7 +26,7 @@ public class MarginTestXml {
             view.addSubview(
                 FrameLayout(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 200.0),
+                size: CGSize(width: -1, height: 200.0),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -31,7 +36,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                     gravity: .topLeft
@@ -45,7 +50,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                     gravity: .bottomLeft
@@ -59,7 +64,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                     gravity: .centerLeft
@@ -73,7 +78,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                     gravity: .topCenter
@@ -87,7 +92,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                     gravity: .bottomCenter
@@ -101,7 +106,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                     gravity: .centerCenter
@@ -115,7 +120,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                     gravity: .topRight
@@ -129,7 +134,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                     gravity: .bottomRight
@@ -143,7 +148,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                     gravity: .centerRight
@@ -159,7 +164,7 @@ public class MarginTestXml {
             view.addSubview(
                 FrameLayout(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 200.0),
+                size: CGSize(width: -1, height: 200.0),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -169,7 +174,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                     gravity: .topFill
@@ -183,7 +188,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                     gravity: .bottomFill
@@ -197,7 +202,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                     gravity: .centerFill
@@ -213,7 +218,7 @@ public class MarginTestXml {
             view.addSubview(
                 FrameLayout(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 200.0),
+                size: CGSize(width: -1, height: 200.0),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -223,7 +228,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                     gravity: .fillLeft
@@ -237,7 +242,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                     gravity: .fillRight
@@ -251,7 +256,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                     gravity: .fillCenter
@@ -267,7 +272,7 @@ public class MarginTestXml {
             view.addSubview(
                 FrameLayout(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 200.0),
+                size: CGSize(width: -1, height: 200.0),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -277,7 +282,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                     gravity: .fillFill
@@ -293,7 +298,7 @@ public class MarginTestXml {
             view.addSubview(
                 LinearLayout(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 200.0),
+                size: CGSize(width: -1, height: 200.0),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -306,7 +311,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                     gravity: .fillLeft,
@@ -321,7 +326,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                     gravity: .fillLeft,
@@ -336,7 +341,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                     gravity: .fillLeft,
@@ -351,7 +356,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UILabel(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                     gravity: .fillLeft,
@@ -368,7 +373,7 @@ public class MarginTestXml {
             view.addSubview(
                 FrameLayout(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 200.0),
+                size: CGSize(width: -1, height: 200.0),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -378,7 +383,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UIButtonWithLayer(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets.zero,
                     gravity: .topLeft
@@ -400,7 +405,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UIButtonWithLayer(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets.zero,
                     gravity: .bottomLeft
@@ -422,7 +427,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UIButtonWithLayer(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets.zero,
                     gravity: .centerLeft
@@ -444,7 +449,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UIButtonWithLayer(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets.zero,
                     gravity: .topCenter
@@ -466,7 +471,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UIButtonWithLayer(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets.zero,
                     gravity: .bottomCenter
@@ -488,7 +493,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UIButtonWithLayer(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets.zero,
                     gravity: .centerCenter
@@ -510,7 +515,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UIButtonWithLayer(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets.zero,
                     gravity: .topRight
@@ -532,7 +537,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UIButtonWithLayer(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets.zero,
                     gravity: .bottomRight
@@ -554,7 +559,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UIButtonWithLayer(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets.zero,
                     gravity: .centerRight
@@ -578,7 +583,7 @@ public class MarginTestXml {
             view.addSubview(
                 FrameLayout(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 200.0),
+                size: CGSize(width: -1, height: 200.0),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -588,7 +593,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UIButtonWithLayer(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets.zero,
                     gravity: .topFill
@@ -610,7 +615,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UIButtonWithLayer(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets.zero,
                     gravity: .bottomFill
@@ -632,7 +637,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UIButtonWithLayer(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets.zero,
                     gravity: .centerFill
@@ -656,7 +661,7 @@ public class MarginTestXml {
             view.addSubview(
                 FrameLayout(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 200.0),
+                size: CGSize(width: -1, height: 200.0),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -666,7 +671,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UIButtonWithLayer(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets.zero,
                     gravity: .fillLeft
@@ -688,7 +693,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UIButtonWithLayer(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets.zero,
                     gravity: .fillRight
@@ -710,7 +715,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UIButtonWithLayer(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets.zero,
                     gravity: .fillCenter
@@ -734,7 +739,7 @@ public class MarginTestXml {
             view.addSubview(
                 FrameLayout(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 200.0),
+                size: CGSize(width: -1, height: 200.0),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -744,7 +749,7 @@ public class MarginTestXml {
                 view.addSubview(
                     UIButtonWithLayer(frame: .zero),
                     minimumSize: CGSize(width: 0, height: 0),
-                    size: CGSize(width: 0, height: 0),
+                    size: CGSize(width: -1, height: -1),
                     margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                     padding: UIEdgeInsets.zero,
                     gravity: .fillFill
@@ -768,7 +773,7 @@ public class MarginTestXml {
             view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                 gravity: .topLeft,
@@ -783,7 +788,7 @@ public class MarginTestXml {
             view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                 gravity: .centerCenter,
@@ -798,7 +803,7 @@ public class MarginTestXml {
             view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                 gravity: .topRight,
@@ -813,7 +818,7 @@ public class MarginTestXml {
             view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0),
                 gravity: .topFill,
@@ -828,7 +833,7 @@ public class MarginTestXml {
             view.addSubview(
                 UIButtonWithLayer(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topLeft,
@@ -852,7 +857,7 @@ public class MarginTestXml {
             view.addSubview(
                 UIButtonWithLayer(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets.zero,
                 gravity: .centerCenter,
@@ -875,7 +880,7 @@ public class MarginTestXml {
             view.addSubview(
                 UIButtonWithLayer(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topRight,
@@ -898,7 +903,7 @@ public class MarginTestXml {
             view.addSubview(
                 UIButtonWithLayer(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -921,7 +926,7 @@ public class MarginTestXml {
             view.addSubview(
                 UITextFieldPadded(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -930,6 +935,7 @@ public class MarginTestXml {
                 self.focusTest = view
                 view.focusAtStartup = false
                 view.padding = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
+                view.setBackgroundColor(.clear)
                 view.backgroundLayer = view.underlineLayer(boldColor: UIColor(argb: 0xFF222222), hintColor: nil)
                 view.font = UIFont.get(size: 16.0, style: [])
                 view.numberOfLines = 0
@@ -939,7 +945,7 @@ public class MarginTestXml {
             view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 32.0, left: 32.0, bottom: 32.0, right: 32.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topLeft,
@@ -954,7 +960,7 @@ public class MarginTestXml {
             view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 padding: UIEdgeInsets(top: 32.0, left: 32.0, bottom: 32.0, right: 32.0),
                 gravity: .topLeft,
@@ -968,11 +974,15 @@ public class MarginTestXml {
             
         }
         xmlRoot = view
+        for test in _layoutTests { dependency.pickLayout(view: view, passOrFail: test) }
         return view
     }
     
-    public unowned var scrollView: ScrollViewVertical!
-    public unowned var scrollToTop: UIButtonWithLayer!
-    public unowned var focusTest: UITextFieldPadded!
+    public var _scrollView: ScrollViewVertical!
+    public var scrollView: ScrollViewVertical { get { return _scrollView } set(value){ _scrollView = value } }
+    public var _scrollToTop: UIButtonWithLayer!
+    public var scrollToTop: UIButtonWithLayer { get { return _scrollToTop } set(value){ _scrollToTop = value } }
+    public var _focusTest: UITextFieldPadded!
+    public var focusTest: UITextFieldPadded { get { return _focusTest } set(value){ _focusTest = value } }
     
 }

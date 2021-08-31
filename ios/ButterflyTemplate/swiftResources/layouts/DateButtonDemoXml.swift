@@ -4,12 +4,17 @@
 //
 
 import UIKit
-import Butterfly
+import LKButterfly
 import MapKit
 
 public class DateButtonDemoXml {
     
     public unowned var xmlRoot: UIView!
+    private var _layoutTests: Array<()->Bool> = []
+    private func pickLayout(test: @escaping()->Bool) -> Bool {
+        _layoutTests.append(test)
+        return test()
+    }
     public func setup(dependency: ViewControllerAccess) -> UIView {
         let view = ScrollViewVertical(frame: .zero)
         view.addSubview(LinearLayout(frame: .zero)) { view in 
@@ -20,7 +25,7 @@ public class DateButtonDemoXml {
             view.addSubview(
                 UILabel(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 gravity: .topFill,
@@ -35,7 +40,7 @@ public class DateButtonDemoXml {
             view.addSubview(
                 DateButton(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -57,7 +62,7 @@ public class DateButtonDemoXml {
             view.addSubview(
                 TimeButton(frame: .zero),
                 minimumSize: CGSize(width: 0, height: 0),
-                size: CGSize(width: 0, height: 0),
+                size: CGSize(width: -1, height: -1),
                 margin: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                 padding: UIEdgeInsets.zero,
                 gravity: .topFill,
@@ -78,11 +83,15 @@ public class DateButtonDemoXml {
             
         }
         xmlRoot = view
+        for test in _layoutTests { dependency.pickLayout(view: view, passOrFail: test) }
         return view
     }
     
-    public unowned var text: UILabel!
-    public unowned var dateButton: DateButton!
-    public unowned var timeButton: TimeButton!
+    public var _text: UILabel!
+    public var text: UILabel { get { return _text } set(value){ _text = value } }
+    public var _dateButton: DateButton!
+    public var dateButton: DateButton { get { return _dateButton } set(value){ _dateButton = value } }
+    public var _timeButton: TimeButton!
+    public var timeButton: TimeButton { get { return _timeButton } set(value){ _timeButton = value } }
     
 }

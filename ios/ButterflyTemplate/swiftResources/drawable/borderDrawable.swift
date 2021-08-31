@@ -1,6 +1,6 @@
 //Automatically created by Khrysalis
 import UIKit
-import Butterfly
+import LKButterfly
 
 extension R.drawable {
 
