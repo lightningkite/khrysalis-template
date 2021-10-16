@@ -16,7 +16,7 @@
             android:orientation="horizontal"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
-            app:systemEdges="center_horizontal|top"
+            app:safeInsets="center_horizontal|top"
             android:gravity="center">
 
         <ImageButton
@@ -47,7 +47,7 @@
 
     <View
             android:id="@+id/bottom0"
-            app:systemEdgesSizing="center_horizontal|bottom"
+            app:safeInsetsSizing="center_horizontal|bottom"
             android:layout_width="match_parent"
             android:background="@color/colorPrimary"
             android:layout_height="0dp"/>
