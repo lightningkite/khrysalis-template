@@ -2,7 +2,9 @@
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_height="match_parent"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
         android:background="#0F0">
 
@@ -14,7 +16,7 @@
             android:orientation="horizontal"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
-            tools:systemEdges="center_horizontal|top"
+            app:systemEdges="center_horizontal|top"
             android:gravity="center">
 
         <ImageButton
@@ -36,7 +38,7 @@
 
     </LinearLayout>
 
-    <com.lightningkite.butterfly.views.widget.SwapView
+    <com.lightningkite.rx.viewgenerators.SwapView
             android:id="@+id/mainContent"
             android:background="#FFF"
             android:layout_width="match_parent"
@@ -45,7 +47,7 @@
 
     <View
             android:id="@+id/bottom0"
-            tools:systemEdgesSizing="center_horizontal|bottom"
+            app:systemEdgesSizing="center_horizontal|bottom"
             android:layout_width="match_parent"
             android:background="@color/colorPrimary"
             android:layout_height="0dp"/>

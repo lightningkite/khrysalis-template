@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"/>
 
-        <com.lightningkite.butterfly.views.widget.HorizontalProgressBar
+        <ProgressBar
                 android:id="@+id/progress"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:indeterminate="false"
@@ -34,29 +34,29 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"/>
 
-        <com.lightningkite.butterfly.views.widget.ColorRatingBar
+        <RatingBar
                 android:id="@+id/rating"
                 style="?android:attr/ratingBarStyle"
-                app:empty_color="#F888"
-                app:progress_color="#FF0"
+                android:progressBackgroundTint="#F888"
+                android:progressTint="#FF0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"/>
 
-        <com.lightningkite.butterfly.views.widget.ColorRatingBar
+        <RatingBar
                 android:id="@+id/ratingDisplayStars"
                 style="?android:attr/ratingBarStyleIndicator"
-                app:empty_color="#F888"
-                app:progress_color="#FF0"
+                android:progressBackgroundTint="#F888"
+                android:progressTint="#FF0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"/>
 
-        <com.lightningkite.butterfly.views.widget.ColorRatingBar
+        <RatingBar
                 android:id="@+id/ratingDisplayStarsSmall"
                 style="?android:attr/ratingBarStyleSmall"
-                app:empty_color="#F888"
-                app:progress_color="#FF0"
+                android:progressBackgroundTint="#F888"
+                android:progressTint="#FF0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"/>
@@ -68,29 +68,29 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"/>
 
-        <com.lightningkite.butterfly.views.widget.ColorRatingBar
+        <RatingBar
                 android:id="@+id/ratingFloat"
                 style="?android:attr/ratingBarStyle"
-                app:empty_color="#F888"
-                app:progress_color="#FF0"
+                android:progressBackgroundTint="#F888"
+                android:progressTint="#FF0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"/>
 
-        <com.lightningkite.butterfly.views.widget.ColorRatingBar
+        <RatingBar
                 android:id="@+id/ratingDisplayStarsFloat"
                 style="?android:attr/ratingBarStyleIndicator"
-                app:empty_color="#F888"
-                app:progress_color="#FF0"
+                android:progressBackgroundTint="#F888"
+                android:progressTint="#FF0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"/>
 
-        <com.lightningkite.butterfly.views.widget.ColorRatingBar
+        <RatingBar
                 android:id="@+id/ratingDisplayStarsSmallFloat"
                 style="?android:attr/ratingBarStyleSmall"
-                app:empty_color="#F888"
-                app:progress_color="#FF0"
+                android:progressBackgroundTint="#F888"
+                android:progressTint="#FF0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"/>

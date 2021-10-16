@@ -1,12 +1,16 @@
 package com.lightningkite.butterflytemplate
 
 import android.os.Bundle
-import com.lightningkite.butterfly.android.ButterflyActivity
-import com.lightningkite.butterfly.views.ViewGenerator
+import com.lightningkite.rx.viewgenerators.*
+import com.lightningkite.rx.android.resources.*
 import com.lightningkite.butterflytemplate.vg.MainVG
+import com.lightningkite.rx.android.staticApplicationContext
+import com.lightningkite.rx.okhttp.HttpClient
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.schedulers.Schedulers
 
 
-class MainActivity : ButterflyActivity() {
+class MainActivity : ViewGeneratorActivity() {
     companion object {
         val viewData: ViewGenerator by lazy { MainVG() }
     }
@@ -15,7 +19,9 @@ class MainActivity : ButterflyActivity() {
         get() = viewData
 
     override fun onCreate(savedInstanceState: Bundle?) {
-//        window.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS or WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        staticApplicationContext = applicationContext
+        HttpClient.ioScheduler = Schedulers.io()
+        HttpClient.responseScheduler = AndroidSchedulers.mainThread()
         super.onCreate(savedInstanceState)
     }
 }

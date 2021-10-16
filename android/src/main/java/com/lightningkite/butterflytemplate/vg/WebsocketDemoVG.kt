@@ -9,80 +9,78 @@ package com.lightningkite.butterflytemplate.vg
 //--- Imports
 
 import android.view.View
-import com.lightningkite.butterfly.android.ActivityAccess
-import com.lightningkite.butterfly.net.ConnectedWebSocket
-import com.lightningkite.butterfly.net.HttpClient
-import com.lightningkite.butterfly.net.WebSocketFrame
-import com.lightningkite.butterfly.observables.ConstantObservableProperty
-import com.lightningkite.butterfly.observables.StandardObservableProperty
-import com.lightningkite.butterfly.observables.asObservableProperty
-import com.lightningkite.butterfly.observables.binding.bind
-import com.lightningkite.butterfly.observables.binding.bindString
-import com.lightningkite.butterfly.rx.removed
-import com.lightningkite.butterfly.rx.until
-import com.lightningkite.butterfly.views.ViewGenerator
-import com.lightningkite.butterfly.views.onClick
-import com.lightningkite.butterflytemplate.layouts.ComponentTextXml
-import com.lightningkite.butterflytemplate.layouts.WebsocketDemoXml
-import io.reactivex.Observable
+import android.widget.TextView
+import com.lightningkite.rx.viewgenerators.ActivityAccess
+import com.lightningkite.rx.okhttp.ConnectedWebSocket
+import com.lightningkite.rx.okhttp.HttpClient
+import com.lightningkite.rx.okhttp.WebSocketFrame
+import com.lightningkite.rx.ValueSubject
+import io.reactivex.rxjava3.kotlin.addTo
+import com.lightningkite.rx.viewgenerators.*
+import com.lightningkite.rx.android.resources.*
+import com.lightningkite.butterflytemplate.databinding.ComponentTextBinding
+import com.lightningkite.butterflytemplate.databinding.WebsocketDemoBinding
+import com.lightningkite.rx.android.*
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.subjects.Subject
 
 //--- Name (overwritten on flow generation)
 @Suppress("NAME_SHADOWING")
 class WebsocketDemoVG(
     //--- Dependencies (overwritten on flow generation)
     //--- Extends (overwritten on flow generation)
-) : ViewGenerator() {
-    
-    
+) : ViewGenerator {
+
+
     //--- Title (overwritten on flow generation)
-    override val title: String get() = "Websocket Demo"
-    
+    override val titleString: ViewString get() = ViewStringRaw("Websocket Demo")
+
     //--- Data
     val socket: Observable<ConnectedWebSocket> = HttpClient.webSocket("wss://echo.websocket.org").replay(1).refCount()
-    val text: StandardObservableProperty<String> = StandardObservableProperty("")
+    val text: ValueSubject<String> = ValueSubject("")
 
     //--- Generate Start (overwritten on flow generation)
     override fun generate(dependency: ActivityAccess): View {
-        val xml = WebsocketDemoXml()
-        val view = xml.setup(dependency)
-        
+        val xml = WebsocketDemoBinding.inflate(dependency.layoutInflater)
+        val view = xml.root
+
         //--- Set Up xml.items
         val itemsList = ArrayList<WebSocketFrame>()
-        xml.items.bind(
-            data = socket.switchMap { it -> it.read }.map { it ->
-                println("Adding item")
-                itemsList.add(it)
-                while (itemsList.size > 20) {
-                    itemsList.removeAt(0)
-                }
-                return@map itemsList as List<WebSocketFrame>
-            }.asObservableProperty(itemsList),
-            defaultValue = WebSocketFrame(),
-            makeView = label@{ observable ->
-                //--- Make Subview For xml.items (overwritten on flow generation)
-                val cellXml = ComponentTextXml()
-                val cellView = cellXml.setup(dependency)
-                
-                //--- Set Up cellXml.label (overwritten on flow generation)
-                cellXml.label.bindString(ConstantObservableProperty("Some Text"))
-                //--- End Make Subview For xml.items (overwritten on flow generation)
-                return@label cellView
+        WebSocketFrame()
+        socket.switchMap { it -> it.read }.map { it ->
+            println("Adding item")
+            itemsList.add(it)
+            while (itemsList.size > 20) {
+                itemsList.removeAt(0)
             }
+            return@map itemsList as List<WebSocketFrame>
+        }.startWithItem(itemsList).retry().showIn(xml.items, makeView = label@{ observable ->
+            //--- Make Subview For xml.items (overwritten on flow generation)
+            val cellXml = ComponentTextBinding.inflate(dependency.layoutInflater)
+            val cellView = cellXml.root
+
+            //--- Set Up cellXml.label (overwritten on flow generation)
+            Observable.just("Some Text")
+                .subscribeAutoDispose<Observable<String>, TextView, String>(cellXml.label, TextView::setText)
+            //--- End Make Subview For xml.items (overwritten on flow generation)
+            return@label cellView
+        }
         )
-        
+
         //--- Set Up xml.input
-        xml.input.bindString(text)
+        text.bind<Subject<String>>(xml.input)
 
         //--- Set Up xml.submit
         xml.submit.onClick {
-            this.socket.take(1).subscribe { it -> it.onNext(WebSocketFrame(text = this.text.value)) }.until(xml.submit.removed)
+            this.socket.take(1).subscribe { it -> it.onNext(WebSocketFrame(text = this.text.value)) }
+                .addTo(xml.submit.removed)
         }
 
         //--- Generate End (overwritten on flow generation)
-        
+
         return view
     }
-    
+
     //--- Init
 
     init {
@@ -95,6 +93,6 @@ class WebsocketDemoVG(
     //--- Action submitClick (overwritten on flow generation)
     fun submitClick() {
     }
-    
+
     //--- Body End
 }

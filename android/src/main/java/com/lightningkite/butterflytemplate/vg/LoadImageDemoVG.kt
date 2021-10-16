@@ -2,73 +2,85 @@
 package com.lightningkite.butterflytemplate.vg
 
 import android.view.View
-import com.lightningkite.butterfly.Image
-import com.lightningkite.butterfly.ImageReference
-import com.lightningkite.butterfly.ImageRemoteUrl
-import com.lightningkite.butterfly.android.ActivityAccess
-import com.lightningkite.butterfly.net.toHttpBody
-import com.lightningkite.butterfly.observables.StandardObservableProperty
-import com.lightningkite.butterfly.observables.binding.bindImage
-import com.lightningkite.butterfly.observables.binding.bindString
-import com.lightningkite.butterfly.observables.map
-import com.lightningkite.butterfly.observables.subscribeBy
-import com.lightningkite.butterfly.rx.removed
-import com.lightningkite.butterfly.rx.until
-import com.lightningkite.butterfly.views.*
-import com.lightningkite.butterflytemplate.layouts.LoadImageDemoXml
-import io.reactivex.rxkotlin.subscribeBy
+import android.widget.ImageView
+import android.widget.TextView
+import com.lightningkite.rx.android.resources.Image
+import com.lightningkite.rx.android.resources.ImageReference
+import com.lightningkite.rx.android.resources.ImageRemoteUrl
+import com.lightningkite.rx.viewgenerators.ActivityAccess
+import com.lightningkite.rx.okhttp.toHttpBody
+import com.lightningkite.rx.ValueSubject
+import com.lightningkite.rx.android.bindImage
+import com.lightningkite.rx.android.bindString
 
-class LoadImageDemoVG : ViewGenerator() {
-    override val title: String get() = "Load Image Demo"
+import io.reactivex.rxjava3.kotlin.subscribeBy
+import com.lightningkite.rx.android.removed
+import io.reactivex.rxjava3.kotlin.addTo
+import com.lightningkite.rx.viewgenerators.*
+import com.lightningkite.rx.android.*
+import com.lightningkite.rx.android.resources.*
+import com.lightningkite.butterflytemplate.databinding.LoadImageDemoBinding
+import com.lightningkite.rx.kotlin
+import com.lightningkite.rx.mapFromNullable
+import com.lightningkite.rx.okhttp.toRequestBody
+import com.lightningkite.rx.optional
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.kotlin.subscribeBy
+import java.util.*
 
-    val canUpload = StandardObservableProperty<Boolean?>(null)
-    val currentImage = StandardObservableProperty<Image?>(null)
+class LoadImageDemoVG : ViewGenerator {
+    override val titleString: ViewString get() = ViewStringRaw("Load Image Demo")
+
+    val canUpload = ValueSubject<Optional<Boolean>>(Optional.empty())
+    val currentImage = ValueSubject<Optional<Image>>(Optional.empty())
 
     override fun generate(dependency: ActivityAccess): View {
-        val xml = LoadImageDemoXml()
-        val view = xml.setup(dependency)
+        val xml = LoadImageDemoBinding.inflate(dependency.layoutInflater)
+        val view = xml.root
 
         currentImage.subscribeBy {
-            canUpload.value = null
-        }.until(view.removed)
+            canUpload.value = Optional.empty()
+        }.addTo(view.removed)
 
-        xml.image.bindImage(currentImage)
+        currentImage.subscribeAutoDispose<Observable<Optional<Image>>, ImageView, Optional<Image>>(xml.image) { xml.image.setImage(
+            it.kotlin
+        ) }
         xml.camera.onClick {
-            dependency.requestImageCamera { url ->
-                currentImage.value = ImageReference(url)
+            dependency.requestImageCamera().subscribeBy { url ->
+                currentImage.value = ImageReference(url).optional
             }
         }
         xml.galleryMultiple.onClick {
-            dependency.requestImagesGallery { urls ->
+            dependency.requestImagesGallery().subscribeBy { urls ->
                 urls.firstOrNull()?.let { url ->
-                    currentImage.value = ImageReference(url)
+                    currentImage.value = ImageReference(url).optional
                 }
             }
         }
         xml.gallery.onClick {
-            dependency.requestImageGallery { url ->
-                currentImage.value = ImageReference(url)
+            dependency.requestImageGallery().subscribeBy { url ->
+                currentImage.value = ImageReference(url).optional
             }
         }
         xml.loremPixel.onClick {
-            currentImage.value = ImageRemoteUrl("https://picsum.photos/200")
+            currentImage.value = ImageRemoteUrl("https://picsum.photos/200").optional
         }
         xml.checkCanUpload.onClick {
-            currentImage.value?.let { i ->
-                i.toHttpBody().subscribeBy(
-                        onError = {
-                            it.printStackTrace()
-                            canUpload.value = false
-                        },
-                        onSuccess = {
-                            canUpload.value = true
-                        }
+            currentImage.value.kotlin?.let { i ->
+                i.toRequestBody().subscribeBy(
+                    onError = {
+                        it.printStackTrace()
+                        canUpload.value = false.optional
+                    },
+                    onSuccess = {
+                        canUpload.value = true.optional
+                    }
                 )
             }
         }
-        xml.canUpload.bindString(canUpload.map {
-            if(it == null) "Not checked" else if(it == true) "Good to go!" else "FAILED!!!"
-        })
+        canUpload.mapFromNullable {
+            if (it == null) "Not checked" else if (it == true) "Good to go!" else "FAILED!!!"
+        }.subscribeAutoDispose(xml.canUpload, TextView::setText)
         return view
     }
 }

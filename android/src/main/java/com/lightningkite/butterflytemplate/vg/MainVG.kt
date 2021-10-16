@@ -2,37 +2,41 @@
 package com.lightningkite.butterflytemplate.vg
 
 import android.view.View
-import com.lightningkite.butterfly.android.ActivityAccess
-import com.lightningkite.butterfly.observables.ObservableProperty
-import com.lightningkite.butterfly.observables.ObservableStack
-import com.lightningkite.butterfly.observables.binding.bindStack
-import com.lightningkite.butterfly.observables.binding.bindString
-import com.lightningkite.butterfly.observables.binding.bindVisible
-import com.lightningkite.butterfly.observables.map
-import com.lightningkite.butterfly.views.EntryPoint
-import com.lightningkite.butterfly.views.ViewGenerator
-import com.lightningkite.butterfly.views.onClick
-import com.lightningkite.butterflytemplate.layouts.MainXml
+import android.widget.TextView
+import com.lightningkite.rx.viewgenerators.ActivityAccess
+import io.reactivex.rxjava3.core.Observable
+import com.lightningkite.rx.viewgenerators.StackSubject
+import com.lightningkite.rx.ValueSubject
+import com.lightningkite.rx.android.bindString
+import com.lightningkite.rx.android.visible
 
-class MainVG : ViewGenerator(), EntryPoint {
-    override val title: String get() = "Main"
+import com.lightningkite.rx.viewgenerators.EntryPoint
+import com.lightningkite.rx.viewgenerators.*
+import com.lightningkite.rx.android.resources.*
+import com.lightningkite.rx.android.onClick
+import com.lightningkite.butterflytemplate.databinding.MainBinding
+import com.lightningkite.rx.android.subscribeAutoDispose
 
-    val stack: ObservableStack<ViewGenerator> = ObservableStack<ViewGenerator>()
-    override val mainStack: ObservableStack<ViewGenerator>?
+class MainVG : ViewGenerator, EntryPoint {
+    override val titleString: ViewString get() = ViewStringRaw("Main")
+
+    val stack: StackSubject<ViewGenerator> = ValueSubject(listOf<ViewGenerator>())
+    override val mainStack: StackSubject<ViewGenerator>?
         get() = stack
-    val shouldBackBeShown: ObservableProperty<Boolean> = stack.map { it -> it.size > 1 }
+    val shouldBackBeShown: Observable<Boolean> = stack.map { it -> it.size > 1 }
 
     init {
         stack.push(SelectDemoVG(stack))
     }
 
     override fun generate(dependency: ActivityAccess): View {
-        val xml = MainXml()
-        val view = xml.setup(dependency)
+        val xml = MainBinding.inflate(dependency.layoutInflater)
+        val view = xml.root
 
-        xml.mainContent.bindStack(dependency, stack)
-        xml.title.bindString(stack.map { it -> it.lastOrNull()?.title ?: "" })
-        xml.mainBack.bindVisible(shouldBackBeShown)
+        stack.showIn(xml.mainContent, dependency)
+        stack.map { it -> it.lastOrNull()?.titleString?.get(dependency.context) ?: "" }
+            .subscribeAutoDispose<Observable<String>, TextView, String>(xml.title, TextView::setText)
+        shouldBackBeShown.subscribeAutoDispose(xml.mainBack, View::visible)
         xml.mainBack.onClick { this.stack.pop() }
 
         return view

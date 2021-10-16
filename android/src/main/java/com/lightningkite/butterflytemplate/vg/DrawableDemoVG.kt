@@ -2,16 +2,17 @@
 package com.lightningkite.butterflytemplate.vg
 
 import android.view.View
-import com.lightningkite.butterfly.android.ActivityAccess
-import com.lightningkite.butterfly.views.ViewGenerator
-import com.lightningkite.butterflytemplate.layouts.DrawableDemoXml
+import com.lightningkite.rx.viewgenerators.ActivityAccess
+import com.lightningkite.rx.viewgenerators.*
+import com.lightningkite.rx.android.resources.*
+import com.lightningkite.butterflytemplate.databinding.DrawableDemoBinding
 
-class DrawableDemoVG() : ViewGenerator() {
-    override val title: String get() = "Drawable Demo"
+class DrawableDemoVG() : ViewGenerator {
+    override val titleString: ViewString get() = ViewStringRaw("Drawable Demo")
 
     override fun generate(dependency: ActivityAccess): View {
-        val xml = DrawableDemoXml()
-        val view = xml.setup(dependency)
+        val xml = DrawableDemoBinding.inflate(dependency.layoutInflater)
+        val view = xml.root
 
         return view
     }

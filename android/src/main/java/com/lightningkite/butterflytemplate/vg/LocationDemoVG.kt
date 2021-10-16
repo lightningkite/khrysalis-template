@@ -1,43 +1,46 @@
 //! This file will translate using Khrysalis.
 package com.lightningkite.butterflytemplate.vg
 
+import android.location.Location
 import android.view.View
-import com.lightningkite.butterfly.android.ActivityAccess
-import com.lightningkite.butterfly.location.LocationResult
-import com.lightningkite.butterfly.location.requestLocation
-import com.lightningkite.butterfly.observables.MutableObservableProperty
-import com.lightningkite.butterfly.observables.StandardObservableProperty
-import com.lightningkite.butterfly.observables.binding.bindString
-import com.lightningkite.butterfly.observables.map
-import com.lightningkite.butterfly.observables.transformed
-import com.lightningkite.butterfly.views.ViewGenerator
-import com.lightningkite.butterfly.views.onClick
-import com.lightningkite.butterflytemplate.layouts.LocationDemoXml
+import android.widget.TextView
+import com.lightningkite.rx.viewgenerators.ActivityAccess
+import io.reactivex.rxjava3.subjects.Subject
+import com.lightningkite.rx.ValueSubject
+import com.lightningkite.rx.android.bindString
 
-class LocationDemoVG : ViewGenerator() {
-    override val title: String get() = "Location Demo"
+import com.lightningkite.rx.viewgenerators.*
+import com.lightningkite.rx.android.resources.*
+import com.lightningkite.rx.android.onClick
+import com.lightningkite.butterflytemplate.databinding.LocationDemoBinding
+import com.lightningkite.rx.android.subscribeAutoDispose
+import com.lightningkite.rx.mapFromNullable
+import com.lightningkite.rx.optional
+import io.reactivex.rxjava3.core.Observable
+import java.util.*
 
-    val locationInfo: MutableObservableProperty<LocationResult?> = StandardObservableProperty<LocationResult?>(null)
+class LocationDemoVG : ViewGenerator {
+    override val titleString: ViewString get() = ViewStringRaw("Location Demo")
+
+    val locationInfo = ValueSubject<Optional<Location>>(Optional.empty())
 
     override fun generate(dependency: ActivityAccess): View {
-        val xml = LocationDemoXml()
-        val view = xml.setup(dependency)
+        val xml = LocationDemoBinding.inflate(dependency.layoutInflater)
+        val view = xml.root
         xml.getLocation.onClick {
             dependency.requestLocation(
-                accuracyBetterThanMeters = 100.0,
-                timeoutInSeconds = 5.0
-            ) { location, message ->
-                println(message)
-                this.locationInfo.value = location
+                accuracyBetterThanMeters = 100.0
+            ).subscribe { location ->
+                this.locationInfo.value = location.optional
             }
         }
-        xml.locationDisplay.bindString(locationInfo.map { it ->
+        locationInfo.mapFromNullable { it ->
             if(it != null){
-                return@map "${it.coordinate}"
+                return@mapFromNullable "${it}"
             } else {
-                return@map "Nothing yet"
+                return@mapFromNullable "Nothing yet"
             }
-        })
+        }.subscribeAutoDispose(xml.locationDisplay, TextView::setText)
         return view
     }
 }

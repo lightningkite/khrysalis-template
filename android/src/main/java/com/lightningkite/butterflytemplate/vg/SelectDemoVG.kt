@@ -2,20 +2,22 @@
 package com.lightningkite.butterflytemplate.vg
 
 import android.view.View
-import com.lightningkite.butterfly.Unowned
-import com.lightningkite.butterfly.android.ActivityAccess
-import com.lightningkite.butterfly.observables.ConstantObservableProperty
-import com.lightningkite.butterfly.observables.ObservableStack
-import com.lightningkite.butterfly.observables.binding.bind
-import com.lightningkite.butterfly.observables.binding.bindText
-import com.lightningkite.butterfly.views.EntryPoint
-import com.lightningkite.butterfly.views.ViewGenerator
-import com.lightningkite.butterfly.views.onClick
-import com.lightningkite.butterflytemplate.layouts.ComponentTestXml
-import com.lightningkite.butterflytemplate.layouts.SelectDemoXml
+import com.jakewharton.rxbinding4.view.clicks
+import com.lightningkite.khrysalis.Unowned
+import com.lightningkite.rx.viewgenerators.ActivityAccess
+import io.reactivex.rxjava3.core.Observable
+import com.lightningkite.rx.viewgenerators.StackSubject
+import com.lightningkite.rx.ValueSubject
+import com.lightningkite.rx.android.*
+import com.lightningkite.rx.viewgenerators.EntryPoint
+import com.lightningkite.rx.viewgenerators.*
+import com.lightningkite.rx.android.resources.*
+import com.lightningkite.rx.android.onClick
+import com.lightningkite.butterflytemplate.databinding.ComponentTestBinding
+import com.lightningkite.butterflytemplate.databinding.SelectDemoBinding
 
-class SelectDemoVG(@Unowned val stack: ObservableStack<ViewGenerator>) : ViewGenerator(), EntryPoint {
-    override val title: String get() = "Select Demo"
+class SelectDemoVG(@Unowned val stack: StackSubject<ViewGenerator>) : ViewGenerator {
+    override val titleString: ViewString get() = ViewStringRaw("Select Demo")
 
     val options: List<ViewGenerator> = listOf(
         VideoDemoVG(),
@@ -23,11 +25,11 @@ class SelectDemoVG(@Unowned val stack: ObservableStack<ViewGenerator>) : ViewGen
         HttpDemoVG(),
         ExternalTestVG(),
 //        BleScanDemoVG(stack),
-        PongDemoVG(),
+//        PongDemoVG(),
         MarginTestsVG(),
-        MultipleDemoVG(),
+//        MultipleDemoVG(),
         DateButtonDemoVG(),
-        MapDemoVG(),
+//        MapDemoVG(),
         LocationDemoVG(),
         LoadImageDemoVG(),
         ControlsDemoVG(),
@@ -35,8 +37,8 @@ class SelectDemoVG(@Unowned val stack: ObservableStack<ViewGenerator>) : ViewGen
         ViewPagerDemoVG(stack),
         SegmentedControlDemoVG(),
         SliderDemoVG(),
-        DateRangeDemoVG(),
-        LoginDemoVG(stack),
+//        DateRangeDemoVG(),
+//        LoginDemoVG(stack),
         DrawableDemoVG(),
         PreviewVG()
     )
@@ -46,24 +48,20 @@ class SelectDemoVG(@Unowned val stack: ObservableStack<ViewGenerator>) : ViewGen
     }
 
     override fun generate(dependency: ActivityAccess): View {
-        val xml = SelectDemoXml()
-        val view = xml.setup(dependency)
+        val xml = SelectDemoBinding.inflate(dependency.layoutInflater)
+        val view = xml.root
 
-        xml.list.bind(
-            data = ConstantObservableProperty(options),
-            defaultValue = options.first(),
-            makeView = { obs ->
-                val xml = ComponentTestXml()
-                val view = xml.setup(dependency)
-                xml.label.bindText(obs) { it -> it.title }
-                xml.button.onClick { this.selectVG(obs.value) }
-                return@bind view
-            }
-        )
+        options.first()
+        Observable.just(options).showIn(xml.list){ obs: Observable<ViewGenerator> ->
+            val xml = ComponentTestBinding.inflate(dependency.layoutInflater)
+            val view = xml.root
+            obs.subscribeAutoDispose(xml.label) { setText(it.titleString) }
+            xml.button.clicks()
+                .flatMap { obs.take(1) }
+                .subscribeAutoDispose(view) { selectVG(it) }
+            view
+        }
 
         return view
     }
-
-    override val mainStack: ObservableStack<ViewGenerator>?
-        get() = stack
 }

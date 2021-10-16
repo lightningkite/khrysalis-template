@@ -13,7 +13,7 @@
             style="@style/Body"
             android:text="This attaches to a socket that just echos the value back."/>
 
-    <com.lightningkite.butterfly.views.widget.VerticalRecyclerView
+    <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/items"
             android:layout_width="match_parent"
             android:layout_height="0dp"

@@ -2,21 +2,22 @@
 package com.lightningkite.butterflytemplate.vg
 
 import android.view.View
-import com.lightningkite.butterfly.android.ActivityAccess
-import com.lightningkite.butterfly.observables.StandardObservableProperty
-import com.lightningkite.butterfly.observables.binding.bind
-import com.lightningkite.butterfly.views.ViewGenerator
-import com.lightningkite.butterflytemplate.layouts.SegmentedControlDemoXml
+import com.lightningkite.rx.viewgenerators.ActivityAccess
+import com.lightningkite.rx.ValueSubject
+import com.lightningkite.rx.android.bind
+import com.lightningkite.rx.viewgenerators.*
+import com.lightningkite.rx.android.resources.*
+import com.lightningkite.butterflytemplate.databinding.SegmentedControlDemoBinding
 
-class SegmentedControlDemoVG() : ViewGenerator() {
-    override val title: String get() = "Segmented Control Demo"
+class SegmentedControlDemoVG() : ViewGenerator {
+    override val titleString: ViewString get() = ViewStringRaw("Segmented Control Demo")
 
     override fun generate(dependency: ActivityAccess): View {
-        val xml = SegmentedControlDemoXml()
-        val view = xml.setup(dependency)
+        val xml = SegmentedControlDemoBinding.inflate(dependency.layoutInflater)
+        val view = xml.root
 
-        xml.tabs.bind(listOf("A", "B", "C"), StandardObservableProperty(0))
-        xml.tabs2.bind(listOf("A", "B", "C", "D", "E", "F", "G"), StandardObservableProperty(0))
+        xml.tabs.bind(listOf("A", "B", "C"), ValueSubject(0))
+        xml.tabs2.bind(listOf("A", "B", "C", "D", "E", "F", "G"), ValueSubject(0))
 
         return view
     }

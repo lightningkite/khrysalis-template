@@ -9,37 +9,43 @@ package com.lightningkite.butterflytemplate.vg
 //--- Imports
 
 import android.view.View
-import com.lightningkite.butterfly.android.ActivityAccess
-import com.lightningkite.butterfly.location.GeoCoordinate
-import com.lightningkite.butterfly.time.addDayOfMonth
-import com.lightningkite.butterfly.time.hourOfDay
-import com.lightningkite.butterfly.time.minuteOfHour
-import com.lightningkite.butterfly.time.secondOfMinute
-import com.lightningkite.butterfly.views.*
-import com.lightningkite.butterflytemplate.layouts.ExternalTestXml
+import com.lightningkite.rx.viewgenerators.ActivityAccess
+import java.time.*
+import java.time.format.*
+import java.time.*
+import java.time.format.*
+import java.time.*
+import java.time.format.*
+import java.time.*
+import java.time.format.*
+import com.lightningkite.rx.viewgenerators.*
+import com.lightningkite.rx.android.*
+import com.lightningkite.rx.android.resources.*
+import com.lightningkite.butterflytemplate.databinding.ExternalTestBinding
 import java.util.*
+import java.time.*
 
 //--- Name (overwritten on flow generation)
 @Suppress("NAME_SHADOWING")
 class ExternalTestVG(
     //--- Dependencies (overwritten on flow generation)
     //--- Extends (overwritten on flow generation)
-) : ViewGenerator() {
+) : ViewGenerator {
     
     
     //--- Title (overwritten on flow generation)
-    override val title: String get() = "External Test"
+    override val titleString: ViewString get() = ViewStringRaw("External Test")
     
     //--- Generate Start (overwritten on flow generation)
     override fun generate(dependency: ActivityAccess): View {
-        val xml = ExternalTestXml()
-        val view = xml.setup(dependency)
+        val xml = ExternalTestBinding.inflate(dependency.layoutInflater)
+        val view = xml.root
         
         //--- Set Up xml.scrollView (overwritten on flow generation)
         
         //--- Set Up xml.openMap
         xml.openMap.onClick {
-            dependency.openMap(GeoCoordinate(41.7269, -111.8432), "Lightning Kite", 14f)
+            dependency.openMap(41.7269, -111.8432, "Lightning Kite", 14f)
         }
 
         //--- Set Up xml.openWeb
@@ -53,8 +59,8 @@ class ExternalTestVG(
                 title = "A Virtual Lunch with LK",
                 description = "Come eat virtual food with us!",
                 location = "Lightning Kite in Logan Utah",
-                start = Date().addDayOfMonth(1).hourOfDay(12).minuteOfHour(0).secondOfMinute(0),
-                end = Date().addDayOfMonth(1).hourOfDay(13).minuteOfHour(0).secondOfMinute(0)
+                start = ZonedDateTime.now().plusDays(1).withHour(12).withMinute(0).withSecond(0),
+                end = ZonedDateTime.now().plusDays(1).withHour(13).withMinute(0).withSecond(0)
             )
         }
 

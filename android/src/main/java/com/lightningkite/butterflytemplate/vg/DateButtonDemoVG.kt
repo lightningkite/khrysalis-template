@@ -2,30 +2,39 @@
 package com.lightningkite.butterflytemplate.vg
 
 import android.view.View
-import com.lightningkite.butterfly.android.ActivityAccess
-import com.lightningkite.butterfly.observables.MutableObservableProperty
-import com.lightningkite.butterfly.observables.StandardObservableProperty
-import com.lightningkite.butterfly.observables.binding.bind
-import com.lightningkite.butterfly.observables.binding.bindString
-import com.lightningkite.butterfly.observables.map
-import com.lightningkite.butterfly.time.ClockPartSize
-import com.lightningkite.butterfly.time.format
-import com.lightningkite.butterfly.views.ViewGenerator
-import com.lightningkite.butterflytemplate.layouts.DateButtonDemoXml
+import android.widget.TextView
+import com.lightningkite.rx.viewgenerators.ActivityAccess
+import io.reactivex.rxjava3.subjects.Subject
+import com.lightningkite.rx.ValueSubject
+import com.lightningkite.rx.android.bind
+import com.lightningkite.rx.android.bindString
+import com.lightningkite.rx.toSubjectLocalDate
+import com.lightningkite.rx.toSubjectLocalTime
+
+import java.time.format.FormatStyle
+import java.time.*
+import java.time.format.*
+import com.lightningkite.rx.viewgenerators.*
+import com.lightningkite.rx.android.resources.*
+import com.lightningkite.butterflytemplate.databinding.DateButtonDemoBinding
+import com.lightningkite.rx.android.subscribeAutoDispose
+import io.reactivex.rxjava3.core.Observable
 import java.util.*
+import java.time.*
 
-class DateButtonDemoVG() : ViewGenerator() {
-    override val title: String get() = "Date Button Demo"
+class DateButtonDemoVG() : ViewGenerator {
+    override val titleString: ViewString get() = ViewStringRaw("ZonedDateTime Button Demo")
 
-    val date: MutableObservableProperty<Date> = StandardObservableProperty(Date())
+    val date: ValueSubject<ZonedDateTime> = ValueSubject(ZonedDateTime.now())
 
     override fun generate(dependency: ActivityAccess): View {
-        val xml = DateButtonDemoXml()
-        val view = xml.setup(dependency)
+        val xml = DateButtonDemoBinding.inflate(dependency.layoutInflater)
+        val view = xml.root
 
-        xml.text.bindString(date.map { it -> it.format(ClockPartSize.Medium, ClockPartSize.Medium) })
-        xml.dateButton.bind(date)
-        xml.timeButton.bind(date)
+        date.map { it -> it.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM, FormatStyle.MEDIUM)) }
+            .subscribeAutoDispose<Observable<String>, TextView, String>(xml.text, TextView::setText)
+        date.toSubjectLocalDate().bind(xml.dateButton)
+        date.toSubjectLocalTime().bind(xml.timeButton)
 
         return view
     }

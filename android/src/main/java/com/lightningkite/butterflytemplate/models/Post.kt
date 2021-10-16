@@ -1,7 +1,7 @@
 //! This file will translate using Khrysalis.
 package com.lightningkite.butterflytemplate.models
 
-import com.lightningkite.butterfly.Codable
+import com.lightningkite.khrysalis.Codable
 
 data class Post(
     var userId: Long = 0,

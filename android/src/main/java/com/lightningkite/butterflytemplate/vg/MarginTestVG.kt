@@ -2,17 +2,18 @@
 package com.lightningkite.butterflytemplate.vg
 
 import android.view.View
-import com.lightningkite.butterfly.android.ActivityAccess
-import com.lightningkite.butterfly.views.ViewGenerator
-import com.lightningkite.butterfly.views.onClick
-import com.lightningkite.butterflytemplate.layouts.MarginTestXml
+import com.lightningkite.rx.viewgenerators.ActivityAccess
+import com.lightningkite.rx.viewgenerators.*
+import com.lightningkite.rx.android.resources.*
+import com.lightningkite.rx.android.onClick
+import com.lightningkite.butterflytemplate.databinding.MarginTestBinding
 
-class MarginTestsVG : ViewGenerator() {
-    override val title: String get() = "Margin Tests"
+class MarginTestsVG : ViewGenerator {
+    override val titleString: ViewString get() = ViewStringRaw("Margin Tests")
 
     override fun generate(dependency: ActivityAccess): View {
-        val xml = MarginTestXml()
-        val view = xml.setup(dependency)
+        val xml = MarginTestBinding.inflate(dependency.layoutInflater)
+        val view = xml.root
         xml.scrollToTop.onClick {
             xml.scrollView.smoothScrollTo(0,0)
         }

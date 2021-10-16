@@ -2,35 +2,36 @@
 package com.lightningkite.butterflytemplate.vg
 
 import android.view.View
-import com.lightningkite.butterfly.android.ActivityAccess
-import com.lightningkite.butterfly.observables.ObservableStack
-import com.lightningkite.butterfly.observables.StandardObservableProperty
-import com.lightningkite.butterfly.observables.binding.bind
-import com.lightningkite.butterfly.views.ViewGenerator
-import com.lightningkite.butterflytemplate.layouts.ComponentTestXml
-import com.lightningkite.butterflytemplate.layouts.ViewPagerDemoXml
+import com.lightningkite.rx.viewgenerators.ActivityAccess
+import com.lightningkite.rx.viewgenerators.StackSubject
+import com.lightningkite.rx.ValueSubject
+import com.lightningkite.rx.android.bind
+import com.lightningkite.rx.viewgenerators.*
+import com.lightningkite.rx.android.resources.*
+import com.lightningkite.butterflytemplate.databinding.ComponentTestBinding
+import com.lightningkite.butterflytemplate.databinding.ViewPagerDemoBinding
+import com.lightningkite.rx.android.showIn
 
-class ViewPagerDemoVG(val stack: ObservableStack<ViewGenerator>) : ViewGenerator() {
-    override val title: String get() = "View Pager Demo"
+class ViewPagerDemoVG(val stack: StackSubject<ViewGenerator>) : ViewGenerator {
+    override val titleString: ViewString get() = ViewStringRaw("View Pager Demo")
 
     val items: List<String> = listOf(
         "First",
         "Second",
         "Third"
     )
-    val selectedIndex: StandardObservableProperty<Int> = StandardObservableProperty(0)
+    val selectedIndex: ValueSubject<Int> = ValueSubject(0)
 
     override fun generate(dependency: ActivityAccess): View {
-        val xml = ViewPagerDemoXml()
-        val view = xml.setup(dependency)
+        val xml = ViewPagerDemoBinding.inflate(dependency.layoutInflater)
+        val view = xml.root
 
-        xml.viewPager.bind(items, selectedIndex) { it ->
-            val xml = ComponentTestXml()
-            val view = xml.setup(dependency)
+        items.showIn(xml.viewPager, selectedIndex) { it ->
+            val xml = ComponentTestBinding.inflate(dependency.layoutInflater)
+            val view = xml.root
             xml.label.text = it
-            return@bind view
+            view
         }
-        xml.viewPagerIndicator.bind(items.size, selectedIndex)
 
         return view
     }

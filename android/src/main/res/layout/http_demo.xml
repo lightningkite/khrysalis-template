@@ -8,13 +8,13 @@
     <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
               style="@style/Body"
               android:text="@string/this_data_is_loaded_from_json_placeholder_typicode"/>
-    <com.lightningkite.butterfly.views.widget.HorizontalProgressBar
+    <ProgressBar
             android:id="@+id/progress"
             style="?android:attr/progressBarStyleHorizontal"
             tools:progress="50"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-    <com.lightningkite.butterfly.views.widget.VerticalRecyclerView
+    <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/items"
             android:layout_width="match_parent"
             android:layout_height="0dp"

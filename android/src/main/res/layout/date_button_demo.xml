@@ -16,14 +16,14 @@
                 style="@style/Body"
                 android:id="@+id/text"/>
 
-        <com.lightningkite.butterfly.views.widget.DateButton
+        <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:id="@+id/dateButton"
                 style="@style/ButtonPrimary"/>
 
-        <com.lightningkite.butterfly.views.widget.TimeButton
+        <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"

@@ -2,42 +2,41 @@
 package com.lightningkite.butterflytemplate.vg
 
 import android.view.View
-import com.lightningkite.butterfly.android.ActivityAccess
-import com.lightningkite.butterfly.observables.StandardObservableProperty
-import com.lightningkite.butterfly.observables.binding.bind
-import com.lightningkite.butterfly.observables.binding.bindInteger
-import com.lightningkite.butterfly.observables.binding.bindString
-import com.lightningkite.butterfly.views.ViewGenerator
-import com.lightningkite.butterflytemplate.layouts.ControlsDemoXml
+import android.widget.TextView
+import com.lightningkite.rx.viewgenerators.ActivityAccess
+import com.lightningkite.rx.ValueSubject
+import com.lightningkite.rx.android.bind
+import com.lightningkite.rx.android.bindString
+import com.lightningkite.rx.viewgenerators.*
+import com.lightningkite.rx.android.resources.*
+import com.lightningkite.butterflytemplate.databinding.ControlsDemoBinding
+import com.lightningkite.rx.android.showIn
+import com.lightningkite.rx.android.subscribeAutoDispose
+import com.lightningkite.rx.toSubjectString
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.subjects.Subject
 
-class ControlsDemoVG() : ViewGenerator() {
-    override val title: String get() = "Controls Demo"
+class ControlsDemoVG() : ViewGenerator {
+    override val titleString: ViewString get() = ViewStringRaw("Controls Demo")
 
-    val text: StandardObservableProperty<String> = StandardObservableProperty("")
-    val options: StandardObservableProperty<List<String>> =
-        StandardObservableProperty(listOf("Apple", "Banana", "Chili Pepper", "Dragon Fruit"))
-    val number: StandardObservableProperty<Int> = StandardObservableProperty(32)
+    val text: ValueSubject<String> = ValueSubject("")
+    val options: ValueSubject<List<String>> =
+        ValueSubject(listOf("Apple", "Banana", "Chili Pepper", "Dragon Fruit"))
+    val number: ValueSubject<Int> = ValueSubject(32)
 
     override fun generate(dependency: ActivityAccess): View {
-        val xml = ControlsDemoXml()
-        val view = xml.setup(dependency)
+        val xml = ControlsDemoBinding.inflate(dependency.layoutInflater)
+        val view = xml.root
 
-        xml.numberText.bindInteger(number)
-        xml.editableText.bindString(text)
-        xml.editableAutoText.bindString(text)
-        xml.editableAutoText.bind(
-            options = options,
-            toString = { it -> it },
-            onItemSelected = { item ->
-                this.text.value = item
-            }
-        )
-        xml.editableTextCopy.bindString(text)
-        xml.editableTextBig.bindString(text)
-        xml.spinner.bind(
-            options = options,
-            selected = text
-        )
+        number.toSubjectString().bind(xml.numberText)
+        text
+            .bind(xml.editableText)
+            .bind(xml.editableAutoText)
+            .bind(xml.editableTextBig)
+            .subscribeAutoDispose(xml.editableTextCopy, TextView::setText)
+        options
+            .showIn(xml.editableAutoText, this.text)
+            .showIn(xml.spinner, text)
 
         return view
     }

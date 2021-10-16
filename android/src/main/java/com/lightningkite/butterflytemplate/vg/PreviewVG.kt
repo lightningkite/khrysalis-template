@@ -2,43 +2,45 @@
 package com.lightningkite.butterflytemplate.vg
 
 import android.view.View
-import com.lightningkite.butterfly.Escaping
-import com.lightningkite.butterfly.android.ActivityAccess
-import com.lightningkite.butterfly.observables.StandardObservableProperty
-import com.lightningkite.butterfly.observables.binding.bind
-import com.lightningkite.butterfly.observables.subscribeBy
-import com.lightningkite.butterfly.rx.removed
-import com.lightningkite.butterfly.rx.until
-import com.lightningkite.butterfly.views.ViewGenerator
-import com.lightningkite.butterflytemplate.layouts.*
+import com.lightningkite.khrysalis.Escaping
+import com.lightningkite.rx.viewgenerators.ActivityAccess
+import com.lightningkite.rx.ValueSubject
+import com.lightningkite.rx.android.bind
+import io.reactivex.rxjava3.kotlin.subscribeBy
+import com.lightningkite.rx.android.removed
+import io.reactivex.rxjava3.kotlin.addTo
+import com.lightningkite.rx.viewgenerators.*
+import com.lightningkite.rx.android.resources.*
+import com.lightningkite.butterflytemplate.databinding.*
+import com.lightningkite.rx.android.showIn
+import io.reactivex.rxjava3.core.Observable
 
-class PreviewVG : ViewGenerator() {
-    override val title: String
-        get() = "Preview"
+class PreviewVG : ViewGenerator {
+    override val titleString: ViewString
+        get() = ViewStringRaw("Preview")
 
     class XmlPreview(val name: String, val make: @Escaping() (ActivityAccess) -> View)
 
     val previews: List<XmlPreview> = listOf(
-        XmlPreview("ControlsDemoXml") { it -> ControlsDemoXml().setup(it) },
-        XmlPreview("DateRangeDemoXml") { it -> DateRangeDemoXml().setup(it) },
-        XmlPreview("ExampleContentXml") { it -> ExampleContentXml().setup(it) },
-        XmlPreview("LoginDemoXml") { it -> LoginDemoXml().setup(it) },
-        XmlPreview("MainXml") { it -> MainXml().setup(it) },
-        XmlPreview("SegmentedControlDemoXml") { it -> SegmentedControlDemoXml().setup(it) },
-        XmlPreview("SelectDemoXml") { it -> SelectDemoXml().setup(it) },
-        XmlPreview("SliderDemoXml") { it -> SliderDemoXml().setup(it) },
-        XmlPreview("ViewPagerDemoXml") { it -> ViewPagerDemoXml().setup(it) }
+        XmlPreview("ControlsDemoBinding") { it -> ControlsDemoBinding.inflate(it.layoutInflater).root },
+        XmlPreview("ExampleContentBinding") { it -> ExampleContentBinding.inflate(it.layoutInflater).root },
+        XmlPreview("LoginDemoBinding") { it -> LoginDemoBinding.inflate(it.layoutInflater).root },
+        XmlPreview("MainBinding") { it -> MainBinding.inflate(it.layoutInflater).root },
+        XmlPreview("SegmentedControlDemoBinding") { it -> SegmentedControlDemoBinding.inflate(it.layoutInflater).root },
+        XmlPreview("SelectDemoBinding") { it -> SelectDemoBinding.inflate(it.layoutInflater).root },
+        XmlPreview("SliderDemoBinding") { it -> SliderDemoBinding.inflate(it.layoutInflater).root },
+        XmlPreview("ViewPagerDemoBinding") { it -> ViewPagerDemoBinding.inflate(it.layoutInflater).root }
     )
 
-    val previewIndex: StandardObservableProperty<Int> = StandardObservableProperty(0)
+    val previewIndex: ValueSubject<Int> = ValueSubject(0)
 
     override fun generate(dependency: ActivityAccess): View {
-        val xml = PreviewXml()
-        val view = xml.setup(dependency)
-        xml.pager.bind(previews, previewIndex) { it -> it.make(dependency) }
+        val xml = PreviewBinding.inflate(dependency.layoutInflater)
+        val view = xml.root
+        previews.showIn(xml.pager, previewIndex) { it -> it.make(dependency) }
         previewIndex.subscribeBy { it ->
             xml.viewName.text = this.previews[it].name
-        }.until(view.removed)
+        }.addTo(view.removed)
         return view
     }
 

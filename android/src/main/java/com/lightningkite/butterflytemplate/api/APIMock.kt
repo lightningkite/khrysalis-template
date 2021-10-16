@@ -2,7 +2,7 @@
 package com.lightningkite.butterflytemplate.api
 
 import com.lightningkite.butterflytemplate.models.Post
-import io.reactivex.Single
+import io.reactivex.rxjava3.core.Single
 import java.util.concurrent.TimeUnit
 
 class APIMock() : APIInterface {

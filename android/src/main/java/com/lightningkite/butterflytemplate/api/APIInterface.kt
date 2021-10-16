@@ -2,7 +2,7 @@
 package com.lightningkite.butterflytemplate.api
 
 import com.lightningkite.butterflytemplate.models.Post
-import io.reactivex.Single
+import io.reactivex.rxjava3.core.Single
 
 interface APIInterface {
     //https://jsonplaceholder.typicode.com/posts

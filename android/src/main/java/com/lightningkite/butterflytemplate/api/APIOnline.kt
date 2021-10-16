@@ -6,10 +6,10 @@
 
 package com.lightningkite.butterflytemplate.api
 
-import com.lightningkite.butterfly.net.HttpClient
-import com.lightningkite.butterfly.net.readJson
+import com.lightningkite.rx.okhttp.HttpClient
+import com.lightningkite.rx.okhttp.readJson
 import com.lightningkite.butterflytemplate.models.Post
-import io.reactivex.Single
+import io.reactivex.rxjava3.core.Single
 
 
 class APIOnline(val baseUrl: String = "https://jsonplaceholder.typicode.com") : APIInterface {
